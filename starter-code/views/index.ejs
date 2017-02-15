@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>coffee and Books</title>
+    <link rel='stylesheet' href='/stylesheets/style.min.css' />
+</head>
+
+<body>
+    <h1>coffee and Books</h1>
+    <div id="map"></div>
+    <form id="id-changer" action="/" method="post">
+        <label for="kind">Kind of Shop</label>
+        <select name="kind" id="kind">
+        <option value="all">All</option>
+        <option value="coffee-shop">Coffee Shop</option>
+        <option value="book-shop">Book Shop</option>
+      </select>
+    </form>
+</body>
+
+<script type="text/javascript">
+    var myPlaces = (<%- jsonPlaces %>);
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnIxTXQT-y_Ev8p0iAwQg1jhJcDAGY6J0">
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+
+</html>
