@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books And Coffee</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+  </head>
+  <body>
+    <h1>Books And Coffee</h1>
+    <p>Add a new place!</p>
+    <section>
+      <form class="form-inline" action="/new" method="POST">
+        <div class="form-group">
+          <label for="name">Place Name:</label>
+          <input type="text" class="form-control" id="exampleInputName2" name="name" placeholder="Place Name">
+        </div>
+        <div class="form-group">
+          <label for="type">Store Type:</label>
+          <select class="form-control" name="type">
+            <option value="Bookstore">Bookstore</option>
+            <option value="Coffee-Place">Coffeeplace</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="longitude">Longitude: </label>
+          <input type="number" class="form-control" id="exampleInputName2" step="any" name="longitude" placeholder="Longitude">
+        </div>
+        <div class="form-group">
+          <label for="latitude">Latitude: </label>
+          <input type="number" class="form-control" name="latitude" step="any" id="exampleInputEmail2" placeholder="Latitude">
+        </div>
+        <button type="submit" class="btn btn-default">Send</button>
+      </form>
+    </section>
+    <div id="map"></div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
