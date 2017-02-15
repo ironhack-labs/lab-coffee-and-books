@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Best Places on Earth</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      </div>
+      <div class="info">
+        <h3>List all bookstore & CoffeShops</h3>
+        <a href="/new">Create </a>
+        <ul>
+
+          <% books.forEach((book) => { %>
+            <li>
+              <a href="/<%= book._id%>">
+                <%= book.name%><span>-><%= book.description %></span>
+              </a>
+               |
+              <a href="/<%= book._id%>/edit">Edit</a>
+               |
+              <a href="/<%= book._id%>/delete">Delete</a>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+      <div id="map"></div>
+
+    </div>
+      <script type="text/javascript">
+        var myBooks = (<%- jsonBooks %>);
+      </script>
+  </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN9OdByHcEHDc-fwHvjNsvh6XKKDvrciY">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Maps | Express</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h3 id="bookName" data-id="<%= book._id %>"><%= book.name %></h3>
+    <p><%= book.description %></p>
+    <a href="/">List</a>
+    <div id="map"></div>
+
+  </div>
+    <script type="text/javascript">
+      var myBooks = (<%- jsonBooks %>);
+    </script>
+  </body>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN9OdByHcEHDc-fwHvjNsvh6XKKDvrciY">
+  </script>
+  <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/show.js"></script>
+</html>
