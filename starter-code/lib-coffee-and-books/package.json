@@ -1,0 +1,20 @@
+{
+  "name": "lib-coffee-and-books",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "ejs": "~2.5.5",
+    "express": "~4.14.1",
+    "mongoose": "^4.8.2",
+    "morgan": "~1.7.0",
+    "multer": "^1.3.0",
+    "node-sass-middleware": "0.9.8",
+    "serve-favicon": "~2.3.2"
+  }
+}
