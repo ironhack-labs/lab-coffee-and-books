@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHtJ_Aez6eUjeykTCgt7cv8fAAMkaJK-4">
+    </script>
+</head>
+
+<body>
+    <h1><%= title %></h1>
+    <p>Welcome to
+        <%= title %>
+    </p>
+    <ul>
+    <% places.forEach((place) => { %>
+      <li><%=place.name%> (<%=place.kind%>)</li>
+    <% }); %>
+    </ul>
+    <a href="/">See All</a><br>
+    <a href="/bookstores">See Bookstores</a><br>
+    <a href="/cafes">See Cafes</a><br><br>
+    <a href="/add">Add Place</a>
+
+    <div id="map"></div>
+    <script type="text/javascript">
+        var myPlaces = <%- jsonPlaces %>;
+    </script>
+    <script type="text/javascript" src="javascripts/main.js">
+    </script>
+</body>
+
+</html>
