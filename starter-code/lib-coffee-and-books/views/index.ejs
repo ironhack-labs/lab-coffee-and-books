@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookstores and coffees</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      </div>
+      <div class="info">
+        <h3>List all Bookstores and Coffes</h3>
+        <a href="/new">Create new place</a>
+
+        <ul>
+          <% placesSearch.forEach((place) => { %>
+            <li>
+              <a href="/<%= place._id%>">
+                <%= place.name%><span><%= place.description %></span>
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+
+      </div>
+    </div>
+          <div id="map"></div>
+  </body>
+  <script type="text/javascript">
+    var myPlaces = (<%- jsonPlace %>);
+ </script>
+  <script
+      async
+      defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG6QkmA8C0NTds2sp6-1M95y6SoRizQcQ">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
