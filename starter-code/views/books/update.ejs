@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Maps | Express</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h3>Edit BookStore</h3>
+    <form method="POST" action="/<%= book._id%>">
+    	<label>Name:</label>
+    	<input type="" name="name" placeholder="Name" value="<%= book.name%>">
+    	<label>Description:</label>
+    	<input type="" name="description" placeholder="Description" value="<%= book.description%>">
+      <label>Location</label>
+      <input type="text" name="latitude" placeholder="Latitude" value="<%= book.location.coordinates[1]%>">
+      <input type="text" name="longitude" placeholder="Longitude" value="<%= book.location.coordinates[0]%>">
+      <input type="submit" name="">
+
+    </form>
+
+  </body>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbBJPvYIaR5ozIx_0-uWiGeO9cK4IxHww">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/update.js"></script>
+</html>
