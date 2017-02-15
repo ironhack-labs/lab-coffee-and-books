@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p>List of Shops</p>
+    <%shops.forEach((shop)=> {%>
+      <li>
+      <a><%= shop.name %></a>
+      <span><%= shop.description%></span>
+      </li>
+    <%})%>
+    <br><br>
+    <form action="/new" method="POST">
+      <input type="text" name="name" placeholder="Shop name here">
+      <input type="text" name="description" placeholder="What type of store">
+      <input type="text" name="longitude" placeholder="Location: longitude">
+      <input type="text" name="latitude" placeholder="Location: latitude">
+      <input type="submit">
+    </form>
+  </body>
+</html>
