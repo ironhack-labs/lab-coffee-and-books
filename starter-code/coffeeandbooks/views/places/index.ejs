@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Best Places on Earth</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      </div>
+      <div class="info">
+        <h3>List all places</h3>
+        <a href="/new">Create new place</a>
+        <ul>
+          <% places.forEach((place) => { %>
+            <li>
+              <a href="/<%= place._id%>">
+                <%= place.name%><span><%= place.description %></span>
+              </a>
+               |
+              <a href="/<%= place._id%>/edit">Edit</a>
+               |
+              <a href="/<%= place._id%>/delete">Delete</a>
+            </li>
+
+
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+
+<!-- MAP -->
+    <style>
+       #map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
+
+   <div id= "map"> </div>
+
+  </body>
+
+  <script type="text/javascript">
+
+ </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbBJPvYIaR5ozIx_0-uWiGeO9cK4IxHww">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+
+  <script type="text/javascript">
+ var myPlaces = [<%- places %>];
+ </script>
+</html>
