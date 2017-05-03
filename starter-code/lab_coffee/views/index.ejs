@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1><%= title %></h1>
+    <p>Welcome to
+        <%= title %>
+    </p>
+    <div id="map">    </div>
+
+    <form action="/" method="post">
+        <input type="text" name="name" placeholder="name">
+        <label>Address</label>
+        <input type="text" name="latitude" placeholder="latitude">
+        <input type="text" name="longitude" placeholder="longitude">
+        <input type="submit">
+    </form>
+
+    <ul>
+  <% places.forEach((place) => { %>
+    <li>
+      <a href="/places/<%= place._id%>">
+        <%= place.name%> | <%= place.description %> </a>
+        <a href="/places/<%= place._id%>/edit">Edit</a> |
+        <a href="/<%= place._id%>/delete">Delete</a>
+    </li>
+  <% }) %>
+</ul>
+
+    <script type="text/javascript">
+      var myPlaces = [<%- places %>]
+    </script>
+</body>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJN77Ru1GI4j9aXygNrZSA_CluLlat_6k">
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+
+</html>
