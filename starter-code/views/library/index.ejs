@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Best Places on Earth</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <div id="map"></div>
+      </div>
+      <div class="info">
+        <h3>List all library</h3>
+        <a href="/new">Create new library</a>
+        <ul>
+          <% library.forEach((library) => { %>
+            <li>
+              <a href="/<%= library._id%>">
+                <%= library.name%><span><%= library.description %></span>
+              </a>
+               |
+              <a href="<%= library._id%>/edit">Edit</a>
+               |
+              <a href="<%= library._id%>/delete">Delete</a>
+            </li>
+          <% }) %>
+        </ul>
+
+    </div>
+  </body>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbBJPvYIaR5ozIx_0-uWiGeO9cK4IxHww">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script>var libraryArr = [<%- library %>] </script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+</html>
