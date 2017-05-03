@@ -1,0 +1,15 @@
+<h1>Coffee & Books</h1>
+<p>Welcome to the best page of coffee and books</p>
+
+<div class="container">
+  <div id="map"></div>
+</div>
+<ul>
+<% places.forEach((placeObj) => { %>
+  <li><%= placeObj.name %> | <%= placeObj.kindPlace %></li>
+<% }) %>
+</ul>
+
+<a href="/create">Add a new place...</a>
+
+<script type="text/javascript"> var placesArr = [<%- places %>]</script>
