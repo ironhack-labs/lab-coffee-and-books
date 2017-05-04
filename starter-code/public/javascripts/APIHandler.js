@@ -18,6 +18,43 @@ class APIHandler {
       },
     });
   }
+
+  getCoordinates(){
+    console.log("hi2");
+    $.ajax({
+      url: this.BASE_URL+"/show",
+      method: "GET",
+      success: function (response) {
+        console.log(response);
+        getCoordinatesJquery(response);
+      },
+      error: function (err) {
+        console.log(err);
+      },
+    });
+  }
+}
+
+function getCoordinatesJquery(places){
+  var tempArray=[];
+  if(places.length)
+  {
+    places.forEach((place)=>{
+      var center = {
+        lat: place.location.coordinates[1],
+        lng: place.location.coordinates[0]
+      };
+      var pin = new google.maps.Marker({
+        position: center,
+        map: map,
+        title: place.name
+      });
+      tempArray.push(pin);
+    });
+  }
+  else {
+    generateInfoPlace();
+  }
 }
 
 

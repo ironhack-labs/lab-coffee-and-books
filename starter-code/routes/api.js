@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 const Place = require('../models/place');
 
-/* GET home page. */
+
 router.route('/show').get((req, res) => {
   Place.find((error, places) => {
     if (error) {
@@ -13,6 +13,5 @@ router.route('/show').get((req, res) => {
     }
   });
 });
-
 
 module.exports = router;
