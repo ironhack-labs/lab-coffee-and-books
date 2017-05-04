@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Places List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1></h1>
+        Name: <%=place.name%> <br>
+        Address: <%=place.address%> <br>
+        Type: <%=place.placeType%> <br>
+        <a href="/<%=place.id%>/edit">Edit</a> | <a href="/<%=place.id%>/delete">Delete</a>
+        <div id="map">
+            
+        </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<form action="/<%=place.id%>" method="POST">
+
+Name: <br> 
+<input type="text" name='name' value='<%=place.name%>'><br>
+Address: <br>
+<input type="text" name='address' value='<%=place.address%>'><br>
+Location: <br>
+Latitude:
+<input type="text" name='latitude' value='<%=place.location.coordinates[1]%>'> <br>
+Longitude:
+<input type="text" name='longitude' value='<%=place.location.coordinates[0]%>'> <br>
+Place Type: <br>
+<input type="radio" name='placeType' value='BOOKSTORE' 
+<% if(place.placeType==='BOOKSTORE') { %>
+checked
+<% } %>
+
+>BookStore<br>
+<input type="radio" name='placeType' value='COFFEESHOP'
+<% if(place.placeType==='COFFEESHOP') { %>
+checked
+<% } %>
+>Coffee Shop<br>
+
+<button>Save Place</button>
+
+</form>
