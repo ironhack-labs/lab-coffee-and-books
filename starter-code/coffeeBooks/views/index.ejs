@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Places List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Places List</h1>
+    <div id="map"></div>
+    <% places.forEach(place => { %>
+        Name: <%=place.name%> <br>
+        Address: <%=place.address%> <br>
+        Type: <%=place.placeType%> <br> <br>
+        <a href="/<%=place.id%>">Show</a> | <a href="/<%=place.id%>/edit">Edit</a> | <a href="/<%=place.id%>/delete">Delete</a><br><br>
+    <% }) %> <br>
+    <a href="/new">Add New Place</a>
+    <!-- jQuery JS 3.1.0 -->
+  <script
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbBJPvYIaR5ozIx_0-uWiGeO9cK4IxHww">
+ </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="/javascripts/main.js"></script>
+  </body>
+</html>
