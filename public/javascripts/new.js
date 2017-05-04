@@ -1,7 +1,7 @@
 $(document).ready(() => {
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    center: { lat: -34.397, lng: 150.644 },
+    zoom: 10,
+    center: { lat: 41.3977381, lng: 2.090471916 },
   });
 
   const geocoder = new google.maps.Geocoder();

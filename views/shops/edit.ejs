@@ -8,14 +8,14 @@
 
 <body>
   <h3>Add new restaurant</h3>
-  <form method="POST" action="/">
+  <form method="POST" action="/<%=result._id%>">
     <label>Name:</label>
-    <input type="" name="name" placeholder="Name" required>
+    <input type="" name="name" value="<%= result.name %>" placeholder="Name" required>
     <label>Description:</label>
-    <input type="" name="description" placeholder="Description">
+    <input type="" name="description" value="<%= result.description %>" placeholder="Description">
     <label>Address</label>
-    <input id="latitude" type="" name="latitude" placeholder="Latitude">
-    <input id="longitude" type="" name="longitude" placeholder="Longitude">
+    <input id="latitude" type="" name="latitude" value="<%= result.location.coordinates[1] %>" placeholder="Latitude">
+    <input id="longitude" type="" name="longitude" value="<%= result.location.coordinates[0] %>" placeholder="Longitude">
     Type of Business:<br>
     <input type="radio" name='business' value='BOOKSTORE' required>BookStore<br>
     <input type="radio" name='business' value='COFFEESHOP'>Coffee Shop<br>

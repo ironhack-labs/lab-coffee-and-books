@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
   const ironhackBCN = {
     lat: 41.3977381,
     lng: 2.090471916,
@@ -7,7 +7,7 @@ $(document).ready(function() {
   const markers = [];
 
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
+    zoom: 7,
     center: ironhackBCN,
   });
 
@@ -43,7 +43,6 @@ $(document).ready(function() {
       },
     });
   }
-
 
   function placeShops(shops) {
     shops.forEach((shop) => {
