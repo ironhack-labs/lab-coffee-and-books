@@ -12,7 +12,9 @@ router.get('/', function(req, res, next) {
       res.render('index', {places});
     }
   })
-
 });
 
+router.get('/test', (req, res, next) =>{
+  res.render('test');
+});
 module.exports = router;
