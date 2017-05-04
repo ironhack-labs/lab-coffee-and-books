@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Coffeeshops and Bookstores</title>
+    <style>
+       #map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Coffeeshops and Bookstores</h3>
+    <div id="map"></div>
+  </body>
+  <script type="text/javascript"> var locations = [<%- places %>]; </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPJkVGfAsJURkAMEAM_40Fx3f3mH2etOQ&libraries=places">
+  </script>
+  <script
+    src="http://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+</html>
