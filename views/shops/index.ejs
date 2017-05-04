@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Google Maps | Express</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="container">
+    <div id="map">
+    </div>
+    <div class="info">
+      <h3>List all shops</h3>
+      <a href="/new">Create new shop</a>
+        <ul>
+          <% shops.forEach((shop) => { %>
+            <li>
+              <a href="/<%= shop._id%>"><%= shop.name%></a> <span> <%= shop.description %></span> <span>Business: <%= shop.business %></span>
+               | 
+              <a href="/<%= shop._id%>/edit">Edit</a> 
+               | 
+              <a href="/<%= shop._id%>/delete">Delete</a>
+            </li>
+          <% }) %>
+        </ul>
+    </div>
+  </div>
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbBJPvYIaR5ozIx_0-uWiGeO9cK4IxHww"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+<script type="text/javascript">
+  var myShops = [<%- shops %>];
+  console.log('myRestaurants: ', myShops);
+  console.log("testing 123")
+</script>
+
+</html>

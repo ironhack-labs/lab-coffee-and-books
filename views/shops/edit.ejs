@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Google Maps | Express</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h3>Add new restaurant</h3>
+  <form method="POST" action="/<%=result._id%>">
+    <label>Name:</label>
+    <input type="" name="name" value="<%= result.name %>" placeholder="Name" required>
+    <label>Description:</label>
+    <input type="" name="description" value="<%= result.description %>" placeholder="Description">
+    <label>Address</label>
+    <input id="latitude" type="" name="latitude" value="<%= result.location.coordinates[1] %>" placeholder="Latitude">
+    <input id="longitude" type="" name="longitude" value="<%= result.location.coordinates[0] %>" placeholder="Longitude">
+    Type of Business:<br>
+    <input type="radio" name='business' value='BOOKSTORE' required>BookStore<br>
+    <input type="radio" name='business' value='COFFEESHOP'>Coffee Shop<br>
+    <input type="submit" name="">
+  </form>
+  <input id="address" type="" name="address" placeholder="address">
+  <input id="submit" type="submit" name="" value="Geocode">
+  <div id="map"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbBJPvYIaR5ozIx_0-uWiGeO9cK4IxHww"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/javascripts/new.js"></script>
+</body>
+</html>

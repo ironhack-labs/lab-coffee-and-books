@@ -1,0 +1,17 @@
+{
+  "name": "lib-coffee-and-books",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Isak La Fleur <isak.engdahl@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/isaklafleur/lib-coffee-and-books",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
