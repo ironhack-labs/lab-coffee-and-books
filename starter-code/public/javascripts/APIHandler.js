@@ -6,7 +6,6 @@ class APIHandler {
   }
 
   CreateOne(map,place){
-    console.log("hiCreateOne");
     $.ajax({
       url: this.BASE_URL+"/new",
       method: "POST",
@@ -49,7 +48,6 @@ class APIHandler {
   }
 
   getCoordinates(map){
-     console.log("hi");
     $.ajax({
       url: this.BASE_URL+"/show",
       method: "GET",
@@ -69,7 +67,7 @@ class APIHandler {
       url: this.BASE_URL+"/"+place_name+"/show",
       method: "GET",
       success: function (response) {
-        console.log("ok api one",response);
+        console.log(response);
         deleteMarkers();
         getCoordinatesJquery(response,map);
 
@@ -81,7 +79,6 @@ class APIHandler {
   }
 
   deleteAll(){
-    console.log("hiDeleteAll");
     deleteMarkers();
   }
 }
@@ -90,7 +87,6 @@ function deleteMarkers() {
     if(this.markers!==undefined)
     {
       this.markers.forEach(function(marker) {
-        console.log("hi",marker);
         marker.setMap(null);
         marker = null;
       });
@@ -129,7 +125,7 @@ function getCoordinatesJquery(places,map){
       });
       tempArray.push(pin);
     });
-    console.log("tempArray",tempArray);
+
     this.markers = tempArray;
   }
   else {
@@ -160,9 +156,3 @@ function deleteInfoPlace(){
 function generateInfoPlace(name="",description="",local="",lt="",ln="", placeId = ""){
   $('.place-container').append($('<li>').addClass('place-info').append($('<p>').append($('<span>').addClass('name').html("Name: " + name + " ")).append($('<span>').addClass('description').html("| Description: " + description + " ")).append($('<span>').addClass('local').html("Local: " + local + " ")).append($('<span>').addClass('lt').html("| LT: " + lt + " ")).append($('<span>').addClass('ln').html("| LN: " + ln + " ")).append($('<span>').html("| ")).append($('<a>').addClass('delete-link').attr('href',placeId).html("Delete"))));
 }
-
-
-
-// function generateInfoPlace(name="",description="",lt="",ln="", placeId = ""){
-//   $('.place-container').append($('<li>').addClass('place-info').append($('<p>').append($('<span>').addClass('name').html("Name: " + name + " ")).append($('<span>').addClass('description').html("| Description: " + description + " ")).append($('<span>').addClass('lt').html("| LT: " + lt + " ")).append($('<span>').addClass('ln').html("| LN: " + ln + " ")).append($('<span>').html("| ")).append($('<a>').attr('href','/show/'+placeId).html("Show")).append($('<span>').html(" | ")).append($('<a>').attr('href','/'+placeId +'/edit').html("Edit")).append($('<span>').html(" | ")).append($('<a>').addClass('delete-link').attr('href',placeId).html("Delete"))));
-// }

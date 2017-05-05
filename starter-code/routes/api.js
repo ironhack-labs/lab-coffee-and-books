@@ -16,8 +16,6 @@ router.route('/show').get((req, res) => {
 
 router.post('/new',(req, res, next) => {
   // Get Params from POST
-  console.log("hiNew");
-  console.log("req.body",req.body);
   let location = {
     type: 'Point',
     coordinates: [req.body.longitude, req.body.latitude]
@@ -30,8 +28,6 @@ router.post('/new',(req, res, next) => {
       local: req.body.local,
       location:    location
     });
-
-      console.log("newPlace",newPlace);
 
   // Save the restaurant to the Database
   newPlace.save((error, place) => {
@@ -64,14 +60,11 @@ router.route('/:place_id/delete')
 
 router.route('/:place_name/show')
 .get((req, res) => {
-  console.log("hi show",req.params.place_name);
+
 	Place.find({name: req.params.place_name}, (error, place) => {
 		if (error) {
-      console.log("nok");
 			res.status(500).json({message: error});
 		} else {
-      console.log("ok");
-      console.log(place);
 			res.status(200).json(place);
 		}
 	});

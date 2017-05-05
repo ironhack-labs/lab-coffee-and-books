@@ -6,7 +6,6 @@ $(document).ready (()=>{
 
   $('.place-container').on('click','.delete-link', (e) => {
     e.preventDefault();
-    console.log("hi",e.target);
     var place_id =e.target.getAttribute('href');
     placesAPI.deleteOne(place_id);
   });
