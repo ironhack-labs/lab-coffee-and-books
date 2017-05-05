@@ -13,9 +13,32 @@ $(document).ready (()=>{
   map = startMap(map);
  placesAPI.getCoordinates(map);
 
+ $('#create-one').on('click', (e) => {
+   e.preventDefault();
+   var place = {};
+
+   place.name = $('#create-one-name').val();
+   console.log("place.name",place.name);
+
+   place.description = $('#create-one-description').val();
+   console.log("place.description",place.description);
+
+   place.local = $('#create-one-local').val();
+   console.log("place.local",place.local);
+
+   place.latitude = $('#create-one-latitude').val();
+   console.log("place.latitude",place.latitude);
+
+   place.longitude = $('#create-one-longitude').val();
+   console.log("place.longitude",place.longitude);
+
+   placesAPI.CreateOne(map,place);
+
+ });
+
   $('#show-one').on('click', (e) => {
     e.preventDefault();
-    var place_name = $('#show-one-id').val();
+    var place_name = $('#show-one-name').val();
     console.log("place_name",place_name);
     placesAPI.getOneCoordinates(map,place_name);
   });

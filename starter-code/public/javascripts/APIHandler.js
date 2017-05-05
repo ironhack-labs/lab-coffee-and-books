@@ -5,6 +5,21 @@ class APIHandler {
     this.markers=[];
   }
 
+  CreateOne(map,place){
+    console.log("hiCreateOne");
+    $.ajax({
+      url: this.BASE_URL+"/new",
+      method: "POST",
+      data: place,
+      success: function (response) {
+        getOneCoordinatesJquery(response,map);
+      },
+      error: function (err) {
+        console.log(err);
+      },
+    });
+  }
+
   deleteOne(place_id){
     $.ajax({
       url: this.BASE_URL+"/"+place_id+"/delete",
@@ -82,6 +97,20 @@ function deleteMarkers() {
       this.markers = [];
     }
   }
+
+function getOneCoordinatesJquery(place,map){
+  var center = {
+    lat: place.location.coordinates[1],
+    lng: place.location.coordinates[0]
+  };
+  var pin = new google.maps.Marker({
+    position: center,
+    label: place.local[0].toUpperCase(),
+    map: map,
+    title: place.name
+  });
+  this.markers.push(pin);
+}
 
 function getCoordinatesJquery(places,map){
   var tempArray=[];
