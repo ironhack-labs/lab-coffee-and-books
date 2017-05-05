@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+     #map {
+      height: 500px;
+      width: 100%;
+     }
+    </style>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <div id="map"></div>
+
+    <form>
+      <input type="text" id="create-one-name" name="name"        placeholder="name">
+      <input type="text" id="create-one-description" name="description" placeholder="description">
+      <select name="local" id="create-one-local">
+       <option value="cafe">Cafe place</option>
+       <option value="book_store">Book Store</option>
+      </select>
+
+      <label>Address</label>
+      <input type="text" id="create-one-latitude" name="latitude" placeholder="Latitude" >
+      <input type="text" id="create-one-longitude" name="longitude" placeholder="Longitude">
+
+      <input type="submit" id="create-one" value="Create One">
+    </form>
+
+    <form >
+      <label>name</label>
+      <input type="text" id=show-one-name  name="name" placeholder="place's name" >
+      <button id="show-one">Show One</button>
+    </form>
+    <button id="show-all">Show All</button>
+    <button id="delete-all">Delete All</button>
+
+
+    <a href="/show">Places</a>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxK06dvST8a0WgnVYNZmtYp_x8oUmt5i8">
+    </script>
+    <script type="text/javascript" src="/javascripts/APIHandler.js"></script>
+    <script type="text/javascript" src="/javascripts/index.js"></script>
+
+  </body>
+</html>
