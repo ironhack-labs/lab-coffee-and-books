@@ -4,8 +4,21 @@ class APIHandler {
     this.BASE_URL = baseUrl;
   }
 
+  DeleteOne(place_id){
+    $.ajax({
+      url: this.BASE_URL+"/"+place_id+"/delete",
+      method: "GET",
+      success: function (response) {
+        console.log(response);
+        getFullListJquery(response);
+      },
+      error: function (err) {
+        console.log(err);
+      },
+    });
+  }
+
   getFullPlaces(){
-    console.log("hi2");
     $.ajax({
       url: this.BASE_URL+"/show",
       method: "GET",
@@ -19,14 +32,13 @@ class APIHandler {
     });
   }
 
-  getCoordinates(){
-    console.log("hi2");
+  getCoordinates(map){
     $.ajax({
       url: this.BASE_URL+"/show",
       method: "GET",
       success: function (response) {
         console.log(response);
-        getCoordinatesJquery(response);
+        getCoordinatesJquery(response,map);
       },
       error: function (err) {
         console.log(err);
@@ -35,7 +47,7 @@ class APIHandler {
   }
 }
 
-function getCoordinatesJquery(places){
+function getCoordinatesJquery(places,map){
   var tempArray=[];
   if(places.length)
   {
@@ -51,9 +63,10 @@ function getCoordinatesJquery(places){
       });
       tempArray.push(pin);
     });
+    return tempArray;
   }
   else {
-    generateInfoPlace();
+    return tempArray;
   }
 }
 
@@ -65,7 +78,7 @@ function getFullListJquery(places){
   if(places.length)
   {
     places.forEach((place)=>{
-      generateInfoPlace(place.name,place.description,place.location.coordinates[0],place.location.coordinates[0]);
+      generateInfoPlace(place.name,place.description,place.location.coordinates[1],place.location.coordinates[0], place._id);
     });
   }
   else {
@@ -74,10 +87,15 @@ function getFullListJquery(places){
 }
 
 function deleteInfoPlace(){
-  console.log("hi");
   $('.place-info').remove();
 }
 
-function generateInfoPlace(name="",description="",lt="",ln=""){
-  $('.place-container').append($('<li>').addClass('place-info').append($('<div>').addClass('name').append($('<p>').html("Name: " + name))).append($('<div>').addClass('description').append($('<p>').html("Description: " + description))).append($('<div>').addClass('lt').append($('<p>').html("LT: " + lt))).append($('<div>').addClass('ln').append($('<p>').html("LN: " + ln))));
+function generateInfoPlace(name="",description="",lt="",ln="", placeId = ""){
+  $('.place-container').append($('<li>').addClass('place-info').append($('<p>').append($('<span>').addClass('name').html("Name: " + name + " ")).append($('<span>').addClass('description').html("| Description: " + description + " ")).append($('<span>').addClass('lt').html("| LT: " + lt + " ")).append($('<span>').addClass('ln').html("| LN: " + ln + " ")).append($('<span>').html("| ")).append($('<a>').addClass('delete-link').attr('href',placeId).html("Delete"))));
 }
+
+
+
+// function generateInfoPlace(name="",description="",lt="",ln="", placeId = ""){
+//   $('.place-container').append($('<li>').addClass('place-info').append($('<p>').append($('<span>').addClass('name').html("Name: " + name + " ")).append($('<span>').addClass('description').html("| Description: " + description + " ")).append($('<span>').addClass('lt').html("| LT: " + lt + " ")).append($('<span>').addClass('ln').html("| LN: " + ln + " ")).append($('<span>').html("| ")).append($('<a>').attr('href','/show/'+placeId).html("Show")).append($('<span>').html(" | ")).append($('<a>').attr('href','/'+placeId +'/edit').html("Edit")).append($('<span>').html(" | ")).append($('<a>').addClass('delete-link').attr('href',placeId).html("Delete"))));
+// }

@@ -5,6 +5,11 @@ const Schema = mongoose.Schema;
 const placeSchema = new Schema({
   name: String,
   description: String,
+  local : {
+    type: String,
+    enum : ['cafe','book_store'],
+    default: 'cafe'
+  },
   location: { type: { type: String }, coordinates: [Number] }
 });
 

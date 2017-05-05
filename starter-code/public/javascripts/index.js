@@ -11,18 +11,22 @@ $(document).ready (()=>{
     lng: undefined
   };
 
-  startMap();
+  var map;
+  console.log("map1",map);
+  map = startMap(map);
+  placesAPI.getCoordinates(map);
+  console.log("map2",map);
 
 });
 
-function startMap(){
+function startMap(map){
 
   var initialCenter = {
     lat: 41.3977381,
     lng: 2.090471916
   };
 
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
     center: initialCenter
   });
@@ -36,7 +40,9 @@ function startMap(){
       // Center map with user location
       map.setCenter(user_location);
     });
+    return map;
   } else {
     console.log('Browser does not support geolocation.');
+    return map;
   }
 }

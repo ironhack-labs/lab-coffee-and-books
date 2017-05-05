@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon --debug ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -14,5 +14,8 @@
     "mongoose": "^4.9.7",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
