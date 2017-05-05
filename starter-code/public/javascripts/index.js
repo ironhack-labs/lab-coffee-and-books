@@ -3,8 +3,6 @@ const placesAPI = new APIHandler("http://localhost:3000/api");
 
 $(document).ready (()=>{
 
-  var markers = [];
-
   var center = {
     lat: undefined,
     lng: undefined
@@ -13,7 +11,24 @@ $(document).ready (()=>{
   var map;
 
   map = startMap(map);
-  placesAPI.getCoordinates(map);
+ placesAPI.getCoordinates(map);
+
+  $('#show-one').on('click', (e) => {
+    e.preventDefault();
+    var place_name = $('#show-one-id').val();
+    console.log("place_name",place_name);
+    placesAPI.getOneCoordinates(map,place_name);
+  });
+
+  $('#show-all').on('click', (e) => {
+    e.preventDefault();
+    placesAPI.getCoordinates(map);
+  });
+
+  $('#delete-all').on('click', (e) => {
+    e.preventDefault();
+    placesAPI.deleteAll();
+  });
 
 
 });

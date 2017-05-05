@@ -2,9 +2,10 @@
 class APIHandler {
   constructor (baseUrl) {
     this.BASE_URL = baseUrl;
+    this.markers=[];
   }
 
-  DeleteOne(place_id){
+  deleteOne(place_id){
     $.ajax({
       url: this.BASE_URL+"/"+place_id+"/delete",
       method: "GET",
@@ -33,11 +34,12 @@ class APIHandler {
   }
 
   getCoordinates(map){
+     console.log("hi");
     $.ajax({
       url: this.BASE_URL+"/show",
       method: "GET",
       success: function (response) {
-        console.log(response);
+        deleteMarkers();
         getCoordinatesJquery(response,map);
       },
       error: function (err) {
@@ -45,7 +47,41 @@ class APIHandler {
       },
     });
   }
+
+  getOneCoordinates(map,place_name){
+     console.log("hi");
+    $.ajax({
+      url: this.BASE_URL+"/"+place_name+"/show",
+      method: "GET",
+      success: function (response) {
+        console.log("ok api one",response);
+        deleteMarkers();
+        getCoordinatesJquery(response,map);
+
+      },
+      error: function (err) {
+        console.log(err);
+      },
+    });
+  }
+
+  deleteAll(){
+    console.log("hiDeleteAll");
+    deleteMarkers();
+  }
 }
+
+function deleteMarkers() {
+    if(this.markers!==undefined)
+    {
+      this.markers.forEach(function(marker) {
+        console.log("hi",marker);
+        marker.setMap(null);
+        marker = null;
+      });
+      this.markers = [];
+    }
+  }
 
 function getCoordinatesJquery(places,map){
   var tempArray=[];
@@ -64,10 +100,11 @@ function getCoordinatesJquery(places,map){
       });
       tempArray.push(pin);
     });
-    return tempArray;
+    console.log("tempArray",tempArray);
+    this.markers = tempArray;
   }
   else {
-    return tempArray;
+    this.markers = tempArray;
   }
 }
 

@@ -33,12 +33,16 @@ router.route('/:place_id/delete')
   });
 });
 
-router.route('/:place_id/show')
+router.route('/:place_name/show')
 .get((req, res) => {
-	Place.findById(req.params.place_id, (error, place) => {
+  console.log("hi show",req.params.place_name);
+	Place.find({name: req.params.place_name}, (error, place) => {
 		if (error) {
+      console.log("nok");
 			res.status(500).json({message: error});
 		} else {
+      console.log("ok");
+      console.log(place);
 			res.status(200).json(place);
 		}
 	});
