@@ -3,7 +3,6 @@ const placesAPI = new APIHandler("http://localhost:3000/api");
 
 $(document).ready (()=>{
 
-  console.log("hiIndex.js");
   var markers = [];
 
   var center = {
@@ -12,10 +11,10 @@ $(document).ready (()=>{
   };
 
   var map;
-  console.log("map1",map);
+
   map = startMap(map);
   placesAPI.getCoordinates(map);
-  console.log("map2",map);
+
 
 });
 

@@ -23,6 +23,7 @@ router.post('/create',(req, res, next) => {
     const newPlace = new Place ({
       name:        req.body.name,
       description: req.body.description,
+      local: req.body.level,
       location:    location
     });
 

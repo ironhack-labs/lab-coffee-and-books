@@ -58,6 +58,7 @@ function getCoordinatesJquery(places,map){
       };
       var pin = new google.maps.Marker({
         position: center,
+        label: place.local[0].toUpperCase(),
         map: map,
         title: place.name
       });
@@ -78,7 +79,7 @@ function getFullListJquery(places){
   if(places.length)
   {
     places.forEach((place)=>{
-      generateInfoPlace(place.name,place.description,place.location.coordinates[1],place.location.coordinates[0], place._id);
+      generateInfoPlace(place.name,place.description,place.local,place.location.coordinates[1],place.location.coordinates[0], place._id);
     });
   }
   else {
@@ -90,8 +91,8 @@ function deleteInfoPlace(){
   $('.place-info').remove();
 }
 
-function generateInfoPlace(name="",description="",lt="",ln="", placeId = ""){
-  $('.place-container').append($('<li>').addClass('place-info').append($('<p>').append($('<span>').addClass('name').html("Name: " + name + " ")).append($('<span>').addClass('description').html("| Description: " + description + " ")).append($('<span>').addClass('lt').html("| LT: " + lt + " ")).append($('<span>').addClass('ln').html("| LN: " + ln + " ")).append($('<span>').html("| ")).append($('<a>').addClass('delete-link').attr('href',placeId).html("Delete"))));
+function generateInfoPlace(name="",description="",local="",lt="",ln="", placeId = ""){
+  $('.place-container').append($('<li>').addClass('place-info').append($('<p>').append($('<span>').addClass('name').html("Name: " + name + " ")).append($('<span>').addClass('description').html("| Description: " + description + " ")).append($('<span>').addClass('local').html("Local: " + local + " ")).append($('<span>').addClass('lt').html("| LT: " + lt + " ")).append($('<span>').addClass('ln').html("| LN: " + ln + " ")).append($('<span>').html("| ")).append($('<a>').addClass('delete-link').attr('href',placeId).html("Delete"))));
 }
 
 
