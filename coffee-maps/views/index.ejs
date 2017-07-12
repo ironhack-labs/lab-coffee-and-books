@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Coffee</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>Coffee and books</h1>
+
+
+  <form method="POST" action="/">
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="description" placeholder="description">
+
+    <label>Address</label>
+    <input type="text" name="latitude" placeholder="Latitude">
+    <input type="text" name="longitude" placeholder="Longitude">
+
+    <input type="submit" id="submit" name="">
+  </form>
+
+  <div id="map"></div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="/javascripts/main.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC17WZvraHjEDsa7dZKXcStrwGrmHgHiVE">
+  </script>
+  <script type="text/javascript">
+    var myPlaces = [<%- places %>];
+  </script>
+</body>
+
+</html>
