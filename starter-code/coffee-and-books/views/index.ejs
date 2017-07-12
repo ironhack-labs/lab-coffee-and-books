@@ -1,0 +1,17 @@
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+
+<form method="POST" action="/">
+  <input type="text" id="name" name="name"        placeholder="name">
+  <input type="text" id="store" name="store" placeholder="store type">
+
+  <input type="text" id="address" name="address" placeholder="address" >
+
+  <input type="hidden" id="lat" name="latitude" placeholder="Latitude" >
+  <input type="hidden" id="lon" name="longitude" placeholder="Longitude">
+
+  <input type="button" id="localice" value="localice place">
+  <input type="submit" name="" value="Create new place">
+</form>
+
+<div id="map"></div>
