@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <form action="/new" method="post">
+      <br><input type="text" name="name" value="" placeholder="name">
+      <br><input type="text" name="description" value="" placeholder="description">
+      <br><input id="address" type="text" name="adress" value="" placeholder="adress">
+      <br><input type="text" name="lon" value="" placeholder="lon">
+      <br><input type="text" name="lat" value="" placeholder="lat">
+      <br><button id="address-request" type="button" name="button">Find place</button>
+      <br><input type="submit" value="submit" hidden="hidden">
+    </form>
+
+    <div id="map" height="500px">
+    </div>
+
+    <a href="/"> Back </a>
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6YjL5w47ZTR-NlmDyIjsk4Nc_9BtvjGw"></script>
+    <script type="text/javascript" src="javascripts/new.js"></script>
+  </body>
+</html>
