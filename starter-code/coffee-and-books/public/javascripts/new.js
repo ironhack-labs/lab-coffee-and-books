@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   var geocoder = new google.maps.Geocoder();
 
-  document.getElementById('localice').on('click', function() {
+  document.getElementById('localice').addEventListener('click', function() {
     geocodeAddress(geocoder, map);
   });
 
