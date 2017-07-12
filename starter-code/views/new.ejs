@@ -7,14 +7,14 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <form action="/new" method="post">
-      <br><input type="text" name="name" value="" placeholder="name">
-      <br><input type="text" name="description" value="" placeholder="description">
-      <br><input id="address" type="text" name="adress" value="" placeholder="adress">
-      <br><input type="text" name="lon" value="" placeholder="lon">
-      <br><input type="text" name="lat" value="" placeholder="lat">
+    <form id='form' action="/new" method="post">
+      <br><input id="name" type="text" name="name" value="" placeholder="name">
+      <br><input id="description" type="text" name="description" value="" placeholder="description">
+      <br><input id="address" type="text" name="address" value="" placeholder="address">
+      <br><input id="latitude" type="text" name="latitude" value="">
+      <br><input id="longitude" type="text" name="longitude" value="">
       <br><button id="address-request" type="button" name="button">Find place</button>
-      <br><input type="submit" value="submit" hidden="hidden">
+      <br><input type="submit" value="submit" >
     </form>
 
     <div id="map" height="500px">

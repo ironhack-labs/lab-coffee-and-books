@@ -4,12 +4,19 @@ const Places = require('../model/place')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  let places = Places.find();
+  Places.find((err, plcs)=>{
+    if (err) {
+      next();
+      return;
+    } else {
+      obj = {
+        title: "Places",
+        places: plcs
+      }
+      res.render('index', obj);
+    }
+});
 
-  res.render('index', {
-    title: 'Books & Coffe',
-    places: places
-   });
 });
 
 router.get('/new', function(req, res, next){
@@ -17,5 +24,29 @@ router.get('/new', function(req, res, next){
     title: 'Register new place'
   });
 });
+
+router.post('/new', function(req, res, next){
+  const { name, description, latitude, longitude } = req.body;
+  const newPlaceDesc = {
+    name,
+    description,
+    location: {
+      type: 'Point',
+      coordinates: [longitude, latitude]
+    }
+  }
+
+  let newPlace = Places(newPlaceDesc);
+
+  newPlace.save((err)=>{
+    if(err){
+      res.redirect('/new');
+      return
+    }
+
+    res.redirect('/');
+  })
+
+})
 
 module.exports = router;
