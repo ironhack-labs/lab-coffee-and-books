@@ -1,0 +1,16 @@
+body {
+  padding: 50px;
+  font: 16px "Helvetica Neue", Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+.label {
+  background-color: #f1f1f1;
+  color: #000;
+  font-weight: 300;
+
+}
+#map {
+        height: 500px;
+        width: 100%;
+       }

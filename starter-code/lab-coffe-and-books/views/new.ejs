@@ -1,0 +1,67 @@
+
+
+
+
+ 
+<h1>New place</h1>
+
+      <div id="locationField">
+            <label>Search address:</label>
+            <input class="form-control" id="autocomplete" placeholder="Enter your address"
+                  onFocus="geolocate()" type="text" required></input>
+      </div>
+<form action="/new" method="POST">
+    <table id="address">
+      <tr>
+        <td class="label">Street address</td>
+        
+        <td class="wideField" colspan="2"><input class="form-control" id="route"
+              disabled="true" name="address" placeholder="Address" required></input></td>
+              <td class="slimField"><input class="form-control" id="street_number"
+              disabled="true" name="number" placeholder="number"></input></td>
+      </tr>
+      <tr>
+        <td class="label">City</td>
+        <!-- Note: Selection of address components in this example is typical.
+             You may need to adjust it for the locations relevant to your app. See
+             https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+        -->
+        <td class="wideField" colspan="3"><input name="locality" class="form-control" id="locality"
+              disabled="true"></input></td>
+      </tr>
+      <tr>
+        <td class="label">State</td>
+        <td class="slimField"><input class="form-control" name="state"
+              id="administrative_area_level_1" disabled="true"></input></td>
+        <td class="label">Zip code</td>
+        <td class="wideField"><input class="form-control" name="zip" id="postal_code"
+              disabled="true"></input></td>
+      </tr>
+      <tr>
+        <td class="label">Country</td>
+        <td class="wideField" colspan="3"><input class="form-control"
+              id="country" name="country" disabled="true"></input></td>
+      </tr>
+     
+       
+      
+    </table>
+
+       <input type="hidden" id="lat" class="form-control"
+               name="lat" required></input>
+      
+      <input type="hidden" id="long" class="form-control"
+               name="long"></input>
+
+    <input class="form-control" type="text" name="name" placeholder="name" required/>
+    <input  class="form-control" type="text" name="description" placeholder="description" required/>
+    <select class="form-control" name="businesstype">
+        <option value="coffe">Coffe Shop</option>
+        <option value="book">Book Store</option>
+    </select>
+    
+    <button class="btn btn-info" type="submit">New place</button>
+</form>
+
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYGeLjGXycZmWTHrdL67cGYhkhMjSAWRo&libraries=places&callback=initAutocomplete"></script>
+<script src="./javascripts/script.js"></script>
