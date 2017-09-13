@@ -35,12 +35,14 @@ function startMap() {
         console.log('Browser does not support geolocation.');
     }
 
-    var marker = new google.maps.Marker({
-          position: {lat: -25.363, lng: 131.044},
-          map: map
-        });
+    google.maps.event.addListener(map, 'click', function( event ){
+        var marker = new google.maps.Marker({
+            position: {lat: event.latLng.lat(), lng: event.latLng.lng()},
+            map: map
+          });
 
-
+        console.log( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() );
+    });
 }
 
 startMap();
