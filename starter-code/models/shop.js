@@ -7,7 +7,7 @@ const shopSchema = new Schema({
   description: { type: String },
   location: {
     type: { type: String },
-    coordinates: [Number] 
+    coordinates: [Number]
   }
 });
 
@@ -15,3 +15,7 @@ shopSchema.index({ location: '2dsphere' });
 const Shop = mongoose.model('Shop', shopSchema);
 
 module.exports = Shop;
+
+
+//We need this model to be able to store info about
+// the location we want to save in the database.

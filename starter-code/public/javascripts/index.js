@@ -34,16 +34,13 @@ function startMap() {
     } else {
         console.log('Browser does not support geolocation.');
     }
+
+    var marker = new google.maps.Marker({
+          position: {lat: -25.363, lng: 131.044},
+          map: map
+        });
+
+
 }
 
 startMap();
-
-
-// var myMarker = new google.maps.Marker({
-//     position: {
-//         lat: 41.3977381,
-//         lng: 2.190471916
-//     },
-//     setMap: map,
-//     title: "I'm here"
-//   });
