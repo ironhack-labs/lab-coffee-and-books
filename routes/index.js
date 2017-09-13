@@ -7,8 +7,8 @@ const Place = require("../models/place");
 router.get('/', (req, res, next) => {
   Place.find({}, (err, places ) => {
     if (err) { next(err)}
-
-    res.render('index', { places: places});
+    console.log(places)
+    res.render('index', { places });
   });
 });
 
@@ -18,9 +18,9 @@ router.post("/create", (req, res, next) => {
     name: req.body.name,
     location: { 
       longitude: req.body.longitude,
-      latitude: req.body.latitude,
-      type: req.body.place
-      }
+      latitude: req.body.latitude
+      },
+    type: req.body.place
     }); 
 
   newPlace.save((err) => {

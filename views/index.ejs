@@ -1,21 +1,20 @@
-Hola
-
-Place
-<% places.forEach((place ) => { %>
-   <% place.location.latitude %> <% place.type %>
-<% }) %>
-
-
- Add Location
+Add Location
 <form action="/create" method="post">
     <label for="name">Name</label>
     <input type="text" name="name">
     <label for="longitude">Longitude</label>
-    <input type="number" name="longitude">
+    <input type="text" name="longitude">
     <label for="latitude">Latitude</label>
-    <input type="number" name="latitude">
+    <input type="text" name="latitude">
     <select name="place" id="place">
-        <option value="coffee">Coffee</option>
-        <option value="book">Book</option>
+        <option value="Coffee">Coffee</option>
+        <option value="Book">Book</option>
     </select>
+    <button type="submit">Submit</button>
 </form>
+
+<ul>
+    <% places.forEach((place) => { %>
+        <li><%= place.type %> Shop: <%= place.name %></li>
+    <% }) %>
+</ul>

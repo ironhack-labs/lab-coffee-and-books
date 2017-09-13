@@ -6,8 +6,8 @@ const Schema = mongoose.Schema;
 const placeSchema = new Schema({
     name: {type: String},
     location: {
-                latitude: {type: Number},
-                longitude: {type: Number},
+                latitude: {type: String},
+                longitude: {type: String},
             },
     type: {type: String}
 });
