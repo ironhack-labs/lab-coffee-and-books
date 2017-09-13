@@ -7,9 +7,8 @@ a {
   color: #00B7FF;
 }
 
-
+/* style.css */
 #map {
- height: 600px;
- width: 50%;
- margin-top: 40px;
+  width: 100%;
+  height: 400px;
 }

@@ -1,36 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title><%= title %></title>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <link rel="author" href="humans.txt">
+</head>
 
-    <form method="POST" action="/">
-      Name: <input type="text" name="name" id="name"><br/>
-      Category: <select name="category" id="category">
-        <option value="Coffee">Coffee</option>
-        <option value="Books">Books</option>
-      </select><br/><br/>
-      <label>Address: </label><br/>
-      Latitude: <input type="text" name="latitude" id="lat"><br/>
-      Longitude: <input type="text" name="longitude" id=long""><br/>
-      <input type="submit" name="submit" id="submit">
+<body>
+    <form method="post" action="/">
+        Name:
+        <input type="text" name="name" placeholder="name">
+        <br> Category:
+        <select name="category">
+            <option value="coffee">Coffee</option>
+            <option value="books">Books</option>
+        </select>
+        <br>
+        <br>
+        <label>Address</label>
+        <br> Lat:
+        <input type="text" name="latitude" placeholder="Latitude"> Lon:
+        <input type="text" name="longitude" placeholder="Longitude">
+        <input type="submit" name="submit">
     </form>
-
     <div id="map"></div>
-
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous">
+    <ul>
+  <% places.forEach((place) => { %>
+    <li>
+      <a href="/places/<%= place._id%>">
+        <%= place.name%> | <%= place.location %> </a>
+        <a href="/places/<%= place._id%>/edit">Edit</a> | 
+        <a href="/<%= place._id%>/delete">Delete</a>
+    </li>
+  <% }) %>
+</ul>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo">
     </script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR2s1VQToFLtOF5eeNtiP_VlDjVOEuZXs">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="/javascripts/main.js"></script>
+</body>
 
-  </body>
 </html>
