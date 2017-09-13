@@ -7,7 +7,6 @@ const Place = require("../models/place");
 router.get('/', (req, res, next) => {
   Place.find({}, (err, places ) => {
     if (err) { next(err)}
-    console.log(places)
     res.render('index', { places });
   });
 });

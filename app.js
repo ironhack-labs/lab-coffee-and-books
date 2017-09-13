@@ -8,6 +8,7 @@ const ejs = require('ejs');
 const index = require('./routes/index');
 const mongoose = require('mongoose');
 const app = express();
+const GOOGLE_API_KEY = "AIzaSyC55Yl_3HB2j3gm4IvKEiKljuCD6JEa5ko"
 
 mongoose.connect("mongodb://localhost/coffee-and-books", {useMongoClient: true});
 
