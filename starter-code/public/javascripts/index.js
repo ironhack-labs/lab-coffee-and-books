@@ -34,15 +34,15 @@ function startMap() {
     } else {
         console.log('Browser does not support geolocation.');
     }
-    
+
     google.maps.event.addListener(map, 'click', function( event ){
         var marker = new google.maps.Marker({
             position: {lat: event.latLng.lat(), lng: event.latLng.lng()},
             map: map
           });
-        
-        console.log( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
+
+        console.log( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() );
     });
-}   
+}
 
 startMap();
