@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <form action="/" method="post">
+      Name: <input type="text" name="name">
+      <select>
+        <option value="coffeshop">coffeshop</option>
+        <option value="bookshop">bookshop</option>
+      </select>
+
+      <label >Latitude</label><input name="latitude" type="text">
+      <label >Longitude</label><input name="longitude" type="text">
+      <button type="submit" name="button">Submit</button>
+    </form>
+  </body>
+</html>
