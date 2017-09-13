@@ -40,7 +40,9 @@ function startMap() {
             position: {lat: event.latLng.lat(), lng: event.latLng.lng()},
             map: map
           });
-
+          console.log(document.getElementById('latitude'));
+          document.getElementById('latitude').value=event.latLng.lat();
+          document.getElementById('longitude').value=event.latLng.lng();
         console.log( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() );
     });
 }
