@@ -12,6 +12,8 @@ mongoose.connect("mongodb://localhost/coffee-and-books");
 // Controllers
 const index = require('./routes/index');
 const places = require('./routes/places');
+const api = require('./routes/api');
+
 
 
 
@@ -27,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/places', places);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
