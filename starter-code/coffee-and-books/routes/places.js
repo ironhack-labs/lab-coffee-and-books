@@ -3,7 +3,11 @@ const places         = express.Router();
 const Place          = require("../models/place");
 
 places.get('/', (req, res, next) => {
-  res.render('places/new');
+  Place.find({}, (err, places) => {
+    console.log(places[0].location);
+    if (err) {return next(err);}
+    res.render('places', {places});
+  });
 });
 
 
@@ -23,7 +27,7 @@ places.post('/save', (req, res, next) => {
 
   newPlace.save((err) => {
     if (err) {
-      res.render("places/new", { message: "Something went wrong" });
+      res.render("places", { message: "Something went wrong" });
     } else {
       res.redirect("/places");
     }
