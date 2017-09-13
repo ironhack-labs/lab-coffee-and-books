@@ -1,0 +1,56 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+  <h2>Search for places</h2>
+
+  <form action="/places/save" method="POST">
+    <div>
+    <label for="name">Enter Name</label>
+    <input type="text" name="name" id="name" placeholder="Enter name here...">
+    </div>
+
+    <div>
+    <label for="latitude">Enter Category</label>
+    <select name="category" id="category">
+      <option value="coffeeshop">Coffee Shop</option>
+      <option value="bookshop">Book Shop</option>
+    </select>
+    </div>
+
+    <div>
+    <label for="latitude">Enter Latitude</label>
+    <input type="number" step="0.000001" name="latitude" id="latitude" placeholder="Enter latitude here...">
+    </div>
+
+    <div>
+    <label for="longitude">Enter Longitude</label>
+    <input type="number" step="0.000001" name="longitude" id="longitude" placeholder="Enter longitude here...">
+    </div>
+
+    <button id="submit-button" type="submit">Submit</button>
+  </form>
+
+  <div id="map">
+
+  </div>
+
+  <script type="text/javascript">
+   var myPlaces = [<%- places %>];
+  </script>
+
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgjV84ieJBPhnHf02rffW4167D-6I2jr0">
+  </script>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+
+
+</body>
