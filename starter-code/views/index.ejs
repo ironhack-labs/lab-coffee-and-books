@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My First Map</title>
-    <style>
-       #map {
-        height: 500px;
-        width: 100%;
-       }
-    </style>
+    <title>Coffee & Books</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
   </head>
   <body>
-    <h3>My First Map</h3>
+    <h3>Coffee & Books</h3>
 
 
-    <form method="POST" action="/save">
+    <form class="form" method="POST" action="/save">
 
       <input type="text" name="name" placeholder="name">
       <input type="text" name="description" placeholder="description">
@@ -21,13 +17,17 @@
       <input type="text" name="longitude" placeholder="longitude" id="longitude">
       <button type="submit" name="save">Save</button>
     </form>
+    <div class="wrapper">
     <div id="map"></div>
-
+    <h2>My saved places</h2>
+    <ul class="list"></ul>
+    </div>
 
 
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqiGQyYZl5S4qJbuvucm6bu_ZPfB1Wd7E">
     </script>
     <script type="text/javascript" src="/javascripts/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
   </body>
 </html>

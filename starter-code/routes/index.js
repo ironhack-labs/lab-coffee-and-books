@@ -28,9 +28,9 @@ router.post('/save', (req, res, next) => {
     if (error) { console.log(error); }
     else {
       res.redirect('/');
-      console.log('nope');
     }
   });
+
 });
 
 
