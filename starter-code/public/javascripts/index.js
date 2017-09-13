@@ -1,9 +1,9 @@
 function startMap() {
     var ironhackBCN = {
-        lat: 31.3977381, 
+        lat: 31.3977381,
         lng: 2.190471916};
     var map = new google.maps.Map(
-      document.getElementById('map'), 
+      document.getElementById('map'),
       {
         zoom: 15,
         center: ironhackBCN
@@ -17,17 +17,17 @@ function startMap() {
           };
           // Center map with user location
           map.setCenter(user_location);
-          
+
           // Add a marker for your user location
           var ironHackBCNMarker = new google.maps.Marker({
             position: {
-              lat: user_location.lat, 
+              lat: user_location.lat,
               lng: user_location.lng
             },
             map: map,
             title: "You are here"
           });
-          
+
         }, function () {
           console.log('Error in the geolocation service.');
         });
@@ -45,5 +45,4 @@ function startMap() {
     });
 }   
 
-  
 startMap();
