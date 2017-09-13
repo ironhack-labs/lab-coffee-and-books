@@ -4,8 +4,9 @@ const Schema   = mongoose.Schema;
 
 const coffeeshopSchema = new Schema({
   name: String,
-  description: String
-  location: { type: { type: String }, coordinates: [Number] }
+  description: String,
+  location: { type: { type: String },
+  coordinates: [Number] }
 });
 
 coffeeshopSchema.index({ location: '2dsphere' });
