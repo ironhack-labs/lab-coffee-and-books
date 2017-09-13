@@ -4,9 +4,9 @@ mongoose.connect('mongodb://localhost/coffee-books');
 
 
 const PlaceSchema = new Schema ({
-  name : {type: String },
-  category : {type: String, enum: ['Coffee', 'Books']},
-  location : { type: String, coordinates: [Number] }
+  name : String,
+  category : String,
+  location : { type: { type: String }, coordinates: [Number] }
 });
 PlaceSchema.index({ location: '2dsphere' });
 
