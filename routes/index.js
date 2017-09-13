@@ -16,8 +16,8 @@ router.post("/create", (req, res, next) => {
   const newPlace = new Place({
     name: req.body.name,
     location: { 
-      longitude: req.body.longitude,
-      latitude: req.body.latitude
+      lng: req.body.longitude,
+      lat: req.body.latitude
       },
     type: req.body.place
     }); 
@@ -27,6 +27,13 @@ router.post("/create", (req, res, next) => {
 
     res.redirect('/');
   })  
+  });
+
+router.get('/api', (req, res, next) => {
+    Place.find({}, (err, places ) => {
+      if (err) { next(err)}
+      res.json(places);
+    });
   });
 
 module.exports = router;
