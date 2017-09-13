@@ -33,18 +33,17 @@ function startMap() {
         });
     } else {
         console.log('Browser does not support geolocation.');
-    } 
+    }
+    
+    google.maps.event.addListener(map, 'click', function( event ){
+        var marker = new google.maps.Marker({
+            position: {lat: event.latLng.lat(), lng: event.latLng.lng()},
+            map: map
+          });
+        
+        console.log( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
+    });
 }   
 
   
 startMap();
-
-
-// var myMarker = new google.maps.Marker({
-//     position: {
-//         lat: 41.3977381, 
-//         lng: 2.190471916
-//     },
-//     setMap: map,
-//     title: "I'm here"
-//   });
