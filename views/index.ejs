@@ -1,0 +1,21 @@
+Hola
+
+Place
+<% places.forEach((place ) => { %>
+   <% place.location.latitude %> <% place.type %>
+<% }) %>
+
+
+ Add Location
+<form action="/create" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name">
+    <label for="longitude">Longitude</label>
+    <input type="number" name="longitude">
+    <label for="latitude">Latitude</label>
+    <input type="number" name="latitude">
+    <select name="place" id="place">
+        <option value="coffee">Coffee</option>
+        <option value="book">Book</option>
+    </select>
+</form>
