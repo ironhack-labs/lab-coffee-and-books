@@ -4,10 +4,12 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const mongooose = require('mongoose');
+const mongoose = require('mongoose');
 
 const index = require('./routes/index');
-const users = require('./routes/users');
+const places = require('./routes/places');
+
+const Place = require("./models/place")
 
 const app = express();
 
@@ -15,7 +17,7 @@ mongoose.connect('mongodb://localhost/coffee-books');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -26,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/places', places);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

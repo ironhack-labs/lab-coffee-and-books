@@ -1,0 +1,12 @@
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+<form method="POST" action="/place">
+  Name: <input type="text" name="name" id="name"><br/>
+  Category: <select name="category" id="category">
+    <option value="Coffee">Coffee</option>
+    <option value="Books">Books</option>
+  </select><br/><br/>
+  <label>Address: </label><br/>
+  Latitude: <input type="number" name="latitude" id="lat"><br/>
+  Longitude: <input type="number" name="longitude" id=long""><br/>
+</form>
