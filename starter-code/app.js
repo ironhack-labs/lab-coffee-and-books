@@ -1,18 +1,20 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+
+const app = express();
 const mongoose = require("mongoose");
+const ejs = require('ejs');
 
-var index = require('./routes/index');
-const place = require('./routes/place');
-var app = express();
+const index = require('./routes/index');
+const places = require('./routes/places');
+const api = require('./routes/api');
 
-mongoose.connect("mongodb://localhost/coffe&books");
+mongoose.connect("mongodb://localhost/coffeeBooks", {useMongoClient: true});
 //Controllers
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,11 +26,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/', place);
+app.use('/', places);
+app.use('/api', api);
+
 
 
 // catch 404 and forward to error handler
