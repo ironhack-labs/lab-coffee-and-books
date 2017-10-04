@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CoffeeShop and bookStore</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <div class="container">
+    </div>
+    <div class="info">
+        <h3>List all bookstore / coffeeshop</h3>
+        <a href="/new">Create new store</a>
+        <ul>
+            <% place.forEach((place) => { %>
+                <li>
+                    <a href="/place/<%= place._id%>">
+                        <%= place.name%><span><%= place.description %></span>
+                    </a>
+                    |
+                    <a href="/place/<%= place._id%>/edit">Edit</a> |
+                    <a href="/<%= place._id%>/delete">Delete</a>
+                </li>
+                <% }) %>
+        </ul>
+    </div>
+    <div id="map"></div>
+    </div>
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDj0UhVUP_wMJ9Xox76KvN5NC2zrMF_CbA">
+
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+<script type="text/javascript">
+    var myPlaces = <%- JSON.stringify("s") %>
+
+</script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+
+</html>
