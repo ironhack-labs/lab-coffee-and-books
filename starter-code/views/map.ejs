@@ -1,0 +1,22 @@
+<!-- main.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coffee and Books</title>
+    <style>
+       #map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Coffee and Books</h3>
+    <div id="map"></div>
+
+    <script type="text/javascript"> var myPlaces = <%- JSON.stringify(places) %></script>;
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAhym1q9c1Xpn0K5PTBqfqv2yQDbbDguo"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+
+  </body>
+</html>

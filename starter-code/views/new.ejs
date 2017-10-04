@@ -1,0 +1,26 @@
+
+<form method="POST" action="/new">
+
+  <label>Place Name</label>
+  <input type="text" name="name" placeholder="name">
+  <br>
+
+  <label> Description</label>
+  <input type="text" name="description" placeholder="description">
+  <br>
+
+  <label for="level">Place Type</label>
+  <input list="establishment" name="establishment">
+  <datalist id="establishment" name="establishment">
+    <option value="Bookstore">
+    <option value="Coffee Shop">
+  </datalist>
+  <br>
+
+  <label>Address</label>
+  <input type="text" name="latitude" placeholder="Latitude" >
+  <input type="text" name="longitude" placeholder="Longitude">
+  <br>
+  
+  <input type="submit" name="">
+</form>
