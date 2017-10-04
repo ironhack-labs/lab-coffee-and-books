@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   let markers = [];
   myPlaces.forEach(function(place) {
-    let title = place.nameplace.name;
+    let title = place.name;
     let position = {
       lat: place.location.coordinates[1],
       lng: place.location.coordinates[0]
