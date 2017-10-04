@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My First Map</title>
+  <style>
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>My First Map</h3>
+  <div id="map"></div>
+  <div>
+    <ul>
+      <%Place.forEach(place => {%>
+        <li>
+          <%=place.name%>
+        </li>
+    </ul>
+    <% }) %>
+  </div>
+
+  <form class="" action="/" method="post">
+    <input type="text" name="lat" placeholder="Ecris la latitude">
+    <input type="text" name="lng" placeholder="Ecris la longitude">
+    <input type="text" name="name" placeholder="Ecris la longitude">
+    <input type="text" name="description" placeholder="description">
+    <button type="button" name="button">Submit</button>
+  </form>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDEl0Nn4CYN1n408gz66TRMMcHyiabJ9g">
+  </script>
+  <script type="text/javascript" src="javascripts/main.js"></script>
+</body>
+
+</html>
