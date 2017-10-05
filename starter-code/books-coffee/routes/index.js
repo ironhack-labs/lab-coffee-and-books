@@ -42,8 +42,13 @@ router.post("/new", (req, res, next) => {
 
 router.get("/show/:id", (req, res, next) => {
     let id = req.params.id;
-    place.findOneById({})
-    res.render("show");
+    Place.findById(id).then(place => {
+      res.render("show", {
+        place
+      });
+      console.log(place)
+    });
+
 });
 
 

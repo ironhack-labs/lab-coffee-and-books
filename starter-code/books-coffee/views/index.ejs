@@ -18,7 +18,7 @@
     <ul>
     <% places.forEach((place) => { %>
       <li>
-        Place: <a href="show/<%= place.id >"><%= place.name %></a>
+        Place: <a href="show/<%= place.id %>"><%= place.name %></a>
       </li>
     <% }) %>
     </ul>
@@ -29,7 +29,7 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
-  <script src="./javascripts/main.js" type="text/javascript"></script>
+  <script src="/javascripts/main.js" type="text/javascript"></script>
   <script type="text/javascript">
     var myPlaces = <%- JSON.stringify(places) %>;
   </script>
