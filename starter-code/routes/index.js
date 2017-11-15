@@ -10,4 +10,27 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.post('/', function(req, res) {
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
+  };
+});
+
+const place = new Place({
+  name: req.body.name,
+  description: req.body.description,
+  location: location
+});
+
+place.save((error) => {
+  if (error) {
+    console.log(error)
+  } else {
+    res.redirect('/';)
+  }
+});
+
+
+
 module.exports = router;
