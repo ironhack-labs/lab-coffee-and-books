@@ -59,4 +59,15 @@ router.get("/map", (req, res, next) => {
   });
 });
 
+router.get("/places/json", (req, res, next) => {
+  Place.find((error, places) => {
+    if (error) {
+      console.log("error", error);
+      res.status(500).json({ error: "FUUUUUUU!" });
+    } else {
+      res.json(places);
+    }
+  });
+});
+
 module.exports = router;

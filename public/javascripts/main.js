@@ -1,3 +1,5 @@
+"use strict";
+
 function main() {
   var ironhackBCN = {
     lat: 0,
@@ -7,47 +9,28 @@ function main() {
     zoom: 5,
     center: ironhackBCN
   });
-  var myMarker = new google.maps.Marker({
-    position: {
-      lat: 0,
-      lng: 0
-    },
-    map: map,
-    title: "Nearest bathroom",
-    animation: google.maps.Animation.DROP
+
+  console.log("places", myPlaces);
+
+  axios.get("/places/json").then((response) => {
+    const myPlaces = response.data;
+
+    myPlaces.coordinates
   });
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      function(position) {
-        const user_location = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
+  //   var myMarker = new google.maps.Marker({
+  //     position: {
+  //       lat: 0,
+  //       lng: 0
+  //     },
+  //     map: map,
+  //     title: "Nearest bathroom",
+  //     animation: google.maps.Animation.DROP
+  //   });
 
-        // Center map with user location
-        map.setCenter(user_location);
-        map.setZoom(20);
-
-        // Add a marker for your user location
-        var YoureHereMarker = new google.maps.Marker({
-          position: {
-            lat: user_location.lat,
-            lng: user_location.lng
-          },
-          map: map,
-          title: "You are here"
-        });
-      },
-      function() {
-        console.log("Error in the geolocation service.");
-      }
-    );
-  } else {
-    console.log("Browser does not support geolocation.");
-  }
-}
-
-startMap();
+//    myPlaces.array.forEach(element => {
+       
+//    });
+// }
 
 window.addEventListener("load", main);
