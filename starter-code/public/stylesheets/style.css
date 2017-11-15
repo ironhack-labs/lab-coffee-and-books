@@ -9,4 +9,17 @@ a {
 
 #map {
   height: 400px;
+  width: 100%;
+}
+
+button {
+  margin: 10px;
+}
+
+.shop-container {
+  display: flex;
+}
+
+.shop-container div {
+  margin: 10px 20px;
 }
