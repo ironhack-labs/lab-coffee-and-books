@@ -10,6 +10,59 @@ var users = require('./routes/users');
 
 var app = express();
 
+//mongoose configuration
+const mongoose = require("mongoose");
+
+const dbName = "mongodb://localhost/coffe-store";
+mongoose.connect(dbName, {useMongoClient:true})
+        .then(() => debug(`Connected to db: ${dbName}`));
+
+//require the user model
+const User = require("./models/User");
+const session       = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const bcrypt        = require("bcrypt");
+const passport      = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+const flash = require("connect-flash");
+
+
+//initialize passport and session here
+passport.serializeUser((user, cb) => {
+  cb(null, user._id);
+});
+
+passport.deserializeUser((id, cb) => {
+  User.findOne({ "_id": id }, (err, user) => {
+    if (err) { return cb(err); }
+    cb(null, user);
+  });
+});
+
+passport.use(new LocalStrategy((username, password, next) => {
+  User.findOne({ username }, (err, user) => {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return next(null, false, { message: "Incorrect username" });
+    }
+    if (!bcrypt.compareSync(password, user.password)) {
+      return next(null, false, { message: "Incorrect password" });
+    }
+
+    return next(null, user);
+  });
+}));
+app.use(session({
+  secret: "our-passport-local-strategy-app",
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -23,7 +76,24 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+// app.use('/users', users);
+
+app.use(session({
+  secret: "basic-auth-secret",
+  cookie: { maxAge: 60*60*24*2 }, // 2 days
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  })
+}));
+app.use((req,res,next) =>{
+  res.locals.user = req.session.currentUser;
+  next();
+});
+
+// require in the routers
+// app.use('/', siteController);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
