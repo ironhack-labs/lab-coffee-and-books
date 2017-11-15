@@ -44,7 +44,7 @@ router.post("/new", (req, res, next) => {
     if (error) {
       console.log(error);
     } else {
-      res.redirect("new");
+      res.redirect("map");
     }
   });
 });
