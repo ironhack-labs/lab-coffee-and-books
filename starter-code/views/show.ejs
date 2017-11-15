@@ -1,0 +1,53 @@
+<h1>Places</h1>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb4BvNnFugHngvWK4n9UwEvvFOAfMcXMo"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<form method="POST" action="/places">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="type" placeholder="type">
+  <input type="text" name="description" placeholder="description">
+
+  <label>Address</label>
+  <input type="text" name="latitude" placeholder="Latitude" value="41.3977381">
+  <input type="text" name="longitude" placeholder="Longitude" value="2.090471916">
+
+  <input type="submit" name="">
+</form>
+
+<div id="map" style="height: 400px; background-color: gray"></div>
+
+<script>
+  $(document).ready(function(){
+  const sol = {
+    lat: 40.417080,
+    lng: -3.703612
+  };
+
+  const map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: sol
+  });
+
+  });
+</script>
+
+<script type="text/javascript">
+var myPlaces = <%- JSON.stringify(places) %>;
+</script>
+
+<script>
+$(document).ready(function(){
+
+// Add place markers to map
+let markers = [];
+myPlaces.forEach(function(place){
+    let title = place.name
+    let position = {
+      lat: place.location.coordinates[1],
+      lng: place.location.coordinates[0]
+    };
+    var pin = new google.maps.Marker({ position, map, title  });
+    markers.push(pin)
+  });
+});
+</script>
