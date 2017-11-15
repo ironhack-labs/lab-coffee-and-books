@@ -1,0 +1,18 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('https://img.buzzfeed.com/buzzfeed-static/static/2013-09/campaign_images/webdr06/24/11/the-epic-love-triangle-between-books-coffee-and-t-1-15502-1380036032-24_big.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  color: #00B7FF;
+}
+
+input {
+  margin: 10px;
+  width: 200px;
+  border-radius: 5px;
+  border-color: green;
+}
