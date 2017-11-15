@@ -23,20 +23,32 @@ function startMap() {
   });
   myMarker.setDraggable(true);
   // Try to get a geolocation object from the web browser
+  var placeMarkers = null;
+  var promise = axios.get("/place/json")
+    .then((response) => {
+        placeMarkers = response.data ;
+        for (let i = 0; i < placeMarkers.length; i++) {
+          console.log(placeMarkers[i]);
+        }
+    });
+  
 }
 
 let markers = [];
-console.log(placeMarkers);
-const array = JSON.stringify(placeMarkers);
-array.forEach((place) => {
-  let title = place.name
-  let position = {
-    lat: place.location.coordinates[1],
-    lng: restaurant.location.coordinates[0]
-  };
-  var pin = new google.maps.Marker({ position, map, title  });
-  markers.push(pin)
-});
+// console.log("here", placeMarkers);
+// // const array = JSON.stringify(placeMarkers);
+// for (let i = 0; i < placeMarkers.length; i++) {
+//   console.log(placeMarkers[i]);
+// }
+// array.forEach((place) => {
+//   let title = place.name
+//   let position = {
+//     lat: place.location.coordinates[1],
+//     lng: restaurant.location.coordinates[0]
+//   };
+//   var pin = new google.maps.Marker({ position, map, title  });
+//   markers.push(pin)
+// });
 
 // startMap();
 window.addEventListener("load", startMap());
