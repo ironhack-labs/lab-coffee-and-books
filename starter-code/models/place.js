@@ -11,7 +11,7 @@ const placeSchema = new Schema({
   category: {
     type: String,
     enum: ["coffeeJoint", "bookStore"],
-    default: "bookStore"
+    default: "coffeeJoint"
   },
   location: {
     type: {

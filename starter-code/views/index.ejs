@@ -15,7 +15,7 @@
 <body>
 
   <!-- TITLE -->
-  <h3>Coffee & Books</h3>
+  <h2>Coffee & Books</h2>
   <div id="map"></div>
 
   <!-- ADDING PLACE LOCATIONS FIELDS FORM -->
@@ -34,10 +34,24 @@
       <option value="coffeejoint">Coffee Joint</option>
     </select>
 
-    <input type="submit" name="">
+    <button id="submit">SUBMIT</button>
   </form>
 
+  <!-- LISTING ALL LOCATIONS IN THE DATABASE -->
+  <h3>List</h3>
 
+  <!-- <ul>
+    <% places.forEach((place) => { %>
+      <li>
+        <a href="/places/<%= place._id%>">
+          <%= place.name%> |
+            <%= place.category %>
+        </a>
+        <a href="/places/<%= place._id%>/edit">Edit</a> |
+        <a href="/<%= place._id%>/delete">Delete</a>
+      </li>
+      <% }) %>
+  </ul> -->
 
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnTGv-ld43BemZSend17x41Vl8Qk0jgH0">

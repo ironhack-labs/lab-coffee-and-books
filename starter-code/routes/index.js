@@ -2,14 +2,22 @@
 
 const express = require('express');
 const router = express.Router();
-const Place = require('../models/place');
+const Place = require('../models/place').Place;
+
+// -- THIS SECTION IS RESPONDING WITH AN ERROR -- //
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', {
-    title: 'Express'
-  });
+router.get('/', function(err, req, res, next) {
+  Place.find({}, (err, req, res, next) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("index"); //should be here??
+    }
+  }); // place here a callback or promise
+  // res.render('index', {});
 });
+
 
 /////////////////////////
 router.post("/", (req, res, next) => {
@@ -20,18 +28,20 @@ router.post("/", (req, res, next) => {
   };
 
   // Create a new Place with location
-  const newPlace = new Place({
+  const newPlace = {
     name: req.body.name,
+    category: req.body.category,
     location: location
-  });
+  };
+
+  const place = new Place(newPlace);
 
   // Save the place to the Database
-  newPlace.save((error) => {
+  place.save((error) => {
     if (error) {
-      console.log(error);
+      next(error);
     } else {
-      console.log("added to database");
-      // res.redirect('/');
+      res.redirect('/');
     }
   });
 });

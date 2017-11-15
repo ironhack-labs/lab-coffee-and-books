@@ -35,5 +35,8 @@ function main() {
 }
 
 
+
 // CREATE MAP ON LOAD
 window.addEventListener("load", main);
+
+//const submit = document.getElementById('submit').addEventListener('click', () => {})
