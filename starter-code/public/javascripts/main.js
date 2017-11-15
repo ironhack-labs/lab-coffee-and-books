@@ -20,40 +20,8 @@ $(document).ready(function() {
       title: "I'm here"
     });
   }
-
   startMap();
 
-
-
-  // Create and Initialize Map
-  // const map = new google.maps.Map(document.getElementById('map'), {
-  //   zoom: 15,
-  //   center: [40.417080, -3.703612]
-  // });
-  //
-  // // Add places markers to map
-  //
-  //
-  //
-  //
-  //   if (navigator.geolocation) {
-  //
-  //     navigator.geolocation.getCurrentPosition(function (position) {
-  //
-  //       center = {
-  //         lat: position.coords.latitude,
-  //         lng: position.coords.longitude
-  //       };
-  //
-  //       map.setCenter(center);
-  //       getPlace();
-  //     }, function () {
-  //       console.log('Error in the geolocation service.');
-  //     });
-  //   } else {
-  //     console.log('Browser does not support geolocation.');
-  //   }
-  //
   //   document.getElementById('submit').addEventListener('click', function() {
   //     $.ajax({
   //       url: "http://localhost:3000/api/search?lat=" + center.lat + "&lng=" + center.lng + "&dis=" + document.getElementById('maxDistance').value,
