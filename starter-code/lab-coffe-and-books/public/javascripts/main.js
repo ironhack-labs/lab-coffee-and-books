@@ -21,4 +21,6 @@ const map = new google.maps.Map(document.getElementById('map'), {
     var pin = new google.maps.Marker({ position, map, title  });
     markers.push(pin);
   });
+
+
 };
