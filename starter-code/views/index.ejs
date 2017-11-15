@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <form action="/" method="POST">
+      <input type="text" name="name" placeholder="Name of the coffeeshop"><br>
+      <input type="text" name="description" placeholder="Description"><br>
+      <label>Location</label><br>
+      <input type="text" name="latitude" placeholder="Latitude">
+      <input type="text" name="longitude" placeholder="Longitude">
+      <input type="submit">
+    </form>
+    <ul><% coffeeshop.forEach((e) => { %>
+      <li><a href="/coffee/<%=e.id%>"><%=e.name%></a></li>
+    <% }) %></ul>
+  </body>
+</html>
