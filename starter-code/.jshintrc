@@ -1,0 +1,16 @@
+{
+  "strict": true,
+  "globalstrict": true,
+  "esversion": 6,
+  "globals": {
+    "module": true,
+    "console": true,
+    "require": true,
+    "__dirname": true,
+    "axios": true,
+    "document": true,
+    "window": true,
+    "google": true,
+    "navigator": true
+  }
+}
