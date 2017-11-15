@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBz7hnHdc3OyR2YviTE9J3FBFoI4H3_Aw"></script>
+    <script src="javascripts/main.js"></script>
+    <script type="text/javascript">
+ var myPlaces = <%- JSON.stringify(places) %>;
+ </script>
+  </head>
+  <body>
+    <h1>Coffe and Books Shop</h1>
+    <ul>
+      <% places.forEach( e => { %>
+        <li>
+          <b>Name:</b> <%=e.name %>
+          <b>Description:</b> <%=e.description %>
+          <b>Location:</b> <%=e.location%>
+        </li>
+        <div id="map"></div>
+        <% }); %>
+    </ul>
+</html>
