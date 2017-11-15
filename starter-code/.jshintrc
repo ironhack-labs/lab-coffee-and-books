@@ -1,0 +1,16 @@
+{
+  "undef": true,
+  "unused": true,
+  "strict": "global",
+  "esversion": 6,
+  "globals": {
+    "console": true,
+    "__dirname": true,
+    "next": true,
+    "require": true,
+    "module": true,
+    "setTimeout":true,
+    "setInterval":true,
+    "clearInterval":true
+  }
+}
