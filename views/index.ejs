@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Locations</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <div class="">
+        <h3>Coffe And Books</h3>
+        <ul>
+          <% response.forEach( e => { %>
+            <li><%= e.name %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <div id="map"></div>
+      <div class="">
+        <form action="/wtf" method="post">
+          <label for="name">Name: </label>
+          <input type="text" name="name" value="">
+          <br><br>
+          <label for="latitude">Latitude: </label>
+          <input type="text" name="latitude" value="">
+          <label for="longitude">Longitude: </label>
+          <input type="text" name="longitude" value="">
+          <br><br>
+          <label for="kind">Kind: </label>
+          <select class="" name="kind">
+            <option value="Bookstores">Bookstores</option>
+            <option value="Coffeshop">Coffeshop</option>
+          </select>
+          <br><br>
+          <input type="submit" value="ADD">
+        </form>
+      </div>
+    </div>
+
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFeIo_dbTR-7iG-Y39hBNfOUUtbjYxDRU"></script>
+    <script type="text/javascript">
+     var myRestaurants = <%- JSON.stringify(response) %>;
+    </script>
+    <script type="text/javascript" src="/javascripts/main.js">
+
+    </script>
+  </body>
+</html>
