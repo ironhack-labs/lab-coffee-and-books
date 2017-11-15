@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>COFFEE AND BOOKS</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <form action="/places/<%= place._id %>" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="<%= place.name %>">
+
+      <label for="type">Type of place</label>
+      <input type="text" name="type" id="type" placeholder="<%= place.type %>">
+
+      <label for="address">Adress</label>
+      <input type="text" name="address" id="address" placeholder="<%= place.address %>">
+
+      <button type="submit">Update</button>
+    </form>
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5szlGG2woo8EqfywCdGt7KEimCxBHfOo"></script>
+    <script  src="/javascripts/main.js"></script>
+  </body>
+
+</html>
