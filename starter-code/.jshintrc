@@ -9,6 +9,8 @@
     "__dirname": true,
     "axios": true,
     "document": true,
-    "window": true
+    "window": true,
+    "google": true,
+    "navigator": true
   }
 }
