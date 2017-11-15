@@ -1,73 +1,50 @@
+const geocoder = new google.maps.Geocoder();
 
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById('form')
+  const name = document.getElementById('name')
+  const description = document.getElementById('description')
+  const address = document.getElementById('address')
+  const latitude = document.getElementById('latitude')
+  const longitude = document.getElementById('longitude')
+  const adressRequest = document.getElementById('address-request')
 
-	function initMap() {
-		var map = new google.maps.Map(document.getElementById('map'), {
-			center: {lat: -33.8688, lng: 151.2195},
-			zoom: 13
-		});
-		var input = /** @type {!HTMLInputElement} */(
-				document.getElementById('pac-input'));
+  let searchedAddress =  null
 
-		var types = document.getElementById('type-selector');
-		map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-		map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
+  let sol = {
+    lat: 40.4170441,
+    lng: -3.7033601
+  }
 
-		var autocomplete = new google.maps.places.Autocomplete(input);
-		autocomplete.bindTo('bounds', map);
+  let map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: sol
+  });
 
-		var infowindow = new google.maps.InfoWindow();
-		var marker = new google.maps.Marker({
-			map: map,
-			anchorPoint: new google.maps.Point(0, -29)
-		});
+  adressRequest.addEventListener('click', (e)=>{
+    let addressText = address.value;
 
-		autocomplete.addListener('place_changed', function() {
-			infowindow.close();
-			marker.setVisible(false);
-			var place = autocomplete.getPlace();
-			if (!place.geometry) {
-				// User entered the name of a Place that was not suggested and
-				// pressed the Enter key, or the Place Details request failed.
-				window.alert("No details available for input: '" + place.name + "'");
-				return;
-			}
+    geocoder.geocode({ address: addressText }, (results, status)=>{
+      if(status == 'OK'){
+        searchedAddress = results[0].geometry.location
+        latitude.value = searchedAddress.lat()
+        longitude.value = searchedAddress.lng()
+        map.setCenter(searchedAddress)
+      }else{
+        console.log('All yout base belong to us')
+      }
+    })
+  });
 
-			// If the place has a geometry, then present it on a map.
-			if (place.geometry.viewport) {
-				map.fitBounds(place.geometry.viewport);
-			} else {
-				map.setCenter(place.geometry.location);
-				map.setZoom(17);  // Why 17? Because it looks good.
-			}
-			marker.setIcon(/** @type {google.maps.Icon} */({
-				url: place.icon,
-				size: new google.maps.Size(71, 71),
-				origin: new google.maps.Point(0, 0),
-				anchor: new google.maps.Point(17, 34),
-				scaledSize: new google.maps.Size(35, 35)
-			}));
-			marker.setPosition(place.geometry.location);
-			marker.setVisible(true);
+  form.addEventListener('submit', (e)=>{
+    let nameFilled = name.value !== ''
+    let descriptioFilled = description.value !== ''
+    let latitudeFiller = latitude.value != ''
+    let longitudeFiller = longitude.value != ''
 
-			var address = '';
-			if (place.address_components) {
-				address = [
-					(place.address_components[0] && place.address_components[0].short_name || ''),
-					(place.address_components[1] && place.address_components[1].short_name || ''),
-					(place.address_components[2] && place.address_components[2].short_name || '')
-				].join(' ');
-			}
-
-			infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-			infowindow.open(map, marker);
-		});
-
-
-		setupClickListener('changetype-all', []);
-		setupClickListener('changetype-address', ['address']);
-		setupClickListener('changetype-establishment', ['establishment']);
-		setupClickListener('changetype-geocode', ['geocode']);
-	}
-	initMap();
+    if (!nameFilled && !descriptioFilled && !latitudeFiller && !longitudeFiller){
+      console.log("Fill the inputs")
+      e.preventDefault()
+    }
+  });
 });
