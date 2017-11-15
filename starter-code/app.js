@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
 
 var app = express();
 
@@ -18,7 +18,7 @@ mongoose.connect(dbName, {useMongoClient:true})
         .then(() => debug(`Connected to db: ${dbName}`));
 
 //require the user model
-const User = require("./models/User");
+const Store = require("./models/Store");
 const session       = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const bcrypt        = require("bcrypt");

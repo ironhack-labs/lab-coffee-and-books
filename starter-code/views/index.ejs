@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <p>Welcome to</p>
+  <div class="container">
+
+    <div class="info">
+      <h3>List all stores</h3>
+      <a href="/new">Create new store</a>
+      <ul>
+        <% stores.forEach((store) => { %>
+          <li>
+            <a href="/<%= store._id%>">
+              <%= store.name%><span><%= store.type %></span>
+            </a>
+            |
+            <a href="/<%= store._id%>/edit">Edit</a> |
+            <a href="/<%= store._id%>/delete">Delete</a>
+          </li>
+          <% }) %>
+      </ul>
+    </div>
+    <div id="map"></div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+  <script type="text/javascript" src="/javascripts/new.js"></script>
+  <script type="text/javascript" src="/javascripts/show.js"></script>
+  <script type="text/javascript" src="/javascripts/update.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7W0HY5n39NygEXomWtZNtHOXR9QAtqCU">
+  </script>
+</body>
+
 </html>
