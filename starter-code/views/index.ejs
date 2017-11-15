@@ -40,22 +40,21 @@
   <!-- LISTING ALL LOCATIONS IN THE DATABASE -->
   <h3>List</h3>
 
-  <!-- <ul>
-    <% places.forEach((place) => { %>
+  <ul>
+    <% place.forEach(place => { %>
       <li>
-        <a href="/places/<%= place._id%>">
-          <%= place.name%> |
-            <%= place.category %>
-        </a>
-        <a href="/places/<%= place._id%>/edit">Edit</a> |
-        <a href="/<%= place._id%>/delete">Delete</a>
+        <%= place.name %>
       </li>
       <% }) %>
-  </ul> -->
+  </ul>
 
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnTGv-ld43BemZSend17x41Vl8Qk0jgH0">
   </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js">
+  </script>
+
   <script type="text/javascript" src="javascripts/main.js"></script>
 </body>
 

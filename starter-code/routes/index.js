@@ -7,15 +7,18 @@ const Place = require('../models/place').Place;
 // -- THIS SECTION IS RESPONDING WITH AN ERROR -- //
 
 /* GET home page. */
-router.get('/', function(err, req, res, next) {
-  Place.find({}, (err, req, res, next) => {
+router.get('/', function(req, res, next) {
+  Place.find({}, (err, place) => {
+    // place[place._id] = place;
     if (err) {
       console.log(err);
     } else {
-      res.render("index"); //should be here??
+      // console.log(place);
+      res.render("index", {
+        place
+      });
     }
-  }); // place here a callback or promise
-  // res.render('index', {});
+  });
 });
 
 
@@ -42,6 +45,19 @@ router.post("/", (req, res, next) => {
       next(error);
     } else {
       res.redirect('/');
+    }
+  });
+});
+
+router.get("/places/json", (req, res, next) => {
+  Place.find((error, places) => {
+    if (error) {
+      console.log("error", error);
+      res.status(500).json({
+        error: "Ya fucked up!!"
+      });
+    } else {
+      res.json(places);
     }
   });
 });

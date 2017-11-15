@@ -7,34 +7,40 @@
 
 function main() {
 
-  var ironhackBCN = {
-    lat: 41.3977381,
-    lng: 2.190471916
+  var center = {
+    lat: 0,
+    lng: 0
   };
 
   var domElement = document.getElementById('map');
   var options = {
-    zoom: 15,
-    center: ironhackBCN
+    zoom: 2,
+    center: center
   };
 
   var map = new google.maps.Map(domElement, options);
 
-  var myMarker = new google.maps.Marker({
-    position: {
-      lat: 41.3977381,
-      lng: 2.190471916
-    },
-    map: map,
-    title: "Ironhack Campus!",
-    animation: google.maps.Animation.DROP,
-  });
-
-  myMarker.setDraggable(true);
+  // THE CORRECT WAY
+  axios.get('/places/json')
+    .then((response) => {
+      const myPlaces = response.data;
+      let markers = [];
+      myPlaces.forEach(function(place) {
+        let title = place.name;
+        let position = {
+          lat: place.location.coordinates[1],
+          lng: place.location.coordinates[0],
+        };
+        var pin = new google.maps.Marker({
+          position,
+          map,
+          title
+        });
+        markers.push(pin);
+      });
+    });
 
 }
-
-
 
 // CREATE MAP ON LOAD
 window.addEventListener("load", main);
