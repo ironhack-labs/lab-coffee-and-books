@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Maps</title>
+        <style>
+                #map {
+                 height: 500px;
+                 width: 100%;
+                }
+             </style>
+    </head>
+
+    <body>
+        <form action="/places/add" method="POST">
+            <label for="address">Address</label>
+            <input id="address" type="text" name="address"><br/>
+            <input type="radio" name="kind" value="Book">Book Store<br/>
+            <input type="radio" name="kind" value="Coffee">Coffe Rest<br/>
+            <input id="latitude" type="text" value="">
+            <input id="longitude" type="text" value="">
+
+            <button type="submit">Save!</button>
+            <button id="submit" type="submit">Search!</button>
+        </form>
+        <h3>Your Choice</h3>
+        <div id="map"></div>
+        
+    <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbwkbFM7Djud7cLU0HfCDeWnk25beLbx8">
+    </script>
+    <script type="text/javascript" src="javascripts/maps.js"></script>
+    </body>
+
+</html>
