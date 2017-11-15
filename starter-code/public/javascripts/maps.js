@@ -1,45 +1,58 @@
 'use strict';
 
 function startMap() {
+  const ironhackBCN = {
+  	lat: 41.3977381, 
+  	lng: 2.190471916};
+  const map = new google.maps.Map(
+    document.getElementById('map'), 
+    {
+      zoom: 15,
+      center: ironhackBCN
+    }
+  );
 
-    const ironhackBCN = {
-        lat: 41.3977381, 
-        lng: 2.190471916};
+  //Creem un marker
+  var myMarker = new google.maps.Marker({
+    position: {
+      lat: 41.3977381, 
+      lng: 2.190471916
+    },
+    map: map,
+    title: "I'm here"
+  });
+}
 
-    const map = new google.maps.Map(
-      document.getElementById('map'), 
-      {
-        zoom: 15,
-        center: ironhackBCN
-      }
-    );
 
+//Geocoder
+const geocoder = new google.maps.Geocoder();
 
-  const geocoder = new google.maps.Geocoder();
+document.getElementById('submit').addEventListener('click', function() {
+  geocodeAddress(geocoder, map);
+  });
   
-  document.getElementById('submit').addEventListener('click', function() {
-    geocodeAddress(geocoder, map);
+function geocodeAddress(geocoder, resultsMap) {
+  let address = document.getElementById('address').value;
+  
+geocoder.geocode({'address': address}, function(results, status) {
+
+  if (status === 'OK') {
+    resultsMap.setCenter(results[0].geometry.location);
+    let marker = new google.maps.Marker({
+      map: resultsMap,
+      position: results[0].geometry.location
     });
-    
-  function geocodeAddress(geocoder, resultsMap) {
-    let address = document.getElementById('address').value;
-    
-  geocoder.geocode({'address': address}, function(results, status) {
-  
-    if (status === 'OK') {
-      resultsMap.setCenter(results[0].geometry.location);
-      let marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-      });
-      document.getElementById('latitude').value = results[0].geometry.location.lat();
-      document.getElementById('longitude').value = results[0].geometry.location.lng();
-     } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-       }
-      });
-      }
-  }
+    document.getElementById('latitude').value = results[0].geometry.location.lat();
+    document.getElementById('longitude').value = results[0].geometry.location.lng();
+   } else {
+    alert('Geocode was not successful for the following reason: ' + status);
+     }
+    });
+    }
 
-  window.addEventListener('load',startMap);
+
+
+//Onload
+
+  //window.addEventListener('load',startMap);
 
