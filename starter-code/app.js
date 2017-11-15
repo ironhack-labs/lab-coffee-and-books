@@ -15,12 +15,9 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Controllers
-// const bookstoresRoutes = require('./routes/bookstores');
-
 // Mongoose configuration
 const dbName = "mongodb://localhost/coffee-and-books";
-mongoose.connect("mongodb://localhost/coffee-and-books", { useMongoClient: true })
+mongoose.connect(dbName, { useMongoClient: true })
         .then(() => console.log(`Connected to db: ${dbName}`));
 
 // uncomment after placing your favicon in /public

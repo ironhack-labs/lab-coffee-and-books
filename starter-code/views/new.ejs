@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Create a new place</title>
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
   <form method="POST" action="/new">
-    <input type="text" name="name"        placeholder="name of stablishment">
-    <input type="text" name="description" placeholder="description">
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name" placeholder="name of stablishment">
+    <label for="name">Kind:</label>
+    <input id="kind" type="text" name="kind" placeholder="kind of stablishment">
+    <label for="description">Description:</label>
+    <input id="description" type="text" name="description" placeholder="description">
 
     <label>Coordinates</label>
     <input type="text" name="latitude" placeholder="Latitude" >
@@ -17,5 +22,7 @@
 
     <input type="submit" name="">
   </form>
+  <div id="map"></div>
+  <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
