@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Maps</title>
+    <style>
+        #map {
+            height: 800px;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+
+<body>
+    <div id=contForm>
+        <form id="form" action="/places/add" method="POST">
+            <div id="floating-panel">
+                <label for="address">Input the Address</label>
+                <input id="address" type="textbox" value="Ironhack">
+                <br/>
+                <input type="radio" name="kind" value="Book">Book Store
+                <br/>
+                <input type="radio" name="kind" value="Coffee">Coffe Rest
+                <br/>
+                <input id="latitude" type="text" value="">
+                <input id="longitude" type="text" value="">
+                <input id="submit" type="button" value="Geocode">
+            </div>
+            <h3>Your Choice</h3>
+        </form>
+    </div>
+    <div id="map" class="container">
+     
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbwkbFM7Djud7cLU0HfCDeWnk25beLbx8">
+    </script>
+    <script type="text/javascript" src="javascripts/maps2.js"></script>
+</body>
+
+</html>
