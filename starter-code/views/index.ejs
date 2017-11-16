@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% places.forEach((e) => { %>
+      <div class="" id="<%= e.id %>" lat="<%= e.location.coordinates[1] %>" lng="<%= e.location.coordinates[0] %>">
+          <%= e.name %>
+      </div>
+    <% }) %>
+
+<div id="map"></div>
+
+
+<script type="text/javascript">
+const places = <%- JSON.stringify(places) %>;
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvCNLnXrywQDAyyYhrjbLa4zkjwEbYSvA"></script>
+<script type="text/javascript" src="javascripts/main.js">
+
+
+  </script>
+
+  </body>
+</html>
