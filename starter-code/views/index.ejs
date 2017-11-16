@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% places.forEach((e) => { %>
+      <div id="<%= e.id %>" lat="<%= e.location.coordinates[1] %>" lng="<%= e.location.coordinates[0] %>">
+          <%= e.name %>
+      </div>
+    <% }) %>
+
+<div id="map"></div>
+
+<a href="/new">Create new store</a>
+<script type="text/javascript"> const places = <%- JSON.stringify(places) %>; </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjc2ehxQspm49Jr0JnQWjnUsCV0LvjabE"></script>
+<script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
