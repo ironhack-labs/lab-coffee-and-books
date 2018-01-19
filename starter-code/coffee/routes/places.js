@@ -15,7 +15,6 @@ router.get('/places', (req, res, next) => {
 });
 
 router.post('/places', (req, res, next) => {
-
   let location = {
     type: 'Point',
     coordinates: [req.body.longitude, req.body.latitude]

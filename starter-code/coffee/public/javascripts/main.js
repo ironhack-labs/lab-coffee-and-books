@@ -9,7 +9,7 @@ $(document).ready(function () {
     center: sol
   });
 
-  let markers = [];
+  let markers = []; // empty array for following markers
 
   myPlaces.forEach(place => {
     let name = place.name;
@@ -24,5 +24,4 @@ $(document).ready(function () {
     });
     markers.push(pin);
   });
-
 });
