@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const DB_NAME = 'bookstorre-gmaps';
+const DB_NAME = 'bookstore-gmaps';
 const MONGO_URI = `mongodb://localhost/${DB_NAME}`;
 const options = {
   useMongoClient: true,

@@ -1,5 +1,5 @@
 const mapsAPI = new APIMaps();
-// const charactersAPI = new APIHandler("http://localhost:3000");
+const handlerAPI = new APIHandler("http://localhost:3000");
 
 function startMap() {
   mapsAPI.startMap();
@@ -9,15 +9,15 @@ $(document).ready(() => {
   
 
 
-  // $('#form-new-bookstore').on('submit', (event) => {
-  //   event.preventDefault();
-  //   var $inputs = $('#new-character-form :input');
-  //   var values = {};
-  //   $inputs.each(function () {
-  //     values[this.name] = $(this).val();
-  //   });
-  //   mapsAPI.createOneRegister(values);
-  // });
+  $('#form-new-bookstore').on('submit', (event) => {
+    event.preventDefault();
+    var $inputs = $('#form-new-bookstore :input');
+    var values = {};
+    $inputs.each(function () {
+      values[this.name] = $(this).val();
+    });
+    handlerAPI.createOneRegister(values);
+  });
 });
 
 

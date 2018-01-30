@@ -8,6 +8,7 @@ module.exports.new = (req, res, next) => {
   res.render("bookstore/new");
 };
 module.exports.create = (req, res, next) => {
+  // res.json({hoola:"todo bon"});
   const {
     name,
     description,
@@ -23,37 +24,36 @@ module.exports.create = (req, res, next) => {
         lng: lng ? '' : 'lng is required'
       }
     });
+  }else{
+    Bookstore.findOne({
+        name: req.body.name
+      })
+      .then(bookstore => {
+        if (bookstore != null) {
+          res.json({
+            bookstore: bookstore,
+            error: {
+              name: 'Bookstore name already exists'
+            }
+          });
+        } else {
+          bookstore = new Bookstore(req.body);
+          bookstore.save()
+            .then(() => {
+              // req.flash('info', 'Successfully sign up, now you can login!');
+              // res.send("GO TO LOGIN");
+              res.json({success:"Bookstore save successfully"});
+            }).catch(error => {
+              if (error instanceof mongoose.Error.ValidationError) {
+                res.json({
+                  bookstore: bookstore,
+                  error: error.errors
+                });
+              } else {
+                next(error);
+              }
+            });
+        }
+      }).catch(error => next(error));
   }
-  // } else {
-  //   User.findOne({
-  //       username: req.body.username
-  //     })
-  //     .then(user => {
-  //       if (user != null) {
-  //         res.render('auth/signup', {
-  //           user: user,
-  //           error: {
-  //             username: 'Username already exists'
-  //           }
-  //         });
-  //       } else {
-  //         user = new User(req.body);
-  //         user.save()
-  //           .then(() => {
-  //             // req.flash('info', 'Successfully sign up, now you can login!');
-  //             // res.send("GO TO LOGIN");
-  //             res.redirect('/login');
-  //           }).catch(error => {
-  //             if (error instanceof mongoose.Error.ValidationError) {
-  //               res.render('auth/signup', {
-  //                 user: user,
-  //                 error: error.errors
-  //               });
-  //             } else {
-  //               next(error);
-  //             }
-  //           });
-  //       }
-  //     }).catch(error => next(error));
-  // }
 };
