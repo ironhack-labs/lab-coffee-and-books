@@ -14,17 +14,18 @@ class APIMaps {
         center: ironhackBCN
       }
     );
-    this.currentMarker = this.myMarker(this.map);
+    this.myMarker(ironhackBCN.lat, ironhackBCN.lng);
     this.getPosition(this.map,this.currentMarker);
   }
 
-  myMarker(map) {
-    return new google.maps.Marker({
+  myMarker(lat,lng) {
+    (this.currentMarker)?this.currentMarker.setMap(null):"";    
+    this.currentMarker= new google.maps.Marker({
       position: {
-        lat: 41.3977381,
-        lng: 2.190471916
+        lat: lat,
+        lng: lng
       },
-      map: map,
+      map: this.map,
       title: "I'm here"
     });
   };
@@ -40,6 +41,18 @@ class APIMaps {
       });
       $('#lat').val(e.latLng.lat);
       $('#lng').val(e.latLng.lng);
+    });
+  }
+
+  showInMap(lat, lng){
+    // currentMarker.setMap(null);
+    return new google.maps.Marker({
+      position: {
+        lat: lat,
+        lng: lng
+      },
+      map: map,
+      title: "I'm here"
     });
   }
 }

@@ -4,7 +4,6 @@ class APIHandler {
   }
 
   createOneRegister(values) {
-    // $("#olResult").empty();
     $(".form-group").removeClass('has-error');
     $(".form-inline").removeClass('has-error');
     $(".control-label").remove();
@@ -23,6 +22,12 @@ class APIHandler {
               $('#' + key).parent().append($("<label class='control-label'>" + response.data.error[key] + "</label>"));
             }
           }
+        }else if (response.data.success) {
+          $("#name").val("");
+          $("#description").val("");
+          $("#lat").val("");
+          $("#lng").val("");
+          alert(response.data.success);
         }
       })
       .catch(function (error) {

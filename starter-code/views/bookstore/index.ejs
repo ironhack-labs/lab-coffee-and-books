@@ -1,1 +1,27 @@
-INDEX!!!!
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Where</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="tbody-store">
+        <% if (typeof(bookstores) !== 'undefined') { %>
+          <% for(var i=0; i<(bookstores.length); i++) { %>
+            <tr>
+              <td><%=(bookstores[i]).name%></td>
+              <td><%=(bookstores[i]).description%></td>
+              <td class="td_latlng<%=i%>" lng="<%=(bookstores[i]).lng%>" lat="<%=(bookstores[i]).lat%>"
+                >Lat: <%=((bookstores[i]).lat).toFixed(2)%>. Lng: <%=((bookstores[i]).lng).toFixed(2)%>
+                <button class="show-bookstore btn btn-info">Show</button>
+              </td>
+              <td><button class="delete-bookstore btn btn-danger">Delete</button></td>
+            </tr>
+          <% }; %>
+      <% } %>
+    </tbody>
+  </table>
+</div>

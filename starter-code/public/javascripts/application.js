@@ -6,9 +6,6 @@ function startMap() {
 }
 
 $(document).ready(() => {
-  
-
-
   $('#form-new-bookstore').on('submit', (event) => {
     event.preventDefault();
     var $inputs = $('#form-new-bookstore :input');
@@ -17,6 +14,14 @@ $(document).ready(() => {
       values[this.name] = $(this).val();
     });
     handlerAPI.createOneRegister(values);
+  });
+
+  $('.show-bookstore').click((event) => {
+    var td = event.target.parentElement;
+    let lat = td.getAttribute("lat");
+    let lng = td.getAttribute("lng");
+    mapsAPI.myMarker(parseFloat(lat),parseFloat(lng));
+
   });
 });
 
