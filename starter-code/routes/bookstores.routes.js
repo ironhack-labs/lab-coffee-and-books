@@ -9,7 +9,7 @@ const bookstoresController = require('../controllers/bookstores.controller');
 router.get('/', bookstoresController.show);
 router.get('/new', bookstoresController.new);
 
-router.post('/create', bookstoresController.create);
+router.post('/new', bookstoresController.create);
 
 
 module.exports = router;
