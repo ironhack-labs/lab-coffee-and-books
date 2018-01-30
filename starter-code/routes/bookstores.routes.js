@@ -7,6 +7,9 @@ const router = express.Router();
 const bookstoresController = require('../controllers/bookstores.controller');
 
 router.get('/', bookstoresController.show);
+router.get('/new', bookstoresController.new);
+
+router.post('/create', bookstoresController.create);
 
 
 module.exports = router;

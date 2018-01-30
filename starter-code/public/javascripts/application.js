@@ -1,17 +1,41 @@
-var map;
-var currentMarker;
-
 function startMap() {
+  var map;
+  var currentMarker;
   var ironhackBCN = {
-  	lat: 41.3977381, 
-  	lng: 2.190471916};
-  var map = new google.maps.Map(
-    document.getElementById('map'), 
-    {
+    lat: 41.3977381,
+    lng: 2.190471916
+  };
+  map = new google.maps.Map(
+    document.getElementById('map'), {
       zoom: 15,
       center: ironhackBCN
     }
   );
+  currentMarker= myMarker(map);
+  getPosition(map, currentMarker);
 }
 
-// startMap();
+function myMarker(map) {
+  return new google.maps.Marker({
+    position: {
+      lat: 41.3977381,
+      lng: 2.190471916
+    },
+    map: map,
+    title: "I'm here"
+  });
+};
+
+function getPosition(map, currentMarker) {
+  google.maps.event.addListener(map, "click", function (e) {
+    currentMarker.setMap(null);
+    currentMarker = new google.maps.Marker({
+      position: e.latLng,
+      map: map,
+      title: "I'm here"
+    });
+    $('#lat').val(e.latLng.lat);
+    $('#lng').val(e.latLng.lng);
+  });
+
+}
