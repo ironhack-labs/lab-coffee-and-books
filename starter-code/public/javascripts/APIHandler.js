@@ -36,9 +36,6 @@ class APIHandler {
   }
 
   deleteOneRegister(id) {
-    console.log(id);
-
-
     $("#tbody-store").empty();
     if (id) {
       axios.post(this.BASE_URL + '/bookstores/delete/' + id)
@@ -65,7 +62,6 @@ class APIHandler {
         })
         .catch(function (error) {
           console.log(error);
-
         });
     } else {
       alert("You need an ID");

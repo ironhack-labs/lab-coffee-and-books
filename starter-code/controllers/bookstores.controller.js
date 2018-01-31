@@ -2,11 +2,6 @@ const Bookstore = require('../models/bookstore.model');
 const path = require('path');
 
 module.exports.show = (req, res, next) => {
-  console.log("AAAAAAAAAA");
-  console.log("AAAAAAAAAA");
-  console.log("AAAAAAAAAA");
-  console.log("AAAAAAAAAA");
-  
   Bookstore.find().then(bookstores=>{
     res.render("bookstore/index",{bookstores});
   });
@@ -15,7 +10,6 @@ module.exports.new = (req, res, next) => {
   res.render("bookstore/new");
 };
 module.exports.create = (req, res, next) => {
-  // res.json({hoola:"todo bon"});
   const {
     name,
     description,
@@ -47,8 +41,6 @@ module.exports.create = (req, res, next) => {
           bookstore = new Bookstore(req.body);
           bookstore.save()
             .then(() => {
-              // req.flash('info', 'Successfully sign up, now you can login!');
-              // res.send("GO TO LOGIN");
               res.json({success:"Bookstore save successfully"});
             }).catch(error => {
               if (error instanceof mongoose.Error.ValidationError) {
@@ -66,11 +58,6 @@ module.exports.create = (req, res, next) => {
 };
 
 module.exports.delete = (req, res, next) => {
-  console.log("AAAAAAAAAAAAAAAAAAAAAA");
-  console.log("AAAAAAAAAAAAAAAAAAAAAA");
-  console.log("AAAAAAAAAAAAAAAAAAAAAA");
-  console.log(req.params.id);
-  
   const _id = req.params.id;
   if (!_id) {
     res.json({
