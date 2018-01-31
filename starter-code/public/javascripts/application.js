@@ -15,19 +15,27 @@ $(document).ready(() => {
     });
     handlerAPI.createOneRegister(values);
   });
-  
-  $('.show-bookstore').click((event) => {
+
+  $('#tbody-store').on('click', '.show-bookstore', (event)=> {
     let td = event.target.parentElement;
     let lat = td.getAttribute("lat");
     let lng = td.getAttribute("lng");
-    mapsAPI.myMarker(parseFloat(lat),parseFloat(lng));
-    
-  });
-  $('.delete-bookstore').click((event) => {
+    mapsAPI.myMarker(parseFloat(lat),parseFloat(lng));   
+});
+  $('#tbody-store').on('click', '.delete-bookstore', (event)=> {
     let td = event.target.parentElement;
     td = td.parentElement;
     handlerAPI.deleteOneRegister(td.className);
-  });
+});
+  // $('.show-bookstore').on("click",(event) => {
+
+  // });
+
+  // $('.delete-bookstore').click((event) => {
+  //   let td = event.target.parentElement;
+  //   td = td.parentElement;
+  //   handlerAPI.deleteOneRegister(td.className);
+  // });
 });
 
 
