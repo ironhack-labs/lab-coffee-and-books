@@ -32,7 +32,6 @@ class APIMaps {
 
   getPosition(map, currentMarker) {
     google.maps.event.addListener(map, "click", function (e) {
-      // debugger
       currentMarker.setMap(null);
       currentMarker = new google.maps.Marker({
         position: e.latLng,
@@ -45,7 +44,6 @@ class APIMaps {
   }
 
   showInMap(lat, lng){
-    // currentMarker.setMap(null);
     return new google.maps.Marker({
       position: {
         lat: lat,

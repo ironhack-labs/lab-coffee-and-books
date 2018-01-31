@@ -8,20 +8,25 @@ function startMap() {
 $(document).ready(() => {
   $('#form-new-bookstore').on('submit', (event) => {
     event.preventDefault();
-    var $inputs = $('#form-new-bookstore :input');
-    var values = {};
+    let $inputs = $('#form-new-bookstore :input');
+    let values = {};
     $inputs.each(function () {
       values[this.name] = $(this).val();
     });
     handlerAPI.createOneRegister(values);
   });
-
+  
   $('.show-bookstore').click((event) => {
-    var td = event.target.parentElement;
+    let td = event.target.parentElement;
     let lat = td.getAttribute("lat");
     let lng = td.getAttribute("lng");
     mapsAPI.myMarker(parseFloat(lat),parseFloat(lng));
-
+    
+  });
+  $('.delete-bookstore').click((event) => {
+    let td = event.target.parentElement;
+    td = td.parentElement;
+    handlerAPI.deleteOneRegister(td.className);
   });
 });
 
@@ -45,9 +50,9 @@ $(document).ready(() => {
 
 
 // function startMap() {
-//   var map;
-//   var currentMarker;
-//   var ironhackBCN = {
+//   let map;
+//   let currentMarker;
+//   let ironhackBCN = {
 //     lat: 41.3977381,
 //     lng: 2.190471916
 //   };

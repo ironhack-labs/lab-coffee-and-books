@@ -2,6 +2,11 @@ const Bookstore = require('../models/bookstore.model');
 const path = require('path');
 
 module.exports.show = (req, res, next) => {
+  console.log("AAAAAAAAAA");
+  console.log("AAAAAAAAAA");
+  console.log("AAAAAAAAAA");
+  console.log("AAAAAAAAAA");
+  
   Bookstore.find().then(bookstores=>{
     res.render("bookstore/index",{bookstores});
   });
@@ -56,6 +61,36 @@ module.exports.create = (req, res, next) => {
               }
             });
         }
+      }).catch(error => next(error));
+  }
+};
+
+module.exports.delete = (req, res, next) => {
+  console.log("AAAAAAAAAAAAAAAAAAAAAA");
+  console.log("AAAAAAAAAAAAAAAAAAAAAA");
+  console.log("AAAAAAAAAAAAAAAAAAAAAA");
+  console.log(req.params.id);
+  
+  const _id = req.params.id;
+  if (!_id) {
+    res.json({
+      error: {
+        id: _id ? '' : 'id is required'
+      }
+    });
+  } else {
+    Bookstore.findByIdAndRemove(req.params.id)
+      .then((bookstore) => {
+        Bookstore.find()
+          .sort({
+            createdAt: -1
+          })
+          .then((bookstores) => {
+            res.json({
+              bookstores: bookstores,
+              success: 'Bookstore Deleted succesfully!!'
+            });
+          }).catch(error => next(error));
       }).catch(error => next(error));
   }
 };

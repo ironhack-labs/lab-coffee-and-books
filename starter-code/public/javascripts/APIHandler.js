@@ -22,7 +22,7 @@ class APIHandler {
               $('#' + key).parent().append($("<label class='control-label'>" + response.data.error[key] + "</label>"));
             }
           }
-        }else if (response.data.success) {
+        } else if (response.data.success) {
           $("#name").val("");
           $("#description").val("");
           $("#lat").val("");
@@ -35,99 +35,40 @@ class APIHandler {
       });
   }
 
-  //   getFullList() {
-  //     $("#olResult").empty();
-  //     axios.get(this.BASE_URL + '/characters')
-  //       .then(function (response) {
-  //         console.log(response);
-  //         paintText(response);
-  //         response.data.characters.forEach(charac => {
-  //           $("#olResult").append($("<ol><li>Id: " + charac._id + "</li><li>name: " + charac.name + "</li><li>occupation: " +
-  //             charac.occupation + "</li><li>debt: " + charac.debt + "</li><li>weapon: " +
-  //             charac.weapon + "</li></ol>"));
-  //         });
-  //       })
-  //       .catch(function (error) {
-  //         console.log(error);
-  //       });
-  //   }
+  deleteOneRegister(id) {
+    console.log(id);
 
-  //   getOneRegister(id) {
-  //     $("#olResult").empty();
-  //     if(id){
-  //       axios.get(this.BASE_URL + '/characters/' + id)
-  //         .then(function (response) {
-  //           console.log(response);
-  //           paintText(response);
-  //           $("#olResult").append($("<ol><li>Id: " + response.data.characters._id + "</li><li>name: " + response.data.characters.name + "</li><li>occupation: " +
-  //             response.data.characters.occupation + "</li><li>debt: " + response.data.characters.debt + "</li><li>weapon: " +
-  //             response.data.characters.weapon + "</li></ol>"));
 
-  //         })
-  //         .catch(function (error) {
-  //           console.log(error);
-  //         });
-  //     }else{
-  //       $("#olResult").append($(`<h4>You need an ID</h4>`));
-  //     }
-  //   }
+    $("#tbody-store").empty();
+    if (id) {
+      axios.post(this.BASE_URL + '/bookstores/delete/' + id)
+        .then((response)=> {
+          this.BASE_URL;
+          console.log(response);
+          if (response.data.success) {
+            let i=0;
+            for (const key in response.data.bookstores) {
+              if (response.data.bookstores[key] != "") {
+                $('#tbody-store').append(`<tr class=${response.data.bookstores[key]._id}>
+                <td>${response.data.bookstores[key].name}</td>
+                <td>${response.data.bookstores[key].description}</td>
+                <td class='td_latlng${i}' lat='${response.data.bookstores[key].lat}' lng='${response.data.bookstores[key].lng}'>
+                Lat: ${(response.data.bookstores[key].lat).toFixed(2)}'. Lng:${(response.data.bookstores[key].lng).toFixed(2)} 
+                <button class="show-bookstore btn btn-info">Show</button></td>
+                <td><button class="delete-bookstore btn btn-danger">Delete</button></td>
+                </tr>`);
+                i++;
+              }
+            }
+          }
 
-  //   updateOneRegister(values) {
-  //     $("#olResult").empty();
-  //     let debt;
-  //     (values.debt === "on") ? debt = true: debt = false;
-  //     axios.post(this.BASE_URL + "/characters/update/" + values.chrid, {
-  //         _id: values.chrid,
-  //         name: values.name,
-  //         occupation: values.occupation,
-  //         debt: debt,
-  //         weapon: values.weapon,
-  //       })
-  //       .then((response) => {
-  //         console.log(response);
-  //         paintText(response);
-  //         response.data.characters.forEach(charac => {
-  //           $("#olResult").append($("<ol><li>Id: " + charac._id + "</li><li>name: " + charac.name + "</li><li>occupation: " +
-  //             charac.occupation + "</li><li>debt: " + charac.debt + "</li><li>weapon: " +
-  //             charac.weapon + "</li></ol>"));
-  //         });
-  //       })
-  //       .catch(function (error) {
-  //         console.log(error);
-  //       });
-  //     }      
+        })
+        .catch(function (error) {
+          console.log(error);
 
-  //   deleteOneRegister(id) {
-  //     $("#olResult").empty();
-  //     if(id){
-  //       axios.post(this.BASE_URL + '/characters/delete/' + id)
-  //         .then(function (response) {
-  //           console.log(response);
-  //           paintText(response);
-  //           response.data.characters.forEach(charac => {
-  //             $("#olResult").append($("<ol><li>Id: " + charac._id + "</li><li>name: " + charac.name + "</li><li>occupation: " +
-  //               charac.occupation + "</li><li>debt: " + charac.debt + "</li><li>weapon: " +
-  //               charac.weapon + "</li></ol>"));
-  //           });
-  //         })
-  //         .catch(function (error) {
-  //           console.log(error);
-  //         });
-  //     }else{
-  //       $("#olResult").append($(`<h4>You need an ID</h4>`));
-  //     }
-  //   }
-  // }
-  // function paintText(response){  
-  //   if(response.data.message){
-  //     $("#olResult").append($(`<div><h4>${response.data.message}</h4></div>`));
-  //   }
-  //   if(response.data.error){
-  //     $("#olResult").append($("<ol><li>Id: " + response.data.error.id + "</li><li>name: " + response.data.error.name + "</li><li>occupation: " +
-  //         response.data.error.occupation + "</li><li>debt: " + response.data.error.debt + "</li><li>weapon: " +
-  //         response.data.error.weapon + "</li></ol>"));
-  //   }
-  //   if(response.data.characters===null){
-  //     $("#olResult").append($(`<h4>No Characters found</h4>`));
-  //   }
+        });
+    } else {
+      alert("You need an ID");
+    }
+  }
 }

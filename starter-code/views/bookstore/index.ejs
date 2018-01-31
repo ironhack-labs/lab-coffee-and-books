@@ -11,7 +11,7 @@
     <tbody id="tbody-store">
         <% if (typeof(bookstores) !== 'undefined') { %>
           <% for(var i=0; i<(bookstores.length); i++) { %>
-            <tr>
+            <tr class="<%=(bookstores[i])._id%>">
               <td><%=(bookstores[i]).name%></td>
               <td><%=(bookstores[i]).description%></td>
               <td class="td_latlng<%=i%>" lng="<%=(bookstores[i]).lng%>" lat="<%=(bookstores[i]).lat%>"

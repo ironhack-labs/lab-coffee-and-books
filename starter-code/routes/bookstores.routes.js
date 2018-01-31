@@ -10,6 +10,7 @@ router.get('/', bookstoresController.show);
 router.get('/new', bookstoresController.new);
 
 router.post('/new', bookstoresController.create);
+router.post('/delete/:id', bookstoresController.delete);
 
 
 module.exports = router;
