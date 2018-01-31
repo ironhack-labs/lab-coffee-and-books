@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookstore GMAPS!</title>  
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVLyU6AEtURh6ZGFqjDYiEB7d38PGt0YI&callback=startMap" async defer></script>
+  <script type="text/javascript" src="/javascripts/APIMaps.js"></script>
+  <script type="text/javascript" src="/javascripts/APIHandler.js"></script>
+  <script type="text/javascript" src="/javascripts/application.js"></script>
+</head>
+<body>
+  <section class="container">
+    <div id="map"></div>
+
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="">
+        <a href="/bookstores">Bookstores</a>
+      </li>
+      <li role="presentation" class="">
+        <a href="/bookstores/new">New</a>
+      </li>
+    </ul>
+
+    <article>
+      <%- body %>
+    </article>
+  </section>
+</body>
+</html>
