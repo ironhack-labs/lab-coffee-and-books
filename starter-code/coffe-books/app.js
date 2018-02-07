@@ -1,52 +1,55 @@
-const express = require('express')
-const path = require('path')
-const logger = require('morgan')
-const cookieParser = require('cookie-parser')
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
-const expressLayouts = require('express-ejs-layouts')
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const expressLayouts = require('express-ejs-layouts');
 
-const index = require('./routes/index')
+const index = require('./routes/index');
+const place = require('./routes/place');
+const api = require('./routes/api');
 
-const app = express()
+const app = express();
 
 // database setup
-mongoose.Promise = Promise
+mongoose.Promise = Promise;
 mongoose.connect('mongodb://localhost/coffee-books', {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
-})
+});
 
 // view engine setup
-app.use(expressLayouts)
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
-app.set('layout', 'layouts/main')
+app.use(expressLayouts);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.set('layout', 'layouts/main');
 
 // middlewares
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
-app.use('/', index)
-// app.use('/users', users)
+app.use('/', index);
+app.use('/place', place);
+app.use('/api', api);
 
 // error handler
 app.use((req, res, next) => {
-  res.status(404)
-  res.render('not-found')
-})
+  res.status(404);
+  res.render('not-found');
+});
 
 app.use((err, req, res, next) => {
-  console.error('ERROR', req.method, req.path, err)
+  console.error('ERROR', req.method, req.path, err);
 
   if (!res.headersSent) {
-    res.status(500)
-    res.render('error')
+    res.status(500);
+    res.render('error');
   }
-})
+});
 
-module.exports = app
+module.exports = app;

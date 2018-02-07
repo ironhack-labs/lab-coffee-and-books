@@ -1,0 +1,25 @@
+<form method="post" action="/place">
+  <div class="form-input">
+    <label for="name">Place Name:</label>
+    <input type="text" name="name" id="name"/>
+  </div>
+  <div class="form-input">
+    <label for="establishment">Establishment:</label>
+    <input type="text" name="establishment" id="establishment"/>
+  </div>
+  <div class="form-input">
+    <label for="latitude">Latitude:</label>
+    <input type="text" name="latitude" id="latitude"/>
+  </div>
+  <div class="form-input">
+    <label for="longitude">Longitude:</label>
+    <input type="text" name="longitude" id="longitude"/>
+  </div>
+  <% if (typeof message !== 'undefined') { %>
+    <p class="error"><%= message %></p>
+  <% } %>
+  <div class="form-button">
+    <button>Submit</button>
+  </div>
+</form>
+<span><a href="/">Back to map</a></span>

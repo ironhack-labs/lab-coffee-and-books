@@ -1,5 +1,6 @@
 function main () {
   const mapElement = document.getElementById('map');
+
   function getBrowserLocation () {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -18,8 +19,6 @@ function main () {
     }
   }
   function startMap (center) {
-    // const userLocation = getBrowserLocation();
-    // console.log(userLocation);
     var map = new google.maps.Map(
       mapElement,
       {
@@ -28,18 +27,27 @@ function main () {
       }
     );
     // add marker
-    var myMarker = new google.maps.Marker({
-      position: center,
-      map: map,
-      title: "I'm here"
+    let markers = [];
+    const allPlaces = getData();
+    allPlaces.forEach((place) => {
+      let name = place.name;
+      // let establishment = place.establishment;
+      let position = {
+        lat: place.location.coordinates[1],
+        lng: place.location.coordinates[0]
+      };
+      var pin = new google.maps.Marker({ position, map, name });
+      markers.push(pin);
     });
   }
 
+  function getData () {
+    return axios.get('/api/places')
+      .then((response) => response.data)
+      .catch((err) => err);
+  }
+
   getBrowserLocation();
-  // .then(startMap)
-  // .catch((err) => {
-  //   console.error(err);
-  // });
 }
 
 window.onload = main;
