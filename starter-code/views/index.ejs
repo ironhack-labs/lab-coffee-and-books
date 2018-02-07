@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Coffee & Books Tumblr</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <style>
+    #map {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Hola</h1>
+  <p>Welcome to Coffee & Books Tumblr</p>
+  <div id="map"></div>
+<a href="/form-place">New Place</a>
+<script
+async
+defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFmDfjSMFumW02NLMMIoNA43OtfBmeKR8&callback=startMap">
+</script>
+<script> let place = <%- JSON.stringify({place:place}) %> 
+</script>
+<% place.forEach((element) => { %>
+  <p>Name: <%= element.name %></p>
+  <p>Type: <%= element.type %></p>
+  <p>Coordinates: <%= element.location.coordinates %></p>
+  <hr>
+<% }) %>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+</body>
+</html>
