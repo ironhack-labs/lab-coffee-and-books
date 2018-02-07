@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 
-// const Place = require('../model/place');
+const Place = require('../model/place');
 
 router.get((req, res, next) => {
   Place.find((error, place) => {
@@ -17,18 +17,18 @@ router.get('/create', (req, res, next) => {
   res.render('create');
 });
 
-router.post((req, res, next) => {
+router.post('/', (req, res, next) => {
   let location = {
     type: 'Point',
     coordinates: [req.body.longitude, req.body.latitude]
   };
 
-  const newPlace = {
+  const newPlace = Place({
     name: req.body.name,
     location: location
-  };
+  });
 
-  place.save((error) => {
+  newPlace.save((error) => {
     if (error) { console.log(error); } else {
       res.redirect('/');
     }
