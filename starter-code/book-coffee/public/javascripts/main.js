@@ -37,7 +37,19 @@ function main () {
           map: map,
           title: 'You are here'
         });
-      }, function () {
+
+        let markers = [];
+        myPlaces.forEach((place) => {
+          let title = place.nameplace.name;
+          let position = {
+            lat: place.location.coordinates[1],
+            lng: place.location.coordinates[0]
+          };
+
+          var pin = new google.maps.Marker({ position, map, title });
+          markers.push(pin);
+        });
+      }, () => {
         console.log('Error in the geolocation service.');
       });
     } else {
