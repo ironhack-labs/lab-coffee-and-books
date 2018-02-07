@@ -1,0 +1,46 @@
+<p>NEW PLACE</p>
+<form id="form" action="/new-place" method="POST">
+    <div class="form-group">
+        <label for="name">
+            Name
+        </label>
+        <br>
+        <input class="form-control" type="text" name="name" placeholder="Name"> </div>
+        <br>
+    <div class="form-group">
+        <label for="description">
+            Description
+        </label>
+        <br>
+        <input class="form-control" type="text" name="description" placeholder="Description"> </div>
+        <br>
+    <div class="form-group">
+        <label for="kindof">
+            Kind of Stablishmen
+        </label>
+        <br>
+        <input class="form-control" type="text" name="kindof" placeholder="kind of">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="location">
+            Location
+        </label>
+        <br>
+        <input class="form-control" type="text" name="location1" placeholder="location1">
+        <input class="form-control" type="text" name="location2" placeholder="location2"> </div>
+    <br>
+    <br>
+    <button >
+        Create Place
+    </button>
+</form>
+<% if (typeof message !== "undefined") { %>
+    <div class="error-message">
+        <%= message %>
+    </div>
+<% } %>
+<a href="/">
+    <small>go home</small>
+</a>
+<br>

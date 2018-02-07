@@ -1,0 +1,12 @@
+
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+<a href="/new-place">New place</a>
+<br>
+<br>
+<br>
+<div id="map"></div>
+<script>
+   var places = <%- JSON.stringify(places) %>
+</script>
