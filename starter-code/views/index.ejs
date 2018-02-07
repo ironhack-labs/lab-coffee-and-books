@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% if(places.length) { %> 
+      <h2>Places</h2>
+      <ul class="list-group">
+        <% places.forEach((place) => { %>
+          <li class="list-group-item">
+              <a href="/<%= place._id %>"><%= place.name %></a>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else { %> 
+      <h2>No places found</h2>
+    <% } %>
+    <div id="map"></div>
+
+    <script>
+      let places = <%- JSON.stringify(places) %>;
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD4N4bWlqYvM629tijHzdukIsgwpmzPSE&callback=startMap">
+    </script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+
+  </body>
+
+</html>
