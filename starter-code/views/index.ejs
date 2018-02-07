@@ -11,9 +11,9 @@
     <% if(places.length) { %> 
       <h2>Places</h2>
       <ul class="list-group">
-        <% .forEach((place) => { %>
+        <% places.forEach((place) => { %>
           <li class="list-group-item">
-              <a href="/<%= place._id %>"><%= place.name | place.kindOfEstablishment %></a>
+              <a href="/<%= place._id %>"><%= place.name %></a>
           </li>
         <% }) %>
       </ul>
@@ -21,13 +21,14 @@
       <h2>No places found</h2>
     <% } %>
     <div id="map"></div>
-    
+
     <script>
       let places = <%- JSON.stringify(places) %>;
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD4N4bWlqYvM629tijHzdukIsgwpmzPSE&callback=startMap">
     </script>
-    <script type="text/javascript" src="/javascripts/map.js"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
 
   </body>
 

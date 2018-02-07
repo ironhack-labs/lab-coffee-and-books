@@ -2,11 +2,12 @@
   "name": "starter-code",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "nodemon --inspect app.js"
-  },
+  
+    "scripts": {
+      "start": "node ./bin/www",
+      "dev": "nodemon ./bin/www"
+    },
+ 
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
@@ -14,7 +15,7 @@
     "express": "~4.15.5",
     "jade": "~1.11.0",
     "mongoose": "^5.0.3",
-    "morgan": "~1.9.0",
+    "morgan": "^1.9.0",
     "serve-favicon": "~2.4.5"
   }
 }

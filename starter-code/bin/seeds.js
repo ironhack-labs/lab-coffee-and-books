@@ -16,14 +16,14 @@ const places = [
     description:
       "un poco piticler",
     kindOfEstablishment: "cofee",
-    location: { type:  "Point" , coordinates: [40.4598732, -3.612345] }
+    location: { type:  "Point" , coordinates: [40.443719, -3.716350] }
   },
   {
     name: "Librería el Ojal",
     description:
       "hay libros",
     kindOfEstablishment: "bookstore",
-    location: { type:  "Point" , coordinates: [40.40909, -3.600000] }
+    location: { type:  "Point" , coordinates: [40.444660, -3.720303] }
   },
   
  
