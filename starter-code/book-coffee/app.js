@@ -8,6 +8,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const expressLayouts = require('express-ejs-layouts');
 
 // -- require your own modules (router, models)
 const index = require('./routes/index');
@@ -25,8 +26,10 @@ mongoose.connect('mongodb://localhost/database-name', {
 const app = express();
 
 // -- view engine setup
+app.use(expressLayouts);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('layout', '_layout');
 
 // -- configure middlewares (static, session, cookies, body, ...)
 
