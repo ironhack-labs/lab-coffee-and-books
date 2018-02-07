@@ -10,6 +10,7 @@ const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 
 const index = require('./routes/index');
+// const places = require('./routes/places');
 
 const app = express();
 
@@ -34,7 +35,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use('/', places);
 app.use('/', index);
+
 
 
 // -- 404 and error handler
