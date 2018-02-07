@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <form method="POST" id="form" action="/place">
+      Location Name  <input type="text" name="name">
+      lat:  <input type="text" name="lat">
+      lng:  <input type="text" name="lng">
+      <button>Submit</button>
+    </form>
+    <div id="map"></div>
+      <script>let sitios = <%- JSON.stringify(sitios) %></script>   //esto no aria falta 
+          <script src="./javascripts/map.js" type="text/javascript"></script>
+          <script
+          async 
+          defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjnLQwCoN25W9MvO6z5V95riIgOoxVlsc&callback=initMap">
+          </script>
+    </body>
+</html>
