@@ -3,27 +3,35 @@ const router = express.Router();
 const Place = require('../models/Place')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  Place.find({}, (err, place)=>{
-  res.render('index', { place:'place' });
+router.get('/', function (req, res, next) {
+  Place.find({}, (err, place) => {
+    res.render('index', { place: 'place' });
   })
 });
 
-router.post((req, res, next) => {
+router.get('/form-place', function (req, res, next) {
+  Place.find({}, (err, place) => {
+    res.render('form', { place: 'place' });
+  })
+});
+
+router.post('/form-place', (req, res, next) => {
   let location = {
     type: 'Point',
     coordinates: [req.body.longitude, req.body.latitude]
   };
 
-    const newPlace = {
-      name:        req.body.name,
-      location:    location
-    };
+  const newPlace = new Place ({
+    name: req.body.name,
+    type: req.body.type,
+    location: location
+  })
 
   // Save the restaurant to the Database
-  Place.save((error) => {
+  newPlace.save((error) => {
     if (error) { console.log(error) }
     else {
+      console.log("New place saved")
       res.redirect('/');
     }
   })

@@ -1,0 +1,14 @@
+<h2>New Place</h2>
+
+<form action="/form-place" method="POST" id="form-container">
+  <label for="place">New Place</label>
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="type" placeholder="type">
+  <input type="text" name="latitude" placeholder="latitude">
+  <input type="text" name="longitude" placeholder="longitude">
+  <br><br>
+  <% if (typeof(errorMessage) != "undefined") { %>
+    <div class="error-message"> <%= errorMessage %> </div>
+  <% } %>
+  <button>Create place</button>
+</form>
