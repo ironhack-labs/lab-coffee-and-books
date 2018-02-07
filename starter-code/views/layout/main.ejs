@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Places</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+        #map {
+         height: 500px;
+         width: 100%;
+        }
+     </style>
+  </head>
+  <body>
+    <%- body -%>
+    <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsQTRHHhzfYJeY1GCDDf5inwLZfEKGYY0&callback=startMap">
+  </script>
+  <script type="text/javascript" src="/js/map.js"></script>
+  </body>
+</html>
