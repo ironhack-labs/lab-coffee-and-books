@@ -1,0 +1,22 @@
+<h1>Edit Place</h1>
+
+<form action="/edit/<%= place._id %>" method="POST">
+  <label for="name">Name</label><br>
+  <input id="name" type="text" name="name" value="<%= place.name%>"><br>
+
+  <label for="type">Type</label><br>
+  <select id="type" name="type">
+    <option value="Coffee">Coffee</option>
+    <option value="Book">Book</option>
+  </select><br>
+  
+  <label for="password">Location</label><br>
+  <input id="lat" type="text" name="lat" placeholder="latitude" value="<%= place.location.lat %>"><br>
+  <input id="long" type="text" name="lng" placeholder="longitude" value="<%= place.location.lng %>"><br><br>
+
+  <% if (typeof(errorMessage) != "undefined") { %>
+    <div class="error-message"><%= errorMessage %></div>
+  <% } %>
+
+  <button type="submit"> Edit Place</button>
+</form>

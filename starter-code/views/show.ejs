@@ -1,0 +1,23 @@
+<h1>Coffe and Books Places</h1>
+
+<div id="list">
+<% if (list.length > 0) { %>
+    <% list.forEach(function(place) { %>
+        <div>
+            <h4>
+                <%= place.name %>
+            </h4>
+            <p>
+              <%= place.type%>
+            </p>
+            <a href="/edit/<%= place._id %>">Edit</a><br>
+            <a href="/delete/<%= place._id %>">Delete</a>
+        </div>
+        <hr>
+  <% }) %>
+<% } else { %>
+    <div>
+        <p>The list is empty</p>
+    </div>
+<% } %>
+</div>
