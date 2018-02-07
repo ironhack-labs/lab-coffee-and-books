@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to
+    <%= title %>
+  </p>
+  <button>
+    <a href="/all">Liste</a>
+  </button>
+  <br>
+
+  <form method="POST" action="/place">
+    <input type="text" id="name" name="name" placeholder="name">
+    <br>
+    <br>
+    <input type="text" id="description" name="description" placeholder="description">
+    <br>
+    <br>
+
+    <label>Address</label>
+    <br>
+    <br>
+    <input type="text" name="latitude" id="latitude" placeholder="Latitude">
+    <br>
+    <br>
+    <input type="text" name="longitude" id="longitude" placeholder="Longitude">
+    <br>
+    <br>
+
+    <input type="submit" name="">
+  </form>
+
+</body>
+
+</html>
