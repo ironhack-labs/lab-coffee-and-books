@@ -1,0 +1,35 @@
+{
+  "name": "lab-coffee-and-books",
+  "version": "1.0.0",
+  "description": "## Learning Outcomes",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-ejs-layouts": "^2.3.1",
+    "express-generator": "^4.15.5",
+    "mongoose": "^5.0.3",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oscarjorgejorge/lab-coffee-and-books.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oscarjorgejorge/lab-coffee-and-books/issues"
+  },
+  "homepage": "https://github.com/oscarjorgejorge/lab-coffee-and-books#readme"
+}
