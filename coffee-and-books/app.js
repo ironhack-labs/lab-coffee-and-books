@@ -6,12 +6,18 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
+const mongoose = require('mongoose');
 
 const index = require('./routes/index');
-const books = require('./routes/books');
-const coffees = require('./routes/coffees');
+const application = require('./routes/application');
 
 const app = express();
+
+// database
+mongoose.connect('mongodb://localhost/coffee-and-books-db', {
+  keepAlive: true,
+  reconnectTries: Number.MAX_VALUE
+});
 
 // view engine setup
 app.use(expressLayouts);
@@ -30,8 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // ROUTES
 app.use('/', index);
-app.use('/books', books);
-app.use('/coffees', coffees);
+app.use('/application', application);
 
 // SESSION (not this project)
 
