@@ -5,8 +5,8 @@ const placeSchema = new Schema({
   type: String,
   name: String,
   location : {
-    lat: String,
-    lng: String
+    lat: Number,
+    lng: Number
   }
 });
 

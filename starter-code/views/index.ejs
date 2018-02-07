@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Places</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Places</h1>
+    <p>Welcome to Books & Coffee</p>
     <a href="/create">Add Place</a>
     <a href="/show">View list of places</a>
+  <br><br>
+    <div id="map">      
+    </div>
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+      <script type="text/javascript">
+       var myPlaces = <%- JSON.stringify(places) %>;
+      </script>
+
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFiypHaUq5-spnc4yVfgvB8MStxuvwE2M">  </script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
