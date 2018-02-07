@@ -4,12 +4,14 @@ cont favicon = require('serve-favicon');
 cont logger = require('morgan');
 cont cookieParser = require('cookie-parser');
 cont bodyParser = require('body-parser');
+cont mongoose = require('mongoose');
 
 cont index = require('./routes/index');
 cont users = require('./routes/users');
 
 cont app = express();
 
+mongoose.Promise = Promise;
 mongoose.connect('mongodb://localhost/coffee', {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE

@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const CoffeeSchema = Schema({
+const BooksSchema = Schema({
   name: String,
   location: { type: { type: String }, coordinates: [Number] }
 });
 
-CoffeeSchema.index({location:'2dsphere'});
+BooksSchema.index({ location: '2dsphere' });
 
-const Coffee = mongoose.model('coffee', CoffeeSchema);
+const Books = mongoose.model('books', BooksSchema);
 
-module.exports = Coffee;
+module.exports = Books;
