@@ -8,13 +8,12 @@ const mongoose = require('mongoose');
 const expressLayouts = require('express-ejs-layouts');
 
 const index = require('./routes/index');
-const users = require('./routes/users');
 
 const app = express();
 
 // -- database
 
-mongoose.connect('mongodb://localhost/db-cofee-books', {
+mongoose.connect('mongodb://localhost/db-coffee-books', {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
 });
@@ -32,7 +31,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
 
 // -- 404 and error handler
 
