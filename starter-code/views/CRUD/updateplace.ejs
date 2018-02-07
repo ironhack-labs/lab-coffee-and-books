@@ -1,0 +1,18 @@
+<form action="/updateplace/<%= place.id%>" method="POST">
+    <div>
+        <label for="name">name:</label>
+        <input type="text" name="name" value="<%=place.name%>"> </div>
+    <div>
+        <label for="kindOf">kindOf:</label>
+        <input type="text" name="kindOf" value="<%=place.kindOf%>"> </div>
+    <div>
+        <label for="latitude">latitude:</label>
+        <input type="text" name="lat" value="<%=place.loc.coordinates[0]%>"> </div>
+    <div>
+        <label for="longitude">longitude:</label>
+        <input type="text" name="long" value="<%=place.loc.coordinates[1]%>"> </div>
+    </div>
+    <input type="submit" value="Updatealo!"></div>
+</form>
+<a href="/">Home</a>
+<br>

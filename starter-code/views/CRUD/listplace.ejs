@@ -1,0 +1,15 @@
+
+<ul>
+    <% place.forEach((p) => {%>
+        <li>name: <%=p.name%></li>
+            <li>kindOf: <%=p.kindOf%></li>
+            
+       <p> <a href="/updateplace/<%=p._id%>">Update</a>  <a href="/deleteplace/<%=p._id%>">Delete</a> </p>
+        <br>
+        <%})%>
+</ul>
+
+<a href="/createplace">Crea un Coffee&Books</a>
+<br>
+<a href="/">Mapa</a>
+
