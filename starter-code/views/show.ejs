@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      <h2><%= place.name %></h2>
+      <ul class="list-group">
+          <li class="list-group-item">
+              Kind: <%= place.kindOfEstablishment %>
+          </li>
+          <li class="list-group-item">
+              Description: <%= place.description %>
+          </li>
+      </ul>
+      <div id="map"></div>
+    
+      <script>
+        let places = <%- JSON.stringify(places) %>;
+      </script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD4N4bWlqYvM629tijHzdukIsgwpmzPSE&callback=startMap">
+      </script>
+      <script type="text/javascript" src="/javascripts/map.js"></script>
+  </body>
+</html>
