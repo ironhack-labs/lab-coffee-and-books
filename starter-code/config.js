@@ -1,5 +1,3 @@
 module.exports = {
-
-  dbURL: "mongodb://localhost/place-ironhack" 
-
-}
+  dbURL: "mongodb://localhost/place-ironhack"
+};
