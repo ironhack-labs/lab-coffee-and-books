@@ -1,8 +1,41 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* ---- reset ---- */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-a {
-  color: #00B7FF;
+
+
+
+/* ---- typography ---- */
+
+body {}
+
+h1 {}
+
+h2 {}
+
+h3 {}
+
+
+
+
+/* ---- layout ---- */
+
+#site-header {}
+
+#site-footer {}
+
+#site-main {}
+
+#map {
+  height: 80vh
 }
+
+
+
+
+/* ---- components ---- */
