@@ -5,9 +5,10 @@ const Place = require('../models/Place')
 /* GET home page. */
 router.get('/', function (req, res, next) {
   Place.find({}, (err, place) => {
-    res.render('index', { place: 'place' });
+    res.render('index', { place: place });
   })
 });
+
 
 router.get('/form-place', function (req, res, next) {
   Place.find({}, (err, place) => {
@@ -36,6 +37,5 @@ router.post('/form-place', (req, res, next) => {
     }
   })
 });
-
 
 module.exports = router;
