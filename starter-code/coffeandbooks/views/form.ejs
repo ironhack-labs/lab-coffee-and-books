@@ -16,7 +16,12 @@
     <label for='longitude'>longitude</label>
     <input type="text" name="longitude" id="longitude" value="<%= longitude %>" />
 </div>
+<div class='field'>
+    <label for='autocomplete'>Exact address</label>
+    <input type='text' id='autocomplete' name='autocomplete'>
+</div>
 <div class='field control'>
     <button type="submit">Create a new place</button>
 </div>
 </form>
+<script src='/javascripts/autocomplete.js'></script>
