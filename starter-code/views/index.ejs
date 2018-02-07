@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to
+    <%= title %>
+  </p>
+  <ul>
+    <% places.forEach((place) => { %>
+      <li>
+        <span>
+          <%= place.name %>
+        </span>
+      </li>
+      <%  }) %>
+  </ul>
+    <div id="map"></div>
+    <script>
+        let place = <%- JSON.stringify(places) %>;
+        console.log(place);
+      </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD4N4bWlqYvM629tijHzdukIsgwpmzPSE&callback=startMap">
+  </script>
+  <script type="text/javascript" src="/javascripts/map.js"></script>
+</body>
+
+</html>
