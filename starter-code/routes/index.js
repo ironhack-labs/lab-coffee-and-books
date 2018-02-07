@@ -5,7 +5,9 @@ const Place = require('../models/Place');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Express' });
+  Place.find().exec((err, places) => {
+    res.render('index', {places});
+  })
 });
 
 router.get('/listplace', (req, res, next) => {
@@ -77,7 +79,7 @@ router.post('/updateplace/:id', (req, res, next) => {
   const coordLng = req.body.long;
 
 
-  Place.findOneAndUpdate({  _id: req.params.id}, {
+  Place.findOneAndUpdate({ _id: req.params.id }, {
     name,
     kindOf,
     loc: { type: "Point", coordinates: [coordLat, coordLng] }
@@ -93,8 +95,8 @@ router.post('/updateplace/:id', (req, res, next) => {
 })
 
 
-router.get('/deleteplace/:id', (req,res,next) => {
-  Place.deleteOne({_id: req.params.id}).exec(() => res.redirect("../listplace") )
-  
+router.get('/deleteplace/:id', (req, res, next) => {
+  Place.deleteOne({ _id: req.params.id }).exec(() => res.redirect("../listplace"))
+
 })
 module.exports = router;

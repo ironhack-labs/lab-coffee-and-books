@@ -8,6 +8,8 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
 
+// AIzaSyA3-wtVuHG5ADL4D45RHA1p6LhmWutseUo
+
 var index = require('./routes/index');
 
 var app = express();
