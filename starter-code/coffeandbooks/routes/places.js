@@ -36,4 +36,13 @@ router.post('/create', (req, res, next) => {
   });
 });
 
+router.get('/places', (req, res, next) => {
+  const data = Place.find((error, response) => {
+    if (error) {
+      return next(error);
+    }
+    res.json(response);
+  });
+});
+
 module.exports = router;
