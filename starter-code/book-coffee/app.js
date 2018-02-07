@@ -13,11 +13,12 @@ const expressLayouts = require('express-ejs-layouts');
 // -- require your own modules (router, models)
 const index = require('./routes/index');
 const users = require('./routes/users');
+const shops = require('./routes/shops');
 
 // -- create app connect to db
 
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/database-name', {
+mongoose.connect('mongodb://localhost/book-coffee', {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
 });
@@ -42,6 +43,7 @@ app.use(cookieParser());
 // -- routes
 app.use('/', index);
 app.use('/users', users);
+app.use('/shops', shops);
 
 // -- 404 and error handler
 
