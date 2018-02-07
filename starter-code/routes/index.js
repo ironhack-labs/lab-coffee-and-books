@@ -65,4 +65,14 @@ router.post("/edit/:id", (req,res, next) =>{
   })
 })
 
+router.get("/delete/:id", (req, res) =>{
+  const id = req.params.id;
+  Place.findById(id).exec((err, place) => {
+    place.remove({},(err) =>{
+      res.redirect("/show");
+    })
+    
+  });
+})
+
 module.exports = router;
