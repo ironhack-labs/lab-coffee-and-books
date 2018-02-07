@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h2>This is your place</h2>
+
+  <h2>Add a new name</h2>
+  <form action="/" method="POST" id="form-container">
+    Name
+    <input id="name" type="text" name="name" placeholder="Place Name Here">
+    <br>
+    <br> Description
+    <input id="description" type="description" name="description" placeholder="Description Here">
+    <br>
+    <br> Kind Of Establishment
+    <input id="kindOfEstablishment" type="kindOfEstablishment" name="kindOfEstablishment" placeholder="what type of establishment">
+    <br>
+    <br> Lat
+    <input id="location.coordinates" type="location.coordinates" name="coordinates1" placeholder="Specify your coordinates here">
+    <br>
+    <br> Lng
+    <input id="location.coordinates2" type="location.coordinates2" name="coordinates2" placeholder="Specify your coordinates here">
+    <% if (typeof message !== "undefined") { %>
+      <div class="error-message">
+        <%= message %>
+      </div>
+      <% } %>
+        <br>
+        <br>
+        <button>Create Place</button>
+  </form>
+
+</body>
+
+</html>
