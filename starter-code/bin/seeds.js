@@ -5,11 +5,16 @@ mongoose.connect("mongodb://localhost/coffee-books");
 
 const coffee1 = new Place({
     name: "Starbucks",
-    location: {
-        type: {
-            type: String
-        },
-        coordinates: [40.420265, -3.705622]}
-});
+    type: "Coffee",
 
-mongoose.connection.close();
+    location: {  type: "Point" , coordinates: [40.420265, -3.705622] }
+});
+coffee1.save((error) => {
+    if (error) { console.log(error) }
+    else {
+        console.log('seeds done')
+    }
+})
+
+
+module.exports = Place;
