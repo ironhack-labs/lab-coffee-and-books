@@ -5,6 +5,7 @@ const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const expressLayouts = require('express-ejs-layouts');
 
 const index = require('./routes/index');
 const books = require('./routes/books');
@@ -13,8 +14,10 @@ const coffees = require('./routes/coffees');
 const app = express();
 
 // view engine setup
+app.use(expressLayouts);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('layout', 'layouts/main-layout');
 
 // MIDDLEWARES
 // uncomment after placing your favicon in /public
