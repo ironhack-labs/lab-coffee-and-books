@@ -1,0 +1,25 @@
+<h1>Create Cafe o Libreria</h1>
+
+<form action="/create" method="POST">
+
+  <label for="name">Name</label><br>
+  <input id="name" type="text" name="name"><br>
+
+  <label for="description">Description</label><br>
+  <input id="description" type="text" name="description"><br>
+
+  <label for="role">Type</label><br>
+  <select id="type" name="type">
+    <option value="Cafe">Coffee</option>
+    <option value="Libreria">Book</option>
+  </select><br>
+  
+  
+  <% if (typeof(errorMessage) != "undefined") { %>
+    <div class="error-message"><%= errorMessage %></div>
+  <% } %>
+
+  <button type="submit">
+    Create Place
+  </button>
+</form>

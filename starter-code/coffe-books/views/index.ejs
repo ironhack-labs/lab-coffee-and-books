@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+      #map {
+       height: 500px;
+       width: 100%;
+      }
+   </style>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <a href="/create">Add Place</a>
+    <a href="/show">View list of places</a>
+
+    <div id="map"></div>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALkTkNiai3r0_w2_HfoGjB0rkTbGOgR6E&callback=startMap">
+    </script>
+    <script type="text/javascript" src="/js/map.js"></script>
+    
+
+  </body>
+</html>
+
+
+

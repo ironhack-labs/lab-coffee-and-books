@@ -1,0 +1,23 @@
+<h1>Coffe and Books Places</h1>
+
+<div id="list">
+<% if (list.length > 0) { %>
+    <% list.forEach(function(user) { %>
+        <div>
+            <h4>
+                <%= user.name %>
+            </h4>
+            <p>
+              <%= user.description %>
+            </p>
+            <a href="/edit/<%= user._id %>">Edit</a><br>
+            <a href="/delete/<%= user._id %>">Delete</a>
+        </div>
+        <hr>
+  <% }) %>
+<% } else { %>
+    <div>
+        <p>The list is empty</p>
+    </div>
+<% } %>
+</div>

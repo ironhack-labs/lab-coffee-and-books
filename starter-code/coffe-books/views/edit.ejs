@@ -1,0 +1,16 @@
+<h1>Edit Place</h1>
+
+<form action="/edit/<%= place._id %>" method="POST">
+  <label for="name">Name</label><br>
+  <input id="name" type="text" name="name" value="<%= place.name%>"><br>
+
+  <label for="type">Type</label><br>
+  <select id="type" name="type">
+    <option value="Coffee">Coffee</option>
+    <option value="Book">Book</option>
+  </select><br>
+  
+  
+
+  <button type="submit"> Edit Place</button>
+</form>
