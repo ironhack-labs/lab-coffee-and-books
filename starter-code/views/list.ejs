@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Coffee-Books</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+
+  <ul>
+    <% places.forEach((place) => { %>
+      <ul>
+        <li>
+          <%= place.name %>
+        </li>
+        <li>
+          <%= place.kind %>
+        </li>
+        <li>
+          <%= place.location %>
+        </li>
+      </ul>
+      <%  }) %>
+  </ul>
+
+  <a href="/new">Crea un nuevo place</a>
+
+</body>
+
+</html>

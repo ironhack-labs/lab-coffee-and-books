@@ -1,0 +1,27 @@
+<!-- main.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Map</title>
+    <style>
+       #map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My First Map</h3>
+    <div id="map"></div>
+    <script type="text/javascript">
+      var myPlaces = <%- JSON.stringify(places) %>;
+    </script>
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1QxaQNztUvnjuFecijwR0ZUJ8-TWQq6s&callback=startMap">
+    </script>
+    <script type="text/javascript" src="/js/map.js"></script>
+  </body>
+</html>
