@@ -1,28 +1,26 @@
 var map;
 
       function initMap() {
-          sitios.forEach(p =>{
-              console.log(p.lat, p.lng)
-            createWindow(p.lat,p.lng,p.name);
-          });
-      }
-
-
-      function createWindow(lat,lng,name, i){
-        position = {lat, lng};
+        position = {lat:40.407304, lng:-3.694664};
         map = new google.maps.Map(document.getElementById('map'), {
           center: position,
           zoom: 15
         });
+          sitios.forEach(p =>{
+            createWindow(p.lat,p.lng,p.name);
+          });
+      }
+
+      function createWindow(lat,lng,name){
         var infowindow = new google.maps.InfoWindow({
             content: name
         });
+        console.log(position)
         var marker= new google.maps.Marker({
-            position: position,
+            position: {lat,lng},
             map: map,
             title: name
         });
-        console.log("In Marker function");
           marker.addListener('click', function () {
             infowindow.open(map, marker);
         });
