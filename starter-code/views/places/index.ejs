@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body> 
+    <div class="container">
+      <div id="map"></div>
+    </div>
+    <h1>List of Places</h1>
+    <% for (var i = 0; i< placesArray.length; i++){%>
+      <a href=<%="/"+placesArray[i]._id%>><p><%=placesArray[i].establishment%>: <%=placesArray[i].name%></p></a>
+      <a href=<%="/"+placesArray[i]._id+"/edit"%>><button>Edit Information</button></a>
+      <a href=<%="/"+placesArray[i]._id+"/delete"%>><button>Delete Place</button></a>
+    <%}%>
+      <br><br>
+    <a href="/new"><button>Add a new Place</button></a>
+
+   
+  </body>
+  <script type="text/javascript">
+    var myPlaces = <%- JSON.stringify(placesArray) %>;
+    </script>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkS2ZKYa3xtCIJpDDZxsGbbzjG2Yobrww">
+    </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Best Places on Earth</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+		<h3>Edit</h3>
+		<form method="POST" action=<%="/"+place._id %>>
+			<label>Name:</label>
+			<input type="" name="name" value="<%=place.name%>">
+            <label>Type of Establishment:</label>
+            <select name="establishment">
+                <option value="Bookstore">Bookstore</option>
+                <option value="Coffee Place">Coffee Place</option>
+            </select>
+			<label>Address</label>
+			<input type="number" step="0.000001" name="latitude" value=<%=place.location.coordinates[1]%> id ="latitude">
+			<input type="number" step="0.000001" name="longitude" value=<%=place.location.coordinates[0]%>  id="longitude">
+			<input type="submit" id="submit" name="">
+		</form>
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY11j37cOpWbPG831B9YxMAXHA-GJvcMM"></script>
+  </body>
+
+</html>
