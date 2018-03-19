@@ -23,11 +23,10 @@ In this exercise, let's create an app to save both bookstores and coffee places 
 
 ## An up a running project
 
-Remember you need to create a new project using express-generator. Before starting, follow the next configuration guide:
+Remember you need to create a new project using ironhack_generator. Before starting, follow the next configuration guide:
 
 1) Install your project and dependencies
-2) Edit your `app.js` file to connect to Mongoose. Set the name of your DDBB here.
-3) Create the models folder to put your models and delete routes and folders related with users (you won't be implementing users just yet).
+2) Create the models folder to put your models.
 
 ## Initial code: Coffee & Books CRUD
 
@@ -44,7 +43,7 @@ Begin by creating a simple CRUD. In this opportunity, you should have two differ
 - Get Location & Save Places
 - Show Places in Map -figure out if you can set a difference among them
 - Get Google Maps API Key
-- Add Google Maps to index.ejs
+- Add Google Maps to index.hbs
 - The map
 - Add Markers to show places’ locations
 - The Show view
