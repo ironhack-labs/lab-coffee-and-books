@@ -3,17 +3,17 @@ const Schema = mongoose.Schema;
 
 const coffeeplaceSchema = new Schema({
   name: String,
-  description: String,
-  location: {
-    lat: Number,
-    long: Number,
-  }
+  location: { 
+    type: { type: String, default: 'Point'}, 
+    coordinates: [Number] }
 }, {
   timestamps: {
     createdAt: "created_at",
     updatedAt: "updated_at"
   }
 });
+
+coffeeplaceSchema.index({ location: '2dsphere' });
 
 const Coffeeplace = mongoose.model("Coffeeplace", coffeeplaceSchema);
 

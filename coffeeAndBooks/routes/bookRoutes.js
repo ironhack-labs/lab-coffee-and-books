@@ -26,8 +26,9 @@ bookRouter.post('/new', (req, res, next) => {
   const myPlace  = { 
     name:req.body.name,
     location:{
-      lat:req.body.lat,
-      long:req.body.long }
+      type: 'Point',
+      coordinates: [req.body.lat,req.body.long]
+      }
     };
     
   const newBook = new Bookplace(myPlace);
@@ -59,8 +60,9 @@ bookRouter.post("/edit/:id", (req, res) => {
   const myPlace  = { 
     name:req.body.name,
     location:{
-      lat:req.body.lat,
-      long:req.body.long }
+      type: 'Point',
+      coordinates: [req.body.lat,req.body.long]
+      }
     };
 
   Bookplace.findByIdAndUpdate(id,myPlace)

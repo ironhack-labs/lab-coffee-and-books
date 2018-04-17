@@ -5,9 +5,9 @@
   <label for="name">Name:</label>
   <input class="form-control"  type="text" name="name" value="{{coffeePlace.name}}">
   <label for="lat">Lat:</label>
-  <input class="form-control"  type="" name="lat" value="{{coffeePlace.location.lat}}">
+  <input class="form-control"  type="" name="lat" value="{{{coffeePlace.location.coordinates.[0]}}}">
   <label for="long">Long:</label>
-  <input class="form-control"  type="" name="long" value="{{coffeePlace.location.long}}">
+  <input class="form-control"  type="" name="long" value="{{coffeePlace.location.coordinates.[1]}}">
   <button class="btn btn-primary" type="submit">Update new place</button>
 </form>
 

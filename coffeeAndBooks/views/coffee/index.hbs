@@ -1,9 +1,22 @@
-Welcome to coffee places
+ Welcome to coffee places
 
 <a href="/coffee/new">Add new</a>
 
 {{#each coffeePlaces}}
-  <tr>
-     <td><li>{{this.name}} <a href="/coffee/edit/{{this._id}}">Edit</a></li></td>
-   </tr>
+<tr>
+  <td>
+    <li>{{this.name}}
+      <a href="/coffee/edit/{{this._id}}">Edit</a>
+    </li>
+  </td>
+</tr>
 {{/each}}
+
+
+
+
+<div id="map"></div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="javascripts/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrthYzck4Ipt5Kc5Fass7-1n8ujv9R7k8">
+</script>

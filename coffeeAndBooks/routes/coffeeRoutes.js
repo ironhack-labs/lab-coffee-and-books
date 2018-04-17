@@ -28,8 +28,9 @@ coffeeRouter.post('/new', (req, res, next) => {
   const myPlace  = { 
     name:req.body.name,
     location:{
-      lat:req.body.lat,
-      long:req.body.long }
+      type: 'Point',
+      coordinates: [req.body.lat,req.body.long]
+      }
     };
   const newCoffee = new Coffeeplace(myPlace);
   newCoffee.save()
@@ -62,8 +63,9 @@ coffeeRouter.post("/edit/:id", (req, res) => {
   const myPlace  = { 
     name:req.body.name,
     location:{
-      lat:req.body.lat,
-      long:req.body.long }
+      type: 'Point',
+      coordinates: [req.body.lat,req.body.long]
+      }
     };
 
     Coffeeplace.findByIdAndUpdate(id,myPlace)
