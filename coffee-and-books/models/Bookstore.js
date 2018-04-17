@@ -5,7 +5,6 @@ const bookstoreSchema = new mongoose.Schema({
   description: String,
   location: { type: { type: String }, coordinates: [Number] }
 });
-
 bookstoreSchema.index({ location: "2dsphere" });
 
 module.exports = mongoose.model("Bookstore", bookstoreSchema);
