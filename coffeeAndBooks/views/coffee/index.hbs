@@ -1,3 +1,9 @@
 Welcome to coffee places
 
 <a href="/coffee/new">Add new</a>
+
+{{#each coffeePlaces}}
+  <tr>
+     <td><li>{{this.name}} <a href="/coffee/edit/{{this._id}}">Edit</a></li></td>
+   </tr>
+{{/each}}

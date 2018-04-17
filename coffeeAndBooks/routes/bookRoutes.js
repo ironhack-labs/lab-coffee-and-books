@@ -4,9 +4,14 @@ const Bookplace = require("../models/Bookplace");
 
 
 bookRouter.get("/", (req, res) => {
-  res.render('book/index');
-
-})
+  Bookplace.find()
+  .then(bookPlaces => {
+    res.render('book/index', {bookPlaces});
+  })
+  .catch(error => {
+    console.log(error)
+  })
+});
 
 // Books - View New form
 
@@ -18,8 +23,14 @@ bookRouter.get("/new", (req, res) => {
 
 bookRouter.post('/new', (req, res, next) => {
  
-  const { name, lat, long } = req.body;
-  const newBook = new Bookplace({ name, lat, long });
+  const myPlace  = { 
+    name:req.body.name,
+    location:{
+      lat:req.body.lat,
+      long:req.body.long }
+    };
+    
+  const newBook = new Bookplace(myPlace);
   newBook.save()
   .then((bookPlace) => {  
     res.redirect('/book');
@@ -30,5 +41,33 @@ bookRouter.post('/new', (req, res, next) => {
   })
 });
 
+
+bookRouter.get("/edit/:id", (req, res) => {
+  let id = req.params.id;
+  Bookplace.findById(id)
+  .then(bookPlace=> {
+    res.render('book/form_edit', {bookPlace});
+  })
+  .catch(error => {
+    console.log(error)
+  })
+});
+
+
+bookRouter.post("/edit/:id", (req, res) => {
+  let id = req.params.id;
+  const myPlace  = { 
+    name:req.body.name,
+    location:{
+      lat:req.body.lat,
+      long:req.body.long }
+    };
+
+  Bookplace.findByIdAndUpdate(id,myPlace)
+  .then(()=> {
+    res.redirect("/book");
+  });
+  
+})
 
 module.exports = bookRouter;

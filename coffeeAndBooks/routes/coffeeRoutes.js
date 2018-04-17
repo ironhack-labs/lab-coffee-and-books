@@ -6,8 +6,14 @@ const Coffeeplace = require("../models/Coffeeplace");
 // Coffee - View index
 
 coffeeRouter.get("/", (req, res) => {
-  res.render('coffee/index');
-})
+  Coffeeplace.find()
+  .then(coffeePlaces => {
+    res.render('coffee/index', {coffeePlaces});
+  })
+  .catch(error => {
+    console.log(error)
+  })
+});
 
 // Coffee - View New form
 
@@ -19,8 +25,13 @@ coffeeRouter.get("/new", (req, res) => {
 
 coffeeRouter.post('/new', (req, res, next) => {
  
-  const { name, lat, long } = req.body;
-  const newCoffee = new Coffeeplace({ name, lat, long });
+  const myPlace  = { 
+    name:req.body.name,
+    location:{
+      lat:req.body.lat,
+      long:req.body.long }
+    };
+  const newCoffee = new Coffeeplace(myPlace);
   newCoffee.save()
   .then((coffeePlace) => {  
     res.redirect('/coffee');
@@ -30,5 +41,36 @@ coffeeRouter.post('/new', (req, res, next) => {
     res.redirect("/coffee/new");
   })
 });
+
+// Coffee - Edit
+
+
+coffeeRouter.get("/edit/:id", (req, res) => {
+  let id = req.params.id;
+  Coffeeplace.findById(id)
+  .then(coffeePlace=> {
+    res.render('coffee/form_edit', {coffeePlace});
+  })
+  .catch(error => {
+    console.log(error)
+  })
+});
+
+
+coffeeRouter.post("/edit/:id", (req, res) => {
+  let id = req.params.id;
+  const myPlace  = { 
+    name:req.body.name,
+    location:{
+      lat:req.body.lat,
+      long:req.body.long }
+    };
+
+    Coffeeplace.findByIdAndUpdate(id,myPlace)
+  .then(()=> {
+    res.redirect("/coffee");
+  });
+  
+})
 
 module.exports = coffeeRouter;

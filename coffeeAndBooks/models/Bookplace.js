@@ -5,8 +5,8 @@ const bookplaceSchema = new Schema({
   name: String,
   description: String,
   location: {
-    Lat: Number,
-    Long: Number,
+    lat: Number,
+    long: Number,
   }
 }, {
   timestamps: {
