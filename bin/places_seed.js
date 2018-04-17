@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Place = require("../models/Place");
 
-const dbURL = "mongodb://localhost/dbBooksCoffee"
+const dbURL = "mongodb://localhost/lab-coffee-and-books"
 
 
 mongoose.connect(dbURL);

@@ -1,9 +1,15 @@
+// index.js
 const express = require('express');
 const router  = express.Router();
+const Place = require("../models/Place");
 
-/* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
+
+router.get("/",(req, res, next) => {
+
+  Place.find()
+  .then(place_data => {
+      res.render('index', {place_data});
+    })
 });
 
 
