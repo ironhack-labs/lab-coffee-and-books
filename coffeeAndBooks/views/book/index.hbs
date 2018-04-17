@@ -1,0 +1,11 @@
+Welcome to book places
+
+<a href="/book/new">Add new</a>
+
+<table>
+{{#each bookPlaces}}
+   <tr>
+     <td><li>{{this.name}} <a href="/book/edit/{{this._id}}">Edit</a></li></td>
+   </tr>
+{{/each}}
+</table>

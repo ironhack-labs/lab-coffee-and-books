@@ -1,0 +1,14 @@
+<h2>Editing "{{bookPlace.name}}" book place:</h2>
+<div class="input-group">
+
+<form action="/coffee/edit/{{bookPlace._id}}" method="post">
+  <label for="name">Name:</label>
+  <input class="form-control"  type="text" name="name" value="{{bookPlace.name}}">
+  <label for="lat">Lat:</label>
+  <input class="form-control"  type="" name="lat" value="{{{bookPlace.location.coordinates.[0]}}}">
+  <label for="long">Long:</label>
+  <input class="form-control"  type="" name="long" value="{{bookPlace.location.coordinates.[1]}}">
+  <button class="btn btn-primary" type="submit">Update new place</button>
+</form>
+
+</div>
