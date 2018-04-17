@@ -1,0 +1,16 @@
+
+<h3>My First Map</h3>
+    <div id="map"></div>
+
+    <ul>
+      {{#each place_data}}
+      <li>{{name}}</li>
+      {{/each}}
+    </ul>
+  </div>
+
+<script>
+
+  const dataBack = JSON.stringify({{{place_data}}});
+</script>
+
