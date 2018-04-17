@@ -50,4 +50,8 @@ app.locals.title = "My Awesome App";
 const index = require("./routes/index");
 app.use("/", index);
 
+const bookstores = require("./routes/bookstores");
+app.use("/bookstores", bookstores);
+
+
 module.exports = app;

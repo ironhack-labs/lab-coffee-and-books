@@ -8,4 +8,4 @@ const bookstoreSchema = new mongoose.Schema({
 
 bookstoreSchema.index({ location: "2dsphere" });
 
-module.exports = mongoose.model("Restaurant", bookstoreSchema);
+module.exports = mongoose.model("Bookstore", bookstoreSchema);
