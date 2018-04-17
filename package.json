@@ -19,5 +19,17 @@
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
-  }
+  },
+  "description": "## Learning Outcomes",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablorgarcia/lab-coffee-and-books.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pablorgarcia/lab-coffee-and-books/issues"
+  },
+  "homepage": "https://github.com/pablorgarcia/lab-coffee-and-books#readme"
 }
