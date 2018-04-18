@@ -58,4 +58,17 @@ router.get("/delete/:id", (req, res, next) => {
     })
 })
 
+// GET show
+router.get("/:id", (req, res, next) => {
+  const id = req.params.id;
+
+  Place.findOne( {_id: id} )
+    .then( place => {
+      res.render("place/show", {place})
+    })
+    .catch( err => {
+      console.log(err);
+    })
+})
+
 module.exports = router;

@@ -2,12 +2,14 @@
 
 <div id="map"></div>
 
+<script>window.places = {{{places}}}</script>
+
 {{#if places}}
 <ul class="places">
   <h2>Places:</h2>
   {{#each places}}
     <li class="places-item">
-      {{name}} - <a href="/place/edit/{{id}}">Edit</a> - <a href="/place/delete/{{id}}">Delete</a>
+      <a href="/place/{{id}}">{{name}}</a> - <a href="/place/edit/{{id}}">Edit</a> - <a href="/place/delete/{{id}}">Delete</a>
     </li>
   {{/each}}
 </ul>
