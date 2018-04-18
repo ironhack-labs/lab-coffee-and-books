@@ -1,0 +1,20 @@
+<h1>Coffees and Bookstores</h1>
+
+<div id="map"></div>
+
+<script>window.places = {{{places}}}</script>
+
+{{#if placesList}}
+<ul class="places">
+  <h2>Places:</h2>
+  {{#each placesList}}
+    <li class="places-item">
+      <a href="/place/{{id}}">{{name}}</a> - <a href="/place/edit/{{id}}">Edit</a> - <a href="/place/delete/{{id}}">Delete</a>
+    </li>
+  {{/each}}
+</ul>
+{{/if}}
+
+<div>
+  <a href="/place/new">Add new place</a>
+</div>
