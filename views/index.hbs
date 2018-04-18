@@ -1,0 +1,41 @@
+<!-- main.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pedro's awesome g00gle maps</title>
+    <style>
+       #map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Pedro's awesome g00gle maps</h3>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9sMOZtj7Sp4V7w9nZGmheBRXhDhSjveU">
+    </script>
+    <br>
+    <br>
+    <form action="/new" method="POST" id="form-container">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" placeholder="">
+      <br><br>
+      <label for="kind">Kind</label>
+      <input id="kind" type="text" name="kind" placeholder="">
+      <br><br>
+      <label for="Latitude">Latitude</label>
+      <input id="Latitude" type="text" name="Latitude" placeholder="">
+      <br><br>
+      <label for="Longitude">Longitude</label>
+      <input id="Longitude" type="text" name="Longitude" placeholder="">
+      <br>
+      <br>
+      <button>Create place</button>
+
+    </form>
+
+  </body>
+</html>
+
