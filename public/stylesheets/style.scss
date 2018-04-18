@@ -1,0 +1,61 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: whitesmoke;
+}
+
+a {
+  color: #00B7FF;
+}
+h3{
+  text-align: center;
+}
+#map{
+  width: 50vw;
+  height: 60vh;
+}
+#locationsList{
+  width: 50vw;
+  padding: 0 20px;
+
+  li{
+    display:flex;
+    justify-content: space-between;
+    font-weight: 100;
+    font-size: 0.9em;
+    list-style: none;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgrey;
+    p{
+      margin: 0;
+    }
+  }
+  h3{
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
+}
+.container{
+  display:flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+form{
+  margin: 5vh auto;
+  width: 90vw;  
+  input{
+    margin: auto 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .radios{
+    margin: auto 10px;
+    display: inline-block;
+  }
+  button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+  }
+}
+

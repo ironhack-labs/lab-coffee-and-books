@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Books and Coffee</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiKJsTxVVQxHaLM1ulF-SEE9HyQA7GKjk">
+  </script>
+  <script src="/js/map.js"></script>
+</head>
+
+<body>
+  <h3>Coffee map</h3>
+  <div class="container">
+    <div id="map"></div>
+    <div id="locationsList">
+      <h3>Locations</h>
+        <ul>
+          {{#each places}}
+          <li><p>{{{this.name}}} - {{{this.type}}} - {{{this.description}}} - Coords: [{{{this.location.coordinates}}}]</p><a href="/delete/{{{this.id}}}">DELETE</a></li>
+          {{/each}}
+        </ul>
+  </script>
+
+    </div>
+  </div>
+  <form method="POST" action="/">
+    <h3>Add new</h3>
+    <input type="text" name="name" placeholder="name">
+    <div class="radios">
+      <input type="radio" id="coffee" name="type" value="coffeestore">
+      <label for="coffee">Coffeestore</label>
+
+      <input type="radio" id="book" name="type" value="bookstore" checked>
+      <label for="book">Bookstore</label>
+    </div>
+    <input type="text" name="description" placeholder="description">
+
+    <label>Geo dirs: </label>
+    <input type="text" name="latitude" placeholder="Latitude">
+    <input type="text" name="longitude" placeholder="Longitude">
+
+    <button type="submit">Add</button>
+  </form>
+</body>
+
+</html>
