@@ -8,10 +8,6 @@ router.get('/', (req, res, next) => {
     .then( places => {
       res.render('index', {places});
     })
-    .catch( err => {
-      next(err);
-      console.log(err);
-    })
 });
 
 module.exports = router;

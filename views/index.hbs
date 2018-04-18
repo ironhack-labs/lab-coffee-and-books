@@ -2,18 +2,17 @@
 
 <div id="map"></div>
 
-<script type="text/javascript"> 
-  window.places = JSON.parse( {{{places}}});
-</script>
-
-{{!-- 
 {{#if places}}
-<div class="places">
+<ul class="places">
+  <h2>Places:</h2>
   {{#each places}}
-    <div class="places-item">
-      <h2>{{item.name}}</h2>
-      <h3>{{item.description}}</h3>
-    </div>
+    <li class="places-item">
+      {{name}} - <a href="/place/edit/{{id}}">Edit</a> - <a href="/place/delete/{{id}}">Delete</a>
+    </li>
   {{/each}}
+</ul>
+{{/if}}
+
+<div>
+  <a href="/place/new">Add new place</a>
 </div>
-{{/if}} --}}
