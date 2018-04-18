@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Try to get a geolocation object from the web browser
       getPlaces() 
-      
+       
     }
     
   

@@ -25,7 +25,7 @@ router.post('/',(req, res, next) => {
     coordinates: [req.body.longitude, req.body.latitude]
   };
 
-  // Create a new Restaurant with location
+  // Create a new place with its location
     const place = new Place( {
       name:        req.body.name,
       type:        req.body.type,
@@ -33,7 +33,7 @@ router.post('/',(req, res, next) => {
       location:    location
     });
 
-  // Save the restaurant to the Database
+  // Save the place to the Database
   place.save((error) => {
     if (error) { console.log(error) }
     else {
@@ -42,7 +42,7 @@ router.post('/',(req, res, next) => {
   })
 });
 
-router.post('/delete/:id',(req, res, next) => {
+router.get('/delete/:id',(req, res, next) => {
   Place.findByIdAndRemove(req.params.id)
     .then(() => {
       res.redirect("/");
