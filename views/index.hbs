@@ -4,10 +4,10 @@
 
 <script>window.places = {{{places}}}</script>
 
-{{#if places}}
+{{#if placesList}}
 <ul class="places">
   <h2>Places:</h2>
-  {{#each places}}
+  {{#each placesList}}
     <li class="places-item">
       <a href="/place/{{id}}">{{name}}</a> - <a href="/place/edit/{{id}}">Edit</a> - <a href="/place/delete/{{id}}">Delete</a>
     </li>
