@@ -1,2 +1,19 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Coffees and Bookstores</h1>
+
+<div id="map"></div>
+
+{{#if places}}
+<ul class="places">
+    <h2>Places:</h2>
+    {{#each places}}
+    <li class="places-item">
+        {{name}} -
+        <a href="/place/edit/{{id}}">Edit</a> -
+        <a href="/place/delete/{{id}}">Delete</a>
+    </li>
+    {{/each}}
+</ul>
+{{/if}}
+
+
+    <a href="/place/new">Add new place</a>

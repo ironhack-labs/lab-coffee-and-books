@@ -33,13 +33,32 @@ router.post("/new", (req, res, next) => {
         });
 })
 
-/* GET home page */
-router.get('/', (req, res, next) => {
-    Place.find()
-        .then(places => {
-            res.render('index', JSON.stringify(places));
+// GET edit
+router.get("/edit/:id", (req, res, next) => {
+    const id = req.params.id;
+
+    Place.findOne({ _id: id })
+        .then(place => {
+            res.render("place/edit", { place })
         })
-});
+        .catch(err => {
+            console.log(err);
+        })
+})
+
+/* GET delete */
+router.get("/delete/:id", (req, res, next) => {
+    const id = req.params.id;
+
+    Place.findByIdAndRemove(id)
+        .then(() => {
+            res.redirect("/");
+        })
+        .catch(err => {
+            console.log(err);
+        })
+})
+
 
 module.exports = router;
 

@@ -8,10 +8,7 @@ const placeSchema = new Schema(
         type: String,
         location: { type: { type: String }, coordinates: [Number] },
         
-        timestamps: {
-            createdAt: 'created_at',
-            updatedAt: 'updated_at'
-        }
+      
     }
 );
 
