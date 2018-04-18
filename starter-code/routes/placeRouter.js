@@ -31,7 +31,7 @@ routerPlace.get("/", (req, res) => {
     Place.find()
       .then(places => {
         console.log(places);
-        res.render("index", { places });
+        res.render("index", { places: JSON.stringify(places) });
       })
       .catch(error => {
         console.log(error);
