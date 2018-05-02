@@ -1,2 +1,62 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+<h1>Coffe & Books with ❤</h1>
+
+<form action="/" method="post">
+    <input type="text" name="name" placeholder="Name" required>
+    <select name="store" required>
+    <option value="BookStore">Book Store</option>
+    <option value="CoffeeShop">Coffee Shop</option>
+    </select>
+    <span>Location</span>
+    <input type="text" name="lat" placeholder="Latitude" required>
+    <input type="text" name="lgn" placeholder="Longitude" required>
+    <input type="submit" value="Add Place">
+</form>
+<div id="map" style="width:1000px;height:400px"></div>
+
+    <p>
+        <table>
+            <tr>
+                <th>Place</th>
+                <th>Store</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Go</th>
+            </tr>
+        {{#each places}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{store}}</td>
+                <td>{{lat}}</td>
+                <td>{{lgn}}</td>
+            </tr>
+        {{/each}}
+        </table>
+        
+    </p>
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjFqG1Gek6IrNw7OHU2McF9Jc1Bmwax58&libraries=places"></script>
+<script>
+    function startMap() {
+    const ini = {
+        lat: 19.4019328,
+        lng: -99.1732938};
+    const map = new google.maps.Map(
+      document.getElementById('map'),
+      {
+        zoom: 15,
+        center: ini
+      }
+    );
+  }
+  var marker = new google.maps.Marker({
+    position: {
+        lat: 19.4019328,
+        lng: -99.1732938},
+    title:"Hello World!"
+});
+  startMap();
+  marker.setMap(map);
+</script>
