@@ -1,2 +1,55 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<style>
+     #map {
+      height: 500px;
+      width: 80%;
+     }
+  </style>
+
+<h1>Coffe & Books CRUD</h1>
+
+<form action="/" method="post">
+<input type="text" name="name" placeholder="Name">
+<select name="store">
+  <option value="BookStore">Book Store</option>
+  <option value="CoffeShop">Coffe Shop</option>
+</select>
+<span>Location</span>
+<input type="text" name="lat">
+<input type="text" name="lgn">
+<input type="submit" value="Save">
+</form>
+
+
+
+
+</form>
+
+<div id="map"></div>
+<h2> Places</h2>
+{{#each places}}
+{{name}}<span> </span>{{lat}}<span> </span> {{lgn}}<br><br>
+{{/each}}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmsqiHyfwW5OBOax6qlJ2419HLTz29Cec"></script>
+<script>
+
+function startMap() {
+  const ubic = {
+    lat: 19.4000658,
+  	lng: -99.1687963};
+  const map = new google.maps.Map(
+    document.getElementById('map'),
+    {
+      zoom: 15,
+      center: ubic
+    }
+  ); const myMarker = new google.maps.Marker({
+  position: ubic,
+  map: map,
+  title: "I'm here",
+  icon: "https://i2.wp.com/pocketrotom.pt/pokedex/wp-content/uploads/pikachu-kalos.png?fit=128%2C128&ssl=1",
+  draggable :true,
+  animation: google.maps.Animation.BOUNCE
+});
+}
+startMap();
+</script>
