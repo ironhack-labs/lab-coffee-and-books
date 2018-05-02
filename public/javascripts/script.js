@@ -1,5 +1,6 @@
 
 function initMap(loc) {
+  console.log(loc)
   const wework = loc
     const map = new google.maps.Map(document.getElementById('map'),
     {
@@ -63,11 +64,16 @@ initMap({
 const cards = document.getElementsByClassName('resCard')
 for (let i = 0; i < cards.length; i++) {
   cards[i].addEventListener('click',()=>{
-    initMap(locs[i])
+    var lng = document.getElementsByClassName("lng")[i].innerHTML
+
+    var lat = document.getElementsByClassName("lat")[i].innerHTML
+    console.log(lng, lat)
+    var loc = { lat: Number(lat), lng: Number(lng)}
+
+    initMap(loc)
   })
   
 }
-
 
 
 
