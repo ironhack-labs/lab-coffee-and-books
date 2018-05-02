@@ -1,0 +1,12 @@
+<h1>Books & Coffee</h1>
+
+<a href="/new">Create a new place</a>
+
+<ul>
+    {{#each places as |place|}}
+    <li>{{name}}
+        <ul><li>{{kind}}</li></ul>
+    </li>
+
+    {{/each}}
+</ul>
