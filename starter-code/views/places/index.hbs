@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Best Places on Earth</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+    </div>
+      <div class="info">
+        <h3>List all places</h3>
+        <a href="/new">Create new place</a>
+        <ul>
+          {{#each places}}
+            <li>
+              <a href="/{{ this._id}}">
+                {{ this.name}} 
+              </a>
+               |
+              <a href="/{{ this._id}}/edit">Edit</a>
+               |
+              <a href="/{{ this._id}}/delete">Delete</a>
+              <p>Type of store:  {{ this.product }}</p>
+              <p>Description: {{ this.description }}</p>
+            </li>
+          {{/each }}
+        </ul>
+      </div>
+      <div id="map"></div>
+  </body>
+
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbBJPvYIaR5ozIx_0-uWiGeO9cK4IxHww">
+  </script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+</html>
