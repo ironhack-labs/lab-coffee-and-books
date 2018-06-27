@@ -34,7 +34,7 @@ window.onload = () => {
     markers.forEach(function(marker) {
       marker.setMap(null);
       marker = null;
-    })
+    });
     markers = [];
   }
 

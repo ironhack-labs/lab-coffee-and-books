@@ -36,7 +36,7 @@ router.get('/api', (req, res, next) => {
 
 router.get('/api/:id', (req, res, next) => {
 	let placeId = req.params.id;
-	places.findOne({_id: placeId}, (error, place) => {
+	Place.findOne({_id: placeId}, (error, place) => {
 		if (error) { next(error); } 
 		else { res.status(200).json({ place }); }
 	});
@@ -60,9 +60,9 @@ router.post('/:place_id', (req, res, next) => {
 		Place.findById(req.params.place_id, (error, place) => {
 			if (error) { next(error); } 
 			else {
-				palce.name        = req.body.name;
-				palce.description = req.body.description;
-				palce.save((error) => {
+				place.name        = req.body.name;
+				place.description = req.body.description;
+				place.save((error) => {
 					if (error) { next(error); } 
 					else { res.redirect('/'); }
 		  	});
@@ -72,17 +72,17 @@ router.post('/:place_id', (req, res, next) => {
 
 
 	router.get('/:place_id/edit', (req, res, next) => {
-		Place.findById(req.params.palce_id, (error, palce) => {
+		Place.findById(req.params.place_id, (error, place) => {
 			if (error) {
 				next(error);
 			} else {
-				res.render('places/update', { palce });
+				res.render('places/update', { place });
 			}
-		})
+		});
 });
 
-router.get('/:palce_id/delete', (req, res, next) => {
-		Place.remove({ _id: req.params.palce_id }, function(error, palce) {
+router.get('/:place_id/delete', (req, res, next) => {
+		Place.remove({ _id: req.params.place_id }, function(error, place) {
 	    if (error) {
 	    	next(error);
 	    } else {
@@ -90,7 +90,5 @@ router.get('/:palce_id/delete', (req, res, next) => {
 	    }
     });
 });
-
-
 
 module.exports = router;
