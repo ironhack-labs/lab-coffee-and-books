@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "nodemon ./bin/www",
     "dev": "DEBUG=coffee-and-books:* nodemon ./bin/www"
   },
   "dependencies": {
