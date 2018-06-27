@@ -16,7 +16,7 @@ router.get((req, res, next) => {
 router.get('/', (req, res, next) => {
     Place.find()
         .then(place => {
-            res.render('locations/show', {place});
+            res.render('locations/locations', {place});
         })
         .catch(err => {
             console.log('No place to be but here: ', err);
@@ -45,6 +45,17 @@ router.post('/add', (req, res, next) => {
         })
         .catch(err => {
             console.log('Nahhhhh only real places allowed', err);
+            next();
+        });
+});
+
+router.get('/:id', (req, res, next) => {
+    Place.findOne({_id: req.params.id})
+        .then(place => {
+            res.render('locations/show', {place})
+        })
+        .catch(err => {
+            console.log('If you want to see this location you\'re gonna have to go to it yourself: ', err);
             next();
         });
 });
