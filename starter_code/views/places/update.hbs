@@ -1,3 +1,11 @@
+{{!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>update</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body> --}}
+
 <h3>Edit place</h3>
     <form method="POST" action="/{{ place._id}}">
     	<label>Name:</label>
@@ -9,3 +17,11 @@
 			<input type="text" name="longitude" id="longitude" placeholder="Longitude" value="{{ place.location.coordinates.[0]}}">
     	<button type="submit" name="" id="submit">Edit</button>
     </form>
+
+		{{!-- <div id="map"></div>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbBJPvYIaR5ozIx_0-uWiGeO9cK4IxHww"></script>
+    <script type="text/javascript" src='/javascripts/script.js'></script>
+    <script type="text/javascript" src="/javascripts/update.js"></script>
+  </body>
+</html> --}}

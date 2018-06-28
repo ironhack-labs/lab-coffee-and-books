@@ -9,7 +9,7 @@ window.onload = () => {
 
   document.getElementById('submit').addEventListener('click', function() {
     geocodeAddress(geocoder, map);
-  });
+	});
   
   function geocodeAddress(geocoder, resultsMap) {
 	  var address = document.getElementById('address').value;
