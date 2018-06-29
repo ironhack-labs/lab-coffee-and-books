@@ -16,12 +16,21 @@ window.onload = () => {
     lng: undefined
   };  
   
-  
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       center = { lat: position.coords.latitude, lng: position.coords.longitude };
       map.setCenter(center);
       getPlace();
+
+      const currentPositionMarker = new google.maps.Marker({
+        position: {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        },
+        map: map,
+        title: "You are here"
+      });
+
     }, () => {
       getPlace();
       console.log('Error in the geolocation service.');

@@ -3,7 +3,34 @@ window.onload = () => {
 	var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
     center: {lat: 25.766033, lng: -80.196191}
-  });
+	});
+	
+	let center = {
+    lat: undefined,
+    lng: undefined
+  };  
+  
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      center = { lat: position.coords.latitude, lng: position.coords.longitude };
+      map.setCenter(center);
+
+      const currentPositionMarker = new google.maps.Marker({
+        position: {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        },
+        map: map,
+        title: "You are here"
+      });
+
+    }, () => {
+      console.log('Error in the geolocation service.');
+    });
+  } else {
+    console.log('Browser does not support geolocation.');
+  }
+
   
   var geocoder = new google.maps.Geocoder();
 
