@@ -1,5 +1,4 @@
 window.onload = () => {
-	
 	var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
     center: {lat: 25.766033, lng: -80.196191}
@@ -30,10 +29,9 @@ window.onload = () => {
   } else {
     console.log('Browser does not support geolocation.');
   }
-
-  
-  var geocoder = new google.maps.Geocoder();
-
+ 
+	var geocoder = new google.maps.Geocoder();
+	
   document.getElementById('submit').addEventListener('click', function() {
     geocodeAddress(geocoder, map);
 	});
