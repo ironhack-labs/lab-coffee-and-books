@@ -13,43 +13,24 @@ router.get("/new", (req, res, next) => {
   res.render("places/new");
 });
 
-router.post("/new", (req, res, next) => {
-  console.log('asdasd')
-  const { name, kind } = req.body;
+
+router.post("/new", (req, res) => {
+  const { name, kind, lat, lng } = req.body;
 
   let location = {
-    type: "point",
-    coordinates: [req.body.latitude, req.body.longitude]
+    type: 'Point',
+    coordinates: [lat, lng]
   };
 
-  var fieldsPromise = new Promise((resolve, reject) => {
-    if (name === "" || kind === "" || location === ['','']) {
-      reject(
-        new Error("Indicate a name, kind and location to create the place")
-      );
-    } else {
-      resolve();
-    }
+  const newPlace = new Place({
+    name,
+    kind,
+    location
   });
 
-  fieldsPromise
-    .then(() => {
-      return Place.findOne({ name });
-    })
+  newPlace.save()
     .then(place => {
-      if (place) {
-        throw new Error("The place already exists");
-      }
-
-      const newPlace = new Place({
-        name,
-        kind,
-        location
-      });
-      return newPlace.save();
-    })
-    .then(() => {
-      res.redirect("/new");
+      res.redirect("/");
     })
     .catch(err => {
       res.render("places/new", {
@@ -57,5 +38,6 @@ router.post("/new", (req, res, next) => {
       });
     });
 });
+
 
 module.exports = router;

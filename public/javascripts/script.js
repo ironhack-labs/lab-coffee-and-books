@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lng: place.location.coordinates[1]
       },
       map: map,
-      title: `${place.name} - ${place.description}`
+      title: `${place.name} - ${place.kind}`
     });
   })
 
@@ -26,14 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const geolocate = () => {
     return new Promise((resolve, reject) => {
-      // Try to get a geolocation object from the web browser
       if (navigator.geolocation) {
-
-        // Get current position
-        // The permissions dialog will popup
         navigator.geolocation.getCurrentPosition(function (position) {
-          // Create an object to match
-          // google's Lat-Lng object format
           console.log(position)
           const myPosition = {
             lat: position.coords.latitude,
