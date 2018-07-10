@@ -10,25 +10,27 @@ router.get('/', (req, res, next) => {
   })
 });
 
-/* 
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+router.post('/addPlace', (req, res, next) => {
+  // Get Params from POST
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
+  };
 
-router.get('/bookStores', (req, res, next) => {
-  BookStore.find()
-  .then(bookStores => {
-      res.render('bookStores/list', {bookStores});
+  // Create a new Restaurant with location
+    const newStore = new Stores({
+      name: req.body.name,
+      description: req.body.description,
+      location: location
+    });
+
+  // Save the restaurant to the Database
+  console.log(newStore);
+  newStore.save()
+  .then(() => {
+      res.redirect('/');    
   })
   .catch(err => next())
 });
 
-router.get('/coffeeStores', (req, res, next) => {
-  CoffeeStore.find()
-  .then(coffeeStores => {
-      res.render('coffeeStores/list', {coffeeStores});
-  })
-  .catch(err => next())
-});
- */
 module.exports = router;
