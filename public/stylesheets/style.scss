@@ -1,0 +1,76 @@
+body {
+  padding: 0 50px 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+#map {
+  height: 500px;
+  margin-top: 10px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+  width: 960px;
+  padding: 20px;
+  box-sizing: border-box;
+  > div {
+    width: 50%;
+    &:first-child {
+      padding-right: 20px;
+    }
+  }
+  .errorMessage {
+    color: #f44336;
+  }
+  #form {
+    label {
+      color: #666;
+      display: inline-block;
+      margin-bottom: 10px;
+      text-align: center;
+      width: 100%;
+    }
+    input,
+    select,
+    button {
+      box-sizing: border-box;
+      font-size: 14px;
+      outline: 0;
+      padding: 4px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    button {
+      background: #43a3e6;
+      border: 1px solid #43a3e6;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      padding: 8px 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.3s ease background;
+      width: 100%;
+      margin-top: 15px;
+      &:hover {
+        background: #fff;
+        color: #43a3e6;
+        transition: 0.3s ease background;
+      }
+    }
+  }
+}
+
+.caption li {
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 20px;
+}

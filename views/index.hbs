@@ -1,0 +1,21 @@
+<h1>{{title}}</h1>
+<a href="/add">Add new place</a>
+<div>
+  <h3>Map legend</h3>
+  <ul class="caption">
+    <li>
+      <img src="/images/marker_blue.png" alt="Marker blue" width="20"> Café
+    </li>
+    <li>
+      <img src="/images/marker_orange.png" alt="Marker orange" width="20"> Bookstore
+    </li>
+  </ul>
+</div>
+
+<div id="map"></div>
+
+{{#if places}}
+<script>
+  window.places = {{{places}}};
+</script>
+{{/if}}
