@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       zoom: 15,
       center: center
     });
+    let markers = [];
 
     if (window.places) {
       const bounds = new google.maps.LatLngBounds();
@@ -37,6 +38,38 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       map.fitBounds(bounds);
+    } else {
+      google.maps.event.addListener(map, 'click', event => {
+        clearMarkers();
+        fillFields(event);
+
+        const marker = new google.maps.Marker({
+          position: {
+            lat: event.latLng.lat(),
+            lng: event.latLng.lng()
+          },
+          map: map,
+          draggable: true
+        });
+
+        google.maps.event.addListener(marker, 'dragend', event => {
+          fillFields(event);
+        });
+
+        markers.push(marker);
+      });
     }
+
+    const clearMarkers = () => {
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+      }
+      markers = [];
+    };
+
+    const fillFields = event => {
+      document.getElementById("lat").value = event.latLng.lat();
+      document.getElementById("lng").value = event.latLng.lng();
+    };
   }, false
 );

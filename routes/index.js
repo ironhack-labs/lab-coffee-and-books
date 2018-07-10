@@ -23,7 +23,7 @@ router.post("/add", (req, res) => {
 
   let location = {
     type: 'Point',
-    coordinates: [lng, lat]
+    coordinates: [lat, lng]
   };
 
   const newPlace = new Place({
