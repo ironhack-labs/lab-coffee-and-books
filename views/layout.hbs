@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
+    <script src='/javascripts/script.js'></script>
+  </head>
+  <body>
+    <script>
+      window.places = {{{placesString}}};
+    </script>
+    <h1>Maps</h1>
+    <h3>Find Coffeeshops or Bookstores!</h3>
+
+    {{{body}}}
+
+    <div id="map" style="height:500px"></div>
+  </body>
+</html>
