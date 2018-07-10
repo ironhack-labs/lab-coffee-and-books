@@ -1,0 +1,25 @@
+<script>
+window.places = {{{placeString}}};
+</script>
+<h2>List of places</h2>
+{{#each place}}
+  <h3>{{name}} - {{kind}} at {{location.coordinates.[0]}},{{location.coordinates.[1]}}</h3>
+{{/each}}
+<div id="map" style="height:500px"></div>
+<br>
+<form action="/add" method="post">
+
+<label for="place">Name</label>
+<input type="text" name="name">
+
+<label for="kind">Kind</label>
+<input type="text" name="kind">
+
+<label for="long">Longitude</label>
+<input type="number" name="longitude">
+
+<label for="lat">Latitude</label>
+<input type="number" name="latitude">
+
+<button>ADD LOCATION</button>
+</form>

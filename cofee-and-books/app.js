@@ -12,7 +12,7 @@ const path         = require('path');
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/cofee-and-books', {useMongoClient: true})
+  .connect(process.env.DBURL, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
