@@ -1,8 +1,42 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #dddddd;
+
+}
+
+.row {
+ padding: 0px;
+
 }
 
 a {
-  color: #00B7FF;
+  color: Black;
+}
+
+
+.formCont {
+  margin: 0px 0px 15px 0px;
+}
+
+.lista {
+  margin: 50px 0px 0px 0px;
+}
+
+li{
+	list-style: none;
+}
+
+.red {
+  color: red;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0px 30px 0px;
+}
+
+
+span {
+  color: #aaaaaa;
 }
