@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<br>
+<br>
+<form action="/places/search" method="POST">
+    <label for="name"> Type in the name of a bookstore or coffee shop...</label>
+    <input type="text" name="name" placeholder="Ex: Starbucks">
+    <input type="submit" value="Search">
+</form>
+<br>
+<br>
+<p>OR</p>
+<br>
+<br>
+<form action="/places/">
+<label for="auto">Create an entry</label>
+<input type="text" name="name" placeholder="Ex: La Ciudad Invisible">
+<label for="type">Type of establishment:</label>
+<input type="text" name="kindOfPlace" placeholder="Ex: Coffee shop">
+<label for="latitude">Latitude:</label>
+<input type="number" name="lat" placeholder="Ex: 40.9122">
+<label for="longitude">Latitude:</label>
+<input type="number" name="lng" placeholder="Ex: -3.2342">
+<input type="submit" value="Create">
+</form>
+{{#if message}}
+<p>{{errorMessage}}</p>
+{{/if}}
+</form>

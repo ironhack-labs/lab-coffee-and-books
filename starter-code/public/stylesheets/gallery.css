@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Poppins');
+
+*, body {
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+    background-color: rgba(224, 87, 38, 0.5);
+}

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Poppins');
+
+*, body {
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+    background-color: rgba(214, 64, 14, 0.7);
+    font-family: 'Poppins', Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+title {
+    display: none;
+}
+
+h1, h2 {
+    font-family: 'Alfa Slab One', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: #0A0A0A;
+}
+
+.container {
+    margin: 1%;
+    padding: 1% 2%;
+}
