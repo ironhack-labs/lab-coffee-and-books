@@ -1,0 +1,56 @@
+<h1>{{title}}</h1>
+<div class="row">
+    <div class="col col-sm-3">
+        <form method="POST" action="/">
+
+            <h4>
+                <label>Sitio</label>
+            </h4>
+            <div class="formCont">
+                <input type="text" class="d-inline p-1" name="name" placeholder="name">
+
+                            
+                <div class="formCont">
+            <input type="radio" name="description" value="Comic Store" checked>Comic Store<br>
+            <input type="radio" name="description" value="Freak Cafe"> Freak Cafe<br>
+
+</div>
+            </div>
+            <h4>
+                <label>Coordenadas</label>
+            </h4>
+            <div class="formCont">
+                <input class="d-inline p-1" type="text" name="latitude" placeholder="Latitude">
+                <input class="d-inline p-1" type="text" name="longitude" placeholder="Longitude">
+            </div>
+            <input type="submit" name="">
+        </form>
+
+        <div class="lista">
+            <h4>
+                <label>Espacios</label>
+            </h4>
+
+
+            {{#each places}}
+            <li>
+                <a href="/{{this._id}}">
+                    {{this.name}} | <span>{{this.description}}</span>
+                </a>
+                |
+                <a class="red" href="/{{this._id}}/delete">Delete</a>
+            </li>
+            {{/each}}
+        </div>
+
+
+    </div>
+
+
+    <div class="col col-sm-9">
+        <script>
+            window.places = {{{places}}};
+        </script>
+        <div id="map" style="height:500px"></div>
+    </div>
+</div>
