@@ -1,2 +1,11 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+<a href="/new">Add a new place</a>
+
+<ul>{{#each places}}
+ <li>Name: {{name}} <br>
+   Description: {{description}}  <br>
+   Type: {{kind}}  <br>
+{{/each}}
+<br>
+
