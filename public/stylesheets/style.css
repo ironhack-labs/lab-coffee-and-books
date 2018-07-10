@@ -1,33 +1,29 @@
 body {
   padding: 0 50px 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF;
-}
+  color: #00B7FF; }
 
 #map {
   height: 500px;
-  margin-top: 10px;
-}
+  margin-top: 10px; }
 
 .errorMessage {
-  color: #f44336;
-}
+  color: #f44336; }
 
-#form ,
+#form,
 .errorMessage {
   margin: 30px auto;
-  width: 380px;
-}
+  width: 380px; }
+
 #form label {
   color: #666;
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
-  width: 100%;
-}
+  width: 100%; }
+
 #form input,
 #form select,
 #form button {
@@ -36,8 +32,8 @@ a {
   outline: 0;
   padding: 4px;
   width: 100%;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
+
 #form button {
   background: #43a3e6;
   border: 1px solid #43a3e6;
@@ -51,16 +47,16 @@ a {
   text-transform: uppercase;
   transition: .3s ease background;
   width: 100%;
-  margin-top: 15px;
-}
+  margin-top: 15px; }
+
 #form button:hover {
   background: #fff;
   color: #43a3e6;
-  transition: .3s ease background;
-}
+  transition: .3s ease background; }
 
 .caption li {
   display: inline-block;
   list-style-type: none;
-  margin-right: 20px;
-}
+  margin-right: 20px; }
+
+/*# sourceMappingURL=style.css.map */
