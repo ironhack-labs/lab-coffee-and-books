@@ -1,0 +1,20 @@
+<h1>Places</h1>
+<a href="/new">Add new</a>
+
+{{#each places}}
+<div>
+  <ul>
+    <li><b>Name: </b>{{name}}</li>
+    <li><b>Type: </b>{{type}}</li>
+    <li><a href="/map/{{_id}}">See on map</a></li>
+    <li><a href="/delete/{{_id}}">Delete</a></li>
+  </ul>
+</div>
+{{/each}}
+
+<div id="map" style="height:500px"></div>
+<script>
+  window.places = {{{info}}}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
+<script src='/javascripts/multipleMaps.js'></script>
