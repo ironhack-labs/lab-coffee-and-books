@@ -1,0 +1,21 @@
+<a href="/">Go Home</a>
+
+<form action="/add" method="POST" id="form">
+
+  <label for="name">name</label>
+  <input type="text" name="name" placeholder="obiwan">
+
+  <label for="kind">kind</label>
+  <input type="text" name="kind" placeholder="thatsnomoon">
+
+  <label for="description">description</label>
+  <input type="text" name="description" placeholder="thatsnomoon">
+
+
+  {{#if message }}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <button>show ubication</button>
+
+</form>
