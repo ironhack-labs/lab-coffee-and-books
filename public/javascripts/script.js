@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   );
 
-  window.places.forEach( place => {
+  window.places.forEach( places => {
     new google.maps.Marker({
       position: {
         lat: place.location.coordinates[0],
@@ -21,8 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
       title: `${place.name} - ${place.description}`
     });
   })
-
-
 
   const geolocate = () => {
     return new Promise((resolve, reject) => {
