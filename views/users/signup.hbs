@@ -1,0 +1,20 @@
+<form id="form" action="/user/signup" method="POST">
+  <label for="username">Username</label>
+  <input type="text" name="username" placeholder="Insert username">
+  <label for="password">Password</label>
+  <input type="password" name="password" placeholder="Insert password"> 
+{{!--   {{#if isAdmin}}
+  <input type="radio" name="role" value="admin">Admin
+  <input type="radio" name="role" value="editor">Editor
+  <input type="radio" name="role" value="guest">Guest 
+  {{/if }}
+  {{#if isEditor}}
+  <input type="radio" name="role" value="editor">Editor
+  <input type="radio" name="role" value="guest">Guest 
+  {{/if }} --}}
+  <button>Create account</button>
+</form>
+{{#if errorMessage }}
+<div class="error-message">{{ errorMessage }}</div>
+{{/if}}
+
