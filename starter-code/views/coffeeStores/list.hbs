@@ -1,0 +1,13 @@
+<h1>List of all the coffee stores in DB</h1>
+<div id="">
+  {{#each coffeeStores}}
+    <div class="coffeeStore">
+      <h3>{{name}}
+      <a href="/coffeeStores/{{_id}}"> see this coffee store in the map</a></h3>
+      <a href="/coffeeStores/{{id}}/delete"><button>Delete</button></a>
+      <a href="/coffeeStores/{{id}}/edit"><button>Edit</button></a>
+    </div>
+  {{/each}}
+  <a href="/coffeeStores/new"><button>NEW</button></a>
+  <a href="/"><button>Back</button></a>
+</div>
