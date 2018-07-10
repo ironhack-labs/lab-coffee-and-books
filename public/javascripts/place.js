@@ -1,24 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const ironhackMAD= {
+  const ironhackMAD = {
     lat: 40.3925321,
     lng: -3.7004609
   };
   const map = new google.maps.Map(
-    document.getElementById('map'), {
-      zoom: 13,
+    document.getElementById('mapPlace'), {
+      zoom: 15,
       center: ironhackMAD
     }
   );
-
-  window.places.forEach( places => {
+  [window.place].forEach( place => {
     new google.maps.Marker({
       position: {
-        lat: places.location.coordinates[0],
-        lng: places.location.coordinates[1]
+        lat: place.location.coordinates[0],
+        lng: place.location.coordinates[1]
       },
       map: map,
-      title: `${places.name} - ${places.description}`
+      title: `${place.name} - ${place.description}`
     });
   })
 

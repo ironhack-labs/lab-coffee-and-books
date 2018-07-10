@@ -33,24 +33,35 @@ router.get("/places/:id", (req, res, next) => {
   Places.findById(celID)
     .then(place => {
       console.log(`Informacion de lugar ${place} OK!`);
-      res.render("show", { place });
+ //     res.render("show", { place });
+      res.render('show',{place,
+        placeRender:JSON.stringify(place)});
     })
     .catch(error => {
       console.log(error);
     });
 });
 
-/* (C)RUD: Agrega forma de nueva place */
+/* (C)RUD: Agrega forma de  place */
 router.get("/new", (req, res, next) => {
   res.render("new");
 });
 
 /* (C)RUD: Agrega una place a la DB */
 router.post("/new", (req, res, next) => {
-  const { name, description } = req.body;
-  new Places({ name, occupation, catchPhrase })
+  const { name, description, tipo , lat, long } = req.body;
+   console.log(`Variables del new name: ${name}, clss=${tipo}, latitude=${lat} `)
+  new Places({
+    name,
+    description,
+    class: tipo,
+    location:{
+        type: "Point",
+        coordinates:[parseFloat(lat),parseFloat(long)]
+    }
+    })
     .save()
-    .then(celebrity => {
+    .then(place => {
       console.log("place creada!");
       res.redirect("/places");
     })
@@ -99,5 +110,4 @@ router.post("/places/edit", (req, res, next) => {
 });
 
 
-module.exports = router;
 module.exports = router;
