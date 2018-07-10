@@ -1,0 +1,27 @@
+form {
+    input {
+      color: black;
+      border: 1px solid black !important;
+      width: 300px !important;
+      text-align: center;
+      height: 35px !important;
+    }
+  
+    label {
+      color: black;
+      font-size: 18px;
+      margin-left: 30px;
+    }
+
+    select {
+      color: black;
+      border: 1px solid black !important;
+      width: 300px !important;
+      text-align: center;
+      height: 35px !important;
+      display: inline-block;
+      box-sizing: content-box;
+      padding: 0;
+      margin: 10px;
+    }
+  }
