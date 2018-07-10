@@ -10,7 +10,7 @@ const logger       = require('morgan');
 const path         = require('path');
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-// const { ensureLoggedIn, hasRole } = require('./middleware/mid');
+const { ensureLoggedIn, hasRole } = require('./middleware/passportMW');
 const flash = require("connect-flash");
 
 mongoose.Promise = Promise;
@@ -43,8 +43,9 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
-app.use('./passport')(app);
+app.use(flash());
 
+require('./passport')(app);
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
@@ -58,7 +59,6 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-
 //default values for resposnes...
 app.use((req,res,next) => {
   res.locals.title = 'Coffee & Books!';
@@ -67,11 +67,7 @@ app.use((req,res,next) => {
   next();
 }) 
 
-// default value for title local
-// app.locals.title = 'Coffee & Books!';
-
-
-const users=require('.routes/users');
+const users=require('./routes/users');
 app.use('/login',users);
 app.use('/signin',users);
 app.use('/logout',users);
