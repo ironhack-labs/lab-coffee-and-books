@@ -1,9 +1,16 @@
 const express = require('express');
 const router  = express.Router();
-const BookStore = require('../models/bookStore');
-const CoffeeStore = require('../models/coffeeStore');
+
+const Stores = require('../models/store');
 
 /* GET home page */
+router.get('/', (req, res, next) => {
+  Stores.find().then( stores => {
+    res.render('index',{stores:JSON.stringify(stores)});
+  })
+});
+
+/* 
 router.get('/', (req, res, next) => {
   res.render('index');
 });
@@ -23,5 +30,5 @@ router.get('/coffeeStores', (req, res, next) => {
   })
   .catch(err => next())
 });
-
+ */
 module.exports = router;

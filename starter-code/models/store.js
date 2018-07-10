@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const bookSchema = new Schema ({
+const storeSchema = new Schema ({
   name: {type: String, required: true},
   description: String,
+  boc: String,
   location: {
     type: {type: String},
     coordinates: [Number]
@@ -11,5 +12,5 @@ const bookSchema = new Schema ({
   }
 );
 
-const BookStore = mongoose.model('BookStore', bookSchema);
-module.exports = BookStore;
+const Store = mongoose.model('Store', storeSchema);
+module.exports = Store;
