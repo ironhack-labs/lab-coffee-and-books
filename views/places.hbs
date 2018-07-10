@@ -1,0 +1,10 @@
+<a href="/places/new" class="btn btn-warning">"Wanna" add new place?</a>
+
+{{#each places}}
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    {{kind}}
+    <a href="/places/{{_id}}" span class="badge badge-primary badge-pill">More details</a>
+  </li>
+</ul>
+{{/each}}
