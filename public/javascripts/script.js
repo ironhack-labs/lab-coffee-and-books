@@ -12,12 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   window.places.forEach( places => {
+    if (places.class == "Books"){
+      labelMap = "B";
+    } else {
+      labelMap = "C";
+    }
     new google.maps.Marker({
       position: {
         lat: places.location.coordinates[0],
         lng: places.location.coordinates[1]
       },
       map: map,
+      label: labelMap,
       title: `${places.name} - ${places.description}`
     });
   })
