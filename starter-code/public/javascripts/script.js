@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-  const map = new google.maps.Map(document.getElementById('map'),{ zoom: 15 });
+  const map = new google.maps.Map(document.getElementById('map'),{ 
+    zoom: 15,
+    center: {lat: 40.3925321, lng: -3.6982669000000215}
+  });
   
   window.places.forEach(place => {
     new google.maps.Marker({
