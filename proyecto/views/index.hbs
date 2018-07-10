@@ -1,0 +1,29 @@
+<h2>Coffe and Books</h2>
+<p>You are not welcomed to Express, lol</p>
+<div id="map" style="height:500px"></div>
+<br>
+<br>
+<form action="/" method="POST" id="form">
+
+  <label for="name" >name</label>
+  <input type="text" name="name" placeholder='starbucks'required>
+  
+  <select name="kind" id="kind">
+   <option value="coffee">coffee</option>
+   <option value="book">book</option>
+  </select>
+
+  <label for="lat">Latitude</label>
+  <input type="text" name="lat" required>
+
+  <label for="lng">Longitude</label>
+  <input type="text" name="lng" required>
+
+  {{#if places}}
+  <script>
+    window.places = {{{places}}};
+  </script>
+  {{/if}}
+
+  <button>Add Place</button>
+</form>
