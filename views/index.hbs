@@ -1,0 +1,11 @@
+<a href="/new">Add a new place</a>
+
+<ul>{{#each places}}
+  <li>Name: {{name}} <br> 
+    Description: {{description}}  <br>
+    Type: {{typeOfPlace}}  <br> 
+    <a href="/delete/{{_id}}">Delete</a> |||
+    <a href="/edit/{{_id}}">Edit</a></li>
+    <br>
+{{/each}}
+<br>
