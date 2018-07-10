@@ -10,6 +10,26 @@ router.get('/', (req, res, next) => {
   })
 });
 
+router.get('/list', (req, res, next) => {
+  console.log("list");
+  Stores.find()
+  .then(stores => {
+      res.render('list', {stores});
+  })
+  .catch(err => next())
+});
+
+router.get('/delete/:id', (req, res, next) => {
+  Stores.findByIdAndRemove(req.params.id)
+  .then(() => {
+      res.redirect('/list');    
+  })
+  .catch(err => {
+      console.log(err);
+      res.send('Error deleting user');
+  });
+})
+
 router.post('/addPlace', (req, res, next) => {
   // Get Params from POST
   let location = {
