@@ -1,0 +1,47 @@
+body {
+  text-align: center; }
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  color: black; }
+  .wrapper .container {
+    text-align: center; }
+  .wrapper .links {
+    margin: 5px;
+    width: 200px; }
+  .wrapper .btn {
+    background-color: #6885e4e3; }
+  .wrapper span {
+    margin: 10px;
+    font-size: 20px;
+    width: 350px; }
+  .wrapper .spanWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
+form input {
+  color: black;
+  border: 1px solid black !important;
+  width: 300px !important;
+  text-align: center;
+  height: 35px !important; }
+
+form label {
+  color: black;
+  font-size: 18px;
+  margin-left: 30px; }
+
+form select {
+  color: black;
+  border: 1px solid black !important;
+  width: 300px !important;
+  text-align: center;
+  height: 35px !important;
+  display: inline-block;
+  box-sizing: content-box;
+  padding: 0;
+  margin: 10px; }
+
+/*# sourceMappingURL=style.css.map */

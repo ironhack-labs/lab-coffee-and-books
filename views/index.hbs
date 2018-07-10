@@ -1,0 +1,48 @@
+<h1>{{title}}</h1>
+
+
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            {{#each places}}
+            <div class="col s12 spanWrapper">
+                <span>{{name}} - {{description}}</span>
+                <a class="waves-effect waves-light btn links" href="/delete/{{_id}}">Delete place</a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<script>
+    window.myPlaces = {{{myPlaces}}};
+</script>
+<div id="map" style="height:500px"></div>
+
+<div class="wrapper">
+    <div class="container">
+        <h2>Add a new place</h2>
+        <form id="form" action="/newPlace" method="POST">
+            <div class="row">
+                <label for="name">Name: </label>
+                <input type="text" name="name" placeholder="Name of the place">
+                <label for="description">Description: </label>
+                <input type="text" name="description" placeholder="Description of the place">
+                <label for="Type">Type: </label>
+                <select name="kindOfPlace">
+                    <option value="Book store">Book store</option>
+                    <option value="Coffee place">Coffee place</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <label for="latitude">Latitude: </label>
+                <input id="lat" type="text" name="lat" placeholder="Latitude">
+                <label for="Longitude">Longitude: </label>
+                <input id="lng" type="text" name="lng" placeholder="Longitude">
+                <button class="waves-effect waves-light btn links">Add place</butto>
+            </div>
+
+        </form>
+    </div>
+</div>
