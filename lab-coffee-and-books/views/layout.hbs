@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <form action="/" method="post">
+    {{{body}}}
+
+    <h2> Add a mark </h2>
+
+    <label for="name">Name:</label>
+    <input type="text" name="name">
+
+    <label for="latitude">Lat:</label>
+    <input id="lat" type="text" name="lat" placeholder="Latitude">
+
+    <label for="longitude">Long:</label>
+    <input id="lng" type="text" name="lng" placeholder="Longitude">
+
+
+    <button type="submit">ADD</button>
+    <ul>
+      {{#each places}}
+      <li>Name: {{name}}
+        <a href="/delete/{{_id}}">Delete place</a>
+      </li>
+      {{/each}}
+    </ul>
+
+  </form>
+
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
+  <script src='/javascripts/script.js'></script>
+</body>
+
+</html>
