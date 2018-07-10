@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 // coffee & books
 const placeSchema = new Schema({
     name: String,
-    description: String,
     kind: [{
         type: String,
         enum : ['Books', 'Coffee'],
