@@ -1,0 +1,18 @@
+<div>
+  <h2>DETALLES DE {{place.name}}</h2>
+  <p><b>Descripción</b>: {{place.description}}</p>
+   <p><b>Tipo</b>: {{place.class}}</p> 
+   <p><b>Ubicacion</b>: 
+   {{#each place.location}}
+      {{this}} |
+   {{/each}}
+   </p> 
+   <br>
+   <a href="/places">Go back</a>
+</div>
+<script>
+window.place = {{{placeRender}}};
+</script>
+<div id="mapPlace" style="width:500px; height:500px;""></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
+<script src='/javascripts/place.js'></script>
