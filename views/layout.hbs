@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          {{#if_equal active 'map'}}
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Map <span class="sr-only">(current)</span></a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/">Map</a>
+          </li>
+          {{/if_equal}}
+          {{#if_equal active 'places'}}
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Places <span class="sr-only">(current)</span></a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/places">Places</a>
+          </li>
+          {{/if_equal}}
+          {{#if_equal active 'add'}}
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Add a place <span class="sr-only">(current)</span></a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/places/add">Add a place</a>
+          </li>
+          {{/if_equal}}
+        </ul>
+      </div>
+    </nav>
+
+    {{{body}}}
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-a8cRM3cduwoyEdbIwEka7RUlMRPC6Ak"></script>
+    <script src='/javascripts/script.js'></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<div class="container p-5">
+  <h2>All the places</h2>
+  <ul>
+      {{#each places}}
+          <li>
+              <div>
+                  <h3>{{name}}</h3>
+                  <p>{{description}}</p>
+                  <p>{{kind}}</p>
+                  <p>{{location.coordinates.[0]}}, {{location.coordinates.[1]}}</p>
+                  <a href="/places/{{_id}}/delete">Delete</a>
+              </div>
+          </li>
+          <br />
+          <br />
+      {{/each}}
+  </ul>
+</div>

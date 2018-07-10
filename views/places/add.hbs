@@ -1,0 +1,26 @@
+<div class="container p-5">
+  <h2>Add a place</h2>
+
+  <form action="/places" method="post">
+    <label for="">Name:</label>
+    <input type="text" name="name">
+    <br />
+    <label for="">Description:</label>
+    <input type="text" name="description">
+    <br />
+    <label for="">Kind:</label>
+    <select name="kind">
+      <option value="" disabled selected>Select</option>
+      <option value="Books">Books</option>
+      <option value="Coffee">Coffee</option>
+    </select>
+    <br />
+    <label for="">Latitude:</label>
+    <input type="text" name="latitude">
+    <br />
+    <label for="">Longitude:</label>
+    <input type="text" name="longitude">
+    <br />
+    <button type="submit">Add</button>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+#map {
+  height: calc(100vh - 47px);
+  width: 100vw; }
+
+/*# sourceMappingURL=style.css.map */
