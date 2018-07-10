@@ -1,0 +1,16 @@
+<h2> List of places - <a href="/">Return to index</a></h2>  
+<a href="/places/new">Add a place</a>
+
+<ul>
+    {{#each places}}
+    <li>
+        <h2>{{name}}</h2>
+        <p>{{description}}</p>
+        <p>{{kind}}</p>
+        <a href="/show/{{_id}}">See more details</a>
+        <a href="/places/delete/{{_id}}">Delete place</a>
+    </li>
+    {{/each}}
+</ul>
+
+
