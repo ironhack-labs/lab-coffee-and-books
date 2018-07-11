@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<ul>{{#each places}}
+ <li>Name: {{name}} <br>
+    Type: {{kind}}  <br>
+   <!--<a href=“/delete/{{_id}}“>Delete</a> |||
+   <a href=“/edit/{{_id}}“>Edit</a></li>-->
+   <br>
+{{/each}}
+<br>
+
+
+<h2>Add a place</h2>
+</div>
+<div class="container box">
+<form action="/" method="post">
+  <label for="">Name:</label>
+  <input type="text" name="name">
+  <label for="">Kind:</label>
+  <input type="text" name="kind">
+  <label for="">Address:</label>
+  <input type="text" name="lat" placeholder="latitude">
+  <input type="text" name="lng" placeholder="longitude">
+  <button type="submit" class="edit">ADD</button>
+</form>
+<br>
+
+
