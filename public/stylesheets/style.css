@@ -1,0 +1,13 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+#map {
+  height: 70vh;
+  width: 90vw;
+  background: #000; }
+
+/*# sourceMappingURL=style.css.map */
