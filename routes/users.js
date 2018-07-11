@@ -72,18 +72,15 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.get('/update', isAdmin, (req, res, next) => {
+  console.log("leggaaa")
   User.find({}).then(users => {
     res.render('users/control-panel', { users });
   })
 });
 
 router.post('/update/:id', isAdmin, (req, res, next) => {
-  console.log(req.user);
-  console.log(req.params);
-  console.log(req.body);
-  User.findById(req.params.id).then((user) => {
-    console.log('user encontrado')
-    console.log(user);
+  User.findById(req.params.id).
+  then((user) => {
     if (req.body.username)
       user.username = req.body.username;
     if (req.body.password) {
@@ -94,16 +91,15 @@ router.post('/update/:id', isAdmin, (req, res, next) => {
       user.role = req.body.role;
 
     User.findByIdAndUpdate(user._id, {$set:user})
-      .then((res) => {
-        res.redirect('users/update', {
-          flashMessage: 'User updated!'
-        });
+      .then(() => {
+        res.redirect('/users/update', {flashMessage: 'User updated!'});
       })
       .catch((err) => {
-        res.redirect('users/update', {
-            flashMessage: 'a problem occured!'
-          });
+        res.redirect('/users/update', {flashMessage: 'A problem occured!'});
       })
+  })
+  .catch((err)=>{
+    //
   })
 });
 

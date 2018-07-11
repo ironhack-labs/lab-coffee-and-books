@@ -22,7 +22,7 @@ const placeSchema = new Schema({
     }
   });
 
-const Place = mongoose.model("Place", userSchema);
+const Place = mongoose.model("Place", placeSchema);
 
 module.exports = Place;
 

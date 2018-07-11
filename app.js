@@ -70,6 +70,9 @@ app.use((req,res,next) => {
 const users=require('./routes/users');
 app.use('/users',users);
 
+const places=require('./routes/places');
+app.use('/places',places);
+
 const index = require('./routes/index');
 app.use('/',index);
 
