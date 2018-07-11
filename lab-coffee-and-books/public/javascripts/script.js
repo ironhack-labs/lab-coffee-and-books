@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  window.places.forEach(place => {
+  window.places2.forEach(place => {
     new google.maps.Marker({
       position: {
         lat: place.location.coordinates[0],
