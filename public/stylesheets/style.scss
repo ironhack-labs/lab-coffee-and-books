@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: rgb(101, 158, 35);
+    h1 {
+        text-align: center;
+    }
+    p {
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    a {
+        color: rgb(9, 73, 99);
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        margin-left: 37%;
+        text-align: center;
+        font-weight: 700;
+      
+        input {
+            margin: 1% 0;
+        }
+    }
+    #map {
+        margin: 2% auto;
+        box-sizing: border-box;
+        height: 400px;
+        width: 75%;
+        padding: 5% 12.5%;
+    }
+}
