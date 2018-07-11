@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.places.forEach( places => {
     new google.maps.Marker({
       position: {
-        lat: place.location.coordinates[0],
-        lng: place.location.coordinates[1]
+        lat: places.location.coordinates[0],
+        lng: places.location.coordinates[1]
       },
       map: map,
-      title: `${place.name} - ${place.description}`
+      title: `${places.name} - ${places.description}`
     });
   })
 
