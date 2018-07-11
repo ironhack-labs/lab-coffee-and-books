@@ -1,0 +1,31 @@
+<h1>{{title}}</h1>
+<h2>User Control Panel</h2>
+<a href="/">Go to home</a>
+<br>
+<br>
+<br>
+
+{{#if flashMessage }}
+<div class="error-message">{{ flashMessage }}</div>
+{{/if}}
+
+<div>
+  {{#each users}}
+  <div>
+    <p><b>Username: {{this.username}}. Role: {{this.role}}</b></p>
+    <form id="form" action="/users/update/{{this._id}}" method="POST">
+      <label for="username">Username</label>
+      <input type="text" name="username" placeholder="{{this.username}}"><br>
+      <label for="password">Password</label>
+      <input type="password" name="password"><br>
+      <input type="radio" name="role" value="admin">Admin
+      <input type="radio" name="role" value="editor">Editor
+      <input type="radio" name="role" value="guest">Guest 
+      <br>
+      <button>Update user</button>
+    </form>
+    <a href="/user/delete/{{this._id}}">Delete user</a>
+    <br><br><br>
+  </div>
+  {{/each}}
+</div>

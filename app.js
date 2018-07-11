@@ -68,11 +68,9 @@ app.use((req,res,next) => {
 }) 
 
 const users=require('./routes/users');
-app.use('/login',users);
-app.use('/signin',users);
-app.use('/logout',users);
+app.use('/users',users);
 
 const index = require('./routes/index');
-app.use('/', index);
+app.use('/',index);
 
 module.exports = app;
