@@ -1,0 +1,44 @@
+<h3>BookStores</h3>
+<ul>
+  {{#each books}}
+  <li><a href="/list/book/{{this.id}}">{{this.name}}</a></li>
+  {{/each}}
+</ul>
+<a href="/newBook">Nueva Libreria</a>
+
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOGtH1GhJnCWB2NfLHPt1_u4bFLZCLfPM"></script>
+<script>
+ let center ={
+    lat: 19.3763659,
+    lng:-99.1594921
+  };
+  let locations =[
+  {{#each books}}
+  {
+    lat:{{this.location.coordinates.[1]}},
+    lng:{{this.location.coordinates.[0]}}
+  },  
+  {{/each}}
+  ];
+console.log(locations)
+
+
+  const map = new google.maps.Map(
+    document.getElementById('map'),
+    {
+      center,
+      zoom:13
+    }
+  )
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+        map: map
+      })
+    }
+</script>
