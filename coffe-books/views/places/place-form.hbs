@@ -1,0 +1,30 @@
+<h1>Resgistra tus cafés Favoritos</h1>
+<a href="/list">Ir a Lista de Lugares</a>
+
+<form validate action="/new" method="POST">
+  <input type="text" name="name" placeholder="Nombre" required>
+  <input type="text" name="location.address" id="address" placeholder="Lugar / Dirección" required>
+  <label for="description">Descripción del Lugar:</label>
+  <textarea name="description" id="description" cols="30" rows="10"></textarea>
+  <input type="hidden" placeholder="Latitude" name="location[coordinates][1]" id="lat" required>
+  <input type="hidden" placeholder="Longitude" name="location[coordinates][0]" id="lng" required>
+  <input type="submit" value="Save">
+</form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDourKsCJgKvFq7q_ZOp1siGTN1YaCmQu0&libraries=places"></script>
+<script>
+  let address = document.getElementById('address');
+  let lat = document.getElementById('lat');
+  let lng = document.getElementById('lng');
+
+  function autoComplete(input, inLat, inLng){
+    const dropdown = new google.maps.places.Autocomplete(input);
+
+    dropdown.addListener('place_changed', ()=>{
+      let place = dropdown.getPlace();
+      lat.value = place.geometry.location.lat();
+      lng.value = place.geometry.location.lng();
+    });
+  }
+  autoComplete(address, lat, lng);
+</script>
