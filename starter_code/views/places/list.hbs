@@ -1,0 +1,75 @@
+<h1>Coffee Shops and Bookstores</h1>
+<p><a href="/addPlace"><button class="add">Add a Place</button></a></p>
+    <div id="map"></div>
+
+<div id="list">
+{{#each places as |place|}}
+<ul>
+    <li>{{place.name}} ({{place.placeType}}) 
+    <form action="/{{place._id}}/delete" method="POST"><button type="submit">Delete</button></form></li>
+</ul>
+
+{{/each}}
+</div>
+
+<script>
+
+    function startMap() {
+
+     var coffeeIcon = {
+        url: '/images/coffee.png',
+        scaledSize: new google.maps.Size(30,30)
+    }
+
+        var bookIcon = {
+        url: '/images/book.png',
+        scaledSize: new google.maps.Size(30,30)
+    }
+
+    let loc, name, marker,newIcon;
+    let center = {
+        lat: 19.4058057,
+        lng: -99.1689616};
+
+    const map = new google.maps.Map(
+      document.getElementById('map'),
+      {
+        center,
+        zoom: 14
+          }
+    );
+
+    {{!-- const marker = new google.maps.Marker({
+        map,
+        position: center,
+        title:'Ironhack',
+        animation: google.maps.Animation.DROP
+    }) --}}
+
+    {{#each places as |place|}}
+    if ('{{place.placeType}}'==='Coffee Shop') {
+        newIcon = coffeeIcon;
+    } else {
+        newIcon = bookIcon;
+    }
+    
+    loc = {
+        lat: {{place.location.coordinates.[1]}},
+        lng: {{place.location.coordinates.[0]}}
+    };
+    name = '{{place.name}}';
+    marker = new google.maps.Marker({
+        map,
+        position: loc,
+        title:name,
+        icon:newIcon
+    });
+
+    {{/each}}
+  }
+
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBybjR2Ofkk6CglRbf1_gGVKiFoNoNrXas&callback=startMap">
+    </script>
