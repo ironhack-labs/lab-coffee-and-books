@@ -1,0 +1,10 @@
+<h1>List of all the stores in DB</h1>
+<div id="stores">
+  {{#each stores}}
+    <div class="store">
+      <h3>{{name}}
+      <a href="/delete/{{_id}}"> Delete</a></h3>
+    </div>
+  {{/each}}
+  <a href="/"><button>Back</button></a>
+</div>
