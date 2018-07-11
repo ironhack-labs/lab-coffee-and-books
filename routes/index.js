@@ -23,7 +23,7 @@ router.get('/places/add', (req, res, next) => {
 
 router.post('/places/new', (req, res, next) => {
   const {name, kindOfPlace, lat, lng} = req.body;
-  new Place({name, kindOfPlace, location:{type:"Point", coordinates:[lat, lng]}})
+  new Place({name, kindOfPlace, location:{type:"", coordinates:[lat, lng]}})
   .save().then( place => {
     console.log("Place successfully added!");
     res.redirect('/places');
