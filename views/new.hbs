@@ -1,0 +1,52 @@
+<h1>Agrega un lugar</h1>
+<form action="/new" method="POST">
+    <p>
+        Name:
+        <input type="text" name="name" id="name">
+    </p>
+    <p>
+        Tipo de lugar:
+        <select name="tipodelugar">
+        
+            <option>Bookstore</option>
+        
+            <option>Coffeestore</option>
+
+        </select>
+
+    </p>
+    <p>
+        Address:
+        <input type="text" name="location[address]" id="address">
+    </p>
+    <p>
+        Latitude:
+        <input type="text" name="location[coordinates][1]" id="lat">
+    </p>
+    <p>
+        Longitude:
+        <input type="text" name="location[coordinates][0]" id="lng">
+    </p>
+    <input type="submit" value="guardalo ">
+</form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ&libraries=places"></script>
+
+<script>
+    
+    let name = document.getElementById('name')
+    let address = document.getElementById('address')
+    let lat = document.getElementById('lat')
+    let lng = document.getElementById('lng')
+    function autoComplete(input, inputLat, inputLng) {
+        const dropdown = new google.maps.places.Autocomplete(input)
+        dropdown.addListener('place_changed', () => {
+            let place = dropdown.getPlace()
+            console.log(place)
+            lat.value = place.geometry.location.lat()
+            lng.value = place.geometry.location.lng()
+            name.value = place.name
+        })
+    }
+    autoComplete(address, lat, lng)
+</script>
