@@ -1,6 +1,14 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
+<ul>{{#each places}}
+ <li>Name: {{name}} <br>
+    Type: {{kind}}  <br>
+   <!--<a href=“/delete/{{_id}}“>Delete</a> |||
+   <a href=“/edit/{{_id}}“>Edit</a></li>-->
+   <br>
+{{/each}}
+<br>
 
 
 <h2>Add a place</h2>
