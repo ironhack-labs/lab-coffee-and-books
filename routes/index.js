@@ -4,7 +4,7 @@ const Place = require('../models/Place');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  place.find().then( places => {
+  Place.find().then( places => {
     console.log(places);
     res.render('index',{places:JSON.stringify(places)});
   })
@@ -20,6 +20,11 @@ console.log("hola")
     description,
     kind
   } = req.body;
+
+  const location = {
+    type: "Point",
+    coordinates: [req.body.latitude,req.body.longitude]
+  }
   console.log(req.body)
 
   Place.findOne({
@@ -36,7 +41,9 @@ console.log("hola")
       const newPlace = new Place({
         name,
        description,
-        kind
+        kind,
+        location
+      
       });
 
       return newPlace.save()
