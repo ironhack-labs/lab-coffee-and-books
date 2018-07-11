@@ -1,0 +1,13 @@
+<h1>COFFEE & BOOKS</h1>
+
+<a href="/places/add">Add a Place</a>
+
+<ul>
+    {{#each places}}
+    <li>
+        <h2>{{name}}</h2>
+        <p>{{kind}}</p>
+        <a href="/places/delete/{{_id}}">Delete place</a>
+    </li>
+    {{/each}}
+</ul>
