@@ -1,0 +1,36 @@
+<h2>Crear nueva Libreria</h2>
+
+<form action="/newBook" method="POST">
+
+  <label for="name">Libreria:</label>
+  <input type="text" name="name">
+
+  <label for="location[address]">Direccion:</label>
+  <input type="text" name="location.address" id="address">
+
+  <label for="location[coordinates]">Longitud</label>
+  <input type="text" name="location.coordinates" id="lng">
+
+  <label for="location[coordinates]">Latitud</label>
+  <input type="text" name="location.coordinates" id="lat">
+
+  <button type="submit">Crear</button>
+</form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOGtH1GhJnCWB2NfLHPt1_u4bFLZCLfPM&libraries=places"></script>
+<script>
+  let address = document.getElementById('address')
+  let lat = document.getElementById('lat')
+  let lng = document.getElementById('lng')
+
+  function autoComplete (input, inputLat, inputLng){
+    const dropdown = new google.maps.places.Autocomplete(input)
+    dropdown.addListener('place_changed',()=>{
+      let place = dropdown.getPlace()
+      lat.value = place.geometry.location.lat()
+      lng.value = place.geometry.location.lng()
+    })
+  }
+
+  autoComplete(address,lat,lng)
+</script>
