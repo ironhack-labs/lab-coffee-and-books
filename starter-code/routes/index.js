@@ -4,8 +4,8 @@ const Place  = require("../models/place");
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  Place.find().then( places => {
-    res.render('index'),{places:JSON.stringify(places.location)};
+  Place.find({}).then( places => {
+    res.render('index'),{places:JSON.stringify(places)};
   })
 });
 
@@ -47,7 +47,7 @@ router.post('/add', (req, res, next) => {
       const newPlace = new Place({
         name,
         type,
-        location:{coordinates:[lat,lng]}
+        location:{type:"Point",coordinates:[Number(lat),Number(lng)]}
       });
 
       return newPlace.save()
