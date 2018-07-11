@@ -1,0 +1,26 @@
+
+{{#if isAdmin}}
+<a href="/users/update">Manage Users</a> |
+<a href="/users/logout">Log out</a>
+{{else if user}}
+<a href="/users/logout">Log out</a>
+{{else}}
+<a href="/users/login">Log in</a> |
+<a href="/users/signup">Sign up</a> 
+{{/if}}
+
+<h1>{{title}}</h1>
+{{#if user}}
+<h3>Hello {{user.username}}.</h3>
+<h3>Your role is: {{user.role}}</h3>
+{{/if}}
+<p>Welcome to the website for literature and coffee lovers.</p>
+
+I like coffee and literature.<br>
+
+Here you will find a list of my favorite places.
+
+<a href="/places/list">list of places</a>
+
+{{!-- 
+<div id="map" style="height:500px"></div> --}}

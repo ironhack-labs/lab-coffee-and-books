@@ -1,0 +1,52 @@
+<h1>{{title}}</h1>
+<h2>Places </h2>
+<a href="/">Go to home</a>
+<br>
+<br>
+<br>
+
+{{#if flashMessage }}
+<div class="error-message">{{ flashMessage }}</div>
+{{/if}}
+
+{{#if isEditor}}
+    <form id="form" action="/places/add" method="POST">
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="Name of this place"><br>
+      <label for="description">Description</label>
+      <textarea rows="5" cols="35" id="description"></textarea>
+      <br>
+      <input type="radio" name="type" value="coffee">Coffee
+      <input type="radio" name="type" value="bookstore">Bookstore
+      <br>
+      <label for="lat">Latitude</label>
+      <input type="text" name="lat" placeholder="latitude"><br>
+      <label for="lng">Longitude</label>
+      <input type="text" name="longitude" placeholder="longitude">
+      <br>
+      <button>Add new place</button>
+    </form>
+{{/if}}
+<br>
+<br>
+<br>
+<div>
+  {{#each places}}
+  <div class="place-div">
+    <p><b>{{this.type}}: {{this.name}}.</b></p>
+    <p><b>Description: {{this.description}}</b></p>
+    <p>Upvotes: {{this.votesPos}}</p>
+    <p>Downvotes. {{this.votesNeg}}</p>
+    <a href="places/{{this._id}}">see details</a>
+    {{#if isEditor}}
+      <br>
+      <a href="/places/update/{{this._id}}">update</a> |
+      <a href="/places/delete/{{this._id}}">delete</a>
+    {{/if}}
+  </div>
+  {{/each}}
+</div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClr_fVK41OBJxuab_HEI3I30pcijqHB7E"></script>
+<script src='/javascripts/script.js'></script>
