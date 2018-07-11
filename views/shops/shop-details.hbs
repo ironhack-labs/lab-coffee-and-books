@@ -1,0 +1,58 @@
+<h1>{{name}}</h1>
+<h2>{{location.address}}</h2>
+<h4>{{type}}</h4>
+
+<div id="map" style="width:100%; height:50vh"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY35HdE3CJ2D38r4CboFvDznrqIySo06I"></script>
+
+<script>
+  let center = {
+    lat:{{location.coordinates.[1]}},
+    lng:{{location.coordinates.[0]}}
+  }
+
+  const map = new google.maps.Map(
+    document.getElementById('map'),
+    {
+      center,
+      zoom:15
+    }
+  )
+
+  var icono = {
+    url:'https://cdn3.iconfinder.com/data/icons/map/500/restaurant-512.png',
+    scaledSize: new google.maps.Size(35,35)
+  }
+
+  const mark = new google.maps.Marker({
+    map,
+    position:center,
+    title:'{{name}}',
+    animation:google.maps.Animation.BOUNCE,
+    icon:icono
+  })
+
+   if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(function(position){
+      let newPosition = {
+        lat:position.coords.latitude,
+        lng:position.coords.longitude
+      }
+      const mark2 = new google.maps.Marker({
+        map,
+        position:newPosition,
+        title:'You are here',
+        animation: google.maps.Animation.BOUNCE
+      });
+    },
+    function(){
+      console.log('access denied')
+    })
+  }else {
+    console.log('unsupported feature')
+  }
+
+
+
+</script>

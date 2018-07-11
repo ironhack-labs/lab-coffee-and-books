@@ -1,0 +1,10 @@
+<h1>List of places</h1>
+
+{{#each results as |result|}}
+<p>
+<h2>{{result.name}}</h2>
+<h4>{{result.type}}</h4>
+<a href="/shoplist/{{result._id}}">View details</a>
+</p>
+<br>
+{{/each}}
