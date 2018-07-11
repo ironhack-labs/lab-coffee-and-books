@@ -1,0 +1,24 @@
+<a href="/">Go home</a>
+
+<form action="/add" method="POST" id="form">
+  <h2></h2>
+
+  <label for="name">Name</label>
+  <input type="text" name="name" placeholder="name">
+
+  <label for="description">Description</label>
+  <input type="text" name="description" placeholder="thatsnomoon">
+  <label for="latitude">latitude</label>
+  <input type="text" name="latitude" placeholder="latitude">
+  <label for="longitude">Longitude</label>
+  <input type="text" name="longitude" placeholder="thatsnomoon">
+
+  <label for="kind">Kind</label>
+  <input type="text" name="kind" placeholder="kind"> {{#if message }}
+  
+  <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <button>Show location</button>
+
+</form>
