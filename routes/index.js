@@ -4,7 +4,7 @@ const router = express.Router();
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  Place.find().then(place => {
+  Place.find().then(Place => {
     console.log(Place);
     res.render('index', {
       places: JSON.stringify(Place)
@@ -23,6 +23,11 @@ router.post('/add', (req, res, next) => {
     description,
   } = req.body;
 
+  const location = {
+    type: "Point",
+    coordinates: [req.body.latitude, req.body.longitude]
+  }
+
   console.log(req.body)
   Place.findOne({
       name
@@ -33,12 +38,13 @@ router.post('/add', (req, res, next) => {
       }
 
 
-       const newplace = new Place({
+      const newplace = new Place({
         name,
         kind,
         description,
+        location
       });
- 
+
       return newplace.save()
     })
     .then(place => {

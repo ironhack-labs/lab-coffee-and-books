@@ -25,7 +25,7 @@ place.create([
         description:"Jarras a 1 euro",
         location:{
             type: "Point",
-            coordinates:[40.4030782,-3.7277825]
+            coordinates:[40.3598782,-3.7242125]
         }
     },
     {
