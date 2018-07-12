@@ -1,0 +1,14 @@
+{{#each place}}
+<div>
+  <a href="locations/{{this._id}}">{{this.name}}</a>
+</div>
+{{/each}}
+
+<a href="/">
+  <button>Back to Home</button>
+</a>
+
+<div id="map"></div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD77bMmpB7LUC792mPtcQY7Mr3T4vBSpzc"></script>
+<script src="/javascripts/script.js"></script>
