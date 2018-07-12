@@ -1,38 +1,58 @@
 const express = require('express');
 const router  = express.Router();
-const CoffeeBook = require('../models/CoffeeBook');
+
+const Places = require('../models/places');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  CoffeeBook.find().then( coffeebooks => {
-    console.log(coffeebooks);
-    res.render('index',{coffeebooks:JSON.stringify(coffeebooks)});
+  Places.find({})
+  .then(places => res.render('index', {places: JSON.stringify(places)}))
+  .catch(err => {
+    console.log(err);
+    next();
   })
 });
 
-router.post((req, res, next) => {
-  // Get Params from POST
-  let location = {
-    type: 'Point',
-    coordinates: [req.body.longitude, req.body.latitude]
-  };
+router.get('/locations', (req, res, next) => {
+  Places.find({})
+  .then(places => res.render('locations', {places}))
+  .catch(err => {
+    console.log(err);
+    next();
+  })
+})
 
-  // Create a new Restaurant with location
-    const newCoffeeBook = {
-      name:        req.body.name,
-      description: req.body.description,
-      location:    location
-    };
+router.post('/locations', (req, res, next) => {
+  const {name, latitude, longitude} = req.body;
 
-  // Save the restaurant to the Database
-  coffeebook.save((error) => {
-    if (error) { console.log(error) }
-    else {
-      res.redirect('/');
+  const newPlace = new Places({
+    name,
+    location: {
+      type: 'Point',
+      coordinates: [latitude, longitude]
     }
   })
-});
+  
+  newPlace.save()
+  .then(() => {
+    res.redirect('/');
+  })
+  .catch(err => {
+    console.log(err);
+    next();
+  })
+})
 
-
+router.get('/location/delete/:id', (req, res, next) => {
+  Places.findByIdAndRemove(req.params.id)
+  .then(() => {
+    console.log('User deleted');
+    res.redirect('/');
+  })
+  .catch(err => {
+    console.log(err);
+    next();
+  })
+})
 
 module.exports = router;
