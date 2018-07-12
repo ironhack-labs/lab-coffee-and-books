@@ -1,0 +1,26 @@
+<form id="form" action="/add" method="POST">
+
+  {{#if errorMessage }}
+    <div class="error-message">{{ errorMessage }}</div>
+  {{/if}}
+    <label for="name">Name</label>
+    <br>
+    <input type="text" name="name" >
+
+    <br>
+    <br>
+    <label for="type">Type</label>
+    <br>
+    <input type="text" name="type" >
+    <br>
+    <br>
+    <label for="coordinate0">Lat</label>
+  <input type="text" name="lat" >
+  <label for="coordinate1">Lng</label>
+  <input type="text" name="lng" >
+  <br>
+  <br>
+    <button>Add place</button>
+</form>
+
+<a href="home"> Go Home</a>
