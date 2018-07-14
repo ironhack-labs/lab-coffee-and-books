@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookstores</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+    </div>
+      <div class="info">
+        <h3>Lista todas las librerías</h3>
+        <a href="/new">Crear nueva librería</a>
+        <ul>
+          {{#each bookstores}}
+            <li>
+              <a href="/{{ this._id}}">
+                {{ this.name}}<span>{{ this.description }}</span>
+              </a>
+               |
+              <a href="/{{ this._id}}/edit">Editar</a>
+               |
+              <a href="/{{ this._id}}/delete">Borrar</a>
+            </li>
+          {{/each }}
+        </ul>
+      </div>
+      <div id="map"></div>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7cZh5EelSQfFBlcoa8Vj9G_AYX2-p76I">
+  </script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+</html>

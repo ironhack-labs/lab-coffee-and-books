@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mapa</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h3 id="bookstoreName" data-id="{{ restaurant.id}}">{{ restaurant.name}}</h3>
+    <p>{{ restaurant.description}}</p>
+    <a href="/">Lista</a>
+    <div id="map"></div>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbBJPvYIaR5ozIx_0-uWiGeO9cK4IxHww">
+  </script>
+  <script type="text/javascript" src="/javascripts/show.js"></script>
+</html>
