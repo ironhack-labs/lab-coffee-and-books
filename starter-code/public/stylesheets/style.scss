@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 16px 'Montserrat', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.go-btn {
+    margin-top: 50px;
+}
+
+.btn-delete {
+    background-color: red;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
