@@ -1,0 +1,13 @@
+<h2>TODAS LAS CAFETERÍAS</h2>
+<ul>
+{{#each coffeeAndBooks}}
+  <li>{{this.name}}</li>
+{{/each}}
+</ul>
+
+<div id="map"></div>
+<script>
+  window.coffeeAndBooks = {{{ coffStr }}}
+</script>
+
+<script src="/javascripts/listMap.js"></script>
