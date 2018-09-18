@@ -1,0 +1,16 @@
+<section class="container">
+	<h2>{{ subtitle }}</h2>
+	<ul class="places-list">
+		{{#each places}}
+			<li>{{this.name}} - <span>{{this.kind}}</span></li>
+		{{/each}}
+	</ul>
+
+	{{!-- Google Map --}}
+	<div class="map" id="map"></div>
+	<script>
+  		window.places = {{{ placesStr }}}
+	</script>
+</section>
+
+<script src="/javascripts/listMap.js"></script>
