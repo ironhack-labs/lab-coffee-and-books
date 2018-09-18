@@ -1,2 +1,14 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+<a href="/new">New</a>
+{{#if places}}
+  <ul>
+  {{#each places }}
+  <li>
+    {{name}} - {{type}}
+  </li>
+  {{/each}}
+  </ul>
+{{else}}
+  <p>No hay lugares</p>
+{{/if}}
