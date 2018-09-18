@@ -1,8 +1,9 @@
-<h2>{{ subtitle }}</h2>
-<ul>
-	{{#each places}}
-		<li>{{this.name}}</li>
-	{{/each}}
-</ul>
-	
+<section class="container">
+	<h2>{{ subtitle }}</h2>
+	<ul class="places-list">
+		{{#each places}}
+			<li>{{this.name}} - <span>{{this.kind}}</span></li>
+		{{/each}}
+	</ul>
+</section>
 
