@@ -1,0 +1,15 @@
+<h1>NEW PLACE</h1>
+
+<form method="POST" action="/place/new">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="kind" placeholder="coffee/books">
+
+  <label>Location</label>
+  <input id="lat-pos" type="text" name="latitude" placeholder="Latitude">
+  <input id="lng-pos" type="text" name="longitude" placeholder="Longitude">
+
+  <input type="submit" name="">
+  <div id="map"></div>
+</form>
+
+<script src="/javascripts/addMap.js"></script>
