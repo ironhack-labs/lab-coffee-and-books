@@ -6,7 +6,7 @@ const Place = require('../models/Place');
 router.get('/', (req, res, next) => {
 	Place.find()
 		.then( places => {
-			res.render('places/index', { 
+			res.render('places/list', { 
 				places,
 				placesStr: JSON.stringify(places),
 				subtitle: 'Places List'

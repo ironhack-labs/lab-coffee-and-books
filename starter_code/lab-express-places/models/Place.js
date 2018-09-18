@@ -2,9 +2,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const placeSchema = new Schema({
-	name: String,
-	kind: {type: String, enum:['Bookstore', 'Coffee-place']},
-	location: { type: { type: String }, coordinates: [Number] }
+	name: { 
+		type: String, 
+		required: true 
+	},
+	kind: {
+		type: String,  
+		enum:['Bookstore', 'Coffee-place'],
+		required: true
+	},
+	location: {
+		type: { type: String }, 
+		coordinates: [Number]
+		//coordinates: { type: [ Number ], required: true}
+	}
 }, {
 	timestamps: {
 		createdAt: 'created_at',
