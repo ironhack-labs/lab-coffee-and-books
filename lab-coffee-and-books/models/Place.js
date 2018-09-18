@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const placeSchema = new Schema({
   name: String,
-  coffeeOrBooks: String,
+  coffeeOrBooks: { type: String, enum: ['BOOKS', 'COFFEE'] },
   location: { type: { type: String }, coordinates: [Number] }
 });
 

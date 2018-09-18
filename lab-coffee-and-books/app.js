@@ -11,7 +11,7 @@ const path         = require('path');
 
 
 mongoose
-  .connect('mongodb://localhost/m2-0818-google-maps-crud', {useNewUrlParser: true})
+  .connect('mongodb://localhost/cofeeAndBooks', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
