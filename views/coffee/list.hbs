@@ -1,0 +1,16 @@
+<h2>TODOS LOS RESTAURANTES</h2>
+<ul>
+{{#each coffees}}
+  <li>{{this.name}}</li>
+{{/each}}
+</ul>
+
+<div id="map"></div>
+<script>
+  window.coffees = {{{ restStr }}}
+
+  console.log(window.coffees)
+  
+</script>
+
+<script src="/javascripts/listMap.js"></script>
