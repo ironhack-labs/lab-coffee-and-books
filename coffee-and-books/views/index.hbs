@@ -5,10 +5,14 @@
   <ul>
   {{#each places }}
   <li>
-    {{name}} - {{type}}
+    {{name}} - <a href="/?{{type}}">{{type}}</a>
   </li>
   {{/each}}
   </ul>
 {{else}}
   <p>No hay lugares</p>
 {{/if}}
+<div id="map"></div>
+<script>window.marks = {{{placesStr}}};</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApwfWncNG9pGMxFx84PiQ0MSLsssTsyoM"></script>
+<script src="javascripts/mapList.js"></script>
