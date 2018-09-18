@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.bg-title {
+  background-image: url("../images/coffee-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh; }
+
+.title {
+  font-size: 51px;
+  color: white;
+  margin-top: 7%;
+  position: absolute; }
+
+.links {
+  position: absolute;
+  margin-left: 78%;
+  margin-top: 2%;
+  display: flex;
+  flex-flow: column;
+  direction: rtl;
+  width: 20%; }
+
+.links a {
+  font-size: 40px;
+  color: dodgerblue;
+  text-decoration: none;
+  padding-top: 60px; }
+
+.list {
+  background-image: url("../images/coffee.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh; }
+
+.list h2 {
+  color: white;
+  font-size: 50px;
+  margin-left: 10%; }
+
+.list-div {
+  color: white;
+  font-size: 26px;
+  margin-left: 10%;
+  margin-top: 2%;
+  height: 10%;
+  width: 80%; }
+
+.list p {
+  padding-bottom: 1%; }
+
+.new {
+  background-image: url("../images/mac.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh; }
+
+.new form {
+  margin-left: 5%;
+  padding-top: 9%;
+  margin-bottom: -145px; }
+
+input[type="text"],
+select {
+  width: 18%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px; }
+
+input[type="submit"] {
+  width: 10%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px; }
+
+#map {
+  width: 45%;
+  height: 50%;
+  border: 5px solid #6aa2bd;
+  border-radius: 2em;
+  margin-top: 13%;
+  position: absolute; }
+
+/*# sourceMappingURL=style.css.map */
