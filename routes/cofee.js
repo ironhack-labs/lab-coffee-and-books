@@ -30,7 +30,7 @@ router.post('/new', (req, res, next) => {
   }
   console.log(cofee);
   Place.create(cofee).then( cofee => {
-    res.redirect('/cofee');
+    res.redirect('/cofees');
   }).catch(e=> next(e));
 });
 

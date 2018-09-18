@@ -30,7 +30,7 @@ router.post('/new', (req, res, next) => {
   }
   console.log(book);
   Place.create(book).then( book => {
-    res.redirect('/book');
+    res.redirect('/books');
   }).catch(e=> next(e));
 });
 
