@@ -1,0 +1,13 @@
+<h2>COFEE</h2>
+<ul>
+{{#each cofees}}
+  <li>{{this.name}}</li>
+{{/each}}
+</ul>
+
+<div id="map"></div>
+<script>
+  window.cofees = {{{ cofStr }}}
+</script>
+
+<script src="/javascripts/listCofees.js"></script>
