@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     map.setCenter(center);
 
     places.forEach(place => {
-      //if place.
       marker = new google.maps.Marker({
         position: {
           lat:place.location.coordinates[0],
@@ -15,16 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         map: map,
         title: place.name+'\n'+ place.kind,
-        label: {
-          text: place.kind,
-          fontSize: '20px',
-          fontWeight: 'bolder'
-        },
-        color: 'blue',
-        MarkerShape: {
-          type: 'circle'
-        }
       });
+      if (place.kind == 'books'){marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');}
+      else {marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');}
       console.log("mARKER: ", marker);
     })
 

@@ -52,7 +52,6 @@ app.locals.title = 'COFFEE & BOOKS';
 
 const place = require('./routes/place');
 app.use('/place', place);
-//app.get('/',(req,res) => res.render('index'));
 const index = require('./routes/index');
 app.use('/', index);
 
