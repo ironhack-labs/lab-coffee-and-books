@@ -5,7 +5,17 @@ body {
 a {
   color: #00B7FF; }
 
+h1 {
+  text-align: center; }
+
 #map {
   height: 300px; }
+
+.container {
+  margin-top: 250px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */
