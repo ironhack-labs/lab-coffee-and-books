@@ -1,0 +1,13 @@
+<h2>COFFEES AND BOOKS</h2>
+<ul>
+{{#each place}}
+  <li>{{this.name}}</li>
+{{/each}}
+</ul>
+
+<div id="map"></div>
+<script>
+  window.place = {{{ placeStr }}}
+</script>
+
+<script src="/javascripts/listMap.js"></script>
