@@ -1,0 +1,13 @@
+<h2>AVAILABLE SHOPS</h2>
+<ul>
+{{#each shop}}
+  <li>{{this.name}}</li>
+{{/each}}
+</ul>
+
+<div id="map"></div>
+<script>
+  window.restaurants = {{{ shopPars }}}
+</script>
+
+<script src="/javascripts/displayOnMap.js"></script>
