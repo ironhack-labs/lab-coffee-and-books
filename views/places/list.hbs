@@ -1,0 +1,14 @@
+<h2>Coffee and Bookstores</h2>
+<p>Coffees are displayed with letter 'C' and bookstores with letter 'B' in the map.</p>
+<ul>
+{{#each places}}
+  <li>{{this.name}}</li>
+{{/each}}
+</ul>
+
+<div id="map"></div>
+<script>
+  window.places = {{{ placesToString }}}
+</script>
+
+<script src="/javascripts/listMap.js"></script>

@@ -1,0 +1,18 @@
+<h2>Add a new place</h2>
+
+<form action="/places/new" method="POST">
+  <input type="text" name="name" placeholder="name">
+  <input id="type" type="text" name="kind" placeholder="Coffee or Bookstore" list="types">
+    <datalist id="types">
+        <option value="coffee">
+        <option value="bookstore">
+    </datalist> 
+  <label>Address:</label>
+  <input id="latitudeForm" type="hidden" name="latitude"s>
+  <input id="longitudeForm" type="hidden" name="longitude">
+
+  <button type="submit">ADD</button>
+
+  <div id="map"></div>
+</form>
+<script src="/javascripts/addMap.js"></script>
