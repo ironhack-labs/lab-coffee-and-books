@@ -1,2 +1,10 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<a href="/new">Add a new place</a>
+<ul>
+  {{#each places}}
+  <li>Name: {{name}} - Description: {{description}} - Type: {{typeOfStore}} - <a href="/delete/{{_id}}">Delete place</a></li>
+  {{/each}}
+</ul>
+
