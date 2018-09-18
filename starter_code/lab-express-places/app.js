@@ -52,6 +52,6 @@ app.locals.title = 'Coffee & Books';
 
 // ROUTES
 app.use('/', require('./routes/index'));
-
+app.use('/places', require('./routes/places'));
 
 module.exports = app;

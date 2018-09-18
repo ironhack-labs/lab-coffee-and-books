@@ -1,0 +1,77 @@
+.header {
+    width: 100%;
+	overflow: hidden;
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+
+.subheader {
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+
+.container {
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+
+.form {
+	.form-group {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+
+		label, .form-control {
+			font-size: 0.85rem;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			display: block;
+			width: 100%
+		}
+		.form-control {
+			padding-left: 10px;
+			padding-right: 10px;
+			border: 2px solid $light-blue;
+			border-radius: 5px;
+			box-sizing: border-box;
+		}
+		select {
+			border: 2px solid $light-blue;
+		}
+		legend {
+			font-weight: bold;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		.primary-btn {
+			background-color: $light-blue;
+			border: 1px solid $medium-blue;
+			border-radius: 5px;
+			padding: 10px 15px;
+			cursor: pointer;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			color: $medium-white;
+			font-size: 1rem;
+		}
+	}
+}
+
+.map {
+	height: 500px;
+	width: 100%;
+	border: 2px solid $light-blue;
+}
+
+/* ================================ */
+// MEDIA QUERIES
+/* ================================ */
+@media screen and (min-width: 768px) {
+	.form {
+		.form-group {
+			.form-control {
+				width: 50%;
+				max-width: 500px;
+			}
+		}
+	}
+}
