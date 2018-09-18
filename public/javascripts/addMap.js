@@ -17,6 +17,8 @@ document.addEventListener(
       marker.setPosition(clickPos);
       setPosOnForm(clickPos);
     });
+
+
     geolocalize().then(center => {
       map.setCenter(center);
       marker = new google.maps.Marker({
@@ -25,6 +27,8 @@ document.addEventListener(
       });
       setPosOnForm(center);
     });
+    
   },
+
   false
 );

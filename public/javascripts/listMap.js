@@ -2,7 +2,7 @@ document.addEventListener(
   "DOMContentLoaded",
   () => {
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 13
+      zoom: 10
     });
     geolocalize().then(center => {
       map.setCenter(center);
@@ -17,6 +17,7 @@ document.addEventListener(
         });
       });
     });
+    map.fitBounds(Marker);
   },
   false
 );
