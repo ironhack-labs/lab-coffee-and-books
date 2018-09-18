@@ -1,0 +1,13 @@
+<h2>Coffees</h2>
+<ul id="list" class="list-group">
+{{#each places}}
+  <li><button class="list-group-item list-group-item-action">{{this.name}}</button></li>
+{{/each}}
+</ul>
+
+<div id="map"></div>
+<script>
+  window.places = {{{ restStr }}}
+</script>
+
+<script src="/javascripts/listMap.js"></script>
