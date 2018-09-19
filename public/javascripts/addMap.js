@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-
   let marker;
 
   map.addListener('click', function(e) {
@@ -31,6 +30,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     setPosOnForm(center);
   });
-
 
 }, false);

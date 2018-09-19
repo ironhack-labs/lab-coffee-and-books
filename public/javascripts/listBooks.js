@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: boo.name
       });
     })
+    
 
   });
 
