@@ -1,0 +1,15 @@
+<h1>Lista de Lugares</h1>
+
+<div>
+<button><a href="/places/new">
+  Agregar Lugar
+</a> </button> 
+</div> 
+<br/>
+<div>
+{{#each places}}
+  <a href="places/detail/{{this._id}}">
+    {{this.name}}
+  </a><br>
+  </div>
+{{/each}}
