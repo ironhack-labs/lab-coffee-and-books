@@ -1,0 +1,53 @@
+<h1>EDICIÓN DE LUGARES</h1>
+
+<form action="/places/edit/{{_id}}" method="POST">
+<p>
+  Nombre del lugar:
+  <input type="text" name="name" value="{{name}}">
+</p>
+
+<p>
+  Selecciona el tipo de lugar:
+  <select name="enum" id="" value="{{enum}}">
+  <option value="CAFE">Cafetería</option>
+  <option value="BOOK">Librería</option>
+</select>
+</p>
+<p>
+  Dirección:
+  <input type="text" name="location[address]" id="address" value="{{location.address}}">
+</p>
+<p>
+  Latitud:
+  <input type="text" name="location[coordinates][1]" id="lat">
+</p>
+<p>
+  Longitud:
+  <input type="text" name="location[coordinates][0]" id="lng">
+</p>
+<input type="submit" value="Guardar">
+
+</form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8o46KiOg4PdiJ8WCRXC9KyFfE4d-g0Qw&libraries=places"></script>
+
+<script>
+
+  const address = document.getElementById('address')
+  const lat     = document.getElementById('lat')
+  const lng     = document.getElementById('lng')
+
+  function autoComplete(addressImput, latImput, lngImput){
+    const dropdown = new google.maps.places.Autocomplete(addressImput)
+
+    dropdown.addListener('place_changed', ()=>{
+      const place = dropdown.getPlace()
+      console.log(place)
+      lat.value = place.geometry.location.lat()
+      lng.value = place.geometry.location.lng()
+    })
+  }
+
+  autoComplete(address, lat, lng)
+</script>
+
