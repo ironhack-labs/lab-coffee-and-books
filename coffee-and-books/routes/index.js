@@ -43,12 +43,9 @@ router.post('/maps', (req, res, next) => {
     };
 
   // Save the restaurant to the Database
-  coffee.save((error) => {
-    if (error) { console.log(error) }
-    else {
-      res.redirect('/');
-    }
-  })
+  Coffee.create(newCoffee).then( newCoffee => {
+    res.redirect('/maps');
+  }).catch(e=> next(e));
 });
 
 module.exports = router;
