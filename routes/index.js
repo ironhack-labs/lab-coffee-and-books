@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
 router.get('/place-list', (req, res, next) => {
   Place.find()
   .then( places => {
-    res.render('place-list', {places})
+    res.render('place-list', {places, placesStr: JSON.stringify(places)})
   }).catch( e => next(e));
 });
 

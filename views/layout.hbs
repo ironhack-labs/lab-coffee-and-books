@@ -6,11 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd9KiBQgXIwHe-jKrOq0rtJafSWvxfBSk"></script>
 </head>
 <body>
-
+  <script>window.places = {{{placesStr}}}</script>
+  
   {{{body}}}
+  
+  <script src="/javascripts/geolocate.js"></script>
+  <script src="/javascripts/displayMarker.js"></script>
+  <script src="/javascripts/newLocation.js"></script>
 
-  <script src="/javascripts/script.js"></script>
 </body>
 </html>

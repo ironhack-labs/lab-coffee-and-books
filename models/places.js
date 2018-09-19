@@ -5,9 +5,16 @@ const Schema   = mongoose.Schema;
 const placeSchema = new Schema({
   name: String,
   description: String,
-  location: { type: { type: String }, coordinates: [Number] }
+  kindOfPlace:{type:String,
+    enum:["bookstore", "coffeplace"]
+  },
+  location: {
+      type: {
+          type: String
+      },
+      coordinates: [Number]
+  }
 });
-placeSchema.index({ location: '2dsphere' });
+placeSchema.index({location: '2dsphere'});
 
-const Place = mongoose.model("Place", placeSchema);
-module.exports = Place;
+module.exports = mongoose.model('Place', placeSchema); 

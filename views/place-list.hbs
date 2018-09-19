@@ -1,3 +1,19 @@
 {{#each places}}
-  <p>Name: {{ this.name}} - Description: {{this.description}}</p>
+<p>Name: {{ this.name}} - Description: {{this.description}} - Coordinates: {{this.location.coordinates.[0]}}, {{this.location.coordinates.[1]}}</p>
 {{/each}}
+
+<form method="POST" action="/form">
+  <input type="text" name="name" placeholder="name" required>
+  <input type="text" name="description" placeholder="description" required>
+
+  <label>Address</label>
+  <input id="lat-pos" type="text" name="latitude" placeholder="Latitude">
+  <input id="lng-pos" type="text" name="longitude" placeholder="Longitude">
+
+  <input type="submit" name="">
+</form>
+
+
+<a href="/form">Add more places</a>
+
+<div id="map" style="height:500px"></div>
