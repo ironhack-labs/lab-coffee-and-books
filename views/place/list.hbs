@@ -1,0 +1,13 @@
+<h2>ALL MY FAVORITE PLACES</h2>
+<ul>
+{{#each places}}
+  <li>{{this.name}}</li>
+{{/each}}
+</ul>
+
+<div id="map"></div>
+<script>
+  window.places = {{{ restStr }}}
+</script>
+
+<script src="/javascripts/listMap.js"></script>
