@@ -1,0 +1,54 @@
+<h1>Lugar</h1>
+<div>
+  <div>
+    
+    <h2>{{this.name}}</h2>
+   
+  <div>{{this.location.address}}</div>
+
+ </div>
+</div>
+
+<h1>Map</h1>
+
+<div id="map"></div>
+
+<a href="/places/edit/{{_id}}">Editar Lugar</a>
+
+<form action="/places/{{this.id}}/delete" method="POST">
+<button type="submit" value="Remove"> Remove</button>
+</form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8o46KiOg4PdiJ8WCRXC9KyFfE4d-g0Qw"></script>
+
+<script>
+
+function map (){
+  const map = new google.maps.Map((
+    document.getElementById('map')
+  ),
+  {
+    zoom:15,
+    center:{
+      lat:{{location.coordinates.[1]}},
+      lng:{{location.coordinates.[0]}}
+    }
+  })
+
+  const marker = new google.maps.Marker({
+    map:map,
+    position:{
+      lat:{{location.coordinates.[1]}},
+      lng:{{location.coordinates.[0]}}
+    },
+    animation:google.maps.Animation.BOUNCE,
+    icon: "https://furtaev.ru/preview/ice_cream_map_pointer_small.png"
+  })
+}
+
+map()
+
+</script>
+
+
+
