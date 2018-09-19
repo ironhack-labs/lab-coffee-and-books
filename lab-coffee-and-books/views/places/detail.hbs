@@ -1,0 +1,37 @@
+<h1>{{this.name}}</h1>
+<h3>{{this.enum}}</h3>
+<p>{{this.location.address}}</p>
+
+
+
+<a href="/places/edit/{{this._id}}">EDITAR</a>
+
+<a href="/places/delete/{{this._id}}">ELIMINAR</a>
+
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8o46KiOg4PdiJ8WCRXC9KyFfE4d-g0Qw"></script>
+    <script>
+      function map(){
+        const map = new google.maps.Map((
+          document.getElementById('map')
+        ),{
+          zoom:17,
+          center:{
+            lat:{{location.coordinates.[1]}},
+            lng:{{location.coordinates.[0]}}
+          }
+        })
+        const marker = new google.maps.Marker({
+          map:map,
+          position:{
+            lat:{{location.coordinates.[1]}},
+            lng:{{location.coordinates.[0]}}
+        },
+          animation: google.maps.Animation.BOUNCE,
+          icon: "http://duspviz.mit.edu/sessions/leaflet/styling/images/map-logo.png"
+        })
+      }
+      map()
+    </script>
+
