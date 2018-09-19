@@ -1,0 +1,12 @@
+<h1>Lista de Cafes</h1>
+
+<a href="/places/new">Agrega un lugar</a>
+
+{{#each cafes}}
+  <p>
+    <a href="/places/detail/{{this.id}}">{{this.name}}</a>
+  </p>
+  <form action="/places/{{this.id}}/delete" method="POST">
+    <input type="submit" value="Remove">
+  </form>
+{{/each}}
