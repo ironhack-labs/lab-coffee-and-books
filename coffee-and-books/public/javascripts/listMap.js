@@ -4,6 +4,7 @@ document.addEventListener(
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 13
     });
+    const bounds = new google.maps.LatLngBounds();
     geolocalize().then(center => {
       map.setCenter(center);
      /*  if (count(markers) <= 1) {
@@ -14,14 +15,16 @@ document.addEventListener(
       } */
 
       places.forEach(place => {
+        let position =  {
+          lat: place.location.coordinates[0],
+          lng: place.location.coordinates[1]
+        }
         new google.maps.Marker({
-          position: {
-            lat: place.location.coordinates[0],
-            lng: place.location.coordinates[1]
-          },
+         position,
           map: map,
           title: place.name
         });
+        bounds.extend(position);
       });
     });
 /*     const bounds = new google.maps.LatLngBounds();
@@ -34,6 +37,7 @@ document.addEventListener(
     if (map.getZoom() > 15) {
       map.setZoom(15);
     } */
+    map.fitBounds(bounds);
   },
   false
 );
