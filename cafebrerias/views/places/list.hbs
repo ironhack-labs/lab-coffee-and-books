@@ -1,0 +1,49 @@
+<h2>Lista de lugares</h2>
+<div style="diplay:flex; flex-direction:column;">
+  <script>let a=[]; let b =[]</script>
+  <a href="/places/new">Agrega un lugar</a>
+  {{#each places}}
+  <div style="margin:2vh 0;">
+    <a href="/places/detail/{{this._id}}">
+      {{this.name}}
+    </a>
+  </div>
+  <script>a.push({{this.location.coordinates.[1]}});b.push({{this.location.coordinates.[0]}})</script>
+  {{/each}}
+</div>
+
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8o46KiOg4PdiJ8WCRXC9KyFfE4d-g0Qw"></script>
+<script>
+  
+  function map(){
+
+    const map = new google.maps.Map((
+      document.getElementById("map")
+    ),
+    {
+      zoom:12,
+      center:{
+        lat:{{promedio.lat}},
+        lng:{{promedio.lng}}
+      }
+      })
+  var bounds = new google.maps.LatLngBounds()
+for(i=0;i<a.length;i++){
+    bounds.extend(new google.maps.LatLng(a[i],b[i]));
+  let marker = new google.maps.Marker({
+        map:map,
+        position:{
+          lat:a[i],
+          lng:b[i]
+        },
+        animation:google.maps.Animation.BOUNCE,
+    })
+  }
+  map.fitBounds(bounds)
+  }
+
+  map()
+
+ </script>

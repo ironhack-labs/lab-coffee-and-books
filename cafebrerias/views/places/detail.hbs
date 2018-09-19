@@ -1,0 +1,37 @@
+<h1>{{name}}</h1>
+<a href="/places/edit/{{_id}}">Editar</a> 
+<a href="/places/delete/{{_id}}">Eliminar</a> 
+<p>Ubicación: {{location.address}} </p>
+<p>Tipo: {{type}}</p>
+<div id="map"></div>
+<br>
+<br>
+<a href="/places">Regresar a la lista</a>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8o46KiOg4PdiJ8WCRXC9KyFfE4d-g0Qw"></script>
+<script>
+  function map(){
+    const map = new google.maps.Map((
+      document.getElementById("map")
+    ),
+    {
+      zoom:17,
+      center:{
+        lat:{{location.coordinates.[1]}},
+        lng:{{location.coordinates.[0]}}
+      }
+      })
+
+      const marker = new google.maps.Marker({
+        map:map,
+        position:{
+          lat:{{location.coordinates.[1]}},
+          lng:{{location.coordinates.[0]}}
+        },
+        animation:google.maps.Animation.BOUNCE,
+    })
+  }
+
+  map()
+
+ </script>

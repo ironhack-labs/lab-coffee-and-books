@@ -1,0 +1,52 @@
+<h2>Registrar nuevo lugar</h2>
+<form action="/places/edit/{{_id}}" method="post">
+  <p>
+    Nombre:
+    <input type="text" name="name" id="name" value="{{name}}" required>
+  </p>
+  <p>
+    Dirección:
+    <input type="text" name="location[address]" id="address" value="{{location.address}}">
+  </p>
+  <p>
+    Tipo:
+    <select name="type" id="type">
+      <option selected disabled hidden>{{type}}</option>
+      <option value="COFFEE" >Cafetería</option>
+      <option value="BOOK" >Librería</option>
+    </select>
+  </p>
+  <p>
+    Latitud: 
+    <input type="text" name="location[coordinates][1]" id="lat" value="{{location.coordinates.[1]}}">
+  </p>
+  <p>
+    Longitud:
+    <input type="text" name="location[coordinates][0]" id="lng" value="{{location.coordinates.[0]}}">
+  </p>
+  <input type="submit" value="Guardar">
+</form>
+<br>
+<br>
+<a href="/places">Regresar a la lista</a>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8o46KiOg4PdiJ8WCRXC9KyFfE4d-g0Qw&libraries=places"></script>
+<script>
+  const address = document.getElementById("address")
+  const lat = document.getElementById("lat")
+  const lng = document.getElementById("lng")
+
+  function autoComplete(addressInput,latInput,lngInput){
+    const dropdown = new google.maps.places.Autocomplete(addressInput)
+
+    dropdown.addListener("place_changed",()=>{
+      const place = dropdown.getPlace()
+      console.log(place)
+      lat.value = place.geometry.location.lat()
+      lng.value = place.geometry.location.lng()
+    })
+  }
+
+  autoComplete(address,lat,lng)
+
+</script>
