@@ -1,0 +1,19 @@
+<h1>Lista de Cafes</h1>
+
+<a href="/detail">
+  Agrega un lugarcin amiguin :)
+</a>
+
+{{#each coffee}}
+<ul>
+
+  <li>
+  <a href="new/{{this._id}}">
+  {{this.name}}
+  </a>
+  </li>
+
+</ul>
+
+
+{{/each}}
