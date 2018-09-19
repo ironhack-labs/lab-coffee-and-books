@@ -1,0 +1,13 @@
+<h1>Lista de coffees</h1>
+
+<a href="/detail">Soy detailr</a>
+<a href="/new">Agrega un lugar</a>
+
+{{#each coffees}}
+<ul>
+
+<li><a href="/detail/{{this._id}}">
+{{this.name}}
+</a></li>
+</ul>
+{{/each}}

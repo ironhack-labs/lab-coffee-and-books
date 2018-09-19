@@ -1,0 +1,47 @@
+<form action="/new" method="POST">
+
+<p>
+  Nombre del lugar:
+  <input type="text" name="name" id="">
+  
+</p>
+
+<p>
+  Address:
+  <input type="text" name="location[address]" id="address">
+</p>
+
+<p>
+  Latitude:
+  <input type="text" name="location[coordinates][1]" id="lat">
+</p>
+<p>
+  Longitud:
+  <input type="text" name="location[coordinates][0]" id="lng">
+</p>
+
+<input type="submit" value="Guardar">
+</form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8o46KiOg4PdiJ8WCRXC9KyFfE4d-g0Qw&libraries=places">
+    </script>
+
+    <script>
+      const  address = document.getElementById('address')
+      const lat = document.getElementById('lat')
+      const lng = document.getElementById('lng')
+
+      function autoComplete(addressInput, latInput, lngInput){
+        const dropdown = new google.maps.places.Autocomplete(addressInput)
+
+        dropdown.addListener('place_changed',()=>{
+          const place = dropdown.getPlace()
+          
+          lat.value = place.geometry.location.lat()
+          lng.value = place.geometry.location.lng()
+
+        })
+      }
+
+      autoComplete(address, lat, lng)
+    </script>
