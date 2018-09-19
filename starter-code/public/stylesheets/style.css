@@ -1,0 +1,23 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+.container {
+  margin: 20px;
+  margin-top: 3%;
+  margin-left: 100px;
+  text-align: center; 
+}
+
+#map {
+  margin: 5% auto;
+  height: 500px;
+  width: 500px; }
+
+.list-group-item {
+  width: 100px;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=style.css.map */
