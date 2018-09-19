@@ -1,0 +1,13 @@
+<h2>BOOKS</h2>
+<ul>
+{{#each books}}
+  <li>{{this.name}}</li>
+{{/each}}
+</ul>
+
+<div id="map"></div>
+<script>
+  window.books = {{{ booStr }}}
+</script>
+
+<script src="/javascripts/listBooks.js"></script>
