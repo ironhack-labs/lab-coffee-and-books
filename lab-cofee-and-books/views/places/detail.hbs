@@ -1,0 +1,60 @@
+<h1>Lugar</h1>
+<div>
+  <div>
+    
+    <h2>{{this.name}}</h2>
+   
+  <div>{{this.location.address}}</div>
+
+ </div>
+</div>
+
+
+
+<h1>Mapita</h1>
+
+<div id="map"></div>
+
+
+
+
+<a href="/places/edit/{{_id}}">Editar Lugar</a>
+
+<form action="/places/{{this.id}}/delete" method="POST">
+<button type="submit" value="Remove"> Borrar</button>
+</form>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8o46KiOg4PdiJ8WCRXC9KyFfE4d-g0Qw">
+</script>
+
+<script>
+function map (){
+  const map = new google.maps.Map((
+    document.getElementById('map')
+  ),
+  {
+    zoom:18,
+    center:{
+      lat:{{location.coordinates.[1]}},
+      lng:{{location.coordinates.[0]}}
+    }
+  })
+  var image = {
+    url: "https://cdn.shopify.com/s/files/1/1044/8640/products/juguetes-trompo-de-madera-1_1024x1024.jpg?v=1503830909",
+    scaledSize: new google.maps.Size(80, 80)
+    };
+      const marker = new google.maps.Marker({
+        map:map,
+        position:{
+          lat:{{location.coordinates.[1]}},
+          lng:{{location.coordinates.[0]}}
+        },
+        animation:google.maps.Animation.BOUNCE,
+        icon: image
+    })
+}
+
+map()
+
+</script>
+
+
