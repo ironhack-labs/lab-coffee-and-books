@@ -1,0 +1,41 @@
+<h1>Formulario</h1>
+
+<form action="/places/new" method="POST" >
+<p  >
+  <input type="text" name="name" id="" placeholder="Ingresa Nombre Del Caffe"  >
+</p>
+
+<p>
+  <input type="text" name="address" placeholder="" id="address">
+
+</p>
+<p>
+  <input type="text" name="location[coordinates][1]" placeholder="Latitude" id="">
+</p>
+<p>
+  <input type="text" name="location[coordinates][0]" placeholder="Longitude" id="">
+</p>
+<input type="submit" name="guardar" id="">
+</form>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8o46KiOg4PdiJ8WCRXC9KyFfE4d-g0Qw&libraries=places"></script>
+
+<script>
+  const address = document.getElementById('address')
+  const lat = document.getElementById('lat')
+  const lng = document.getElementById('lng')
+  
+  function autoComplete(addressInput,latInput,lngInput){
+    const dropdown = new google.maps.places.Autocomplete(addressInput) 
+    
+    dropdown.addListener('place_changed'),()=>{
+      const place = dropdown.getPlace()
+      //console.log(place)
+      lat.value = place.geometry.location.lat()
+      lng.value = place.geometry.location.lng()
+    }
+
+  }
+
+  autoComplete(address,lat,lng)
+
+</script>
