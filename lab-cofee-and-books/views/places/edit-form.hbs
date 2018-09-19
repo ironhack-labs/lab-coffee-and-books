@@ -1,0 +1,19 @@
+<form action="/places/edit/{{_id}}" method="POST">
+  <p>
+     Nombre del restaurant:
+    <input type="text" name="name" id="" value="{{name}}">
+  </p>
+  <p>
+     Address:
+    <input type="text" name="location[address]" id="address" value="{{location.address}}">
+  </p>
+  <p>
+     Latitude:
+    <input type="text" name="location[coordinates][1]" id="lat" value="{{location.coordinates.[1]}}">
+  </p>
+  <p>
+     Longitude:
+    <input type="text" name="location[coordinates][0]" id="lng" value="{{location.coordinates.[0]}}">
+  </p>
+  <button type="submit">Agregar</button>
+</form>
