@@ -1,13 +1,9 @@
 <div class="new-place">
-
+ <h2>Add a new PLACE</h2>
   <form method="POST" action="/places/new">
   {{!-- Dropdown menu --}}
-    <input type="text" name="name" placeholder="name">
-    {{!-- <select name="place" id="place">
-      <option value="Bookstore">Bookstore</option>
-      <option value="Coffee Place">Coffee Place</option>
-    </select> --}}
-      <select name="place" class="form-control" id="place" width="50">
+    <input  class="name-input"type="text" name="name" placeholder="name">
+      <select name="place" class="select-control" id="place">
         <option value="Bookstore">Bookstore</option>
         <option value="Coffe Shop">Coffee Shop</option>
       </select>

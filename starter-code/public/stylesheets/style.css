@@ -1,21 +1,26 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
+h2 {
+  text-align: center;
+}
 a {
-  color: #00B7FF; }
-
+  color: #00B7FF; 
+}
+.name-input {
+  margin-left: 600px;
+  margin-bottom: 20px;
+}
 .content {
   margin: 20px;
   margin-top: 3%;
   text-align: center; }
-
+.btn {
+  margin-top: 10px;
+  margin-left: 670px;
+}
 #map {
   margin: 5% auto;
   height: 400px;
   width: 600px; }
-
-.list-group-item {
-  width: 200px;
-  margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */
