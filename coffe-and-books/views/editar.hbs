@@ -1,0 +1,42 @@
+<h1>Edita el lugar</h1>
+<form action="/editar" method="POST">
+    <p>
+        Name:
+        <input type="text" name="name" placeholder="{{name}}">
+    </p>
+    <p>
+        Address:
+        <input type="text" name="location[address]" id="address">
+    </p>
+    <p>
+        Latitude:
+        <input type="text" name="location[coordinates][1]" id="lat">
+    </p>
+    <p>
+        Longitude:
+        <input type="text" name="location[coordinates][0]" id="lng"> 
+    </p>
+    <input type="submit" value="guardalo ">
+
+</form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWYfOM0W_RHLc5aKmVabk-bnmNMyidJPM&libraries=places"></script>
+
+<script>
+    let address = document.getElementById('address') 
+    let lat = document.getElementById('lat')
+    let lng = document.getElementById('lng')
+
+    function autoComplete(input, inputLat, inputLng){
+        const dropdown = new google.maps.places.Autocomplete(input)
+
+        dropdown.addListener('place_changed', ()=>{
+            let place = dropdown.getPlace()
+            console.log(place)
+            lat.value = place.geometry.location.lat()
+            lng.value = place.geometry.location.lng()
+        })
+    }
+    autoComplete(address, lat, lng)
+
+</script>
