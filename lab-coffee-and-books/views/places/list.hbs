@@ -1,0 +1,14 @@
+<h1>LUGARES</h1>
+
+
+<div>
+  {{#each places}}
+  <h3>{{this.name}}</h3>
+  <p>{{this.enum}}</p>
+  <a href="/places/detail/{{this._id}}">Ver más</a>
+  {{/each}}
+
+</div>
+
+<a href="/places/new">Agregar nuevo lugar</a>
+
