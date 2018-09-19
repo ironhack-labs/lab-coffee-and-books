@@ -26,6 +26,7 @@ window.onload = () => {
   });
 
   function placeCoffees(coffees){
+    console.log("hello")
     coffees.forEach(function(coffee){
       const center = {
         lat: coffee.location.coordinates[1],

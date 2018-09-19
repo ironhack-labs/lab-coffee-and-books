@@ -5,18 +5,9 @@ const express = require('express');
 const router  = express.Router();
 const Coffee = require('../models/coffee');
 
-function getCoffees() {
-  axios.get("http://localhost:3000/api")
-  .then( response => {
-    placeCoffees(response.data.coffees)
-  })
-  .catch(error => {
-    next(error)
-  })
-}
 
 router.get('/', (req, res, next) => {
-  res.render('index');
+  res.render('maps');
 });
 
 router.get('/maps', (req, res, next) => {
@@ -26,6 +17,19 @@ router.get('/maps', (req, res, next) => {
       res.render('maps', { coffees });
     }
   })
+})
+
+router.get('/:id/delete',(req,res,next)=>{
+  const {id} = req.params
+  res.render('maps')
+})
+
+router.post('/:id/delete', (req,res,next)=>{
+  const {id} = req.params
+  Coffee.findByIdAndRemove(id)
+    .then(user=>{
+      res.redirect('/maps')
+    }).catch(e=>next(e))
 })
 
 router.post('/maps', (req, res, next) => {
