@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13,
+    zoom: 11,
   });
 
   const setPosOnForm = (latlng) => {

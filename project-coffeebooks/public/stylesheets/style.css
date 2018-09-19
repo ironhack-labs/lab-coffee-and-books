@@ -9,4 +9,21 @@ a {
 #map {
   height: 300px; }
 
+.menu a {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: white; }
+
+.menu {
+  list-style-type: square;
+  margin-left: 50px; }
+
+#coffee {
+  display: block;
+  margin: 0 70px; }
+
+h1 {
+  font-size: 2.5em;
+  margin-left: 70px; }
+
 /*# sourceMappingURL=style.css.map */
