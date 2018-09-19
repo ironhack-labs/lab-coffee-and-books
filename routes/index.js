@@ -21,7 +21,7 @@ router.post('/form', (req, res, next) => {
   // Get Params from POST
   let location = {
     type: 'Point',
-    coordinates: [Number(req.body.longitude), Number(req.body.latitude)]
+    coordinates: [Number(req.body.latitude), Number(req.body.longitude)]
   };
 
   // Create a new Restaurant with location

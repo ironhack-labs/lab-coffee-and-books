@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13,
-  });
+
+
 
   const setPosOnForm = (latlng) => {
     document.getElementById('lat-pos').value = latlng.lat;
@@ -11,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let marker;
 
-  map.addListener('click', function (e) {
+  map.addEventListener('click', function (e) {
 
     const clickPos = {
       lat: e.latLng.lat(),
@@ -23,14 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   geolocate().then(center => {
-
     map.setCenter(center);
     marker = new google.maps.Marker({
       position: center,
       map: map
     });
     setPosOnForm(center);
-    console.log("MARKER: ", marker);
   });
 
 }, false);
