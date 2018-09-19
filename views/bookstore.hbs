@@ -1,0 +1,13 @@
+<h2>BOOK STORES</h2>
+<ul>
+{{#each bookstores}}
+  <li>{{this.name}}</li>
+{{/each}}
+</ul>
+
+<div id="map"></div>
+<script>
+  <window class="bookstores"></window> = {{{ restStr }}}
+</script>
+
+<script src="/javascripts/bookMap.js"></script>
