@@ -1,0 +1,17 @@
+<div class="new-place">
+ <h2>Add a new PLACE</h2>
+  <form method="POST" action="/places/new">
+  {{!-- Dropdown menu --}}
+    <input  class="name-input"type="text" name="name" placeholder="name">
+      <select name="place" class="select-control" id="place" width="50">
+        <option value="Bookstore">Bookstore</option>
+        <option value="Coffee Shop">Coffee Shop</option>
+      </select>
+    {{!-- hidden lat lng pos when clicked on map --}}
+    <input id="lat-pos" type="hidden" name="latitude">
+    <input id="lng-pos" type="hidden" name="longitude">
+    <input class="btn btn-primary" type="submit" value="Add">
+  </form>
+  <div id="map"></div>
+</div>
+<script src="/javascripts/addMap.js"></script>
