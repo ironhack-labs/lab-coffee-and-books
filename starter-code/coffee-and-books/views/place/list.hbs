@@ -1,0 +1,7 @@
+<h1>Lugares Registrados</h1>
+
+<a href="/signup">Reistra un nuevo lugar</a>
+
+{{#each places}}
+  <p><a href="/detail/{{this._id}}">{{this.name}}</a></p>
+{{/each}}

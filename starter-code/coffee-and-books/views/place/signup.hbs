@@ -1,0 +1,40 @@
+<h2>Añade un nuevo lugar</h2>
+
+<form action="/signup" method="POST">
+  <p>
+    Nombre del lugar:
+    <input type="text" name="name" id="name">
+  </p>
+    <p>
+    Direccion:
+    <input type="text" name="location[address]" id="address">
+  </p>
+  <p>
+    Latitud:
+    <input type="text" name="location[coordinates][1]" id="latitud">
+  </p>
+    <p>
+    Longitud:
+    <input type="text" name="location[coordinates][0]" id="longitud">
+  </p>
+  <input type="submit" value="guardalo">
+</form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8o46KiOg4PdiJ8WCRXC9KyFfE4d-g0Qw&libraries=places"></script>
+
+<script>
+  const address = document.getElementById('address')
+  const lat = document.getElementById('latitud')
+  const lng = document.getElementById('longitud')
+
+  function autoComplete(addressInput,latInput,lngInput){
+    const dropdown = new google.maps.places.Autocomplete(addressInput)
+    dropdown.addListener('place_changed',()=>{
+      const place =dropdown.getPlace()
+      console.log(place)
+      lat.value= place.geometry.location.lat()
+      lng.value= place.geometry.location.lng()
+    })
+  }
+  autoComplete(address,lat,lng)
+</script>
