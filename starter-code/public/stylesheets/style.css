@@ -4,20 +4,18 @@ body {
 a {
   color: #00B7FF; }
 
-.container {
+.content {
   margin: 20px;
   margin-top: 3%;
-  margin-left: 100px;
-  text-align: center; 
-}
+  text-align: center; }
 
 #map {
   margin: 5% auto;
-  height: 500px;
-  width: 500px; }
+  height: 400px;
+  width: 600px; }
 
 .list-group-item {
-  width: 100px;
+  width: 200px;
   margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,14 +3,18 @@
   <form method="POST" action="/places/new">
   {{!-- Dropdown menu --}}
     <input type="text" name="name" placeholder="name">
-    <select name="place" id="place">
+    {{!-- <select name="place" id="place">
       <option value="Bookstore">Bookstore</option>
       <option value="Coffee Place">Coffee Place</option>
-    </select>
+    </select> --}}
+      <select name="place" class="form-control" id="place" width="50">
+        <option value="Bookstore">Bookstore</option>
+        <option value="Coffe Shop">Coffee Shop</option>
+      </select>
     {{!-- hidden lat lng pos when clicked on map --}}
     <input id="lat-pos" type="hidden" name="latitude">
     <input id="lng-pos" type="hidden" name="longitude">
-    <input type="submit" value="Create">
+    <input class="btn btn-primary" type="submit" value="Add">
   </form>
   <div id="map"></div>
 </div>
