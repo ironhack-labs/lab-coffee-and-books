@@ -1,0 +1,18 @@
+<h1>NEW PLACE</h1>
+
+<form method="POST" action="/place/new">
+  <input type="text" name="name" placeholder="name">
+  <label>Kind of place </label>
+  <select name="kind">
+    <option value="coffee">Coffee</option>
+    <option value="books">Books</option>
+  </select>
+  <label>Location</label>
+  <input id="lat-pos" type="hidden" name="latitude" placeholder="Latitude">
+  <input id="lng-pos" type="hidden" name="longitude" placeholder="Longitude">
+
+  <input type="submit" name="" value="CREATE">
+  <div id="map"></div>
+</form>
+
+<script src="/javascripts/addMap.js"></script>
