@@ -6,14 +6,19 @@ const ironhackBCN = {
     zoom: 13,
     center: ironhackBCN
   });
+  var bounds = new google.maps.LatLngBounds();
   console.log(marks)
  marks.forEach(e=>{
-   new google.maps.Marker({
-     position:{
-       lat:e.location.coordinates[0],
-       lng:e.location.coordinates[1]},
-       map,
-       title:e.name
-      })
+  position={
+    lat:e.location.coordinates[0],
+    lng:e.location.coordinates[1]
+  }
+  new google.maps.Marker({
+      position,  
+      map,
+      title:e.name
+    })
+    bounds.extend(position)
   })
     
+    map.fitBounds(bounds);
