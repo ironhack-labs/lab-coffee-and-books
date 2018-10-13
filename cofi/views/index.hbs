@@ -1,0 +1,34 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<ul>
+    {{#each coffee}}
+        <li>
+            <a href="/{{this._id}}">{{this.name}}</a>
+        </li>
+    {{/each}}
+</ul>
+
+<div id="res_map" style="width: 70%; height: 400px"></div>
+
+<script>
+    window.onload = function () {
+        const map = new google.maps.Map(document.getElementById("res_map"),{
+            zoom: 15,
+            center: {
+                lat: {{coffee.[0].location.coordinates.[1]}},
+                lng: {{coffee.[0].location.coordinates.[0]}}
+            }
+        });
+        let marker;
+        {{#each coffee}}
+            marker = new google.maps.Marker({
+                position:{
+                    lat: {{this.location.coordinates.[1]}},
+                    lng: {{this.location.coordinates.[0]}}
+                },
+                map
+            });
+        {{/each}}
+    }
+</script>

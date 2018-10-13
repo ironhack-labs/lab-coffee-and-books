@@ -1,0 +1,22 @@
+<h1>{{coffee.name}}</h1>
+
+<div id="res_map" style="width: 70%; height: 400px"></div>
+
+<script>
+    window.onload = function () {
+        const map = new google.maps.Map(document.getElementById("res_map"),{
+            zoom: 15,
+            center: {
+                lat: {{coffee.location.coordinates.[1]}},
+                lng: {{coffee.location.coordinates.[0]}}
+            }
+        });
+        const marker = new google.maps.Marker({
+            position:{
+                lat: {{coffee.location.coordinates.[1]}},
+                lng: {{coffee.location.coordinates.[0]}}
+            },
+            map
+        })
+    }
+</script>
