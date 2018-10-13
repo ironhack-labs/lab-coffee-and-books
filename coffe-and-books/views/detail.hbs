@@ -1,0 +1,28 @@
+<h1>Place here</h1>
+<h1>{{place.name}}</h1>
+<h2>PLACE FOR: {{place.kind}}</h2>
+
+<br>
+<div id="res_map" style="width: 70%; height: 400px"></div>
+<br>
+<script>
+  window.onload = function() {
+    const map = new google.maps.Map(document.getElementById("res_map"), {
+      zoom: 15,
+      center: {
+        lat: {{ place.location.coordinates.[1] }},
+        lng: {{ place.location.coordinates.[0] }}
+      }
+    });
+    let marker;
+    marker = new google.maps.Marker({
+      position:{
+        lat: {{place.location.coordinates.[1]}},
+        lng: {{place.location.coordinates.[0]}}
+      },
+      animation: google.maps.Animation.BOUNCE,
+      
+      map
+    });   
+  }
+</script>
