@@ -1,0 +1,57 @@
+<form action="/libraries/newL" method="POST">
+  <label for="">
+    Name:
+    <input type="text" name="name" id="name">
+  </label>
+  <br><br>
+  <label for="">
+    Description:
+    <input type="text" name="desc">
+  </label>
+  <br><br>
+  <label for="">
+    Image_URL:
+    <input type="text" name="image" id="image">
+  </label>
+  <br><br>
+  <label for="">
+    Place:
+    <input type="text" id="autocomplete">
+  </label>
+  <br><br>
+  <label for="">
+    Lat:
+    <input type="text" id="lat" name="lat">
+  </label>
+  <br><br>
+  <label for="">
+    Lng:
+    <input type="text" id="lng" name="lng">
+  </label>
+  <br><br>
+  <button type="submit">Add new Library</button>
+</form>
+<br>
+<form action="/">
+  <button type="submit">Return</button>
+</form>
+
+<!-- Uso de la API de google para agregar los lugares -->
+<script>
+  window.onload = function () {
+    const input = document.getElementById("autocomplete");
+    const lat = document.getElementById("lat");
+    const lng = document.getElementById("lng");
+    const name = document.getElementById("name");
+    const dropdown = new google.maps.places.Autocomplete(input);
+    dropdown.addListener("place_changed", () => {
+
+      // getPlace() solicitud que abre una ventana de información para mostrar los detalles del lugar.]
+      console.log(dropdown.getPlace());
+      let place = dropdown.getPlace();
+      lat.value = place.geometry.location.lat();
+      lng.value = place.geometry.location.lng();
+      name.value = place.name;
+    })
+  }
+</script>

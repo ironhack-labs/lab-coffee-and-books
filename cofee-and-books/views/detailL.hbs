@@ -1,0 +1,33 @@
+<h1>{{libraries.name}}</h1>
+<h2>{{libraries.desc}}</h2>
+<img src="{{libraries.image}}" alt="{{this.name}}">
+
+<div id="res_map" style="width: 70%; height: 400px"></div>
+
+<script>
+    window.onload = function () {
+        const map = new google.maps.Map(document.getElementById("res_map"),{
+            zoom: 18,
+            center: {
+                lat: {{libraries.location.coordinates.[1]}},
+                lng: {{libraries.location.coordinates.[0]}}
+            }
+        });
+        const marker = new google.maps.Marker({
+            position:{
+                lat: {{libraries.location.coordinates.[1]}},
+                lng: {{libraries.location.coordinates.[0]}}
+            },
+            animation: google.maps.Animation.BOUNCE,
+            icon: {
+              url: "{{libraries.image}}",
+              scaledSize: new google.maps.Size(50, 50), // scaled size
+            },
+            map
+        })
+    }
+</script>
+<br><br>
+<form action="/libraries/Libraries">
+<button type="submit">Return</button>
+</form>
