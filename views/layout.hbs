@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+  
+  <nav>
+    <ul>
+      <li><a href="#" onclick="goBack()">Back</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/coffee/new">Create Coffee Shop</a></li>
+      <li><a href="/book/new">Create Bookstore</a></li>
+      <li><a href="/map">View map</a></li>
+    </ul>
+  </nav>
+
+  {{{body}}}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2dioJDF34ZPu6ts4TFIBTvV2TI4qg5tI&libraries=places" async defer></script>
+  <script src="/javascripts/script.js"></script>
+</body>
+</html>

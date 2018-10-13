@@ -1,0 +1,20 @@
+<form
+  {{#if coffee}}
+  action="/coffee/new"
+    {{else}}
+      action="/book/new"
+  {{/if}}
+method="post" enctype="application/x-www-form-urlencoded">
+  {{#if coffee}}
+    <input type="hidden" name="kind" value="coffee">
+    {{else}}
+      <input type="hidden" name="kind" value="book">
+  {{/if}}
+  <input type="text" id="autocomplete" placeholder="&ensp;Search place">
+  <input type="text" id="name" name="name" placeholder="&ensp;Name">
+  <input type="text" id="lat" name="lat" placeholder="&ensp;Latitude">
+  <input type="text" id="lng" name="lng" placeholder="&ensp;Longitud">
+  <button type="submit">Create</button>
+</form>
+
+<script src="/javascripts/newPlace.js"></script>

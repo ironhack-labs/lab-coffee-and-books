@@ -1,0 +1,28 @@
+<h1>{{place.name}}</h1>
+<p>Details:</p>
+
+<ul>
+  <li>Name: {{place.name}}</li>
+  <li>Kind: {{place.kind}}</li>
+  <li>Location
+    <ul>
+      <li>Latitude: {{place.location.coordinates.[0]}}</li>
+      <li>Longitud: {{place.location.coordinates.[1]}}</li>
+    </ul>
+  </li>
+  <li>Created: {{place.created_at}}</li>
+  <li>Updated: {{place.updated_at}}</li>
+</ul>
+
+<p>Update info:</p>
+<form action="/update" method="post" enctype="application/x-www-form-urlencoded">
+  <input type="hidden" name="id" value="{{place._id}}">
+  <label for="name">Name:&emsp;</label>
+  <input type="text" id="name" name="name" placeholder="&ensp;Name" value="{{place.name}}">
+  <button type="submit">Update</button>
+</form>
+
+<form action="/delete" method="post" enctype="application/x-www-form-urlencoded">
+  <input type="hidden" name="id" value="{{place._id}}">
+  <button type="submit">Delete</button>
+</form>

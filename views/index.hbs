@@ -1,0 +1,24 @@
+<h1>DE - PT2MEX - Coffee &amp; Books</h1>
+<p><u>Coffees</u>:</p>
+<ul>
+  {{#each coffees as |coffee|}}
+    <li><a href="/details/{{coffee._id}}">{{coffee.name}}</a></li>
+    <a href="/details/{{coffee._id}}">Update</a>
+    <form action="/delete" method="post" enctype="application/x-www-form-urlencoded">
+      <input type="hidden" name="id" value="{{coffee._id}}">
+      <button type="submit">Delete</button>
+    </form>
+  {{/each}}
+</ul>
+
+<p><u>Bookstores</u>:</p>
+<ul>
+  {{#each books as |book|}}
+    <li><a href="/details/{{book._id}}">{{book.name}}</a></li>
+    <a href="/details/{{book._id}}">Update</a>
+    <form action="/delete" method="post" enctype="application/x-www-form-urlencoded">
+      <input type="hidden" name="id" value="{{book._id}}">
+      <button type="submit">Delete</button>
+    </form>
+  {{/each}}
+</ul>
