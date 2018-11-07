@@ -1,0 +1,10 @@
+<h1>All places</h1>
+<ul>
+  {{#each places}}
+  <li>
+    {{name}}<br>
+    {{!-- <a href="/see/{{_id}}">{{name}}</a><br> --}}
+    (<a href="/see/{{_id}}/delete">Delete</a>)
+  </li>
+  {{/each}}
+</ul>
