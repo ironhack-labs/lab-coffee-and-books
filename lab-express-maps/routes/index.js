@@ -7,6 +7,16 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+router.get('/api', (req, res, next) => {
+  Place.find({}, (error, allRestaurantsFromDB) => {
+    if (error) {
+      next(error);
+    } else {
+      res.json({ restaurants: allRestaurantsFromDB, city: "Viersen" });
+    }
+  });
+});
+
 router.get('/see', (req, res, next) => {
   Place.find()
     .then(places => {
@@ -44,9 +54,9 @@ router.post('/create', (req, res, next) => {
       name: name,
       kind: kind,
       location: {
-        lat: locationLat,
-        lng: locationLong
-      },
+        type: "Point",
+        coordinates: [locationLat, locationLong]
+      }
     });
     newPlace.save()
       .then(() => {
