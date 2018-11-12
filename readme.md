@@ -1,59 +1,69 @@
+![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+
 # Express | Coffee & Books
 
-## Learning Outcomes
+## Introduction
+
+Books and coffee are two very compatible things. If you think about it, a nice cup of a hot beverage and a book are two amazing things to have together.
+
+In this exercise, let's create an app to save both bookstores and coffee places and display them. You could even use Google Maps to display a path from one place to the other.
+
+:bulb: **Hint:** To accomplish this new challenge, feel free to follow the Google Maps & Express, the previous lesson.
+
+
+## Requirements
+
+- Fork this repo
+- Clone this repo
+
+## Submission
+
+- Upon completion, run the following commands:
+
+  ```
+  git add .
+  git commit -m "done"
+  git push origin master
+  ```
+
+- Create Pull Request so your TAs can check up your work.
+
+## Instructions
 
 This exercise will help you to:
 - Practice Google Maps API integration with an app
 - Add location properties in your models as GeoJSON
-- Display content from the Database in a map
+- Display content from the database in a map
 
 ![cofee-book pic](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_141038aa0f5ce10c722722400bfdc6d5.jpg)
 
 
+### Iteration 1 - create model
 
-## Introduction
+In `models` folder, create a new model `place.js`. For now, this model will have:
 
-Books and coffee are two very compatible things. If you think about it, a nice cup of a hot beverage and a book are two  amazing things to have together.
+```bash
+    - name,
+    - type: coffee shop, bookstore
+    - timestamps 
+```
 
-In this exercise, let's create an app to save both bookstores and coffee places and display them. You could even use Google Maps to display a path from one place to the other.
+### Iteration 2 - create CRUD on this model
 
-:::success
-:bulb: **Hint:** To accomplish this new challenge, feel free to follow the Google Maps & Express Learning Unit from the classroom
-:::
+In this iteration, you should create full CRUD on `place.js` model - to be able to create, update, delete and display all the places you save in the database. You will have to create routes and corresponding views.
 
-## An up a running project
+### Iteration 3 - add `location` property
 
-Remember you need to create a new project using ironhack_generator. Before starting, follow the next configuration guide:
-
-1) Install your project and dependencies
-2) Create the models folder to put your models.
-
-## Initial code: Coffee & Books CRUD
-
-Begin by creating a simple CRUD. In this opportunity, you should have two different kind of places. Create a `place.js` file and add an attribute to set the kind of establishment.
-
-1) Create the model.
-2) Create routes to show the listed elements.
-3) Edit the `index.js` and the `app.js` with the routes to your model.
-4) Create the routes files and the views with the proper filesystem.
-
-
-- Add Location to Model
-- Add Location fields to form
-- Get Location & Save Places
-- Show Places in Map -figure out if you can set a difference among them
+- To be able to locate places on the map, you will have to add `location` property to its model (refer to the previous lesson if necessary);
+- Add Location fields to form(s) - create and update
 - Get Google Maps API Key
-- Add Google Maps to index.hbs
-- The map
-- Add Markers to show places’ locations
-- The Show view
+- Add Google Maps to the view(s) that will display the map
+- Show places on the map & add markers to show places’ locations
 
-## Summary
-Now you know how to:
-- Add Google Maps to any application
-- Incorporate GeoJSON attributes in a Mongoose Schema
-- Display elements in a map with information from your apps Database
 
 ## Extra Resources
 - [GeoJSON](http://geojson.org/geojson-spec.html#introduction)
 - [Google Maps API](https://developers.google.com/maps/)
+
+Happy coding! :heart:
+
