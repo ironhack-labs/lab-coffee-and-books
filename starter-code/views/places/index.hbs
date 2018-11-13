@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<div class="info">
+    <h3>List of all places</h3>
+    <a href="/places/new">Add new place</a>
+    <ul>
+        {{#each places}}
+        <li>
+            <a href="/places/{{ this._id}}">Name: {{ this.name}}</a>
+            |
+            <span>Type: {{ this.type}}</span>
+            |
+            <span>Location: {{ this.location.coordinates}}</span>
+            |
+            <a href="/places/{{ this._id}}/delete">Delete place</a>
+        </li>
+        {{/each }}
+    </ul>
+</div>
+  
