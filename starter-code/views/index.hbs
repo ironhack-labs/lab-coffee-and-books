@@ -1,2 +1,26 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<p>Welcome to LAB Coffee and Bookstores{{title}}</p>
+
+<h1>{{title}}</h1>
+<div class="info">
+    <h3>List of all Coffees and Bookstores</h3>
+    <a href="/create">Create new Coffee or Bookstore</a>
+    <ul>
+        {{#each places}}
+        <li>
+            <a href="/places/{{ this._id}}">{{ this.name}}</a>
+            |
+            <a href="/places/{{ this._id}}/delete">Delete</a>
+        </li>
+        {{/each }}
+    </ul>
+    <div id="map">
+        <!--  Axios CDN  -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLr7hx0X2Sp7yCIdcJZsm9Wi7JuoNz6KE">
+        </script>
+    </div>
+</div>
+{{!-- added your scripts here --}}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+  
