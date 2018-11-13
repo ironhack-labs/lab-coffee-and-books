@@ -1,0 +1,11 @@
+  <h3>Edit Place</h3>
+<form method="POST" action="/update/{{ place._id}}">
+    <label>Name:</label>
+    <input type="" name="name" placeholder="Name" value="{{ place.name}}">
+    <label>Description:</label>
+    <select name="type">
+      <option value="coffee shop">Coffee</option>
+      <option value="bookstore">Bookstore</option>
+    </select>
+    <button type="submit" name="" id="submit">Edit</button>
+</form>

@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+<div class="info">
+    <h3>List of all Coffee Shop e Bookstores</h3>
+    <a href="/create_new">Create new</a>
+    <ul>
+        {{#each places}}
+        <li>
+            <a href="/update/{{ this._id}}">{{ this.name}} - {{this.type}}</a>
+            |
+            <a href="/index/{{ this._id}}/delete">Delete</a>
+        </li>
+        {{/each }}
+    </ul>
+</div>
+
+<div id="map"></div>
+
+<!--  Axios CDN  -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<!--  Google Maps Key  -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEAK484brIUiv1txdKM_xra7m2mhxmhXM">
+  </script>
+<!--  Connect main.js  -->
+  <script type="text/javascript" src="javascripts/main.js"></script>
+
