@@ -1,0 +1,14 @@
+<h2>Edit {{place.name}}'s info:</h2>
+
+<form action="/places/{{place._id}}" method="POST">
+<label>
+    Type
+    <input type="text" name="title" value="{{place.type}}">
+</label>
+<label>
+    Address
+  <input type="text" name="latitude" value="{{place.latitude}}" >
+  <input type="text" name="longitude" value="{{place.longitude}}">
+</label>
+<button type="submit">Edit Place</button>
+</form>

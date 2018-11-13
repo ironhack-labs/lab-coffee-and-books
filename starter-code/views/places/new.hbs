@@ -1,0 +1,24 @@
+<h2>Add a new Coffee/Book Place</h2>
+
+<form action="/place/new" method="POST">
+<label>
+    Name
+    <input type="text" name="name">
+</label>
+<label>
+    Type
+    <select name="type">
+        <option value='coffe shop'>coffe shop</option>
+        <option value='bookstore'>bookstore</option>
+    </select>
+</label>
+<label>
+    Address
+  <input type="text" name="latitude" placeholder="latitude" >
+  <input type="text" name="longitude" placeholder="longitude">
+</label>
+<button type="submit">Add Place</button>
+</form>
+
+<a href="/places">Back</a>
+

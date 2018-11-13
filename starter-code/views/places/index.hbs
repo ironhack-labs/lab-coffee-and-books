@@ -1,0 +1,21 @@
+<h2>Coffee and Book Places here</h2>
+<a href="place/new">Add a new coffee/book place</a>
+<ul>
+{{#each places}}
+<li>
+<a href="places/{{this._id}}">{{this.name}}</a>
+<form action="/places/{{this._id}}/delete" method="POST">
+<button type="submit">Delete</button>
+</form>
+</li>
+{{/each}}
+</ul>
+<div id="map"></div>
+
+<a href="/">Back</a>
+
+<!--Maps related scripts -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwo9H_OAYm68ulspvHEQBZofRpRktBdOg">
+  </script>  
+<script type="text/javascript" src="/javascripts/main.js"></script>

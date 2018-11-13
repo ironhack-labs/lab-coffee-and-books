@@ -1,0 +1,14 @@
+<h2>More about "{{place.name}}"</h2>
+<div>
+{{place.name}} is a {{place.type}}
+</div>
+<a href="/places">Back</a>
+<a href="/places/{{place._id}}/edit">Edit</a>
+
+<div id="map"></div>
+
+<!--Maps related scripts -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwo9H_OAYm68ulspvHEQBZofRpRktBdOg">
+  </script>  
+<script type="text/javascript" src="/javascripts/show.js"></script>
