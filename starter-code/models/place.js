@@ -9,7 +9,6 @@ const placeSchema = new Schema({
   },
   latitude: Number,
   longitude: Number
-  //location: { type: { type: String }, coordinates: [Number] }
 });
 placeSchema.index({ location: '2dsphere' });
 

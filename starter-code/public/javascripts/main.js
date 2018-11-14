@@ -7,7 +7,7 @@ window.onload = () => {
   const markers = [];
 
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 13,
+    zoom: 12,
     center: saoPaulo
   });
 
@@ -18,8 +18,6 @@ window.onload = () => {
 
   function placePlaces(places) {
     places.data.forEach(function(place) {
-      console.log(place.latitude);
-      console.log(place.longitude);
       const center = {
         lat: place.latitude,
         lng: place.longitude

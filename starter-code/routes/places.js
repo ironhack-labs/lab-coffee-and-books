@@ -23,29 +23,15 @@ router.get('/places/api', (req, res, next) => {
 });
 
 router.get('/places/:id', (req, res, next) => {
-	let placeId = req.params.id;
-	Place.findOne({'_id': placeId})
+	const placeId = req.params.id;
+	Place.findOne({_id: placeId})
 	.then(place => {
-		console.log(place)
 		res.render('places/show', {place});
 	})
 	.catch(error => {
 		res.render('error');
 	})
 });
-
-router.get('/places/api', (req, res, next) => {
-	let placeId = req.params.id;
-	Place.findOne({'_id': placeId})
-	.then(place => {
-		console.log(place)
-		res.send(place);
-	})
-	.catch(error => {
-		res.render('error');
-	})
-});
-
 
 router.get('/place/new', (req, res, next) => {
 	Place.find()
