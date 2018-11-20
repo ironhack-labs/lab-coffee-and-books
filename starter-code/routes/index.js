@@ -12,7 +12,7 @@ router.post('/', (req, res, next) => {
   
   const place = new Place({name : req.body.name});
 
-
+    
   Place.create(place)
   .then((place => {
     res.redirect('/placeList')
@@ -25,7 +25,7 @@ router.post('/', (req, res, next) => {
 router.get('/placeList', (req, res, next) => {
   Place.find()
   .then(places => {
-    res.render('showPlaceList', places);
+    res.render('showPlaceList', {places});
   })
   .catch(error => console.log(error))
 })
