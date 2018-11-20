@@ -1,9 +1,60 @@
 const express = require('express');
-const router  = express.Router();
 
+const router  = express.Router();
+const mongoose = require('mongoose');
+const Place = require('../models/place');
+
+const placeRouter = express.Router();
+mongoose.connect('mondodb://localhost/Places');
 /* GET home page */
+
 router.get('/', (req, res, next) => {
-  res.render('index');
+  res.redirect('/placesList');
 });
 
+router.get('/new', (req, res, next) => {
+  res.render('new');
+});
+
+router.post('/new', (req, res) => {
+  const { name, type } = req.body;
+
+  const newPlace = new Place({
+    name,
+    type,
+  });
+  newPlace.save()
+    .then(() => {
+      res.redirect('/placesList');
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+router.get('/placesList', (req, res) => {
+  Place.find({}, (error, places) => {
+    if (error) {
+      next(error);
+    } else {
+      res.render('placesList',  { places });
+    }
+  });
+});
+
+router.get('/showPlace/:id', (req, res, next) => {
+  Place.findById(req.params.id)
+    .then(place => res.render('showPlace', { place }))
+    .catch(err => next(err));
+});
+
+router.get('/:place_id/edit', (req, res, next) => {
+  Restaurant.findById(req.params.place_id, (error, place) => {
+    if (error) {
+      next(error);
+    } else {
+      res.render('/updatePlace', { place });
+    }
+  });
+});
 module.exports = router;

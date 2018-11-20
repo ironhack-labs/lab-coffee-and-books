@@ -1,0 +1,12 @@
+<div class="info">
+    <h3>List of all Places</h3>
+    <a href="/new">Create new Place</a>
+    <ul>
+        {{#each places}}
+        <li>
+           <a href="/showPlace/{{this.id}}">{{this.name}}</a>
+        </li>
+        {{/each }}
+    </ul>
+    {{!-- add map here --}}
+</div>
