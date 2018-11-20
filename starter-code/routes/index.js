@@ -63,8 +63,8 @@ router.get('/:place_id/delete', (req, res, next) => {
   
   
   // POST => save updates in the database
-  router.post('/:place_id', (req, res, next) => {
-    Place.findById(req.params.place_id, (error, place) => {
+  router.post('/:id', (req, res, next) => {
+    Place.findById(req.params.id, (error, place) => {
       if (error) { 
         next(error); 
       } else {
@@ -74,7 +74,7 @@ router.get('/:place_id/delete', (req, res, next) => {
           if (error) { 
             next(error); 
           } else { 
-            res.redirect(`/displayAll/${req.params.place_id}`); 
+            res.redirect('/displayAll'); 
           }
         });
       }
