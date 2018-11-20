@@ -2,27 +2,28 @@
 <ul>
 {{#each coffiebar}}
   <li>{{this.name}}</li>
+  <li>{{this.type}}</li>
+  <li>{{this.coordinates.lat}}</li>
+  <li>{{this.coordinates.lon}}</li>
   <a href="/coffiebar/delete/{{this._id}}">DELETE</a>
 {{/each}}
 </ul>
 <hr>
 <form method="POST" action="/coffiebar/list">
   <input type="text" name="name" placeholder="name">
-  <input type="text" name="description" placeholder="description">
-
-  <label>Address</label>
+  <select name="type">
+    <option> Choose One</option>
+    <option value="Coffie Shop">Coffie Shop</option>
+    <option value="BookStore">BookStore</option>
+  </select>
+  <label></label>
   <input id="lat-pos" type="hidden" name="latitude" placeholder="Latitude">
   <input id="lng-pos" type="hidden" name="longitude" placeholder="Longitude">
 
   <input type="submit" name="">
 
-  <div id="map"></div>
+  
 </form>
-{{!-- <script src="/javascripts/addMap.js"></script> --}}
 
-{{!-- <div id="map"></div>
-<script>
-  window.restaurants = {{{ restStr }}}
-</script>
 
-<script src="/javascripts/listMap.js"></script> --}}
+
