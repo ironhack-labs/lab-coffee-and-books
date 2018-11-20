@@ -1,2 +1,20 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Coffe & Books</h1>
+
+<form action="/news" method="POST">
+    <label>Place: </label>
+    <input type="text" name="name">
+    <label>Type: </label>
+    <input type="text" name="type">
+    <input id="ltd" type="text" name="ltd" hidden>
+    <input id="lng" type="text" name="lng" hidden>
+    <button type="submit">Create a new Place</button>
+</form>
+<a href="/view-all">View All Places</a>
+
+<div id='map' style="width: 800px; height:500px" >
+
+</div>
+ 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmA_nB5Ja-EzOKb37_eyIomFhgC6QjEvw"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="/javascripts/script.js"></script>

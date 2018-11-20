@@ -1,0 +1,26 @@
+<h1>Edit Place</h1>
+<h3>Current Data:</h3>
+<div>
+    <p>Name: {{this.name}}</p>
+    <p>Type: {{this.type}}</p>
+    <p>ltd: {{this.coordinates.lng}}</p>
+    <p>lgn: {{this.coordinates.ltd}}</p>
+
+
+</div>
+<form action="/edit/{{this._id}}" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Type:</label>
+    <input type="text" name="type">
+    <input  id="ltd" type="text" name="ltd" value={{this.coordinates.ltd}} hidden>
+    <input id="lng" type="text" name="lng"  value={{this.coordinates.lng}} hidden>
+    <button type="submit">Edit Place</button>
+</form>
+<div id='map' style="width: 800px; height:500px" >
+
+</div>
+ 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmA_nB5Ja-EzOKb37_eyIomFhgC6QjEvw"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="/javascripts/script.js"></script>

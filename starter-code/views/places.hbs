@@ -1,0 +1,20 @@
+<h1>Look All Places to Chill</h1>
+{{#each places}}
+    <h3>{{this.name}}</h3>
+    <p>{{this.type}}</p>
+    <form action="/edit/{{this._id}}" method="GET">
+        <button type="submit">edit</button>
+    </form>
+    <form action="/delete/{{this._id}}" method="GET">
+        <button type="submit">delete</button>
+    </form>
+      <input  id="ltd" type="text" name="ltd" value={{this.coordinates.ltd}} hidden>
+    <input id="lng" type="text" name="lng"  value={{this.coordinates.lng}} hidden>
+{{/each}}
+<div id='map' style="width: 800px; height:500px" >
+
+</div>
+ 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmA_nB5Ja-EzOKb37_eyIomFhgC6QjEvw"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="/javascripts/script.js"></script>
