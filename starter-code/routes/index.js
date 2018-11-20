@@ -13,6 +13,8 @@ router.post("/", (req, res, next) => {
   const newPlace = new Place()
   newPlace.name = req.body.name;
   newPlace.type = req.body.type;
+  // newPlace.location.lgt = req.body.lgt;
+  // newPlace.location.ltd = req.body.ltd;
   newPlace
     .save()
     .then(() => res.redirect("/"))

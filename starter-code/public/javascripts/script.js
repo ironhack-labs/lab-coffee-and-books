@@ -18,6 +18,38 @@ document.addEventListener('DOMContentLoaded', () => {
       lat: undefined,
       lng: undefined
     }; 
+    // map.addListener("click", function (e) {
+    //   window.chosenLocation = {
+    //       lat: e.latLng.lat(),
+    //       lng: e.latLng.lng()
+    //   }
+    //   console.log(window.chosenLocation.lat)
+    //   marker.setPosition(chosenLocation);
+  // })
+    function getPlaces() {
+      axios.get("/")
+       .then( response => {
+         placeCoffe(response.data.restaurants);
+       })
+       .catch(error => {
+         console.log(error);
+       })
+     }
+
+     function placeCoffe(place){
+      place.forEach(function(place){
+        const center = {
+          lat: place.location.coordinates[1],
+          lng: place.location.coordinates[0]
+        };
+        const pin = new google.maps.Marker({
+          position: center,
+          map: map,
+          title: place.name
+        });
+        markers.push(pin);
+      });
+  }
   };
-  
+
 }, false);

@@ -12,7 +12,8 @@ mongoose
 
   const places = [{
         name: "Paco's beers",
-        type: "Coffe shop"
+        type: "Coffe shop",
+        coordinates: [41.386230, 2.174980]
   }]
   Place.create(places, err => {
     if (err) {
