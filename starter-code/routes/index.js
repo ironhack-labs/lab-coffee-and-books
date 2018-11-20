@@ -11,11 +11,15 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/restList', (req, res, next) => {
- res.render('../restaurant/restList');
+ res.render('./restaurant/restList');
 });
 
 router.get('/new', (req, res, next) => {
  res.render('./restaurant/new');
+});
+
+router.get('/restList', (req, res, next) => {
+  res.render('./restaurant/restList');
 });
 
 router.post('/new', (req, res, next) => {
@@ -30,7 +34,7 @@ router.post('/new', (req, res, next) => {
  }
  console.log(place);
  Place.create(place).then( place => {
-   res.redirect('restList');
+   res.redirect('/');
  }).catch(e=> next(e));
 });
 
