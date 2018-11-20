@@ -1,8 +1,6 @@
 html, body, p {
   padding: 0px;
-  margin: 0px;
-
-}
+  margin: 0px; }
 
 #booksPage {
   width: 100vw;
@@ -10,18 +8,15 @@ html, body, p {
   display: flex;
   justify-content: center;
   flex-flow: column;
-  align-items: center
-}
+  align-items: center; }
 
 #booksPage h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 60px;
-  margin-bottom: 50px;
-}
+  margin-bottom: 50px; }
 
 #booksPage form {
-  margin-bottom: 50px;
-}
+  margin-bottom: 50px; }
 
 .books {
   padding: 20px;
@@ -30,23 +25,19 @@ html, body, p {
   display: flex;
   flex-flow: column;
   justify-content: space-around;
-  align-items: center
-}
+  align-items: center; }
 
 #bookForm {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center
-}
+  align-items: center; }
 
 #bookForm input {
-  margin-right: 10px;
-}
+  margin-right: 10px; }
 
 #bookForm select {
-  margin-right: 10px;
-}
+  margin-right: 10px; }
 
 .cell {
   display: flex;
@@ -58,30 +49,26 @@ html, body, p {
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0px;
-  white-space: nowrap;
-}
+  white-space: nowrap; }
 
 .headerBooks, .books-listed {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
-}
+  border-bottom: 1px solid black; }
 
-.list-of-books{
-  width: 100%;
-}
+.list-of-books {
+  width: 100%; }
 
 .editIcon {
-  color: rgb(0, 61, 131);
-}
+  color: #003d83; }
 
 .deleteIcon {
-  color:rgb(131, 1, 1);
-}
+  color: #830101; }
 
 #map {
   height: 1000px;
   width: 100%;
-  margin-top: 50px;
- }
+  margin-top: 50px; }
+
+/*# sourceMappingURL=style.css.map */

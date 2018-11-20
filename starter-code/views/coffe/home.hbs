@@ -1,0 +1,44 @@
+<section id="booksPage">
+  <div class="books">
+    <h1>Coffe & Books</h1>
+
+    <form id="bookForm" action="{{placeObject.action}}" method="post">
+      <input placeholder="Name" class="form-control" type="text" name="name" value='{{placeObject.placeToEdit.0.name}}'>
+      <select name="type" class="form-control">
+        <option value="coffe shop">Coffe Shop</option>
+        <option value="bookstore">Bookstore</option>
+      </select>
+      <input class="form-control" type="text" name="latitude" placeholder="latitude">
+      <input class="form-control" type="text" name="longitude" placeholder="longitude">
+
+      <button class="btn btn-success" type="submit">{{placeObject.button}}</button>
+    </form>
+
+    <div class="list-of-books">
+      <div class="headerBooks">
+        <p class="cell">Name</p>
+        <p class="cell">Type</p>
+        <p class="cell">Edit</p>
+        <p class="cell">Delete</p>
+      </div>
+
+
+      {{#each placeObject.places}}
+      <div class="books-listed">
+        <p class="cell">{{this.name}}</p>
+        <p class="cell">{{this.type}}</p>
+        <a class="cell editIcon" href="/coffe/{{this._id}}/edit"><i class="fas fa-edit"></i></a>
+        <a class="cell deleteIcon" href="/coffe/{{this.id}}/delete"><i class="fas fa-trash-alt"></i></a>
+      </div>
+
+      {{/each}}
+
+    </div>
+
+    <div id="map"></div>
+
+  </div>
+
+
+
+</section>
