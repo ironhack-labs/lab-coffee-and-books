@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const PlaceSchema = new Schema({
+const placeSchema = new Schema({
   name: String,
   type: {type: String, enum: ['coffee', 'shop', 'bookstore']}
 },
