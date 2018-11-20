@@ -1,0 +1,14 @@
+<h1>Edit Place</h1>
+
+<form action="/place/edit/{{response.place._id}}" method="post">
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" value="{{response.place.name}}">
+  <label for="type">Type:</label>
+  <select name="type" id="type">
+    <option value="COFFEE SHOP" {{#if response.COFFEESHOP}}selected{{/if}}>Coffee Shop</option>
+    <option value="BOOKSTORE" {{#if response.BOOKSTORE}}selected{{/if}}>Bookstore</option>
+  </select>
+  <button type="submit">Edit Place</button>
+</form>
+
+<a href="/place">Go Back</a>
