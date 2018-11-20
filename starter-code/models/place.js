@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const placeSchema = new Schema({
     name: { type: String, unique: true },
-    type: { type: String, enum: ['coffee shop, bookstore'] }
+    type: { type: String, enum: ['coffee shop', 'bookstore'] }
 },
     {
         timestamps: {
