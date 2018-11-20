@@ -1,0 +1,16 @@
+<h2>PLACES IN OUR WEB</h2>
+<div>
+  <ul>
+    {{#each places}}
+    <li>{{this.name}}<a href=""> edit</a></li>
+    <li>{{this.location.coordinates}}</li>
+    {{/each}}
+  </ul>
+</div>
+<div id="map"></div>
+
+{{!-- <script>
+  window.restaurants = {{ { restStr } }}
+</script> --}}
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/Map.js"></script>
