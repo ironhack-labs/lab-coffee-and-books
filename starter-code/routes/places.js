@@ -15,6 +15,11 @@ router.get('/', (req, res, next) => { //Find
     })
 });
 
+router.get('/getPlaces', (req, res, next) => {
+  Place.find()
+    .then(places => res.json({ places }))
+    .catch(err => next(err));
+});
 
 router.get('/new', (req, res, next) => {
   res.render('places/new');
@@ -25,30 +30,36 @@ router.get('/:id', (req, res, next) => {
   Place.findById(req.params.id)
     .then(place => {
       res.render('places/show', { place });
+      
     })
     .catch(err => {
       console.error(err);
     })
 });
 
-router.post('/new', (req, res, next) => { //Save
-  const newPlace = new Place();
 
-  if (req.body.name == '' || req.body.type == '') {
-    console.log('VACIO');
-    res.redirect('/places');
+
+router.post('/new', (req, res, next) => { //Save
+
+
+  if (req.body.name == '' || req.body.type == '' || req.body.lat == '' || req.body.lng == '') {
+    res.redirect('/places/new');
   }
 
-  newPlace.name = req.body.name;
-  newPlace.type = req.body.type;
-  
+  const newPlace = new Place({
+    name: req.body.name,
+    type: req.body.type,
+    location: {
+      lat: parseFloat(req.body.lat),
+      lng: parseFloat(req.body.lng),
+    },
+  });
 
-  Place.create(newPlace)
-    .then(place => {
-      res.redirect('/places');
-    })
-    .catch(err => console.log(err));
+  newPlace.save()
+    .then(() => res.redirect('/places'))
+    .catch(() => res.redirect('/places/new'));
 });
+
 
 router.post('/:id/delete', (req, res, next) => { //Delete
   Place.findByIdAndRemove(req.params.id)

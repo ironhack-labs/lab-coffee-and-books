@@ -49,6 +49,5 @@ app.use('/', index);
 
 const places = require('./routes/places');
 app.use('/places', places);
-// app.use('/new', places);
 
 module.exports = app;
