@@ -1,9 +1,9 @@
 <h2>Places</h2>
 {{#each places}}
-<p>{{this.name}}</p>
+<p> <a href="/places/{{this.id}}">{{this.name}}</a></p>
 <p>{{this.type}}</p>
 {{!-- <a href="/places/{{this.id}}/edit"><button>Edit</button></a> --}}
-<form action="places/{{this.id}}/delete" method="POST">
+<form action="/places/{{this.id}}/delete" method="POST">
 <button type="submit">Delete</button>
 </form>
 {{/each}}

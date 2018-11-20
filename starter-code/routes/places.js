@@ -20,6 +20,17 @@ router.get('/new', (req, res, next) => {
   res.render('places/new');
 });
 
+router.get('/:id', (req, res, next) => {
+
+  Place.findById(req.params.id)
+    .then(place => {
+      res.render('places/show', { place });
+    })
+    .catch(err => {
+      console.error(err);
+    })
+});
+
 router.post('/new', (req, res, next) => { //Save
   const newPlace = new Place();
 
@@ -30,17 +41,16 @@ router.post('/new', (req, res, next) => { //Save
 
   newPlace.name = req.body.name;
   newPlace.type = req.body.type;
-  console.log(newPlace.name);
-  console.log(newPlace.type);
+  
 
-  newPlace.save()
+  Place.create(newPlace)
     .then(place => {
       res.redirect('/places');
     })
     .catch(err => console.log(err));
 });
 
-router.post('/places/:id/delete', (req, res, next) => { //Delete
+router.post('/:id/delete', (req, res, next) => { //Delete
   Place.findByIdAndRemove(req.params.id)
     .then(place => {
       res.redirect('/places');
