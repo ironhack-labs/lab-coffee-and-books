@@ -1,0 +1,22 @@
+<ul>
+{{#each places}}
+<li>Name: {{this.name}}     Type:{{this.type}}
+  <br>
+  <a href="/edit/{{this.id}}">Edit</a>
+  <form action="/delete" method="post">
+  <input type="hidden" name="id" value={{this.id}}>
+  <button type="submit" name="your_name" value="your_value" style="border:none;
+  outline:none;
+  background:none;
+  cursor:pointer;
+  color:#0000EE;
+  padding:0;
+  text-decoration:underline;
+  font-family:inherit;
+  font-size:inherit;">Delete</button>
+</form>
+</li>
+{{/each}}
+</ul>
+
+<p><a href="/create">Create a new place</a></p>

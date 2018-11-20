@@ -1,0 +1,16 @@
+<form action="/edit" method="post">
+  <label for="name">Name:</label>
+  <input id="edit-name" type="text" name="name" value={{place.name}}> 
+
+  <br><br>
+
+  <label for="type">Type:</label>
+  <select name="type" id="edit-type" value={{place.type}}>
+    <option value="coffee shop">Coffee Shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <input type="hidden" name="id" value={{place.id}}>
+  <br><br>
+
+  <button type="submit">Edit</button>
+  <a href="/">Cancel</a>
