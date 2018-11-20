@@ -1,1 +1,31 @@
 <h2>Welcome to the places homepage</h2>
+
+<fieldset>
+    <legend>Places</legend>
+{{#each places}}
+
+<p>Name: {{this.name}}</p>
+<p>Type: {{this.type}}</p>
+
+<form action="/delete-place/{{this.id}}" method="post">
+<button class="btn btn-danger m-1" type="submit">Delete</button>
+</form>
+
+<form action="/places/edit/{{this.id}}" method="get">
+<button class="btn btn-primary m-1" type="submit">Edit</button>
+</form>
+
+{{/each}}
+</fieldset>
+
+<form action="/add-place" method="post">
+<label for="name">Name</label>
+<input type="text" name="name">
+<select name="type" id="type-selector">
+    <option value="coffee shop">coffee shop</option>
+    <option value="bookstore">bookstore</option>
+</select>
+<button class="btn btn-primary" type="submit">Add</button>
+</form>
+<br>
+<a href="/">Home</a>

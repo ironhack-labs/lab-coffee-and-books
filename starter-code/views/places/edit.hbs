@@ -1,0 +1,16 @@
+
+<form action="/edit-place/{{this.id}}" method="post">
+<label for="name">Name</label>
+<input type="text" name="name" value="{{this.name}}">
+<select name="type" id="type-selector">
+    <option value="{{this.type}}">{{this.type}}</option>
+    <option value="coffee shop">coffee shop</option>
+    <option value="bookstore">bookstore</option>
+</select>
+<button class="btn btn-primary m-1" type="submit">Edit</button>
+</form>
+
+<br>
+<a href="/places">Places List</a>
+<br><br>
+<a href="/">Home</a>
