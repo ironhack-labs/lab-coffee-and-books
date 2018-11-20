@@ -33,13 +33,9 @@ router.post('/new', (req, res) => {
 });
 
 router.get('/placesList', (req, res) => {
-  Place.find({}, (error, places) => {
-    if (error) {
-      next(error);
-    } else {
-      res.render('placesList',  { places });
-    }
-  });
+  Place.find({})
+    .then(places => res.render('placesList',  { places }))
+    .catch(err => next(err));
 });
 
 router.get('/showPlace/:id', (req, res, next) => {
