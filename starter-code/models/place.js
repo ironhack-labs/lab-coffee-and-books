@@ -7,7 +7,12 @@ const PlaceSchema = new Schema({
   type: {
     type: String,
     enum : ['Coffie Shop', 'BookStore'],
-  }},
+  },
+  coordinates: {
+    lat: Number,
+    lon: Number
+  }
+},
   {
     timestamps: true
   });

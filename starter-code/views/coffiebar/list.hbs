@@ -1,0 +1,28 @@
+<h2>COFFIES AND BOOKS</h2>
+<ul>
+{{#each coffiebar}}
+  <li>{{this.name}}</li>
+  <a href="/coffiebar/delete/{{this._id}}">DELETE</a>
+{{/each}}
+</ul>
+<hr>
+<form method="POST" action="/coffiebar/list">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="description" placeholder="description">
+
+  <label>Address</label>
+  <input id="lat-pos" type="hidden" name="latitude" placeholder="Latitude">
+  <input id="lng-pos" type="hidden" name="longitude" placeholder="Longitude">
+
+  <input type="submit" name="">
+
+  <div id="map"></div>
+</form>
+{{!-- <script src="/javascripts/addMap.js"></script> --}}
+
+{{!-- <div id="map"></div>
+<script>
+  window.restaurants = {{{ restStr }}}
+</script>
+
+<script src="/javascripts/listMap.js"></script> --}}
