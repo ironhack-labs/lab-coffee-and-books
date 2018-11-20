@@ -1,0 +1,15 @@
+<h1>Bookstores</h1>
+{{#each places}}
+    <p>{{this.name}}</p>
+    <button>Edit</button>
+    <button>Delete</button>
+{{/each}}
+
+<h2>Add bookstore</h2>
+<form action="/bookstores" method="post">
+<label for="">Name of bookstore:</label>
+<input type="text" name="name">
+<input type="text" name="type" value="bookstore" hidden>
+<button type="submit">Add</button>
+
+</form>

@@ -4,11 +4,7 @@ const Schema   = mongoose.Schema;
 
 const placeSchema = new Schema({
     name : { type: String},
-    type: { type: String, enum: ['coffee shop','bookstore']},
-    timestamps: {
-      createdAt: "created_at",
-      updatedAt: "updated_at"
-    }
+    type: { type: String, enum: ['coffee shop','bookstore']}
 });
 
 const Place = mongoose.model('Place', placeSchema);

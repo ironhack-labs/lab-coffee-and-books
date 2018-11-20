@@ -1,0 +1,15 @@
+<h1>Restaurants</h1>
+{{#each places}}
+    <p>{{this.name}}</p>
+    <button>Edit</button>
+    <button>Delete</button>
+{{/each}}
+
+<h2>Add restaurant</h2>
+<form action="/restaurants" method="post">
+<label for="">Name of bookstore:</label>
+<input type="text" name="name">
+<input type="text" name="type" value="coffee shop" hidden>
+<button type="submit">Add</button>
+
+</form>
