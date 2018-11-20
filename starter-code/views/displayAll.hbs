@@ -1,0 +1,17 @@
+<h1>DISPLAY ALL PAGE</h1>
+
+ <a href="create">Create New Place</a>
+
+ <ul>
+        {{#each places}}
+        <li>
+          {{ this.name}}
+            |
+            <a href="/{{this._id}}/delete">Delete</a>
+            <a href="{{this._id}}/edit">Edit</a>
+        </li>
+        {{/each }}
+    </ul>
+
+
+   

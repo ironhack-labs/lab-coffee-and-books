@@ -3,8 +3,7 @@ const Schema   = mongoose.Schema;
 
 const placeSchema = new Schema({
   name: String,
-  type: String,
-  enum : ['coffee shop', 'bookstore'],
+  type: { type: String, enum: ['Coffee shop', 'Bookstore']},
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
