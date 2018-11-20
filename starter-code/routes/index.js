@@ -48,13 +48,39 @@ router.get('/showPlace/:id', (req, res, next) => {
     .catch(err => next(err));
 });
 
-router.get('/:place_id/edit', (req, res, next) => {
-  Restaurant.findById(req.params.place_id, (error, place) => {
-    if (error) {
-      next(error);
-    } else {
-      res.render('/updatePlace', { place });
-    }
+router.get('/:id/edit', (req, res, next) => {
+  Place.findById(req.params.id)
+    .then(place => res.render('updatePlace', { place }))
+    .catch(err => next(err));
+});
+
+router.post('/:id', (req, res) => {
+  const { name, type } = req.body;
+
+  const newPlace = new Place({
+    name,
+    type,
   });
+  Place.findById(req.params.id)
+    .then((place) => {
+      place.name = req.body.name;
+      place.type = req.body.type;
+      place.save()
+        .then(() => {
+          res.redirect('/placesList');
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+router.get('/:id/delete', (req, res, next) => {
+  Place.findByIdAndRemove(req.params.id)
+    .then(place => res.redirect('/placesList'))
+    .catch(err => next(err));
 });
 module.exports = router;
