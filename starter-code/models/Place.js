@@ -6,6 +6,10 @@ const placeSchema = new Schema({
   type: {
     type: String,
     enum: ['COFFEE SHOP', 'BOOKSTORE']
+  }, 
+  location: { 
+    lat: {type: Number}, 
+    lng: {type: Number}
   }
 }, {
   timestamps: {

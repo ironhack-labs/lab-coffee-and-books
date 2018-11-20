@@ -8,6 +8,13 @@
     <option value="COFFEE SHOP" {{#if response.COFFEESHOP}}selected{{/if}}>Coffee Shop</option>
     <option value="BOOKSTORE" {{#if response.BOOKSTORE}}selected{{/if}}>Bookstore</option>
   </select>
+
+  <label>Address</label>
+  <input id="lat-pos" type="hidden" name="latitude" placeholder="Latitude" value="{{response.place.location.lat}}">
+  <input id="lng-pos" type="hidden" name="longitude" placeholder="Longitude" value="{{response.place.location.lng}}">
+
+  <div id="map"></div>
+  
   <button type="submit">Edit Place</button>
 </form>
 

@@ -9,6 +9,13 @@ router.get('/', (req, res, next) => {
   }).catch(e=> next(e));
 });
 
+router.get('/api', (req, res, next) => {
+  Place.find().then( places => {  
+    console.log(places)
+    res.json(places);
+  }).catch(e=> next(e));
+});
+
 router.get('/new', (req, res, next) => {
   res.render('place/new');
 });
@@ -17,7 +24,11 @@ router.post('/new', (req, res, next) => {
 
   let place = {
     name: req.body.name,
-    type: req.body.type
+    type: req.body.type, 
+    location: {
+      lat: req.body.latitude,
+      lng: req.body.longitude 
+    }
   }
   
   Place.create(place).then( place => {
@@ -42,8 +53,12 @@ router.post('/edit/:id', (req, res, next) => {
   const id = req.params.id;
 
   const {name, type} = req.body;
+  const location = {
+    lat: req.body.latitude,
+    lng: req.body.longitude
+  }
 
-  Place.findByIdAndUpdate(id, {$set: {name, type}})
+  Place.findByIdAndUpdate(id, {$set: {name, type, location}})
   .then(place => {
     res.redirect("/place/")
   })
