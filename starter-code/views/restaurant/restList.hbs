@@ -1,0 +1,13 @@
+<h2>ALL RESTAURANTS</h2>
+<ul>
+{{#each restaurants}}
+  <li>{{this.name}}</li>
+{{/each}}
+</ul>
+
+<div id="map"></div>
+<script>
+  window.restaurants = {{{ restStr }}}
+</script>
+
+{{!-- <script src="/javascripts/listMap.js"></script> --}}
