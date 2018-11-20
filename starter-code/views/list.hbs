@@ -1,0 +1,9 @@
+<h2>TODOS LOS LUGARES</h2>
+<ul>
+{{#each places}}
+  <li>{{this.name}}</li>
+  <form action="/list/{{this.id}}/delete" method="post"><button type="submit">DELETE</button></form>
+{{/each}}
+</ul>
+<a href="/edit"><button>Edita un lugar</button></a>
+<a href="/"><button>Salir</button></a>
