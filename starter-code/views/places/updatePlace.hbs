@@ -6,11 +6,15 @@
             <option {{#is place.type 'coffe shop'}}selected{{/is}}>coffee shop</option>
             <option {{#is place.type 'bookstore'}}selected{{/is}}>bookstore</option>
         </select>
-        <input type="text" name="lat" placeholder="Latitude">
-        <input type="text" name="long" placeholder="Longitude">
+        <input type="text" id="lat" name="lat" value="{{place.coordinates.lat}}" placeholder="Latitude">
+        <input type="text" id="long" name="long" value="{{place.coordinates.long}}" placeholder="Longitude">
         <button type="submit">Save</button>
     </form>
     <div>
         <a href="/">Home</a>
     </div>
 </div>
+
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmA_nB5Ja-EzOKb37_eyIomFhgC6QjEvw"></script>

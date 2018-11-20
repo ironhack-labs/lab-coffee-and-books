@@ -9,8 +9,12 @@ placeRouter.get('/newPlace', (req, res, next) => {
 placeRouter.post('/newPlace', (req, res, next) => {
 
     let { name, type } = req.body;
+    let coordinates = {
+        'lat': req.body.lat,
+        'long': req.body.long
+    }
 
-    Place.create({ name, type })
+    Place.create({ name, type, coordinates })
         .then(() => {
             res.redirect('/');
         })
@@ -42,12 +46,23 @@ placeRouter.post('/updatePlace/:id', (req, res, next) => {
 
     let id = req.params.id;
     const { name, type } = req.body;
+    let coordinates = {
+        'lat': req.body.lat,
+        'long': req.body.long
+    }
 
-    Place.updateOne({ _id: id }, { $set: { name, type } })
+    Place.updateOne({ _id: id }, { $set: { name, type, coordinates } })
         .then(() => res.redirect('/'))
         .catch(err => next(err));
 });
 
+placeRouter.get('/apiJson', (req, res, next) => {
+    Place.find({})
+        .then(jsonPlaces => {
+            res.json({ jsonPlaces });
+        })
+        .catch(err => next(err));
+});
 
 
 module.exports = placeRouter;
