@@ -3,16 +3,13 @@ const Schema   = mongoose.Schema;
 
 const placeSchema = new Schema({
   name: String,
-  password: String,
-  placeType: {
-    type: String,
-    enum : ['coffee shop', 'bookstore'],
-    // default: 'place'
+  description: String,
+  location: {
+    type: {type: { type: String }, coordinates: [Number]  },
   },
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
 
-const Place = mongoose.model("Place", placeSchema);
 
-module.exports = Place;
+module.exports =  mongoose.model('place', placeSchema);
