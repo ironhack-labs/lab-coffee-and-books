@@ -1,2 +1,14 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div id="main-panel">
+    <h1>Main Panel</h1>
+    {{#each places}}
+    <div class="item-place">
+        <span>{{name}}</span>
+        <span>{{type}}</span>
+        <a href="/places/updatePlace/{{_id}}">Update</a>
+        <a href="/places/deletePlace/{{_id}}">Delete</a>
+    </div>
+    {{/each}}
+    <div>
+        <a href="/places/newPlace">Create New</a>
+    </div>
+</div>

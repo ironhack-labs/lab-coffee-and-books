@@ -1,0 +1,16 @@
+<div class="update-place">
+    <h1>Update Place</h1>
+    <form action="/places/updatePlace/{{place._id}}" method="POST">
+        <input type="text" name="name" placeholder="Name" value="{{place.name}}">
+        <select name="type">
+            <option {{#is place.type 'coffe shop'}}selected{{/is}}>coffee shop</option>
+            <option {{#is place.type 'bookstore'}}selected{{/is}}>bookstore</option>
+        </select>
+        <input type="text" name="lat" placeholder="Latitude">
+        <input type="text" name="long" placeholder="Longitude">
+        <button type="submit">Save</button>
+    </form>
+    <div>
+        <a href="/">Home</a>
+    </div>
+</div>
