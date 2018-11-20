@@ -13,6 +13,10 @@ const placeSchema = new Schema({
     required: true,
     enum: ['coffee shop', 'bookstore'],
   },
+  location: {
+    lat: { type: String },
+    lng: { type: String },
+  },
 });
 
 const Place = mongoose.model('Place', placeSchema);

@@ -10,6 +10,12 @@ placeRouter.get('/', (req, res, next) => {
     .catch(err => next(err));
 });
 
+placeRouter.get('/getAll', (req, res, next) => {
+  Place.find()
+    .then(places => res.json({ places }))
+    .catch(err => next(err));
+});
+
 placeRouter.get('/new', (req, res, next) => res.render('newPlace'));
 
 placeRouter.get('/:id', (req, res, next) => {
@@ -28,6 +34,10 @@ placeRouter.post('/', (req, res, next) => {
   const myPlace = new Place({
     name: req.body.name,
     type: req.body.type,
+    location: {
+      lat: parseFloat(req.body.lat),
+      lng: parseFloat(req.body.lng),
+    },
   });
 
   myPlace.save()
