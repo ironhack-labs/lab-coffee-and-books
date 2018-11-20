@@ -1,6 +1,14 @@
 <h1>Places list</h1>
 
-
+<div>
 {{#each places}}
   <p>{{this.name}}</p>
+
+  <form action="/placeList/{{this._id}}/delete" method="post">
+    <button type="submit">Delete</button>
+  </form>
 {{/each}}
+</div>
+<div>
+  <a href="/">Add something new</a>
+</div>

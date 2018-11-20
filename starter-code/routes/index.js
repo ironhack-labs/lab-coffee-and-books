@@ -20,8 +20,6 @@ router.post('/', (req, res, next) => {
 
 })
 
-
-
 router.get('/placeList', (req, res, next) => {
   Place.find()
   .then(places => {
@@ -29,6 +27,19 @@ router.get('/placeList', (req, res, next) => {
   })
   .catch(error => console.log(error))
 })
+
+router.post('/placeList/:id/delete', (req, res, next) => {
+  let placeId = req.params.id;
+
+  Place.findByIdAndRemove({'_id': placeId})
+  .then(place => {
+    res.redirect('/placeList');
+    })
+  .catch(error => console.log(error));
+})
+
+
+
 
 
 
