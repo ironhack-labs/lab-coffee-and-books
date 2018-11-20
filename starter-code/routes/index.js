@@ -37,9 +37,6 @@ router.post('/create', (req, res, next) => {
 
 
 //ELIMINAMOS LUGARES:
-// router.get('/delete', (req, res, next) => {
-//   res.render('delete');
-// });
 
 
 router.get('/:place_id/delete', (req, res, next) => {
@@ -54,37 +51,35 @@ router.get('/:place_id/delete', (req, res, next) => {
 
 
 // EDITAMOS LUGARES:
-router.get('/update', (req, res, next) => {
-  res.render('update');
 
-  // router.get('/:restaurant_id/edit', (req, res, next) => {
-  //   Restaurant.findById(req.params.restaurant_id, (error, restaurant) => {
-  //     if (error) {
-  //       next(error);
-  //     } else {
-  //       res.render('restaurants/update', { restaurant });
-  //     }
-  //   });
-  // });
+  router.get('/:id/edit', (req, res, next) => {
+    Place.findById(req.params.id, (error, place) => {
+      if (error) {
+        next(error);
+      } else {
+        res.render('edit', { place });
+      }
+    });
   
-  // // POST => save updates in the database
-  // router.post('/:restaurant_id', (req, res, next) => {
-  //   Restaurant.findById(req.params.restaurant_id, (error, restaurant) => {
-  //     if (error) { 
-  //       next(error); 
-  //     } else {
-  //       restaurant.name        = req.body.name;
-  //       restaurant.description = req.body.description;
-  //       restaurant.save(error => {
-  //         if (error) { 
-  //           next(error); 
-  //         } else { 
-  //           res.redirect(`/restaurants/${req.params.restaurant_id}`); 
-  //         }
-  //       });
-  //     }
-  //   });
-  // });
+  
+  // POST => save updates in the database
+  router.post('/:place_id', (req, res, next) => {
+    Place.findById(req.params.place_id, (error, place) => {
+      if (error) { 
+        next(error); 
+      } else {
+        place.name        = req.body.name;
+        place.type        = req.body.typePlace;
+        place.save(error => {
+          if (error) { 
+            next(error); 
+          } else { 
+            res.redirect(`/displayAll/${req.params.place_id}`); 
+          }
+        });
+      }
+    });
+  });
 });
 
 
