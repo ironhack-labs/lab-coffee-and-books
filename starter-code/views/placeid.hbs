@@ -1,0 +1,11 @@
+<h2>Edit {{place.name}}</h2>
+
+<p>Name: {{place.name}} // Type: {{place.type}}</p>
+
+<form action="/{{place._id}}/update" method="post">
+<input type="text" placeholder="name" name="name">
+<input type="text" placeholder="type" name="type">
+<input type="submit" value="Edit this place">
+</form>
+
+<p><a href="/">Go to all places</a></p>

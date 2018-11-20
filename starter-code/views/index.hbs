@@ -1,2 +1,14 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h2>Places</h2>
+<ul>
+{{#each places}}
+<form action="/{{this._id}}/delete" method="post">
+<li><a href="/{{this._id}}">Name: {{this.name}}</a> // Type: {{this.type}} <input type="submit" value="Delete place"></li>
+</form>
+{{/each}}
+</ul>
+<h3>Add a new place</h2>
+<form action="/new" method="post">
+<input type="text" placeholder="name" name="name">
+<input type="text" placeholder="type" name="type">
+<input type="submit" value="Add a new place">
+</form>
