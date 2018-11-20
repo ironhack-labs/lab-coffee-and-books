@@ -1,2 +1,20 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<h2>All places</h2>
+
+{{#each place}}
+<ul>
+<li>{{this.name}}, {{this.type}}</li>
+
+</ul>
+{{/each}}
+
+<h2>Create</h2>
+<input type="text">
+
+<h2>Update</h2>
+<input type="text">
+
+<h2>Delete</h2>
+<input type="text">
