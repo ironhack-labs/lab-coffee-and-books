@@ -19,7 +19,16 @@ router.get('/restaurants', (req, res, next) => {
 });
 
 router.post('/restaurants', (req, res, next) => {
- 
+  const { name, type } = req.body;
+  const newRestaurant = new Place({ name, type});
+
+  newRestaurant.save()
+  .then((book) => {
+    res.redirect('/restaurants');
+  })
+  .catch((error) => {
+    console.log(error);
+  })
 });
 
 router.get('/bookstores', (req, res, next) => {
@@ -29,6 +38,19 @@ router.get('/bookstores', (req, res, next) => {
   })
   .catch(error => {
     console.log(error)
+  })
+});
+
+router.post('/bookstores', (req, res, next) => {
+  const { name, type } = req.body;
+  const newBookstore = new Place({ name, type});
+
+  newBookstore.save()
+  .then((book) => {
+    res.redirect('/bookstores');
+  })
+  .catch((error) => {
+    console.log(error);
   })
 });
 
