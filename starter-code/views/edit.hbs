@@ -1,0 +1,14 @@
+<a href="/">Go back to the beginning</a>  <br> <br>
+<a href="/places">Go back</a>  <br> <br>
+{{!-- {{#each place}} --}}
+<form action="/places/{{place.id}}/edit" method="POST">
+  <input type="text" placeholder="{{place.name}}" name="name">
+  <select name="type">
+    <option value="bookstore">Bookstore</option>
+    <option value="coffee">Coffeeshop</option>
+    <option selected disabled>Chose One</option>
+  </select> <br> <br>
+  <button type="submit">Submit</button>
+</form>
+
+{{!-- {{/each}} --}}

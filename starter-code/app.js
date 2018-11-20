@@ -54,5 +54,7 @@ app.locals.title = 'Coffees and Books';
 const index = require('./routes/index');
 app.use('/', index);
 
+const places = require('./routes/places');
+app.use('/places', places);
 
 module.exports = app;
