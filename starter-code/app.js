@@ -49,10 +49,42 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
-
+const place = require('./routes/place');
+app.use('/place', place);
 
 const index = require('./routes/index');
 app.use('/', index);
 
+const router  = express.Router();
 
-module.exports = app;
+const Place = require('../models/place');
+
+
+router.post('/', (req, res, next) => {
+
+
+  let location = {
+	type: 'Point',
+	coordinates: [req.body.longitude, req.body.latitude]
+  };
+  
+  const newPlace = new Place({
+	name:        req.body.name,
+	description: req.body.description,
+	location:    location 
+  });
+
+  newPlace.save((error) => {
+	if (error) { 
+	  next(error); 
+	} else { 
+	  res.redirect('/');
+	}
+  })
+});
+
+
+module.exports = router;
+
+
+
