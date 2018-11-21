@@ -79,4 +79,5 @@ router.get('/:id/delete', (req, res, next) => {
     .then(place => res.redirect('/placesList'))
     .catch(err => next(err));
 });
+
 module.exports = router;
