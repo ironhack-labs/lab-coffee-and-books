@@ -15,8 +15,6 @@ router.get('/', (req, res, next) => {
 // POST new place
 router.post('/new', (req, res, next) => {
   
-  console.log(req.body);
-
   let coffe = {
     name: req.body.name,
     type: req.body.type,
