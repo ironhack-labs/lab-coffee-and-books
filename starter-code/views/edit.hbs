@@ -1,0 +1,11 @@
+<form action="/places/{{place.id}}" method="POST">
+   <label>Name: <input name="name" type="text" value="{{place.name}}"></label>
+   <label>Type: 
+     <select name="type">
+       <option value="bookstore">coffee shop</option>
+       <option value="coffee shop">bookstore</option>
+     </select>
+   </label>
+   <button type="submit">Submit</button>
+ </form>
+ <a href="/places/">Go back</a> 
