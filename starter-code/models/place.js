@@ -9,8 +9,8 @@ const PlaceSchema = new Schema({
     enum : ['Coffie Shop', 'BookStore'],
   },
   coordinates: {
-    lat: Number,
-    lon: Number
+    lat: String,
+    lon: String
   }
 },
   {
