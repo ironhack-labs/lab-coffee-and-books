@@ -17,50 +17,52 @@ router.get('/places', (req, res, next) => {
 })
 
 router.post('/add-place', (req, res, next) => {
-    let {name, type} = req.body;
-    let newPlace = new Place({name, type});
+
+    let { name, type, long, lat} = req.body;
+    let newPlace = new Place({ name, type, long, lat });
+
 
     newPlace.save()
-    .then(()=>{
-        res.redirect('/places');
-    })
-    .catch((err)=>{
-        next(err);
-    })
+        .then(() => {
+            res.redirect('/places');
+        })
+        .catch((err) => {
+            next(err);
+        })
 })
 
 router.post('/delete-place/:id', (req, res, next) => {
     Place.findByIdAndRemove(req.params.id)
-    .then(()=>{
-        res.redirect('/places');
-    })
-    .catch((err)=>{
-        next(err);
-    })
+        .then(() => {
+            res.redirect('/places');
+        })
+        .catch((err) => {
+            next(err);
+        })
 })
 
 router.get('/places/edit/:id', (req, res, next) => {
     Place.findById(req.params.id)
-    .then((place)=>{
-        res.render('places/edit', place);
-    })
-    .catch((err)=>{
-        next(err);
-    })
-    
+        .then((place) => {
+            res.render('places/edit', place);
+        })
+        .catch((err) => {
+            next(err);
+        })
+
 })
 
-router.post('/edit-place/:id', (req, res, next)=>{
+router.post('/edit-place/:id', (req, res, next) => {
 
-    let {name, type} = req.body;
+    let { name, type, long, lat } = req.body;
 
-    Place.findByIdAndUpdate(req.params.id, { name, type })
-    .then(()=>{
-        res.redirect('/places');
-    })
-    .catch((err)=>{
-        next(err);
-    })
+    Place.findByIdAndUpdate(req.params.id, { name, type, long, lat })
+        .then(() => {
+            res.redirect('/places');
+        })
+        .catch((err) => {
+            next(err);
+        })
 })
 
 module.exports = router;

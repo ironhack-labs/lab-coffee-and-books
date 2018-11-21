@@ -6,6 +6,7 @@
 
 <p>Name: {{this.name}}</p>
 <p>Type: {{this.type}}</p>
+<p>Longitude: {{this.long}} Latitude: {{this.lat}}</p>
 
 <form action="/delete-place/{{this.id}}" method="post">
 <button class="btn btn-danger m-1" type="submit">Delete</button>
@@ -25,6 +26,8 @@
     <option value="coffee shop">coffee shop</option>
     <option value="bookstore">bookstore</option>
 </select>
+<input type="number" step="any" name="long" id="" value=0>
+<input type="number" step="any" name="lat" id="" value=0>
 <button class="btn btn-primary" type="submit">Add</button>
 </form>
 <br>
