@@ -3,3 +3,11 @@
 <h2><a href="/places/{{this.id}}">{{this.name}}</a></h2>
 
 {{/each}}
+
+<div id="map"></div>
+
+<script>
+  window.places={{{placesStr}}}
+</script>
+
+<script src="/public/javascripts/script.js"></script>

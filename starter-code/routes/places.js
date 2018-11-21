@@ -23,16 +23,20 @@ placeRouter.get("/:id", (req, res, next) => {
       next(err))
 })
 
-placeRouter.get('/create', (req, res) => {
+placeRouter.get('/new', (req, res) => {
   res.render("create")
 });
 
-placeRouter.post('/create', (req, res) => {
-  let newPlace = {
+placeRouter.post('/new', (req, res) => {
+  const newPlace = ({
     name: req.body.name,
-    type: req.body.type
-  }
-  Place.save(newPlace)
+    type: req.body.type,
+    location: {
+      lat: parseFloat(req.body.lat),
+      lng: parseFloat(req.body.lng),
+    },
+  });
+  Place.create(newPlace)
     .then(() => res.redirect('/places'))
     .catch(() => {
       // console.log(e)
@@ -54,7 +58,11 @@ placeRouter.get("/:id/edit", (req, res) => {
 placeRouter.post("/:id/edit", (req, res, next) => {
   Places.findByIdAndUpdate(req.params.id, {
     name: req.body.name,
-    type: req.body.type
+    type: req.body.type,
+    location: {
+      lat: parseFloat(req.body.lat),
+      lng: parseFloat(req.body.lng),
+    },
   })
     .then(() => {
       res.redirect("/places")

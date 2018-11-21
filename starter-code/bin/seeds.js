@@ -5,10 +5,18 @@ const Places = require("../models/Places");
 const places = [
   {
     name: "London",
-    type: "coffee"
+    type: "coffee",
+    location:{
+      lat:"55",
+      lng:"22"
+    }
   }, {
     name: "Bookie",
-    type: "bookstore"
+    type: "bookstore",
+    location:{
+      lat:"-20",
+      lng:"-50"
+    }
   }
 ]
 

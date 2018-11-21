@@ -3,6 +3,7 @@
 
 <h4>{{places.name}}</h4>
 <p>{{places.type}}</p>
+<p>Its coordintes are: {{places.location.lat}}, {{places.location.lng}}</p>
 <a href="/places/{{places.id}}/edit"><button>Edit</button></a>
 <br><br>
 <form action="/places/{{places.id}}/delete" method="post">
