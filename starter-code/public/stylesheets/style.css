@@ -10,3 +10,17 @@ a {
   height: 600px; }
 
 /*# sourceMappingURL=style.css.map */
+.flex {
+  display: flex;
+  flex-direction: row; }
+
+.flex div {
+  margin-right: 100px;
+  margin-bottom: 20px; }
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+/*# sourceMappingURL=style.css.map */
