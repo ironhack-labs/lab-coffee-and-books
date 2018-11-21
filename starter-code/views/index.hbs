@@ -1,2 +1,24 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>COFEE AND BOOKS</h1>
+<fieldset>
+  <h2>Add Place</h2>
+  <form action="/new" method="post">
+    <label for="">Name</label>
+    <input type="text" name="name">
+    <select name="type" id="moneda">
+      <option>Select</option>
+      <option value="coffee shop">Coffee Shop</option>
+      <option value="bookstore">Bookstore</option>
+    </select>
+    <input type="submit" value="Create!">
+  </form>
+</fieldset>
+<h2>Places List</h2>
+<div class="places-container">
+  {{#each places}}
+  <fieldset>
+    <h3><a href="/{{this.id}}">{{this.name}}</a></h3>
+    <a href="/edit/{{this.id}}"><button>Edit</button></a>
+    <a href="/delete/{{this.id}}"><button>Delete</button></a>
+  </fieldset>
+  {{/each}}
+</div>
