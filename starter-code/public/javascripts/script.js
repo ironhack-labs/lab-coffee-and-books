@@ -4,7 +4,7 @@ let inputLong = document.getElementById('long');
 let form = document.querySelectorAll('form');
 var map;
 var initalCoords;
-
+let actualRute = 'http://localhost:3000/';
 function initMap() {
 
   if (inputLat && inputLong) {
@@ -16,7 +16,7 @@ function initMap() {
 
 
   map = new google.maps.Map(
-    document.getElementById('map'), { zoom: 4, center: initalCoords });
+    document.getElementById('map'), { zoom: 2, center: initalCoords });
   if (form.length > 0) {
     var marker = new google.maps.Marker({ position: initalCoords, map: map });
   }
@@ -37,6 +37,7 @@ function saveLocation(chosenLocation) {
   inputLong.value = chosenLocation.lng;
 
 }
+
 function getPlacesJson() {
   console.log('entro');
   axios.get("/places/apiJson")
@@ -47,13 +48,14 @@ function getPlacesJson() {
       console.log(error);
     })
 }
+
 initMap();
 getPlacesJson();
 
 function markets(jsonData) {
 
   let coord = [];
-  if (window.location.href == 'http://localhost:3000/') {
+  if (window.location.href == actualRute) {
     jsonData.forEach(element => {
       let coordsJson = {
         lat: element.coordinates.lat,
