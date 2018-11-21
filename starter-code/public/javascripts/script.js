@@ -8,13 +8,14 @@ function startMap() {
 
   const map = new google.maps.Map(
     document.getElementById('theMap'), {
-      zoom: 5,
+      zoom: 3,
       center: ironhackBCN,
     },
   );
 
   axios.get('/places/getPlaces')
     .then((res) => {
+      let markers = [];
       res.data.places.forEach(function (elem) {
         const center = {
           lat: parseFloat(elem.location.lat),
@@ -31,6 +32,7 @@ function startMap() {
     .catch(err => console.log(err));
 
   map.addListener('click', (e) => {
+    
     window.chosenLocation = {
       lat: e.latLng.lat(),
       lng: e.latLng.lng(),
