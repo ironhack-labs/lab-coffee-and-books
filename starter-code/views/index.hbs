@@ -1,2 +1,14 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+
+<ul>
+  {{#each user}}
+  <li>{{this.name}} , {{this.type}}</li>
+
+  <br>
+  {{/each}}
+
+{{!-- <a href="/edit/{{me._id}}">Edit my profile</a> --}}
+
+</ul>
