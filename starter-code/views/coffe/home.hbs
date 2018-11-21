@@ -8,8 +8,8 @@
         <option value="coffe shop">Coffe Shop</option>
         <option value="bookstore">Bookstore</option>
       </select>
-      <input class="form-control" type="text" name="latitude" placeholder="latitude">
-      <input class="form-control" type="text" name="longitude" placeholder="longitude">
+      <input id="latitude" class="form-control" type="hidden" name="latitude" placeholder="latitude">
+      <input id="longitude" class="form-control" type="hidden" name="longitude" placeholder="longitude">
 
       <button class="btn btn-success" type="submit">{{placeObject.button}}</button>
     </form>
@@ -42,3 +42,9 @@
 
 
 </section>
+
+<script>
+  window.places = {{{ placeObject.placesStr }}}
+</script>
+
+<script src="/javascripts/listMap.js"></script>

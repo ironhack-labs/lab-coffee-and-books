@@ -7,14 +7,26 @@ const Place   = require('../models/Place');
 router.get('/', (req, res, next) => {
   Place.find({})
   .then(places => {
-    let placeObject = {places:places, action: '/coffe/new', button: 'Save'}
+    let placeObject = {places:places, action: '/coffe/new', button: 'Save', placesStr: JSON.stringify(places)}
     res.render('coffe/home', {placeObject})
   })
 });
 
 // POST new place
 router.post('/new', (req, res, next) => {
-  Place.create({...req.body})
+  
+  console.log(req.body);
+
+  let coffe = {
+    name: req.body.name,
+    type: req.body.type,
+    location: {
+      type: 'Point',
+      coordinates: [Number(req.body.latitude), Number(req.body.longitude)]
+    }
+  }
+
+  Place.create(coffe)
   .then(() => {
     res.redirect('/coffe');
   })
