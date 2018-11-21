@@ -5,16 +5,22 @@ const placeSchema = new Schema({
   name: String,
   type: {
     type: String,
-    enum: [`coffee shop`, `bookstore`]
+    enum: [`coffee shop`, `bookstore`],
+    location: {
+      lat: Number,
+      lng: Number
+    }
   }
-},{
-  timestamps: {
-    createdAt: "created_at",
-    updatedAt: "updated_at"
-  }}
+}, {
+    timestamps: {
+      createdAt: "created_at",
+      updatedAt: "updated_at"
+    }
+  }
 );
 
 
 placeSchema.index({ location: '2dsphere' });
 
 module.exports = mongoose.model('place', placeSchema);
+
