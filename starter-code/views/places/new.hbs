@@ -1,0 +1,21 @@
+{{#if error}}
+<h2>{{error}}</h2>
+{{/if}}
+<form id="form" action="/places/new" method="POST">
+    <label for="name">Place name</label><br>
+    <input type="text" name="name" placeholder="some place here">
+    <br><br>
+    <select name="type">
+        <option selected value="coffe shop"> Coffe Shop </option>
+        <option value="bookstore">Bookstore</option>
+    </select>
+    <br>
+    <br>
+    <label for="latitude">latitude</label>
+    <input type="number" name="latitude"   step="0.0000000000001" value=40.3925321>
+    <br>
+      <label for="longitude">longitude</label>
+    <input type="number" name="longitude" step="0.0000000000001" value=-3.6982669>
+    <br><br>
+    <button>Add a place</button>
+</form>
