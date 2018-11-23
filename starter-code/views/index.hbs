@@ -1,2 +1,17 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+  <div class="placesList">
+    {{#each places}}
+    <div class="listItem">
+      <li>Name of place: {{name}}</li>
+      <li>Type of place: {{type}}</li>
+      <a class="new" href="/{{_id}}/edit">Edit</a>
+      <a class="delete" href="/{{_id}}/delete">Delete</a>
+    </div>
+    {{/each}}
+  </div>
+
+  <div class="gMap">
+
+  </div>
+
+</div>

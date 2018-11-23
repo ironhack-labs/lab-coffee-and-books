@@ -1,0 +1,21 @@
+<div class="containerForm">
+
+  <h2>Edit Place</h2>
+  <form action="" method="post">
+    <div class="rowForm">
+      <label for="name">Name</label>
+      <input type="text" name="name" value="{{place.name}}">
+    </div>
+    <div class="rowForm">
+      <p>Actual type is {{place.type}}</p>
+      <label for="type">Type</label>
+      <input type="radio" name="type" value="coffee shop">Coffee Shop
+      <input type="radio" name="type" value="bookstore">Bookstore
+
+    </div>
+
+    <button type="submit">Edit</button>
+
+  </form>
+
+</div>
