@@ -1,0 +1,8 @@
+<h2>Edit</h2>
+<form method="POST" action="/places/{{data.id}}/edit">
+  <input type="text" value="{{data.name}}" name="name">
+  <input type="text" value="{{data.type}}" name="type">
+  <input type="text" name="latitude"  placeholder="Latitude">
+  <input type="text" name="longitude" placeholder="Longitude">
+  <button type="submit">Save Changes</button>
+</form>
