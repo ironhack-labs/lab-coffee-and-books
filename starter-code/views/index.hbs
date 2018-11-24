@@ -1,2 +1,25 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm">
+    <h1>{{title}}</h1>
+    <p>Welcome to {{title}}</p>
+    <a href="/places/create" class="btn btn-primary mb-3">Add new</a>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-9">
+      <div id="map"></div>
+    </div>
+    <div class="col-3">
+      <h3>Places</h3>
+      <hr>
+      <div class="list-group">
+            {{#each places}}
+              {{> placeItem}}
+            {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/javascripts/home.js"></script>
