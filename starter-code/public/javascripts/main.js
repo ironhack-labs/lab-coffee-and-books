@@ -18,7 +18,7 @@ function startMap() {
       title: "I'm here"
     });
   } else {
-    var coord = document.querySelectorAll(".pos"); 
+    var coord = document.querySelectorAll(".pos");
 
     const center = {
       lat: 40.3925321,
@@ -28,27 +28,18 @@ function startMap() {
       zoom: 7,
       center: center
     });
-    coord.forEach(e => { 
-        let split= e.innerText.split(",")
-        console.log(split)
-        const myMarker = new google.maps.Marker({
-            position: {
-              lat:Number(split[1]),
-              lng: Number(split[0])
-            },
-      
-            map: map,
-            title: "I'm here"
-          });
-    });
-    const myMarker = new google.maps.Marker({
-      position: {
-        lat: Number(document.querySelector("input[name=latitude]").value),
-        lng: Number(document.querySelector("input[name=longitude]").value)
-      },
+    coord.forEach(e => {
+      let split = e.innerText.split(",");
+      console.log(split);
+      const myMarker = new google.maps.Marker({
+        position: {
+          lat: Number(split[1]),
+          lng: Number(split[0])
+        },
 
-      map: map,
-      title: "I'm here"
+        map: map,
+        title: "I'm here"
+      });
     });
   }
 }
