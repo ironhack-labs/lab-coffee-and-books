@@ -1,0 +1,11 @@
+<h2>TODOS LOS LUGARES</h2>
+<ul>
+{{#each places}}
+  <li>{{this.name}}</li>
+{{/each}}
+</ul>
+<div id="map"></div>
+<script>
+  window.places = {{{ places }}}
+</script>
+<script src="/javascripts/listMap.js"></script>
