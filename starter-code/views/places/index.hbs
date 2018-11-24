@@ -1,34 +1,58 @@
 <h2>Welcome to the places homepage</h2>
 
-<fieldset>
+<div class="places-container">
     <legend>Places</legend>
-{{#each places}}
+    {{#each places}}
 
-<p>Name: {{this.name}}</p>
-<p>Type: {{this.type}}</p>
-<p>Longitude: {{this.long}} Latitude: {{this.lat}}</p>
+    <div class="place key{{@key}}">
 
-<form action="/delete-place/{{this.id}}" method="post">
-<button class="btn btn-danger m-1" type="submit">Delete</button>
-</form>
+        <p>Name: {{this.name}}</p>
+        <p>Type: {{this.type}}</p>
+        <p>Longitude: <span id="long">{{this.long}}</span> Latitude: <span id="lat">{{this.lat}}</span></p>
 
-<form action="/places/edit/{{this.id}}" method="get">
-<button class="btn btn-primary m-1" type="submit">Edit</button>
-</form>
+        <div class="place-actions-container">
+            <form action="/delete-place/{{this.id}}" method="post">
+                <button class="btn btn-danger m-1" type="submit">Delete</button>
+            </form>
 
-{{/each}}
-</fieldset>
+            <form action="/places/edit/{{this.id}}" method="get">
+                <button class="btn btn-primary m-1" type="submit">Edit</button>
+            </form>
+        </div>
 
-<form action="/add-place" method="post">
-<label for="name">Name</label>
-<input type="text" name="name">
-<select name="type" id="type-selector">
-    <option value="coffee shop">coffee shop</option>
-    <option value="bookstore">bookstore</option>
-</select>
-<input type="number" step="any" name="long" id="" value=0>
-<input type="number" step="any" name="lat" id="" value=0>
-<button class="btn btn-primary" type="submit">Add</button>
-</form>
+    </div>
+
+    {{/each}}
+</div class="places-container">
+
+<style>
+    #map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
+
+<h3>My First Map</h3>
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key={{places.cl4v3}}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="/javascripts/map.js"></script>
+
+
 <br>
+<fieldset>
+    <legend>Add a Place</legend>
+    <form action="/add-place" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name">
+        <select name="type" id="type-selector">
+            <option value="coffee shop">coffee shop</option>
+            <option value="bookstore">bookstore</option>
+        </select>
+        <input type="number" step="any" name="long" id="" value=0>
+        <input type="number" step="any" name="lat" id="" value=0>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+    <br>
+</fieldset>
 <a href="/">Home</a>

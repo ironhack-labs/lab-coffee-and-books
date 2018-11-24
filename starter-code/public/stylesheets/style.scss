@@ -6,3 +6,22 @@ body {
 a {
   color: #00B7FF;
 }
+
+.places-container{
+  display:flex;
+  flex-flow: row wrap;
+}
+
+.place{
+  margin-left: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.place-actions-container{
+  display:flex;
+  flex-direction: row;
+}
