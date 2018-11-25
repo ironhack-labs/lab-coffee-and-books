@@ -14,10 +14,10 @@ const map = new google.maps.Map(
 //   .catch(e => console.log(e));
 
 
-const addMarker = (title, position, map, color) => {
+const addMarker = (title, description, position, map, color) => {
   let url = "http://maps.google.com/mapfiles/ms/icons/";
   url += color + "-dot.png";
-  return new google.maps.Marker({
+  let marker = new google.maps.Marker({
     position,
     map,
     title,
@@ -25,6 +25,17 @@ const addMarker = (title, position, map, color) => {
       url
     }
   });
+  addWindow(title, description, map, marker);
+  return marker;
+};
+
+const addWindow = (title, description, map, marker) => {
+  let content = `<h1>${title}</h1><p>${description}</p>`;
+  let infowindow = new google.maps.InfoWindow({content, maxWidth: 200});
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+  return infowindow;
 };
 
 
