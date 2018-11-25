@@ -36,7 +36,7 @@ const addWindow = (title, description, map, marker) => {
     infowindow.open(map, marker);
   });
   return infowindow;
-};
+}
 
 
 loadData(map);
