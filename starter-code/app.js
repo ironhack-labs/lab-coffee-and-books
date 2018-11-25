@@ -1,4 +1,9 @@
-require('dotenv').config();
+const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config();
+dotenv.config({path: path.join(__dirname, '.public.env')});
+dotenv.config({path: path.join(__dirname, '.private.env')});
+
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -7,7 +12,6 @@ const favicon = require('serve-favicon');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
-const path = require('path');
 
 
 mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
@@ -50,12 +54,16 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Coffee & Books';
 
 
 
 const index = require('./routes/index');
 app.use('/', index);
+
+const placesRoutes = require('./routes/placesRoutes');
+app.use('/places', placesRoutes);
+
 
 
 module.exports = app;
