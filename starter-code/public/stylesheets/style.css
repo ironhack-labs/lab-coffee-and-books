@@ -10,6 +10,30 @@ body {
   padding: 3em;
   height: calc(100% - 6em); }
 
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start; }
+
+.container {
+  height: calc(100% - 5em);
+  margin-top: 2em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start; }
+  .container #map {
+    margin-top: 0;
+    width: 70%;
+    height: 90%; }
+  .container .placesList {
+    width: 27%; }
+    .container .placesList h2 {
+      margin-top: 0;
+      padding-bottom: .6em;
+      border-bottom: 2px solid grey; }
+
 .hBut {
   display: inline-block;
   height: 2em; }
@@ -46,10 +70,113 @@ body {
       -ms-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
       -o-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1); }
 
+.placeInList {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center; }
+
+.actions {
+  display: inline-block;
+  height: 1.3em; }
+  .actions a.btn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-size: .9em;
+    font-weight: 800;
+    padding: .1em 0 .4em;
+    min-width: 5em;
+    height: .8em;
+    border-radius: 5em;
+    color: white;
+    border: .15em solid transparent;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .actions a.btn:hover {
+      -webkit-transform: scale(1.1, 1.1);
+      -moz-transform: scale(1.1, 1.1);
+      -ms-transform: scale(1.1, 1.1);
+      -o-transform: scale(1.1, 1.1);
+      transform: scale(1.1, 1.1);
+      transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      -moz-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      -ms-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      -o-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .actions a.btn.btnE {
+      background-color: green; }
+      .actions a.btn.btnE:hover {
+        color: green;
+        border: .15em solid green;
+        background-color: white; }
+    .actions a.btn.btnD {
+      background-color: red; }
+      .actions a.btn.btnD:hover {
+        color: red;
+        border: .15em solid red;
+        background-color: white; }
+
+.locationStatus {
+  color: green;
+  font-weight: bold; }
+
 #map {
-  margin-top: 2em;
+  margin-top: 1em;
   width: 100%;
-  height: 80%;
+  height: 85%;
   background: #eee; }
+
+form {
+  width: 70%; }
+  form input, form button {
+    box-sizing: border-box;
+    outline: none !important;
+    padding: .5em 1em;
+    margin-bottom: 1em;
+    border: 2px solid #eee;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em; }
+  form input {
+    background: transparent; }
+    form input:focus {
+      border-color: 0 !important;
+      box-shadow: 0 !important; }
+  form select {
+    background: transparent;
+    border: 0;
+    width: 100%;
+    outline: none !important; }
+  form .roundedSelect {
+    display: inline-block;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    padding: .25em 1em;
+    margin-bottom: 1em;
+    border: 2px solid #eee; }
+  form input.button {
+    border-radius: 2em;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    padding: .5em 1.5em;
+    margin: 0 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .3s ease background; }
+    form input.button:hover {
+      transition: .3s ease background; }
+    form input.button.but {
+      background: green;
+      border: 2px solid green; }
+      form input.button.but:hover {
+        background: #fff;
+        color: green; }
 
 /*# sourceMappingURL=style.css.map */

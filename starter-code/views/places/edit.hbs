@@ -1,0 +1,23 @@
+<div class="header">
+  <form method="POST" action="/places/{{place._id}}/edit">
+    <h2>Edit place</h2>
+    <input type="text" name="name" placeholder="name" value="{{place.name}}">
+    <input type="text" name="description" placeholder="description" value="{{place.description}}">
+    <div class="roundedSelect">
+      <select name="type">
+        <option value="coffee shop">Coffee Shop</option>
+        <option value="bookstore">Bookstore</option>
+      </select>
+    </div>
+    <input type="hidden" name="latitude" placeholder="latitude" value={{place.location.coordinates.[0]}}>
+    <input type="hidden" name="longitude" placeholder="longitude" value={{place.location.coordinates.[1]}}>
+    <input class="button but" type="submit" name="" value="Edit place">
+    <span class="locationStatus"></span>
+  </form>
+
+  <span class="hBut"><a class="btnA" href="/">Go back</a></span>
+</div>
+
+<div id="map"></div>
+
+<script src="/javascripts/add-edit.js"></script>

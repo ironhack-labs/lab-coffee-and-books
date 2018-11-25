@@ -1,13 +1,21 @@
-<h1>{{title}}</h1>
+<div class="header">
+  <h1>{{title}}</h1>
+  <span class="hBut"><a class="btnA" href="/places/add">Add place</a></span>
+</div>
 
 <script>
   window.places = {{{places}}}
 </script>
 
-<span class="hBut"><a class="btnA" href="/add">Add place</a></span>
-
-
-<div id="map"></div>
+<div class="container">
+  <div id="map"></div>
+  <div class="placesList">
+    <h2>Places list</h2>
+    {{#each placesList}}
+      {{> placeList}}
+    {{/each}}
+  </div>
+</div>
 
 
 <script src="/javascripts/main.js"></script>

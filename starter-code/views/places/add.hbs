@@ -1,0 +1,23 @@
+<div class="header">
+  <form method="POST" action="/places/add">
+    <h2>New place</h2>
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="description" placeholder="description">
+    <div class="roundedSelect">
+      <select name="type">
+        <option value="coffee shop">Coffee Shop</option>
+        <option value="bookstore">Bookstore</option>
+      </select>
+    </div>
+    <input type="hidden" name="latitude" placeholder="latitude" >
+    <input type="hidden" name="longitude" placeholder="longitude">
+    <input class="button but" type="submit" name="" value="Add place">
+    <span class="locationStatus"></span>
+  </form>
+
+  <span class="hBut"><a class="btnA" href="/">Go back</a></span>
+</div>
+
+<div id="map"></div>
+
+<script src="/javascripts/add-edit.js"></script>

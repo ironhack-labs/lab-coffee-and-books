@@ -11,4 +11,4 @@ const geolocateMe = () => {
       reject('Browser does not support geolocation.');
     }
   })
-}
+};

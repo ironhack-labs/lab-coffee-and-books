@@ -14,7 +14,7 @@ placeSchema.index({ location: '2dsphere' });
 
 const Place = mongoose.model('Place', placeSchema);
 
-Place.add = function(name, description, lat, lng){
+Place.add = function(name, type, description, lat, lng){
   return Place.create({
     name,
     type,

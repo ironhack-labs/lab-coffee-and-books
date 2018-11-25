@@ -29,7 +29,7 @@ const places = [
     location:{type:"Point", coordinates:[40.4245367,-3.7159213]}
   },
   {
-    name:"Tipos Infames.",
+    name:"Tipos Infames",
     type: "bookstore",
     description: "Librería especializada en editoriales y autores independientes, con un rincón mezcla de cafetería y vinoteca.",
     location:{type:"Point", coordinates:[40.4246957,-3.7011121]}
