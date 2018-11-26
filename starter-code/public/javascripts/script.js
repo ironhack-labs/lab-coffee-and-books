@@ -10,7 +10,3 @@ const map = new google.maps.Map(
 );
 
 loadData(map);
-
-// geolocateMe()
-//   .then(center => map.setCenter(center))
-//   .catch(e => console.log(e));

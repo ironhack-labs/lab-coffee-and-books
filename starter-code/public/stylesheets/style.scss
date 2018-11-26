@@ -90,6 +90,15 @@ body {
       background-color: white;
       @include hover_scale;
     }
+    &.findMe {
+      background-color: goldenrod;
+      margin-right: 1em;
+      &:hover {
+        color: goldenrod;
+        border: .2em solid goldenrod;
+        background-color: white;
+      }
+    }
   }
 }
 
