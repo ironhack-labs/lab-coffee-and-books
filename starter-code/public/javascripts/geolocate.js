@@ -15,10 +15,9 @@ const geolocateMe = () => {
 
 
 
-//Update position each second after btn click
-
 document.querySelector(".findMe").onclick = (e) => {
-  setInterval(()=>{
+  //Update position each second after btn click
+  //setInterval(()=>{
     geolocateMe()
     .then(center => {
       console.log('Position updated');
@@ -28,5 +27,5 @@ document.querySelector(".findMe").onclick = (e) => {
       marker = new google.maps.Marker({position: center, map});
     })
     .catch(e => console.log(e));
-  }, 1000);
+  //}, 1000);
 };
