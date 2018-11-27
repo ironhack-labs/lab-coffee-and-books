@@ -37,7 +37,7 @@ router.get('/list', (req, res, next) => {
 });
 
 router.get('/list/:id', (req, res, next) => {
-  const {id} = req.params.id
+  const id = req.params.id
   Place.findById(id)
   .then(place =>{
     res.render('detail', place)
