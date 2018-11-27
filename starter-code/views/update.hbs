@@ -1,0 +1,13 @@
+<h1>Update Place</h1>
+
+<form action="/places/update/{{_id}}" method="POST">
+
+<input value="{{name}}" type="text" name="name" id="name">
+<input value="{{type}}" type="text" name="type" id="type">
+<input value="{{location.coordinates.[0]}}" type="hidden" name="lat" id="lat">
+<input value="{{location.coordinates.[1]}}" type="hidden" name="long" id="long">
+
+<input type="submit" value="Guardar">
+
+
+</form>

@@ -46,4 +46,26 @@ router.get('/list/:id', (req, res, next) => {
   })
 });
 
+router.get('/update/:id', (req, res, next) => {
+  const id = req.params.id
+  Place.findById(id)
+  .then(place =>{
+    res.render('update', place)
+  }).catch(err=>{
+    console.log(err)
+  })
+});
+
+router.post('/update/:id', (req,res,next) =>{
+  const id = req.params.id
+  const {name,type,lat,long} = req.body
+  console.log(req.body.name)
+  Place.findByIdAndUpdate(id, {name,type,lat,long},{new:true}, null)
+  .then(place=>{
+    res.redirect(`/places/list/${id}`)
+  }).catch(err=>{
+    console.log(err)
+  })
+})
+
 module.exports = router;
