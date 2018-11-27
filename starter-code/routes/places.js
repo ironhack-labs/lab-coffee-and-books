@@ -7,11 +7,29 @@ router.get('/new', (req, res, next) => {
   res.render('places/new',{action});
 });
 
+// router.post('/new', (req, res, next) => {
+//   Place.create(req.body)
+//   .then(place=>{
+//     res.redirect('/places')
+//   }).catch(e=>next(e))
+// });
+
 router.post('/new', (req, res, next) => {
-  Place.create(req.body)
+  const p = {
+    name:req.body.name,
+    tipo:req.body.tipo,
+    location:{
+      type:"Point",
+      coordinates:[
+        req.body.lng,
+        req.body.lat
+      ]
+    }
+  }
+  Place.create(p)
   .then(place=>{
     res.redirect('/places')
-  }).catch(e=>next(e))
+  })
 });
 
 router.get('/detail/:id', (req, res, next) => {
@@ -37,7 +55,19 @@ router.get('/update/:id', (req, res, next) => {
 });
 
 router.post('/update/:id', (req, res, next) => {
-  Place.findByIdAndUpdate(req.params.id,{$set:req.body},{new:true})
+  console.log(req.body)
+  const newbody = {
+    name:req.body.name,
+    tipo:req.body.tipo,
+    location:{
+      type:"Point",
+      coordinates:[
+        req.body.lng,
+        req.body.lat
+      ]
+    }
+  }
+  Place.findByIdAndUpdate(req.params.id,{$set:newbody},{new:true})
   .then(place=>{
     res.redirect(`/places/detail/${req.params.id}`)
   }).catch(e=>next(e))

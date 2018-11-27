@@ -2,3 +2,29 @@
 <h3>{{tipo}}</h3>
 
 <a href="/places">Regresar a places</a>
+
+<input type="hidden" value="{{location.coordinates.[1]}}" id="lat">
+<input type="hidden" value="{{location.coordinates.[0]}}" id="lng">
+<div style="width:600px;height:600px;" id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ&libraries=places"></script>
+<script>
+
+  const lugar = {
+    lat: Number(document.querySelector('#lat').value),
+    lng: Number(document.querySelector('#lng').value)
+  }
+  function startMap(){
+    var map = new google.maps.Map(document.getElementById('map'), {
+          center: lugar,
+          zoom: 13
+        });
+
+    const myMarker = new google.maps.Marker({
+      position: lugar,
+      map: map,
+      title: "I'm here"
+    });
+  }
+  startMap()
+</script>
