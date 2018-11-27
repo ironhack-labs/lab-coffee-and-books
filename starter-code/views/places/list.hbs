@@ -1,0 +1,9 @@
+<h1>Places</h1>
+
+{{#each places}}
+<span>{{this.name}} | </span>
+<a href="/places/detail/{{this._id}}">Ver detalle</a>
+<a href="/places/update/{{this._id}}">Editar</a>
+<a href="/places/delete/{{this._id}}">Borrar</a>
+<br>
+{{/each}}
