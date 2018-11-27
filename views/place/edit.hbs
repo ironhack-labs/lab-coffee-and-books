@@ -1,0 +1,12 @@
+<h2>Edit {{name}}</h2>
+<form action="/place/{{_id}}" method="POST">
+<p>
+  Name:
+  <input type="text" name="name" value="{{name}}">
+</p>
+<p>
+ Kind:
+  <input type="text" name="kind" value="{{kind}}">
+</p>
+<input type="submit" value="Save">
+</form> 

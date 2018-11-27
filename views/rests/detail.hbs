@@ -1,0 +1,33 @@
+<h2>{{name}}</h2>
+<input id="lat" value="{{location.coordinates.[1]}}" type="hidden">
+<input id="lng" value="{{location.coordinates.[0] }}" type="hidden">
+
+<div style="width:600px;height:600px" id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ&libraries=places"></script>
+<script>
+
+  const lugar = {
+    lat: Number(document.querySelector('#lat').value),
+    lng: Number(document.querySelector('#lng').value)
+  }
+
+  function startMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: lugar,
+      zoom: 16
+    });
+
+    const myMarker = new google.maps.Marker({
+      position: lugar,
+      map: map,
+      title: "I'm here"
+    });
+  }
+
+  startMap()
+
+
+
+
+</script>
