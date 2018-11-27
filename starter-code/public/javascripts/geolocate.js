@@ -27,8 +27,6 @@ document.querySelector(".findMe").onclick = (e) => {
         body: JSON.stringify({location}),
         headers: {"Content-Type": "application/json"}
       }).then(res => {
-        console.log('------------------');
-        console.log(res);
         res.json();
       })
       .catch(err => console.error('Error:', err));

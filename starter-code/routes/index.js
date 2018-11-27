@@ -37,21 +37,40 @@ router.get('/', (req, res, next) => {
 // });
 
 
+// router.post('/nearPlaces', (req, res, next) => {
+//   console.log(req.body);
+//   Place.find().where("location").near({
+//     center: {
+//       type: "Point",
+//       coordinates: [req.body.location.lng, req.body.location.lat]
+//     },
+//         maxDistance: 1000,
+//         spherical: true
+//     }
+//   ).find((error, places) => { //.exec
+//     if(error) console.log("ERROR", error)
+//     else console.log("BIEN", places);
+//   })
+// });
+
+
 router.post('/nearPlaces', (req, res, next) => {
-  console.log(req.body);
-  Place.find().where("location").near({
-    center: {
-      type: "Point",
-      coordinates: [req.body.location.lng, req.body.location.lat]
-    },
-        maxDistance: 1000,
-        spherical: true
+  let {lat,lng} = req.body.location;
+  //console.log(`Searching locations with(${lat},${lng})`);
+  Place.find({
+    location: {
+      $near: {
+        $maxDistance: 1000,
+        $geometry: {
+          type: "Point",
+          coordinates: [lat,lng]
+        }
+      }
     }
-  ).find((error, docs) => { //.exec
-    if(error) console.log("ERROR", error)
-    else console.log("BIEN", docs);
+  }).then(places => {
+    console.log(places);
+    res.json(places);
   })
 });
-
 
 module.exports = router;
