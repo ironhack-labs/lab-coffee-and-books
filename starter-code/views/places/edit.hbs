@@ -1,0 +1,54 @@
+<h2>Editando {{place.name}}</h2>
+
+<form action="/places/edit/{{place._id}}" method="POST">
+<p>
+    Nombre:
+    <input type="text" name="name" value="{{place.name}}">
+  </p>
+  <p>
+    Tipo:
+
+    <input type="radio" id="cofeeshop" name="type" value="cofee shop" checked>
+    <label for="cofeeshop">Cafetería</label>
+    <input type="radio" id="bookstore" name="type" value="bookstore">
+    <label for="bookstore">Librería</label>
+
+    <p>Address</p>
+    <input id="geo" type="text" width="300px">
+
+    <input type="hidden" name="latitude" placeholder="latitude" id="lat" value="{{place.location.coordinates.[1]}}">
+    <input type="hidden" name="longitude" placeholder="longitude" id="lng" value="{{place.location.coordinates.[0]}}">
+  </p>
+
+  <input type="submit" value="Enviar">
+
+</form>
+  <br>
+<div style="width:600px;height:600px" id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ&libraries=places"></script>
+<script>
+  function startMap() {
+    var map = new google.maps.Map(document.getElementById('map'),{
+      center: {
+        lat: {{place.location.coordinates.[1]}},
+        lng: {{place.location.coordinates.[0]}}
+      },
+      zoom: 20
+    });
+
+    var input = document.querySelector('#geo')
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.bindTo('bounds', map);
+    autocomplete.addListener('place_changed', function () {
+      var lat = autocomplete.getPlace().geometry.location.lat()
+      var lng = autocomplete.getPlace().geometry.location.lng()
+      map.setCenter({
+        lat: lat,
+        lng: lng
+      })
+      document.querySelector('#lat').value = lat
+      document.querySelector('#lng').value = lng
+    })
+  }
+  startMap()
+</script>

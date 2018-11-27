@@ -1,0 +1,22 @@
+<h1>{{name}}</h1>
+
+<p>Tipo de lugar: {{type}}</p>
+
+<a href="/places/edit/{{_id}}">Editar</a>
+<a href="/places/delete/{{_id}}">Borrar</a>
+<br>
+
+<div style="width:600px;height:600px" id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ&libraries=places"></script>
+<script>
+  function startMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: {{location.coordinates.[1]}},
+        lng: {{location.coordinates.[0]}}
+      },
+      zoom: 20
+    });
+  }
+  startMap()
+</script>
