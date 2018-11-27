@@ -13,24 +13,45 @@ router.get('/', (req, res, next) => {
 });
 
 
-// /*GET near places*/
-// router.post('/', (req, res, next) => {
+/*GET near places*/
+
+// router.post('/nearPlaces', (req, res, next) => {
+//   console.log(req.body);
 //   Place.find({
-//     $near: {
-//       $geometry: {
-//         type: "Point",
-//         coordinates: [40.5463993, -3.652186]
-//       },
-//       $maxDistance: 500,
-//       $minDistance: 0
+//     location: {
+//       $near: {
+//         $maxDistance: 100000,
+//         $geometry: {
+//           type: "Point",
+//           coordinates: [req.body.location.lng, req.body.location.lat]
+//         }
+//       }
 //     }
-//   })
-//   .then(places => {
-//     res.render('index', {
-//       places: JSON.stringify(places),
-//       placesList: places
-//     });
-//   })
+//   }).then(places => {
+//     console.log(places);
+//     // res.send({
+//     //   places: JSON.stringify(places),
+//     //   placesList: places
+//     // });
+//   });
 // });
+
+
+router.post('/nearPlaces', (req, res, next) => {
+  console.log(req.body);
+  Place.find().where("location").near({
+    center: {
+      type: "Point",
+      coordinates: [req.body.location.lng, req.body.location.lat]
+    },
+        maxDistance: 1000,
+        spherical: true
+    }
+  ).find((error, docs) => { //.exec
+    if(error) console.log("ERROR", error)
+    else console.log("BIEN", docs);
+  })
+});
+
 
 module.exports = router;

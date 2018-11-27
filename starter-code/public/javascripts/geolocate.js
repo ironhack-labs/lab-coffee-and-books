@@ -19,12 +19,24 @@ document.querySelector(".findMe").onclick = (e) => {
   //Update position each second after btn click
   //setInterval(()=>{
     geolocateMe()
-    .then(center => {
+    .then(location => {
       console.log('Position updated');
-      map.setCenter(center);
+      console.log(location);
+      fetch("/nearPlaces", {
+        method: 'POST',
+        body: JSON.stringify({location}),
+        headers: {"Content-Type": "application/json"}
+      }).then(res => {
+        console.log('------------------');
+        console.log(res);
+        res.json();
+      })
+      .catch(err => console.error('Error:', err))
+      .then(res => console.log('Success:', res));
+      map.setCenter(location);
       let marker;
       if(marker) marker.setMap(null);
-      marker = new google.maps.Marker({position: center, map});
+      marker = new google.maps.Marker({position: location, map});
     })
     .catch(e => console.log(e));
   //}, 1000);
