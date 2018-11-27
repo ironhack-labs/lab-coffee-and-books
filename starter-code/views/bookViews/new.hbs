@@ -1,0 +1,53 @@
+<h2>Create new bookstore</h2>
+<form action="{{action}}" method="POST">
+  <p>
+    Bookstore name:
+    <input type="text" name="name" value="{{bookstore.name}}">
+  </p>
+  <p>
+    Bookstore location:
+    <input type="text" id="geolocale">
+  </p>
+  <p>
+    <input type="hidden" value="bookstore" name="type">
+    <input type="hidden" name="lat" id="lat" value="{{bookstore.location.coordinates.[1]}}">
+    <input type="hidden" name="lng" id="lng" value="{{bookstore.location.coordinates.[0]}}">
+  </p>
+  <button type="submit">Create Bookstore</button>
+</form>
+<br>
+<div id="map" style="width: 800px; height: 600px;"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ&libraries=places"></script>
+<script>
+
+  function startMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: 19.3979067,
+        lng: -99.171706
+      },
+      zoom: 15
+    });
+
+    var input = document.querySelector('#geolocale')
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.bindTo('bounds', map);
+    autocomplete.addListener('place_changed', function () {
+      var lat = autocomplete.getPlace().geometry.location.lat()
+      var lng = autocomplete.getPlace().geometry.location.lng()
+      map.setCenter({
+        lat: lat,
+        lng: lng
+      })
+      const myMarker = new google.maps.Marker({
+        position: { lat: lat, lng: lng },
+        map: map,
+        title: "You're here"
+      });
+      document.querySelector('#lat').value = lat
+      document.querySelector('#lng').value = lng
+
+    })
+  }
+  startMap()
+</script>

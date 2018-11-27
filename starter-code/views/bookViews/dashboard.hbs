@@ -1,0 +1,18 @@
+<h2>Welcome to Books</h2>
+<a href="/books/new"><button>Create new Bookstore</button></a>
+<hr>
+<div>
+  {{#each bookstores}}
+  <div style="border: 1px solid black; padding: 8px; margin: 8px;">
+    <a href="/books/{{this._id}}">
+      <div>
+        <h3>{{this.name}}</h3>
+        <a href="/books/delete/{{this._id}}"><button>Eliminar</button></a>
+        <a href="/books/edit/{{this._id}}"><button>Editar</button></a>
+      </div>
+    </a>
+    <br>
+  </div>
+  {{/each}}
+  </ul>
+</div>
