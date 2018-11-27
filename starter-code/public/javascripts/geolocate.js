@@ -31,8 +31,7 @@ document.querySelector(".findMe").onclick = (e) => {
         console.log(res);
         res.json();
       })
-      .catch(err => console.error('Error:', err))
-      .then(res => console.log('Success:', res));
+      .catch(err => console.error('Error:', err));
       map.setCenter(location);
       let marker;
       if(marker) marker.setMap(null);
