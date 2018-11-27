@@ -47,10 +47,10 @@ router.post("/update/:id", (req, res, next) => {
 
 //DELETE
 router.get("/delete/:id", (req, res, next) => {
-  const id = req.body.id;
+  const id = req.params.id;
   Place.findByIdAndDelete(id)
     .then(places => {
-      res.redirect("/places");
+      res.redirect("/places/");
     })
     .catch(e => next(e));
 });
