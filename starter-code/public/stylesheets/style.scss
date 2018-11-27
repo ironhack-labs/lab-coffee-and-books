@@ -59,6 +59,8 @@ body {
   }
   .placesList {
     width: 27%;
+    height: 90%;
+    overflow-y: scroll;
     h2 {
       margin-top: 0;
       padding-bottom: .6em;

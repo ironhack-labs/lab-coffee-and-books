@@ -28,7 +28,9 @@ body {
     width: 70%;
     height: 90%; }
   .container .placesList {
-    width: 27%; }
+    width: 27%;
+    height: 90%;
+    overflow-y: scroll; }
     .container .placesList h2 {
       margin-top: 0;
       padding-bottom: .6em;
