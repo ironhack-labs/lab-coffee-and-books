@@ -15,48 +15,10 @@ router.get('/', (req, res, next) => {
 
 /*GET near places*/
 
-// router.post('/nearPlaces', (req, res, next) => {
-//   console.log(req.body);
-//   Place.find({
-//     location: {
-//       $near: {
-//         $maxDistance: 100000,
-//         $geometry: {
-//           type: "Point",
-//           coordinates: [req.body.location.lng, req.body.location.lat]
-//         }
-//       }
-//     }
-//   }).then(places => {
-//     console.log(places);
-//     // res.send({
-//     //   places: JSON.stringify(places),
-//     //   placesList: places
-//     // });
-//   });
-// });
-
-
-// router.post('/nearPlaces', (req, res, next) => {
-//   console.log(req.body);
-//   Place.find().where("location").near({
-//     center: {
-//       type: "Point",
-//       coordinates: [req.body.location.lng, req.body.location.lat]
-//     },
-//         maxDistance: 1000,
-//         spherical: true
-//     }
-//   ).find((error, places) => { //.exec
-//     if(error) console.log("ERROR", error)
-//     else console.log("BIEN", places);
-//   })
-// });
-
-
 router.post('/nearPlaces', (req, res, next) => {
   let {lat,lng} = req.body.location;
   //console.log(`Searching locations with(${lat},${lng})`);
+  let places = [];
   Place.find({
     location: {
       $near: {
@@ -69,7 +31,7 @@ router.post('/nearPlaces', (req, res, next) => {
     }
   }).then(places => {
     console.log(places);
-    res.json(places);
+    res.render('index');
   })
 });
 

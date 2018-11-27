@@ -26,8 +26,6 @@ document.querySelector(".findMe").onclick = (e) => {
         method: 'POST',
         body: JSON.stringify({location}),
         headers: {"Content-Type": "application/json"}
-      }).then(res => {
-        res.json();
       })
       .catch(err => console.error('Error:', err));
       map.setCenter(location);
