@@ -1,0 +1,6 @@
+<div>
+    <h1>Lista de cafeterías y librerías</h1>
+    {{#each places}}
+    <a href="/places/detail/{{this._id}}">{{this.name}} esta es una {{this.tipo}}</a><br>
+    {{/each}}
+</div>
