@@ -1,0 +1,7 @@
+<h2>Lugares en tu zona</h2>
+{{#each places}}
+<a href="/places/{{this._id}}">{{this.name}}</a>
+<a href="/places/update/{{this._id}}">Update</a>
+<a href="/places/delete/{{this._id}}">Borrar</a>
+<br>
+{{/each}}
