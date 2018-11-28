@@ -26,3 +26,9 @@ const addWindow = (title, description, map, marker) => {
   });
   return infowindow;
 };
+
+const removeMarkers = (markers) => {
+  markers.forEach(m => {
+    m.setMap(null);
+  });
+};

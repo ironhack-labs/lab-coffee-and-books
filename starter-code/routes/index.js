@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
 router.post('/nearPlaces', (req, res, next) => {
   let {lat,lng} = req.body.location;
   //console.log(`Searching locations with(${lat},${lng})`);
-  let places = [];
+  //let places = [];
   Place.find({
     location: {
       $near: {
@@ -29,9 +29,9 @@ router.post('/nearPlaces', (req, res, next) => {
         }
       }
     }
-  }).then(places => {
-    console.log(places);
-    res.render('index');
+  }).then(nearPlaces => {
+    //console.log(nearPlaces);
+    res.json(nearPlaces);
   })
 });
 

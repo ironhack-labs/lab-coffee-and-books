@@ -1,5 +1,5 @@
 const geolocateMe = () => {
-  return new Promise( (resolve, reject) => {
+  return new Promise((resolve, reject) => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         resolve({
@@ -18,20 +18,26 @@ const geolocateMe = () => {
 document.querySelector(".findMe").onclick = (e) => {
   //Update position each second after btn click
   //setInterval(()=>{
-    geolocateMe()
+  geolocateMe()
     .then(location => {
       console.log('Position updated');
       console.log(location);
       fetch("/nearPlaces", {
-        method: 'POST',
-        body: JSON.stringify({location}),
-        headers: {"Content-Type": "application/json"}
-      })
-      .catch(err => console.error('Error:', err));
-      map.setCenter(location);
-      let marker;
-      if(marker) marker.setMap(null);
-      marker = new google.maps.Marker({position: location, map});
+          method: 'POST',
+          body: JSON.stringify({location}),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }).then(res => res.json()).then(nearPlaces => {
+          window.places = nearPlaces;
+          removeMarkers(markers);
+          let meMarker;
+          map.setCenter(location);
+          if (meMarker) meMarker.setMap(null);
+          meMarker = new google.maps.Marker({position: location, map});
+          loadData(map);
+        })
+        .catch(e => console.error('Error:', e));
     })
     .catch(e => console.log(e));
   //}, 1000);
