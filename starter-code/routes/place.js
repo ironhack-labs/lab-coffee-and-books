@@ -68,4 +68,14 @@ router.post('/update/:id', (req,res,next) =>{
   })
 })
 
+
+router.get("/delete/:id", (req, res, next) => {
+  const id = req.params.id;
+  Place.findByIdAndDelete(id)
+    .then(places => {
+      res.redirect("/places/list/");
+    })
+    .catch(e => next(e));
+});
+
 module.exports = router;
