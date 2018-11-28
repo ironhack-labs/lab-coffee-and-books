@@ -1,6 +1,15 @@
 <div>
     <h1>Lista de cafeterías y librerías</h1>
     {{#each places}}
-    <a href="/places/detail/{{this._id}}">{{this.name}} esta es una {{this.tipo}}</a><br>
+    <b><label>Nombre del lugar: </label></b>
+    <label>{{this.name}}</label>
+    <br>
+    <b><label>Tipo de establecimiento: </label></b>
+    <label >{{this.tipo}}</label>
+    <br>
+
+    <a href="/places/detail/{{this._id}}">Ver mas</a>
+    <hr>
     {{/each}}
 </div>
+<a href="/places/new">Nuevo lugar</a>

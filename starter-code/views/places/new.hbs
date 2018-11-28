@@ -1,8 +1,10 @@
 <div>
+    <h2>Da de alta un nuevo lugar</h2>
+    <hr>
     <form action="/places/new" method="POST">
-    <label for="geo"> Ingresa el nombre:</label>
+    <label for="geo"> Busca el lugar: </label>
     <input type="text" id="geo" name="name" placeholder="Nombre del lugar">
-    <label for="tipo"> Giro:</label>
+    <label for="tipo"> Tipo: </label>
     <input type="text" id="tipo" name="tipo" placeholder="Coffee Shop / Bookstore">
 
     <input id="lat" name="lat" type="hidden">
@@ -10,6 +12,7 @@
 
     <input type="submit" value="Agregar">
     </form>
+    <br>
     <div id="map" style=" width:900; height:300px;"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ&libraries=places"></script>
     <script>
@@ -20,7 +23,7 @@ function startMap() {
             lng: -99.171706
         },
         zoom: 20
-    });
+    })
     navigator.geolocation.getCurrentPosition(function (position) {
         const center = {
             lat: position.coords.latitude,
