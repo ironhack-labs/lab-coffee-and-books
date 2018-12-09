@@ -1,0 +1,54 @@
+<h1>{{place.name}}</h1>
+
+<ul>
+    <li>Name: {{place.name}}</li>
+    <li>Type: {{place.type}}</li>
+    <li>Location
+        <ul>
+            <li>Latitude: {{place.location.coordinates.[0]}}</li>
+            <li>Longitud: {{place.location.coordinates.[1]}}</li>
+        </ul>
+    </li>
+</ul>
+<br />
+<form action="/delete" method="post">
+    <input type="hidden" name="id" value="{{place._id}}">
+    <button type="submit">Delete</button>
+</form>
+<br />
+<a href="/">Regresar</a>
+<br />
+<div id="res_map" style="width: 70%; height:400px"></div>
+<script>
+    window.onload = function () {
+        let iconBase = 'http://maps.google.com/mapfiles/kml/';
+        let icons = {
+            coffeeShop: {
+                icon: iconBase + 'pal2/icon54.png'
+            },
+            bookstore: {
+                icon: iconBase + 'shapes/library_maps.png'
+            }
+        };
+
+        const map = new google.maps.Map(
+                document.getElementById('res_map'),
+                {
+                    zoom: 15,
+                    center: {
+                        lat: {{place.location.coordinates.[1]}},
+                        lng: {{place.location.coordinates.[0]}}
+                    }
+                });
+
+        const marker = new google.maps.Marker({
+            position: {
+                lat: {{place.location.coordinates.[1]}},
+                lng: {{place.location.coordinates.[0]}}
+            },
+            map,
+            icon: icons['{{place.type}}'].icon,
+        });
+    }
+
+</script>

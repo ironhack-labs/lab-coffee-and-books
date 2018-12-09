@@ -1,2 +1,40 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Places</h1>
+<a href="/new">New Place</a>
+<ul>
+    {{#each places}}
+        <li><a href="/{{this._id}}">{{this.name}}</a></li>
+    {{/each}}
+</ul>
+
+<div id="res_map" style="width: 70%; height: 400px"></div>
+
+<script>
+    window.onload = function () {
+        let iconBase = 'http://maps.google.com/mapfiles/kml/';
+        let icons = {
+            coffeeShop: {
+                icon: iconBase + 'pal2/icon54.png'
+            },
+            bookstore: {
+                icon: iconBase + 'shapes/library_maps.png'
+            }
+        };
+        const map = new google.maps.Map(document.getElementById("res_map"),{
+            zoom: 15,
+            center: {
+                lat: {{places.[0].location.coordinates.[1]}},
+                lng: {{places.[0].location.coordinates.[0]}}
+            }
+        });
+        {{#each places}}
+            marker = new google.maps.Marker({
+                position:{
+                    lat: {{this.location.coordinates.[1]}},
+                    lng: {{this.location.coordinates.[0]}}
+                },
+                map,
+                icon: icons['{{this.type}}'].icon,
+            });
+        {{/each}}
+    }
+</script>

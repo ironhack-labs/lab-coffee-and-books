@@ -1,0 +1,47 @@
+<h1>Add New Place</h1>
+
+<form action="/new" method="POST">
+    <label for="">
+        Name:
+        <input type="text" name="name" id="name">
+    </label>
+    <label for="">
+        <select name="type" >
+            <option value="coffeeShop">Coffee Shop</option>
+            <option value="bookstore">Bookstore</option>
+        </select>
+    </label>
+    <label for="">
+        Place:
+        <input type="text" id="autocomplete">
+    </label>
+    <label for="">
+        Latitud:
+        <input type="text" name="lat" id="lat">
+    </label>
+    <label for="">
+        Longitud:
+        <input type="text" name="lng" id="lng">
+    </label>
+
+    <button type="submit">Crear</button>
+</form>
+
+<script>
+    window.onload = function() {
+        const input = document.getElementById('autocomplete');
+        const lat = document.getElementById('lat');
+        const lng = document.getElementById('lng');
+        const name = document.getElementById('name');
+
+        const dropdown = new google.maps.places.Autocomplete(input);
+        dropdown.addListener('place_changed', () => {
+            let place = dropdown.getPlace();
+            lat.value = place.geometry.location.lat();
+            lng.value = place.geometry.location.lng();
+            name.value = place.name;
+        })
+    };
+
+
+</script>
