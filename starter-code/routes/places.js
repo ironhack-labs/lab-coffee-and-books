@@ -22,7 +22,11 @@ router.post("/add", (req, res, next) => {
   placeSchema
     .create({
       name: req.body.name,
-      type: req.body.type
+      type: req.body.type,
+      location: {
+        type: "Point",
+        coords: { lat: +req.body.latitude, lng: +req.body.longitude }
+      }
     })
     .then(() => {
       res.redirect("/places");
@@ -37,12 +41,23 @@ router.post("/:id/delete", (req, res, next) => {
 });
 
 router.post("/:id/edit", (req, res, next) => {
+  const placeUpdate = {
+    name: req.body.name,
+    type: req.body.type,
+    location: {
+      type: "Point",
+      coords: { lat: +req.body.latitude, lng: +req.body.longitude }
+    }
+  };
   placeSchema
-    .findByIdAndUpdate(req.params.id, {
-      name: req.body.name,
-      type: req.body.type
-    })
+    .findByIdAndUpdate(req.params.id, placeUpdate)
     .then(() => res.redirect("/places"));
+});
+
+router.get("/map", (req, res, next) => {
+  placeSchema.find({}, { _id: 0 }).then(places => {
+    res.json(places);
+  });
 });
 
 module.exports = router;

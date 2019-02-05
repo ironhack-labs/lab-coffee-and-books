@@ -60,4 +60,8 @@ a {
   width: 100%;
   margin-bottom: 20px; }
 
+#map {
+  height: 70vh;
+  width: 70vw; }
+
 /*# sourceMappingURL=style.css.map */

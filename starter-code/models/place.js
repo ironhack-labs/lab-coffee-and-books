@@ -4,7 +4,8 @@ const placeSchema = new mongoose.Schema(
   {
     name: String,
     type: String,
-    enum: ["coffe shop", "bookstore"]
+    enum: ["coffe shop", "bookstore"],
+    location: Object
   },
   { timestamps: true }
 );
