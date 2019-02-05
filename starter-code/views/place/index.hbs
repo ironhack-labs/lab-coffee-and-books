@@ -1,0 +1,12 @@
+<h1>Places List</h1>
+
+{{#each place}}
+{{this.name}}
+{{this.type}}
+<a href="/place/editPlace">Edit place</a>
+<a href="/place/deletePlace">Delete place</a>
+{{/each}}
+
+<a href="/place/newPlace">Add a new place</a>
+
+<div id="map"></div>

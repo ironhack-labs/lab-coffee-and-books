@@ -1,0 +1,27 @@
+<form id="form" action="/newPlace" method="POST">
+ 
+  <label for="name">Name</label>
+  <br>
+  <input type="text" name="name" placeholder="Te'll me the name of the new place">
+
+  <br>
+  <br>
+
+  <label for="type">Type</label>
+  <br>
+  <select name="type" id="type">
+    <option value="coffe shop">coffe shop</option>
+    <option value="bookstore">bookstore</option>
+  </select>
+
+  <br>
+  <br>
+
+  <label>Direction</label>
+  <input type="hidden" id="lat-pos" name="latitude" placeholder="Latitude">
+  <input type="hidden" id="lng-pos" name="longitude" placeholder="Longitude">
+
+  <div id="map"></div>
+
+  <button type="submit">Create new place</button>
+</form>
