@@ -1,0 +1,10 @@
+<div class="">
+    <p>{{this.name}}</p>
+    <p>{{this.type}}</p>
+    <form method="POST" action="/places/{{this.id}}/delete">
+        <button type="submit">delete</button>
+    </form>
+    <form method="GET" action="/places/{{this.id}}/edit">
+        <button type="submit">edit</button>
+    </form>
+</div>
