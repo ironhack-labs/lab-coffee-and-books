@@ -1,2 +1,16 @@
-<h1>LIST</h1>
-<p>coffees shops and Bookstore</p>
+<h1>Coffee & Books</h1>
+
+<ul>
+    {{#each places}}
+    <li>{{this.name}}</li>
+    {{/each}}
+</ul>
+
+<p><a type="submit"   href="/place/new">Create new place</a></p>
+
+<div id="map"></div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<API_KEY>"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
