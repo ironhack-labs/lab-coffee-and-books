@@ -1,2 +1,35 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Coffee & Books</h1>
+<h2>Create a new place</h2>
+<form action="/add" method="POST">
+  <label for="name">Name</label>
+  <input id="name" type="text" placeholder="enter the place's name" name="name">
+  <label for="type">Type</label>
+  <select name="type" id="type">
+    <option value="coffee shop">Coffee Shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <br>
+  <label for="latitude">Latitude</label>
+  <input id="latitude" type="number" name="latitude" max="90" min="-90" placeholder="latitude">
+  <br>
+  <label for="longitude">Longitude</label>
+  <input id="longitude" type="number" name="longitude" max="180" min="-180" placeholder="longitude">
+  <br>
+  <input type="submit" value="add place">
+</form>
+
+<h2>List of places</h2>
+<ul>
+  {{#each places}}
+  <li>
+    Name: {{this.name}} |
+    Type: {{this.type}}
+  </li>
+  <form action="/edit/{{this._id}}" method="POST">
+    <input type="submit" value="Edit place">
+  </form>
+  <form action="/delete/{{this._id}}" method="POST">
+    <input type="submit" value="Delete place">
+  </form>
+  {{/each}}
+</ul>
