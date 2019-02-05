@@ -1,0 +1,14 @@
+<form action="/add" method="post" id="form">
+  <label for="name">Name</label>
+  <input type="text" name="name" placeholder="Name">
+  <label for="type">Type</label>
+  <select name="type" id="type">
+    <option value="coffe shop">Coffe Shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <button>Add Place</button>
+</form>
+{{#if errorMessage}}
+<div class="error-message">{{errorMessage}}</div>
+{{/if}}
+<a href="/places">Back to full list</a>

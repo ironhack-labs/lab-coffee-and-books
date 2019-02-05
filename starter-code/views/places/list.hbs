@@ -1,0 +1,8 @@
+{{#each places}}
+<h4>{{this.name}}</h4>
+<p>{{this.type}}</p>
+<form action="/{{this._id}}/delete" method="post">
+  <button>Delete Place</button>
+</form>
+<a href="/{{this._id}}/edit">Edit</a>
+{{/each}}

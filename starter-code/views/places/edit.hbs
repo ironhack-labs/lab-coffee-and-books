@@ -1,0 +1,14 @@
+<form action="/{{place._id}}/edit" method="post" id="form">
+  <label for="name">Name</label>
+  <input type="text" name="name" placeholder="Name" value="{{place.name}}">
+  <label for="type">Type</label>
+  <select name="type" id="type" value="{{place.type}}">
+    <option value="coffe shop">Coffe Shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <button>Update Place</button>
+</form>
+{{#if errorMessage}}
+<div class="error-message">{{errorMessage}}</div>
+{{/if}}
+<a href="/places">Back to full list</a>
