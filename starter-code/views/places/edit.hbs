@@ -1,0 +1,25 @@
+<h2>Edit:</h2>
+
+
+<h2>Create:</h2>
+<form action="/edit" method="POST">
+<label for="Name">Name:
+<input type="text" name="name" value="{{data.name}}">
+</label>
+<p>
+<label for="type">Type:
+<input type="text" name="type" value="{{data.type}}">
+</label>
+</p>
+<p>
+
+<label for="type">Location:
+<input type="text" name="location" value="{{data.location}}">
+</label>
+
+</p>
+<input type="hidden" value="{{data.id}}" name="id">
+<input type="submit" name="" id="">
+
+
+</form>

@@ -1,0 +1,57 @@
+
+<div id="map"></div>
+
+
+<h2>CRUD Place</h2>
+
+{{#if message}}
+
+<p style="background:red">{{message}}</p>
+
+{{/if}}
+
+
+{{#each data}}
+
+<h3>Place:</h3>
+<ul>
+  <li>{{this.name}}</li>
+  <li>{{this.type}}</li>
+  <li><a href="/edit/{{this.id}}">Edit</a></li>
+  <li><a href="/eliminate/{{this.id}}">Eliminate</a></li>
+</ul>
+
+{{/each}}
+
+
+
+
+<h2>Create:</h2>
+<form action="/insert" method="POST">
+<label for="Name">Name:
+<input type="text" name="name">
+</label>
+<p>
+<label for="type">Type:
+<input type="text" name="type">
+</label>
+</p>
+<p>
+<label for="type">Longitude:
+<input type="text" name="longitude">
+</label>
+</p>
+
+<label for="type">Latitude:
+<input type="text" name="latitude">
+</label>
+<input type="submit" name="" id="">
+
+
+</form>
+
+
+
+
+
+
