@@ -1,2 +1,74 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div id='map' style='width: 800px; height: 600px;'></div>
+<button class="btn btn-success" id="addbutton" >Add New Place</button>
+<div class="d-flex flex-column" id="add-field">
+  <form action="/add" method="post">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+    <label for="kind">Kind</label>
+    <input type="text" id="kind" name="kind">
+    <label for="latitude">Lat</label>
+    <input type="text" id="latitude" name="latitude">
+    <label for="longitude">Lon</label>
+    <input type="text" id="longitude" name="longitude">
+    <button class="btn" type="submit">Add</button>
+  </form>
+</div>
+
+<div id="places-table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">location</th>
+        <th scope="col">CRUD</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each places}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.kind}}</td>
+        <td>{{this.coordinates}}</td>
+        <td><button class="update-btn btn btn-success"><a href="/update/{{this._id}}">Update</a></button><button class="btn btn-warning"><a
+              href="/delete/{{this._id}}">Delete</a></button></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<div id="update-field" class="d-flex flex-column">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{placeToUpdate.name}}</td>
+        <td>{{placeToUpdate.kind}}</td>
+        <td>{{placeToUpdate.coordinates}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <form action="/updatethis/{{placeToUpdate._id}}">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="{{placeToUpdate.name}}">
+    <label for="type">Type</label>
+    <input type="text" id="kind" name="type" value="{{placeToUpdate.kind}}">
+    <label for="latitude">Lat</label>
+    <input type="text" id="latitude" name="latitude" placeholder="latitude">
+    <label for="longitude">Lon</label>
+    <input type="text" id="longitude" name="longitude" placeholder="longitude">
+    <button class="btn" type="submit">Submit</button>
+  </form>
+</div>
+{{!--  --}}
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
+<script src="/javascripts/script.js"></script>
