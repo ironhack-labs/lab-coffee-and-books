@@ -1,0 +1,19 @@
+<h1>Add new place</h1>
+<form action="/new" method="post" id="form">
+  <label for="name">Name place</label>
+  <input type="text" name="name" placeholder="Name">
+  <label for="type">Type place</label>
+  <select name="type" id="type">
+    <option value="Coffee shop">Coffee Shop</option>
+    <option value="Bookstore">Bookstore</option>
+  </select>
+  <label for="latitude">Latitude</label>
+  <input type="text" name="latitude" placeholder="Latitude">
+  <label for="longitude">Longitude</label>
+  <input type="text" name="longitude" placeholder="Longitude">
+  <button>Add Place</button>
+</form>
+{{#if errorMessage}}
+<div class="error-message">{{errorMessage}}</div>
+{{/if}}
+<a href="/places">Back to full list</a>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,47 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
+  <div>
+    <html>
 
-  {{{body}}}
+    <head>
+      <title>My First Map</title>
+      <style>
+        #map {
+          height: 500px;
+          width: 100%;
+        }
+      </style>
+    </head>
 
-  <script src="/javascripts/script.js"></script>
-</body>
-</html>
+    <body>
+      <h3>My First Map</h3>
+      <div id="map"></div>
+
+      {{{body}}}
+      <script src="https://maps.googleapis.com/maps/api/js?key={{key}}"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+      <script src="/javascripts/script.js"></script>
+    </body>
+
+    </html>
+    <script>
+      function startMap() {
+        const ironhackBCN = {
+          lat: 41.3977381,
+          lng: 2.190471916
+        };
+        const map = new google.maps.Map(
+          document.getElementById('map'),
+          {
+            zoom: 5,
+            center: ironhackBCN
+          }
+        );
+      }
+
+      startMap();
+    </script>
