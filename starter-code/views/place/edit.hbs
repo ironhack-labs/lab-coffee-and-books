@@ -1,0 +1,10 @@
+<form action="/places/edit/{{place._id}}" method="POST">
+  <label for="name">Name</label>
+  <input type="text" name="name" value='{{place.name}}'>
+  <label for="type ">Type</label>
+  <input type="text" name='type' value="{{place.type}}">
+  <label>Adress</label>
+  <input type="text" name="latitude">
+  <input type="text" name="longitude">
+  <button type="submit">edit</button>
+</form>
