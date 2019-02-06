@@ -34,12 +34,16 @@ console.log(req.body)
     lat:  lat,
   }
 
+
+  
   Place.create(newPlace)
   .then(()=>{
-    
-    console.log("Entro")
-
+    res.redirect('/');
   })
+  .catch(() => {
+    next(error);
+  })
+  
 })
 
 
