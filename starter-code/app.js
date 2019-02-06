@@ -48,6 +48,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.secretKey = process.env.secretKey;
 
 
 
@@ -58,6 +59,6 @@ const places = require('./routes/place');
 app.use('/', places)
 
 
-app.listen(2000,()=>{})
+app.listen(process.env.PORT,()=>{})
 
 module.exports = app;
