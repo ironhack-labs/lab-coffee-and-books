@@ -1,0 +1,7 @@
+<form action="/places/update/{{place._id}}" method="POST">
+  <input type="text" name="name" value="{{place.name}}">
+  <input type="text" name="type" value="{{place.type}}">
+  <input type="text" name="lat" value="{{place.location.lat}}">
+  <input type="text" name="lng" value="{{place.location.lng}}">
+  <button type="submit">update</button>
+</form>

@@ -1,0 +1,13 @@
+{{#each places}}
+  <div class="myDiv">
+    Name: {{this.name}} | Type: {{this.type}} | Lat: {{this.location.lat}} | Lng: {{this.location.lng}}
+    <p><a href="/places/update/{{this._id}}">update</a></p>
+    <form action="/places/{{this._id}}" method="POST">
+      <button type="submit">Delete</button>
+    </form>    
+  </div>
+{{/each}}
+<div class="myDiv">
+  <a href="/places/new">New Place</a>
+  <a href="/">Go back</a>
+</div>

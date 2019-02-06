@@ -1,2 +1,41 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+<h1>JESUS</h1>
+<p>Welcome to IronBeers</p>
+<a href="/places">configurate places</a>
+
+<h3>My First Map</h3>
+<div id="map"></div>
+
+
+<script>
+  const theMap =document.getElementById('map');
+  
+    const BCN = {
+      lat: 41.3977381,
+      lng: 2.190471916};
+    const map = new google.maps.Map(
+    theMap,
+    {
+      zoom: 4,
+      center: BCN
+    });
+    function placeMarket(title,lat,lng){
+      const myMarker = new google.maps.Marker({
+        map: map,
+        title:title,
+        position: {
+          lat: lat,
+          lng: lng
+        },
+      })
+    }
+  
+  axios.get("http://localhost:2401/places/find")
+  .then(places => {
+    for(var i = 0; i < places.data.length; i++){
+      placeMarket(places.data[i].name, places.data[i].location.lat, places.data[i].location.lng)
+    }
+  })
+  
+</script>
+

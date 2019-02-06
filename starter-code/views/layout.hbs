@@ -6,8 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={{key}}"></script>
 </head>
+<style>
+  #map {
+  height: 500px;
+  width: 100%;
+  }
+  a{
+    padding: 5px;
+    font: 40px;
+  }
+  .myDiv{
+    padding: 20px;
+    border: 1px solid black;
+  }
+</style>
 <body>
+  
 
   {{{body}}}
 
