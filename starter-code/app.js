@@ -48,7 +48,8 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // default value for title local
 app.locals.title = 'Deily cafetas';
-
+app.locals.key = process.env.APIKEY;
+console.log(app.locals.key)
 
 
 const index = require('./routes/index');
