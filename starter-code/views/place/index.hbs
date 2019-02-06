@@ -1,0 +1,5 @@
+{{#each places}}
+  <a href="/places/edit/{{this.id}}">{{this.name}}</a>
+  <a href="/places/delete/{{this.id}}">delete</a><br></br>
+{{/each}}
+<a href="places/new">add new place</a>
