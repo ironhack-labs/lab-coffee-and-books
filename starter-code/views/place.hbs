@@ -1,0 +1,43 @@
+
+    <style>
+       #map {
+        height: 500px;
+        width: 1000px;
+       }
+    </style>
+  </head>
+  <body>
+    <div>
+        <h3>{{place.name}}</h3>
+        <p>Type: {{place.type}}</p>
+        <p>Latitude: {{place.lat}}</p>
+        <p>Longitude: {{place.lng}}</p>
+        <h3>EN ESTA SECCIÓN DE ABAJO DEBERÍA APARECER EL MAPA DE LA DIRECCIÓN</h3>
+</div>
+
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8VY0XGu8qTA5WCIca-TKb6k5iI8YQagc"`></script>
+  
+  </body>
+
+<script>
+ 
+
+  function startMap(lat,lng){
+     
+    const ironhackBCN = {
+  	  lat: lng,
+  	  lng: lat
+    };
+    const map = new google.maps.Map(
+      document.getElementById('map'),
+    {
+      zoom: 15,
+      center: ironhackBCN
+    }
+    );
+}
+
+startMap({{place.lat}},{{place.lng}});
+</script>
