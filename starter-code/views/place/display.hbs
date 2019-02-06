@@ -1,0 +1,10 @@
+<h1>Places</h1>
+
+{{#each places}}
+<li>
+  {{this.name}}
+  {{this.type}}
+  <a href="/place/update/{{this._id}}">Edit Place</a>
+  <a href="/place/delete/{{this._id}}">Delete Place</a>
+</li>
+{{/each}}
