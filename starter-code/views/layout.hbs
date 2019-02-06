@@ -7,10 +7,36 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+<style>
+  #map{
+    height: 500px;
+    width: 100%;
+  }
+</style>
+
 <body>
+<h3>My First Map</h3>
+<div id="map"></div>
 
   {{{body}}}
-
   <script src="/javascripts/script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwrQ06GHICvIaP59ik0GNAFIv1CXK1znc"></script>
+<script>
+  function startMap() {
+  const ironhackBCN = {
+  	lat: 41.3977381,
+  	lng: 2.190471916};
+  const map = new google.maps.Map(
+    document.getElementById('map'),
+    {
+      zoom: 5,
+      center: ironhackBCN
+    }
+  );
+}
+
+startMap();
+</script>
+
 </body>
 </html>
