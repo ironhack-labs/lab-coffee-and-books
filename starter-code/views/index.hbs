@@ -1,2 +1,48 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="home">                                                                                                                                                                                     
+  <h1>Coffe Shop / Book Store</h1>
+
+  <a href="./create">Add a new places!</a>
+</div>
+<style>
+       #map {
+        height: 500px;
+        width: 1100px;
+       }
+    </style>
+  </head>
+  <body>
+    
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8VY0XGu8qTA5WCIca-TKb6k5iI8YQagc"></script>
+    <script type="text/javascript" src="../main.js"></script> 
+  </body>
+
+<script>
+function startMap(){
+  const ironhackBCN ={
+  	lat: 41.3977381,
+  	lng: 2.190471916};
+  const map = new google.maps.Map(
+    document.getElementById('map'),
+    {
+      zoom: 5,
+      center: ironhackBCN
+    }
+  );
+}
+
+startMap();
+</script>
+
+
+
+{{#each place}}
+    <div>
+        <h2>{{this.name}}</h2>
+        <p>Type: {{this.type}}</p>
+        <p>Latitude: {{this.lat}}</p>
+        <p>Longitude: {{this.lng}}</p>
+        <a href="place/{{this._id}}">See more</a>
+    </div>
+{{/each}} 
