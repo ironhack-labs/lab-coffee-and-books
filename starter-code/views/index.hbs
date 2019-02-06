@@ -1,2 +1,24 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<div>
+  {{#each places}}
+  <p>
+    <a href='/detail/{{this.id}}'>{{this.name}}</a>
+    <a> | </a>
+    <a href='/edit/{{this.id}}'>Edit</a>
+    <a> | </a>
+    <a href="/delete/{{this.id}}">Delete</a>
+  </p>
+  {{/each}}
+</div>
+<br>
+<a href="/create">Create new place</a>
+
+<div id="map"></div>
+
+<script type="text/javascript" src="/javascripts/main.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjd8DPkNf9ZXt2Iw8LZiaavCpzwN3Pjk0&callback=getPlaces">
+</script>

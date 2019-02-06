@@ -1,0 +1,30 @@
+<h2>Edit place</h2>
+
+<form action="/edit" method="POST" id="form-container">
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" value="{{place.name}}">
+  </div>
+  <div class="form-group">
+    <label for="product">Type</label>
+    <select class="form-control" id="product" name="product" value="{{place.product}}">
+      <option>coffee shop</option>
+      <option>bookstore</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="latitude">Latitude</label>
+    <input type="number" step="0.000001" class="form-control" id="latitude" name="latitude" value="{{place.location.coordinates.0}}">
+  </div>
+  <div class="form-group">
+    <label for="longitude">Longitude</label>
+    <input type="number" step="0.000001" class="form-control" id="longitude" name="longitude">
+  </div>
+
+  {{#if message}}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <button type="submit">Edit place</button>
+</form>
