@@ -1,0 +1,44 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<div id='map' style='height: 500px;'></div>
+
+
+<div class="container">
+
+  <div class="item">
+    <h2 id="h2-coffee">Coffe places nearby
+    </h2>
+    <button id="get-coffee">Get coffee places nearby</button>
+    <ul id="li-coffee"></ul>
+  </div>
+
+  <div class="item">
+    <h2>My favourite coffee places</h2>
+    <ul>
+      {{#each places}}
+      {{#isCoffee category}}
+      <li>{{../name}}</li>
+      {{/isCoffee}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="item">
+    <h2 id="h2-bookstores">Bookstores nearby
+    </h2>
+    <button id="get-bookstores">Get bookstores nearby</button>
+    <ul id="li-bookstores"></ul>
+  </div>
+
+  <div class="item">
+    <h2>My favourite bookstores</h2>
+    <ul>
+      {{#each places}}
+      {{#isBookstore category}}
+      <li>{{../name}}</li>
+      {{/isBookstore}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
