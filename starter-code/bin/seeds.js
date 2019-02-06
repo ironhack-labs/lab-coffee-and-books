@@ -11,6 +11,7 @@ location: { lat: 40.466775, lng: -3.71379 }},
 {
   timestamps: true
 }
+
 ]
 
 Place.create(coffeShops, (err) => {
