@@ -10,10 +10,10 @@
   </select>
   <br>
   <label for="latitude">Latitude</label>
-  <input id="latitude" type="number" name="latitude" max="90" min="-90" placeholder="latitude">
+  <input id="latitude" type="number" name="latitude" max="90" min="-90" step="any" placeholder="latitude">
   <br>
   <label for="longitude">Longitude</label>
-  <input id="longitude" type="number" name="longitude" max="180" min="-180" placeholder="longitude">
+  <input id="longitude" type="number" name="longitude" max="180" min="-180" step="any" placeholder="longitude">
   <br>
   <input type="submit" value="add place">
 </form>
@@ -33,3 +33,10 @@
   </form>
   {{/each}}
 </ul>
+
+<div id="map"></div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{key}}"></script>
+<script src="/javascripts/script.js"></script>

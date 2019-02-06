@@ -9,11 +9,11 @@
     <option value="bookstore">Bookstore</option>
   </select>
   <br>
-  <label for="latitude">Latitude</label>
-  <input id="latitude" type="number" name="latitude" max="90" min="-90" value="{{place.location.lat}}">
+  {{!-- <label for="latitude">Latitude</label>
+  <input id="latitude" type="number" name="latitude" max="90" min="-90" step="any" value="{{place.location.coordinates.1}}">
   <br>
   <label for="longitude">Longitude</label>
-  <input id="longitude" type="number" name="longitude" max="180" min="-180" value="{{place.location.lon}}">
-  <br>
+  <input id="longitude" type="number" name="longitude" max="180" min="-180" step="any" value="{{place.location.coordinates.0}}">
+  <br> --}}
   <input type="submit" value="Edit place">
 </form>

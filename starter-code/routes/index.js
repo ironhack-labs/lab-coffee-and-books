@@ -10,10 +10,10 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/add", (req, res, next) => {
-  const { name, type, latitude, longitude } = req.body;
+  const { name, type } = req.body;
   const location = {
-    lat: latitude,
-    lon: longitude
+    type: "Point",
+    coordinates: [req.body.longitude, req.body.latitude]
   };
   const newPlace = new Place({ name, type, location });
   newPlace
@@ -37,13 +37,21 @@ router.post("/delete/:id", (req, res, next) => {
 });
 
 router.post("/:id/edit", (req, res, next) => {
-  const { name, place, latitude, longitude } = req.body;
+  const { name, place } = req.body;
   const location = {
-    lat: latitude,
-    lon: longitude
+    type: "Point",
+    coordinates: [req.body.longitude, req.body.latitude]
   };
   Place.findByIdAndUpdate(req.params.id, { name, place, location })
     .then(() => res.redirect("/"))
+    .catch(error => console.log(error));
+});
+
+router.get("/places/api", (req, res, next) => {
+  Place.find()
+    .then(places => {
+      res.json(places);
+    })
     .catch(error => console.log(error));
 });
 
