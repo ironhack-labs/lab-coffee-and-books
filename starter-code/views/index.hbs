@@ -1,2 +1,45 @@
+  <html>
+  <head>
+  
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+    <style>
+       #map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My First Map</h3>
+    <div id="map"></div>
+    
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChAxs2zltzahqqcp_Bg-CQpocy4f0iEww"></script>
+  </body>
+</html>
+<script>
+function startMap() {
+    const ironhackBCN = {
+        lat: 41.3977381,
+        lng: 2.190471916};
+    const map = new google.maps.Map(
+      document.getElementById('map'),
+      {
+        zoom: 3,
+        center: ironhackBCN
+      }
+    );
+  }
+  <h1>PLACES</h1>
+
+{{#each place}}
+    <img src="{{this.image}}"/>
+    <p>{{this.title}}</p> </br>
+    <a href="place/{{this._id}}">See more</a>
+{{/each}}
+  
+  startMap();
+
+  </script>
