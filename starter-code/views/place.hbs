@@ -1,0 +1,39 @@
+
+    <html>
+    <head>
+      <title>My First Map</title>
+      <style>
+        #map {
+          height: 500px;
+          width: 100%;
+        }
+      </style>
+    </head>
+    <body>
+      <h3>My First Map</h3>
+      <div id="map"></div>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=?MapNira"></script>
+      <script type="text/javascript" src="main.js"></script>
+
+      <script>
+        function startMap(place) {
+  const ironhackBCN = {
+  	lat: req.body.latitude,
+  	lng: req.body.longitude};
+  const map = new google.maps.Map(
+    document.getElementById('map'),
+    {
+      zoom: 3,
+      center: ironhackBCN
+    }
+  );
+}
+
+startMap();
+      </script>
+<a href="http://localhost:3000">volver</a>
+    </body>
+  </html>
+
+ 
