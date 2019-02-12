@@ -1,0 +1,29 @@
+<h2>{{name}}</h2>
+<h3>{{stars}} stars</h3>
+<h4>{{category}}</h4>
+<div id="map"></div>
+<br>
+<a href="/places">Go back</a>
+
+<style>
+  #map {
+    width: 500px;
+    height: 250px;
+  }
+</style>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGl1cml2aiIsImEiOiJjanAxdjA2cTQwMGp1M2tvYzZmZGp3bWc3In0.4cZEyLkU2ikqx_wb4A1z8A';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    zoom: 13,
+    center: [{{address.coordinates}}]
+  })
+  const marker = new mapboxgl.Marker({
+    color: 'red'
+  })
+    .setLngLat([{{address.coordinates}}])
+    .addTo(map)
+</script>
