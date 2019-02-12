@@ -1,0 +1,67 @@
+<h1>{{title}}</h1>
+
+
+<div id="map"></div>
+
+<strong>Try these great places...</strong><br><br>
+{{#each places}}
+<strong>{{placeType}}</strong> {{name}}: {{desc}} <br><br>
+{{/each}}
+
+
+
+
+<script src='/javascripts/script.js'></script>
+
+ <script>
+
+// step one, plot these markers, later get from DB
+const places = [ 
+  {
+  name: "Hermann Eike",
+  desc: "Pleasant local place",
+  placeType: "Coffee",
+  location: { type: "Point", coordinates: [13.3970559,52.5373329] }
+  },
+  {
+  name: "Starbucks",
+  desc: "In a pinch when travelling",
+  placeType: "Coffee",
+  location: { type: "Point", coordinates: [13.309752,52.5167286] }
+  },
+  {
+  name: "The Barn",
+  desc: "Trendy, expensive and very slow",
+  placeType: "Coffee",
+  location: { type: "Point", coordinates: [13.404411,52.528673] }
+  },
+  {
+  name: "Dussmann",
+  desc: "Wonderful media mecca",
+  placeType: "Books",
+  location: { type: "Point", coordinates: [13.3187469,52.5183134] }
+  }
+]
+
+
+
+// Initialize and add the map
+function initMap() {
+  
+  var berlin = {lat: 52.5165133, lng: 13.3987469 };
+  // The map, centered at Berlin
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 11, center: berlin});
+
+  places.forEach( place => {
+    let pos = { lat: place.location.coordinates[1], lng: place.location.coordinates[0]};  
+    var marker = new google.maps.Marker({position: pos, map: map});
+    console.log("POS ", pos)
+  })
+  
+}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUTV-rXp0MkyXfDftokR4tFGFqq0lb2zc&callback=initMap">
+    </script>
+
