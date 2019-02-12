@@ -1,0 +1,34 @@
+<h1>{{title}}</h1>
+<form action="{{action}}" method="post">
+    <p>Place name
+        <input type="text" name="name" id="name" value="{{name}}">
+    </p>
+    <p>Place
+        <select name="place">
+            <option value="coffeeshop">Coffeeshop</option>
+            <option value="bookstore">Bookstore</option>
+        </select>
+    </p>
+    <div id="map"></div>
+    <input type="text" name="address.coordinates" id="coords" value="{{coords}}">
+    <input type="submit" value="Submit">
+</form>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.0/mapbox-gl-geocoder.min.js'></script>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicG9sZ29pZGUiLCJhIjoiY2pzMXhrOW1uMXo0ZTQ0bzNscG52N2c3OSJ9.idfHSgW5pK1sKEx5OAtnTw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        zoom: 12,
+    })
+    const geoCoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken
+    })
+    map.addControl(geoCoder)
+    geoCoder.on('result', (res) => {
+        console.log(res.result)
+        document.getElementById('coords').value = res.result.geometry.coordinates
+        document.getElementById('name').value = res.result.text
+    })
+</script>

@@ -1,0 +1,20 @@
+<h1>{{name}}</h1>
+<p>{{place}}</p>
+
+<div id="map">
+
+</div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic2FpcGFzaGEiLCJhIjoiY2pzMXhqcXljMW5lMzQzbW4yanN0bTkxeCJ9.htnbQH1DEE3_fT-MUy5u-A';
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        zoom: 14,
+        center: [{{address.coordinates}}],
+    })
+    let marker = new mapboxgl.Marker({
+        color: 'skyblue',
+    }).setLngLat([{{address.coordinates}}]).addTo(map)
+</script>
