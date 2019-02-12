@@ -1,0 +1,44 @@
+<h2>Add new place</h2>
+
+<form action="{{action}}" method="POST">
+  <input type="text" name="name" placeholder="name" value="{{name}}">
+  <br>
+  <input type="number" name="stars" placeholder="stars" min="1" max="5" value="{{stars}}">
+  <br>
+  <select name="category" id="">
+    <option value="restaurant">restaurant</option>
+    <option value="bar">bar</option>
+    <option value="coffee">coffee</option>
+    <option value="social">social</option>
+    <option value="educational">educational</option>
+  </select>
+  <br>
+  <div id ="map"></div>
+  <input type="text" name="address[coordinates][0]" hidden="true" id="lng" >
+  <input type="text" name="address[coordinates][1]" hidden="true" id="lat" >
+  <input type="submit" value="{{submit}}">
+</form>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.0/mapbox-gl-geocoder.min.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiY2FvcnRpenBhY2hlY28iLCJhIjoiY2pzMXhqaWF5MGFpNDQ0bzBmdWN1YnVnbCJ9.dXHyAs3Wf3rvyz0pF_qnow';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+
+  let geoCoder = new MapboxGeocoder({
+    accessToken:mapboxgl.accessToken
+  })
+
+  map.addControl(geoCoder)
+
+  geoCoder.on("result",(res)=>{
+    console.log(res.center)
+    document.getElementById("lng").value=res.result.center[0]
+    document.getElementById("lat").value=res.result.center[1]
+  })
+  
+
+</script>

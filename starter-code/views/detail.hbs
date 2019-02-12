@@ -1,0 +1,31 @@
+<h2>{{name}}</h2>
+
+<h3>{{stars}} stars</h3>
+
+<h4>{{category}}</h4>
+
+<div id="map"></div>
+
+<style>
+  #map{
+    width: 400px;
+    height: 400px;
+  }
+</style>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiY2FvcnRpenBhY2hlY28iLCJhIjoiY2pzMXhqaWF5MGFpNDQ0bzBmdWN1YnVnbCJ9.dXHyAs3Wf3rvyz0pF_qnow';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    zoom:10,
+    center:[{{address.coordinates}}]
+  });
+
+  let marker = new mapboxgl.Marker({
+    color:"red"
+  })
+  .setLngLat([{{address.coordinates}}])
+  .addTo(map)
+</script>

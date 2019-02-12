@@ -1,0 +1,8 @@
+<h2>list of places</h2>
+
+
+{{#each places}}
+<a href="/places/detail/{{this._id}}"><h3>{{this.name}}</h3></a>
+<h6>{{this.category}}</h6>
+{{/each}}
+
