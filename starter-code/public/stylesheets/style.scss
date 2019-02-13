@@ -5,4 +5,38 @@ body {
 
 a {
   color: #00B7FF;
+  text-decoration:none;
+
+}
+#map{
+  height: 400px;
+  width: 600px;
+}
+
+.home {
+  background-image: url('https://pendulo.com/images/especiales/015-es-polanco2-1050px.jpg');
+  background-size: cover;
+  height: 85vh;
+  color:white;
+  margin: 0;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn{
+  color:white;
+  background: rgba(50,50,50, .8);
+}
+
+.btn a{
+  color:white;
+}
+
+.menu{
+  background: black;
+  text-align:center;
+  padding:50px;
+
 }
