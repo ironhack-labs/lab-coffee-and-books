@@ -1,0 +1,13 @@
+<h2>List of places</h2>
+{{#each places}}
+<a style="text-decoration: none" href="/places/detail/{{this._id}}">
+  <h3>{{this.name}}</h3>
+</a>
+  <h5>{{this.category}}</h5> 
+  <a href="/places/edit/{{this._id}}">Edit</a>
+    <form action="/places/delete/{{this.id}}" method="POST">
+        <button>Delete</button>
+    </form>
+{{/each}}
+
+<a href="/">Back to Menu</a>
