@@ -1,0 +1,36 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF;
+  text-decoration: none; }
+
+#map {
+  height: 400px;
+  width: 600px; }
+
+.home {
+  background-image: url("https://camo.githubusercontent.com/2e546b82573c533638306dab277a8b13ff28cef4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f75706c6f61645f31343130333861613066356365313063373232373232343030626664633664352e6a7067");
+  background-size: cover;
+  height: 85vh;
+  color: white;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.btn {
+  color: white;
+  background: rgba(50, 50, 50, 0.8); }
+
+.btn a {
+  color: white; }
+
+.menu {
+  background: black;
+  text-align: center;
+  padding: 50px; }
+
+/*# sourceMappingURL=style.css.map */

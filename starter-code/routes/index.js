@@ -1,5 +1,6 @@
 let express = require("express");
 let router = express.Router();
+const Place = require('../models/Place')
 
 /* GET home page */
 router.get("/", (req, res, next) => {
