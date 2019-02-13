@@ -1,0 +1,37 @@
+<h2>{{name}}</h2>
+<h4>{{type}}</h4>
+
+<div id="map"></div>
+
+
+<a href="/places">Go back</a>
+
+<div>
+    <button href="/places/edit/{{this._id}}">
+        <a href="/places/edit/{{this._id}}">Edit</a>
+    </button>
+</div>
+<style>
+    #map {
+        width: 800px;
+        height: 400px;
+    }
+</style>
+
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.3/mapbox-gl-directions.js'></script>
+
+<script>
+    mapboxgl.accessToken = process.env.MBTOKEN;
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        zoom: 15,
+        center: [{{address.coordinates}}]
+    });
+
+    const marker = new mapboxgl.Marker({
+        color:"red",
+    }).setLngLat([{{address.coordinates}}]).addTo(map)
+</script>
