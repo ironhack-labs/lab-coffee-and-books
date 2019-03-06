@@ -2,6 +2,7 @@
 
 {{#each places}}
   <p><a href="/places/{{_id}}">{{name}}</a></p>
+  <P>{{type}}</P>
   <form action="/places/{{_id}}/delete" method="post">
     <button type="submit">Delete place</button>
   </form>
