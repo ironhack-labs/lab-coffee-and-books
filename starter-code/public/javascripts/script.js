@@ -19,37 +19,37 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("longitude").value = e.latLng.lng();
       });
   
-    const myMarker = new google.maps.Marker({
-      position: ironhackMad,
-      map: map,
-      title: 'IronHack'
-    })
+    // const myMarker = new google.maps.Marker({
+    //   position: ironhackMad,
+    //   map: map,
+    //   title: 'IronHack'
+    // })
   
   
-    if (navigator.geolocation) {
+    // if (navigator.geolocation) {
   
-      navigator.geolocation.getCurrentPosition((position) => {
+    //   navigator.geolocation.getCurrentPosition((position) => {
   
-        const myPosition = {
-          lat: position.coords.latitude,
-          lng:  position.coords.longitude
-        }
+    //     const myPosition = {
+    //       lat: position.coords.latitude,
+    //       lng:  position.coords.longitude
+    //     }
   
-        const myMarkerPosition = new google.maps.Marker({
-          position: myPosition,
-          map: map,
-          title: "Aquí estoy yo!"
-        })
+    //     const myMarkerPosition = new google.maps.Marker({
+    //       position: myPosition,
+    //       map: map,
+    //       title: "Aquí estoy yo!"
+    //     })
   
-        console.log("posición", myPosition)
+    //     console.log("posición", myPosition)
   
-      }, () => {
-        console.log("Error en la geolocalización")
-      })
+    //   }, () => {
+    //     console.log("Error en la geolocalización")
+    //   })
   
-    } else {
-      console.log("Comprate un pc")
-    }
+    // } else {
+    //   console.log("Comprate un pc")
+    // }
   
   
     }

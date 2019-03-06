@@ -25,33 +25,46 @@ router.post('/places', (req, res, next) => {
   }
 
   Place.find({"name":name})
+    
     .then(place => {
       console.log(place)
       if(place[0]){
         Place.updateOne({"name":place[0].name}, { $set: {name, description, location}})
         .then(()    => {
+          updated = true
           res.redirect('/')
-          return
+          console.log("no se piro")
         })
         .catch(err  => next(err))
+      }else{
+        const newPlace = new Place({
+          name,
+          description,
+          location
+        })
+      
+        newPlace.save(err => {
+          if (err) {
+            next(err)
+          } else {
+            res.redirect('/')
+          }
+        })
       }})
     .catch(err  => next(err))
 
 
-  const newPlace = new Place({
-    name,
-    description,
-    location
-  })
+})
 
-  newPlace.save(err => {
-    if (err) {
-      next(err)
-    } else {
-      res.redirect('/')
-    }
-  })
 
+router.post('/places/delete',(req,res,next)=>{
+  const {name} = req.body
+
+  Place.deleteOne({"name":name})
+    .then(()    => {
+    res.redirect('/')
+    })
+    .catch(next)
 })
 
 module.exports = router;
