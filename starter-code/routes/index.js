@@ -24,6 +24,20 @@ router.post('/places', (req, res, next) => {
     coordinates: [longitude, latitude]
   }
 
+  Place.find({"name":name})
+    .then(place => {
+      console.log(place)
+      if(place[0]){
+        Place.updateOne({"name":place[0].name}, { $set: {name, description, location}})
+        .then(()    => {
+          res.redirect('/')
+          return
+        })
+        .catch(err  => next(err))
+      }})
+    .catch(err  => next(err))
+
+
   const newPlace = new Place({
     name,
     description,
