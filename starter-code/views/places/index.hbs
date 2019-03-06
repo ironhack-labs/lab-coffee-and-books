@@ -1,0 +1,22 @@
+<h2>Our places</h2>
+
+{{#each places}}
+  <p><a href="/places/{{_id}}">{{name}}</a></p>
+  <form action="/places/{{_id}}/delete" method="post">
+    <button type="submit">Delete place</button>
+  </form>
+  <form action="/places/{{_id}}/edit" method="post">
+    <button type="submit">Edit place</button>
+  </form>
+{{/each}}
+
+<div id="map"></div>
+
+<p><a href="/places/new">ADD A NEW PLACE</a></p>
+
+
+<script>
+
+  window.result = {{{result}}}
+  
+</script>
