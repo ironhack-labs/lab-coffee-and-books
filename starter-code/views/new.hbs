@@ -1,0 +1,21 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<div id="map"></div>
+<script>
+  window.result = {{{JSONplaces}}}
+</script>
+<h2>Add a new place</h2>
+
+<form method="POST" action="/new">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="type" placeholder="type">
+
+  <label>Address</label>
+  <input id="latitude" type="text" name="latitude" placeholder="latitude" >
+  <input id="longitude" type="text" name="longitude" placeholder="longitude">
+
+  <button type="submit">Add</button>
+
+
+</form>

@@ -1,2 +1,24 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<div id="map"></div>
+<script>
+  window.result = {{{JSONplaces}}}
+</script>
+<h2>Places</h2>
+
+{{#each places}}
+    <div>{{this.name}}
+
+      <a href="/{{id}}/edit">Edit</a>
+      <form action="/{{id}}/delete" method="post">
+        <button type="submit">Delete</button>
+      </form>
+
+    </div>
+{{/each}}
+<br>
+<input type="text" id="latitude">
+<input type="text" id="longitude">
+  <a href="/new">Create new</a>
+
