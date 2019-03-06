@@ -1,2 +1,30 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+{{!-- <button id="router">Go To Place</button> --}}
+
+<div id="map"></div>
+
+<form method="POST" action="/places">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="type" placeholder="type">
+
+  <label>Location</label>
+  <input type="text" name="latitude" placeholder="latitude" id="latitude" >
+  <input type="text" name="longitude" placeholder="longitude" id="longitude">
+
+  <input type="submit" name="">
+</form>
+{{#each places}}
+    <p>{{name}}</p>
+    <p>{{type}}</p>
+    <a href="/places/{{this._id}}">Details</a> 
+    <a href="/places/edit/{{this._id}}">Edit</a> 
+
+{{/each}}
+
+
+<script>
+  
+  window.result = {{{result}}} //pilla result(el JSON q transformamos). se guarda en window porq es la conexion q hay con el front
+</script>
