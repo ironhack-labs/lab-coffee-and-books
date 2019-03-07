@@ -1,0 +1,33 @@
+<h1>Places List</h1>
+
+<ul>
+{{#each places}}
+  
+    {{this.name}}
+    {{this.type}}
+    
+<a href="/places/edit/{{this._id}}">Edit Place</a>
+<a href="/places/delete/{{this._id}}">Delete Place</a>
+{{/each}}
+
+  <div id="map"></div>
+
+{{!-- <form method="POST" action="/">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="description" placeholder="description"> --}}
+
+
+{{!-- 
+  <input type="submit" name="">
+</form> --}}
+
+
+<script>
+  
+  window.result = {{{result}}}
+</script>
+
+
+</ul>
+
+<a href="/places/new">Add a new place</a> 
