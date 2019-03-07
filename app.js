@@ -9,9 +9,13 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+const APP_NAME = require('./package.json').name;
+const app_name = APP_NAME
+const MONGO_URL = process.env.MONGO_URL
+const DB_CONNECT = `mongodb://${MONGO_URL}/${APP_NAME}`
 
 mongoose
-  .connect('mongodb://localhost/starter-code', {useNewUrlParser: true})
+  .connect(DB_CONNECT, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -19,7 +23,6 @@ mongoose
     console.error('Error connecting to mongo', err)
   });
 
-const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
@@ -47,7 +50,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Naples Cafes and Bookstores - by Marco';
 
 
 

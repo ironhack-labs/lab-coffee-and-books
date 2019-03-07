@@ -1,2 +1,31 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<section class="container places-list">
+  <div><ul>
+    {{#each places}}
+    <li>{{ this.name }}</li>
+    {{/each}}
+  </ul>
+  </div>
+</section>
+<section class="jumbotron">
+  <style>
+    #gmap {
+      height: 400px;
+      width: 100%;
+      box-sizing: content-box;
+    }
+  </style>
+  
+  <div id="gmap"></div>
+  
+  <script>
+    function initMap() {
+      let uluru = {lat: -25.344, lng: 131.036};
+      let map = new google.maps.Map(
+      document.getElementById('gmap'), {zoom: 4, center: uluru});
+      let marker = new google.maps.Marker({position: uluru, map: map})
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key={{gMapAPIKey}}&callback=initMap">
+  </script>
+</section>
