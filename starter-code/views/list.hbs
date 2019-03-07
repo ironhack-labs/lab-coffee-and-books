@@ -1,0 +1,9 @@
+
+{{#each places}}
+    <p>Name: {{name}}</p>
+    <p>Type: {{type}}</p>
+    <p>Latitud: {{this.location.coordinates.[1]}}</p>
+    <p>Longitud: {{this.location.coordinates.[0]}} </p>
+    <a href="/delete/{{_id}}">Delete Place</a>
+    <a href="/edit/{{_id}}">Edit Place</a>
+{{/each}}
