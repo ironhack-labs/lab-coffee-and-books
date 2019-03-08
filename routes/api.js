@@ -1,49 +1,114 @@
 const express = require('express');
 const router  = express.Router();
 
+
 // Load the Place DB document mongoose model
 const Place = require('../models/Place')
+
 
 // say hello
 router.get('/',
   (_, res, next) =>
 {
-  res.send('Hello! This is the API for coffeee and books v 0.0.0.\nTo use this API go to /api/places.')
+  res.send('Hello! This is the API for "Coffeee and Books" v 0.0.0.\nTo use this API go to /api/places.')
 })
+
 
 // GET list wih limits
 router.get('/places',
   (_, res, next) =>
 {
-  res.send('API endpoint that returns the LIST of places with the limits speciifed in the query')
+  Place.find()
+    .then(
+      (queryResults) =>
+        res.json(queryResults)
+    )
+    .catch(
+      (error) =>
+        res.status(400).send("ERROR! There was a problem READING from the database")
+    )
 })
+
+
+// 
+router.post('/places',
+  (req, res, next) =>
+  {
+    const postedData = req.body
+    const newPlace =
+        {
+          "location": {coordinates: [0, 0], "type": "Point"},
+          "name": "The largest bookstore",
+          "type": "bookstore",
+          "timestamp": null
+        }
+
+  Place.create(newPlace)
+  .then(
+    (document) =>
+      res.json(document)
+  )
+  .catch(
+    (error) =>
+      res.status(400).send("ERROR! There was a problem WRITING to the database")
+  )
+})
+
 
 // 
 router.get('/places/:_id',
   (req, res, next) =>
 {
-  res.send('API endpoint that RETURNS the place with specified _id')
+  Place.findById(req.params._id) // 5c813df2ec98871b2694b32e
+  .then(
+    (document) =>
+      res.json(document)
+  )
+  .catch(
+    (error) =>
+      res.status(400).send("ERROR! There was a problem READING from the database")
+    )
 })
 
-// 
-router.post('/places/:_id',
-  (req, res, next) =>
-{
-  res.send('API endpoint that CREATES a new place')
-});
 
 // 
 router.put('/places/:_id',
   (req, res, next) =>
 {
-  res.send('API endpoint that UPDATES the place with specified _id')
+  const updateData = req.body
+  const updatePlace =
+    {
+      "location": {coordinates: [180, 90], "type": "Point"},
+      "name": "The largest bookstore",
+      "type": "bookstore",
+      "timestamp": null
+    }
+
+  Place.findByIdAndUpdate(req.params._id , updatePlace, {"new": true}) // 5c813df2ec98871b2694b32e
+  .then(
+    (document) =>
+      res.json(document)
+  )
+  .catch(
+    (error) =>
+      next(error)
+  )
 });
+
 
 // 
 router.delete('/places/:_id',
   (req, res, next) =>
 {
-  res.send('API endpoint that DELETES the place with specified _id')
+  Place.findByIdAndDelete(req.params._id)
+  .then(
+    (document) =>
+      res.json(document)
+  )
+  .catch(
+    (error) =>
+      res.status(400).send("ERROR! There was a problem WRITING to the database")
+    )
 });
 
 

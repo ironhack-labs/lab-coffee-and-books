@@ -1,7 +1,7 @@
 <section class="container places-list">
   <div><ul>
     {{#each places}}
-    <li>The {{ this.type }} "{{ this.name }}" is at</li>
+    <li>The {{ this.type }} "{{ this.name }}" is at {{ this.location.coordinates }} with ID: {{ this._id }}</li>
     {{/each}}
   </ul>
   </div>
