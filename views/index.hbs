@@ -1,7 +1,7 @@
 <section class="container places-list">
   <div><ul>
     {{#each places}}
-    <li>{{ this.name }}</li>
+    <li>The {{ this.type }} "{{ this.name }}" is at</li>
     {{/each}}
   </ul>
   </div>
@@ -19,10 +19,10 @@
   
   <script>
     function initMap() {
-      let uluru = {lat: -25.344, lng: 131.036};
-      let map = new google.maps.Map(
-      document.getElementById('gmap'), {zoom: 4, center: uluru});
-      let marker = new google.maps.Marker({position: uluru, map: map})
+      const naples = {lat: 40.8397706, lng: 14.2216924};
+      const map = new google.maps.Map(
+      document.getElementById('gmap'), {zoom: 14, center: naples});
+      const marker = new google.maps.Marker({position: naples, map: map});
     }
   </script>
   <script async defer

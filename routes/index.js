@@ -1,7 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 
-// Load the Plac DB document mongoose modle
+// Load the Place DB document mongoose model
 const Place = require('../models/Place')
 // GET home page 
 router.get('/',
