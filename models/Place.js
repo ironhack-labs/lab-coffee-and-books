@@ -6,8 +6,8 @@ const palceSchema = new Schema(
   {
     name: String,
     type: String,
-    timestamp: Date,
-    location: {type: String, coordinates: [Number, Number]}
+    timestamp: Number,
+    location:  {type: {type: String}, coordinates: [Number]}
   })
 
-  module.exports = mongoose.model('Place', palceSchema) 
+  const Place = module.exports = mongoose.model('Place', palceSchema)
