@@ -11,7 +11,7 @@ router.get('/',
     (error, queryResults) =>
     {
       if(error) next(error)
-      else res.render('index', {places: queryResults, gMapAPIKey: process.env.MAPS_API_KEY})
+      else res.render('index', {places: queryResults, gMapAPIKey: process.env.GMAPS_API_KEY})
     }
     )
 });
