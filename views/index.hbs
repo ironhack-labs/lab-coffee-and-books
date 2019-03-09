@@ -1,11 +1,24 @@
-<section class="container places-list">
-  <div><ul>
-    {{#each places}}
-    <li>The {{ this.type }} "{{ this.name }}" is at {{ this.location.coordinates }} with ID: {{ this._id }}</li>
-    {{/each}}
-  </ul>
+<div class="container-fluid">
+  <div class="row position-relative">
+    <div id="gmap" class="col-12" ></div>
+    <div id="palces-list" class="col-3 rounded">
+        {{#each places}}
+        <div class="card border-dark mt-3 mb-3">
+          <div class="card-header">
+            <h6 class="card-title">{{ this.name }}</h6>
+          </div>
+          <div class="card-body">
+            <p class="card-text text-justify">
+              The {{ this.type }} <span class="font-italic">"{{ this.name }}"</span>
+               is at {{ this.location.coordinates }} with ID: {{ this._id }}
+            </p>
+          </div>
+          <div class="card-footer bg-white text-right">
+            <a href="#" class="card-link text-danger">delete</a>
+            <a href="#" class="card-link text-success">edit</a>
+          </div>
+        </div>
+        {{/each}}
+    </div>
   </div>
-</section>
-<section class="jumbotron">
-  <div id="gmap"></div>
-</section>
+</div>

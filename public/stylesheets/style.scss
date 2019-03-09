@@ -8,7 +8,18 @@ a {
 }
 
 #gmap {
-  height: 400px;
-  width: 100%;
+  height: 75vh;
   box-sizing: content-box;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#palces-list {
+  height: 70vh;
+  overflow: scroll;
+  position: absolute;
+  top: 3%;
+  left: 2%;
+  background-color: white;
 }
