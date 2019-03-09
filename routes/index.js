@@ -1,19 +1,25 @@
-const express = require('express');
-const router  = express.Router();
+const axios = require('axios')
+const express = require('express')
+const router  = express.Router()
 
-// Load the Plac DB document mongoose modle
+// Load the Place DB document mongoose model
 const Place = require('../models/Place')
+
 // GET home page 
 router.get('/',
   (_, res, next) =>
 {
-  Place.find({}, 
-    (error, queryResults) =>
-    {
-      if(error) next(error)
-      else res.render('index', {places: queryResults, gMapAPIKey: process.env.MAPS_API_KEY})
-    }
-    )
-});
+  axios
+  .get(
+    `http://127.0.0.1:${process.env.PORT}/api/places`)
+  .then(
+    serverResponse =>
+    res.render('index', {places: serverResponse.data, gMapAPIKey: process.env.GMAPS_API_KEY})
+  )
+  .catch(
+    error =>
+    next(error)
+  )
+})
 
 module.exports = router

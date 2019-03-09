@@ -5,4 +5,9 @@ body {
 a {
   color: #00B7FF; }
 
+#gmap {
+  height: 400px;
+  width: 100%;
+  box-sizing: content-box; }
+
 /*# sourceMappingURL=style.css.map */
