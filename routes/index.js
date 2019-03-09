@@ -11,7 +11,7 @@ router.get('/',
 {
   axios
   .get(
-    `http://127.0.0.1:${process.env.PORT}/api/places`)
+    `http://localhost:${process.env.PORT}/api/places`)
   .then(
     serverResponse =>
     res.render('index', {places: serverResponse.data, gMapAPIKey: process.env.GMAPS_API_KEY})
