@@ -1,4 +1,4 @@
-![app_screenshot](Screen%20Shot%202019-03-09%20at%2014.29.30.png)
+![app_screenshot](Shot%202019-03-09%20at%2017.07.58.png)
 
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
