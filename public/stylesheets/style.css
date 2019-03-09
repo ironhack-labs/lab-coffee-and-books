@@ -13,11 +13,16 @@ a {
   left: 0; }
 
 #palces-list {
-  height: 70vh;
+  height: 65vh;
   overflow: scroll;
   position: absolute;
-  top: 3%;
+  top: 10%;
   left: 2%;
   background-color: white; }
+
+#btn-new-place {
+  position: absolute;
+  top: 3%;
+  left: 2%; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,24 +1,61 @@
 <div class="container-fluid">
   <div class="row position-relative">
     <div id="gmap" class="col-12" ></div>
+    <button type="button" data-toggle="modal" data-target="#actionModal" data-action="create" class="btn btn-success col-3" id="btn-new-place">+ Add a New Place</button>
     <div id="palces-list" class="col-3 rounded">
         {{#each places}}
         <div class="card border-dark mt-3 mb-3">
           <div class="card-header">
-            <h6 class="card-title">{{ this.name }}</h6>
+            <h5 class="card-title">{{ this.name }}</h5>
           </div>
-          <div class="card-body">
-            <p class="card-text text-justify">
-              The {{ this.type }} <span class="font-italic">"{{ this.name }}"</span>
-               is at {{ this.location.coordinates }} with ID: {{ this._id }}
-            </p>
+          <div class="card-body small">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Type: {{ this.type }}</li>
+                <li class="list-group-item">At: {{ this.location.coordinates }}</li>
+              </ul>
           </div>
           <div class="card-footer bg-white text-right">
-            <a href="#" class="card-link text-danger">delete</a>
-            <a href="#" class="card-link text-success">edit</a>
+            <a href="#actionModal" data-toggle="modal" data-action="delete" data-mongo-id="{{ this._id }}" class="card-link text-danger">delete</a>
+            <a href="#actionModal" data-toggle="modal" data-action="edit" data-mongo-id="{{ this._id }}" class="card-link text-success">edit</a>
           </div>
         </div>
         {{/each}}
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="actionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Place</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" id="place-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Type:</label>
+            <input type="text" class="form-control" id="place-type">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Longitude:</label>
+            <input type="text" class="form-control" id="place-latitude">
+            <label for="recipient-name" class="col-form-label">Latitude:</label>
+            <input type="text" class="form-control" id="place-longitude">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">esc</button>
+        <button type="button" class="btn btn-primary">action</button>
+      </div>
     </div>
   </div>
 </div>
