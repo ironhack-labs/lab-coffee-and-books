@@ -78,10 +78,7 @@ router.put('/places/:_id',
   const updateData = req.body
   const updatePlace =
     {
-      "location": {coordinates: [180, 90], "type": "Point"},
-      "name": "The largest bookstore",
-      "type": "bookstore",
-      "timestamp": null
+      "location": {coordinates: [180, 90], "type": "Point"}
     }
 
   Place.findByIdAndUpdate(req.params._id , updatePlace, {"new": true}) // 5c813df2ec98871b2694b32e
