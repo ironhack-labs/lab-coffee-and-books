@@ -14,7 +14,7 @@ router.get('/',
 })
 
 
-// GET list wih limits
+// GET request to LIST documents in the collection
 router.get('/places',
   (_, res, next) =>
 {
@@ -30,7 +30,7 @@ router.get('/places',
 })
 
 
-// 
+// POST request to CREATE new document
 router.post('/places',
   (req, res, next) =>
   {
@@ -55,7 +55,7 @@ router.post('/places',
 })
 
 
-// 
+// GET request to LIST single document by _id which is unique in our collection by 
 router.get('/places/:_id',
   (req, res, next) =>
 {
@@ -71,7 +71,7 @@ router.get('/places/:_id',
 })
 
 
-// 
+// PUT request to MODIFY single document by _id wich is unique in our collection
 router.put('/places/:_id',
   (req, res, next) =>
 {
@@ -93,7 +93,7 @@ router.put('/places/:_id',
 });
 
 
-// 
+// DELETE request to DELETE single document by _id wich is unique in our collection
 router.delete('/places/:_id',
   (req, res, next) =>
 {
