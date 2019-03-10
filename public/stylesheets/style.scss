@@ -16,16 +16,22 @@ a {
 }
 
 #palces-list {
-  height: 65vh;
+  height: 60vh;
   overflow: scroll;
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 2%;
   background-color: white;
 }
 
 #btn-new-place {
   position: absolute;
-  top: 3%;
+  top: 8%;
   left: 2%;
+}
+
+.card-body *:hover{
+  background-color: lightgrey;
+  cursor: zoom-in;
+
 }
