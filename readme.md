@@ -5,7 +5,7 @@
 ![app_demo_screencast](AppDemoScreecast_small_10fps.gif)
 
 ## Summary
-This is inresponse to a request for a code sample around some skeleton code form IronHack.
+This is in response to a request for a code sample around some skeleton code form IronHack.
 
 **IMPORTANT!** The code is meant to be a connversation starter. You will notice different technologies and styles used through differnet parts of the app so that each of them can be discussed with a practical example at hand.
 This app would have been a perfect candidate for a reactive frontend framework, but since the exercise proposed the use of templates I stuck to that choice.
