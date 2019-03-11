@@ -1,8 +1,6 @@
-[
-  {"name": "Gran Caffé International", "type": "cafe", "location":{"type":"Point","coordinates":[14.225234985351562,40.83235268631087]}, "timestamp": 0},
-  {"name": "Lettura", "type": "bookstore", "location": {"type":"Point","coordinates":[14.237251281738281,40.83339174582102]}, "timestamp": 0},
-  {"name": "The Bookwarm", "type": "bookstore", "location": {"type":"Point","coordinates":[14.231500625610352,40.83371644857845]}, "timestamp": 0},
-  {"name": "Caffé Napoli", "type": "cafe", "location": {"type":"Point","coordinates":[14.230856895446777,40.842580219544224]}, "timestamp": 0},
-  {"name": "Seher lecker Cafe", "type": "cafe", "location": {"type":"Point","coordinates":[14.247894287109375,40.83043687764923]}, "timestamp": 0},
-  {"name": "The largest bookstore", "type": "bookstore", "location": {"type":"Point","coordinates":[14.24853801727295,40.83696338868893]}, "timestamp": 0}
-]
+{"name": "Gran Caffé International", "type": "cafe", "location":{"type":"Point","coordinates":[14.225234985351562,40.83235268631087]}, "timestamp": 0}
+{"name": "Lettura", "type": "bookstore", "location": {"type":"Point","coordinates":[14.237251281738281,40.83339174582102]}, "timestamp": 0}
+{"name": "The Bookwarm", "type": "bookstore", "location": {"type":"Point","coordinates":[14.231500625610352,40.83371644857845]}, "timestamp": 0}
+{"name": "Caffé Napoli", "type": "cafe", "location": {"type":"Point","coordinates":[14.230856895446777,40.842580219544224]}, "timestamp": 0}
+{"name": "Seher lecker Cafe", "type": "cafe", "location": {"type":"Point","coordinates":[14.247894287109375,40.83043687764923]}, "timestamp": 0}
+{"name": "The largest bookstore", "type": "bookstore", "location": {"type":"Point","coordinates":[14.24853801727295,40.83696338868893]}, "timestamp": 0}

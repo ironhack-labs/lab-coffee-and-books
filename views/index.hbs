@@ -1,11 +1,101 @@
-<section class="container places-list">
-  <div><ul>
-    {{#each places}}
-    <li>The {{ this.type }} "{{ this.name }}" is at {{ this.location.coordinates }} with ID: {{ this._id }}</li>
-    {{/each}}
-  </ul>
+<div class="container-fluid">
+  <div class="row position-relative">
+    <div id="gmap" class="col-12" ></div>
+    <button type="button" data-toggle="modal" data-target="#modifyModal" data-action="create" class="btn btn-success col-3" id="btn-new-place">+ Add a New Place</button>
+    <div id="palces-list" class="col-3 rounded shadow-lg">
+        {{#each places}}
+        <div class="card border-dark mt-3 mb-3">
+          <div class="card-header" data-toggle="modal" data-target="#listModal" data-action="info" data-mongo-id="{{ this._id }}">
+            <h5 class="card-title">{{ this.name }}</h5>
+          </div>
+          <div class="card-body small" data-toggle="modal" data-target="#listModal" data-action="info" data-mongo-id="{{ this._id }}">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Type: {{ this.type }}</li>
+                <li class="list-group-item">Lat: {{ this.location.coordinates.[1] }}</li>
+                <li class="list-group-item">Long: {{ this.location.coordinates.[0] }}</li>
+              </ul>
+          </div>
+          <div class="card-footer bg-white text-right">
+            <button type="button" role="button" data-toggle="modal" data-target="#listModal" data-action="delete" data-mongo-id="{{ this._id }}" class="card-link text-danger btn btn-sm">delete</button>
+            <button type="button" role="button" data-toggle="modal" data-target="#modifyModal" data-action="edit" data-mongo-id="{{ this._id }}" class="card-link text-success btn btn-sm">edit</button>
+          </div>
+        </div>
+        {{/each}}
+    </div>
   </div>
-</section>
-<section class="jumbotron">
-  <div id="gmap"></div>
-</section>
+</div>
+
+
+<div id="modifyModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modifyModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="title-modifyModal">Placeholder Title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" id="place-name-modifyModal" name="name" value="" placeholder="Enter the name of the place" required>
+          </div>
+          <div class="form-group">
+            <label for="type" class="col-form-label">Type:</label>
+            <select class="form-control" id="place-type-modifyModal" name="type" value="" placeholder="Select: cafe or bookstore" required>
+              <option disabled selected value="">Select: cafe or bookstore</option>
+              <option value="cafe">cafe</option>
+              <option value="bookstore">bookstore</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="lat" class="col-form-label">Latitude:</label>
+            <input type="number" min="-90" max="90" step="0.0000000000001" class="form-control" id="place-lat-modifyModal" name="lat" value="" placeholder="40.839----">
+            <label for="lng" class="col-form-label">Longitude:</label>
+            <input type="number" min="-180" max="180" step="0.0000000000001" class="form-control" id="place-lng-modifyModal" name="lng" value="" placeholder="14.221----">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn-back-modifyModal">back</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" id="btn-submit-modifyModal" onclick="createDocuemnt(undefined)">create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="listModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="listModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="title-listModal">Placeholder Title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control-plaintext" id="place-name-listModal" name="name" value="" placeholder="Name of the place" readonly>
+          </div>
+          <div class="form-group">
+            <label for="type" class="col-form-label">Type:</label>
+            <input type="text" class="form-control-plaintext" id="place-type-listModal" name="type" value="" placeholder="Type of place" readonly>
+          </div>
+          <div class="form-group">
+            <label for="lat" class="col-form-label">Latitude:</label>
+            <input type="text" class="form-control-plaintext" id="place-lat-listModal" name="lat" value="" placeholder="Latitude">
+            <label for="lng" class="col-form-label">Longitude:</label>
+            <input type="text" class="form-control-plaintext" id="place-lng-listModal" name="lng" value="" placeholder="Longitude">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn-back-listModal">back</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-delete-listModal" onclick="deleteDocuemnt(undefined)" disabled>delete</button>
+      </div>
+    </div>
+  </div>
+</div>

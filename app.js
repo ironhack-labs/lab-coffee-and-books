@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // default value for title local
-app.locals.title = 'Naples Cafes and Bookstores';
+app.locals.title = 'Cafes and Bookstores in Naples';
 
 // app middleware intercepts and delgates all /api requests to api.js router
 const api = require('./routes/api');
