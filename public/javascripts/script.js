@@ -82,7 +82,7 @@ $('#listModal')
             .removeClass()
             .addClass("btn btn-danger")
             .prop('disabled', false)
-            .attr('onclick', `deleteDocuemnt(${documentURI})`)
+            .attr('onclick', `deleteDocuemnt("${documentURI}")`)
             .text("delete")
           break
         default:
@@ -113,11 +113,12 @@ $('#modifyModal')
       
       const actionToDo = originButton.data('action') || "There was a problem generating the action" // gat action from html attribute
 
-      modalWindow.find("form")[0].reset()
-
+      const form = modalWindow.find("form")
+      
       switch (actionToDo)
       {
         case "create":
+          form[0].reset()
           modalWindow
             .find("#title-modifyModal")
             .text("Create a new place")
@@ -126,7 +127,7 @@ $('#modifyModal')
             .removeClass()
             .addClass("btn btn-success")
             .prop('disabled', false)
-            .attr('onclick', `createDocuemnt(${documentURI})`)
+            .attr('onclick', `createDocuemnt("${documentURI}")`)
             .text("create")
           break
         case "edit":
@@ -139,7 +140,7 @@ $('#modifyModal')
             .removeClass()
             .addClass("btn btn-warning")
             .prop('disabled', false)
-            .attr('onclick', `updateDocuemnt(${documentURI})`)
+            .attr('onclick', `updateDocuemnt("${documentURI}")`)
             .text("update")
           break
         default:
@@ -161,16 +162,10 @@ $('#modifyModal')
 function
   fillModalFields(modalWindow, dataSourceURI)
 {
-  const modalForm = modalWindow.find("form")
-  const modalFormInputs = modalForm.find("input")
-  const modalFormSelects = modalForm.find("select")
-  const modalActionButton = modalWindow.find('#modal-submit')
-  const modalCancelButton = modalWindow.find('#modal-dismiss')
-  const modalTitle = modalWindow.find('#titleActionModal')
-  const modaPlaceName = modalWindow.find('#place-name')
-  const modalPlaceType = modalWindow.find('#place-type')
-  const modalPlaceLng = modalWindow.find('#place-lng')
-  const modalPlaceLat = modalWindow.find('#place-lat')
+  const modalPlaceName = modalWindow.find("[id|='place-name']")
+  const modalPlaceType = modalWindow.find("[id|='place-type']")
+  const modalPlaceLng = modalWindow.find("[id|='place-lng']")
+  const modalPlaceLat = modalWindow.find("[id|='place-lat']")
 
   fetch(dataSourceURI)
     .then(serverResponse => serverResponse.json())
@@ -181,10 +176,10 @@ function
         const {
           name = errorMsg+"name",
           type = errorMsg+"type",
-          location : {coordinates : [lng = errorMsg+"longitude", lat = errorMsg+"latitude"]}
+          location : {coordinates : [lat = errorMsg+"latitude", long = errorMsg+"longitude"]}
         } = jsonData
 
-        modaPlaceName
+        modalPlaceName
           .val(name)
         modalPlaceType
           .val(type)
@@ -192,92 +187,109 @@ function
           .val(lng)
         modalPlaceLat
           .val(lat)
-        modalActionButton
-          .removeClass("disabled")
-          .prop('disabled', false)
       }
       )
       .catch(err =>
       {
-        modalTitle
-          .text("There was an error retriving data. Please cancel and retry.")
           modaPlaceName
-            .val("")
+            .val("Name could not be retrived")
           modalPlaceType
-            .val("")
+            .val("Type could not be retrived")
           modalPlaceLng
-            .val("")
+            .val("Longitude could not be retrived")
           modalPlaceLat
-            .val("")
-          modalActionButton
-            .addClass("btn-primary d-none")
-            .text("ERROR! Please cancel and retry")
-          modalCancelButton.text("back")
+            .val("Latitude could not be retrived")
           console.log(err)
         })
 }
 
-/*
-    $("#contact_form").on("submit", function(e) {
-      var postData = $(this).serializeArray();
-      var formURL = $(this).attr("action");
-      $.ajax({
-          url: formURL,
-          type: "POST",
-          data: postData,
-          success: function(data, textStatus, jqXHR) {
-              $('#contact_dialog .modal-header .modal-title').html("Result");
-              $('#contact_dialog .modal-body').html(data);
-              $("#submitForm").remove();
-          },
-          error: function(jqXHR, status, error) {
-              console.log(status + ": " + error);
-          }
-      });
-      e.preventDefault();
-  });
-   
-  $("#submitForm").on('click', function() {
-      $("#contact_form").submit();
-  });
 
-(function() {
-	function toJSONString( form ) {
-		var obj = {};
-		var elements = form.querySelectorAll( "input, select, textarea" );
-		for( var i = 0; i < elements.length; ++i ) {
-			var element = elements[i];
-			var name = element.name;
-			var value = element.value;
-
-			if( name ) {
-				obj[ name ] = value;
-			}
-		}
-
-		return JSON.stringify( obj );
-	}
-
-	document.addEventListener( "DOMContentLoaded", function() {
-		var form = document.getElementById( "test" );
-		var output = document.getElementById( "output" );
-		form.addEventListener( "submit", function( e ) {
-			e.preventDefault();
-			var json = toJSONString( this );
-			output.innerHTML = json;
-
-		}, false);
-
-	});
-
-})();
+function
+  deleteDocuemnt(documentURI)
+{
+  fetch(documentURI,
+    {
+      method: 'DELETE',
+      headers:
+      {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(documentURI)
+    }
+  )
+}
 
 
-$.ajax({
-  type: "POST",
-  url: "serverUrl",
-  data: formData,
-  dataType: "json",
-  contentType : "application/json"
-})
-*/
+function
+  createDocuemnt(documentURI)
+{
+  const form = $("#modifyModal form")
+  const jsonName = form.find("[id|='place-name']").val()
+  const jsonType = form.find("[id|='place-type']").val()
+  const jsonLng = form.find("[id|='place-lng']").val()
+  const jsonLat = form.find("[id|='place-lat']").val()
+
+  const jsonData =
+    JSON.stringify(
+      {
+        name : jsonName,
+        type : jsonType,
+        location :
+        {
+          type: "Point",
+          coordinates : [jsonLng, jsonLat]
+        },
+        timestamp : 0
+      }
+    )
+
+  fetch(documentURI,
+    {
+      method: 'POST',
+      headers:
+      {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: jsonData
+    }
+  )
+}
+
+
+function
+  updateDocuemnt(documentURI)
+{
+  const form = $("#modifyModal form")
+  const jsonName = form.find("[id|='place-name']").val()
+  const jsonType = form.find("[id|='place-type']").val()
+  const jsonLng = form.find("[id|='place-lng']").val()
+  const jsonLat = form.find("[id|='place-lat']").val()
+
+  const jsonData =
+    JSON.stringify(
+      {
+        name : jsonName,
+        type : jsonType,
+        location :
+        {
+          type: "Point",
+          coordinates : [jsonLng, jsonLat]
+        },
+        timestamp : 0
+      }
+    )
+
+  fetch(documentURI,
+    {
+      method: 'PUT',
+      headers:
+      {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: jsonData
+    }
+  )
+}
