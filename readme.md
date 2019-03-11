@@ -1,4 +1,27 @@
+# Coffee adn Books in Naples | Marco Santonastasi
 ![app_demo_screencast](AppDemoScreecast_small_10fps.gif)
+
+## Summary
+This is inresponse to a request for a code sample around some skeleton code form IronHack.
+
+**IMPORTANT!** The code is meant to be a connversation starter. You will notice different technologies and styles used through differnet parts of the app so that each of them can be discussed with a practical example at hand.
+This app would have been a perfect candidate for a reactive frontend framework, but since the exercise proposed the use of templates I stuck to that choice.
+
+## Details
+The following technologies are present at variuos levels in the code:
+- Full CRUD on Express.js middleware and routing
+- Mongoose ODM to MongoDB backend datawarehouse
+- GoogleMapsAPI 3rd party service consumption
+- Bootstrap (v4+) UI
+- JQuery (v3+) UI
+- JS Promises HTTP
+- JS Async/Await HTTP
+- Node.js (v.10+)
+- ES2017 destructuring and lambdas
+- CSS3 fluid layout and relative positioning
+- HTML5 forms
+
+Use for educational purposes only!
 
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
