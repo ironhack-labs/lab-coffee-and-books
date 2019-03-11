@@ -12,7 +12,7 @@ document
         const IAmHere = new google.maps.Marker({position: naples, map: map, title: "I am here"})
         
         const IAmHereInfo = new google.maps.InfoWindow({
-          content: "<h5>Full CRUD app in Express.js</h5><p>Hello. This is the core of a CRUD app coded in Express.js</p><p>This code is meant as a DEMO and runs on a locally bind instance of MongoDB.</p><p>The app feature examples of the following technologies:<ul><li>ES2017</li><li>Node.js (v.10+)</li><li>Express.js (v4+)</li><li>GoogleMapsAPI</li><li>Bootstrap (v4+) advanced data flow</li><li>JQuery (v3+) advanced data flow</li><li>JS Promises</li><li>JS Async/Await</li><li>CSS3 fluid layout</li><li>CSS3 breakpoints</li><li>CSS3 relative positioning</li><li>HTML5</li></ul></p><p>Use for educational purposes only!</p>"
+          content: "<h5>Concept  DEMO of full CRUD Express app</h5><p>Hello. This is the core of a CRUD app coded in Express.js</p><p>This code is meant as a DEMO</p><p> It runs on a dev-only locally bind instance of MongoDB</p><p>The app feature examples of the following technologies:<ul><li>ES2017</li><li>Node.js (v.10+)</li><li>Express.js (v4+)</li><li>GoogleMapsAPI</li><li>Bootstrap (v4+) utilities</li><li>JQuery (v3+) smart selectors</li><li>JS Promises</li><li>JS Async/Await</li><li>CSS3 fluid layout</li><li>CSS3 relative positioning</li><li>HTML5</li></ul></p><p>Use for educational purposes only!</p>"
         })
 
         IAmHere.addListener('click', function() {
@@ -43,7 +43,6 @@ async function
       }
     )
 }
-
 
 $('#listModal')
   .on('show.bs.modal',
@@ -176,7 +175,7 @@ function
         const {
           name = errorMsg+"name",
           type = errorMsg+"type",
-          location : {coordinates : [lat = errorMsg+"latitude", long = errorMsg+"longitude"]}
+          location : {coordinates : [lat = errorMsg+"latitude", lng = errorMsg+"longitude"]}
         } = jsonData
 
         modalPlaceName
@@ -191,7 +190,7 @@ function
       )
       .catch(err =>
       {
-          modaPlaceName
+          modalPlaceName
             .val("Name could not be retrived")
           modalPlaceType
             .val("Type could not be retrived")
@@ -215,9 +214,10 @@ function
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(documentURI)
+      body: JSON.stringify({})
     }
   )
+  window.location.reload(true)
 }
 
 
@@ -255,6 +255,7 @@ function
       body: jsonData
     }
   )
+  window.location.reload(true)
 }
 
 
@@ -292,4 +293,5 @@ function
       body: jsonData
     }
   )
+  window.location.reload(true)
 }

@@ -33,15 +33,8 @@ router.get('/places',
 // POST request to CREATE new document
 router.post('/places',
   (req, res, next) =>
-  {
-    const postedData = req.body
-    const newPlace =
-        {
-          "location": {coordinates: [0, 0], "type": "Point"},
-          "name": "The largest bookstore",
-          "type": "bookstore",
-          "timestamp": null
-        }
+{
+    const newPlace = req.body
 
   Place.create(newPlace)
   .then(
@@ -59,7 +52,7 @@ router.post('/places',
 router.get('/places/:_id',
   (req, res, next) =>
 {
-  Place.findById(req.params._id) // 5c813df2ec98871b2694b32e
+  Place.findById(req.params._id)
   .then(
     (document) =>
       res.json(document)
@@ -75,13 +68,9 @@ router.get('/places/:_id',
 router.put('/places/:_id',
   (req, res, next) =>
 {
-  const updateData = req.body
-  const updatePlace =
-    {
-      "location": {coordinates: [180, 90], "type": "Point"}
-    }
+  const updatePlace = req.body
 
-  Place.findByIdAndUpdate(req.params._id , updatePlace, {"new": true}) // 5c813df2ec98871b2694b32e
+  Place.findByIdAndUpdate(req.params._id , updatePlace, {"new": true})
   .then(
     (document) =>
       res.json(document)
