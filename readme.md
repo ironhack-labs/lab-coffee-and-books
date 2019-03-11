@@ -1,4 +1,7 @@
 # Coffee adn Books in Naples | Marco Santonastasi
+- A 1 min screencast the app:  https://www.youtube.com/playlist?list=PLrNT0z1RStpFbkHRd_s3oxzyEJZkHo30q
+- The pull request on IornHack github:  https://github.com/ironhack-labs/lab-coffee-and-books/pull/323
+
 ![app_demo_screencast](AppDemoScreecast_small_10fps.gif)
 
 ## Summary
