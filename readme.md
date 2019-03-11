@@ -8,7 +8,11 @@
 This is in response to a request for a code sample around some skeleton code form IronHack.
 
 **IMPORTANT!** The code is meant to be a connversation starter. You will notice different technologies and styles used through differnet parts of the app so that each of them can be discussed with a practical example at hand.
-This app would have been a perfect candidate for a reactive frontend framework, but since the exercise proposed the use of templates I stuck to that choice.
+This app would have been a perfect candidate for a reactive frontend framework, but since the exercise proposed the use of templates I stuck to that choice. Please be aware the .env file is of course missing from this repo (it was in .gitignore as standard practice to hide the api keys etc..) Here are the contents:
+PORT=3000
+ENV=development
+MONGO_URL=127.0.0.1:27017
+GMAPS_API_KEY=--------------------------------------
 
 ## Details
 The following technologies are present at variuos levels in the code:
