@@ -30,7 +30,7 @@ document
 async function
   gMapUpdate(map, source)
 {
-  const jsonData
+  let jsonData
   try {
     const serverResponse = await fetch(source)
     jsonData = await serverResponse.json()
