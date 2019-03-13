@@ -1,0 +1,32 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+#gmap {
+  height: 75vh;
+  box-sizing: content-box;
+  position: relative;
+  top: 0;
+  left: 0; }
+
+#palces-list {
+  height: 60vh;
+  overflow: scroll;
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  background-color: white; }
+
+#btn-new-place {
+  position: absolute;
+  top: 8%;
+  left: 2%; }
+
+.card-body *:hover {
+  background-color: lightgrey;
+  cursor: zoom-in; }
+
+/*# sourceMappingURL=style.css.map */
