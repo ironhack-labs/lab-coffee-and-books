@@ -1,0 +1,90 @@
+<h2>Edit {{name}}</h2>
+<form action="/places/{{_id}}" method="POST">
+  <label for="name">
+    Name:
+    <input type="text" name="name" id="name" value="{{name}}">
+  </label>
+  <select name="type" id="">
+    <option value="Coffee Shop">Coffee Shop</option>
+    <option value="Bookstore">Bookstore</option>
+  </select>
+  <div>
+    <label for="">
+      Longitude:
+      <input id="lng" type="text" name="lng">
+    </label>
+  </div>
+  <div>
+    <label for="">
+      Latitude:
+      <input id="lat" type="text" name="lat">
+    </label>
+  </div>
+
+  {{!-- para generar un search bar --}}
+  <div id="search">
+  </div>
+  {{!-- mapa asociado al search --}}
+  <div id="map" style='width: 80%; height: 600px;'>
+  </div>
+  <button type="submit">Confirm Edit</button>
+</form>
+
+<script>
+  //token para usar mapbox
+  mapboxgl.accessToken = 'pk.eyJ1IjoibG9ja2VhczE2IiwiYSI6ImNqdTBsdzNsaDJuNDU0ZW1wdDhsemh1ZWgifQ.Eb6eV0uCOFbUPAEvSFGAFg';
+  let geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+  });
+  // jalamos los input para ponerles el valor
+  let inplng = document.getElementById("lng")
+  let inplat = document.getElementById("lat")
+
+  let map = new mapboxgl.Map({
+    container: "map",
+    style: 'mapbox://styles/mapbox/streets-v11'
+  })
+
+  let [lat,lng] = [{{{location.coordinates}}}];
+  let name = "{{{name}}}";
+  inplng.value = lng;
+  inplat.value = lat;
+
+  //creamos popup para poner nombre del lugar
+  const popup = new mapboxgl.Popup()
+    .setText(name);
+
+    // se crea instancia, se le pone longitud y latitud y luego se agrega al map
+  const marker = new mapboxgl.Marker()
+    .setLngLat([lat,lng])
+    //le encadenamos el popup
+    .setPopup(popup)
+    .addTo(map);
+  
+  map.setZoom(15).setCenter([lat,lng]);
+
+  geocoder.on("result", (res) => {
+    console.log(res);
+    // obtenemos las coordenadas del resultado
+    let [lng, lat] = res.result.center;
+    // le pasamos los valores a los inputs
+    inplng.value = lng;
+    inplat.value = lat;
+
+    //creamos popup para poner nombre del lugar
+    const popup = new mapboxgl.Popup()
+    .setText(res.result.place_name);
+
+    // se crea instancia, se le pone longitud y latitud y luego se agrega al map
+    const marker = new mapboxgl.Marker()
+    .setLngLat([lng,lat])
+    //le encadenamos el popup
+    .setPopup(popup)
+    .addTo(map);
+  })
+
+  // Add zoom and rotation controls to the map.
+  map.addControl(new mapboxgl.NavigationControl());
+
+  document.getElementById('search').appendChild(geocoder.onAdd(map));
+</script>
