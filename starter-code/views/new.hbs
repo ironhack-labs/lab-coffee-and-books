@@ -1,0 +1,55 @@
+<nav class="deep-orange accent-2">
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/">HOME</a></li>
+      <li><a href="/places">PLACES MAP</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="bg">
+  <div class="square">
+    <div>
+      <form 
+      {{#if place._id}} action="/places/{{place._id}}/edit" 
+      {{else}} action="/places/new" {{/if}} method="POST">
+        <div class="input-field">
+          <input type="text" name="name" value="{{place.name}}"/>
+          <label for="">Name</label>
+        </div>
+        <div class="input-field">
+          <input id="lng" type="text" name="lng" value="{{place.location.coordinates.[0]}}"/>
+          <label for="">Longitude</label>
+        </div>
+        <div class="input-field">
+          <input id="lat" type="text" name="lat" value="{{place.location.coordinates.[1]}}"/>
+          <label for="">Latitude</label>
+        </div>
+        <div class="input-field">
+          <textarea class="materialize-textarea" name="description">{{place.description}}</textarea>
+          <label for="">Description</label>
+        </div><br>
+        <button class="btn deep-orange accent-2" type="submit">Submit</button>
+      </div>
+      <div>
+        <div id="map" style="width: 500px; height: 400px"></div>
+        <script>
+          mapboxgl.accessToken =
+            "pk.eyJ1IjoibWx6eiIsImEiOiJjanUwbTRtaTQxc3RzNDRtZmdtaXF1dXVxIn0.k3hMbEeCzUKaDn2sIsULjA";
+          let geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken
+          });
+          let input_lng = document.getElementById("lng");
+          let input_lat = document.getElementById("lat");
+          let map = new mapboxgl.Map({container: "map", style: "mapbox://styles/mapbox/streets-v11"});
+          geocoder.on("result", res => {
+            let [lng, lat] = res.result.center;
+            input_lng.value = lng;
+            input_lat.value = lat;
+          });
+          map.addControl(new mapboxgl.NavigationControl());
+          map.addControl(new MapboxGeocoder({accessToken: mapboxgl.accessToken}), "top-left");
+        </script>
+      </div>
+      </form>
+  </div>
+</div>

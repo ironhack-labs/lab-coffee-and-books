@@ -1,0 +1,42 @@
+body {
+  font: 22px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: salmon }
+
+.bg {
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/photos/md/2017-09-11/beverage_book_caffeine_coffee.jpeg');
+  width: 100vw;
+  height: 93vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.square {
+  width: 65vw;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+  padding: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.square2 {
+  width: 30vw;
+  height: 80vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+  padding: 3vw;
+}
+
+#map {
+  border: solid salmon 2px;
+}
+
+/*# sourceMappingURL=style.css.map */

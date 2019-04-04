@@ -1,0 +1,47 @@
+<nav class="deep-orange accent-2">
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/">HOME</a></li>
+      <li><a href="/places/new">NEW PLACE</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="bg">
+<div id="map" style="width: 60%; height: 700px;"></div>
+<div class="square2">
+  <h5>Lista de lugares:</h5>
+<ul>
+  {{#each places as |place|}}
+  <li>
+    <b>{{place.name}}</b>
+    <a href="/places/{{place._id}}/edit"><i class="material-icons">create</i></a>
+    <a href="/places/{{place._id}}/delete" uk-icon="icon: trash"><i class="material-icons">delete</i></a>
+    <br><p style="font-size: 15px;">{{place.description}}
+      <br> Ubicación: {{place.location.coordinates.[0]}}, {{place.location.coordinates.[1]}}</p>
+  </li>
+  {{/each}}
+</ul>
+</div>
+  <script>
+    mapboxgl.accessToken =
+      "pk.eyJ1IjoibWx6eiIsImEiOiJjanUwbTRtaTQxc3RzNDRtZmdtaXF1dXVxIn0.k3hMbEeCzUKaDn2sIsULjA";
+    let map = new mapboxgl.Map({container: "map", style: "mapbox://styles/mapbox/streets-v11"});
+    
+    map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), "top-left");
+    map.addControl(new mapboxgl.NavigationControl());
+
+    let locations = [];
+    let names = [];
+    {{#each places as |place|}}
+      locations.push({{{place.location}}});
+      names.push("{{{place.name}}}");
+    {{/each}}
+    locations.forEach((place, i)=>{
+      let [lng,lat] = place.coordinates
+      let place_position = [lng, lat];
+      let popup = new mapboxgl.Popup().setText(names[i]);
+      let marker = new mapboxgl.Marker().setLngLat(place_position).setPopup(popup).addTo(map);
+      map.setZoom(10).setCenter(place_position);
+    });
+  </script>
+</div>
