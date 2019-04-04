@@ -2,21 +2,69 @@
 {{#unless places}}
 <p>There are no Places in our Database, go ahead and <a href="/places/new">create</a> one</p>
 {{/unless}}
-<ul>
-  {{#each places as |place|}}
-  <p><strong>{{place.name}}</strong></p>
-  <p style="font-size: 10px; color:darkgray">Type: {{place.type}}</p>
-  {{!-- {{#if place.location.coordinates}}
-  <p>Location: {{place.location.coordinates}}</p>
-  {{/if}} --}}
-  <div style="display:flex; flex-direction:row">
-    <a href="/places/{{place._id}}/edit"><button>Edit</button></a>
-    <form action="/places/{{place._id}}/delete" method="POST"><button type="submit">Delete</button></form>
+<div class="container">
+  <div>
+    <ul>
+      {{#each places as |place|}}
+      <p><strong>{{place.name}}</strong></p>
+      <p style="font-size: 10px; color:darkgray">Type: {{place.type}}</p>
+      {{!-- {{#if place.location.coordinates}}
+<p>Location: {{place.location.coordinates}}</p>
+{{/if}} --}}
+      <div style="display:flex; flex-direction:row">
+        <a href="/places/{{place._id}}/edit"><button>Edit</button></a>
+        <form action="/places/{{place._id}}/delete" method="POST"><button type="submit">Delete</button></form>
+      </div>
+      {{/each}}
+      <br>
+      <hr>
+      {{#if places}}
+      <a href="/places/new">Create a New Place</a>
+      {{/if}}
+    </ul>
   </div>
+  <div id="map" style='width: 80%; height: 600px;'>
+  </div>
+</div>
+
+<script>
+  //token para usar mapbox
+  mapboxgl.accessToken = 'pk.eyJ1IjoibG9ja2VhczE2IiwiYSI6ImNqdTBsdzNsaDJuNDU0ZW1wdDhsemh1ZWgifQ.Eb6eV0uCOFbUPAEvSFGAFg';
+  let geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+  });
+
+  let map = new mapboxgl.Map({
+    container: "map",
+    style: 'mapbox://styles/mapbox/streets-v11'
+  })
+
+  // Add zoom and rotation controls to the map.
+  map.addControl(new mapboxgl.NavigationControl());
+
+  let locations = [];
+  let names = [];
+  {{#each places as |place|}}
+    locations.push({{{place.location}}});
+    names.push("{{{place.name}}}")
   {{/each}}
-  <br>
-  <hr>
-  {{#if places}}
-  <a href="/places/new">Create a New Place</a>
-  {{/if}}
-</ul>
+
+  locations.forEach((place,index)=>{
+    let [lat,lng] = place.coordinates
+    let markerPos = [lat,lng];
+    // el popup puede rendear html
+    let popup = new mapboxgl.Popup()
+    .setText(names[index]);
+
+    // se crea instancia, se le pone longitud y latitud y luego se agrega al map
+    let marker = new mapboxgl.Marker()
+    .setLngLat(markerPos)
+    //le encadenamos el popup
+    .setPopup(popup)
+    .addTo(map);
+
+    if (index == 0){
+      map.setZoom(12).setCenter(markerPos);
+    }
+  })
+</script>
