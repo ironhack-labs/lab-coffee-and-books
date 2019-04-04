@@ -1,0 +1,58 @@
+<nav class="deep-orange accent-2">
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/">HOME</a></li>
+      <li><a href="/places/new">NEW PLACE</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="bg">
+<div id="map" style="width: 60%; height: 700px;"></div>
+<div class="square2">
+  <h5>Lista de lugares:</h5>
+<ul>
+  {{#each places as |place|}}
+  <li>
+    <b>{{place.name}} </b>
+    <a href="/places/{{place._id}}/edit"><i class="material-icons">create</i></a>
+    <a href="/places/{{place._id}}/delete" uk-icon="icon: trash"><i class="material-icons">delete</i></a>
+    <br> About: {{place.description}}
+  </li>
+  {{/each}}
+</ul>
+</div>
+<script>
+  mapboxgl.accessToken =
+    "pk.eyJ1IjoibWx6eiIsImEiOiJjanUwbTRtaTQxc3RzNDRtZmdtaXF1dXVxIn0.k3hMbEeCzUKaDn2sIsULjA";
+  var map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/mapbox/streets-v11"
+  });
+  map.addControl(
+    new MapboxDirections({
+      accessToken: mapboxgl.accessToken
+    }),
+    "top-left"
+  );
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        let { longitude, latitude } = position.coords;
+        const user_position = [longitude, latitude];
+        map.setZoom(13).setCenter(user_position);
+        const popup = new mapboxgl.Popup().setText("Aquistás");
+        const marker = new mapboxgl.Marker()
+          .setLngLat(user_position)
+          .setPopup(popup)
+          .addTo(map);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  } else {
+    console.log("Cámbiate al Chrome");
+  }
+  map.addControl(new mapboxgl.NavigationControl());
+</script>
+</div>
