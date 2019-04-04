@@ -60,8 +60,17 @@ router.post('/:id/delete', (req, res) => {
 })
 
 router.post('/:id', (req, res) => {
+  let { lng, lat, ...place } = req.body;
+  let newPlace = {
+    ...place,
+    location: {
+      type: "Point",
+      coordinates: [lng, lat]
+    }
+  };
+
   const {id} = req.params;
-  Place.findByIdAndUpdate(id, {$set: {...req.body}})
+  Place.findByIdAndUpdate(id, {$set: {...newPlace}})
     .then(() => {
       res.redirect('/places/index')
     })
