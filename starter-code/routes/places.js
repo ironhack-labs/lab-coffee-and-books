@@ -19,7 +19,16 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/new', (req, res) => {
-  Place.create(req.body)
+  let { lng, lat, ...place } = req.body;
+  let newPlace = {
+    ...place,
+    location: {
+      type: "Point",
+      coordinates: [lng, lat]
+    }
+  };
+
+  Place.create(newPlace)
     .then(() => {
       res.redirect('/places/index');
     })
