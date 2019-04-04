@@ -1,0 +1,22 @@
+<h2>List of places stored in our Database:</h2>
+{{#unless places}}
+<p>There are no Places in our Database, go ahead and <a href="/places/new">create</a> one</p>
+{{/unless}}
+<ul>
+  {{#each places as |place|}}
+  <p><strong>{{place.name}}</strong></p>
+  <p style="font-size: 10px; color:darkgray">Type: {{place.type}}</p>
+  {{!-- {{#if place.location.coordinates}}
+  <p>Location: {{place.location.coordinates}}</p>
+  {{/if}} --}}
+  <div style="display:flex; flex-direction:row">
+    <a href="/places/{{place._id}}/edit"><button>Edit</button></a>
+    <form action="/places/{{place._id}}/delete" method="POST"><button type="submit">Delete</button></form>
+  </div>
+  {{/each}}
+  <br>
+  <hr>
+  {{#if places}}
+  <a href="/places/new">Create a New Place</a>
+  {{/if}}
+</ul>

@@ -1,0 +1,17 @@
+<h2>CREATE A NEW PLACE</h2>
+<form action="/places/new" method="POST">
+  <label for="name">
+    Name:
+    <input type="text" name="name" id="name" placeholder="Name">
+  </label>
+  <select name="type" id="">
+    <option value="Coffee Shop">Coffee Shop</option>
+    <option value="Bookstore">Bookstore</option>
+  </select>
+  {{!-- <label for="location">
+    Location:
+    <input type="text" name="location" id="location" placeholder="Location">
+  </label> --}}
+  <button type="submit">Create a New Place</button>
+
+</form>
