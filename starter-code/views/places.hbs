@@ -13,46 +13,35 @@
 <ul>
   {{#each places as |place|}}
   <li>
-    <b>{{place.name}} </b>
+    <b>{{place.name}}</b>
     <a href="/places/{{place._id}}/edit"><i class="material-icons">create</i></a>
     <a href="/places/{{place._id}}/delete" uk-icon="icon: trash"><i class="material-icons">delete</i></a>
-    <br> About: {{place.description}}
+    <br><p style="font-size: 15px;">{{place.description}}
+      <br> Ubicación: {{place.location.coordinates.[0]}}, {{place.location.coordinates.[1]}}</p>
   </li>
   {{/each}}
 </ul>
 </div>
-<script>
-  mapboxgl.accessToken =
-    "pk.eyJ1IjoibWx6eiIsImEiOiJjanUwbTRtaTQxc3RzNDRtZmdtaXF1dXVxIn0.k3hMbEeCzUKaDn2sIsULjA";
-  var map = new mapboxgl.Map({
-    container: "map",
-    style: "mapbox://styles/mapbox/streets-v11"
-  });
-  map.addControl(
-    new MapboxDirections({
-      accessToken: mapboxgl.accessToken
-    }),
-    "top-left"
-  );
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      position => {
-        let { longitude, latitude } = position.coords;
-        const user_position = [longitude, latitude];
-        map.setZoom(13).setCenter(user_position);
-        const popup = new mapboxgl.Popup().setText("Aquistás");
-        const marker = new mapboxgl.Marker()
-          .setLngLat(user_position)
-          .setPopup(popup)
-          .addTo(map);
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  } else {
-    console.log("Cámbiate al Chrome");
-  }
-  map.addControl(new mapboxgl.NavigationControl());
-</script>
+  <script>
+    mapboxgl.accessToken =
+      "pk.eyJ1IjoibWx6eiIsImEiOiJjanUwbTRtaTQxc3RzNDRtZmdtaXF1dXVxIn0.k3hMbEeCzUKaDn2sIsULjA";
+    let map = new mapboxgl.Map({container: "map", style: "mapbox://styles/mapbox/streets-v11"});
+    
+    map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), "top-left");
+    map.addControl(new mapboxgl.NavigationControl());
+
+    let locations = [];
+    let names = [];
+    {{#each places as |place|}}
+      locations.push({{{place.location}}});
+      names.push("{{{place.name}}}");
+    {{/each}}
+    locations.forEach((place, i)=>{
+      let [lng,lat] = place.coordinates
+      let place_position = [lng, lat];
+      let popup = new mapboxgl.Popup().setText(names[i]);
+      let marker = new mapboxgl.Marker().setLngLat(place_position).setPopup(popup).addTo(map);
+      map.setZoom(10).setCenter(place_position);
+    });
+  </script>
 </div>
