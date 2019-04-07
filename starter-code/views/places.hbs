@@ -1,0 +1,56 @@
+<h1>Places</h1>
+
+<ul>
+  {{#each places as |pl|}}
+  <li>
+    <a href="/places/{{ pl._id }}">{{ pl.name }}</a>
+    <a href="/places/{{ pl._id }}/edit">editar</a>
+    <a href="/places/{{ pl._id }}/delete">borrar</a>
+  </li>
+  {{/each}}
+</ul>
+
+<div id="map" style="width: 100%; height: 400px;"></div>
+<script>
+  mapboxgl.accessToken =
+    "pk.eyJ1IjoibHVpc2Y4OSIsImEiOiJjanUwbHY2dGEyZDNhNDNvZmR6OTlraW9kIn0.lIjqQqEqNmbbbPR6lI0O0w";
+  var map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/mapbox/streets-v11"
+  });
+  map.addControl(
+    new MapboxDirections({
+      accessToken: mapboxgl.accessToken
+    }),
+    "top-left"
+  );
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        let { longitude, latitude } = position.coords;
+        const user_position = [longitude, latitude];
+        map.setCenter(user_position).setZoom(15);
+        const popup = new mapboxgl.Popup().setText("Aqui hay uno");
+        const marker = new mapboxgl.Marker()
+          .setLngLat(user_position)
+          .setPopup(popup)
+          .addTo(map);
+      },
+      err => {
+        console.log("No se pudo", err);
+      }
+    );
+  } else {
+    console.log("Usa chrome");
+  }
+  let n,mark,pop;
+  {{#each places }}
+   n = "{{this.name}}"
+   pop = new mapboxgl.Popup().setText(n);
+   mark = new mapboxgl.Marker()
+    .setLngLat([{{ this.location.coordinates.[0] }}, {{ this.location.coordinates.[1] }}])
+    .setPopup(pop)
+    .addTo(map);
+  {{/each}}
+      map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
+</script>
