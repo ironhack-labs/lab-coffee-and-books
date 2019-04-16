@@ -15,7 +15,7 @@ const Place = require("../models/place")
 // })
 
 Router.get('/', (req, res, next) => {
-  res.render("places")
+  res.render("places/indexPlaces")
 })
 
 Router.post('/', (req, res, next) => {
@@ -25,7 +25,18 @@ Router.post('/', (req, res, next) => {
 
 const {name, type, longitude, latitude} = req.body
   Place.create( {name, type, longitude, latitude})
-    .then(completedPlaces => res.redirect("/places"))
+    .then(completedPlaces => res.redirect("/places/indexPlaces"));
+})
+
+Router.get("/showPlaces", (req, res, next) => {
+    Place.find()
+    .then(places => {
+        res.render("places/showPlaces", {places});
+      })
+    .catch(err => {
+        console.log('Error while finding all places', err)
+        next()
+    })
 })
 
 module.exports = Router;
