@@ -1,0 +1,21 @@
+<h2>Places</h2>
+<div class="places">
+  {{#each places}}
+  <div class="placedetails">   
+    <div class="placelink"><a href="/places/{{this._id}}">{{this.name}}</a> 
+    <div class="formscontainer" style="float:right">
+      <form action="/places/{{this._id}}/delete"  method="post">
+        <div><button type="submit" class="buttondel">Delete</button></div>
+      </form>  
+      <form action="/places/{{this._id}}/edit"  method="get">
+        <div><button type="submit" class="buttondel">Edit</button></div>
+      </form>   
+    </div> 
+         
+  </div>   
+  </div>
+  {{/each}}
+  <br>
+  <br>
+  <a href="/">Home</a>
+</div>

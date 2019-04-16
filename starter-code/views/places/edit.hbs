@@ -1,0 +1,16 @@
+<h2>Modify a place</h2>
+<form action="/places/{{place.id}}/update" method="post">
+  <input type="hidden" name="_id" value="{{place._id}}">
+
+  <label for="">Title:</label>
+  <input type="text" name="name" value="{{place.name}}">
+
+  <label for="">Genre:</label>
+  <input type="text" name="type" value="{{place.type}}">
+
+
+  <button type="submit">UPDATE</button>
+</form>
+<br>
+<br>
+<a href="/">Home</a>
