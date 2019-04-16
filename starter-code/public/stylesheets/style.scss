@@ -6,3 +6,25 @@ body {
 a {
   color: #00B7FF;
 }
+
+.error-message {
+  background-color: rgba(255,0,0,0.8);
+  border-radius: 5px;  
+  margin-top: 15px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.Add-message {
+  background-color: rgba(0,255,0,0.8);
+  border-radius: 5px;  
+  margin-top: 15px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}

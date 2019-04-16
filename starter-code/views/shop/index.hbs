@@ -1,0 +1,14 @@
+<h1>Coffe Shop &amp; Bookstore</h1>
+{{#each shop}}
+  <ul>
+    <li>
+      <p>Name: {{this.name}}, Type: {{this.type}}, Latitude: {{this.location.coordinates.[0]}}, Longitude: {{this.location.coordinates.[1]}}</p>
+      <form action="/deleteShop" method="post">
+        <input type="hidden" name="id" value="{{this._id}}">
+        <button type="submit">DELETE</button>
+      </form>
+      <a href="/edit">Edit</a>
+    </li>
+  </ul>
+{{/each}}
+<a href="/add">Add a new Coffee Shop or a new Bookstore</a>
