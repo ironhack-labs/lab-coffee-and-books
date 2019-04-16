@@ -1,20 +1,29 @@
 const Place = require('../models/Place.model');
 
 module.exports = {
-  acceptedFields: ['name', 'type'],
-  getAcceptedFields(container){
-    const response = {};
-    this.acceptedFields.forEach(field => response[field] = container[field]);
-    return response;
+  acceptedPlaceType: ['CoffeeShop', 'Bookstore'],
+  getAcceptedPlaceType(){
+    return this.acceptedPlaceType;
+  },
+  getPlaceById(id){
+    return Place.findById(id);
   },
   getPlaces(filter = {}){
     return Place.find(filter);
   },
   createPlace(post){
-    return Place.create(this.getAcceptedFields(post));
+    return Place.create({
+      name: post.name,
+      type: post.type,
+      coordinates: [+post.longitude, +post.latitude],
+    });
   },
   updatePlace(id, post){
-    return Place.findByIdAndUpdate(id, this.getAcceptedFields(post));
+    return Place.findByIdAndUpdate(id, {
+      name: post.name,
+      type: post.type,
+      coordinates: [+post.longitude, +post.latitude],
+    });
   },
   removePlace(id){
     return Place.findByIdAndRemove(id);

@@ -5,8 +5,9 @@ module.exports = mongoose.model('Place', new Schema({
   name: String,
   type: {
     type: String,
-    enum: ['Coffee shop', 'Bookstore'],
+    enum: ['CoffeeShop', 'Bookstore'],
   },
+  coordinates: [Number],
 },
 {
   timestamps: true,

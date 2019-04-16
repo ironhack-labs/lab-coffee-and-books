@@ -1,5 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+App = {
+  // getPlaces(){
+  //   return axios.get('./places/list');
+  // },
+  // renderPlaces(elementBefore){
+  //   this.getPlaces()
+  //     .then(places => {
+  //       const td = document.createElement('td');
+  //       places.forEach(place => {
+  //         const tr = document.createElement('tr');
 
-  console.log('IronGenerator JS imported successfully!');
-
-}, false);
+  //       })
+  //       elementBefore.appendChild
+  //     });
+  //     // Handle error
+  // },
+};

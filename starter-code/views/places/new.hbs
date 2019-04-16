@@ -1,0 +1,28 @@
+<h1>Create new place</h1>
+<label for="name">Name</label>
+<input type="text" name="name">
+<select name="type">
+  <option value="Bookstore">Book Store</option>
+  <option value="CoffeeShop">Coffee Shop</option>
+</select>
+<label for="name">Latitude</label>
+<input type="text" name="latitude">
+<label for="name">longitude</label>
+<input type="text" name="longitude">
+<input type="submit" value="Create">
+<script>
+  document.querySelector('input[type="submit"]').onclick = submitForm;
+  function submitForm(){
+    var name = document.querySelector('input[name="name"]');
+    var select = document.querySelector('select');
+    var latitude = document.querySelector('input[name="latitude"]');
+    var longitude = document.querySelector('input[name="longitude"]');
+    axios.post('/places/new', {
+      name: name.value,
+      select: select.options[select.options.selectedIndex].value,
+      latitude: latitude.value,
+      longitude: longitude.value,
+    })
+      .then(() => window.location.replace(window.location.origin + '/'));
+  }
+</script>
