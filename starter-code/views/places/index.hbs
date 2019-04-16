@@ -1,0 +1,19 @@
+<h1>Coffee shops and Bookstores</h1>
+
+{{#each places}}
+<div class="place-card">
+  <h2>{{this.name}}</h2>
+  <p>{{this.type}}</p>
+  <ul>
+    <li>
+      <a href="/places/update/{{this._id}}"><button>Update</button></a>
+    </li>
+    <li><form action="/places/delete/{{this._id}}" method="POST">
+      <button>Delete</button>
+    </form>
+    </li>
+  </ul>
+</div>
+{{/each}}
+
+<a href="/places/add"> Add place</a>

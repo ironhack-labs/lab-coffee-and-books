@@ -1,0 +1,9 @@
+<form action="/places/update" method="POST">
+  <input type="hidden" name="id" value="{{place._id}}">
+  <input type="text" name="name" value="{{place.name}}">
+  <select name="type">
+    <option value="coffee shop" {{#is place.type "coffee shop"}} selected{{/is}}>Coffee shop</option>
+    <option value="bookstore" {{#is place.type "bookstore"}} selected{{/is}}>Bookstore</option>
+  </select>
+  <button>Update</button>
+</form>
