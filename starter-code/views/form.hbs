@@ -1,0 +1,15 @@
+<form action="/{{route}}" method="post">
+  <input type="hidden" name="_id" value="{{place._id}}">
+  <label for="">Name:</label>
+  <input type="text" name="name" value='{{place.name}}'>
+  <label for="">Type: </label>
+  <select name="type">
+    <option value="coffee shop">Coffee shop</option>
+    <option value="bookstore" {{#if option}}selected{{/if}}>Bookstore</option>
+  </select>
+  <label for="">Long:</label>
+  <input type="text" name="long" value={{place.long}}>
+  <label for="">Lat:</label>
+  <input type="text" name="lat" value={{place.lat}}>
+  <button type="submit">{{route}}!!</button>
+</form>
