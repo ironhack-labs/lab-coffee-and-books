@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/places', (req,res)=>{
-
+  res.render('map')
 });
 
 router.get('/add', (req, res) =>{
