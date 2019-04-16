@@ -1,0 +1,29 @@
+<form action="/places" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+    </div>
+    <br>
+    <div>
+        <select name="Places">
+            <option value="coffeeShop">Coffee Shop</option>
+            <option value="bookstore">Bookstore</option>
+        </select>
+    </div>
+    <br>
+    <div>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="longitude">
+        <label for="name">Name:</label>
+        <input type="text" name="latitude">
+    </div>
+    <br>
+
+    {{#if message}}
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+    <div>
+        <input type="submit" value="Add new place">
+    </div>
+</form>
