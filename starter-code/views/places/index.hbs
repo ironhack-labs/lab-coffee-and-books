@@ -1,0 +1,12 @@
+{{#each places}}
+<h2><a class="boton marginTop" href="/places/{{_id}}">{{name}}</a></h2>
+
+<form action="/places/{{_id}}/delete" method="post">
+   <input class="boton" type="submit" value="Delete">
+
+</form>
+<h2><a class="boton" href="/places/{{_id}}/edit">Edita lugar</a></h2>
+{{/each}}
+
+
+<h2><a class="boton marginBot" href="/places/new">Crear nuevo lugar</a></h2>

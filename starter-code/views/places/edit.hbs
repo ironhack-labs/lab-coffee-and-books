@@ -1,0 +1,14 @@
+<h2>Edita el sitio</h2>
+
+<form action="/places/{{_id}}" method="post">
+  <label for="name-input">Name:</label>
+  <input id="name" type="text" name="name" value={{name}}>
+
+  <label for="type-input">type:</label>
+  <input id="type-input" type="text" name="type" value={{type}}>
+
+  <label for="timestamps-input">Catch Phrase:</label>
+  <input id="timestamps-input" type="text" name="timestamps" value={{timestamps}}>
+
+  <input type="submit" value="Save Name">
+</form>
