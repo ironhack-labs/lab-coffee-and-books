@@ -8,7 +8,8 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/placesMap', (req,res)=>{
-  res.render('map')
+  let apikey = process.env.APIKEY
+  res.render('map', apikey)
 });
 
 router.get('/places', (req,res)=>{
