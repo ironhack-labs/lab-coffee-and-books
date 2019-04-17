@@ -12,6 +12,17 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.get('/json', (req, res, next) => {
+  Movie.find({})
+    .then(responses => {
+      res.json( {pan: responses})
+    })
+    .catch(err => {
+      res.render('./error', err)
+    });
+});
+
+
 router.get('/new', (req, res, next) => {
   res.render('./movies/new');
 });

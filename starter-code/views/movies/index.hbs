@@ -1,12 +1,12 @@
-<h2>Movies overview</h2>
+<h2>Places overview</h2>
+<br>
 
 {{#each movies}}
-  <h3>{{title}}</h3> 
-  <p><a href="/movies/{{_id}}">Show details</a></p>
-  <p><a href="/movies/{{_id}}/edit">Edit movie</a></p>
+  <h3 class="mt-3">Place: {{title}}</h3> 
+  <p><a href="/movies/{{_id}}">Show details</a> | <a href="/movies/{{_id}}/edit">Edit Place</a></p>
   <form action="/movies/{{_id}}/delete" method="post">
-    <button>Delete movie</button>
+    <button class="btn btn-danger">Delete Place</button>
   </form> 
 {{/each}}
 
-<p><a href="/movies/new">Add a new movie!</a></p>
+<p><a href="/movies/new" class="btn btn-success mt-3">Add a new Place!</a></p>

@@ -9,23 +9,33 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <style>
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+  </style>
 </head>
 
 <body>
 
   <nav class="nav justify-content nav-pills nav-fill p-3 align-items-center">
     <a class="p-3 m-3 nav-link active" href="/">home</a>
-    <a class="p-3 m-3 nav-link active" href="/celebrities">celebrities</a>
-    <a class="p-3 m-3 nav-link active" href="/movies">movies</a>
+    <a class="p-3 m-3 nav-link active" href="/movies">places</a>
   </nav>
-<div class="container">
-  {{{body}}}
-</div>
-  
+  <div class="container">
+    {{{body}}}
+  </div>
+  <h3>My First Map</h3>
+  <div id="map"></div>
+
   <footer class="nav p-3 align-items-center">
-    <a  class="btn btn-warning m-3" href="./">Go back</a></p>
+    <a class="btn btn-warning m-3" href="./">Go back</a></p>
     <a class="p-3 m-3 nav-link " href="http://bolonesa.com/">Done by Rafa</a>
   </footer>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADeKvJWEC47zlBu8sFoS_CnPIBxmok_Q0"></script>
   <script src="/javascripts/script.js"></script>
 </body>
 
