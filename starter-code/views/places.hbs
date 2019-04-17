@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="/places/newPlaces">New Place</a>
+  <div>
+    {{#each placesData}}
+    {{!-- <a href="/places/editPlaces">{{this.name}}</a> --}}
+    <div>
+      {{this.name}}
+      <a href="/places/editPlaces">Edit</a>
+      <button>Delete</button>
+    </div>
+
+    {{/each}}
+  </div>
+</body>
+
+</html>
