@@ -1,12 +1,14 @@
-<form action="/" method="POST">
+<h4>{{name}} - {{type}} - {{location.coordinates}}</h4>
+
+<form action="/update/{{_id}}" method="POST">
   <div>
     <label for="name">Name:</label>
-    <input id="name" type="text" name="name">
+    <input id="name" type="text" name="name" value="{{name}}">
   </div>
   
   <div>
     <label for="type">Type:</label>
-    <select name="type" id="type">
+    <select name="type" id="type" value="{{type}}">
       <option value="coffee shop">coffee shop</option>
       <option value="bookstore">bookstore</option>
     </select> 
@@ -27,16 +29,6 @@
   {{/if}}
 
   <div>
-    <input type="submit" value="Add">
+    <input type="submit" value="Update">
   </div>
 </form>
-
-<div id="placelist">
-  {{#each places}}
-  <div class="place-container">
-    <h4>{{this.name}} - {{this.type}} - {{this.location.coordinates}}</h4>
-    <form action="/delete/{{this._id}}" method="POST"><input type="submit" value="Delete"></form>
-    <form action="/update/{{this._id}}" method="GET"><input type="submit" value="Update"></form>
-  </div>
-  {{/each}}
-</div>
