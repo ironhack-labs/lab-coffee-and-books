@@ -3,6 +3,16 @@ const router  = express.Router();
 //
 const Place = require('../models/place');
 
+router.get('/findplaces', (req, res, next) => {
+  Place.find({})
+  .then((places)=>{
+    res.json(places);
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+} );
+
 router.get('/', (req, res, next) => {
   Place.find({})
   .then((places)=>{
@@ -22,8 +32,8 @@ router.get('/new', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {  
-  const { name, type } = req.body;
-  const newPlace = new Place({ name, type })
+  const { name, type, lat, lng} = req.body;
+  const newPlace = new Place({ name, type, lat, lng })
   newPlace.save()
     .then((place) => {
       res.redirect('/places');
@@ -70,8 +80,8 @@ router.get('/:placeId/edit', (req, res, next) => {
 
 router.post('/:id/update' , (req, res, next) =>{
   console.log(req.body);
-  const {_id, name, type} = req.body ;
-  console.log(`${_id}, ${name}, ${type}`);
+  const {_id, name, type, lat, lng} = req.body ;
+  console.log(`${_id}, ${name}, ${type}, ${lat}, ${lng}`);
   Place.findByIdAndUpdate(_id, req.body , {new: true})
   .then((place)=>{
     res.redirect('/places');

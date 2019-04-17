@@ -15,9 +15,13 @@ mongoose
 
 const places = [
   {name: "Cafeteria 1",
-  type : 'coffee shop'},
+  type : 'coffee shop',
+  lat:40.4159053,
+  lng:-3.7039018},
   {name: "Librería 1",
-  type : 'bookstore'}
+  type : 'bookstore',
+  lat:40.4233828,
+  lng:-3.7121647}
 ];
 
 

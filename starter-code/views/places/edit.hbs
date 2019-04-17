@@ -2,12 +2,17 @@
 <form action="/places/{{place.id}}/update" method="post">
   <input type="hidden" name="_id" value="{{place._id}}">
 
-  <label for="">Title:</label>
+  <label for="">Name:</label>
   <input type="text" name="name" value="{{place.name}}">
 
-  <label for="">Genre:</label>
+  <label for="">Type:</label>
   <input type="text" name="type" value="{{place.type}}">
 
+  <label for="">Latitude:</label>
+  <input type="text" name="lat" value="{{place.lat}}">
+
+  <label for="">Length:</label>
+  <input type="text" name="lng" value="{{place.lng}}">
 
   <button type="submit">UPDATE</button>
 </form>
