@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/placesMap', (req,res)=>{
   let apikey = process.env.APIKEY
-  res.render('map', apikey)
+  res.render('map', {apikey: apikey})
 });
 
 router.get('/places', (req,res)=>{
