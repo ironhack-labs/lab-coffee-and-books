@@ -7,8 +7,10 @@
         <input type="hidden" name="id" value="{{this._id}}">
         <button type="submit">DELETE</button>
       </form>
-      <a href="/edit">Edit</a>
+      <a href="/edit/{{this.id}}">Edit</a>
     </li>
   </ul>
 {{/each}}
 <a href="/add">Add a new Coffee Shop or a new Bookstore</a>
+<br><br>
+<a href="/maps">See Coffee Shop or Bookstore on the map!</a>

@@ -17,6 +17,16 @@ router.get("/add", (req, res, next) => {
   res.render('shop/add');
 });
 
+router.get("/places", (req,res) => {
+  Shop.find()
+  .then(places => res.json(places));
+});
+
+//map
+router.get("/maps", (req, res, next) => {
+  let apikey = process.env.APIKEY;
+  res.render('shop/maps', {apikey: apikey});
+});
 
 //create new shop
 router.post('/add', (req, res) => {
@@ -69,7 +79,7 @@ router.post('/deleteShop', (req, res, next) => {
 });
 
 //edit shop
-router.get("/edit", (req, res, next) => {
+router.get("/edit/:id", (req, res, next) => {
   let shopId = req.params.id;
   Shop.findById(shopId)
   .then((shop) => {
@@ -80,16 +90,17 @@ router.get("/edit", (req, res, next) => {
   })
 });
 
-// router.post('/edit', (req, res, next) => {
-//   const {name, type, location} = req.body;
-//   let roterId = req.params.id;
-//   Celebrity.findByIdAndUpdate(roterId, req.body)
-//   .then(() => {
-//     res.redirect('shop/index');
-//   })
-//   .catch(() => {
-//     next(err);
-//   })
-// });
+router.post('/edit/:id', (req, res, next) => {
+  let shopId = req.params.id;
+  const {name, type, location} = req.body;
+  Shop.findByIdAndUpdate(shopId, req.body)
+  .then(() => {
+    res.redirect('/');
+  })
+  .catch(() => {
+    res.render("shop/edit", { message: "Something went wrong" });
+  })
+});
+
 
 module.exports = router;

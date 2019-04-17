@@ -1,5 +1,6 @@
 body {
-  padding: 50px;
+  margin: 0;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
@@ -24,5 +25,9 @@ a {
   justify-content: center;
   align-items: center;
   padding: 10px 0; }
+
+.map {
+  height: 100vh;
+  width: 100vw; }
 
 /*# sourceMappingURL=style.css.map */
