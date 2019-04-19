@@ -1,2 +1,40 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>List of coffee shop and bookstore nearby</h1>
+<div id='map' style='width: 1000px; height: 300px;'></div>
+
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+
+  var markerHeight = 20, markerRadius = 3, linearOffset = 10;
+  var popupOffsets = {
+    'top': [0, 0],
+    'top-left': [0, 0],
+    'top-right': [0, 0],
+    'bottom': [0, -markerHeight],
+    'bottom-left': [linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+    'bottom-right': [-linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+    'left': [markerRadius, (markerHeight - markerRadius) * -1],
+    'right': [-markerRadius, (markerHeight - markerRadius) * -1]
+  };
+
+
+  axios.get('/api/places')
+    .then((response) => {
+      let places = response.data
+      places.forEach((place) => {
+        let coordinate = place.location.coordinates
+        var marker = new mapboxgl.Marker()
+          .setLngLat(coordinate)
+          .addTo(map);
+
+        var popup = new mapboxgl.Popup({ offset: popupOffsets, className: 'my-class' })
+          .setLngLat(coordinate)
+          .setHTML(`<h4>${place.name}</h4>`)
+          .addTo(map);
+      })
+    })
+</script>
