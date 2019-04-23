@@ -1,0 +1,23 @@
+<img src="{{place.image}}" alt="{{place.name}}">
+<h2>{{place.name}}</h2>
+<p>Category: {{place.category}}</p>
+<p>{{place.stars}} stars</p>
+<div id="map" style="width: 600px; height: 300px"></div>
+<p>
+  <a href="/places/{{place._id}}/edit">Edit</a> | <a href="/places/{{place._id}}/delete">Delete</a>
+</p>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYnJlbm5lZGl0aCIsImEiOiJjanV0eWp6YnkwNXNxNGVsbDE2b2xpdmY0In0.UHhz0xvT4fo6bkeOKmMSSg';
+
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [{{ place.location.coordinates }}],
+    zoom: 15
+  });
+
+  const marker = new mapboxgl.Marker()
+    .setLngLat([{{ place.location.coordinates }}])
+    .addTo(map);
+</script>
