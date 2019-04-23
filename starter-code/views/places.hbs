@@ -1,0 +1,11 @@
+<body class="places__body">
+  <h1 class="h1__index">ALL THE PLACES</h1>
+  {{#each places as |place|}}
+    <a href="/places/{{place._id}}">
+    <img class="places__img" src="{{place.image}}" alt="{{place.name}}" width="200"/>
+    </a>
+    <a href="/places/{{place._id}}">
+    <h2>{{place.name}}</h2>
+    </a>
+  {{/each}}
+</body>

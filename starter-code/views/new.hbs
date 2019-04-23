@@ -1,0 +1,50 @@
+<body class="new__body">
+  <form action="{{action}}" method="POST">
+  <p>
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{place.name}}"/>
+  </p>
+  <p>
+    <label>Image:</label>
+    <input type="text" name="image" value="{{place.image}}"/>
+  </p>
+  <p>
+    <label>Stars:</label>
+    <input type="number" name="stars" value="{{place.stars}}"/>
+  </p>
+  <p>
+    <label>Category:</label>
+    <select name="category">
+      <option value="Coffee Shop">Coffee Shop</option>
+      <option value="Book store">Book store</option>
+    </select>
+  </p>
+  <p>
+    <input type="text" name="location[coordinates][0]" id="lng" hidden="true" value="{{place.location.coordinates.[0]}}"/>
+    <input type="text" name="location[coordinates][1]" id="lat" hidden="true" value="{{place.location.coordinates.[1]}}"/>
+  </p>
+  <input type="submit" value="{{button}}">
+</form>
+
+<div id='map' style='width: 800px; height: 400px;'></div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.0/mapbox-gl-geocoder.min.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoidmljdG9yaWFwbCIsImEiOiJjanV0eWk4bzQwZDVuM3luaTZoeGV1MGdtIn0.oSHfkDISD3jLqYOLuTXP7Q';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+  })
+  const geoCoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+  })
+  map.addControl(geoCoder)
+
+  geoCoder.on('result', res => {
+    document.getElementById('lng').value = res.result.center[0]
+    document.getElementById('lat').value = res.result.center[1]
+  })
+
+</script>
+</body>

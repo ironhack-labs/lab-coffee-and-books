@@ -4,5 +4,77 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+  text-decoration: none;
+}
+
+.h1__index{
+  color: brown;
+  font-size: 50px;
+}
+
+.body__index {
+  background-image: url('http://www.wordisout.com.au/wp-content/uploads/2016/02/second-Saturday.jpg')
+}
+
+.button__index { 
+  border: 2px solid brown;
+  padding: 10px;
+  color: brown;
+  text-decoration: none;
+  margin-top: 10%;
+}
+
+.places__body {
+  background-image: url('http://www.wordisout.com.au/wp-content/uploads/2016/02/second-Saturday.jpg')
+}
+
+.button__detail {
+  position: relative;
+  border: 2px solid white;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.detail__container {
+  background:rgba(0,0,0,0.5);
+  color: white;
+  width: 30%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  margin-left: 33%;
+}
+
+.detail__p {
+  text-align: center;
+}
+
+.detail__h2 {
+  color: white;
+  margin-left: 45%;
+}
+
+.detail__img {
+  margin-left: 24%;
+}
+
+.center {
+  margin-left: 37%;
+}
+
+#map {
+  margin-left: 13%;
+}
+
+.center__btn {
+  margin-left: 42%;
+}
+
+.new__body {
+  background-image: url('http://www.wordisout.com.au/wp-content/uploads/2016/02/second-Saturday.jpg')
 }
