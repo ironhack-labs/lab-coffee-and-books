@@ -1,0 +1,37 @@
+  <div class="col s12 m12">
+    {{!-- <h2 class="header"></h2> --}}
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="{{image}}">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h4>{{name}}</h4>
+          <p>Category: {{category}}</p>
+          <p>{{stars}} stars</p>
+        </div>
+      <div id="map" style="width:600px; height:300px"></div>
+        <div class="card-action">
+          <a class="white-text btn blue" href="/places/{{_id}}/edit">Edit</a>
+          <a class="white-text btn red" href="/places/{{_id}}/delete">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<script src='https://static-assets.mapbox.com/gl-pricing/dist/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.3/mapbox-gl-directions.js'></script>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoicGhpY2siLCJhIjoiY2p1dHlpdGhqMGQ2azN6cWl1N3UxcTBmYyJ9.CSgR_P7mP1cC9-7AIC4hlQ';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [{{ location.coordinates }}],
+    zoom:17,
+  });
+  new mapboxgl.Marker({color:'red'}).setLngLat([{{location.coordinates}}]).addTo(map)
+</script>
