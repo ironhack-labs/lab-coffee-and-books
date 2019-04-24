@@ -1,0 +1,31 @@
+<h2>{{name}}</h2>
+<img src="{{image}}" alt="{{name}}">
+<p>Category: {{category}}</p>
+<p>Rank: {{starts}}</p>
+
+<div id="map" style="width: 400px; height: 300px"></div>
+
+<br><br>
+<a href="/places/{{_id}}/edit">
+  <button>Edit</button>
+</a>
+<a href="/places/{{_id}}/delete">
+  <button>Delete</button>
+</a>
+
+<script src='https://static-assets.mapbox.com/gl-pricing/dist/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoieWVhaGJldG95ZWFoIiwiYSI6ImNqdXR5aTVycTBkM3E0M3AxZmlqdXJlMHMifQ.KPkktYTj4hGvbppjP0d2AQ';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [{{ location.coordinates }}],
+    zoom: 15
+  })
+  new mapboxgl.Marker({
+      color: 'yellow',
+      draggable: true
+    })
+    .setLngLat([{{ location.coordinates }}])
+    .addTo(map)
+</script>
