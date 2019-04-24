@@ -1,4 +1,4 @@
-require('dotenv').config();
+//require('dotenv').config();
 
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -27,7 +27,8 @@ const app = express();
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+//Cambiar a true para detectar la sintaxis de objeto en el name de la vista
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Express View engine setup
