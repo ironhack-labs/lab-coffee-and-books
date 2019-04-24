@@ -1,0 +1,27 @@
+<script src="https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.3/mapbox-gl-directions.js'></script>
+
+<img src="{{image}}" alt="{{name}}" style="width: 200px">
+<h2>{{name}}</h2>
+<p>CATEGORY: {{category}}</p>
+<p>{{stars}} stars</p>
+<div id="map" style="width: 800px; height: 400px;"></div>
+
+<a href="/places/{{_id}}/edit">Edit</a>
+<br>
+<a href="/places/{{_id}}/delete">Delete</a>
+
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VzdGF2dm9wZW5uYSIsImEiOiJjanV0eWlhZjgwZDlwNDRyempvNW9pOG85In0.f9OVdpDp8Lvhb1tKSEcjlA';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center:  [{{ location.coordinates }}] ,
+    zoom: 18
+  })
+
+  new mapboxgl.Marker()
+  .setLngLat([{{ location.coordinates }}])
+  .addTo(map)
+</script>

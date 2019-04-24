@@ -1,2 +1,43 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<script src="https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.3/mapbox-gl-directions.js'></script>
+
+<h1>Bars, Restaurants & Coffee Shops</h1>
+
+<a href="/places">See all the places</a>
+<hr>
+<a href="/places/new">Create a new place</a>
+<hr>
+
+{{!-- <script>
+  
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VzdGF2dm9wZW5uYSIsImEiOiJjanV0eWlhZjgwZDlwNDRyempvNW9pOG85In0.f9OVdpDp8Lvhb1tKSEcjlA';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-99.1678488, 19.4202721],
+zoom: 15
+})
+
+if(!navigator.geolocation) {
+  console.log('tu navegador esta viejo')
+} else {
+  navigator.geolocation.getCurrentPosition(position => {
+    const center = [
+    position.coords.longitude,
+    position.coords.latitude
+    ]
+    map.setCenter(center)
+    const marker = new mapboxgl.Marker()
+    .setLngLat(center)
+    .addTo(map)
+  })
+}
+
+map.addControl(new MapboxDirections({
+  accessToken: mapboxgl.accessToken
+}), 'top-left')
+
+
+
+</script> --}}
+

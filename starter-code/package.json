@@ -1,10 +1,10 @@
 {
-  "name": "starter-code",
+  "name": "lugares-mamadores",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "DEBUG=starter-code:* nodemon ./bin/www",
+    "dev": "DEBUG=lugares-mamadores:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www"
   },
   "dependencies": {

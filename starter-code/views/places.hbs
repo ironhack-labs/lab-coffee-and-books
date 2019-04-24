@@ -1,0 +1,22 @@
+<div style="display: flex; flex-wrap: wrap;">
+{{#each places as |place|}}
+  <div class="card" style="width: 30%; margin: 20px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <a href="/places/{{place._id}}">
+        <img class="activator" src="{{place.image}}" alt="{{place.name}}" />
+      </a>
+    </div>
+    <div class="card-content">
+      <a href="/places/{{place._id}}">
+        <span class="card-title grey-text text-darken-4">{{place.name}}</span>
+      </a>
+      <p>
+        <a href="/places/{{place._id}}/edit">Edit</a>
+      </p>
+      <p>
+        <a href="/places/{{place._id}}/delete">Delete</a>
+      </p>
+    </div>
+  </div>
+{{/each}}
+</div>
