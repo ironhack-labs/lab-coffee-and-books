@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const placeSchema = new mongoose.Schema({
   name: String,
+  image: String,
   category: {
     type: String,
     enum: ['Coffee Shop', 'Bookstore']

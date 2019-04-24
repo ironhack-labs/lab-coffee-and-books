@@ -8,21 +8,16 @@
     <label for="image">Image Url</label>
     <input type="text" name="image" value="{{place.image}}"/>
   </div>
-  <div class="input-field col s4">
-    <label for="stars">Stars</label>
-    <input class="center" type="number" name="stars" value="{{place.stars}}" />
-  </div>
-      <select class="browser-default col s8"name="category" id="category">
-        <option value="Bar">Bar</option>
-        <option value="Restaurant">Restaurant</option>
-        <option value="Coffee">Coffee</option>
+      <select class="browser-default col s6 "name="category" id="category">
+        <option value="Bookstore">Bookstore</option>
+        <option value="Coffee Shop">Coffee Shop</option>
       </select>
 
   <p>
     <input type="text" name="location[coordinates][0]" id="lng" hidden="true" value="{{place.location.coordinates.[0]}}"/>
     <input type="text" name="location[coordinates][1]" id="lat" hidden="true" value="{{place.location.coordinates.[1]}}"/>
   </p>
-  <input class="col s3 offset-s6 btn right red"type="submit" value="{{button}}">
+  <input class="col s4 btn right red"type="submit" value="{{button}}">
   </form>
   <div class="col s7 offset-s2" id="map" style="width:800px; height:400px"></div>
 </div>

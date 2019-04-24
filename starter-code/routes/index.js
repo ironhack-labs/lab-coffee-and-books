@@ -1,5 +1,6 @@
 const express = require('express');
 const router  = express.Router();
+const Place   = require('../models/Place')
 
 router.get('/', (req, res, next) => res.render('index'))
 
@@ -16,6 +17,14 @@ router.post('/places/new', (req,res,next) => {
   Place.create({ ...req.body })
     .then(place => {
       res.redirect(`/places/${place._id}`)
+    })
+    .catch(err => res.send(err))
+})
+
+router.get('/places', (req,res,next) => {
+  Place.find()
+    .then(places => {
+      res.render('places',{ places })
     })
     .catch(err => res.send(err))
 })
