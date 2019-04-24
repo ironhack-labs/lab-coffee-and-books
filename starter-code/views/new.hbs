@@ -1,0 +1,52 @@
+<form action="{{action}}" method="POST">
+  <p>
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{place.name}}"/>
+  </p>
+  <p>
+    <label>Image:</label>
+    <input type="text" name="image" value="{{place.image}}"/>
+  </p>
+  <p>
+    <label>Category:</label>
+    <select name="category">
+      <option value="coffee shop">Coffee Shop</option>
+      <option value="bookstore">BookStore</option>
+    </select>
+  </p>
+  <p>
+    <input type="text" name="location[coordinates][0]" id="lng" hidden="true" value="{{place.location.coordinates.[0]}}"/>
+    <input type="text" name="location[coordinates][1]" id="lat" hidden="true" value="{{place.location.coordinates.[1]}}"/>
+  </p>
+  <input type="submit" value="{{button}}">
+</form>
+
+<div id='map' style='width: 800px; height: 400px;'></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB55L-sl05uBCd3uyi9Dx-J3VR6JpMd0hE"></script>
+
+<script>
+function startMap() {
+  const ironhackBCN = {
+  	lat: 19.4212752,
+  	lng: -99.1631294};
+  const map = new google.maps.Map(
+    document.getElementById('map'),
+    {
+      zoom: 15,
+      center: ironhackBCN
+    }
+  );
+  const myMarker = new google.maps.Marker({
+  position: {
+  	lat: 19.4212752,
+  	lng: -99.1631294
+  },
+  map: map,
+  title: "I'm here"
+});
+}
+
+startMap();
+
+</script>
