@@ -1,0 +1,40 @@
+<img src="{{image}}" alt="{{name}}" width="200">
+<h2>{{name}}</h2>
+<p>Category: {{category}}</p>
+<div id="map" style="width: 800px; height: 400px;">
+
+</div>
+<a href="/places/{{_id}}/edit">
+  <button >Edit</button>
+</a>
+
+<a href="/places/{{_id}}/delete">
+  <button>Delete</button>
+</a>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB55L-sl05uBCd3uyi9Dx-J3VR6JpMd0hE"></script>
+
+<script>
+function startMap() {
+  const ironhackBCN = {
+  	lat: 19.4212752,
+  	lng: -99.1631294};
+  const map = new google.maps.Map(
+    document.getElementById('map'),
+    {
+      zoom: 15,
+      center: ironhackBCN
+    }
+  );
+  const myMarker = new google.maps.Marker({
+  position: {
+  	lat: 19.4212752,
+  	lng: -99.1631294
+  },
+  map: map,
+  title: "I'm here"
+});
+}
+
+startMap();
+</script>
