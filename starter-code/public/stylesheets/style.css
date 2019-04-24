@@ -1,0 +1,101 @@
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url(../images/bg.jpg) no-repeat;
+  background-size: cover; }
+
+img {
+  max-width: 100%; }
+
+a {
+  color: #00B7FF;
+  text-decoration: none; }
+
+#home, #container {
+  width: 100%;
+  padding: 2rem;
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10%;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+#home h1 {
+  font-size: 2rem;
+  color: white; }
+
+#home a {
+  padding: 1rem;
+  background: darkblue;
+  display: block;
+  box-sizing: border-box;
+  color: white;
+  display: inline-block; }
+
+#home a:hover {
+  background: #999;
+  color: #333; }
+
+#container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-count: 2; }
+
+.bookstore {
+  background: olive; }
+
+.coffee-shop {
+  background: darkcyan; }
+
+#container article {
+  width: 48%;
+  box-sizing: border-box;
+  padding: 1rem;
+  margin-bottom: 2rem; }
+
+.coffee-shop a, .bookstore a {
+  position: relative;
+  bottom: 0px;
+  height: 2rem;
+  display: block;
+  background: black;
+  width: 100%;
+  box-align: border-box;
+  line-height: 2rem;
+  color: white; }
+
+#detail {
+  display: block;
+  width: 100%; }
+
+#detail h1 {
+  color: white;
+  font-size: 2rem; }
+
+#detail a {
+  float: left;
+  display: inline-block;
+  margin-right: 20px; }
+
+#map {
+  height: 400px;
+  width: 800px; }
+
+#detail img, #detail #map {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 240px;
+  width: 45%; }
+
+#content {
+  padding: 1rem;
+  background: white;
+  box-sizing: border-box;
+  -webkit-box-shadow: -6px -8px 12px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -6px -8px 12px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -6px -8px 12px 0px rgba(0, 0, 0, 0.75); }
+
+/*# sourceMappingURL=style.css.map */
