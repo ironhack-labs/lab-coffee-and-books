@@ -1,0 +1,29 @@
+<div class="row">
+{{#each places as |place|}}
+    <div class="col s4 m4">
+      <div class="card black">
+        <div class="card-image medium">
+          <a href="/places/{{place._id}}">
+            <img max-height="100px" src="{{place.image}}" alt="{{place.name}}">
+          </a>
+          <a href="/places/{{_id}}/edit" class="btn-floating halfway-fab waves-effect waves-light blue btn-large"><i class="material-icons">edit</i></a>
+        </div>
+          <a href="/places/{{place._id}}">
+            <h4 class="card-title white-text">{{place.name}}</h4>
+          </a>
+        <div class="card-action">
+          <a class="white-text btn-floating btn-medium red" href="/places/{{_id}}/delete"><i class="material-icons">delete</i></a>
+          <br><br>
+        </div>
+      </div>
+    </div>
+{{/each}}
+<div class="fixed-action-btn">
+  <a href="/places/new" class="btn-floating btn-large red">
+    <i class="material-icons">add_circle_outline</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+</ul>
+</div>
+</div>
