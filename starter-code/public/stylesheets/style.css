@@ -1,0 +1,13 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+.places {
+  display: flex;
+  flex-direction: column;
+  color: palevioletred;
+  background-color: paleturquoise;
+  font-size: 20px;
+  margin-bottom: 20px; }
+
+/*# sourceMappingURL=style.css.map */

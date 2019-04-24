@@ -1,0 +1,27 @@
+<div class ="places">
+<h2>Name:{{name}}</h2>
+<img src="{{image}}" alt="{{name}}" style="width: 200px">
+<h2>{{name}}</h2>
+<p>CATEGORY: {{category}}</p>
+<p>{{stars}} stars</p>
+<div id="map" style="width: 800px; height: 400px;"></div>
+
+<a href="/places/{{_id}}/edit">Edit</a>
+<br>
+<a href="/places/{{_id}}/delete">Delete</a>
+
+</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2llZ3JpY2hvIiwiYSI6ImNqdXR5am8xcjBkOGM0ZXBoeThjN2wyODEifQ.9JB40q3MPOBf6NO9rWk9CA';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-99.1653181, 19.4212802],
+zoom: 15,
+center:[{{ location.coordinates }}]
+});
+
+new mapboxgl.Marker()
+.setLngLat([{{location.coordinates}}])
+.addTo(map)
+</script>
