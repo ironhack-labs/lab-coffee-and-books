@@ -1,0 +1,9 @@
+{{#each places as |place|}}
+<a href="/places/{{place._id}}">
+<img src = "{{place.image}}" alt="{{place.name}}" width="200px">
+</a>
+
+<a href="/places/{{place._id}}">
+<h2>{{place.name}}</h2>
+</a>
+{{/each}}

@@ -1,0 +1,37 @@
+<h2>{{name}}</h2>
+<img src="{{image}}" alt="{{name}}" width="200px">
+
+<p> Category: {{category}}</p>
+
+<p>stars:  {{stars}} </p>
+
+
+
+<div id = "map" style="width: 800px; heigth: 400px;"></div>
+
+
+<a href="/places/{{_id}}/edit">
+<button>Edit</button>
+</a>
+
+<a href="/places/{{_id}}/delete">
+<button>Delete</button>
+</a>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.0/mapbox-gl-geocoder.min.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2F1bHNjcyIsImEiOiJjanV0eWlpdGcwZDZoM3pxaWduejRubWN3In0.43SAqvXyqdtcylVJ5LB_gg';
+
+const map = new mapboxgl.Map({
+  container: "map",
+  style: "mapbox://styles/mapbox/streets-v11",
+  center: [{{location.coordinates}}],
+  zoom: 15
+})
+
+new mapboxgl.Marker()
+.setLngLat([{{location.coordinates}}])
+.addTo(map)
+</script>
