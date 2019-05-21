@@ -1,0 +1,36 @@
+<h1>Lista de sitios</h1>
+
+
+<ul>
+  
+  {{#each places}}
+  <li>
+    <a href="/place/detail/{{this._id}}">{{this.name}}</a>
+    ---
+    <a href="/place/edit?place_id={{this._id}}">Editar</a>
+  </li>
+  <br>
+  <form action="/place/delete/{{this._id}}" method="POST">    
+    <button type="submit">Eliminar</button>
+  </form>
+<br>
+  {{/each}}
+
+</ul>
+
+
+<br>
+
+
+<a href="/place/create">Añadir sitio</a>
+
+<a href="/">Inicio</a>
+<div>
+
+<figure id="map"></figure>
+
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
