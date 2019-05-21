@@ -1,2 +1,41 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Hello to the Coffeebookstoreshop app!</h1>
+
+<div class="form">
+  <form action="/" method="post">
+    <div class="inputContainer"><label for="name">Name</label><input type="text" name="name"></div>
+    <div class="inputContainer"><label for="lng">Longitude</label><input type="text" name="lng"></div>
+    <div class="inputContainer"><label for="lat">Latitude</label><input type="text" name="lat"></div>
+    <div class="inputContainer"><label for="type">Type</label>
+      <select name="type">
+        <option value="coffee shop">Coffee Shop</option>
+        <option value="bookstore">Bookstore</option>
+      </select>
+    </div>
+    {{!-- <button>Create</button> --}}
+    <input type="submit" value="Create" id="buttonCreate">
+  </form>
+</div>
+<div class="mapContainer">
+  <div id="map"></div>
+</div>
+
+<hr>
+<div class="list-container">
+  <h2>Here's the list of the places!</h2>
+
+  {{#each place}}
+  <div class="cardContainer">
+    <h2>{{ name }}</h2>
+    <h3>{{ type }}</h3>
+    <form action='{{id}}/delete' method='POST'>
+      <input type="submit" class="deleteBtn" value="Delete">
+    </form>
+    <div class="locationNoShow">{{location}}</div>
+  </div>
+  {{/each}}
+</div>
+
+
+
+
+<!-- index.html -->

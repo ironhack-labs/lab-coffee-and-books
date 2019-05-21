@@ -1,80 +1,68 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF;
-}
+  color: #00B7FF; }
 
 .form {
   width: 34%;
   vertical-align: middle;
-  float: left;
-}
+  float: left; }
 
-.mapContainer{
+.mapContainer {
   width: 65%;
-  display: inline-block
-}
+  display: inline-block; }
 
 hr {
-  margin: 2em 0
-}
+  margin: 2em 0; }
 
-label{
-  padding: 0 15px;
-}
+label {
+  padding: 0 15px; }
 
-.inputContainer{
+.inputContainer {
   display: inline-block;
   width: 100%;
-  margin: 10px 0;
-}
+  margin: 10px 0; }
 
-input{
-  width: 400px;
-}
+input {
+  width: 400px; }
 
 #buttonCreate {
   display: block;
   margin: 10px 35%;
   width: 120px;
   height: 40px;
-  background-color: rgb(154, 255, 108);
+  background-color: #9aff6c;
   font-family: sans-serif;
   font-weight: 600;
   border-radius: 20px;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
-select{
-  width: 400px;
-}
+select {
+  width: 400px; }
 
 label {
   display: inlie-block;
-  width: 500px;
-}
+  width: 500px; }
 
-.cardContainer{
+.cardContainer {
   text-align: center;
   padding: 15px 0;
   margin: 10px 20px;
   display: inline-block;
   width: 20%;
-  box-shadow:6px 4px 13px 5px #CCC;
-}
+  box-shadow: 6px 4px 13px 5px #CCC; }
+
 .deleteBtn {
   width: 200px;
   display: inline-block;
-  margin: 15px 0;
-}
+  margin: 15px 0; }
 
 #map {
-  height: 400px;
-}
+  height: 400px; }
 
 .locationNoShow {
-  display: none;
-}
+  display: none; }
+
+/*# sourceMappingURL=style.css.map */
