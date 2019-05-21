@@ -1,0 +1,17 @@
+<h2>Places</h2> <br> <br>
+
+<p><a href="/">Back to index</a></p>
+
+<ul>
+{{#each places}}
+<li>
+{{name}}
+{{type}}
+<a href="/books/{{_id}}/edit"><button name="edit">Edit</button></a>
+<form action="/books/delete" method="POST">
+<button name="delete" value="{{_id}}">Delete</button>
+</form>
+</li>
+{{/each}}
+
+</ul>

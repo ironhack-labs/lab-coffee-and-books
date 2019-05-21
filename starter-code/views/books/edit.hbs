@@ -1,0 +1,26 @@
+<h2>Edit the place</h2>
+<p><a href="/">Back to index</a></p>
+
+
+<form action="/books/{{_id}}/edit" method="post">
+  <label for="name">Name of the place:</label>
+  <input type="text" name="name" id="name" value="{{name}}">
+
+<br>
+
+<p>Type</p>
+  <select name="placeType" id="placeType" aria-placeholder="{{type}}">
+    <option value="{{type}}" selected disabled>{{type}}</option>
+    <option value="coffee shop">Coffee Shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+<br><br>
+
+    <label>Address</label><br>
+    <input type="text" name="latitude" placeholder="latitude">
+    <input type="text" name="longitude" placeholder="longitude"><br><br>
+
+
+
+  <button type="submit" id="send">ADD</button>
+</form>
