@@ -1,0 +1,20 @@
+<h1>Añadir nuevo lugar</h1>
+
+<form action="/add" method="post">
+  <label for="name">Nombre:</label>
+  <input type="text" name="name"><br>
+
+  <div>
+    <h3>Tipo:</h3>
+    <input type="radio" id="coffe" value="coffee shop" name="type">
+    <label for="coffe">Coffee shop</label>
+    <input type="radio" id="book" value="bookstore" name="type">
+    <label for="book">Bookstore</label>
+  </div>
+  <br><br>
+
+
+  <button type="submit">AÑADIR NUEVO LUGAR</button>
+</form>
+
+<a href="/list">Cancelar y volver a la lista</a>

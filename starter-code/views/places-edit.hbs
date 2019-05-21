@@ -1,0 +1,18 @@
+<h1>Editar {{place.name}}</h1>
+
+<form action="/edit/{{place._id}}" method="post">
+  <label for="name">Name:</label>
+  <input type="text" name="name" value="{{place.name}}"><br>
+
+  <div>
+    <h3>Tipo:</h3>
+    <input type="radio" id="coffe" value="coffee shop" name="type">
+    <label for="coffe">Coffee shop</label>
+    <input type="radio" id="book" value="bookstore" name="type">
+    <label for="book">Bookstore</label>
+  </div>
+  <br><br>
+
+
+  <button type="submit">EDIT</button>
+</form>
