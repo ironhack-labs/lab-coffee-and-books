@@ -25,10 +25,15 @@ router.get("/view/:place_id", (req, res) => {
 router.get("/add", (req, res) => res.render("place-add"));
 router.post("/add", (req, res) => {
   const { name, type} = req.body;
-  const newPlace = new Place({ name, type });
+  let location = {
+    type: "Point",
+    coordinates: [req.body.longitude, req.body.latitude]
+  }
+
+  const newPlace = new Place({ name, type, location:location });
   newPlace
     .save()
-    .then(theBook => res.redirect("/place/"))
+    .then(x => res.redirect("/place/"))
     .catch(error => console.log(error));
 });
 
@@ -45,16 +50,19 @@ router.get("/edit", (req, res) => {
 });
 
 router.post("/edit", (req, res) => {
-  const { name,type } = req.body;
+  const { name,type} = req.body;
+  
   Place.update(
     { _id: req.query.place_id },
-    { $set: { name, type} }
+    { $set: { name, type} },
+
   )
     .then(place => res.redirect("/place/"))
     .catch(error => console.log(error));
 });
 //----------------D-----------------
 
+//delete places
 
 
 router.post("/delete/:place_id", (req, res, next) => {
@@ -66,7 +74,18 @@ router.post("/delete/:place_id", (req, res, next) => {
 
 
 
+//api creator.com guau guau
 
+
+router.get("/api", (req, res, next) => {
+  Place.find({}, (error, allPlacesfromDB) => {
+    if (error) {
+      next(error);
+    } else {
+      res.status(200).json({ place: allPlacesfromDB });
+    }
+  });
+});
 
 
 module.exports = router
