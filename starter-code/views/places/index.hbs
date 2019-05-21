@@ -1,12 +1,12 @@
-<h2>Movies list</h2>
+<h2>Places list</h2>
 <ul>
-  {{#each movies}}
-  <li><a href="/movies/{{_id}}"> {{title}}</a>
-  <a href="/movies/{{_id}}/delete">Delete</a>
-  <a href="/movies/{{_id}}/edit">Edit</a>
+  {{#each places}}
+  <li><a href="/places/{{_id}}"> {{name}}</a>
+  <a href="/places/{{_id}}/delete">Delete</a>
+  <a href="/places/{{_id}}/edit">Edit</a>
   </li>
   {{/each}}
 </ul>
 
-<a href="/movies/add/new">Add new movie</a>
+<a href="/places/add/new">Add new place</a>
 

@@ -11,6 +11,5 @@ const placeSchema = new Schema({
 }, {timestamps: true})
 
 
-const Place = new mongoose.model('Place', placeSchema)
+module.exports = new mongoose.model('Place', placeSchema)
 
-module.exports = Place
