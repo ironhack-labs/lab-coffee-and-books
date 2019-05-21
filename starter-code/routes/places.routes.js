@@ -17,6 +17,15 @@ router.get('/', (req, res, next) => {
     })
 });
 
+router.get('/api', (req, res, next) => {
+  Place.find()
+    .then(places => {res.status(200).json(places)
+    console.log('json',res.json(places))})
+    .catch(err => {
+      next(err)
+    })
+});
+
 
 router.get('/:id', (req, res) => {
   Place.findById(req.params.id)
@@ -31,12 +40,14 @@ router.get('/:id', (req, res) => {
 router.post('/:id', (req, res) => {
   const {
    name,
-   type
+   type,
+   location
   } = req.body
 
   Place.findByIdAndUpdate(req.params.id, {
     name,
-    type
+    type,
+    location
     })
     .then(place => {
       console.log('place actualizado', place)
@@ -50,13 +61,15 @@ router.get('/add/new', (req, res) => res.render('places/new'))
 router.post('/add/new', (req, res) => {
   const {
     name,
-    type
+    type,
+    location
   } = req.body
 
   //console.log(req.body)
   const newPlace = new Place({
     name,
-    type
+    type,
+    location
   })
   newPlace.save()
     .then(

@@ -1,7 +1,7 @@
 {{#with place}}
 <h2>Editing {{name}}</h2>
 
-<form action="/places/{{_id}}" method="POST">
+
 
 
 <label for="name">Name:</label>
@@ -12,8 +12,11 @@
     <option value="bookstore">Bookstore</option>
 </select>
 
+<label for="address">Address:</label>
+<input type="text" name="address" id="address">
 
-<button type="submit">Save details</button>
+
+<button type="submit" id="edit">Save details</button>
 
 
 </form>

@@ -1,15 +1,22 @@
 <h2>Add new place</h2>
 
-<form action="/places/add/new" method="POST">
+
 <label for="name">Name:</label>
-  <input type="text" name="name"><br>
+  <input type="text" name="name" id="name"><br>
 <label for="type">Type:</label>
- <select name="type">
+ <select name="type" id="type">
     <option value="coffee shop">Coffee shop</option>
     <option value="bookstore">Bookstore</option>
 </select>
+<label for="address">Address:</label>
+<input type="text" name="address" id="address">
 
-<button type="submit">Add new</button>
+
+<button type="submit" id="add-new">Add new</button>
 
 
-</form>
+ <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_9UjX2_EU-YgI1M_d9DQrmeYAXKKlG-s">
+    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="/javascripts/locatePlaces.js"></script>
