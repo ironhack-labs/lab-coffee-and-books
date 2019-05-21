@@ -1,2 +1,20 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="info">
+    
+    <h1>Places to be</h1>
+    <a href="/new">Create new restaurant</a>
+    <ul>
+        {{#each places}}
+        <li>
+            <a href="/{{this._id}}">{{this.name}}</a>
+            |
+            <a href="/{{this._id}}/delete">Delete</a>
+        </li>
+        {{/each }}
+    </ul>  
+</div>
+<div class="map-box">
+<figure id="map"></figure>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD66kfHKTQR_x0VYJRZhIxTgJ5RbWq7FTE"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
