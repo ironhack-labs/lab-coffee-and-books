@@ -1,0 +1,17 @@
+<h1>Lista de lugares</h1>
+
+<ul>
+  {{#each place}}
+  <li>
+    <a href="/place/view/{{this._id}}">{{this.name}}</a>
+    -
+    <a href="/place/edit?place_id={{this._id}}">editar</a>
+    -
+    <form action="/place/delete/{{this._id}} " method="post">
+      <button type="submit">borrar lugar</button>
+    </form>
+  </li>
+  {{/each}}
+</ul>
+
+<a href="/place/add">Añadir nuevo lugar</a>

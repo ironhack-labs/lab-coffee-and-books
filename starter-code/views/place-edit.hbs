@@ -1,0 +1,13 @@
+<h1>Editar lugar {{place.name}}</h1>
+
+<form action="/place/edit?place_id={{place._id}}" method="post">
+    <label for="name">Nombre:</label>
+    <input type="text" name="name" value="{{place.name}}"><br>
+
+    <label for="type">sitio:</label>
+    <input type="text" name="type" value="{{place.type}}"><br>
+
+  
+
+    <button type="submit">EDIT</button>
+</form>
