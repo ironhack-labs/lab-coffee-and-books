@@ -19,8 +19,10 @@ router.get('/', (req, res, next) => {
 
 router.get('/api', (req, res, next) => {
   Place.find()
-    .then(places => {res.status(200).json(places)
-    console.log('json',res.json(places))})
+    .then(places => {
+      res.status(200).json(places)
+      //console.log('json',res.json(places))
+    })
     .catch(err => {
       next(err)
     })

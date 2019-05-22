@@ -7,15 +7,16 @@ window.onload = () =>{
 
 const geocodeAddress =  (geocoder,address) => {
   return new Promise((resolve, reject)=>{
-    console.log(address)
+    //console.log(address)
     geocoder.geocode({
         'address': address
       },
       (results, status) => {
         if (status === 'OK') {
+          
           resolve([
-              results[0].geometry.location.lat(),
-              results[0].geometry.location.lng()
+              results[0].geometry.location.lng(),
+              results[0].geometry.location.lat()
           ])
         }/* else { //hay veces que solo funciona si le quito el else :(
           reject(new Error(`Couldnt\'t find the location ${address}`))

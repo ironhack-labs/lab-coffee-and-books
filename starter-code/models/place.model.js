@@ -16,6 +16,8 @@ const placeSchema = new Schema({
     }
 }, {timestamps: true})
 
-
+placeSchema.index({
+  location: '2dsphere'
+})
 module.exports = new mongoose.model('Place', placeSchema)
 
