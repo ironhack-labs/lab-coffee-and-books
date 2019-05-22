@@ -1,0 +1,15 @@
+<h2>Lugares</h2>
+
+{{#each places}}
+
+<a href="/places/{{_id}}">
+  <p>{{name}}</p>
+</a>
+
+
+<a href="/places/{{_id}}/delete">Borrar Lugar</a><br><br>
+
+
+{{/each}}<br><br>
+
+<a href="/places/add">Añadir un nuevo lugar</a>

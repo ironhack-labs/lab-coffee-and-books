@@ -1,0 +1,19 @@
+<h2>Editar una celebridad</h2>
+
+<form action="/places/{{place._id}}/edit" method="post">
+  <label for="">Nombre:</label>
+  <input type="text" name="name" value="{{place.name}}"><br><br>
+
+  <label for="">Tipo:</label>
+  <select name="type">
+    <option value="coffee shop">coffee shop</option>
+    <option value="bookstore">bookstore</option>
+  </select><br><br><br>
+
+  <label>Direccion</label><br>
+  <input type="text" name="latitude" placeholder="Latitud" value="{{place.location.coordinates.[1]}}"><br>
+  <input type="text" name="longitude" placeholder="Longitud" value="{{place.location.coordinates.[0]}}"><br><br>
+
+  <button type="submit" name="" id="submit">Editar celebridad</button>
+
+</form>

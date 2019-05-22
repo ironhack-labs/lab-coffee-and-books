@@ -1,0 +1,21 @@
+<h2>Añadir nuevo lugar</h2>
+
+<form action="/places/add" method="post">
+  <label for="name">Nombre:</label><br>
+  <input type="text" name="name"><br><br>
+
+  <label for="type">Tipo:</label><br>
+  <select name="type">
+    <option value="coffee shop">coffee shop</option>
+    <option value="bookstore">bookstore</option>
+  </select><br><br><br>
+
+  <label>Direccion</label><br>
+  <input type="text" name="latitude" placeholder="latitud"><br>
+  <input type="text" name="longitude" placeholder="longitud"><br><br>
+
+  <button type="submit">Añadir lugar</button>
+
+</form><br>
+
+{{!-- <a href="/celebrities">Cancelar y volver a la lista de celebridades</a> --}}
