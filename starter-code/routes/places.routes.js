@@ -59,34 +59,34 @@ router.post('/', (req, res, next) => {
 //EDIT A PLACE
 
 // // GET 
-// router.get('/:_id/edit', (req, res, next) => {
-// 	Place.findById(req.params._id, (error, place) => {
-// 		if (error) {
-// 			next(error);
-// 		} else {
-// 			res.render('/edit', {place});
-// 		}
-// 	});
-// });
+router.get('/:_id/edit', (req, res, next) => {
+	Place.findById(req.params._id, (error, place) => {
+		if (error) {
+			next(error);
+		} else {
+			res.render('/edit', {place});
+		}
+	});
+});
 
 // // POST 
-// router.post('/:restaurant_id', (req, res, next) => {
-// 	Restaurant.findById(req.params.restaurant_id, (error, restaurant) => {
-// 		if (error) {
-// 			next(error);
-// 		} else {
-// 			restaurant.name = req.body.name;
-// 			restaurant.description = req.body.description;
-// 			restaurant.save(error => {
-// 				if (error) {
-// 					next(error);
-// 				} else {
-// 					res.redirect(`/restaurants/${req.params.restaurant_id}`);
-// 				}
-// 			});
-// 		}
-// 	});
-// });
+router.post('/:_id', (req, res, next) => {
+	Restaurant.findById(req.params.restaurant_id, (error, restaurant) => {
+		if (error) {
+			next(error);
+		} else {
+			restaurant.name = req.body.name;
+			restaurant.description = req.body.description;
+			restaurant.save(error => {
+				if (error) {
+					next(error);
+				} else {
+					res.redirect(`//${req.params._id}`);
+				}
+			});
+		}
+	});
+});
 
 //GET THE API DATA 
 

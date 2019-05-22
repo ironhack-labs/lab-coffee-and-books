@@ -1,7 +1,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  
+  color:rgb(206, 39, 39);
+  font-weight: 700;
 
 }
 
@@ -22,4 +23,12 @@ a {
   position:fixed;
   display:block;
   z-index: 400;
+}
+li{
+list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color:rgb(206, 39, 39);
+  font-weight: 700;
 }
