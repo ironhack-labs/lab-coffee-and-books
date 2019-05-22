@@ -1,0 +1,14 @@
+<h3>Edit {{places.name}}</h3>
+<form method="POST" action="/site/edit/{{places._id}}">
+    <input type="text" name="name" placeholder="name">
+
+    <input list="site" name="site">
+    <datalist id="site">
+        <option value="Coffee shop">
+        <option value="Bookstore">
+    </datalist><br><br>
+
+
+    <input type="submit" name="" id="submit">
+</form>
+<a href="/">Back to the list</a>

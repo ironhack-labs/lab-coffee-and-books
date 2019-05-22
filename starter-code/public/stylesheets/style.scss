@@ -1,8 +1,46 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+    color: #242f3f;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+
+#map {
+    height: 100vh;
+    ;
+}
+
+.button {
+    background: #0eaa5c;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+}
+
+ul li {
+    list-style: none;
+    display: block;
+    padding: 20px;
+}
+
+ul li span {
+    color: white;
+    background: #4b79de;
+    padding: 10px 40px;
+    border-radius: 20px;
+}
+
+.btn-delete {
+    color: white;
+    background: red;
+    padding: 10px 40px;
+    border-radius: 20px;
 }

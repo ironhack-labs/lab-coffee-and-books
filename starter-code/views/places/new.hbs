@@ -1,0 +1,19 @@
+<h3>Add new place</h3>
+<form method="POST" action="/site/new">
+    <input type="text" name="name" placeholder="name">
+
+    <input list="site" name="site">
+    <datalist id="site">
+        <option value="Coffee shop">
+        <option value="Bookstore">
+    </datalist><br><br>
+
+
+    <label>Address</label><br>
+    <input type="text" name="latitude" placeholder="latitude">
+    <input type="text" name="longitude" placeholder="longitude"><br><br>
+
+
+    <input type="submit" name="" id="submit">
+</form>
+<a href="/">Back to the list</a>
