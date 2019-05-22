@@ -57,7 +57,10 @@ router.post('/create', (req, res, next) => {
 // Editar 
 router.get('/edit', (req, res) => {
   Place.findOne({ _id: req.query.place_id })
-    .then(place => res.render("place-edit", { place }))
+    .then(place => {
+			console.log(place.location.coordinates[0])
+
+			res.render("place-edit", { place })})
     .catch(error => console.log(error))
 })
 
@@ -77,6 +80,7 @@ router.post('/edit/:place_id', (req, res) => {
 				if (error) {
 					next(error)
 				} else {
+					console.log(place.location)
 					res.redirect(`/place/list`)
 				}
 			})
