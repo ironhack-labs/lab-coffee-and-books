@@ -51,11 +51,14 @@ router.get("/edit", (req, res) => {
 
 router.post("/edit", (req, res) => {
   const { name,type} = req.body;
-  
+   let location = {
+     type: "Point",
+     coordinates: [req.body.longitude, req.body.latitude]
+   };
+
   Place.update(
     { _id: req.query.place_id },
-    { $set: { name, type} },
-
+    { $set: { name, type, location: location } }
   )
     .then(place => res.redirect("/place/"))
     .catch(error => console.log(error));
