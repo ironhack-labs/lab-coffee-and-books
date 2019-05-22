@@ -1,6 +1,6 @@
 <h1>Editar {{place.name}}</h1>
 
-<form action="/edit/{{place._id}}" method="post">
+<form action="edit/{{place._id}}" method="post">
   <label for="name">Name:</label>
   <input type="text" name="name" value="{{place.name}}"><br>
 
@@ -12,6 +12,10 @@
     <label for="book">Bookstore</label>
   </div>
   <br><br>
+
+  <label>Address</label><br>
+  <input type="text" name="latitude" placeholder="latitude">
+  <input type="text" name="longitude" placeholder="longitude"><br><br>
 
 
   <button type="submit">EDIT</button>

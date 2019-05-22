@@ -11,11 +11,26 @@ router.get('/', (req, res, next) => {
 //añadir nuevo lugar
 router.get('/add', (req, res) => res.render('places-add'))
 router.post('/add', (req, res) => {
-  const { name, type } = req.body
-  const newPlace = new Place({ name, type })
-  newPlace.save()
-    .then(thePlace => res.redirect('/list'))
-    .catch(error => console.log(error))
+  console.log(req.body)
+
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
+  };
+
+  const newPlace = new Place({
+    name: req.body.name,
+    description: req.body.description,
+    location: location // 
+  });
+
+  newPlace.save((error) => {
+    if (error) {
+      next(error);
+    } else {
+      res.redirect('/list');
+    }
+  });
 })
 
 //listado de lugares
@@ -43,8 +58,10 @@ router.get('/detail/:place_id', (req, res) => {
 //borrar
 
 router.post('/delete/:place_id', (req, res) => {
+  console.log(req.params.place_id)
   Place.findByIdAndRemove(req.params.place_id)
     .then(thePlace => {
+      console.log("he entrado en el post")
       res.redirect('/list')
     })
     .catch(error => console.log(error))
@@ -59,17 +76,48 @@ router.get('/edit/:place_id', (req, res) => {
     .catch(error => console.log(error))
 })
 
-router.post('/edit/:place_id', (req, res) => {
+/* router.post('/edit/:place_id', (req, res) => {
   const { name, type } = req.body
   Place.findByIdAndUpdate({ _id: req.params.place_id }, { $set: { name, type } })
     .then(() => res.redirect('/list'))
     .catch(error => console.log(error))
 
-})
+}) */
 
+router.post('/edit/:place_id', (req, res, next) => {
 
+  let location = {
+    type: "Point",
+    coordinates: [req.body.longitude, req.body.latitude]
+  }
 
+  Place.findById(req.params.place_id, (error, place) => {
+    if (error) {
+      next(error);
+    } else {
+      place.name = req.body.name;
+      place.type = req.body.type;
+      location = location
+      place.save(error => {
+        if (error) {
+          next(error);
+        } else {
+          res.redirect("/list");
+        }
+      });
+    }
+  });
+});
 
+router.get('/api', (req, res, next) => {
+  Place.find({}, (error, allPlacesFromDB) => {
+    if (error) {
+      next(error);
+    } else {
+      res.status(200).json({ places: allPlacesFromDB });
+    }
+  });
+});
 
 
 
