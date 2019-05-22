@@ -1,0 +1,17 @@
+<h2>Place Detail</h2>
+<ul>
+  {{#with place}}
+  <h3> Name: {{name}}</h3>
+  <p>Type: {{type}}</p>
+  {{/with}}
+</ul>
+
+<figure id="map"></figure>
+
+<a href="/places">Back to the list</a>
+
+
+<script type="javascript" src="/javascripts/locatePlaces.js"></script>
+ <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_9UjX2_EU-YgI1M_d9DQrmeYAXKKlG-s&callback=initMap">
+    </script>
