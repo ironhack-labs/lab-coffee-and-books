@@ -1,0 +1,25 @@
+<h1>Listado de libros</h1>
+
+<ul>
+  {{#each places}}
+
+  <li>
+    <a href="/detail/{{this._id}}">{{this.name}}</a>
+    <a href="/edit/{{this._id}}">editar</a>
+  </li>
+
+  <form action="/delete/{{_id}}" method="post">
+    <button type="submit">BORRAR</button>
+  </form>
+
+  {{/each}}
+</ul>
+
+
+<a href="/add">Añadir lugar</a><br>
+
+
+
+<a href="/">Volver</a>
+
+<figure id="map"></figure>
