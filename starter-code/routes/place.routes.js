@@ -61,27 +61,27 @@ router.get('/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
-router.post('/edit', (req, res) => {
+router.post('/edit/:place_id', (req, res) => {
 	let location = {
 		type: 'Point',
 		coordinates: [req.body.longitude, req.body.latitude]
-	};
+	}
   Place.findById(req.params.place_id, (error, place) => {
 		if (error) {
-			next(error);
+			next(error)
 		} else {
 			place.name = req.body.name;
 			place.type = req.body.type;
 			location=location
 			place.save(error => {
 				if (error) {
-					next(error);
+					next(error)
 				} else {
-					res.redirect(`/place/list`);
+					res.redirect(`/place/list`)
 				}
-			});
+			})
 		}
-	});
+	})
 })
 
 
