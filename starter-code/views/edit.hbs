@@ -1,0 +1,19 @@
+<form action="/places/{{_id}}/edit" method="post">
+
+<p>
+  <label for="name">Name</label>
+  <input type="text" name="name" placeholder="Name" id="name" value="{{name}}">
+</p>
+
+<p>
+  <label for="type">Type</label>
+  <select name="placeType" id="type" >
+    <option value="cantina">Cantina</option>
+    <option value="bar">Bar</option>
+    <option value="antro">Antro</option>
+    <option value="restaurante">Restaurante</option>
+  </select>
+</p>
+
+<input type="submit" value="Edit">
+</form>
