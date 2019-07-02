@@ -1,9 +1,33 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
+const {
+    getPlaces,
+    getCreatePlace,
+    postCreatePlace,
+    getOnePlace,
+    getEditPlace,
+    postEditPlace,
+    getDeletePlace
+} = require('../controllers/index.controller')
 
-/* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+
+
+
+//******** Crud *********//
+router.get('/places/create', getCreatePlace)
+
+router.post('/places/create', postCreatePlace)
+
+//******* cRud *******//
+router.get('/', getPlaces)
+router.get('/places/:id', getOnePlace)
+
+//******* crUd *******//
+router.get('/places/:id/edit', getEditPlace)
+router.post('/places/:id/edit', postEditPlace)
+
+//******* crUd *******//
+router.get('/places/:id/delete', getDeletePlace)
+
 
 module.exports = router;
