@@ -1,8 +1,46 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    padding: 50px;
 }
 
-a {
-  color: #00B7FF;
+.mainmenu {
+    margin-bottom: 20px;
+}
+
+.links {
+    background-color: #00B7FF;
+    color: white;
+    border-style: 1px solid black;
+    padding: 5px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+}
+
+#map {
+    height: 60vh;
+    width: 75vw;
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.details {
+    font-size: 24px;
+}
+
+.actionsbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 20px;
 }
