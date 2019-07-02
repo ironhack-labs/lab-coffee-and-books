@@ -1,2 +1,36 @@
+<style>
+  #map {
+    height: 500px;
+    width: 100%;
+  }
+</style>
+
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<p>Welcome {{title}}</p>
+
+
+<h2>{{name}}</h2>
+{{#each allPlaces}}
+<h4>{{this.name}}</h4>
+<h4>{{this.type}}</h4>
+
+<h6>Modify:</h6>
+<form action="/update-place" method="POST">
+  <input type="text" placeholder="name" name="name">
+  <input type="password" placeholder="type" name="type">
+
+  <input type="hidden" name="_id" value="{{_id}}">
+  <input type="Submit" value="Modify">
+</form>
+
+
+<form action="/delete" method="POST">
+ <input type="hidden" name="_id" value="{{_id}}">
+  <input type="Submit" value="Delete">
+</form>
+{{/each}}
+
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvQ98IXaHndpMgzy36tcI_zgugs_hFp3c"></script>
+<script type="text/javascript" src="/javascripts/maps.js"></script>
