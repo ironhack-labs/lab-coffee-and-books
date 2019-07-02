@@ -4,13 +4,13 @@ const {getPlaces,getCreatePlace,postCreatePlace,getOnePlace,getEditPlace,postEdi
 
 //*************************Crud**********************/
 router.get('/places/create',getCreatePlace)
-router.post('places/create',postCreatePlace)
+router.post('/places/create',postCreatePlace)
 /*******************cRud**************** */
 router.get('/', getPlaces)
 router.get('/places/:id',getOnePlace)
 //*****************crUd****************** */
-router.get('/places/:id/edit/',getEditPlace)
-router.post('/places/:id/edit/',postEditPlace)
+router.get('/places/:id/edit', getEditPlace)
+router.post('/places/:id/edit', postEditPlace)
 /*******************cruD******************* */
 router.get('/places/:id/delete',getDeletePlace)
 
