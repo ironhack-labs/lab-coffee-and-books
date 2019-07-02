@@ -1,0 +1,39 @@
+<form action="/places/create" method="post" novalidate>
+
+  <p>
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name" id="
+name">
+  </p>
+  <p>
+    <label for="type">Type</label>
+    <select name="placeType" id="type">
+      <option value="cantina">Cantina</option>
+      <option value="bar">Bar</option>
+      <option value="antro">Antro</option>
+      <option value="restaurante">Restaurante</option>
+    </select>
+  </p>
+  <input type:"number" name="location[coordinates][0]" id="lng" hidden />
+  <input type:"number" name="location[coordinates][1]" id="lat" hidden />
+  <input type="submit" value="Create">
+</form>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiY2h1Y2E5OSIsImEiOiJjanhtMmNoajcwY2d5M3JtZ2F5am15cnN3In0.bKS7-zBZuo3040BnEcmqkA';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+  const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+  });
+  map.addControl(geocoder)
+  geocoder.on("result", ({ result: { center } }) => {
+    console.log(center)
+    document.querySelector("#lng").value = center[0]
+    document.querySelector("#lat").value = center[1]
+  })
+</script>
