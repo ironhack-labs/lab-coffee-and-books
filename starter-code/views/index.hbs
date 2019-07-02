@@ -1,2 +1,24 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<html>
+  <head>
+    <title>My First Map</title>
+  </head>
+  <body>
+    <h3>My First Map</h3>
+
+<div class="info">
+    <h3>List of all places</h3>
+    <a href="/places/new">Create new place</a>
+    <ul>
+        {{#each places}}
+        <li>
+            <a href="/places/{{ this._id}}">{{ this.name}}</a>
+            |
+            <a href="/places/{{ this._id}}/delete">Delete</a>
+        </li>
+        {{/each }}
+    </ul>
+
+    <div id="map"></div>
+
+  </body>
+</html>
