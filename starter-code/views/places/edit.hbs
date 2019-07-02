@@ -1,0 +1,17 @@
+<form action="/places/{{_id}}/edit" method="post">
+  <p>
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name" id="name" value="{{name}}">
+  </p>
+
+  <p>
+    <label for="type">Type</label>
+    <select name="placeType" id="type">
+      <option value="coffee">Coffe</option>
+      <option value="shop">Shop</option>
+      <option value="bookstore">Bookstore</option>
+    </select>
+  </p>
+  <input type="submit" value="Edit">
+</form> 
+<a href="/places">Go back</a>

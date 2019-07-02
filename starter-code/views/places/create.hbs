@@ -1,0 +1,19 @@
+<h1>Create</h1>
+<form action="/places/create" method="POST">
+  <p>
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name" id="name">
+  </p>
+  <p>
+    <label for="placeType">Type</label>
+    <select name="placeType" id="type">
+      <option value="coffee">Coffe</option>
+      <option value="shop">Shop</option>
+      <option value="bookstore">Bookstore</option>
+    </select>
+  </p>
+  <input type="submit" value="create">
+</form>
+<div>
+  <a href="/">Go back</a>
+</div>

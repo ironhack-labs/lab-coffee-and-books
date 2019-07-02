@@ -1,0 +1,10 @@
+<h1>Listado</h1>
+{{#each places as |place|}}
+<h2>{{place.name}}</h2>
+<a href="/places/{{place._id}}">Detail</a>
+<a href="/places/{{place._id}}/edit">Edit</a>
+<a href="/places/{{place._id}}/delete">Delete</a>
+{{/each}}
+<div>
+  <a href="/">Go back</a>
+</div>
