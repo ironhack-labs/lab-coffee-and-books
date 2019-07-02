@@ -1,2 +1,27 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>HEY! Check out these cool places </h1>
+
+
+<ul>
+
+{{#each places}}
+
+ <li><a href="/detail/{{this.id}}">{{this.name}}</a></li>
+ <form action="/{{this.id}}/delete" method="POST">
+
+  <input type="submit" value="Delete">
+</form>
+
+<button>
+
+<a href="/edit/{{this.id}}">EDIT</a>
+</button>
+{{/each}}
+
+</ul>
+<a href="/add"> ADD NEW  </a>
+
+<div id = "map"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo">
+  </script>
+  <script src="/javascripts/script.js"></script>
