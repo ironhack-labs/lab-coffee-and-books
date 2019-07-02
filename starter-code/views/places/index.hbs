@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="list">
+        <h2>Places:</h2>
+        <ul>
+        {{#each place}}
+            <li>
+                <h3><a href='places/show/{{this.id}}'>{{this.name}}</a></h3>
+                <form action="/{{this.id}}/delete" method="POST">
+                    <button onclick="Submit">Delete</button>
+                </form>
+                <form action="{{this.id}}/edit" method="POST">
+                    <button onclick="Submit">Update</button>
+                </form>
+            </li>
+        {{/each}}
+        <br><br>
+        </ul>
+        <p>Options:</p>
+        <ul>
+            <li>
+                <a href="places/new">New Place</a>
+            </li>
+            <li>
+                <a href="/">Return to main menu</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="map">
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+<script src="/javascripts/script.js"></script>

@@ -1,0 +1,14 @@
+<h2>Update data for {{name}}</h2>
+<form action="/update/{{id}}" method="POST">
+    <input type="text" value="{{name}}" placeholder="Name" name="nameForm">
+    <select selected="{{type}}" name="typeForm">
+        <option value="coffee shop">Coffee Shop</option>
+        <option value="bookstore">Bookstore</option>
+    </select>
+    <input type="text" value="{{location.cordinates}}" placeholder="Longitude" name="longitudeForm">
+    <input type="text" value="{{location.latitude}}" placeholder="Latitude" name="latitudeForm">
+    <button onclick="Submit">Update</button>
+</form>
+
+<br><br>
+<a href="../places">Return to Place List</a>

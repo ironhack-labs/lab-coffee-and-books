@@ -1,0 +1,13 @@
+<h2>Add new place to the list</h2>
+<form action="/new-place" method="POST">
+    <input type="text" placeholder="Name" name="nameForm">
+    <select selected="coffee shop" name="typeForm">
+        <option value="coffee shop">Coffee Shop</option>
+        <option value="bookstore">Bookstore</option>
+    </select>
+    <input type="text" placeholder="Longitude" name="longitudeForm">
+    <input type="text" placeholder="Latitude" name="latitudeForm">
+    <button onclick="Submit">Create</button>
+</form>
+<br><br>
+<a href="../places">Return to Place List</a>
