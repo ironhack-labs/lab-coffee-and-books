@@ -1,0 +1,39 @@
+<div class="places">
+  <h2>{{name}}</h2>
+  <div class="form-content">
+    <div class="form-content-text">
+      <div>
+      <p>Type: {{placeType}}</p>
+      </div>
+    </div>
+    <div class="form-content-map">
+      {{#if location.coordinates.[0]}}
+      <div id="map" style="width: 400px; height: 300px"></div>
+      {{/if}}
+    </div>
+  </div>
+  <div class="buttons">
+    <a href="/places/{{_id}}/edit">Edit</a>
+    <a href="/places/{{_id}}/delete">Delete</a>
+    <a href="/">Go back</a>
+  </div>
+</div>
+
+{{#if location.coordinates.[0]}}
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1Ijoicm9nZXJheXJhIiwiYSI6ImNqcWgzd2dsMTI2dTQ0NGxicXJiczQ5cXEifQ.XxSlOtI11XLzeQ-QsxlXAg';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    zoom: 14,
+    center: [{{ location.[coordinates] }}]
+  });
+
+  const marker = new mapboxgl.Marker({
+    color: 'red'
+  })
+    .setLngLat([{{ location.[coordinates] }}])
+    .addTo(map)
+
+</script>
+{{/if}}

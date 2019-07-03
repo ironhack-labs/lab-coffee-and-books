@@ -1,2 +1,9 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="places">
+  <h2>Places</h2>
+  <div class="places-list">
+    {{#each places as |place|}}
+    <a href="/places/{{place._id}}">{{place.name}}</a>
+    {{/each}}
+  </div>
+  <a href="/places/create">Create new place</a>
+</div>
