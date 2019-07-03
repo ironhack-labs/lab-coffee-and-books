@@ -1,0 +1,23 @@
+<div class="">
+  <h2>Añadir nuevo place</h2>
+
+  <form class="" action="/places/add" method="POST">
+    <label for="name">Nombre:</label>
+    <input type="text" name="name" placeholder="nombre"><br>
+
+    <label for="type">Tipo:</label>
+    <select name="type">
+      <option value="coffee shop">coffee shop</option>
+      <option value="bookstore">bookstore</option>
+    </select><br><br><br>
+    
+    <label>Direccion</label><br>
+    <input type="text" name="latitude" placeholder="latitud"><br>
+    <input type="text" name="longitude" placeholder="longitud"><br><br>
+
+    <button type="submit">Añadir place</button>
+
+  </form><br>
+
+  <a href="/places/list">Cancelar y volver a la lista de places</a>
+</div>

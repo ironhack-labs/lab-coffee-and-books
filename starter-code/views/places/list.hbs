@@ -1,0 +1,23 @@
+<div class="">
+  <h2>Places</h2>
+
+  {{#each places}}
+  {{!-- <a href="/places/{{id}}"> //list/ --}}
+    <p>⌂- {{name}}</p>
+  </a>
+
+
+  <a href="/places/{{_id}}/delete">Borrar Lugar</a><br><br>
+
+
+  {{/each}}<br><br>
+
+  <a href="/places/add">Añadir nuevo place</a><br>
+</div>
+
+{{!-- <form class="box" action="/places/list/{{id}}/delete" method="POST">
+    <button type="submit">Borrar place</button></form><br></br>
+  </form><br> --}}
+{{!-- <a href="/places/list/{{id}}/edit">
+    Editar place
+  </a><br> --}}
