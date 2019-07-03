@@ -1,0 +1,25 @@
+<h1>List of Coffe Shops and Book Stores </h1>
+<ul>
+
+  {{#each places}}
+
+  <div class="listContainer">
+    <div class="details">
+      <li><a href="/detail/{{this.id}}">{{this.name}}</a></li>
+    </div>
+
+    <div class="actionsbuttons">
+      <form action="/{{this.id}}/delete" method="POST">
+        <input class="links" type="submit" value="Delete">
+      </form>
+      <button class="links">
+        <a href="/edit/{{this.id}}">EDIT</a>
+      </button>
+    </div>
+  </div>
+
+  {{/each}}
+
+</ul>
+
+<a class="links" href="/">BACK</a>
