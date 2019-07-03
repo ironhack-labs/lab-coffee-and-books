@@ -27,11 +27,12 @@ exports.getCreatePlaces = (req, res, next) => {
 }
 
 exports.postCreatePlaces = (req, res, next) => {
-  const {name, placeType} = req.body
-  Place.create({name, placeType})
+  const { location } = req.body
+  const n = {...location, coordinates: [Number(location.coordinates[0]), Number(location.coordinates[1])]}
+  Place.create({ ...req.body, n })
   .then(place => {
     console.log(place);
-    res.redirect('/places')
+    res.redirect(`/places/${place._id}`)
   })
   .catch(err => {
     res.send(err)

@@ -8,8 +8,10 @@ const placeSchema = new Schema(
       enum: ['coffee', 'shop', 'bookstore']
     },
     location: {
-      type: String,
-      default: 'Point',
+      address: {
+        type: String,
+        default: 'Point'
+      },
       coordinates: [Number]
     }
   },
