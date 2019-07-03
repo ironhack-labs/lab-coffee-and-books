@@ -15,10 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   );
 
+
+
 axios
-        .get("http://localhost:3000/test")
+        .get(`http://localhost:3000/test`)
         .then(JSONPayload => {
-          console.log(JSONPayload.data)
+          // console.log(lolo)
             JSONPayload.data.places.forEach(place => {
                 const marker = new google.maps.Marker({
                     position: {

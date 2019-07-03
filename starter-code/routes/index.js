@@ -2,7 +2,9 @@ const express = require('express');
 const router  = express.Router();
 const Place = require('../models/Places')
 
-
+router.get("/", (req,res) => {
+	res.redirect("/places")
+})
 
 router.get('/places/new', (req, res, next) => {
   res.render('newplace');

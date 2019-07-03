@@ -1,16 +1,18 @@
 body {
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  background-color: radial-gradient(gray, 30%, white, 70%); }
 
 a {
-  color: #00B7FF; }
+  color: #172aba;
+  text-decoration: none; }
 
 #map {
-  width: 70vw;
-  height: 60vh; }
+  width: 100vw;
+  height: 80vh; }
 
 /*# sourceMappingURL=style.css.map */
