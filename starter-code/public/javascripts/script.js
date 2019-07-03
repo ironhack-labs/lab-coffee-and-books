@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const map = new google.maps.Map(
     document.getElementById('map'),
     {
-      zoom: 5,
+      zoom: 4,
       center: ironhackBCN
     }
   );
 
 axios
-        .get("http://localhost:3000/test")
+        .get("http://localhost:3000/json")
         .then(JSONPayload => {
           console.log(JSONPayload.data)
             JSONPayload.data.places.forEach(place => {

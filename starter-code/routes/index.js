@@ -110,7 +110,7 @@ router.get('/places/:id', (req, res, next) => {
 	});
 });
 
-router.get('/test', (req, res, next) => {
+router.get('/json', (req, res, next) => {
 	Place.find({},(error, placesFromDB) => {
 		if (error) { 
 			next(error); 
