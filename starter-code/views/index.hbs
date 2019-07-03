@@ -1,5 +1,8 @@
 <h1>Places</h1>
 
+{{#each places as |place|}}
+<a href="/place/{{place._id}}">{{place.name}}</a>
+{{/each}}
 <a href="/places/create">Create new place</a>
 <br/>
 

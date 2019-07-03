@@ -1,17 +1,40 @@
-<form action="/places/create" method="post">
-<p>
-  <label for="name">Name</label>
-  <input type="text" name="name" placeholder="Name" id="name">
-</p>
+<form action="/places/create" method="post" novalidate>
+  <p>
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name" id="name">
+  </p>
 
-<p>
-  <label for="type">Type</label>
-  <select name="placeType" id="type">
-    <option value="cantina">cantina</option>
-    <option value="bar">bar</option>
-    <option value="antro">antro</option>
-    <option value="restaurante">restaurante</option>
-  </select>
-</p>
+  <p>
+    <label for="type">Type</label>
+    <select name="placeType" id="type">
+      <option value="cantina">Cantina</option>
+      <option value="bar">Bar</option>
+      <option value="antro">Antro</option>
+      <option value="restaurante">Restaurante</option>
+    </select>
+  </p>
+
+  <input type="number" name="location[coordinates][0]" id="lng" hidden>
+  <input type="number" name="location[coordinates][1]" id="lat" hidden>
+
   <input type="submit" value="Create">
 </form>
+
+<div id="map" style="width: 400px; height: 300px"></div>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGl1cml2aiIsImEiOiJjanAxdjA2cTQwMGp1M2tvYzZmZGp3bWc3In0.4cZEyLkU2ikqx_wb4A1z8A';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  })
+  const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl
+  })
+  map.addControl(geocoder)
+  geocoder.on('result', ({ result: { center } }) => {
+    document.querySelector('#lng').value = center[0]
+    document.querySelector('#lat').value = center[1]
+  })
+</script>

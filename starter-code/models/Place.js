@@ -7,7 +7,10 @@ const placeSchema = new Schema({
     enum:['bar', 'antro', 'cantina', 'restaurante']
   },
   location: {
-    address: String,
+    address: {
+      type: String,
+      default: 'Point'
+    },
     coordinates: [Number]
   }
 },

@@ -1,5 +1,12 @@
 const router = require('express').Router()
-const { getPlaces, getCreatePlace, postCreatePlace, getOnePlace, getEditPlace, postEditPlace, getDeletePlace } = require('../controllers/index.controller')
+const { 
+  getPlaces, 
+  getCreatePlace, 
+  postCreatePlace, 
+  getOnePlace, 
+  getEditPlace, 
+  postEditPlace, 
+  getDeletePlace } = require('../controllers/index.controller')
 
 
 //Crud
