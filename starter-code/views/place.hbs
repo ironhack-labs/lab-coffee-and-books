@@ -1,0 +1,22 @@
+<h2>{{name}}</h2>
+<p>{{placeType}}</p>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoibmV2ZXJzZXR0ZWxzIiwiYSI6ImNqeG0yY2g0cjBjbzYzbm9jY3o4a20xM2oifQ.VLvR11K2EfF3zWhnLoIWvQ';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    zoom: 14,
+    center: [{{ location.coordinates }}]
+  });
+
+  const marker = new mapboxgl.Marker().setLngLat([{{ location.coordinates }}]).addTo(map)
+
+</script>
+
+<a href="/places/edit/{{id}}">edit</a>
+<br />
+<a href="/places/{{id}}/delete">delete</a>
+<a href="/">Go back</a>
