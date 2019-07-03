@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
  
 
-
+  document.querySelector("#loadPins").onclick = function () {
   axios
       .get("http://localhost:3000/json")
       .then(JSONPayload => {
@@ -37,5 +37,5 @@ document.addEventListener('DOMContentLoaded', () => {
               });
           })
       })
-
+    }
 
