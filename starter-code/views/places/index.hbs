@@ -1,0 +1,16 @@
+<h1>List of all places</h1>
+<div class="info">
+    <ul>
+        {{#each allPlaces}}
+
+        <li>
+            <a href="/site/show/{{_id}}">{{name}}</a>
+            <a href="/site/edit/{{_id}}"><span>Edit</span></a>
+            <a href="site/delete/{{_id}}" class="btn-delete">Delete</a>
+        </li>
+
+        {{/each }}
+    </ul>
+</div>
+<a href="site/new" class="button">Create new places</a>
+<figure id="map"></figure>
