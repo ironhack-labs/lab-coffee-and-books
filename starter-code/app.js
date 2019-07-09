@@ -10,8 +10,13 @@ const logger       = require('morgan');
 const path         = require('path');
 
 
+const session       = require("express-session");
+const bcrypt        = require("bcrypt");
+const passport      = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+
 mongoose
-  .connect('mongodb://localhost/starter-code', {useNewUrlParser: true})
+  .connect('mongodb://localhost/lab-coffee-and-books', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -47,12 +52,15 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Coffee and Books';
 
 
 
 const index = require('./routes/index');
 app.use('/', index);
+
+const places = require('./routes/places');
+app.use('/', places);
 
 
 module.exports = app;
