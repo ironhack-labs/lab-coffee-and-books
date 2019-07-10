@@ -7,12 +7,12 @@ router.get('/create', (req, res, next) => {
 });
 
 router.post('/create', (req, res, next) => {
-  const { name, type, latitude, longitude } = req.body;
+  const { name, type } = req.body;
 
   const location = {
     type: 'Point',
-    coordinates: [parseFloat(longitude), parseFloat(latitude)]
-  }
+    coordinates: [req.body.longitude, req.body.latitude],
+  };
 
 
   const newPlace = new Places({
