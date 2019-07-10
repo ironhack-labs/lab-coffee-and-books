@@ -1,0 +1,9 @@
+<form action="/place/create" method="post">
+  <label>Name: <input name="name"></label>
+  <label>Type: <input type="text" name="type"></label>
+  <label>Location: </label>
+  <input type="text" name="latitude" placeholder="latitude">
+  <input type="text" name="longitude" placeholder="longitude">
+  <input type="hidden" name="placeID" value="{{_id}}"/>
+  <button type="submit">Send</button>
+</form>
