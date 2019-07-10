@@ -1,0 +1,9 @@
+<form action="/place/edit" method="post">
+  <label>Name: <input name="name" value="{{name}}"></label>
+  <label>Type: <input type="text" name="type" value="{{type}}"></label>
+  <label>Location: </label>
+  <input type="text" name="latitude" placeholder="latitude" value="{{#if location}}{{location.coordinates.[1]}}{{/if}}">
+  <input type="text" name="longitude" placeholder="longitude" value="{{#if location}}{{location.coordinates.[0]}}{{/if}}">
+  <input type="hidden" name="placeID" value="{{_id}}"/>
+  <button type="submit">Send</button>
+</form>

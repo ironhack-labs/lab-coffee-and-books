@@ -1,0 +1,6 @@
+{{#each places}}
+<p>{{name}} - {{type}} |
+  <a href="place/edit/{{_id}}">Edit</a>
+  <a href="place/remove/{{_id}}">Delete</a></p>
+{{/each}}
+<a href="place/create">Create</a>
