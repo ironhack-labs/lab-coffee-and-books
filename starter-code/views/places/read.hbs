@@ -1,0 +1,19 @@
+<nav>
+  <a class="nav-link" href="/places/add">Create new place</a>
+</nav>
+<main>
+  <h1>Places:</h1>
+  <ul>
+    {{#each places}}
+    <li>
+        <p>{{name}}</p>
+        <a href="/places/edit/{{_id}}" class="edit-button">EDIT</a>
+        <a href="/places/delete/{{_id}}" class="edit-button">DELETE</a>
+    </li>
+    {{/each}}
+  </ul>
+  <div id="map"></div>
+</main>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{MAPSKEY}}"></script>
+<script src="/javascripts/script.js"></script>
