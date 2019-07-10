@@ -1,0 +1,21 @@
+<h1>Coffee - Bookshops</h1>
+
+<ul>
+  {{#each place}}
+  <p>
+    <a href="/places/{{_id}}">{{this.name}}</a>
+    <a href="/places/edit/{{_id}}" class="edit-button">Edit</a> |
+     <form action="/places/delete/{{ _id }}" method="post">
+    <button type="submit">Delete</button>
+  </form>
+
+  </p>
+  {{/each}}
+ 
+</ul>
+<a href="/places/add">Create new Place</a>
+  <div id="map">
+     {{#if GMAPS}}
+  <p>oie</p>
+  {{/if}}
+  </div>
