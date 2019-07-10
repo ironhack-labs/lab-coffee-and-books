@@ -11,8 +11,18 @@ window.onload = () => {
     center: ironhackBCN,
   });
 
-  let center = {
+  const center = {
     lat: undefined,
     lng: undefined,
   };
 };
+
+function getPlaces() {
+  axios.get('/restaurants/api')
+    .then((response) => {
+      placeRestaurants(response.data.restaurants);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
