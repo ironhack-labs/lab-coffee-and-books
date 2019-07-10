@@ -1,2 +1,17 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Location list:</h1>
+{{#each place}}
+ <a href="/places/{{id}}"><p>{{name}}</p></a>
+ <a href="/places/{{id}}/delete"><input type="button" value="Delete"></a>
+ <a href="/places/{{id}}/edit"><input type="button" value="Edit"></a>
+ <br>
+{{/each}}
+<br>
+<br>
+<a href="/places/add"><input type="button" value="Add new place"></a>
+<br>
+<br>
+<div id="map" style="height: 500px; width: 100%"></div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{MAPSKEY}}"></script>
+<script type="text/javascript" src="/javascripts/script.js"></script>
