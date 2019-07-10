@@ -1,0 +1,15 @@
+<div>
+  <h2>Places list:</h2>
+  <ul>
+  {{#each places}}
+  <li><a href="/places/{{id}}">{{name}}</a></li>
+  <a href="/{{id}}/edit"><button type="submit">EDIT</button></a>
+  <form action="/places/{{id}}/delete" method="POST">
+  <button type="submit">DELETE</button>
+  <input type="hidden" name="placesID" value="{{id}}">
+  </form>
+  {{/each}}
+  </ul>
+  <p><a href="/place/new">Add a new place</a></p>
+  <p><a href="/">Return Home</a></p>
+</div>
