@@ -1,0 +1,19 @@
+<h1>Places:</h1>
+
+<ul>
+{{#each places}}
+  <li>
+    <a href="/places/show-details/{{_id}}">{{name}}</a> |
+    <a href="/places/edit/{{_id}}">edit</a> |
+    <a href="/places/delete/{{_id}}">delete</a>
+    </li>
+{{/each}}
+</ul>
+
+<a href="/places/create">Register a new place</a>
+<br><br>
+
+<div id="map"></div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={{GMAPS}}"></script>
+  <script type="text/javascript" src="/javascripts/script.js"></script>
