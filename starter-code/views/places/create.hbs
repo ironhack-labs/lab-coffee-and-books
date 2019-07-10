@@ -1,0 +1,13 @@
+<form action="/places/create" method="POST">
+  <label for="name">Name: </label>
+  <input name="name" type="text" required>
+  <select name="type">
+    <option value="cofee shop">Coffee shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <label>Coordinates: </label>
+  <input name="latitude" type="text" placeholder="latidude" required>
+  <input name="longitude" type="text" placeholder="longitude" required>
+
+  <button type="submit">Create</button>
+</form>
