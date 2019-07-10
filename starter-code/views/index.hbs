@@ -1,2 +1,12 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<ul>
+  {{#each place}}
+  <li><a href="/edit/{{_id}}">{{name}}</a></li>
+  {{/each}}
+</ul>
+
+<a href="/create">Create new place</a>
+<div id="map"></div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{GMAPS}}"></script>
+<script type="text/javascript" src="/javascripts/script.js"></script>
