@@ -1,0 +1,10 @@
+<a href="/create"> Create a new place</a>
+<br>
+<a href="/"> Back</a>
+{{#each answer}}
+  <h1>{{name}}</h1>
+  <a href="/show/{{id}}">Details</a>
+{{/each}}
+
+<h3>Locations</h3>
+<div id="map"></div>
