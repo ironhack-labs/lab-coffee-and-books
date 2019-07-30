@@ -1,0 +1,12 @@
+<h2>So you want to know more about</h2>
+
+<form action="/view-details" action="get">
+ <select name="see-details"></select>
+  {{#with eachPlace}}
+ 
+    <option>{{this.name}}</option>
+    {{/with}}
+  </select>
+
+    <button type="submit" class="btn btn-primary">See details!</button>  
+</form>
