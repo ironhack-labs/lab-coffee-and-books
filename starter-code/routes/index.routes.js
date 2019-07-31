@@ -32,4 +32,10 @@ router.post('/create', (req, res, send) => {
 		})
 })
 
+router.get('/api', (req, res, next) => {
+	Place.find()
+		.then(allPlaces => res.json(allPlaces))
+		.catch(err => console.log('error', console.log(err)))
+})
+
 module.exports = router
