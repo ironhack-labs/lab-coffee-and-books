@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<div class="info">
+    <h3>Lista de todas las cafeterias</h3>
+    <a href="/coffeshops/new">Create new restaurant</a>
+    
+    <ul>    <!--se refiere a la carpeta coffeshops??? -->
+        {{#each coffeshops}}
+        <li>
+            <a href="/coffeshops/{{ this._id}}">{{ this.name}}</a>
+            |
+            <a href="/coffeshops/{{ this._id}}/delete">Borrar</a>
+        </li>
+        {{/each }}
+    </ul>
+    <figure id="map"></figure>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU"></script>
+<script src="/javascripts/main.js"></script>
