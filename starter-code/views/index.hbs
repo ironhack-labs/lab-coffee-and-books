@@ -1,2 +1,21 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+<div class="container">
+    <div class="col-3">
+        <a class="enlaces" href="/crearLocal">Crear local ||</a>
+    </div>
+    <div class="col-9">
+        <h2>Lista de Coffee shops y librerias</h2>
+        <ul class="places-list">
+        {{#each places}}
+        <li>{{name}}
+          <div>
+            {{!-- <a href="/books/detail/{{_id}}">Ver detalles</a>
+            -
+            <a href="/books/edit?bookId={{_id}}">Editar libro</a> --}}
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+   </div>
