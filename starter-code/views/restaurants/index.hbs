@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<div class="info">
+  <h3>List of all restaurants</h3>
+  <a href="/restaurants/new">Create new restaurant</a>
+  <ul>
+    {{#each restaurants}}
+    <li>
+      <a href="/restaurants/{{ this._id}}">{{ this.name}}</a>
+      |
+      <a href="/restaurants/{{ this._id}}/delete">Delete</a>
+    </li>
+    {{/each }}
+  </ul>
+  <figure id="map"></figure>
+</div>
+<script src="/javascripts/main.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key="></script>
