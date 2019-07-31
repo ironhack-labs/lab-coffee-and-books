@@ -1,2 +1,14 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<h2>Listado de sitios</h2>
+<ul>
+  {{#each places}}
+  <li>
+    Nombre: {{this.name}} <br>
+    Tipo: {{this.type}}
+  </li>
+  {{/each}}
+</ul>
+<figure id="map"></figure>
+<a href="/create" class="btn btn-primary">Crear</a>
