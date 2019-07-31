@@ -1,0 +1,28 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <h1>Editar Lugar {{thePlace.name}}</h1>
+    </div>
+
+    <div class="col-md-6">
+
+      <form action="/place/edit?placebId={{thePlace._id}}" method="post">
+        <div class="form-group">
+          <label for="name-input">Nombre</label>
+          <input name="name" type="text" class="form-control" id="name-input" value="{{thePlace.name}}">
+        </div>
+
+        <div class="form-group">
+          <label for="type-input">Tipo de sitio</label>
+          <input name="type" type="text" class="form-control" id="type-input" value="{{thePlace.type}}">
+        </div>
+
+        <button type="submit" class="btn btn-dark">Actualizar lugar</button>
+
+      </form>
+    </div>
+
+  </div>
+</div>

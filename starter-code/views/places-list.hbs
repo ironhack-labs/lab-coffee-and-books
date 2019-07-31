@@ -1,0 +1,4 @@
+{{#each place}}
+<h1>{{name}}</h1><a href="/place/create" class ="btn btn-dark">Crear un lugar nuevo</a> <a href="/place/edit?placeId={{_id}}"class ="btn btn-dark">Editar Lugar</a> <a href="/place/details/{{_id}}" class = "btn btn-dark">Ver detalles</a>  <a href="/place/remove/{{_id}}"class ="btn btn-dark">BORRAR</a>
+<h2>{{type}}</h2><hr>
+{{/each}}
