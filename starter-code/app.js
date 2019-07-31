@@ -55,4 +55,11 @@ const index = require('./routes/index');
 app.use('/', index);
 
 
+// default value for title local
+app.locals.title = 'Google Maps | Express';
+
+// routes middleware goes here
+const cafeRoutes = require('./routes/coffeeBooks.routes');
+app.use('/coffeshops', cafeRoutes);
+
 module.exports = app;
