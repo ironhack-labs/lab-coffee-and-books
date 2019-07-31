@@ -4,25 +4,28 @@ const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
 const favicon      = require('serve-favicon');
-const hbs          = require('hbs');
-const mongoose     = require('mongoose');
+const passport = require('passport');
+// const hbs          = require('hbs');
+// const mongoose     = require('mongoose');  //Me lo llevo a configs
 const logger       = require('morgan');
 const path         = require('path');
 
 
-mongoose
-  .connect('mongodb://localhost/starter-code', {useNewUrlParser: true})
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err)
-  });
+const session = require('express-session');
+
+const flash = require("connect-flash");
+
+
+require('./configs/passport.config')
+require('./configs/mongoose.config')
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+
+
+
 
 // Middleware Setup
 app.use(logger('dev'));
@@ -46,13 +49,43 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 
+// Configuración sesión
+app.use(session({
+  secret: "secretoPssprt",
+  resave: true,
+  saveUninitialized: true
+}))
+
+
+
+
+
+//Flash Error handling
+app.use(flash())
+
+
+
+
+//iniciar passport y session *******
+app.use(passport.initialize())
+app.use(passport.session())
+
+
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.key = 'AIzaSyCUrMZVoUbvc-8FCi8gPoR6TRa_O5vegIU'
 
 
 
-const index = require('./routes/index');
+
+const index = require('./routes/places.routes');
 app.use('/', index);
+
+
+const placesRoutes = require('./routes/places.routes');
+app.use('/places', placesRoutes);
+
+
 
 
 module.exports = app;
