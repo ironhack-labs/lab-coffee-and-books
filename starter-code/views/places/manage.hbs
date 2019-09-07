@@ -1,0 +1,16 @@
+<h1>Manage Places</h1>
+
+<h3>Coffe shops and Bookstores</h3>
+<ul>
+  {{#each places}}
+  <li>{{this.name}} is a {{this.type}}
+    <a href="/places/edit/{{this._id}}">Edit</a>
+    <a href="/places/delete/{{this._id}}">Delete</a>
+  </li>
+  {{/each}}
+</ul>
+
+<a href="/places/create">Create a place</a>
+
+<div id="map">
+</div>

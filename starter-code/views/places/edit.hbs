@@ -1,0 +1,21 @@
+<h1>Edit {{place.name}}</h1>
+
+{{#if msg}}
+<span>{{msg}}</span>
+{{/if}}
+
+<form action="/places/edit/{{place._id}}" method="post">
+  <label for="name">Name</label>
+  <input type="text" name="name" value="{{place.name}}">
+  <label for="type">Type</label>
+  <select name="type" id="type">
+    <option value="{{place.type}}">{{place.type}}</option>
+    <option value="coffee shop">Coffee shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <label for="latitude">Latitude</label>
+  <input type="text" value="{{place.lat}}" name="lat">
+  <label for="longitude">Longitude</label>
+  <input type="text" value="{{place.lng}}" name="lng">
+  <button>Submit changes</button>
+</form>
