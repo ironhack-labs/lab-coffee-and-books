@@ -1,2 +1,47 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="columns is-centered">
+	<div class="column is-6">
+		<h2 class="title is-1">Places</h2>
+		<hr>
+		<div class="columns">
+			<div class="column">
+				<div class="buttons is-right">
+					<a href="/addplace" class="button is-success is-hovered">
+						<span class="icon is-small"><i class="far fa-plus-square"></i></span>
+						<span>Add one</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<table class="table table is-hoverable movies">
+			<thead>
+				<tr>
+					<th><abbr></abbr></th>
+					<th class="title is-3">Title</th>
+					<th><abbr></abbr></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each places as |place|}}
+				<tr>
+					<td>{{place.name}}</td>
+					<td class="is-centered">
+						<a href="/editplace?placeid={{this._id}}" class="button is-warning is-inverted is-outlined">
+							<span class="icon is-small">
+								<i class="fas fa-edit"></i>
+							</span>
+						</a>
+					</td>
+					<td>
+						<form action="/{{this._id}}/delete" method="POST">
+						<button class="button is-danger is-hovered" type="submit">
+						<span class="icon is-small"><i class="far fa-plus-square"></i></span>
+						<span>Delete</span>
+					</button>
+						</form>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</div>

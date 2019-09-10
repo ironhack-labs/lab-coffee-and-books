@@ -1,0 +1,39 @@
+<div class="columns is-centered">
+	<div class="column is-6">
+		<h2 class="title is-3">Add place</h2>
+		<hr>
+		<div class="box">
+			<form action="/addplace" method="POST">
+			<div class="field">
+				<label class="label">Name:</label>
+				<div class="control has-icons-left has-icons-right">
+					<input class="input" type="text" name="name">
+					<span class="icon is-small is-left">
+				
+					</span>
+				</div>
+	
+			</div>
+
+			<div class="field">
+				<label class="label">Type:</label>
+				<div class="control has-icons-left has-icons-right">
+					<select name="type" id="type">
+						<option value="0"></option>
+						<option value="1"></option>
+					</select>
+					<span class="icon is-small is-left">
+						<i class="fas fa-key"></i>
+					</span>
+				</div>
+			</div>
+
+			<div class="buttons is-right">
+				<button type="submit" value="create" class="button is-fullwidth is-success is-hovered">
+					<span>Add place</span>
+				</button>
+			</div>
+		</form>
+		</div>
+	</div>
+</div>
