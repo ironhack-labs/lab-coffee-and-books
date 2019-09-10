@@ -1,0 +1,24 @@
+<h2>Create Place</h2>
+<form action="/create" method="POST">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input name="name" type="text" class="form-control" id="name" placeholder="Enter name">
+  </div>
+  <div class="form-group">
+      <label for="type">Type</label>
+      <select name="type" id="type" class="form-control">
+        <option>Choose...</option>
+        <option value="Coffee Shop">Coffee Shop</option>
+        <option value="Bookstore">Bookstore</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="longitude">Longitude</label>
+      <input id="lng" class="form-control" type="text" name="lng" placeholder="Longitude" />
+    </div>
+    <div class="form-group">
+      <label for="latitude">Latitude</label>
+      <input id="lat" class="form-control" type="text" name="lat" placeholder="Latitude" />
+    </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>

@@ -1,0 +1,57 @@
+<h2>Places</h2>
+<a href="/create"><button class="btn btn-info">Create Place</button></a>
+<div>
+  {{#each places as |place| }}
+  <p>{{place.type}} - {{place.name}}</p>
+  <p><a href="/edit/{{place._id}}">Update</a></p>
+  <p><a href="/delete/{{place._id}}">Delete</a></p>
+  <hr>
+  {{/each}}
+</div>
+
+
+<div id="map" style="width: 900px; height: 500px"></div>
+
+<script>
+  mapboxgl.accessToken = "pk.eyJ1IjoibmVyd2VuMjI5MSIsImEiOiJjazBkeG9sN3MwYzRhM3FybmdpNGR6eWJnIn0.CLSMkNf7rWHwBo-jX7eNGw";
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/mapbox/streets-v10",
+    //center: [-99.1711, 19.399],
+    //zoom: 15
+  });
+
+  map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), 'top-left');
+  map.addControl(new mapboxgl.NavigationControl());
+
+  // Try to get a geolocation object from the web browser
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      const center = [
+        position.coords.longitude,
+        position.coords.latitude
+      ];
+
+      map.setZoom(12).setCenter(center);
+
+      new mapboxgl.Marker({ color:"red" })
+        .setLngLat(center)
+        .setPopup(new mapboxgl.Popup().setHTML("<p>Usted está aquí</p>"))
+        .addTo(map)
+    });
+  }
+
+  let locations = [];
+  let names = [];
+  {{#each places as |place|}}
+    locations.push({{{place.location}}})
+    names.push("{{place.name}}");
+  {{/each}}
+  console.log(locations)
+  locations.forEach((place, i) => {
+    let [lng,lat] = place.coordinates
+    let place_position = [lng, lat];
+    let popup = new mapboxgl.Popup().setText(names[i]);
+    let marker = new mapboxgl.Marker().setLngLat(place_position).setPopup(popup).addTo(map);
+  });
+</script>
