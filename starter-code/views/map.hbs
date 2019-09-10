@@ -1,0 +1,67 @@
+<h1>Coffee and Books</h1>
+
+
+{{#each places as |place|}}
+<ul>
+<li>{{place.name}}</li>
+<form action="/delete/{{place._id}}" method="post"><button>Delete</button></form>
+<form action="/update/{{place._id}}" method="get"><button>Update</button></form>
+</ul>
+{{/each}}
+
+  <div id="map" style="width: 1000px; height: 700px"></div>
+    
+    
+    <script>
+    mapboxgl.accessToken = "pk.eyJ1IjoiY2hvc2thcyIsImEiOiJjazBkeG8zNjAwY2NrM2xxZHlodzAyZzM3In0.VF-SFf5PUyUc4SCfBJ0-Tg";
+    const map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/mapbox/streets-v10",
+      center: [-99.1711, 19.399],
+      zoom: 15
+    });
+
+    map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), 'bottom-left');
+    map.addControl(new mapboxgl.NavigationControl());
+    
+
+    {{!-- const marker = new mapboxgl.Marker()
+    .setLngLat([-99.1711, 19.399])
+    .addTo(map); --}}
+    
+    if (navigator.geolocation) {
+
+  
+  navigator.geolocation.getCurrentPosition(function (position) {
+   
+    const center = [
+      position.coords.longitude,
+      position.coords.latitude,
+    ];
+
+    map.setZoom(12).setCenter(center)
+    
+    {{!-- new mapboxgl.Marker({color: "red"})
+    .setLngLat(center)
+    .setPopup(new mapboxgl.Popup().setHTML("<p>usted esta aqui mijo </p>"))
+    .addTo(map) --}}
+  
+  });
+} 
+
+  let locations = [];
+  let names = [];
+
+  
+  {{#each places as |place|}}
+    locations.push({{{place.location}}});
+    names.push("{{place.name}}");
+    {{/each}}
+  console.log(locations)
+    locations.forEach((place, i)=>{
+      let [lng, lat] = place.coordinates
+      let place_position = [lng, lat];
+      let popup = new mapboxgl.Popup().setText(names[i]);
+      let marker = new mapboxgl.Marker().setLngLat(place_position).setPopup(popup).addTo(map);
+    });
+    </script>
