@@ -1,0 +1,68 @@
+<div class="container">
+
+<h1>Coffeeshops and Bookstores</h1>
+<form action="new" method="get">
+<input type="submit" value="Add POI">
+</form>
+<br>
+<br>
+</div>
+<div class="container">
+{{#each places as |place|}}
+<p>{{place.name}}   <a href="edit/{{this._id}}"><small>Edit</small></a>  <a href="delete/{{this._id}}"><small>Delete</small></a></p>
+
+{{/each}}
+<div id="map" style="width: 1024px; height: 768px"></div>
+<script>
+  mapboxgl.accessToken = "pk.eyJ1Ijoib3R0b2NvZGViZXJsaW4iLCJhIjoiY2swZHhueDF0MGMzbzNobzB1dmQ3Z2x0NiJ9.ybxTXyweubqcEFqhRhyWmw";
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/mapbox/streets-v10",
+    //center: [-99.1711, 19.399],
+    //zoom: 15
+  });
+
+  map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken }), 'top-left')
+  //add control panel
+  map.addControl(new mapboxgl.NavigationControl())
+  //const marker = new mapboxgl.Marker()
+  //  .setLngLat([-99.1711, 19.399])
+  //  .addTo(map);
+
+  // Try to get a geolocation object from the web browser
+  if (navigator.geolocation) {
+
+    // Get current position
+    // The permissions dialog will pop up
+    navigator.geolocation.getCurrentPosition(function (position) {
+      // Create an object to match Mapbox's Lat-Lng array format
+      const center = [
+        position.coords.longitude,
+        position.coords.latitude,
+      ];
+      map.setZoom(12).setCenter(center)
+
+      new mapboxgl.Marker({ color: 'red' })
+        .setLngLat(center)
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Usted esta aqui</h3>"))
+        .addTo(map)
+      //console.log('center: ', center)
+      // User granted permission
+      // Center the map in the position we got
+    });
+  }
+
+  let locations = []
+  let names = []
+  {{#each places as |place|}}
+  locations.push({{{place.location}}})
+  names.push("{{place.name}}")
+  {{/each}}
+      locations.forEach((place, i) => {
+        let [lng, lat] = place.coordinates
+        let place_position = [lng, lat]
+        let popup = new mapboxgl.Popup().setText(names[i])
+        let marker = new mapboxgl.Marker().setLngLat(place_position).setPopup(popup).addTo(map)
+      }) 
+</script>
+</div>

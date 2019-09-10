@@ -1,0 +1,54 @@
+<div class="container">
+  <form action="/new" method="post">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input value="{{name}}" class="form-control" type="text" name="name" id="name">
+    </div>
+    <div class="form-group">
+      <label for="type">Select Coffeeshop or Bookstore</label>
+      <select class="custom-select" name="type" id="type">
+        <option {{#if isCoffeeshop}} selected {{/if}} value="COFFEE">Coffeeshop</option>
+        <option {{#if isBookstore}} selected {{/if}} value="BOOKS">Bookstore</option>
+      </select>
+
+    </div>
+    <div class="form-group">
+      <label for="lng">Longitude</label>
+      <input value="{{location.coordinates.[0]}}" class="form-control" type="text" name="lng" id="lng">
+      <label for="lat">Latitude</label>
+      <input value="{{location.coordinates.[1]}}" class="form-control" type="text" name="lat" id="lat">
+    </div>
+    <input type="submit" value="{{title}}" class="btn btn-primary">
+  </form>
+</div>
+<br>
+<br>
+<div class="container">
+      <div class="container">
+        <div  id="search" class="container"></div>
+        {{!-- <div id='map' style='display: inline-flex;width: 400px; height: 300px;'></div> --}}
+      </div>
+      <br>
+      <div class="container" id="map" style="width: 80vw; height: 20vw"></div>
+      <script>
+        let input_lng = document.getElementById("lng");
+        let input_lat = document.getElementById("lat");
+        //let input_address = document.getElementById("address")
+        mapboxgl.accessToken =
+          "pk.eyJ1Ijoib3R0b2NvZGViZXJsaW4iLCJhIjoiY2swZHhueDF0MGMzbzNobzB1dmQ3Z2x0NiJ9.ybxTXyweubqcEFqhRhyWmw";
+        let map = new mapboxgl.Map({ container: "map", style: "mapbox://styles/mapbox/streets-v11" });
+        let geocoder = new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken
+        });
+        document.getElementById("search").appendChild(geocoder.onAdd(map))
+        geocoder.on("result", res => {
+          let [lng, lat] = res.result.center;
+          //let address = res.result.place_name;
+          input_lng.value = lng;
+          input_lat.value = lat;
+          //input_address.value = address;
+        });
+        map.addControl(new mapboxgl.NavigationControl());
+      </script>
+</div>
+</div>
