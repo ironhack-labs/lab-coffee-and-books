@@ -31,6 +31,25 @@ router.post('/create',(req,res,next)=>{
   
 })
 
+router.get('/update-place/:id', (req, res, next) =>{
+  const {id} = req.params
+  Place.findById(id)
+  .then(place => {
+    res.render('update-place', {place})
+  })
+});
+
+router.post('/update-place/:id', (req, res, next) => {
+  const {id} = req.params
+  Place.findByIdAndUpdate(id, {$set: {...req.body}})
+  .then(place => {
+    res.redirect('/lugares');
+  })
+  .catch(err => {
+    console.log(err);
+  })
+});
+
 router.get('/delete/:_id',deletePlace)
 
 router.post('/edit-place',updatePlace)

@@ -1,7 +1,4 @@
-{{#each places as |place|}}
-
-
-
+{{!-- {{#each places as |place|}}
 <div>
       <form action="/edit-place?placeid={{place._id}}" method="POST">
         <div>
@@ -20,4 +17,30 @@
         <button type="submit">Edita place</button>
  </form>
     </div>
-{{/each}}
+{{/each}} --}}
+
+
+<h2>Edit Place</h2>
+<form action="/update-place/{{place._id}}" method="POST">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input value="{{place.name}}" name="name" type="text" class="form-control" id="name" placeholder="Enter name">
+  </div>
+  <div class="form-group">
+      <label for="type">Type</label>
+      <select name="type" id="type" class="form-control">
+        <option selected>Choose...</option>
+        <option value="coffee shop">Coffee Shop</option>
+        <option value="bookstore">Bookstore</option>
+      </select>
+    </div>
+    {{!-- <div class="form-group">
+      <label for="lng">Longitude</label>
+      <input value="{{place.location.coordinates.[0]}}" id="lng" class="form-control" type="text" name="lng" placeholder="Longitude" />
+    </div>
+    <div class="form-group">
+      <label for="lat">Latitude</label>
+      <input value="{{place.location.coordinates.[1]}}" id="lat" class="form-control" type="text" name="lat" placeholder="Latitude" />
+    </div> --}}
+  <button type="submit" class="btn btn-primary">Edit</button>
+</form>

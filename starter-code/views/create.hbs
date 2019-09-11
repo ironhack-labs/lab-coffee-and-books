@@ -1,21 +1,31 @@
 <div>
       <form action="/create" method="POST">
-        <div>
-            <label for="">Name</label>
+        <div class="form-group">
+          <label for="">Name</label>
           <input type="text" name="name" placeholder="Name" /><br><br>
 
-        
-            <label for="">Type</label><br><br>
+          <label for="">Type</label>
           <select name="type" id="">
               <option value="coffee shop">coffee shop</option>
               <option value="bookstore">bookstore</option>
           </select>
-
         </div>
-
-        <button type="submit">Create place</button>
- </form>
+         <div class="form-group">
+      <label for="longitude">Longitude</label>
+      <input id="lng" class="form-control" type="text" name="lng" placeholder="Longitude" />
     </div>
+    <div class="form-group">
+      <label for="latitude">Latitude</label>
+      <input id="lat" class="form-control" type="text" name="lat" placeholder="Latitude" />
+    </div>
+
+        <button type="submit" class="btn btn-primary">Create place</button>
+        
+ </form>
+ <br>
+ <a href="/lugares"><button type="submit" class="btn btn-primary">Go to places</button></a>
+ 
+</div>
 
    
     
