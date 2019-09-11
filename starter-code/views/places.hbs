@@ -1,0 +1,60 @@
+<h1>Places</h1>
+
+<ul>
+  {{#each lugares as |place|}}
+  <li>{{place.name}}</li>
+  {{/each}}
+</ul>
+
+<div id="map" style="width: 100%; height: 800px"></div>
+
+<script>
+  mapboxgl.accessToken = "pk.eyJ1IjoianVhbnNpbm1pZWRvcyIsImEiOiJjazBkeG5yMjAwYmh1M2dwbXBreGhwaHowIn0.R0mwPQ9Ja7NH7AisDAeNvw"
+
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/mapbox/streets-v10"
+  });
+
+  map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), 'top-left')
+  map.addControl(new mapboxgl.NavigationControl())
+
+  if (navigator.geolocation) {
+
+  navigator.geolocation.getCurrentPosition(function (position) {
+    const center = [
+      position.coords.longitude,
+      position.coords.latitude,
+    ];
+
+    map.setZoom(15).setCenter(center)
+
+    new mapboxgl.Marker({color: "peru"})
+      .setLngLat(center)
+      .setPopup(new mapboxgl.Popup().setHTML("<p>OA VATOOO</p>"))
+      .addTo(map);
+    // User granted permission
+    // Center the map in the position we got
+    }, function () {
+      // If something goes wrong
+      console.log('Error in the geolocation service.');
+    });
+  } else {
+    // Browser says: Nah! I do not support this.
+    console.log('Browser does not support geolocation.');
+  }
+
+  let locations = []
+  let names = []
+  {{#each lugares as |place|}}
+    locations.push({{{place.location}}})
+    names.push('{{place.name}}')
+  {{/each}}
+  locations.forEach((place, i) => {
+    let [lng, lat] = place.coordinates
+    let place_position = [lng, lat]
+    let popup = new mapboxgl.Popup().setText(names[i])
+    let marker = new mapboxgl.Marker().setLngLat(place_position).setPopup(popup).addTo(map)
+  })
+  
+</script>
