@@ -15,8 +15,8 @@
 		<table class="table table is-hoverable movies">
 			<thead>
 				<tr>
+					<th class="title is-3">Place</th>
 					<th><abbr></abbr></th>
-					<th class="title is-3">Title</th>
 					<th><abbr></abbr></th>
 				</tr>
 			</thead>
@@ -24,20 +24,19 @@
 				{{#each places as |place|}}
 				<tr>
 					<td>{{place.name}}</td>
+					<td>
+						<form action="/{{this._id}}/delete" method="POST">
+						<button class="button is-danger is-hovered" type="submit">
+						<span class="icon is-small"><i class="far fa-trash-alt"></i></span>
+					</button>
+						</form>
+					</td>
 					<td class="is-centered">
 						<a href="/editplace?placeid={{this._id}}" class="button is-warning is-inverted is-outlined">
 							<span class="icon is-small">
 								<i class="fas fa-edit"></i>
 							</span>
 						</a>
-					</td>
-					<td>
-						<form action="/{{this._id}}/delete" method="POST">
-						<button class="button is-danger is-hovered" type="submit">
-						<span class="icon is-small"><i class="far fa-plus-square"></i></span>
-						<span>Delete</span>
-					</button>
-						</form>
 					</td>
 				</tr>
 				{{/each}}

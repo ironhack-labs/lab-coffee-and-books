@@ -1,5 +1,5 @@
 <div class="columns is-centered">
-	<div class="column is-6">
+	<div class="column is-4">
 		<h2 class="title is-3">Add place</h2>
 		<hr>
 		<div class="box">
@@ -7,33 +7,84 @@
 			<div class="field">
 				<label class="label">Name:</label>
 				<div class="control has-icons-left has-icons-right">
-					<input class="input" type="text" name="name">
+					<input value ="" class="input" type="text" name="name">
 					<span class="icon is-small is-left">
 				
 					</span>
 				</div>
-	
+			</div>
+
+			<div class="box">
+			<form action="/addplace" method="POST">
+			<div class="field">
+				<label class="label">Address:</label>
+				<div class="control has-icons-left has-icons-right">
+					<input id="address" class="input" type="text" name="address">
+					<span class="icon is-small is-left">
+					</span>
+				</div>
+			</div>
+			<div class="field">
+				<label class="label">Longitud:</label>
+				<div class="control has-icons-left has-icons-right">
+					<input id="lng" class="input" type="text" name="lng">
+					<span class="icon is-small is-left">
+					</span>
+				</div>
 			</div>
 
 			<div class="field">
-				<label class="label">Type:</label>
+				<label class="label">Latitude:</label>
 				<div class="control has-icons-left has-icons-right">
-					<select name="type" id="type">
-						<option value="0"></option>
-						<option value="1"></option>
-					</select>
+					<input id="lat" class="input" type="text" name="lat">
 					<span class="icon is-small is-left">
-						<i class="fas fa-key"></i>
 					</span>
 				</div>
 			</div>
 
 			<div class="buttons is-right">
-				<button type="submit" value="create" class="button is-fullwidth is-success is-hovered">
+				<button type="submit" class="button is-fullwidth is-success is-hovered">
 					<span>Add place</span>
 				</button>
 			</div>
 		</form>
 		</div>
+	</div>
+</div>
+<div class="column is-8">
+<div class="box">
+		<div>
+      <div>
+        <div id="search"></div>
+        <div id='map' style='display: block;width: 100%; height: 600px'></div>
+      </div>
+      <div id="map" height="500px"></div>
+      <script>
+        let input_lng = document.getElementById("lng");
+        let input_lat = document.getElementById("lat");
+        let input_address = document.getElementById("address")
+        mapboxgl.accessToken =
+          "pk.eyJ1IjoibWx6eiIsImEiOiJjanUwbTRtaTQxc3RzNDRtZmdtaXF1dXVxIn0.k3hMbEeCzUKaDn2sIsULjA";
+
+        let map = new mapboxgl.Map({ container: "map", style: "mapbox://styles/mapbox/streets-v11" });
+
+        let geocoder = new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken
+        });
+
+        document.getElementById("search").appendChild(geocoder.onAdd(map))
+
+        geocoder.on("result", res => {
+          let [lng, lat] = res.result.center;
+          let address = res.result.place_name;
+          input_lng.value = lng;
+          input_lat.value = lat;
+          input_address.value = address;
+        });
+
+        map.addControl(new mapboxgl.NavigationControl());
+
+      </script>
+    </div>		
 	</div>
 </div>

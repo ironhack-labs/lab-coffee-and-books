@@ -11,21 +11,21 @@ exports.addPlaceForm = async (req,res,next) => {
 }
 
 exports.addPlace = async (req,res,next) => {
-	const {name, address, type } = req.body
-	await Place.create({name, address, type })
+	const {name, address, location } = req.body
+	await Place.create({name, address, location })
 	res.redirect('/')
 }
 
 exports.editPlaceForm = async (req,res,next) => {
 	const { placeid } = req.query
 	const place = await Place.findById(placeid)
-	res.render(`editplace`)
+	res.render('editplace', place)
 }
 
 exports.editPlace = async (req,res,next) => {
 	const {name, address, type } = req.body
 	const {placeid} = req.query
-	await Place.findByIdAndUpdate(placeid,{name, address, type })
+	await Place.findByIdAndUpdate(placeid,{name, address, location })
 	res.redirect('/')
 }
 
