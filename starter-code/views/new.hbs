@@ -1,0 +1,43 @@
+  <form action="/new" method="POST">
+      <label for="name">Name</label>
+      <input value="{{name}}" class="form-control" type="text" name="name" id="name">
+      <label for="type">Coffee or Book</label>
+      <select class="custom-select" name="type" id="type">
+        <option {{#if isCoffeeshop}} selected {{/if}} value="Coffee">Coffee</option>
+        <option {{#if isBookstore}} selected {{/if}} value="Bookstore">Book</option>
+      </select>
+
+      <label for="lng">Longitude</label>
+      <input value="{{location.coordinates.[0]}}" class="form-control" type="text" name="lng" id="lng">
+      <label for="lat">Latitude</label>
+      <input value="{{location.coordinates.[1]}}" class="form-control" type="text" name="lat" id="lat">
+      <input type="submit" value="{{title}}" class="btn btn-primary">
+  </form>
+<br>
+<br>
+
+      <br>
+      <div>
+        <div id="search"></div>
+        <div id='map' style='display: inline-flex;width: 400px; height: 300px;'></div>
+      </div>
+      <div id="map" style="width: 800px; height: 600px"></div>
+      <script>
+        let input_lng = document.getElementById("lng");
+        let input_lat = document.getElementById("lat");
+        mapboxgl.accessToken =
+          "pk.eyJ1IjoiZWRpZTMxNiIsImEiOiJjazBkeG43Y2swY2FjM2RudWVoaGN2azNrIn0.VWfauR5K4-1vXW39MBvtFA";
+        let map = new mapboxgl.Map({ container: "map", style: "mapbox://styles/mapbox/streets-v11" });
+        let geocoder = new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken
+        });
+        document.getElementById("search").appendChild(geocoder.onAdd(map))
+        geocoder.on("result", res => {
+          let [lng, lat] = res.result.center;
+          input_lng.value = lng;
+          input_lat.value = lat;
+        });
+        map.addControl(new mapboxgl.NavigationControl());
+      </script>
+</div>
+</div>

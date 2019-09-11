@@ -1,0 +1,56 @@
+<h1>Coffe && Bookstore Map</h1>
+
+
+
+<form action="new" method="get">
+<input type="submit" value="Add CB">
+</form>
+<br>
+<br>
+{{#each places as |place|}}
+<p>{{place.name}}   <a href="edit/{{this._id}}"><small>Edit</small></a>  <a href="delete/{{this._id}}"><small>Delete</small></a></p>
+
+{{/each}}
+
+<div class="container">
+
+<div id="map" style="width: 850px; height: 600px"></div>
+<script>
+  mapboxgl.accessToken = "pk.eyJ1IjoiZWRpZTMxNiIsImEiOiJjazBkeG43Y2swY2FjM2RudWVoaGN2azNrIn0.VWfauR5K4-1vXW39MBvtFA";
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/mapbox/streets-v10",
+    //center: [-99.1711, 19.399],
+    //zoom: 15
+  });
+  map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken }), 'top-left')
+  map.addControl(new mapboxgl.NavigationControl())
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      const center = [
+        position.coords.longitude,
+        position.coords.latitude,
+      ];
+      map.setZoom(12).setCenter(center)
+      new mapboxgl.Marker({ color: 'green' })
+        .setLngLat(center)
+        .setPopup(new mapboxgl.Popup().setHTML("<h3>Usted esta aqui mero</h3>"))
+        .addTo(map)
+      
+    });
+  }
+  let locations = []
+  let names = []
+  {{#each places as |place|}}
+  locations.push({{{place.location}}})
+  names.push("{{place.name}}")
+  {{/each}}
+      locations.forEach((place, i) => {
+        let [lng, lat] = place.coordinates
+        let place_position = [lng, lat]
+        let popup = new mapboxgl.Popup().setText(names[i])
+        let marker = new mapboxgl.Marker().setLngLat(place_position).setPopup(popup).addTo(map)
+      }) 
+</script>
+</div>
