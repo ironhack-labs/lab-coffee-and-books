@@ -1,2 +1,48 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>My Places</h1>
+<a href="/place/new">Create new place</a>
+<ul>{{#each places as | place |}}
+  <li>{{ place.name }} <a href="/place/{{ place._id }}/delete">Delete</a> <a href="/place/{{place._id}}/edit">Edit</a> </li>
+  {{/each}}
+</ul>
+<div id="map" style="width: 800px; height: 600px"></div>
+
+<script>
+  mapboxgl.accessToken = "{{mapToken}}"
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/mapbox/streets-v10",
+  });
+
+  map.addControl(new mapboxgl.NavigationControl())
+
+  // Get current position
+  // The permissions dialog will pop up
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      // Create an object to match Mapbox's Lat-Lng array format
+      const center = [
+        position.coords.longitude,
+        position.coords.latitude,
+      ];
+      map.setZoom(12).setCenter(center)
+      
+      new mapboxgl.Marker({ color: "red" })
+        .setLngLat(center)
+        .setPopup(new mapboxgl.Popup().setHTML("<p>You are here!</p>"))
+        .addTo(map)
+    })
+  }
+
+  let locations = []
+  let names = []
+  {{#each places as | place |}}
+  locations.push({{{ place.location }}})
+  names.push("{{place.name}}")
+  {{/each}}
+      locations.forEach((place, i) => {
+        let [lng, lat] = place.coordinates
+        let place_position = [lng, lat]
+        let popup = new mapboxgl.Popup().setText(names[i])
+        let marker = new mapboxgl.Marker().setLngLat(place_position).setPopup(popup).addTo(map)
+      })
+</script>
