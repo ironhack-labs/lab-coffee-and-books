@@ -1,0 +1,14 @@
+<h1>My first lugar</h1>
+<ul>{{#each places as |place|}}
+<li><p>{{place.name}}</p></li>
+<form action="/lugares" method="POST">
+<a href="/delete/{{place._id}}">
+Borra Lugar
+</a><br>
+<a href="/edit-place?placeid={{place._id}}">
+Edita Lugar
+</a>
+</form>
+{{/each}}
+</ul>
+

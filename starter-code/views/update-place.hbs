@@ -1,0 +1,23 @@
+{{#each places as |place|}}
+
+
+
+<div>
+      <form action="/edit-place?placeid={{place._id}}" method="POST">
+        <div>
+            <label for="">{{place.name}}</label>
+          <input type="text" name="name" placeholder="Name" /><br><br>
+
+        
+            <label for="">{{place.type}}</label><br><br>
+          <select name="type" id="">
+              <option value="coffee shop">coffee shop</option>
+              <option value="bookstore">bookstore</option>
+          </select>
+
+        </div>
+
+        <button type="submit">Edita place</button>
+ </form>
+    </div>
+{{/each}}
