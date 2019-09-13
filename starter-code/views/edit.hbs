@@ -1,0 +1,61 @@
+<div class="columns is-centered">
+	<div class="column is-6">
+		<h2 class="title is-3">Update Place</h2>
+		<hr>
+		<form action="/edit/{{_id}}" method="POST">
+			<div class="field">
+				<label class="label" for="name">Name:</label>
+				<input value="{{name}}" class="input" type="text" name="name" placeholder="{{name}}">
+			</div>
+
+          <div class="field">
+            <label class="label" for="type">Type:</label>
+            <select class = "input" name="type" id="type">
+              <option value="coffeeShop">Coffee Shop</option>
+              <option value="bookStore">Book Store</option>
+            </select>
+			<div class="field">
+				<label class="label" for="lng">Longitude:</label>
+      	<input id="lng" type="text" name="lng" placeholder="{{location.coordinates.[0]}}" />
+			</div>
+			<div class="field">
+				<label class="label" for="lat">Latitude:</label>
+      	<input id="lat" type="text" name="lat" placeholder="{{location.coordinates.[0]}}" />
+			</div>
+			<div class="buttons is-right">
+				<button type="submit" value="create" class="button is-fullwidth is-success is-hovered">
+					<span class="icon is-small"><i class="far fa-save"></i></span>
+					<span>Update Place</span>
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+  <div>
+    <div id="search"></div>
+    <div id='map' style='display: inline-flex;width: 400px; height: 300px;'></div>
+  </div>
+  <div id="map" style="width: 500px; height: 400px"></div>
+  <script>
+    let input_lng = document.getElementById("lng");
+    let input_lat = document.getElementById("lat");
+    let input_address = document.getElementById("address")
+    mapboxgl.accessToken =
+      "pk.eyJ1IjoibWx6eiIsImEiOiJjanUwbTRtaTQxc3RzNDRtZmdtaXF1dXVxIn0.k3hMbEeCzUKaDn2sIsULjA";
+    let map = new mapboxgl.Map({ container: "map", style: "mapbox://styles/mapbox/streets-v11" });
+    let geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken
+    });
+    document.getElementById("search").appendChild(geocoder.onAdd(map))
+    geocoder.on("result", res => {
+      let [lng, lat] = res.result.center;
+      let address = res.result.place_name;
+      input_lng.value = lng;
+      input_lat.value = lat;
+      input_address.value = address;
+    });
+    map.addControl(new mapboxgl.NavigationControl());
+  </script>
+</div> 

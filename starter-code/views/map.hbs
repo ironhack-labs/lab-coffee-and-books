@@ -1,0 +1,61 @@
+<h3>My First Map</h3>
+
+
+{{#each places as |place|}}
+<ul>
+<li>{{place.name}}</li>
+<form action="/delete/{{place._id}}" method="post"><button>Delete</button></form>
+<form action="/edit/{{place._id}}" method="get"><button>edit</button></form>
+</ul>
+{{/each}}
+
+<a href="/new"><button>Add new Location</button> </a>
+
+    <div id="map" style="width: 800px; height: 600px"></div>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGpub2JsZXM0MjAzOSIsImEiOiJjazBkeG45eGYwYnY0M2ltcWt3ejNpYzhpIn0.EhUvMyEhXm-0ew4mBvhDag';
+    const map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/mapbox/streets-v10",
+      //center: [-99.1711, 19.399],
+      //zoom: 15
+    });
+    map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), 'top-left')
+    map.addControl(new mapboxgl.NavigationControl())
+     //   map.addControl(new MapboxDirections({}))
+    
+    const marker = new mapboxgl.Marker()
+    .setLngLat([-99.1711, 19.399])
+    .addTo(map);
+// Try to get a geolocation object from the web browser
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    // Create an object to match Mapbox's Lat-Lng array format
+    const center = [
+      position.coords.longitude,
+      position.coords.latitude,
+    ];
+      map.setZoom(10).setCenter(center);
+      new mapboxgl.Marker({ color: "red" })
+        .setLngLat(center)
+        .setPopup(new mapboxgl.Popup().setHTML("<p>You are here</p>"))
+        .addTo(map);
+  }, function () {
+  });
+} else {
+}
+  let locations = [];
+  let names = [];
+  {{#each places as |place|}}
+    locations.push({{{place.location}}});
+    names.push("{{place.name}}");
+  {{/each}}
+   
+  locations.forEach((place, i) => {
+    let [lng,lat] = place.coordinates
+    let place_position = [lng, lat];
+    let popup = new mapboxgl.Popup().setText(names[i]);
+    let marker = new mapboxgl.Marker().setLngLat(place_position).setPopup(popup).addTo(map);
+  });
+</script>
