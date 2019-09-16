@@ -7,8 +7,10 @@ exports.deletePlace=async(req,res,next)=>{
 }
 
 exports.updatePlace=async(req,res,next)=>{
-  const {name, type}=req.body
+  const {name, type, coordinates}=req.body
+  
   const {placeid}=req.query
-  await Place.findByIdAndUpdate(placeid,{name,type})
+  console.log(placeid)
+  await Place.findByIdAndUpdate(placeid,{name,type,coordinates})
   res.redirect('/lugares')
 }

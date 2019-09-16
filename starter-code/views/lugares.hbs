@@ -1,7 +1,8 @@
 <h1>Places</h1>
 <a href="/">Inicio</a>
 <ul class="list-group"></ul>{{#each places as |place|}}
-<li class="list-group-item"><p>Name: {{place.name}}</p>
+<li class="list-group-item">
+  <p>Name: {{place.name}}</p>
 <p>Type: {{place.type}}</p>
 <form action="/lugares" method="POST">
 <a href="/delete/{{place._id}}">
@@ -17,46 +18,22 @@
   <div>
 
       <div>
-        <div id='map' style='display: inline-flex;width: 400px; height: 300px;'></div>
+        <div id='map' style='display: inline-flex;width: 800px; height: 500px;'></div>
       </div>
-      <div id="map" style="width: 600px; height: 400px"></div>
-      <script>
-        let input_lng = document.getElementById("lng");
-        let input_lat = document.getElementById("lat");
-        let input_address = document.getElementById("address")
-        mapboxgl.accessToken =
-          "pk.eyJ1IjoibWx6eiIsImEiOiJjanUwbTRtaTQxc3RzNDRtZmdtaXF1dXVxIn0.k3hMbEeCzUKaDn2sIsULjA";
-        let map = new mapboxgl.Map({ container: "map", style: "mapbox://styles/mapbox/streets-v11" });
-        let geocoder = new MapboxGeocoder({
-          accessToken: mapboxgl.accessToken
-
-        });
-
-        document.getElementById("search").appendChild(geocoder.onAdd(map))
-        geocoder.on("result", res => {
-          let [lng, lat] = res.result.center;
-          let address = res.result.place_name;
-          input_lng.value = lng;
-          input_lat.value = lat;
-          input_address.value = address;
-        });
-        map.addControl(new mapboxgl.NavigationControl());
-      </script>
-    </div>
-<script >
+<script>
   mapboxgl.accessToken="pk.eyJ1IjoiZ2lzZWxpdXgiLCJhIjoiY2swZHhwZ3VwMGJ2eDNpbXF4bDgxY2d3dSJ9.oCz3yt20nmOFdeSKEZK8UA"
-  const map = new mapboxgl.Map({
+  let map2 = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/streets-v10",
 });
 
 //añadir controladores
-map.addControl(new MapboxDirections({accessToken:mapboxgl.accessToken}),'top-left')
-map.addControl(new mapboxgl.NavigationControl());
+map2.addControl(new MapboxDirections({accessToken:mapboxgl.accessToken}),'top-left')
+map2.addControl(new mapboxgl.NavigationControl());
 
-const marker = new mapboxgl.Marker()
+{{!-- const marker = new mapboxgl.Marker()
     .setLngLat([-99.1711, 19.399])
-    .addTo(map);
+    .addTo(map2); --}}
 
 if (navigator.geolocation) {
 
@@ -69,11 +46,11 @@ if (navigator.geolocation) {
       position.coords.latitude,
     ];
 
-    map.setZoom(12).setCenter(center);
+    map2.setZoom(12).setCenter(center);
 
    new mapboxgl.Marker({color:"red"})
    .setLngLat(center)
-   .addTo(map)
+   .addTo(map2)
    .setPopup(new mapboxgl.Popup().setHTML("<p>Usted està aquì </p>"))
 
   });

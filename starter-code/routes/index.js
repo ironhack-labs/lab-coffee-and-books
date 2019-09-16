@@ -21,9 +21,13 @@ router.get('/create',(req,res)=>{
 })
 
 router.post('/create',(req,res,next)=>{
-  let{name,type}=req.body
+  let{name,type, lat, lng}=req.body
   let place={
-    name,type
+    name,type,
+    location: {
+      type: "Point",
+      coordinates : [lng, lat]
+    }
   }
   Place.create(place).then(()=>{
     res.render("create")
