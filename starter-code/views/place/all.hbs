@@ -1,0 +1,53 @@
+<div class="bg-dark">
+  <div class="container">
+    <div class="row fullheight">
+
+      <div class="col-12 col-md-5 m-auto">
+        <div class="card p-5">
+          <h1 class="h3 mb-0">All places</h1>
+          <hr class="my-4">
+          {{#each places as |place|}}
+          {{> placePartial place}}
+          {{else}}
+          <div class="text-center">
+            <h1 class="h4"><span class="display-3">🗺</span> <br> There are no places added yet</h1>
+            <p class="h5 text-muted font-weight-normal">Why don't you try adding one?</p>
+          </div>
+          {{/each}}
+          <div class="text-center mt-4">
+            <a href="/place/create" class="btn btn-info">Add a new place</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-7 m-auto">
+        <div id="map" class="w-100" style="height: 500px;"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1Ijoidml2ZXJhbGlhIiwiYSI6ImNrMGR4bm85bjA4YnQzbmsxa3Y0bHBmNGIifQ.DsI6Z2UAX22clLhWgTax3g'
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v10'
+  })
+
+  map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken }), 'top-left')
+  map.addControl(new mapboxgl.NavigationControl())
+
+let locations = []
+let names = []
+{{#each places as |place|}}
+  locations.push({{{place.location}}})
+  names.push("{{place.name}}")
+{{/each}}
+locations.forEach((place, i)=>{
+  let [lng,lat] = place.coordinates
+  let place_position = [lng, lat]
+  let popup = new mapboxgl.Popup().setText(names[i])
+  let marker = new mapboxgl.Marker().setLngLat(place_position).setPopup(popup).addTo(map)
+})
+</script>

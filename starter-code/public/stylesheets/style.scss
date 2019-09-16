@@ -1,8 +1,8 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.fullheight {
+  min-height: 100vh;
 }
 
-a {
-  color: #00B7FF;
+#search {
+  top: 10px;
+  left: -10px;
 }
