@@ -64,4 +64,20 @@ router.post("/edit", (req, res, next) => {
   })
 })
 
+// Render the view to confirm the delete
+router.get("/delete/:id", (req, res, next) => {
+  Places.findById(req.params.id)
+  .then(placeFound => {
+    res.render("places/delete", {place: placeFound})
+  })
+})
+
+// Delete a place
+router.post("/delete", (req, res, next) => {
+  Places.findByIdAndDelete(req.body._id)
+  .then(placeDeleted => {
+    res.redirect('/places')
+  })
+})
+
 module.exports = router;

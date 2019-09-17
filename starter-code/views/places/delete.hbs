@@ -1,0 +1,16 @@
+<h1>Deleting place</h1>
+
+{{#with place}}
+<div class="place">
+  <h2 class="title">{{name}}</h2>
+  <p class="type">{{type}}</p>
+</div>
+<form action="/places/delete" method="post" class="form">
+  <input type="hidden" name="_id" value="{{_id}}">
+  <p class="confirm">Are you sure? 🤔</p>
+  <div class="actions">
+    <a href="/places/{{_id}}" class="button button-cancel">Cancel</a>
+    <input type="submit" value="delete" class="button button-delete">
+  </div>
+</form>
+{{/with}}
