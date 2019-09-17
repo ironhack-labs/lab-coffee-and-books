@@ -31,17 +31,20 @@ router.post('/new', (req, res, next) => {
   })
 })
 
-router.get('/edit/:id', async (req, res, next) => {
-  const { id } = req.params
-  const place = await Place.findById(id)
-  const isBookstore=(place.type==='Bookstore')
-  const isCoffeeshop=(place.type==='Coffe')
-  place.isBookstore=isBookstore
-  place.isCoffeeshop=isCoffeeshop
-  place.title='Update CP'
-  res.render('new', place)
+router.get('/edit/:id', (req, res, next) => {
+  Place.findById(req.params.id)
+    .then(places => {
+      console.log(places)
+      res.render("edit", {places})})
+    .catch(err=> console.log(err))
 })
 
+router.post("/edit/:id", (req,res,next) => {
+  
+  Place.findByIdAndUpdate(req.params.id, {$set: req.body})
+    .then(() => res.redirect('/list'))
+    .catch(err => console.log(err))
+  })
 
 router.get('/delete/:id', async (req, res, next) => {
   const { id } = req.params
