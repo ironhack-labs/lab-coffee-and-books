@@ -1,0 +1,21 @@
+<h2>Best places for coffee and books</h2>
+<a href="/">Home</a>
+<a href="new">Add new place</a>
+ <div id="map"></div>
+<ul>
+  {{#each allPlaces}}
+
+  <li>
+     <h4>{{this.name}}</h4><p>{{this.type}}</p>
+    <a href="/places/{{this._id}}/edit">Edit</a> 
+    <form action="/places/{{this._id}}/delete" method="post">
+      <button type="submit">Delete</button>    
+    </form>
+  </li>
+  {{/each}}
+</ul>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+<script type="text/javascript" src="../public/javascripts/script.js"></script>

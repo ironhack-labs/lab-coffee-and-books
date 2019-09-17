@@ -1,0 +1,17 @@
+<h2>Add a new place</h2>
+<form action="/new" method="POST">
+  <input type="text" name="name" placeholder="Name">
+  <select name="type" id="type">
+    <option value="coffee shop">Coffee shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <input type="text" name="latitude" placeholder="latitude">
+  <input type="text" name="longitude" placeholder="longitude">
+  <button type="submit">Submit place</button>
+</form>
+
+{{#if error}}
+        <p style="color:red">{{error}}</p>
+{{/if}}
+
+<a href="/">Back</a>
