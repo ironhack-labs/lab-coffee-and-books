@@ -8,7 +8,14 @@ const placeSchema = new Schema({
     required: true,
     unique: true,
   },
+  location: { type: { type: String }, coordinates: [Number] },
   type: {
     type: String,
-  }
-}) 
+  },
+}, {
+  timestamps: true,
+});
+
+const Place = mongoose.model('place', placeSchema);
+
+module.exports = Place;
