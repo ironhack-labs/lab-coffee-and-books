@@ -10,14 +10,7 @@ const logger       = require('morgan');
 const path         = require('path');
 
 
-mongoose
-  .connect('mongodb://localhost/starter-code', {useNewUrlParser: true})
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err)
-  });
+require("./configs/db.config")
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
@@ -44,6 +37,8 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+hbs.registerPartials(__dirname + "/views/partials");
+
 
 
 // default value for title local
@@ -51,7 +46,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 
-const index = require('./routes/index');
+const index = require('./routes/index.routes');
 app.use('/', index);
 
 

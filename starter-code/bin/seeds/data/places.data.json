@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Starbucks",
+    "type": "coffee shop"
+  },
+  {
+    "name": "Dunkin Coffee",
+    "type": "coffee shop"
+  },
+  {
+    "name": "Fnac",
+    "type": "bookstore"
+  },
+  {
+    "name": "La casa del libro",
+    "type": "bookstore"
+  }
+]

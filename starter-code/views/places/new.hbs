@@ -1,0 +1,17 @@
+<h1>Create new place</h1>
+
+<form class="form" method="post" action="/places/new"">
+  <div class="field">
+    <input type="text" class="input" name="name" placeholder="Name" id="name">
+    <label for="name" class="label">Name</label>
+  </div>
+  <div class="field">
+    <select name="type" id="type" class="select">
+      <option value="coffee shop">Coffee shop</option>
+      <option value="bookstore">Bookstore</option>
+    </select>
+  </div>
+  <div class="actions">
+    <input type="submit" value="Create" class="button button-submit">
+  </div>
+</form>
