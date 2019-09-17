@@ -1,2 +1,20 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<a href="/new">Add places</a>-<a href="/detail">Update places</a>
+
+
+<h3>List of places</h3>
+
+<ul>
+  {{#each places}}
+  <li>
+    {{this.name}} || {{this.type}}
+    {{!-- <a href="/{{_id}}">{{name}}</a> --}}
+  </li>
+  {{/each}}
+</ul>
+
+
+
+<div id="map"></div>

@@ -1,0 +1,24 @@
+<h1>Create a place</h1>
+
+<form action="/new" method="POST">
+  <input type="text" name="name" placeholder="Place name..">
+  <input type="text" name="type">
+  <input type="number" step="any" name="lat">
+  <input type="number" step="any" name="lng">
+  <input type="submit" value=" Add Place">
+</form>
+
+
+<h3>List of places</h3>
+<ul>
+  {{#each places}}
+  <li>
+    {{this.name}} || {{this.type}}
+    {{!-- <a href="/{{_id}}">{{name}}</a> --}}
+  </li>
+  {{/each}}
+</ul>
+
+<div id="map"></div>
+
+<a href="/">Go back</a>
