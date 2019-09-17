@@ -1,0 +1,19 @@
+<h1>Edit place</h1>
+
+{{#with place}}
+<form class="form" method="post" action="/places/edit">
+  <div class="field">
+    <input type="hidden" name="_id" value="{{_id}}">
+    <input type="text" class="input" name="name" placeholder="Name" id="name"
+      value="{{name}}">
+    <label for="name" class="label">Name</label>
+  </div>
+  <div class="field">
+    <input type="text" name="type" id="type" placeholder="Type" value="{{type}}">
+    <label for="type" class="label">Type</label>
+  </div>
+  <div class="actions">
+    <input type="submit" value="update" class="button button-submit">
+  </div>
+</form>
+{{/with}}

@@ -39,7 +39,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 hbs.registerPartials(__dirname + "/views/partials");
 
-
+require('./helpers/helpers');
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';

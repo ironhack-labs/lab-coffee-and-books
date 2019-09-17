@@ -1,3 +1,16 @@
-{{> navigation}}
+<ul class="places">
+{{#each places}}
+  <li class="place">
+    <div>
+      <h2 class="title">{{this.name}}</h2>
+      <p class="type">{{this.type}}</p>
+      <div class="links">
+        <a href="/places/{{this._id}}" class="button button--detail">Detail</a>
+        <a href="/places/edit/{{this._id}}" class="button button--edit">Edit</a>
+      </div>
+    </div>
+  </li>
+{{/each}}
+</ul>
 
 <div id="map" class="map"></div>
