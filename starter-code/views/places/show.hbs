@@ -1,0 +1,20 @@
+<div class="flex-column">
+  <h2>Place Info</h2>
+
+  <div class="profile flex-column">
+    {{#with place}}
+      <div class="flex prof">
+        <h3>Name:</h3>
+        <p>{{name}}
+      </div>
+      <div class="flex prof">
+        <h3>Type:</h3>
+        <p>{{type}}
+      </div>
+      <div class="flex prof">
+        <h3>Address:</h3>
+        <p>{{address}}
+      </div>
+    {{/with}}
+  </div>
+</div>

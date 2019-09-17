@@ -1,0 +1,24 @@
+
+<div class="flex-cloumn">
+  
+  <h2>List of places</h2>
+
+  <div class="flex">
+    {{#each place}}
+    <div class="flex-column staff">
+        <h4>{{this.name}}</h4>
+        
+        <div class="flex">
+          <form action="/edit/{{_id}}/" method="GET">
+          <button type="submit">Edit</button>
+          </form>
+
+          <form action="/edit/delete/{{_id}}" method="POST">
+          <button type="submit">Delete</button>
+          </form>
+        </div>
+    </div>
+    {{/each}}
+  </div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="flex-column">
+  <form action="/new" method="POST" class="flex-column">
+
+    <div class="flex">
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name" placeholder="Vladimir">
+    </div>
+    
+    <div class="flex">
+      <label for="address">Address:</label>
+      <input id="address" type="text" name="address" placeholder="vladCrazy">
+    </div>
+
+    <div class="flex">
+      <label for="lng">Longitude:</label>
+      <input id="lng" type="number" step="0.000001" name="lng" placeholder="vladCrazy">
+    </div>
+
+    <div class="flex">
+      <label for="lat">Latitude:</label>
+      <input id="lat" type="number" step="0.000001" name="lat" placeholder="vladCrazy">
+    </div>
+    
+    <div class="flex">
+      <label for="type">Type:</label>
+        <select id="type" type="text" name="type">
+          <option value="COFFEE SHOP">COFFEE SHOP</option>
+          <option value="BOOKSTORE">BOOKSTORE</option>
+        </select>
+    </div>
+
+    {{#if message}}
+      <div class="error-message">{{ message }}</div>
+    {{/if}}
+  
+
+    <button type="submit">Create place</button>
+  </form>
+</div>
