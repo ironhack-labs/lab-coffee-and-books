@@ -1,0 +1,20 @@
+<h2>All the places in our community are listed here:</h2>
+<br>
+<span style="color: red">{{error}}</span>
+
+<ul>
+  {{#each allPlaces}}
+  <li> {{this.name}}
+    <a href="/places/details/{{this.id}}">See details</a>
+  </li>
+  <br>
+  {{/each}}
+</ul>
+<br>
+<br>
+
+<ul>
+  <li><a href="/">Home</a></li>
+    <li><a href="/places/generalView">View all our places</a></li>
+  <li><a href="/places/delete">Delete a place</a></li>
+</ul>
