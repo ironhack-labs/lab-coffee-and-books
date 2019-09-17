@@ -51,6 +51,30 @@ router.get("/update-place/:id", (req, res, next) => {
     .catch(err => next(err));
 });
 
+router.post("/update-place/:id", (req, res, next) => {
+  const { name, type, lat, lng } = req.body;
+
+  Place.update(
+    { _id: req.params.id },
+    {
+      $set: {
+        name,
+        type,
+        location: {
+          coordinates: [lng, lat],
+          type: "Point"
+        }
+      }
+    }
+  )
+    .then(place => {
+      res.redirect("/");
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
 // Delete
 router.get("/delete-place", (req, res, next) => {
   Place.find()
