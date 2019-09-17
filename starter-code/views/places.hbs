@@ -1,0 +1,18 @@
+<h1>places map</h1>
+
+{{#each places}}
+<h2>{{this.name}}</h2>
+<span>{{this.type}}</span>
+<a href="/place/{{this._id}}">View</a>
+<form action="place/{{this.id}}/delete" method="POST">
+  <button type="submit">Delete</button>
+</form>
+{{/each}}
+
+<p>Welcome to {{title}}</p>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
