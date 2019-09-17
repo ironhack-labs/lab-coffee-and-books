@@ -1,0 +1,17 @@
+<h2>Update "{{place.name}}"</h2>
+<form action="/update-place/{{place.id}}" method="POST">
+    <input type="text" name="name" value="{{place.name}}">
+    <select name="type">
+        {{#ifEquals place.type "coffee shop"}}
+        <option value="coffee shop" selected>coffee shop</option>
+        <option value="bookstore">bookstore</option>
+        {{/ifEquals}}
+        {{#ifEquals place.type "bookstore"}}
+        <option value="coffee shop">coffee shop</option>
+        <option value="bookstore" selected>bookstore</option>
+        {{/ifEquals}}
+    </select>
+    <input type="number" name="lat" step="0.000001" placeholder="Latitude" value="{{place.location.coordinates.[1]}}">
+    <input type="number" name="lng" step="0.000001" placeholder="Longitude" value="{{place.location.coordinates.[0]}}">
+    <input type="submit" value="Submit">
+</form>

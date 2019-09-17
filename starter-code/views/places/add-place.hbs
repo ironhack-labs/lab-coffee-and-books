@@ -1,0 +1,12 @@
+<h2>Add a place</h2>
+<form action="/add-place" method="POST">
+  <input type="text" name="name" placeholder="Name">
+  <select name="type">
+      <option value="" disabled>select type</option>
+        <option value="coffee shop">coffee shop</option>
+        <option value="bookstore">bookstore</option>
+    </select>
+  <input type="number" name="lat" step="0.000001" placeholder="Latitude">
+  <input type="number" name="lng" step="0.000001" placeholder="Longitude">
+  <input type="submit" value="Submit">
+</form>

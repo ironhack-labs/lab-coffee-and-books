@@ -1,0 +1,10 @@
+<h2>Which place would you like to update?</h2>
+<form action="/select-place" method="POST">
+    <select name="place_id">
+        <option value="" disabled>select by name</option>
+        {{#each allPlaces}}
+        <option value="{{this.id}}">{{this.name}} ({{this.type}})</option>
+        {{/each}}
+    </select>
+    <input type="submit" value="Select to update">
+</form>

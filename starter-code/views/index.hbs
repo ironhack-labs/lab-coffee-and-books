@@ -1,2 +1,14 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Map</h1>
+<div id="map"></div>
+<h2>Actions</h2>
+<ul>
+    <li><a href="/places">View JSON file</a></li>
+    <li><a href="/add-place">Create a new place</a></li>
+    <li><a href="/select-place">Update a place</a></li>
+    <li><a href="/delete-place">Delete a place</a></li>
+</ul>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{google_api_key}}&callback=initMap"
+type="text/javascript"></script>
+<script type="text/javascript" src="/javascripts/script.js"></script>
