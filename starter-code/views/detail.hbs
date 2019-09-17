@@ -1,0 +1,16 @@
+<h2>{{placeDetail.name}}'s info</h2>
+
+<form action="/{{placeDetail.id}}" method="POST">
+  
+  <input type="text" name="name"  value="{{placeDetail.name}}">
+  <select id="text" type="type" name="type" placeholder="{{placeDetail.type}}"> 
+    <option value="coffee shop">Coffee Shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <input type="text" name="lat" value="{{placeDetail.location.coordinates.[1]}}">
+  <input type="text" name="lng" value="{{placeDetail.location.coordinates.[0]}}">
+  
+  <input type="submit" value="Update">
+</form>
+
+<a href="/">Go back</a>
