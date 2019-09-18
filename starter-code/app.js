@@ -42,7 +42,7 @@ hbs.registerPartials(__dirname + "/views/partials");
 require('./helpers/helpers');
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Google Maps API';
 
 
 

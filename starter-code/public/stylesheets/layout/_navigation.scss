@@ -1,34 +1,29 @@
 .main-nav {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  padding: 2rem 2rem 1rem;
-  background-color: darken($primary, 5);
-  border-radius: 0 0 25px 25px;
-  box-shadow: 0 3px 10px darken($primary, 5);
+  border-bottom: 1px solid #CCCCCC;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .menu {
   display: flex;
-  color: rgba($on-primary, .8);
+  justify-content: flex-end;
 }
 
 .menu-item {
-  
+
   &:not(:last-child) {
     margin-right: 1rem;
   }
 }
 
 .menu-link {
-  color: inherit;
   font-weight: 600;
-  font-size: .9rem;
   text-transform: uppercase;
+  font-size: .9rem;
+  color: #888888;
   transition: color .2s;
 
   &:hover {
-    color: $on-primary;
+    color: $primary;
   }
 }

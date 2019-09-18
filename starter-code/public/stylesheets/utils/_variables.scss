@@ -2,7 +2,7 @@
 $font-family: sans-serif;
 
 // Font sizes
-$h1-font-size: 2rem;
+$h1-font-size: 3rem;
 $h2-font-size: 1.65rem;
 $h3-font-size: 1.25rem;
 
@@ -23,8 +23,11 @@ $on-background: #888888;
 $primary: #008888;
 $on-primary: #FFFFFF;
 
+$accent: #8811AA;
+$on-accent: #FFFFFF;
+
 // Paddings
-$body-padding: 6rem 4rem 4rem;
+$body-padding: 2rem;
 
 // Offset of the body
 $body-offset: calc(300px + #{$body-padding})

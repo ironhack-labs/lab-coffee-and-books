@@ -53,12 +53,20 @@ router.get("/edit/:id", (req, res, next) => {
 router.post("/edit", (req, res, next) => {
   let { name, type, _id, lat, lng } = req.body;
 
-  console.log(name, type, _id);
+  type = type.toLowerCase()
+
+  console.log("name", name)
+  console.log("type", type)
+  console.log("_id", _id)
+  console.log("lat", lat)
+  console.log("lng", lng)
 
   if (!name || !type || !_id || !lat || !lng) {
     res.redirect(`/places/edit/${_id}`);
     return;
   }
+
+  console.log("validación chachi")
 
   Places.findByIdAndUpdate(_id, { name, type, location: { lat, lng } }).then(
     placeUpdated => {

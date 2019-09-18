@@ -1,16 +1,31 @@
 <h1>Deleting place</h1>
 
-{{#with place}}
-<div class="place">
-  <h2 class="title">{{name}}</h2>
-  <p class="type">{{type}}</p>
+<div class="place-container">
+  {{#with place}}
+  <div class="place-card">
+    <h2 class="place-card-title">{{name}}</h2>
+    <p class="place-card-type">{{type}}</p>
+    <p class="place-location place-location-lat">
+      Latitude<span id="lat">{{location.lat}}</span></p>
+    <p class="place-location place-location-lng">
+      Longitude<span id="lng">{{location.lng}}</span></p>
+    <div class="actions">
+      <a href="/places/edit/{{_id}}" class="button button-edit">Edit</a>
+    </div>
+  </div>
+  <div id="map" class="map"></div>
 </div>
-<form action="/places/delete" method="post" class="form">
+<form action="/places/delete" method="post" class="form form-delete">
   <input type="hidden" name="_id" value="{{_id}}">
-  <p class="confirm">Are you sure? 🤔</p>
+  <p class="are-you-sure">Are you sure? 🤔</p>
   <div class="actions">
     <a href="/places/detail/{{_id}}" class="button button-cancel">Cancel</a>
     <input type="submit" value="delete" class="button button-delete">
   </div>
 </form>
 {{/with}}
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+<script src="/javascripts/delete.js"></script>

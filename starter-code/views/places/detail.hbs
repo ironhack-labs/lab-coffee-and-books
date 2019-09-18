@@ -1,8 +1,24 @@
 <h1>Place detail</h1>
 
-{{#with place}}
-<div class="place">
-  <h2 class="title">{{name}}</h2>
-  <p class="type">{{type}}</p>
+<div class="place-container">
+  {{#with place}}
+  <div class="place-card">
+    <h2 class="place-card-title" id="title">{{name}}</h2>
+    <p class="place-card-type">{{type}}</p>
+    <p class="place-location place-location-lat">
+      Latitude<span id="lat">{{location.lat}}</span></p>
+    <p class="place-location place-location-lng">
+      Longitude<span id="lng">{{location.lng}}</span></p>
+    <div class="actions">
+      <a href="/places/edit/{{_id}}" class="button button-edit">Edit</a>
+      <a href="/places/delete/{{_id}}" class="button button-delete">Delete</a>
+    </div>
+  </div>
+  {{/with}}
+  <div id="map" class="map"></div>
 </div>
-{{/with}}
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+<script src="/javascripts/detail.js"></script>

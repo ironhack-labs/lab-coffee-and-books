@@ -3,6 +3,9 @@
   padding: 2rem;
   border-radius: 4px;
   box-shadow: 0 3px 6px darken($primary, 1);
+  margin-bottom: 3rem;
+  max-height: 500px;
+  overflow: auto;
 }
 
 .place {
@@ -43,4 +46,85 @@
 
 .place-wrapper {
   margin-bottom: 1rem;
+}
+
+
+.place-card {
+  background-color: #FFFFFF;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
+  border-radius: 4px;
+}
+
+.place-card-title {
+  color: $accent;
+  margin-bottom: 2rem;
+  font-size: $h2-font-size;
+  font-weight: 500;
+}
+
+.place-card-type {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+}
+
+.place-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+
+  .map {
+    width: 100%;
+  }
+}
+
+.place-location {
+  color: #000000;
+  letter-spacing: 1px;
+  font-weight: 600;
+
+  &:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+  }
+
+  span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: .75rem;
+    color: #888888;
+    letter-spacing: 0;
+  }
+}
+
+// Forms
+.place-card {
+  input[type="text"] {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px dashed #CCCCCC;
+    transition: border-color .2s, color .2s;
+
+    &:focus {
+      border-color: $primary;
+      color: $primary;
+    }
+  }
+
+  input[type="submit"] {
+    // margin-top: 2rem;
+  }
+}
+
+.actions {
+  margin-top: 2rem;
+
+  .button:not(:last-child) {
+    margin-right: 1rem;
+  }
 }
