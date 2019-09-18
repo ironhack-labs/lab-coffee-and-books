@@ -1,2 +1,42 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div id="title">
+  <h1>{{title}}</h1>
+</div>
+
+<div id="add">
+  <h2>New place</h2>
+  <form action="/new" method="POST">
+    <input type="text" name="name" placeholder="Place name..">
+    <select name="type" type="text">
+      <option value="COFFEE SHOP">COFFEE SHOP</option>
+      <option value="BOOK STORE">BOOK STORE</option>
+    </select>
+    <input type="number" name="lat" placeholder="Latitude..." step="any">
+    <input type="number" name="lng" placeholder="Longitude..." step="any">
+    <input type="submit" value="New place">
+  </form>
+</div>
+
+<div id="places">
+<ul>
+    {{#each allPlaces}}
+    <li>
+        <a href="">{{this.name}} </a>
+        <form action="/{{this._id}}/delete" method="POST">
+        <button type="submit">delete</button>
+        </form>
+        <form action="/{{this._id}}/edit" method="POST">
+        <button type="submit">edit</button>
+        </form>
+         {{!-- <form action=“/{{this._id}}/delete” method=“POST”>
+        <button type=“submit”>delete an user</button>
+        </form> --}}
+        
+    </li>
+    {{/each}}
+</ul>
+</div>
+
+<div id="map"></div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>

@@ -1,38 +1,35 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  // display: flex;
-  // align-items: flex-start;
-  // justify-content: center;
-  background-color: #131d21e2;
-}
+  background-color: #131d21e2; }
 
 a {
-  color: #00b7ff;
-}
+  color: #00b7ff; }
+
 #title {
   display: flex;
   align-items: center;
   justify-content: center;
   font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: rgba(249, 223, 168, 0.961);
-}
+  color: rgba(249, 223, 168, 0.961); }
+
 #add {
   font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 5px;
   background-color: rgba(238, 219, 177, 0.797);
   display: flex;
   align-items: center;
-  justify-content: space-around;
-}
+  justify-content: space-around; }
+
 #places {
-  color: rgba(63, 60, 51, 0.961);
-}
+  color: rgba(63, 60, 51, 0.961); }
+
 #places li {
   font-size: 12px;
-  list-style: none;
-}
+  list-style: none; }
+
 #map {
   margin: 5px;
   width: 100%;
-  height: 500px;
-}
+  height: 500px; }
+
+/*# sourceMappingURL=style.css.map */
