@@ -1,0 +1,32 @@
+.profiles {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 300px) );
+  gap: 2rem;
+}
+
+.profile {
+  $background: #FFFFFF;
+  $on-background: #888888;
+
+  background-color: $background;
+  color: $on-background;
+  
+  max-width: 300px;
+  padding: 2rem;
+
+  &--deleting {
+    margin-bottom: 2rem;
+  }
+
+  &__name {
+    color: #000000;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+  }
+
+  &__actions {
+    text-align: right;
+    padding-top: 1rem;
+  }
+}

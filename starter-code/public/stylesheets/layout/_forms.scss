@@ -1,0 +1,55 @@
+.form {
+  $background: #FFFFFF;
+  $on-background: #888888;
+  
+  background-color: $background;
+  color: $on-background;
+
+  padding: 2rem;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
+  max-width: 500px;
+
+  &--delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 1rem;
+
+    input,
+    select {
+      padding: 0.5rem;
+      border: 1px solid #DDDDDD;
+      color: inherit;
+
+      &:focus {
+        border-color: $primary;
+        color: $primary;
+
+        & + .form__label {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &__label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #000000;
+    font-size: .9rem;
+  }
+
+  &__actions {
+    text-align: right;
+
+    .button:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}

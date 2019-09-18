@@ -1,0 +1,30 @@
+// Font family
+$font-family: sans-serif;
+
+// Font sizes
+$h1-font-size: 2rem;
+$h2-font-size: 1.65rem;
+$h3-font-size: 1.25rem;
+
+$text-font-size: 1rem; // Default text font size
+
+// Breakpoints for the media queries
+$breakpoints: (
+  'small': 600px,
+  'medium': 900px,
+  'large': 1024px,
+  'larger': 1400px
+);
+
+// Colors
+$background: #F3F3F3;
+$on-background: #888888;
+
+$primary: #008888;
+$on-primary: #FFFFFF;
+
+// Paddings
+$body-padding: 6rem 4rem 4rem;
+
+// Offset of the body
+$body-offset: calc(300px + #{$body-padding})

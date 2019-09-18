@@ -7,6 +7,15 @@ const placesSchema = new Schema(
     type: {
       type: String,
       enum: ["coffee shop", "bookstore"]
+    },
+    // location: { type: { type: String }, coordinates: [Number] }
+    location: {
+      lat: {
+        type: Number
+      },
+      lng: {
+        type: Number
+      }
     }
   },
   {
@@ -22,6 +31,6 @@ const placesSchema = new Schema(
   }
 );
 
-const Places = mongoose.model("Places", placesSchema)
+const Places = mongoose.model("Places", placesSchema);
 
-module.exports = Places
+module.exports = Places;

@@ -1,0 +1,47 @@
+body {
+  background-color: $background;
+  color: $on-background;
+
+  padding: $body-padding;
+}
+
+h1 {
+  color: $primary;
+  font-size: $h1-font-size;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+a {
+  text-decoration: none;
+}
+
+a, p, button, input, select {
+  font-size: $text-font-size;
+}
+
+ul, li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+select {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+input,
+select {
+  appearance: none;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}

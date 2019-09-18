@@ -1,18 +1,34 @@
 [
   {
     "name": "Starbucks",
-    "type": "coffee shop"
+    "type": "coffee shop",
+    "location": {
+      "lat": 40.430552399999996,
+      "lng": -3.6817528
+    }
   },
   {
     "name": "Dunkin Coffee",
-    "type": "coffee shop"
+    "type": "coffee shop",
+    "location": {
+      "lat": 40.4347984,
+      "lng": -3.7193114
+    }
   },
   {
     "name": "Fnac",
-    "type": "bookstore"
+    "type": "bookstore",
+    "location": {
+      "lat": 20.430552399999996,
+      "lng": -3.6817528
+    }
   },
   {
     "name": "La casa del libro",
-    "type": "bookstore"
+    "type": "bookstore",
+    "location": {
+      "lat": 10.430552399999996,
+      "lng": -3.6817528
+    }
   }
 ]

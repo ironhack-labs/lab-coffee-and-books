@@ -1,0 +1,46 @@
+.places {
+  background-color: darken($primary, 1);
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px darken($primary, 1);
+}
+
+.place {
+  background-color: #FFFFFFDD;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px #00000033;
+
+  .title {
+    font-size: 1.25rem;
+    color: $primary;
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: 700px) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .links {
+
+    .button:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &:not(:last-child) {
+    
+  }
+}
+
+.place-wrapper {
+  margin-bottom: 1rem;
+}

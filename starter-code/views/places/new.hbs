@@ -11,7 +11,22 @@
       <option value="bookstore">Bookstore</option>
     </select>
   </div>
+  <div class="field">
+    <input type="text" class="input" name="lat" id="lat">
+    <label for="lat">Latitude</label>
+  </div>
+  <div class="field">
+    <input type="text" class="input" name="lng" id="lng">
+    <label for="lng">Longitude</label>
+  </div>
   <div class="actions">
     <input type="submit" value="Create" class="button button-submit">
   </div>
 </form>
+
+<div id="map" class="map"></div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+<script src="/javascripts/new.js"></script>

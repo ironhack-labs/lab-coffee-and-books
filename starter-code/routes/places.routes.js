@@ -10,7 +10,7 @@ router.get("/", (req, res, next) => {
 });
 
 // Render the detail of a place
-router.get("/:id", (req, res, next) => {
+router.get("/detail/:id", (req, res, next) => {
   Places.findById(req.params.id).then(placeFound => {
     res.render("places/detail", { place: placeFound });
   });
@@ -23,14 +23,17 @@ router.get("/new", (req, res, next) => {
 
 // Add a new place
 router.post("/new", (req, res, next) => {
-  let { name, type } = req.body;
+  let { name, type, lat, lng } = req.body;
+
+  console.log("lat", lat);
+  console.log("lng", lng);
 
   if (!name || !type) {
     res.redirect("/places/new");
     return;
   }
 
-  Places.create({ name, type }).then(placeCreated => {
+  Places.create({ name, type, location: { lat, lng } }).then(placeCreated => {
     res.redirect("/places");
     return;
   });
@@ -48,36 +51,35 @@ router.get("/edit/:id", (req, res, next) => {
 
 // Update a place
 router.post("/edit", (req, res, next) => {
-  let {name, type, _id} = req.body
+  let { name, type, _id, lat, lng } = req.body;
 
-  console.log(name, type, _id)
+  console.log(name, type, _id);
 
-  if (!name || !type) {
-    res.redirect(`/places/edit/${_id}`)
-    return
+  if (!name || !type || !_id || !lat || !lng) {
+    res.redirect(`/places/edit/${_id}`);
+    return;
   }
 
-  Places.findByIdAndUpdate(_id, {name, type})
-  .then(placeUpdated => {
-    res.redirect(`/places/${_id}`)
-    return
-  })
-})
+  Places.findByIdAndUpdate(_id, { name, type, location: { lat, lng } }).then(
+    placeUpdated => {
+      res.redirect(`/places/edit/${_id}`);
+      return;
+    }
+  );
+});
 
 // Render the view to confirm the delete
 router.get("/delete/:id", (req, res, next) => {
-  Places.findById(req.params.id)
-  .then(placeFound => {
-    res.render("places/delete", {place: placeFound})
-  })
-})
+  Places.findById(req.params.id).then(placeFound => {
+    res.render("places/delete", { place: placeFound });
+  });
+});
 
 // Delete a place
 router.post("/delete", (req, res, next) => {
-  Places.findByIdAndDelete(req.body._id)
-  .then(placeDeleted => {
-    res.redirect('/places')
-  })
-})
+  Places.findByIdAndDelete(req.body._id).then(placeDeleted => {
+    res.redirect("/places");
+  });
+});
 
 module.exports = router;

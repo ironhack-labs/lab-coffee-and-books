@@ -9,11 +9,27 @@
     <label for="name" class="label">Name</label>
   </div>
   <div class="field">
-    <input type="text" name="type" id="type" placeholder="Type" value="{{type}}">
+    <input type="text" name="type" id="type" placeholder="Type"
+      value="{{type}}">
     <label for="type" class="label">Type</label>
+  </div>
+  <div class="field">
+    <input type="text" class="input" name="lat" id="lat" value="{{location.lat}}">
+    <label for="lat">Latitude</label>
+  </div>
+  <div class="field">
+    <input type="text" class="input" name="lng" id="lng" value="{{location.lng}}">
+    <label for="lng">Longitude</label>
   </div>
   <div class="actions">
     <input type="submit" value="update" class="button button-submit">
   </div>
 </form>
 {{/with}}
+
+<div id="map" class="map"></div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+<script src="/javascripts/edit.js"></script>

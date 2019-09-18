@@ -1,13 +1,12 @@
 <ul class="places">
 {{#each places}}
-  <li class="place">
-    <div>
+  <li class="place-wrapper">
+    <div class="place">
       <h2 class="title">{{this.name}}</h2>
-      <p class="type">{{this.type}}</p>
       <div class="links">
-        <a href="/places/{{this._id}}" class="button button--detail">Detail</a>
-        <a href="/places/edit/{{this._id}}" class="button button--edit">Edit</a>
-        <a href="/places/delete/{{this._id}}" class="button button--edit">Delete</a>
+        <a href="/places/detail/{{this._id}}" class="button button-detail">Detail</a>
+        <a href="/places/edit/{{this._id}}" class="button button-edit">Edit</a>
+        <a href="/places/delete/{{this._id}}" class="button button-delete">Delete</a>
       </div>
     </div>
   </li>
@@ -15,3 +14,8 @@
 </ul>
 
 <div id="map" class="map"></div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+<script src="/javascripts/places.js"></script>

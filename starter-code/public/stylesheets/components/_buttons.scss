@@ -1,0 +1,45 @@
+.button {
+  display: inline-block;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .85rem;
+  min-width: 75px;
+  text-align: center;
+
+  &-delete {
+    background-color: #FF0000AA;
+    box-shadow: 0 2px 5px #FF0000AA;
+  }
+
+  &-detail,
+  &-view,
+  &-delete,
+  &-submit,
+  &-edit {
+    color: #FFFFFF
+  }
+
+  &-detail,
+  &-edit,
+  &-submit {
+    background-color: $primary;
+    box-shadow: 0 2px 5px $primary;
+  }
+
+  &-view,
+  &-submit {
+    
+  }
+  
+  &-edit {
+    
+  }
+
+  &-delete {
+    
+  }
+}
