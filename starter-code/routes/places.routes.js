@@ -1,6 +1,11 @@
 const express = require("express");
 const Place = require("../models/Place");
 const router = express.Router();
+const favicon      = require('serve-favicon');
+const hbs          = require('hbs');
+const path         = require('path');
+
+// require('./configs/db.config');
 
 router.get("/api", (req, res, next) => {
   Place.find().then(allPlaces => {
@@ -19,26 +24,31 @@ router.get('/', (req, res, next) => {
 });
 
 router.get("/new", (req, res, next) => {
-  res.render("addPlace");
+  res.render("places/new");
 });
 
 router.post("/new", (req, res, next) => {
-  const { name, type, lat, lng } = req.body;
+  const { name, type, description, lat, lng } = req.body;
+
+  console.log(name, type, description, lat, lng)
 
   const place = new Place({
     name,
     type,
+    description,
     location: {
       coordinates: [lng, lat],
       type: "Point"
     }
   });
 
+  console.log(place)
+
   place
     .save()
     .then(ok => {
       console.log("Place created");
-      res.redirect("/");
+      res.redirect("/places");
     })
     .catch(error => next(error));
 });

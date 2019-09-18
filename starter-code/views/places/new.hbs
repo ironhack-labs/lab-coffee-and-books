@@ -1,11 +1,11 @@
-<h3>Add new place</h3>
-<form method="POST" action="/places">
-    <input type="text" name="name" placeholder="name">
-    <input type="text" name="description" placeholder="description">
-{{!-- you will start using "address" part when you 
-set up your model to be able to store lat and long, so add address here:  --}}
-    
-
-    <input type="submit" name="" id="submit">
+<h2>New Place</h2>
+<form action="/places/new" method="POST">
+  <input type="text" name="name" placeholder="Place name..">
+  <input type="text" name="type" placeholder="Bookstore or Coffee Shop...">
+  <input type="text" name="description" placeholder="Add a description...">
+  <input type="number" name="lat" placeholder="Latitud...">
+  <input type="number" name="lng" placeholder="Longitud">
+  <input type="submit" value="New place">
 </form>
-<a href="/places">Back to the list</a>
+
+<p><a href="/places">Back to the list</a></p>
