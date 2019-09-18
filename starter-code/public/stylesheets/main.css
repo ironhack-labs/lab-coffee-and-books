@@ -152,7 +152,11 @@ select:focus {
   padding: 2rem;
   text-align: center;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-  border-radius: 4px; }
+  border-radius: 4px;
+  margin-bottom: 2rem; }
+  @media screen and (min-width: 768px) {
+    .place-card {
+      margin-bottom: 0; } }
 
 .place-card-title {
   color: #8811AA;
@@ -167,12 +171,14 @@ select:focus {
   letter-spacing: 1px;
   margin-bottom: 3rem; }
 
-.place-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem; }
-  .place-container .map {
-    width: 100%; }
+@media screen and (min-width: 768px) {
+  .place-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem; } }
+
+.place-container .map {
+  width: 100%; }
 
 .place-location {
   color: #000000;

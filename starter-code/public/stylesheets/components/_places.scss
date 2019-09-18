@@ -55,6 +55,11 @@
   text-align: center;
   box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
   border-radius: 4px;
+  margin-bottom: 2rem;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
 }
 
 .place-card-title {
@@ -73,9 +78,11 @@
 }
 
 .place-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 
   .map {
     width: 100%;
