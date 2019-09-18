@@ -1,2 +1,27 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+<h2>New place</h2>
+
+{{#if allPlaces}}
+<ul>
+  {{#each allPlaces}}
+  <li>
+    {{this.name}}
+  </li>
+  {{/each}}
+</ul>
+{{/if}}
+
+<form action="/new" method="POST">
+  <input type="text" name="name" placeholder="place name..">
+  <input type="text" name="type" placeholder="place type..">
+  <input type="number" name="lat" step="any" placeholder="place latitude..">
+  <input type="number" name="lng" step="any" placeholder="place longitude..">
+  <input type="submit" value="New place">
+</form>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
