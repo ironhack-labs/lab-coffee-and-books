@@ -1,0 +1,9 @@
+<ul>
+  {{#each places}}
+  <li>
+    {{this.name}} || {{this.type}} || <a href="/deleteplace/{{_id}}">Delete Place</a>
+  </li>
+  {{/each}}
+</ul>
+
+<a href="/">Index</a>
