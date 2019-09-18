@@ -3,12 +3,18 @@ const placesRouter = express.Router();
 const Places = require("../models/Places");
 
 /* GET home page */
+placesRouter.get("/", (req, res, next) => {
+  Places.find().then(allPlaces => {
+    res.json(allPlaces);
+  });
+});
+
 placesRouter.get("/new", (req, res, next) => {
   res.render("places/new");
 });
 
 placesRouter.post("/new", (req, res, next) => {
-  const { name, type } = req.body;
+  const { name, type, latitude, longitude } = req.body;
   if (name === "" || type === "") {
     res.render("places/new", {
       message: "Please, introduce all the fields"
@@ -19,7 +25,11 @@ placesRouter.post("/new", (req, res, next) => {
       if (placeFound === null) {
         const newPlace = new Places({
           name,
-          type
+          type,
+          location: {
+            coordinates: [longitude, latitude],
+            type: "Point"
+          }
         });
         newPlace.save(err => {
           if (err) {
@@ -87,12 +97,24 @@ placesRouter.get("/edit/:id", (req, res, next) => {
 });
 
 //No funciona ¿¿¿???
-placesRouter.post("/edit", (req, res, next) => {
-  console.log(req.body);
-  Places.findByIdAndUpdate(req.body.id, req.body).then(updatedPlace => {
+placesRouter.post("/edit/:id", (req, res, next) => {
+  console.log("hola")
+  const { name, latitude, longitude, type } = req.body;
+  Places.findByIdAndUpdate(
+    req.params.id,
+    {
+      $set: {
+        name,
+        type,
+        location: { type: "Point", coordinates: [longitude, latitude] }
+      }
+    },
+    { new: true }
+  ).then(updatedPlace => {
     console.log(req.body);
     res.redirect(`/details/${req.body._id}`);
-  });
+  })
+  .catch(error => next(error));
 });
 
 module.exports = placesRouter;
