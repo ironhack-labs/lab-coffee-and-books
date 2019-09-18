@@ -1,0 +1,24 @@
+
+<h1>Create a place</h1>
+
+{{#if msg}}
+<span>{{msg}}</span>
+{{/if}}
+
+<form action="/places/create" method="post">
+  <label for="name">Name</label>
+  <input type="text" name="name" >
+  <label for="type">Type</label>
+  <select name="type" id="type" >
+    <option value="-1"  >Choose a type of place</option>
+    <option value="coffee shop">Coffee shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <label for="latitude">Latitude</label>
+  <input type="text" name="lat">
+  <label for="longitude">Longitude</label>
+  <input type="text" name="lng">
+  <button>Submit</button>
+</form>
+
+<a href="/places">Go back</a>
