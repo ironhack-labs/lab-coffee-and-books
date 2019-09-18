@@ -12,6 +12,7 @@ const placeSchema = new Schema({
     type: String,
     emp: ["Bookstore", "Coffee Shop"]
   },
+  description: String,
   location: { type: { type: String }, coordinates: [Number] },
 }, {
   timestamps: true,
