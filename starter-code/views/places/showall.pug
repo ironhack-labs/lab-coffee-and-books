@@ -1,0 +1,22 @@
+extends ../layout
+
+block content 
+  a(href="/") HOME
+  h2 These are all the places saved in DB.
+  each place in places
+    div
+      a(href=`/places/${place._id}`)
+        li #{place.name}
+      form(class="btn-form" action=`places/${place._id}/delete` method="POST")
+        button(class="btn" type="submit") Delete
+      form(class="btn-form" action=`/places/${place._id}/edit` method="GET")
+        button(class="btn" type="submit") Edit
+  
+  include ../includes/mapsForShowAll
+
+  
+  
+  
+  
+
+  

@@ -1,0 +1,21 @@
+div(id="map" style="width:800px;height:450px")
+script.
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZWx3aWltYW4iLCJhIjoiY2sxOGs3OXIzMXJuZzNndGp5eXhjbmRocCJ9.NhiuwMg8LB0VBvavRrY7DQ';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [-99.133999, 19.43764], //recibe primero longitud y luego latitud
+    zoom: 13
+    });
+    
+    map.addControl(new mapboxgl.NavigationControl())
+    
+  
+    let places = !{JSON.stringify(places)}
+    
+
+    places.forEach(place => {
+      const marker = new mapboxgl.Marker().setLngLat(place.location.coordinates)
+      marker.addTo(map)
+      console.log("here")
+      })
