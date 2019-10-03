@@ -1,0 +1,24 @@
+extends ../layout
+block content
+
+  h2 EDIT A PLACE
+  a(href="/places") Places
+  div
+    form(action=`/places/${place.id}` method="POST")
+      div
+        label(for="name") Name:
+        input(id="name" type="text" name="name" value=place.name)
+      div
+        label(for="type") Type:
+        select(name="type")
+          each obj in options
+            option(value=obj, selected=place.type === obj ? true : false)=obj
+      div 
+        label(for="latitude") Latitude:
+        input(id="latitude" type="text" name="latitude" value=place.location.coordinates[1])
+      div 
+        label(for="longitude") Longitude:
+        input(id="longitude" type="text" name="longitude" value=place.location.coordinates[0])  
+      div
+      div
+        button(type="submit") Finish Edition

@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+
+  h1 CREATE NEW PLACE
+  a(href="/places") Places
+  div
+    form(action="/places-new" method="POST")
+      div
+        label(for="name") Name:
+        input(id="name" type="text" name="name")
+      div
+        label(for="type") Type:
+        select(id="type" name="type")
+          option(value="coffee shop") Coffe Shop
+          option(value="bookstore") Bookstore
+      div 
+        label(for="latitude") Latitude:
+        input(id="latitude" type="text" name="latitude")
+      div 
+        label(for="longitude") Longitude:
+        input(id="longitude" type="text" name="longitude")  
+      div
+        button(type="submit") Create Place
+
+      include ../includes/mapsForNew
+      
+
