@@ -1,2 +1,13 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+
+{{#each arrPlace}}
+{{!-- <div>{{this.name}} | {{this.type}}</div> --}}
+<a href="/api/{{this._id}}">{{this.name}} | {{this.type}}</a>
+<br>
+{{/each}}
+<br>
+<div>
+  <a href="/add"><button>add new place</button> </a>
+</div>
+<br>
