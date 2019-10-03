@@ -1,2 +1,34 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<h2>New Place</h2>
+<divc class="forms">
+<form id="newPlaceForm" action="/" method="POST">
+  <div class="field">
+    <label for="name">Name: </label>
+    <input type="text" name="name">
+  </div>
+  <select name="type">
+    <option value="Bookstore">Bookstore</option>
+    <option value="Coffee Shop">Coffee Shop</option>
+  </select>
+  <div class="field">
+    <label for="latitude">Latitude: </label>
+    <input type="text" name="latitude">
+  </div>
+  <div class="field">
+    <label for="longitude">Longitude: </label>
+    <input type="text" name="longitude">
+  </div>
+  <button id="send-data">Create</button>
+</form>
+
+<form id="newPlaceForm" action="/delete" method="POST">
+  <div class="field">
+    <label for="name">Name: </label>
+    <input type="text" name="name">
+  </div>
+  <button id="send-data">Delete</button>
+</form>
+</div>
+<div id="map"></div>
