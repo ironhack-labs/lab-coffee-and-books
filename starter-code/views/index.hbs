@@ -1,2 +1,9 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+<a href="/create">Create</a>
+<a href="/map">Map</a>
+<div>{{#each allFromDb}}
+  <div>
+    <p>Nome: {{this.name}} - Tipo: {{this.tipo}} // <a href="/update/{{this.id}}">Update</a> // <a href="/delete/{{this.id}}">Delete</a></p>
+  </div>{{/each}}
+</div>
