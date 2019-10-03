@@ -7,6 +7,15 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+router.get('/api', (req,res,next) => {
+  Place.find()
+  .then(result => {
+    console.log(result);
+    res.json(result);
+
+  })
+  .catch(err => console.log(err))
+})
 
 router.get('/places', (req, res, next) => {
   Place.find()
@@ -21,15 +30,22 @@ router.get('/places', (req, res, next) => {
 });
 
 router.post('/places/add', (req, res, next) => {
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
+    };
   const { name, type } = req.body;
-  const newPlace = new Place({ name, type })
+  const newPlace = new Place({ name, type, location})
   newPlace.save()
   .then((place) => {
     res.redirect('/places');
+
+
   })
   .catch((error) => {
     console.log(error);
   })
 });
+
 
 module.exports = router;
