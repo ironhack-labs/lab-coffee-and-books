@@ -1,0 +1,56 @@
+<div id="my-map"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAw_K2RJd5LMwCk7CP1iDV_kmesUePv6rc">
+  </script>
+<script>
+    window.onload = () => {
+  const mapPos = {
+    lat: 0, 
+    lng: 0
+  };
+  
+  var markers = []
+  
+  const map = new google.maps.Map(document.getElementById('my-map'), {
+    zoom: 2,
+    center: mapPos
+  });
+
+  axios.get('/places').then(places=>placesOnMay(places.data)).catch(err=>console.log(err))
+  
+
+////////////////////////////////////
+function placesOnMay(places){
+  console.log(places)
+    places.forEach(function(place){
+      const center = {
+        lat: place.location.coordinates[1],
+        lng: place.location.coordinates[0]
+      };
+      const pin = new google.maps.Marker({
+        position: center,
+        map: map,
+        title: place.name
+      });
+var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            `<h1 id="firstHeading" class="firstHeading">${place.name}</h1>`+
+            '<div id="bodyContent">'+
+            `<p><b>Type:</b> ${place.type.toUpperCase()}</p>`+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString,
+          maxWidth: 200
+        });
+        pin.addListener('click', function() {
+          infowindow.open(map, pin);
+        });
+      markers.push(pin);
+    });
+}
+
+};
+  </script>
