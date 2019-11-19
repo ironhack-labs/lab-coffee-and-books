@@ -5,4 +5,9 @@ body {
 a {
   color: #00B7FF; }
 
+#map {
+  width: 60vw;
+  height: 70vh;
+  background-color: #00B7FF; }
+
 /*# sourceMappingURL=style.css.map */

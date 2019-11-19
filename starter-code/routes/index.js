@@ -26,7 +26,12 @@ router.get('/create', (req,res) => {
 router.post('/create', (req,res) => {
   Places.create({
     name: req.body.name,
-    type: req.body.type
+    type: req.body.type,
+    location : {
+      type: 'Point',
+      coordinates: [+req.body.lng, +req.body.lat]
+      }
+
   }).then(()=> res.redirect('/list'));
 });
 
@@ -43,10 +48,21 @@ router.get('/update/:id', (req,res) => {
 router.post('/update', (req,res) => {
   Places.find({name:req.body.name}).then(places => {
     if(places.length <= 0 || `${places[0]._id}` === req.body.id){
-      Places.findByIdAndUpdate(req.body.id,{name:req.body.name, type:req.body.type}).then(()=> res.redirect("/list"))
+      Places.findByIdAndUpdate(req.body.id,{
+        name:req.body.name,
+        type:req.body.type,
+        location : {
+          type: 'Point',
+          coordinates: [+req.body.lng, +req.body.lat]
+          }
+        }).then(()=> res.redirect("/list"))
     }
   });
   res.redirect("/list")
 });
+
+router.get('/placesData', (req,res) => {
+  Places.find().then(payload => res.json(payload));
+})
 
 module.exports = router;
