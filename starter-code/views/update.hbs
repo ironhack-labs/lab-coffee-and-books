@@ -1,0 +1,9 @@
+<form action="/update" method="POST">
+  <input type="text" name="name" value="{{name}}">
+  <select name="type">
+    <option value="coffee shop">Coffee shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <input hidden type="text" name="id" value="{{_id}}">
+  <input type="submit" value="Update place">
+</form>

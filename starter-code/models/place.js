@@ -6,7 +6,7 @@ const schemaName = new Schema(
     name: String,
     type: {
       type: String,
-      enum: ['coffe shop', 'bookstore']
+      enum: ['coffee shop', 'bookstore']
     }
   },
   {
