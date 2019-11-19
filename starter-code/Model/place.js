@@ -6,12 +6,15 @@ const schemaName = new Schema({
   type:{
     type: String,
     enum : ['Coffee Shop', 'Bookstore',]
-  }
+  },
+  location: { type: { type: String }, coordinates: [Number] }
 },
 {
   timestamps: true
 }
 );
-
+schemaName.index({ location: '2dsphere' });
 const Places = mongoose.model("places", schemaName);
 module.exports = Places;
+
+

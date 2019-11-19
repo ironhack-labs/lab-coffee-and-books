@@ -8,9 +8,14 @@ router.get('/add', (req, res) => {
 });
 
 router.post('/add', (req, res) => {
+  let location = {
+    type: 'Point',
+    coordinates: [eq.body.latitude, req.body.longitude]
+    };
   Place.create({
       name: req.body.name,
       type: req.body.type,
+      location: location
     }).then(() => {
      
       res.redirect("/places/favs");
@@ -54,9 +59,13 @@ router.post("/:id/update", (req, res, next) => {
     }, {
       name: req.body.name,
       type: req.body.type,
+      location : {
+        type: 'Point',
+        coordinates: [req.body.latitude, req.body.longitude]
+        }
     })
     .then(() => {
-      res.redirect("/");
+      res.redirect("/places/favs");
     })
     .catch(error => {
       next();
@@ -64,16 +73,27 @@ router.post("/:id/update", (req, res, next) => {
     });
 });
 
-router.post("/:id/delete", (req, res, next) => {
+router.get("/:id/delete", (req, res, next) => {
   Place.findByIdAndDelete(req.params.id)
     .then(() => {
-      res.redirect("/");
+      res.redirect("/places/favs");
     })
     .catch(error => {
       next();
       console.log(error)
     });
 });
+
+// router.post("/:id/delete", (req, res, next) => {
+//   Place.findByIdAndDelete(req.params.id)
+//     .then(() => {
+//       res.redirect("/");
+//     })
+//     .catch(error => {
+//       next();
+//       console.log(error)
+//     });
+// });
 
 
 

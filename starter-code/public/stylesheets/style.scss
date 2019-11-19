@@ -4,5 +4,13 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  display: block;
+  color: #666;
+  text-decoration: none;
+  
 }
+
+#map {
+  height: 500px;
+  width: 100%;
+ }
