@@ -4,6 +4,8 @@
 <form action="/places/{{place._id}}/edit" method="POST">
   <input type="text" name="name" placeholder={{place.name}} value="{{place.name}}">
   <input type="text" name="type" placeholder={{place.type}} value="{{place.type}}">
+   <input type="text" name="lon" placeholder={{place.lon}} value="{{place.lon}}">
+  <input type="text" name="lat" placeholder={{place.lat}} value="{{place.lat}}">
   
   <input type="hidden" name="_id" value="{{place._id}}">
 

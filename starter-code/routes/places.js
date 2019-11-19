@@ -33,6 +33,8 @@ router.post("/new", (req, res, next) => {
   Place.create({
     name: req.body.name,
     type: req.body.type,
+    lat: +req.body.lat,
+    lon: +req.body.lon
   })
     .then(() => res.redirect("/places/index"))
     .catch(function() {
