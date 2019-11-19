@@ -1,6 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const router  = express.Router();
 const Place = require('../models/place');
+
+let apiUrl;
+let apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
 // GET => render the form to create a new place
 router.get('/new', (req, res, next) => {
@@ -34,10 +38,11 @@ router.post('/', (req, res, next) => {
 // GET => to retrieve all the places from the DB
 router.get('/', (req, res, next) => {
 	Place.find({},(error, placesFromDB) => {
+    apiUrl=`https://maps.googleapis.com/maps/api/js?key=${apiKey}`
 		if (error) { 
 			next(error); 
 		} else { 
-			res.render('places/index', { places: placesFromDB });
+			res.render('places/index', { places: placesFromDB, apiUrl });
 		}
 	});
 });
