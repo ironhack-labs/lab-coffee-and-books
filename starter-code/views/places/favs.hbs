@@ -1,0 +1,11 @@
+<h2>Favourite places</h2>
+{{#each placeInDb}}
+ <h3>{{name}}</h3>
+ <p>{{type}}</p>
+ <a href="/places/{{_id}}/update">Update details</a>
+ <form action="/places/{{_id}}/delete" method="POST">
+  <button type="submit">Delete</button>
+</form>
+{{/each}}
+
+<a href="/places/add">Add a new favourite Place</a>

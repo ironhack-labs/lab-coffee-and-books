@@ -5,7 +5,7 @@ const schemaName = new Schema({
   name: String,
   type:{
     type: String,
-    enum : ['coffee shop', 'bookstore',]
+    enum : ['Coffee Shop', 'Bookstore',]
   }
 },
 {
