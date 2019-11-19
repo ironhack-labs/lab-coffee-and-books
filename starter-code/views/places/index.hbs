@@ -1,0 +1,16 @@
+<div>
+    <h2>Coffee & Books</h2>
+    {{#each place}}
+    <p><a href="/show/{{id}}">{{name}}</a></p>
+    <form method="POST" action="{{id}}/place-delete/">
+        <p><a href="/edit/{{id}}">edit</a></p>
+        <button>Delete</button>
+    </form>
+    {{/each}}
+    <p><a href="/">go home</a></p>
+    <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx2GmyouiTJKT1cnseLaV4I5LJDwp5oo8"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
