@@ -4,7 +4,8 @@
 
 <ul id="all-places">
         {{#each allPlaces}}
-        <li>{{name}} <span>{{type}}</span></li>
+        <li><p>{{name}} <span>{{type}}</span></p>
+        </li>
 
         <form action="places/{{_id}}/edit" method="get">
             <button type="submit">Edit this place</button>

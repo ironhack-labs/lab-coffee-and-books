@@ -1,3 +1,5 @@
+
+
 const Madrid = { lat: 40.4183083, lng: -3.70275 };
 const markers = []
 let map;
@@ -16,10 +18,6 @@ startMap();
 
 
 
-
-
-
-
 function showMarkers(map) {
   axios.get("http://localhost:3000/places-data").then(allPlaces => {
     allPlaces.data.forEach(places => {
@@ -29,11 +27,12 @@ function showMarkers(map) {
           lng: places.location.coordinates[1]
         },
         map: map,
-        title: places.name
+        title: places.name,
+        draggable : true
       });
 
       var infowindow = new google.maps.InfoWindow({
-        content: places.name
+        content: `${places.name} - ${places.type} <br>At ${marker.position}` 
       });
 
       marker.addListener("click", function() {
