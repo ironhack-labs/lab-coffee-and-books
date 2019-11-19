@@ -5,13 +5,17 @@
     <ul>
         {{#each places}}
         <li>
-            <a href="/places/{{this._id}}">{{this.name}}</a><span>{{this.type}}</span>
+            <a href="/places/{{this._id}}">{{this.name}}</a><span> |{{this.type}}|</span>
             |
             <a href="/places/{{this._id}}/delete">Delete</a>
         </li>
         {{/each }}
     </ul>
     {{!-- add map here --}}
+    <div id="map"></div>
 </div>
+
 {{!-- added your scripts here --}}
-  
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyDc6nFedtbKRPGdEa-BKeEJoNpffUM_lHA"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>

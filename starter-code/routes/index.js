@@ -2,19 +2,24 @@ const express = require('express');
 const router  = express.Router();
 const Place = require('../models/place');
 
-// GET => render the form to create a new restaurant
+// GET => render the form to create a new place
 router.get('/new', (req, res, next) => {
   res.render('places/new');
 });
 
-// POST => to create new restaurant and save it to the DB
+// POST => to create new places and save it to the DB
 router.post('/', (req, res, next) => {
-  // add location object here
-  console.log(req.body)
+
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
+    };
+ 
 
 	const newPlace = new Place({
 		name: req.body.name,
-		type: req.body.type
+    type: req.body.type,
+    location: location
 	});
 
 	newPlace.save((error) => {
@@ -26,7 +31,7 @@ router.post('/', (req, res, next) => {
 	});
 });
 
-// GET => to retrieve all the restaurants from the DB
+// GET => to retrieve all the places from the DB
 router.get('/', (req, res, next) => {
 	Place.find({},(error, placesFromDB) => {
 		if (error) { 
@@ -37,10 +42,10 @@ router.get('/', (req, res, next) => {
 	});
 });
 
-// GET => get the form pre-filled with the details of one restaurant
+// GET => get the form pre-filled with the details of one place
 router.get('/:place_id/edit', (req, res, next) => {
 	Place.findById(req.params.place_id, (error, place) => {
-    console.log(place.type)
+  
 		if (error) {
 			next(error);
 		} else {
@@ -52,6 +57,7 @@ router.get('/:place_id/edit', (req, res, next) => {
 // POST => save updates in the database
 router.post('/:place_id', (req, res, next) => {
 	Places.findById(req.params.place_id, (error, place) => {
+    
 		if (error) { 
       next(error); 
     } else {
@@ -82,23 +88,23 @@ router.get('/:place_id/delete', (req, res, next) => {
 
 // to see raw data in your browser, just go on: http://localhost:3000/api
 router.get('/api', (req, res, next) => {
-	Restaurant.find({}, (error, allRestaurantsFromDB) => {
+	Place.find({}, (error, allPlacesFromDB) => {
 		if (error) { 
 			next(error); 
 		} else { 
-			res.status(200).json({ restaurants: allRestaurantsFromDB });
+			res.status(200).json({ places: allPlacesFromDB });
 		}
 	});
 });
 
 // to see raw data in your browser, just go on: http://localhost:3000/api/someIdHere
 router.get('/api/:id', (req, res, next) => {
-	let restaurantId = req.params.id;
-	Restaurant.findOne({_id: restaurantId}, (error, oneRestaurantFromDB) => {
+	let placeId = req.params.id;
+	Place.findOne({_id: placeId}, (error, onePlaceFromDB) => {
 		if (error) { 
 			next(error) 
 		} else { 
-			res.status(200).json({ restaurant: oneRestaurantFromDB }); 
+			res.status(200).json({ place: onePlaceFromDB }); 
 		}
 	});
 });
@@ -106,6 +112,7 @@ router.get('/api/:id', (req, res, next) => {
 // GET => get the details of one place
 router.get('/:places_id', (req, res, next) => {
 	Place.findById(req.params.places_id, (error, place) => {
+    console.log(place)
 		if (error) {
 			next(error);
 		} else {
