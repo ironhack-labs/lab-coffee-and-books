@@ -1,0 +1,10 @@
+<h2>Edit Place:</h2>
+<div>
+    <form action="/place/{{_id}}" method="POST">
+        <input type="hidden" name="id" value="{{_id}}">
+        <input type="text" name="name" value="{{name}}">
+        <input type="text" name="type" value="{{type}}">
+        <input type="submit" class="submit" value="Update">
+    </form>
+    <a href="/place">Edit</a>
+</div>
