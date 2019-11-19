@@ -1,0 +1,14 @@
+<h3>Add new restaurant</h3>
+<form method="POST" action="/places">
+    <input type="text" name="name" placeholder="name">
+    <select name="type">
+        <option>Coffee shop</option>
+        <option>Bookstore</option>  
+    </select>
+    {{!-- you will start using "address" part when you 
+set up your model to be able to store lat and long, so add address here:  --}}
+
+
+    <input type="submit" value="Create!">
+</form>
+<a href="/places">Back to the list</a>

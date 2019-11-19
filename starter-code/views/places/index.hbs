@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<div class="info">
+    <h3>List of all Places</h3>
+    <a href="/places/new">Create new Coffee or Bookstore</a>
+    <ul>
+        {{#each places}}
+        <li>
+            <a href="/places/{{this._id}}">{{this.name}}</a><span>{{this.type}}</span>
+            |
+            <a href="/places/{{this._id}}/delete">Delete</a>
+        </li>
+        {{/each }}
+    </ul>
+    {{!-- add map here --}}
+</div>
+{{!-- added your scripts here --}}
+  
