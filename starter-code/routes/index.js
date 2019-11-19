@@ -7,6 +7,20 @@ const bodyParser   = require('body-parser');
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
 
+router.get("/map", (req, res, next) => {
+  Place.find()
+    .then(placesFound => {
+      res.json(placesFound)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+});
+
+router.get("/maps", (req, res, next) => {
+  res.render('map')
+})
+
 router.get('/', (req, res, next) => {
   Place.find()
     .then(placesFound =>{
@@ -18,9 +32,21 @@ router.get('/new', (req, res, next) => {
   res.render('create');
 });
 
+router.get('/map', (req, res, next) => {
+  res.render('map');
+});
+
 router.post('/new', (req, res, next) => {
-  const {name, type} = req.body;
-  const newPlace = new Place({name, type});
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.latitude, req.body.longitude]
+  }
+  const newPlace = new Place ({
+    name: req.body.name,
+    type: req.body.type,
+    location: location
+  });
+  console.log(newPlace)
   newPlace.save()
     .then(() => {
       res.redirect('/')
@@ -41,8 +67,14 @@ router.get('/:id/edit', (req, res, next) => {
 });
 
 router.post("/:id/edit", (req, res, next) => {
-  const {name, type} = req.body;
-  Place.findByIdAndUpdate(req.params.id, {name, type})
+  const name = req.body.name;
+  const type = req.body.type;
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.latitude, req.body.longitude]
+  }
+  
+  Place.findByIdAndUpdate(req.params.id, {name, type, location})
     .then(() => {
       res.redirect(`/${req.params.id}`)
     })
@@ -65,5 +97,7 @@ router.get("/:id/delete", (req, res, next) => {
       res.redirect('/')
     })
 })
+
+
 
 module.exports = router;
