@@ -75,7 +75,7 @@ router.get('/:id/edit', (req, res) => {
 
 router.post('/:id/edit', (req, res) => {
 
-    let {title, type, lng, lat }  = req.body; 
+    let {title, type, lat, lng }  = req.body; 
 
     Places
         .findByIdAndUpdate({ _id: req.params.id }, {
@@ -83,7 +83,7 @@ router.post('/:id/edit', (req, res) => {
             type,
             location : {
                 type: "Point",
-                coordinates : [lng, lat]
+                coordinates : [lat, lng]
             }
         })
         .then(placeUpdated => {
