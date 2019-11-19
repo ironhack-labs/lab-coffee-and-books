@@ -1,0 +1,11 @@
+  <h3>Edita un place!!!</h3>
+<form method="POST" action="/places/{{ place._id }}">
+    <label>Nombre del place:</label>
+    <input type="" name="name" placeholder="Nombre" value="{{ place.name}}">
+    <label>Tipo:</label>
+    <input type="" name="type" placeholder="Tipo de place" value="{{ place.type}}">
+    <label>Dirección</label>
+        <input type="text" name="latitude" id="latitude" placeholder="Latitud" value="{{ place.location.coordinates.[1]}}">
+        <input type="text" name="longitude" id="longitude" placeholder="Longitud" value="{{ place.location.coordinates.[0]}}">
+    <button type="submit" name="" id="submit">Editar</button>
+</form>
