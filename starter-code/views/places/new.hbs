@@ -1,0 +1,11 @@
+<h1>Create a new place</h1>
+
+<form action="/places" method="POST">
+    <input type="text" name="name" placeholder="Introduce the name of a place" value="" required>
+    <select name="type" required>
+        <option selected disabled>Choose a type</option>
+        <option value="coffee shop">Coffee Shop</option>
+        <option value="bookstore">Bookstore</option>
+    </select>
+    <input type="submit" value="Create now!">
+</form>

@@ -1,0 +1,19 @@
+{{#if allPlaces}}
+<h1>All your fav places</h1>
+<p>Delete or edit this stuff. You know you can</p>
+
+<ul id="all-places">
+        {{#each allPlaces}}
+        <li>{{name}}</li>
+
+        <form action="places/{{_id}}/edit" method="get">
+            <button type="submit">Edit this place</button>
+        </form>
+
+        <form action="places/{{_id}}/delete" method="post">
+            <button type="submit">Delete this place</button>
+        </form>
+
+    {{/each}}
+</ul>
+{{/if}}
