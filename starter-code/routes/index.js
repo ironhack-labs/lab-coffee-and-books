@@ -2,11 +2,6 @@ const express = require('express');
 const router  = express.Router();
 const Place = require('../models/place');
 
-// /* GET home page */
-// router.get('/', (req, res, next) => {
-//   res.render('places/index');
-// });
-
 // GET => render the form to create a new restaurant
 router.get('/new', (req, res, next) => {
   res.render('places/new');
@@ -56,7 +51,7 @@ router.get('/:place_id/edit', (req, res, next) => {
 
 // POST => save updates in the database
 router.post('/:place_id', (req, res, next) => {
-	Place.findById(req.params.place_id, (error, place) => {
+	Places.findById(req.params.place_id, (error, place) => {
 		if (error) { 
       next(error); 
     } else {
