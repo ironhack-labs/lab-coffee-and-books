@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Place = require("../models/Place.js");
+const coords=[]
 
 router.get("/index", (req, res, next) => {
   Place.find({})
@@ -37,6 +38,8 @@ router.post("/new", (req, res, next) => {
     lon: +req.body.lon
   })
     .then(() => res.redirect("/places/index"))
+    .then((placeCreated) => coords.push(placeCreated.lon)) ///////////////////////////////////
+    .then((placeCreated) => coords.push(placeCreated.lat)) ///////////////////////////////////
     .catch(function() {
       next();
       throw new Error("Como puedes ser tan desgraciado de no ser capaz de añadir algo!");
