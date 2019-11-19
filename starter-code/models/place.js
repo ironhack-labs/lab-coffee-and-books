@@ -13,8 +13,10 @@ const placeSchema = new Schema({
         enum: [
             "Coffee Shop",
             "Bookstore"
-        ]
-    }
+        ],
+    },
+    location: { type: { type: String }, coordinates: [Number] }
+
 },  {
         timestamps: true
     }

@@ -3,10 +3,16 @@
 <form action="/places/{{placeToEdit._id}}/edit" method="POST">
     <input type="text" name="name" placeholder="Introduce the name of a place" value="{{placeToEdit.name}}" required>
     <select name="type" required>
-        <option selected disabled value ="">Choose a type</option>
+        <option selected disabled value="">Choose a type</option>
         <option value="Coffee Shop">Coffee Shop</option>
         <option value="Bookstore">Bookstore</option>
     </select>
+
+    <label>Location</label>
+    <input type="text" name="lng" value="{{lng}}">
+    <input type="text" name="lat" value="{{lat}}">
+
+
     <input type="hidden" name="{{placeToEdit._id}}">
     <input type="submit" value="Edit now!">
 </form>
