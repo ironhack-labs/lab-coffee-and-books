@@ -9,30 +9,30 @@ const Places = require('../models/place');
 const places = [
     {
         name: "Cafe de la Luz",
-        type : "coffee shop"
+        type : "Coffee Shop"
     },
     {
         name: "Matilda Café",
-        type : "coffee shop"
+        type : "Coffee Shop"
     },
     {
         name: "Gran Café Gijón",
-        type : "coffee shop"
+        type : "Coffee Shop"
     }, {
         name: "HanSo Café",
-        type : "coffee shop"
+        type : "Coffee Shop"
     }, {
         name: "Panta Rhei",
-        type : "bookstore"
+        type : "Bookstore"
     }, {
         name: "Tipos infames",
-        type : "bookstore"
+        type : "Bookstore"
     }, {
         name: "La Central",
-        type : "bookstore"
+        type : "Bookstore"
     }, {
         name: "Librería Enclave",
-        type : "bookstore"
+        type : "Bookstore"
     },
 ]
 

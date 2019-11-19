@@ -36,6 +36,11 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.locals.title = 'Coffee and books and so';
 
 
+// Routes
+const index = require('./routes/index');
+app.use('/', index);
+
+
 const places = require('./routes/places');
 app.use('/places', places);
 

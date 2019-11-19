@@ -11,8 +11,8 @@ const placeSchema = new Schema({
         type: String,
         required : true,
         enum: [
-            "coffee shop",
-            "bookstore"
+            "Coffee Shop",
+            "Bookstore"
         ]
     }
 },  {

@@ -6,7 +6,7 @@
 
 Books and coffee are two very compatible things. If you think about it, a nice cup of a hot beverage and a book are two amazing things to have together.
 
-In this exercise, let's create an app to save both bookstores and coffee places and display them. You could even use Google Maps to display a path from one place to the other.
+In this exercise, let's create an app to save both Bookstores and coffee places and display them. You could even use Google Maps to display a path from one place to the other.
 
 :bulb: **Hint:** To accomplish this new challenge, feel free to follow the Google Maps & Express, the previous lesson.
 
@@ -44,7 +44,7 @@ In `models` folder, create a new model `place.js`. For now, this model will have
 
 ```bash
     - name,
-    - type: coffee shop, bookstore
+    - type: Coffee Shop, Bookstore
     - timestamps 
 ```
 
