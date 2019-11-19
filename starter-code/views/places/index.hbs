@@ -1,0 +1,24 @@
+<h2>BEST PLACES OF ALL TIMES</h2>
+<div class="list-wrapper">
+<ul>
+{{#each placesFound}}
+<li>
+<h3>{{name}}</h3>
+<h4>{{type}}</h4>
+<a href="/places/{{_id}}">View more...</a>
+<div class="forms-container">
+<form action="/places/{{_id}}/delete" method="POST">
+<input type="hidden" name="id" class="text" value="{{_id}}">
+<input type="submit" class="submit" value="Delete"></form>
+<form action="/places/{{_id}}/edit" method="POST">
+<input type="hidden" name="id" class="text" value="{{_id}}">
+<input type="submit" class="submit" value="Edit">
+</form>
+</div>
+</li>
+{{/each}}
+</ul>
+
+</div>
+<a class="new" href="/places/new">create new place</a>
+<a class="home" href="/">go back home</a>
