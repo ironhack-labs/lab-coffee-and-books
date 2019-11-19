@@ -1,0 +1,13 @@
+ 
+<h2>Actualise joven</h2>
+
+<form action="/places/{{place._id}}/edit" method="POST">
+  <input type="text" name="name" placeholder={{place.name}} value="{{place.name}}">
+  <input type="text" name="type" placeholder={{place.type}} value="{{place.type}}">
+  
+  <input type="hidden" name="_id" value="{{place._id}}">
+
+  <input type="submit" value="Actualisa">
+</form>
+
+<a href="/places/index">Atrás jovensito</a>

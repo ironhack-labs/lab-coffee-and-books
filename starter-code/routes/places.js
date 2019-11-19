@@ -18,7 +18,7 @@ router.get("/index", (req, res, next) => {
 router.get("/:id", (req, res, next) => {
   Place.findById(req.params.id)
     .then(placeData =>
-      res.render("place/show", { place: placeData })
+      res.render("places/show", { place: placeData })
     )
     .catch(function() {
       next();
@@ -63,7 +63,7 @@ router.get("/:id/edit", (req, res, next) => {
 
 router.post("/:id/edit", (req, res) => {
   Place.findByIdAndUpdate(req.body._id, req.body).then(updatedPlace => {
-    res.redirect("/place/index");
+    res.redirect("/places/index");
   });
 }); 
 

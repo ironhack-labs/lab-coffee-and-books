@@ -1,2 +1,15 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h2>Places index</h2>
+
+<ul>
+  {{#each places}}
+  <li>
+    <a href="/places/{{_id}}">{{name}}</a>
+    <a href="/places/{{_id}}/delete">| Delete place</a>
+    <a href="/places/{{_id}}/edit">| Update place info</a>
+  </li>
+  {{/each}}
+</ul>
+
+<h2>End of index</h2>
+
+<a href="/places/new">Add a new thing</a>
