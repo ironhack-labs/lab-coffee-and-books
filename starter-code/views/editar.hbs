@@ -1,0 +1,15 @@
+ <h2>Editar</h2>
+
+<form action="/editar" method="POST">
+  <input type="text" name="name" value="{{name}}">
+  <select name="type">
+    <option value="coffee shop">Coffee shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <input type="text" name="lat" placeholder="latitude">
+  <input type="text" name="lon" placeholder="longitude">
+  <input hidden type="text" name="id" value="{{_id}}">
+  <input type="submit" value="Update">
+</form>
+
+<a href="/index">Inicio</a>
