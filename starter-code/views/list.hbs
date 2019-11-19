@@ -1,0 +1,10 @@
+<h2>hello this is a list of places</h2>
+
+{{#each place}}
+<ul>
+    <li>{{name}} <br>
+        <a href="/edit/{{_id}}">edit</a> <br>
+        <a href="/delete/{{_id}}">delete</a>
+        </li>
+</ul>
+{{/each}}
