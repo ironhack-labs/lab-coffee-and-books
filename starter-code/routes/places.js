@@ -12,8 +12,8 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
   places.findOne({ _id: req.params.id })
-    .then((movieFound) => {
-      res.render('places/show', movieFound)
+    .then((placeFound) => {
+      res.render('places/show', placeFound)
     })
     .catch(() => {
       next()
@@ -22,7 +22,7 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.get('/:id/edit', (req, res, next) => {
-  res.render('places/edit',movie)
+  res.render('places/edit',place)
 });
 
 router.post('/:id', (req, res, next) => {
@@ -30,7 +30,8 @@ router.post('/:id', (req, res, next) => {
     {_id: req.body.id},
     {
         name: req.body.name,
-        type: req.body.type
+        type: req.body.type,
+        pos:{lat: req.body.lat, lng: req.body.lng}
       }
     )
     .then(()=>{
@@ -41,8 +42,8 @@ router.post('/:id', (req, res, next) => {
 
 router.post('/:id/edit', (req, res, next) => {
   places.findOne({ _id: req.body.id })
-    .then((movie) => {
-      res.render('places/edit', movie)
+    .then((place) => {
+      res.render('places/edit', place)
     })
     .catch(() => {
       next()
@@ -52,7 +53,7 @@ router.post('/:id/edit', (req, res, next) => {
 router.post('/:id/delete', (req, res, next) => {
   places.findByIdAndRemove(req.body.id)
     .then(() => {
-      res.redirect('/places')
+      res.redirect('/')
     })
     .catch(() => {
       next()
@@ -62,16 +63,16 @@ router.post('/:id/delete', (req, res, next) => {
 
 router.get('/new', (req, res, next) => {
   res.render('places/new')
-
 });
 
 router.post('/', (req, res, next) => {
   places.create({
     name: req.body.name,
-    type: req.body.type
+    type: req.body.type,
+    pos:{lat: req.body.lat, lng: req.body.lng}
   })
     .then(() => {
-      res.redirect('/places')
+      res.redirect('/')
     })
 });
 

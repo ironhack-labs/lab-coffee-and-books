@@ -12,7 +12,6 @@ body {
   color: #000000; }
 
 .new {
-  margin-top: 4rem;
   font-size: 1.6rem;
   text-decoration: none; }
 
@@ -47,6 +46,7 @@ body {
   align-items: center; }
 
 .list-wrapper {
+  margin-bottom: 3rem;
   display: flex;
   width: 60vw;
   justify-content: center; }
@@ -100,15 +100,23 @@ h2 {
 
 .list-wrapper li {
   display: flex;
-  width: 33%;
+  width: 22%;
+  margin: 0 1rem;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: flex-start;
-  padding: 2rem 0 1rem 0; }
+  align-items: center;
+  padding: 2rem 0 1rem 0;
+  transition: 0.3s ease-in; }
+
+.list-wrapper li:hover {
+  transform: translateY(-3rem);
+  transition: 0.3s ease-in;
+  border-bottom: 1rem dashed #38f2ff; }
 
 .forms-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   width: 100%; }
 
 .celebrity-wrapper {
@@ -119,18 +127,24 @@ h2 {
   text-align: center;
   flex-wrap: wrap; }
   .celebrity-wrapper h4 {
-    font-size: 2rem; }
-  .celebrity-wrapper q {
-    padding: 3rem;
     font-size: 5rem; }
+  .celebrity-wrapper p {
+    margin: 3rem;
+    padding: 0 2rem;
+    font-size: 3rem;
+    background-color: #38f2ff; }
+  .celebrity-wrapper .map-indications {
+    margin: 2rem;
+    font-size: 1.5rem;
+    background: none; }
   .celebrity-wrapper a {
     font-size: 1.5rem; }
   .celebrity-wrapper a:hover::before {
     content: "<< "; }
   .celebrity-wrapper input {
     text-align: left;
-    padding: 2rem 4rem;
-    font-size: 5rem;
+    padding: 1rem 2rem;
+    font-size: 3rem;
     margin: 2rem;
     width: 60%; }
   .celebrity-wrapper .submit {
@@ -155,7 +169,7 @@ h2 {
   align-items: center; }
   .hero-section h1 {
     font-size: 4rem;
-    margin: 4rem;
+    margin: 3rem;
     padding: -1rem 3rem;
     color: rgba(0, 0, 0, 0.8);
     text-align: center;
@@ -194,5 +208,38 @@ h2 {
 a:visited {
   text-decoration: none;
   color: inherit; }
+
+#map {
+  margin: 3rem 0;
+  width: 80vw;
+  height: 50vh; }
+
+#map-detail {
+  width: 100%;
+  height: 40vh;
+  margin: 3rem; }
+
+select {
+  display: inline-block;
+  cursor: pointer;
+  padding: 2rem 5rem;
+  outline: 0;
+  border: 0px solid #000000;
+  border-radius: 0px;
+  background: #e6e6e6;
+  color: #7b7b7b;
+  font-size: 3rem; }
+
+select::-ms-expand {
+  display: none; }
+
+select:hover,
+select:focus {
+  color: #000000;
+  background: #cccccc; }
+
+select:disabled {
+  opacity: 0.2;
+  pointer-events: none; }
 
 /*# sourceMappingURL=style.css.map */

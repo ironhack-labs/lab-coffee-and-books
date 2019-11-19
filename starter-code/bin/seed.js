@@ -11,43 +11,73 @@ Place.deleteMany()
   const places = [
     {
       name: "Il café di Maria",
-      type: "coffee shop"
+      type: "coffee shop",
+      pos:{ 
+        lat: 40.416900, 
+        lng: -3.703400}
     },
     {
       name: "Coffee Time",
-      type: "coffee shop"
+      type: "coffee shop",
+      pos:{ 
+        lat: 40.416500, 
+        lng: -3.703492}
     },
     {
       name: "My Coffee",
-      type: "coffee shop"
+      type: "coffee shop",
+      pos:{ 
+        lat: 40.416928, 
+        lng: -3.703492}
     },
     {
       name: "Relax & Coffee",
-      type: "coffee shop"
+      type: "coffee shop",
+      pos:{ 
+        lat: 40.416930, 
+        lng: -3.703600}
     },
     {
       name: "La cafetera",
-      type: "coffee shop"
+      type: "coffee shop",
+      pos:{ 
+        lat: 40.416900, 
+        lng: -3.702000}
     },
     {
       name: "El librero",
-      type: "bookstore"
+      type: "bookstore",
+      pos:{ 
+        lat: 40.416910, 
+        lng: -3.704000}
     },
     {
       name: "De letras y folios",
-      type: "bookstore"
+      type: "bookstore",
+      pos:{ 
+        lat: 40.416092, 
+        lng: -3.702432}
     },
     {
       name: "Book & Book",
-      type: "bookstore"
+      type: "bookstore",
+      pos:{ 
+        lat: 40.416940, 
+        lng: -3.710000}
     },
     {
       name: "Shakespeare",
-      type: "bookstore"
+      type: "bookstore",
+      pos:{ 
+        lat: 40.416875, 
+        lng: -3.702500}
     },
     {
       name: "Cogito ergo sum",
-      type: "bookstore"
+      type: "bookstore",
+      pos:{ 
+        lat: 40.416900, 
+        lng: -3.710000}
     },
     
   ];

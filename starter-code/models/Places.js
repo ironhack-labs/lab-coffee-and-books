@@ -7,7 +7,9 @@ const schemaName = new Schema({
   type: {
     type: String,
     enum: ['coffee shop', 'bookstore']
-  }
+  },
+  pos: { lat: Number, lng: Number}
+
 },
   {
     timestamps: true

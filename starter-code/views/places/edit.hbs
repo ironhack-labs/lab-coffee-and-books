@@ -1,10 +1,19 @@
-<h2>Edit movie:</h2>
+<h2>Edit Place:</h2>
 <div class="celebrity-wrapper">
+
 <form action="/places/{{_id}}" method="POST">
-<input type="hidden" name="id" value="{{_id}}">
-<input type="text" name="name" value="{{name}}">
-<input type="text" name="type" value="{{type}}">
+<input type="hidden" name="id" class="id" value="{{_id}}">
+<input type="hidden" name="lat" id="lat" value="{{pos.lat}}">
+<input type="hidden" name="lng" id="lng" value="{{pos.lng}}">
+<input type="text" name="name" id="name" value="{{name}}">
+<select name="type" id="type">
+  <option value="coffee shop">Coffee Shop</option>
+  <option value="bookstore">Bookstore</option>
+</select>
+<p class="map-indications">Drag and drop 📍 the marker to update the location</p>
+<div id="map-detail"></div>
+
 <input type="submit" class="submit" value="Update">
 </form>
-<a href="/places">Go back</a>
+<a href="/">Go back</a>
 </div>

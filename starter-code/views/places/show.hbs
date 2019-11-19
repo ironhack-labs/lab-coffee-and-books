@@ -1,7 +1,14 @@
 <h2>{{title}}:</h2>
 <div class="celebrity-wrapper">
+<input type="hidden" name="id" class="id" value="{{_id}}">
+<input type="hidden" name="lat" id="lat" value="{{pos.lat}}">
+<input type="hidden" name="lng" id="lng" value="{{pos.lng}}">
+<input type="hidden" name="type" id="type" value="{{type}}">
+<input type="hidden" name="name" id="name" value="{{pos.lng}}">
 <h4>{{name}}</h4>
-<q>{{type}}</q>  
-<a href="/places">Go back</a>
+<p>{{type}}</p>  
+<div id="map-detail"></div>
+
+<a href="/">Go back</a>
 </div>
 
