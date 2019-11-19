@@ -3,12 +3,12 @@ const router = express.Router();
 const places = require("../models/Places");
 
 /* GET home page */
-router.get('/', (req, res, next) => {
-  places.find()
-    .then((placesFound) => {
-      res.render('places/index', { placesFound })
-    })
-});
+// router.get('/', (req, res, next) => {
+//   places.find()
+//     .then((placesFound) => {
+//       res.render('/index', { placesFound })
+//     })
+// });
 
 router.get('/:id', (req, res, next) => {
   places.findOne({ _id: req.params.id })
@@ -35,7 +35,7 @@ router.post('/:id', (req, res, next) => {
       }
     )
     .then(()=>{
-      res.redirect('/places')
+      res.redirect('/')
     })
 
 })

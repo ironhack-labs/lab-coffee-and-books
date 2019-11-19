@@ -46,9 +46,8 @@ body {
   align-items: center; }
 
 .list-wrapper {
-  margin-bottom: 3rem;
   display: flex;
-  width: 60vw;
+  width: 80vw;
   justify-content: center; }
   .list-wrapper h3 {
     font-size: 2rem;

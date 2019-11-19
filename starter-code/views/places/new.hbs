@@ -1,19 +1,18 @@
 <h2>New Place:</h2>
 <div class="celebrity-wrapper">
+    <form action="/places" method="POST">
+        <input type="hidden" name="id" class="id" value="{{_id}}">
+        <input type="hidden" name="lat" id="lat" value="40.416928">
+        <input type="hidden" name="lng" id="lng" value="-3.703492">
+        <input type="text" name="name" id="name" value="Name">
+        <select name="type" id="type">
+            <option value="coffee shop">Coffee Shop</option>
+            <option value="bookstore">Bookstore</option>
+        </select>
+        <p class="map-indications">Drag and drop 📍 the marker to set the location</p>
+        <div id="map-detail"></div>
 
-<form action="/places" method="POST">
-<input type="hidden" name="id" class="id" value="{{_id}}">
-<input type="hidden" name="lat" id="lat" value="40.416928">
-<input type="hidden" name="lng" id="lng" value="-3.703492">
-<input type="text" name="name" id="name" value="Name">
-<select name="type" id="type">
-  <option value="coffee shop">Coffee Shop</option>
-  <option value="bookstore">Bookstore</option>
-</select>
-<p class="map-indications">Drag and drop 📍 the marker to set the location</p>
-<div id="map-detail"></div>
-
-<input type="submit" class="submit" value="Create! 💡">
-</form>
-<a href="/">Go back</a>
+        <input type="submit" class="submit" value="Create! 💡">
+    </form>
+    <a href="/">Go back</a>
 </div>
