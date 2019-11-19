@@ -1,0 +1,10 @@
+<h2>Edit Place Data</h2>
+<form action="/{{_id}}/edit" method="POST">
+  <input type="text" name="name" value="{{name}}">
+  <select name="type" id="type-of-place">
+    <option value="coffee shop">Coffe Shop</option>
+    <option value="bookstore">Bookstore</option>
+  </select>
+  <input type="submit" value="Submit information">
+</form>
+<a href="/">Home</a>

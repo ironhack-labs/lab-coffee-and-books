@@ -1,2 +1,9 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h2>Listing Places</h2>
+<ul>
+  {{#each placesFound}}
+  <li><a href="{{_id}}">{{name}} - {{type}}</a></li>
+  <form action="{{_id}}/delete"><input type="submit" value="Delete"></form>
+  <form action="{{_id}}/edit"><input type="submit" value="Edit"></form>
+  {{/each}}
+</ul>
+<a href="/new">Insert new places in the database</a>
