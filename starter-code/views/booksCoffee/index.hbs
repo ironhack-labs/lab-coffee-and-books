@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<div class="info">
+    <h3>List of all booksShops</h3>
+    <a href="/coffee/new">Create new</a>
+    <ul>
+        {{#each coffeeDB}}
+        <li>
+            {{!-- <a href="/coffee/{{ this._id}}">{{ this.name}}</a>
+            |
+            <a href="/coffee/{{ this._id}}/delete">Delete</a> --}}
+            {{this}}
+        </li>
+        {{/each }}
+    </ul>
+</div>
+
+<script src="/javascripts/script.js"></script>
+
