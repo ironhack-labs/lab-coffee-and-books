@@ -1,0 +1,15 @@
+<h3>Añadir un nuevo Coffe/Books</h3>
+<form method="POST" action="/places">
+    <input type="text" name="name" placeholder="nombre">
+    {{!-- <input type="text" name="clase" placeholder="clase"> --}}
+    <select name="clase" id="clase">
+        <option value="coffee shop" type="text">Coffee shop</option>
+        <option value="bookstore" type="text">Bookstore</option>
+    </select>
+    
+    <input type="text" name="latitude" placeholder="latitude">
+    <input type="text" name="longitude" placeholder="longitude">
+    
+    <input type="submit" name="" id="submit">
+</form>
+<a href="/places">Regresar</a>
