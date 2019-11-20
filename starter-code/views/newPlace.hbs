@@ -1,0 +1,36 @@
+<div class="container">
+
+  <h2>Añadir</h2>
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+      <form action="/place/add" method="POST">
+        <div class="form-group">
+          <label for="field1">Nombre: </label>
+          <input type="text" class="form-control" id="field1" name="name">
+        </div>
+        <div class="form-group">
+          <label for="field2">Tipo: </label>
+          <input type="text" class="form-control" id="field2" name="type">
+        </div>
+        <div class="form-group">
+          <label for="field3">Latitud: </label>
+          <input type="text" name="latitude" placeholder="latitude">
+        </div>
+        <div class="form-group">
+          <label for="field4">Longitud: </label>
+          <input type="text" name="longitude" placeholder="longitude">
+        </div>
+            
+            
+
+        <button type="submit" class="btn btn-dark">Añadir</button>
+      </form>
+      <p>
+        <a href="/place">Volver</a>
+      </p>
+    </div>
+  </div>
+</div>

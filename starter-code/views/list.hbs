@@ -1,0 +1,29 @@
+<div class="container">
+
+  <h2>Lista</h2>
+
+  <ul>
+
+    {{#each place}}
+    <p>Nombre: <a href="/place/list/{{this._id}}">{{this.name}}</a>
+        (<a href="/place/edit?cellId={{this._id}}"> Editar</a> | <a href="/place/delete?cellId={{this._id}}">
+        Borrar</a>)</p>
+    {{!-- <p>Ocupación: {{this.occupation}}</p>
+    <p>Frase: {{this.catchPhrase}}</p> --}}
+    {{/each}}
+
+  </ul>
+  <p>
+    <a href="/">Volver</a>
+  </p>
+</div>
+
+<figure id="map"></figure>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/main.js"></script>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
