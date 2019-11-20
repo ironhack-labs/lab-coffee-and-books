@@ -1,2 +1,23 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="info">
+  <h3>LIST OF COFFEE PLACES</h3>
+  <ul>
+    {{#each places}}
+    <li>
+      <a href="/show?placeId">{{ this.name}}</a>
+      <a href="/edit?placeId={{ this._id}}">Edit</a>
+      |
+      <a href="/delete?placeId={{this._id}}">Delete</a>
+    </li>
+    {{/each }}
+  </ul>
+  <a href="/new">Create a new place</a>
+  <figure id="map"></figure>
+</div>
+
+{{!--AXIOS CDN--}}
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+{{!-- CONNECT MAIN --}}
+<script type="text/javascript" src="/javascripts/main.js"></script>
+{{!-- GOOGLE MAPS KEY --}}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
