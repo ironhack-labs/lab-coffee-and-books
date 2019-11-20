@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h1>Nuestros Restaurantes</h1>
+
+  <ul>
+
+    {{#each places}}
+    <li>{{this.name}} (<a href="/places/details/{{this._id}}">Ver detalles</a> | <a
+        href="/places/edit?placeId={{this._id}}">Editar</a> )
+    </li>
+    {{/each}}
+
+  </ul>
+
+      <figure id="map"></figure>
+      
+      <script src="directions.js"></script>
+      <script src="mapStyles.js"></script>
+      <script src="main.js"></script>
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+
+</div>
