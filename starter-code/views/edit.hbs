@@ -1,0 +1,14 @@
+<form action="/{{_id}}/edit" method="post">
+  <label for="field1">Nombre</label>
+  <input type="text" name="name" id="name" value="{{name}}">
+  <label for="field2">Tipo actual {{type}}</label>
+  <select name="type" id="type">
+    <option type="text" value="coffee shop">Coffee Shop</option>
+    <option type="text" value="bookstore">Bookstore</option>
+  </select>
+  <label for=" field4">Longitud</label>
+  <input type="text" name="longitude" id="longitude" value="{{location.coordinates.[0]}}">
+  <label for="field3">Latitud</label>
+  <input type="text" name="latitude" id="latitude" value="{{location.coordinates.[1]}}">
+  <button type="submit">Actualizar</button>
+</form>
