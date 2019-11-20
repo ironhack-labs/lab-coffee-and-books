@@ -31,7 +31,7 @@ router.get('/new', (req, res) => res.render('places/new'))
 router.post('/new', (req, res) => {
   let location = {
     type: 'Point',
-    coordinates: [req.body.longitude, req.body.latitude]
+    coordinates: [req.body.latitude, req.body.longitude]
   }
   const {
     name,
