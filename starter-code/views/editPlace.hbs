@@ -1,0 +1,34 @@
+<div class="container">
+
+  <h2>Modificar</h2>
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+      <form action="/place/edit?cellId={{_id}}" method="POST">
+        <div class="form-group">
+          <label for="field1">Nombre: </label>
+          <input type="text" class="form-control" id="field1" name="name" value="{{name}}">
+        </div>
+        <div class="form-group">
+          <label for="field2">Ocupación: </label>
+          <input type="text" class="form-control" id="field2" name="type" value="{{type}}">
+        </div>
+        <div class="form-group">
+          <label for="field3">Latitud: </label>
+          <input type="text" name="latitude" value="{{location.coordinates.[1]}}">
+        </div>
+        <div class="form-group">
+          <label for="field4">Longitud: </label>
+          <input type="text" name="longitude" value="{{location.coordinates.[0]}}">
+        </div>
+        <button type="submit" class="btn btn-dark">Modificar</button>
+      </form>
+      <p>
+        <a href="/place">Volver</a>
+      </p>
+
+    </div>
+  </div>
+</div>
