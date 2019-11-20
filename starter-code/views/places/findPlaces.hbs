@@ -1,0 +1,23 @@
+<div class="container">
+
+    <h1>Our Places</h1>
+
+    <ul>
+
+        {{#each places }}
+        <li><a href="/places/details/{{this._id}}">{{this.name}}</a> ( <a
+                href="/places/edit?placeId={{this._id}}">Edit</a> ) |
+            <form action="/places/delete?placeId={{this._id}}" method="POST"> <button>Delete</button></form>
+
+        </li>
+        {{/each}}
+
+    </ul>
+    <a href="places/add">Add Place</a>
+    <figure id="map"></figure>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/main.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
