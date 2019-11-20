@@ -1,0 +1,16 @@
+<h2>Places</h2>
+{{#each allPlaces}}
+<li><a href="/place/details/{{this.id}}">{{this.name}}</a></li>
+<a href="/place/{{this.id}}/delete"> (Delete)</a>
+<a href="/place/{{this.id}}/edit"> (Edit)</a>
+{{/each}}
+<br><br>
+<a href="/place/new">New Place</a>
+<br><br>
+<a href="/">Atras</a>
+
+<figure id="map"></figure>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/script.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
