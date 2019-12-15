@@ -1,0 +1,66 @@
+<style>
+    #map{
+        width: 100%;
+        height: 600px;
+    }
+</style>
+
+<div id="map"></div>
+
+<script>
+    function initMap(){
+        const map = new google.maps.Map(
+            document.getElementById("map"), {
+                    zoom: 15,
+                    center:{
+                        lat: 41.3977381,
+                        lng: 2.190471916
+                    }
+                });
+        const marker = new google.maps.Marker({
+            position:{
+                lat: 41.3977381,
+                lng: 2.190471916
+            },
+            animation: google.maps.Animation.BOUNCE,
+            icon: {
+              url: "http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Pepsi-Icon-Logo-PNG-Transparent-500x488.png",
+              scaledSize: new google.maps.Size(50, 50), // scaled size
+            },
+            map,
+            title: "coffe shop"
+        });
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(function(position){
+                const user_location = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                console.log(position);
+                map.setCenter(user_location);
+                marker.setPosition(user_location);
+                const directionService = new google.maps.DirectionsService;
+                const directionDisplay = new google.maps.DirectionsRenderer
+                const directionRequest = {
+                    origin: user_location,
+                    destination: {
+                        lat: 19.4270245,
+                        lng: -99.16766469999999
+                    },
+                    travelMode: "DRIVING"
+                };
+                directionService.route(directionRequest,function (res, status){
+                    if(status === "OK"){
+                        directionDisplay.setDirections(res)
+                    }
+                });
+                directionDisplay.setMap(map);
+            },function(err){
+                console.log(err)
+            })
+        }else{
+            console.log("con leche")
+        }
+    }
+    initMap()
+</script>
