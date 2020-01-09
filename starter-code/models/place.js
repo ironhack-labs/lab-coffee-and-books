@@ -4,15 +4,15 @@ const permittedTypes = [`coffee shop`, `bookstore`];
 
 const placeSchema = new Schema({
   name: {
-    type: [String]
+    type: [String],
   },
-  type: {
+  typeSelector: {
     type: [String],
     enum: permittedTypes,
-    required: `Please specify either coffee shop or bookstore.`
+    required: `Please specify either coffee shop or bookstore.`,
   },
   timestamp: {
-    type: [Date]
+    type: [Date],
   }
 });
 
