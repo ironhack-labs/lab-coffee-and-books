@@ -1,8 +1,41 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif; }
 
 a {
   color: #00B7FF; }
+
+#map {
+  width: 100%;
+  height: 400px; }
+
+img {
+  width: 200px; }
+
+.input-select {
+  width: 450px !important; }
+
+.navbar-brand {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 30px;
+  text-decoration: underline; }
+
+.navbar-brand:hover {
+  text-decoration: underline; }
+
+#page-container {
+  position: relative;
+  min-height: 100vh; }
+
+#footer {
+  font-family: 'Roboto Mono', monospace;
+  bottom: 0;
+  width: 100%;
+  height: 4.5rem;
+  background-color: #f8f9fa; }
+
+.edit-image {
+  width: 150px; }
 
 /*# sourceMappingURL=style.css.map */

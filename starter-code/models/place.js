@@ -1,27 +1,25 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const place = new Schema({
+const placeSchema = new Schema({
+  originalName: String,
   name: String,
-  tipo: {
+  description: { type: String, default: 'There is no description yet, add some now'},
+  image: { type: String, default: 'https://st2.depositphotos.com/4231857/6759/v/950/depositphotos_67592533-stock-illustration-set-of-stylized-food.jpg'},
+  type: {
     type: String,
-    enum: ['cafeteria', 'livraria']
+    enum: ['coffee shoṕ', 'bookstore', 'all places']
   },
-  local: {
+  location: {
     type: {
       type: String
     },
     coordinates: [Number]
   }
-}, {
-  timestamps: true
-})
+},
+  {
+    timestamps: true
+  });
+placeSchema.index({ location: '2dsphere' });
 
-place.index({
-  location: '2dsphere'
-})
-
-const Place = mongoose.model('Place', place)
-
-
-module.exports = Place
+module.exports = mongoose.model('Place', placeSchema);
