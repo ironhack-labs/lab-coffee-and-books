@@ -5,12 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+       #map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
 </head>
 <body>
 
   {{{body}}}
 
+    <h3>My First Map</h3>
+    <div id="map"></div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgLsoqNQxixyS504HiziJSB56wijqqV6Y"></script>
+ 
   <script src="/javascripts/script.js"></script>
 </body>
 </html>
