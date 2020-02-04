@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col">
+    <h3 class="mt-4">Edit place</h3>
+    <form method="POST" action="/update/{{ place.id}}" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>Name:</label>
+        <input class="form-control" type="" name="name" placeholder="Name" value="{{ place.name}}">
+      </div>
+      <div class="form-group">
+        <label>Type:</label>
+        <select class="form-control" name="type">
+          <option selected value="coffee shoṕ">{{ place.type }}</option>
+          <option value="coffee shoṕ">coffee shop</option>
+          <option value="bookstore">bookstore</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        {{!-- <input class="form-control" type="text" value="{{ place.description }}" name="description" id=""> --}}
+        <textarea class="form-control" id="description" name="description" rows="2">{{ place.description }}</textarea>
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <input class="form-control" type="text" name="latitude" id="latitude" placeholder="Latitude"
+          value="{{ place.location.coordinates.[1]}}">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="longitude" id="longitude" placeholder="Longitude"
+          value="{{ place.location.coordinates.[0]}}">
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-2">
+            <img class="edit-image" src="{{ place.image }}" alt="">
+          </div>
+          <div class="col d-flex align-items-end">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" name="photo" id="customFile">
+              <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button class="btn btn-outline-dark mb-4" type="submit" name="" id="">Edit</button>
+    </form>
+    <a href="/"><i class="material-icons">arrow_back</i></a>
+    <div id="map"></div>
+  </div>
+</div>

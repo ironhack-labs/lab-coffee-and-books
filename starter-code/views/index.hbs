@@ -1,2 +1,28 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="row">
+  <div class="col">
+    <div class="form-inline d-flex justify-content-center mt-2">
+      <form method="POST" action="/" id="select-type">
+        <label for="">Filter Places</label>
+        <div class="form-group row">
+          <select class="form-control input-select mr-2" name="type">
+            <option selected value="all places">all places</option>
+            <option value="coffee shoṕ">coffee shop</option>
+            <option value="bookstore">bookstore</option>
+          </select>
+          <button class="btn btn-outline-dark" type="submit" name="">Send</button>
+        </div>
+      </form>
+    </div>
+    <div class="mt-4 mb-4" id="map"></div>
+    <h2 class="text-center"><u>Places</u></h2>
+    <div class="row info mb-4">
+    </div>
+  </div>
+</div>
+{{!-- added your scripts here --}}
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAeLvA95VbtyfzfQAZacBAECELMe22STM"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+<script>
+
+</script>

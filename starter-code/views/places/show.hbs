@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col">
+    <h3 class="mt-4" id="placeName" data-id="{{ places.id }}">{{ places.name }}</h3>
+    <p>{{ places.type }}</p>
+    <p>{{ places.description }}</p>
+    {{!-- add map here --}}
+    <div class="mb-4" id="map"></div>
+    <a href="/"><i class="material-icons">arrow_back</i></a>
+    <a href="/place/{{ places._id }}/edit"><i class="material-icons">edit</i></a>
+
+  </div>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAeLvA95VbtyfzfQAZacBAECELMe22STM"></script>
+<script>
+  axios.get('/api')
+    .then(response => {
+
+      const markers = []
+      response.data.places.map((place) => {
+        let url = window.location.href
+        let id = url.slice(22, url.length)
+
+        if (place._id === id) {
+          const placeSelect = {
+            lat: place.location.coordinates[1],
+            lng: place.location.coordinates[0]
+          }
+          const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: placeSelect
+          })
+          response.data.places.forEach(function (place) {
+            const center = {
+              lat: place.location.coordinates[1],
+              lng: place.location.coordinates[0]
+            };
+            const pin = new google.maps.Marker({
+              position: center,
+              map: map,
+              title: place.name,
+              id: place._id
+            });
+            markers.push(pin)
+
+            for (i = 0; i < markers.length; i += 1) {
+              if (markers[i].id !== id) {
+                markers[i].setMap(null);
+              } else {
+                markers[i].setMap(map);
+              }
+            }
+          });
+        }
+      })
+    })
+</script>

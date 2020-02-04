@@ -1,16 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
 
-  {{{body}}}
+  {{!-- Modal --}}
+  <div class="modal fade" id="create-place-modal" tabindex="-1" role="dialog" aria-labelledby="create-place-modalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="create-place-modalLabel">Create new place</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="/" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="">Name</label>
+              <input class="form-control" type="text" name="name" placeholder="name">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description" name="description" rows="2"></textarea>
+            </div>
+            <label class="col-form-label">Address</label>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="latitude" placeholder="latitude">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="longitude" placeholder="longitude">
+                </div>
 
-  <script src="/javascripts/script.js"></script>
+              </div>
+
+            </div>
+            <div class="form-group">
+              <label for="">Type</label>
+              <select class="form-control" name="type" id="">
+                <option selected value="coffee shoṕ">coffee shop</option>
+                <option value="bookstore">bookstore</option>
+              </select>
+            </div>
+            <label for="">Upload image for your place</label>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" name="photo" id="customFile">
+              <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Fim Modal --}}
+
+  {{!-- Navbar --}}
+
+  <nav class="navbar navbar-light bg-light d-flex justify-content-center">
+    <div class="col">
+
+    </div>
+    <div class="col text-center logo">
+      <a class="navbar-brand" href="/">Coffee&Books</a>
+    </div>
+    <div class="col text-right">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-place-modal">
+        Create new place
+      </button>
+
+    </div>
+  </nav>
+  <div class="container" id="page-container">
+    {{!-- Fim Navbar --}}
+
+    {{{body}}}
+
+  </div>
+  <footer id="footer" class="mt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center mt-4">
+          <h5>Coffee&Books</h5>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--  Axios CDN  -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!--  Google Maps Key  -->
+  <!--  Connect main.js  -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/script.js"></script>
+
 </body>
+
 </html>
