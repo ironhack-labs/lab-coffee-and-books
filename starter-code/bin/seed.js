@@ -11,6 +11,13 @@ const places = [{
   {
     name: "MÜR Café",
     type: "coffee shop"
+  },
+  {
+    name: "Cereal Hunters",
+    type: "coffee shop",
+    location: {
+    coordenates: [-3.698788, 40.42747]
+    }
   }
 ];
 

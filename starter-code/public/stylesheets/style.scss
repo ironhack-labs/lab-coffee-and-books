@@ -1,8 +1,23 @@
 body {
-  padding: 50px;
+  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#placesMap {
+  height: 400px
+}
+
+.background {
+  height: 100%;
+  background-image: url("/images/coffee-book-bg.jpg");
+  background-size: cover;
+  padding: 2em;
+}
+
+.bg {
+  color: whitesmoke;
 }

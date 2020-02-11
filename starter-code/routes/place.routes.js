@@ -42,9 +42,16 @@
      type,
    } = req.body
 
+   const location = {
+     type: 'Point',
+     coordinates: [req.body.longitude, req.body.latitude]
+   }
+
+
    Place.create({
        name,
        type,
+       location
      })
      .then(() => res.redirect('/places'))
      .catch(err => {
@@ -81,7 +88,16 @@
    const placeId = req.params.id
    console.log("EL id del place que llega como URL param es:", placeId)
 
-   Place.findByIdAndUpdate(placeId, req.body, {
+   const location = {
+     type: 'Point',
+     coordinates: [req.body.longitude, req.body.latitude]
+   }
+
+   Place.findByIdAndUpdate(placeId, {
+       name: req.body.name,
+       type: req.body.type,
+       location
+     }, {
        useFindAndModify: false
      })
      .then(x => res.redirect(`/places`))
@@ -90,5 +106,18 @@
        next(err)
      })
  })
+
+ router.get('/places/api', (req, res, next) => {
+   Place.find()
+     .then(data => res.json(data))
+     .catch(err => next(err))
+ })
+
+ router.get('/places/api/:id', (req, res, next) => {
+   Place.findById(req.params.id)
+     .then(place => res.json(place))
+     .catch(err => next(err))
+ })
+
 
  module.exports = router;

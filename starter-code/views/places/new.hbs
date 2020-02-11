@@ -1,12 +1,22 @@
 <h2>Create a New Place</h2>
 <div>
   <form action="/places" method="post">
-    <label for="">Name:</label>
+    <label for="name">Name:</label>
     <input type="text" name="name">
 
-    <label for="">type:</label>
+    <label for="type">Type:</label>
     <input type="text" name="type">
+    <br>
 
+    <br><label> <strong>Location</strong> <br>
+      <div>
+        <label for="latitude">Latitude:</label>
+        <input type="text" name="latitude">
+        <label for="longitude">Longitude:</label>
+        <input type="text" name="longitude">
+      </div>
+    </label>
+    <br>
     <button type="submit">Create</button>
   </form>
   <br>

@@ -11,9 +11,15 @@
     </div>
     {{/each}}
   </div>
+  <figure id="placesMap"></figure>
   <br>
   <a href="/">Go Home</a>
   <br>
   <br>
   <a href="/places/new">Go to create a New Place</a>
 </div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/main.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg5lWzj9mpsieYdsZQahdGqjeDvflLt5k&callback=initMap"></script>
