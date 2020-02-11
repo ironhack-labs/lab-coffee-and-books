@@ -17,4 +17,8 @@ a {
   align-items: center;
   display: flex; }
 
+.card {
+  display: flex;
+  align-items: center; }
+
 /*# sourceMappingURL=style.css.map */
