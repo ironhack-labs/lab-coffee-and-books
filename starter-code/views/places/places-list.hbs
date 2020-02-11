@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Todas los establecimientos:</h2>
+  <ul>
+    {{#each places}}
+    <li class="margin-bottom">
+      <a class="names" href="/places/details/{{_id}}">{{name}}</a> -
+      <a class="green" href="/places/edit/?id={{_id}}">[Editar]</a> -
+      <a class="red" href="/places/delete/{{_id}}">[Eliminar]</a>
+    </li>
+
+    {{/each}}
+  </ul>
+  <div class="text-center">
+    <a class="btn btn-primary" href="/">Volver Atrás</a>
+    <a class="btn btn-dark" href="/places/new">Añadir Establecimiento</a>
+
+  </div>
+</div>

@@ -1,2 +1,8 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1 class="text-center">{{title}}</h1>
+<p class="text-center ">Bienvenido a {{title}}</p>
+
+<figure id="placesMap"></figure>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../javascripts/map-config.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{secret}}&callback=initMap"></script>
