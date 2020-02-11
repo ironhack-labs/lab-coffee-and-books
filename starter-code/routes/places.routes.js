@@ -92,4 +92,16 @@ router.post('/new', (req, res, next) => {
 //   });
 // });
 
+router.get('/api', (req, res, next) => {
+  Place.find()
+    .then(allPlacesFromDB => res.json(allPlacesFromDB))
+    .catch(err => next(err))
+})
+
+router.get('/api/:id', (req, res, next) => {
+  Place.findById(req.params.id)
+    .then(thePlace => res.jason(thePlace))
+    .catch(err => next(err))
+})
+
 module.exports = router;

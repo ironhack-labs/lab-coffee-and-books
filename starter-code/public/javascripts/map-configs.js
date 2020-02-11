@@ -1,5 +1,5 @@
 let initialCoords = { lat: 41.3977381, lng: 2.190471916 }, myMap
-
+alert('hola')
 function initMap() {
   let mapOptions = { center: initialCoords, zoom: 5 }
   myMap = new google.maps.Map(document.querySelector('#placesMap'), mapOptions)
