@@ -71,4 +71,13 @@ router.post('/update/:id', (req, res) => {
     .catch(errr => console.log("Error al actualizar: ", err))
 })
 
+//Delete
+
+router.get('/delete/:id', (req, res) => {
+  Places.findByIdAndDelete(req.params.id)
+    .then(x => res.redirect('/crud/read'))
+    .catch(err => console.log("Error elimininando place: ", err))
+})
+
+
 module.exports = router
