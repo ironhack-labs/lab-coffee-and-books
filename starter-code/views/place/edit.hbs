@@ -1,0 +1,17 @@
+<div class="edit">
+  <h2>Edit the Place</h2>
+  <form action="/{{_id}}" method="POST">
+    <input type="hidden" name="id" value="{{_id}}">
+    <label for="">Name:</label>
+    <input type="text" value="{{onePlace.name}}" name="name">
+    <label for="">Location:</label>
+    <input type="text" name="lat" value="{{onePlace.location.lat}}">
+    <input type="text" name="lng" value="{{onePlace.location.lng}}">
+    <label for="">Change type {{onePlace.type}} to:</label>
+    <select name="type" id="type">
+      <option value="coffee-shop">Coffee Shop</option>
+      <option value="bookstore">Bookstore</option>
+    </select>
+    <button type="submit">Update Place</button>
+  </form>
+</div>

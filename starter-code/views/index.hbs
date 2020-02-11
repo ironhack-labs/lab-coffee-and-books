@@ -1,2 +1,51 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="indexPlaces">
+  <h2>LIST OF PLACES</h2>
+  <div id="map"></div>
+  <ul>
+    {{#each Place}}
+    <li>
+      <a href="/{{_id}}">{{name}}</a>
+      <form action="/{{_id}}/edit">
+        <button type="submit"><i class="far fa-edit"></i></i></button>
+      </form>
+      <form action="/{{_id}}/delete" method="post">
+        <button type="submit"><i class="far fa-trash-alt"></i></button>
+      </form>
+    </li>
+    {{/each}}
+  </ul>
+  <a href="/new"><i class="far fa-plus-square"></i> Add new</a>
+</div>
+
+
+
+<script>
+  let allPlaces = {{{ allPlaces }}};
+
+  let map;
+
+  function initMap() {
+    const ironhack = { lat: 40.3925087, lng: -3.700465 };
+
+    const map = new google.maps.Map(
+      document.getElementById('map'), { zoom: 15, center: ironhack });
+
+    allPlaces.forEach(place => {
+      new google.maps.Marker({
+        position: {
+          lat: place.location.lat,
+          lng: place.location.lng
+        },
+        map: map,
+        title: place.name
+      });
+    })
+  }
+
+  initMap();
+
+
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAadkh9CVBLYD6I8wPFJlK_1LSq1qPC1Lo&callback=initMap">
+  </script>
