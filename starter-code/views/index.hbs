@@ -1,2 +1,18 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="info">
+  <a href=""><h3>List of Cooffes and Books</h3></a>
+
+  <a href="/new">Create new Place</a>
+  <ul>
+    {{#each places}}
+    <li>
+      <a href="/{{ this._id}}/edit">{{ this.name}}</a>
+      |
+      <a href="/{{ this._id}}/delete">Delete</a>
+    </li>
+    {{/each }}
+  </ul>
+  {{!-- add map here --}}
+  <div id="map"></div>
+</div>
+{{!-- added your scripts here --}}
