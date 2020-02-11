@@ -1,0 +1,24 @@
+<h2>Places Page</h2>
+{{#each place}}
+   <br><br>
+ <div class="col-4">
+   <h2>{{name}}</h2>
+   <br>
+   <a class="btn btn-primary btn-sm" href="/locations/details/{{id}}" role="button">More info</a>
+   <a class="btn btn-primary btn-sm" href="/locations/edit/{{id}}" role="button">Edit</a>
+   <a class="btn btn-primary btn-sm" href="/locations/delete/{{id}}" role="button">Delete</a>
+   <br><br>
+ </div>
+{{/each}}
+<div class="col-4">
+
+<br>
+ <a class="btn btn-primary btn-sm" href="/locations/new" role="button">Create new place</a>
+</div>
+<br>
+<br>
+<p style="text-align: center;">Locations:</p>
+<figure id="placesMap"></figure>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../javascripts/maps.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8Nh0XexCfmbUbFjTl9D45CUhtVB36a4M&callback=initMap"></script>
