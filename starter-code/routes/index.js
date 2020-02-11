@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Place = require("../models/Place");
 
+//CRUD
 
 router.get('/', (req, res, next) => {
   Place.find()
@@ -54,15 +55,5 @@ router.post('/:id/update', (req, res, next) => {
     }));
 });
 
-router.post('/books/edit', (req, res, next) => {
-  const { title, author, description, rating } = req.body;
-  Book.update({_id: req.query.book_id}, { $set: {title, author, description, rating }})
-  .then((book) => {
-    res.redirect('/books');
-  })
-  .catch((error) => {
-    console.log(error);
-  })
-});
 
 module.exports = router;
