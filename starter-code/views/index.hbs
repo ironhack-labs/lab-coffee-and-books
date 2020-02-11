@@ -1,17 +1,19 @@
 <section>
   <h2>Our Places</h2>
   {{#each place}}
+  <p>Name</p>
   <h3>{{name}}</h3>
+  <p>Kind of Place</p>
   <h3>{{type}}</h3>
-  <form action="/{{_id}}/delete" method="post"><button class="btn-menu" type="submit">Delete</button></form>
-  <button class="btn-menu"><a href="/{{_id}}/show">Update a Place</a></button>
+  <div class="btn-flex">
+    <form action="/{{_id}}/delete" method="post"><button class="btn-menu" type="submit">Delete</button></form>
+    <button class="btn-menu"><a href="/{{_id}}/show">Update a Place</a></button>
+  </div>
   {{/each}}
   <p>{{error}}</p>
-  <div>
-    <button class="btn-menu"><a href="/new">Add a new place</a></button>
-  </div>
-  <div>
-    <button id="multiple-points">Show me the Places</button>
+  <div class="btn-flex">
+    <button class="btn-menu-dif"><a href="/new">Add a new place</a></button>
+    <button class="btn-menu-dif" id="multiple-points">Show me the Places</button>
   </div>
 </section>
 
@@ -31,51 +33,51 @@
 
   //Multiple-points
 
-      document.querySelector("#multiple-points").onclick = function() {
-        let shops = [
-          {
-            coords: new google.maps.LatLng(40.3922301, -3.42),
-            name: "zapatillas comet"
-          },
-          {
-            coords: new google.maps.LatLng(40.3722301, -3.72),
-            name: "el patín de oro"
-          },
-          {
-            coords: new google.maps.LatLng(40.3922301, -3.52),
-            name: "test"
-          }
-        ];
+  document.querySelector("#multiple-points").onclick = function () {
+    let shops = [
+      {
+        coords: new google.maps.LatLng(40.3922301, -3.42),
+        name: "zapatillas comet"
+      },
+      {
+        coords: new google.maps.LatLng(40.3722301, -3.72),
+        name: "el patín de oro"
+      },
+      {
+        coords: new google.maps.LatLng(40.3922301, -3.52),
+        name: "test"
+      }
+    ];
 
-        let statues = [
-          {
-            coords: new google.maps.LatLng(40.3922305, -3.49),
-            name: "carlos v"
-          },
-          {
-            coords: new google.maps.LatLng(40.3722305, -3.79),
-            name: "la cibeles"
-          }
-        ];
+    let statues = [
+      {
+        coords: new google.maps.LatLng(40.3922305, -3.49),
+        name: "carlos v"
+      },
+      {
+        coords: new google.maps.LatLng(40.3722305, -3.79),
+        name: "la cibeles"
+      }
+    ];
 
-        statues.forEach(statueInfo => {
+    statues.forEach(statueInfo => {
 
-          new google.maps.Marker({
-            position: statueInfo.coords,
-            map: map,
-            title: statueInfo.name,
-          });
-        });
+      new google.maps.Marker({
+        position: statueInfo.coords,
+        map: map,
+        title: statueInfo.name,
+      });
+    });
 
-        shops.forEach(shopInfo => {
+    shops.forEach(shopInfo => {
 
-          new google.maps.Marker({
-            position: shopInfo.coords,
-            map: map,
-            title: shopInfo.name,
-          });
-        });
-      };
+      new google.maps.Marker({
+        position: shopInfo.coords,
+        map: map,
+        title: shopInfo.name,
+      });
+    });
+  };
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFnYiVa5aDoUogEdckM6vylp1s0cGJxVY&callback=initMap" async
