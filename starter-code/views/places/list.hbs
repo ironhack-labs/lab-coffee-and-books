@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Lista de lugares</h2>
+
+  <div class="row">
+
+    {{#each places}}
+    {{this.name}}
+
+
+    <div class="col">
+      <br>
+      <a href="/places/{{this._id}}">
+        <button type="button" class="btn btn-link">Ir a esta</button>
+      </a>
+    </div>
+
+    <div>
+      <form action="/places/{{this._id}}/delete" method="post">
+
+        <button type="submit">Eliminar</button>
+      </form>
+    </div>
+    <br>
+    {{/each}}
+
+    <br>
+  </div>
+
+  <div class="col">
+    <a href="/places/add">
+      <button type="button" class="btn btn-link">Agregar nuevo lugar</button>
+    </a>
+  </div>
+
+</div>
