@@ -1,2 +1,31 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1J1p1X47TBx53q1TvRZWIxYkJZfoKfEQ">
+</script>
+
+<div class="father">
+  <h1>CAFE Y CIGARRO</h1>
+  <div id="map"></div>
+</div>
+
+{{#each placesFound}}
+<div class="places card">
+  <a href="/places/{{_id}}">
+    <p>{{name}}</p>
+  </a>
+  <p>{{type}}</p>
+  <form action="/places/{{_id}}/delete" method="POST">
+    <button>delete</button>
+  </form>
+</div>
+{{/each}}
+
+<form class="create-form" action="/" method="POST">
+  <input type="text" name="name" placeholder="name">
+  <select name="type">
+    <option value="Cofee Shop">Cofee Shop</option>
+    <option value="Bookstore">Bookstore</option>
+  </select>
+  <input type="text" name="lat" placeholder="lat 40.4110018">
+  <input type="text" name="lng" placeholder="lng -3.7070343">
+  <button>create</button>
+</form>
+<script src="/javascripts/main.js"></script>
