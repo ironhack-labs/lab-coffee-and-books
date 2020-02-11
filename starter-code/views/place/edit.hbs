@@ -1,0 +1,15 @@
+<h1>EDITA TUS LUGARES</h1>
+
+<form action="/edit/{{_id}}" method="post">
+  <label for="">Name:</label>
+  <input type="text" name="name" value="{{name}}"><br>
+
+  <label for="">Latitude</label>
+  <input type="text" name="latitude" value="{{location.coordinates.[1]}}"><br>
+  <label for="">Longitude</label>
+  <input type="text" name="longitude" value="{{location.coordinates.[0]}}"><br>
+  
+
+
+  <button type="submit">UPDATE</button>
+</form>

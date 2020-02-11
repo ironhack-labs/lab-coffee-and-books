@@ -1,0 +1,29 @@
+<h1>CREA NUEVOS SITIOS</h1>
+<form action="/new" method="post">
+  <label for="">Nombre:</label>
+  <input type="text" name="name">
+
+  <label for="type">¿Qué es?</label>
+  <input list="type" name="type">
+  <datalist id="type">
+    <option value="coffeshop">
+    <option value="bookstore">
+  </datalist>
+
+  <label>Localizacion
+    <input type="text" name="latitude" placeholder="latitude">
+    <input type="text" name="longitude" placeholder="longitude">
+  </label>
+
+  <button type="submit">ADD</button>
+
+  <p>{{#each place}}
+    <ul><li><a href="details/{{_id}}">{{name}}</a></li></ul> <a href="delete/{{_id}}">DELETE</a><br><a href="edit/{{_id}}">EDITAR</a>
+    {{/each}}
+  </p>
+</form>
+
+<figure id="placeMap"></figure>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcU0fx6tKwmIrgmstcCMhSL3O9v_u2_HY&callback=initMap"></script>
