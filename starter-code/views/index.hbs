@@ -1,2 +1,11 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h2>Our Places</h2>
+{{#each place}}
+<h3>{{name}}</h3>
+<h3>{{type}}</h3>
+<form action="/{{_id}}/delete" method="post"><button class="btn-menu" type="submit">Delete</button></form>
+<button class="btn-menu"><a href="/{{_id}}/show">Update a Place</a></button>
+{{/each}}
+<p>{{error}}</p>
+<div>
+  <button class="btn-menu"><a href="/new">Add a new place</a></button>
+</div>
