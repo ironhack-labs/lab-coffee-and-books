@@ -125,15 +125,19 @@ input {
   flex-direction: column;
 }
 
-form {
+.show-form {
   display: flex;
   flex-direction: column;
   margin-top: 3em;
   text-align: center;
-
 }
 
 .update-form {
   font-size: 0.75;
   text-transform: uppercase;
+}
+
+div.show {
+  display: flex;
+  flex-direction: column;
 }
