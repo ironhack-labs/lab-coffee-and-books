@@ -1,0 +1,27 @@
+<form action="/crud/update/{{_id}}" method="POST">
+
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name" value="{{name}}">
+
+  <label for="type">Type</label>
+  <select name="type" id="type" value='{{type}}'>
+    <option value="coffe shop">Coffe Shop</option>
+    <option value="bookstore">Book Store</option>
+  </select>
+  <br>
+
+  <h6>Location:</h6>
+
+  <label for="lat">Latitude:</label>
+  <input type="number" name="lat" id="lat" value="{{location.coord.[0]}}">
+
+  <label for="lng">Longitude:</label>
+  <input type="number" name="lng" id="lng" value='{{location.coord.[1]}}'>
+
+  <button>Add</button>
+</form>
+
+<br>
+{{#if message}}
+<h4 style='color:red'> {{message}}</h4>
+{{/if}}

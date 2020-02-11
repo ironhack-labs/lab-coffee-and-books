@@ -1,0 +1,16 @@
+<h1>Places</h1>
+<br>
+
+<ul>
+
+  {{#each places}}
+  <li>{{this.name}}
+    <a href="/crud/show/{{this._id}}">Show</a>
+    <a href="/crud/update/{{this._id}}">Update </a>
+    <a href="/crud/delete/{{this._id}}">Delete</a>
+  </li>
+  {{/each}}
+
+</ul>
+
+<a href="/crud/add">Create new</a>
