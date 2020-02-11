@@ -19,9 +19,9 @@ router.post('/add', (req, res) => {
     coordinates: [req.body.longitude, req.body.latitude]
   }
 
-  const { name, type, location: coordinates } = req.body
+  const { name, type } = req.body
 
-  Place.create({ name, type, location: coordinates })
+  Place.create({ name, type, location: location })
     .then(() => res.redirect('/list'))
     .catch(() => res.render('places/create'))
 })

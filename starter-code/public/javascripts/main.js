@@ -1,4 +1,3 @@
-const Place = require('../models/place.models')
 
 function initMap() {
   // Opciones de mapa
@@ -20,3 +19,4 @@ function initMap() {
   // Instancia de marcador
   new google.maps.Marker(markerOptions)
 }
+

@@ -8,8 +8,8 @@ const placeSchema = new Schema({
     required: true,
     enum: ['coffee shop', 'bookstore'],
     default: 'coffee shop',
-    location: { type: { type: String }, coordinates: [Number] }
-  }
+  },
+  location: { type: { type: String }, coordinates: [Number] }
 }, {
   timestamps: true
 });
