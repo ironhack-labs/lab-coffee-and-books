@@ -15,7 +15,7 @@ require('./configs/locals.config')(app)
 
 
 app.use('/', require('./routes/index.routes'));
-app.use('/', require('./routes/places.routes'));
+app.use('/places', require('./routes/places.routes'));
 
 
 module.exports = app;

@@ -5,12 +5,9 @@ const placeSchema = new Schema({
   name: String,
   type: ['coffee shop', 'bookstore'],
   date: { type: Date, default: Date.now },
-  coords: {
-    lat: Number,
-    lng: Number
-  },
-});
+  location: { type: { type: String }, coordinates: [Number] }
+})
 
-const Place = mongoose.model("Place", placeSchema);
+placeSchema.index({ location: '2dsphere' })
 
-module.exports = Place;
+module.exports = mongoose.model('Place', placeSchema)

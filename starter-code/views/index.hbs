@@ -1,4 +1,21 @@
-<div class="container ">
+<div class="container">
   <h1>{{title}}</h1>
   <hr>
+  <div class="info">
+    <h3>List of all places</h3>
+    <a href="/new">Create new place</a>
+    <ul>
+      {{#each places}}
+      <li>
+        <a href="/places/{{ this._id}}">{{ this.name}}</a> | <a href="/places/{{ this._id}}/delete">Delete</a>
+      </li>
+      {{/each }}
+    </ul>
+    <figure id="placesMap"></figure>
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/javascripts/main.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFPhuSzSAR4FzJmO0eMimZ7B_XRD4FOJY&callback=initMap"></script>
 </div>
