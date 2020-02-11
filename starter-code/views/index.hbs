@@ -1,2 +1,20 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Inicio</h1>
+
+<ul>
+  {{#each places}}
+  <li>
+    <a href="/mostrar/{{_id}}">{{name}}</a>
+  </li>
+  <li>
+    <a href="/{{_id}}/delete">Eliminar</a>
+  </li>
+  <li>
+    <a href="/{{_id}}/editar">Actualizar información</a>
+  </li>
+  <hr>
+  {{/each}}
+</ul>
+
+
+
+<a href="/crear">Crear nuevo sitio</a>
