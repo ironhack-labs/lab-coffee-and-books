@@ -1,0 +1,15 @@
+<h2>Holaa</h2>
+
+<p>Este es el list:</p>
+
+<div class="container">
+  <div class="row">
+    {{#each place}}
+    <div class="col-md-4 d-flex flex-column align-items-center">
+      <h5>{{name}}</h5>
+      <a href="/details/{{id}}">Details</a>
+    </div>
+    {{/each}}
+
+
+  </div>
