@@ -1,0 +1,29 @@
+<h2 class="margin-left">Nuevo establecimiento en {{title}}</h2>
+
+
+<div class="container">
+
+  <form action="/places/new" method="post">
+    <div class="form-group">
+      <label for="name">Introduce el nombre:</label>
+      <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp"
+        placeholder="Ej: El Asador de Germán">
+    </div>
+    <div class="form-group">
+      <label for="type">Tipo:</label>
+      <input type="text" name="type" class="form-control" id="type" placeholder="Ej: bookstore">
+    </div>
+    <div class="form-group">
+      <label for="longitude">Longitud:</label>
+      <input type="text" name="longitude" class="form-control" id="longitude" placeholder="Ej: 40.393240 ">
+    </div>
+    <div class="form-group">
+      <label for="latitude">Longitud:</label>
+      <input type="text" name="latitude" class="form-control" id="latitude" placeholder="Ej: -3.698244 ">
+    </div>
+    <button type="submit" class="btn btn-primary ">Submit</button>
+  </form>
+</div>
+<div class="text-center margin-top">
+  <a class="btn btn-dark " href="/places"> Volver atrás</a>
+</div>
