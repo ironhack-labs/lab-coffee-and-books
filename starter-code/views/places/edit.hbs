@@ -1,0 +1,16 @@
+<h2>Edit Place</h2>
+<div>
+  <form action="/places/{{id}}/edit" method="post">
+    <label for="">Name:</label>
+    <input type="text" name="name" value="{{name}}">
+
+    <label for="">Type:</label>
+    <input type="text" name="type" value="{{type}}">
+
+    <button type="submit">Edit</button>
+  </form>
+  <br>
+  <p><a href="/places">Go to Places</a></p>
+  <a href="/">Go Home</a>
+  </p>
+</div>

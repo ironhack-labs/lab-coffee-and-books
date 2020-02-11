@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Places</h2>
+  <div id="places">
+    {{#each places}}
+    <div>
+      <p><a href="/places/{{id}}">{{name}}</a></p>
+      <form action="/places/{{id}}/delete" method="post">
+        <button type="submit">Delete</button>
+      </form>
+      <a href="/places/{{id}}/edit">Edit</a>
+    </div>
+    {{/each}}
+  </div>
+  <br>
+  <a href="/">Go Home</a>
+  <br>
+  <br>
+  <a href="/places/new">Go to create a New Place</a>
+</div>
