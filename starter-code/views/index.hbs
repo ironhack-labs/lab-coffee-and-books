@@ -1,2 +1,11 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<a href="/place/create">Create</a>
+<a href="/place/:id/delete">Delete</a>
+<a href="/place/:d/edit">Edit</a>
+<a href="/place/:id">Create</a>
+<br>
+<hr>
+<br>
+{{#each allPlaces}}
+<li><a href="/place/{{id}}"> {{name}}</a> || <a href="/place/{{id}}/delete">Delete</a>
+    || <a href="/place/{{id}}/edit">Edit</a> </li>
+{{/each}}
