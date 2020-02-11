@@ -1,0 +1,12 @@
+<h1>Edit Place</h1>
+<a href="/">Go Back</a>
+
+  <form action="/{{_id}}/edit" method="POST">
+    <input type="text" name="name" value="{{name}}">
+      <select name="type">
+      
+        <option value="Bookstore">Bookstore</option>
+        <option value="Coffee Shop">Coffee Shop</option>
+      </select>
+    <button>Edit</button>
+  </form>
