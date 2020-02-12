@@ -1,0 +1,19 @@
+<h1>Bienvenido a nuestra lista de lugares</h1>
+<br><br>
+<div class="info">
+  {{#each places}}
+
+  <h3>{{name}} | {{type}} <a class="btn btn-info" href="/places/details/{{_id}}">Ver</a> | <a class="btn btn-info"
+      href="/places/edit/{{_id}}">Editar</a> |
+    <form action="/places/{{_id}}/delete" method="POST">
+      <button class="btn btn-danger" type="submit">Borrar</a>
+    </form>
+  </h3>
+  <br>
+  {{/each}}
+
+  <figure id="placesMap"></figure>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/maps.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=API&callback=initMap"></script>

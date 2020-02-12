@@ -1,0 +1,22 @@
+body {
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+nav {
+  margin-bottom: 50px; }
+
+form {
+  display: inline; }
+
+#placesMap {
+  height: 400px; }
+
+button {
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: aquamarine; }
+
+/*# sourceMappingURL=style.css.map */
