@@ -1,0 +1,28 @@
+<h1>Lista de Places</h1>
+
+<hr>
+
+
+
+<div class="row">
+  {{#each places}}
+    <div class="col-3">
+      <div class="card" style="width: 90%;">
+        <div class="body">
+          <h5 class="card-title">{{name}}</h5>
+          <h6 class="card-subtitle">{{type}}</h6>
+          <a class="card-link" href="/places/details/{{_id}}">ver</a>
+          <a class="card-link" href="/places/edit/{{_id}}">edit</a>
+          <form  class="card-link" action="/places/delete/{{_id}}" method="post" style="display: inline;">
+            <button class="btn btn-danger" type="submit">DEL</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+<br>
+<br>
+
+<a href="/places">Atras</a>
