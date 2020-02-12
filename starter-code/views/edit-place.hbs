@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Geo App</title>
+    <style>
+        #map {
+            height: 100vh;
+            width: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="map"></div>
+        <div id="contain">
+            <nav class="nav">
+                <ul>
+                    <a href="/">
+                        <li>Home</li>
+                    </a>
+                    <a href="#">
+                        <li id="coffee">Coffee Shops</li>
+                    </a>
+                    <a href="#">
+                        <li id="book">Bookstores</li>
+                    </a>
+                    <a href="/add/place">
+                        <li>Add place</li>
+                    </a>
+                </ul>
+            </nav>
+            <div class="container">
+                <div class="container-form">
+                    <form action="/edit/place/{{store._id}}" method="POST" class="form-edit">
+                        <input type="hidden" name="id" value="{{store._id}}">
+                
+                        <div class="form-group">
+                            <label>Name: </label>
+                            <input type="text" class="form-control" name="name" value="{{store.name}}">
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Type: </label>
+                            <select name="type" class="form-control">
+                                <option value="{{place.type}}" selected>{{store.type}}</option>
+                                <option value="Coffee shop">Coffee Shop</option>
+                                <option value="Bookstore">Book Store</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="row">
+                                <div class="col-1">
+                                    <label class="title-label">Lat: </label>
+                                </div>
+                                <div class="col-5">
+                                    <input type="text" class="form-control" name="latitude" value={{store.location.lat}}>
+                                </div>
+                                <div class="col-1">
+                                    <label class="title-label">Lng: </label>
+                                </div>
+                                <div class="col-5">
+                                    <input type="text" class="form-control" name="longitude" value={{store.location.lng}}>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row buttons-edit float-right">
+                            <a href="/"><button type="button" class="btn btn-danger danger">Cancel</button></a>
+                            <button class="btn btn-success">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <script>
+
+        let place = {{{place}}}
+
+        console.log(place)
+        
+
+        let map;
+
+        function startMap() {
+            const ironhackMAD = {
+                lat: 40.3925046,
+                lng: -3.700465
+            };
+            const map = new google.maps.Map(
+                document.getElementById('map'),
+                {
+                    zoom: 14,
+                    center: ironhackMAD
+                }
+            )
+        
+        if (place.type === 'Coffee shop') {
+                new google.maps.Marker({
+                    position: {
+                        lat: place.location.lat,
+                        lng: place.location.lng
+                    },
+                    map: map,
+                    title: place.name,
+                    draggable: true,
+                    animation: google.maps.Animation.DROP
+                });
+            } else {
+                new google.maps.Marker({
+                    position: {
+                        lat: place.location.lat,
+                        lng: place.location.lng
+                    },
+                    map: map,
+                    title: place.name,
+                    draggable: true,
+                    animation: google.maps.Animation.DROP,
+                    icon: book
+                });
+            }
+
+        }
+
+        startMap();
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdidhbZyn9dM7WoEP8DWcQwNRaGHdrdws&callback=startMap"></script>
+    {{!-- <script type="text/javascript" src="../main.js"></script> --}}
+</body>
+
+</html>
