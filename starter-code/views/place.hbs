@@ -1,0 +1,21 @@
+<h1>PLACES!!!!</h1>
+<a href="/create">Create new place</a>
+
+
+{{#each placeAll}}
+<div>
+<div>
+{{this.name}}
+</div><div>
+{{this.local}}
+</div>
+<div>
+{{this.location}}
+</div>
+<form action="/{{_id}}/delete" method="POST">
+<input class="button" type="submit" value="Deleter">
+</div>
+{{/each}}
+ 
+
+ <a href="/">BACK</a>
