@@ -17,10 +17,9 @@ router.get('/add', (req, res) => res.render('places/new')
 )
 router.post('/add', (req, res) => {
 
+const objectPlace = {name: req.body.name, type: req.body.type, coords: {lat: req.body.lat, lng: req.body.lng}}
 
-  const { name, type} = req.body
-
-  Place.create({ name, type})
+  Place.create({objectPlace})
     .then(() => {
 
       res.redirect('list')
@@ -30,13 +29,14 @@ router.post('/add', (req, res) => {
 
 // Editar lugar
 router.get('/edit/:placeId', (req, res) => {
-  console.log(ENTRA)
+  console.log("ENTRAAAAAA")
 
   const placeId = req.query.placeId
   Place.findById(placeId)
     .then(thePlace => res.render('places/edit', thePlace))
     .catch(err => console.log(err))
 })
+
 router.post('/edit/:placeId', (req, res) => {
   console.log("EL Id del lugar que llega como URL param es:", req.params.placeId)
   const placeId = req.params.placeId

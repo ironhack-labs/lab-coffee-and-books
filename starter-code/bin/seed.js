@@ -7,24 +7,36 @@ mongoose.connect(`mongodb://localhost/${dbName}`)
 
 
 const places = [
-    {
-      name : "Hola Coffe",
-      type: "coffee shop"
+  {
+    name: "Hola Coffe",
+    coords: {
+      lat: 40.407249,
+      lng: -3.699019
     },
-    {
-      name : "Gatoteca",
-      type: "coffee shop"
-
+    type: "coffee shop"
+  },
+  {
+    name: "Gatoteca",
+    coords: {
+      lat: 40.407918,
+      lng: -3.696283
     },
-    {
-      name : "La Central",
-      type: "bookstore"
-    }
-  ]
+    type: "coffee shop"
+
+  },
+  {
+    name: "La Central",
+    coords: {
+      lat: 40.419446,
+      lng: -3.705960
+    },
+    type: "bookstore"
+  }
+]
 
 
-  Place.create(places, (err) => {
-    if (err) { throw (err) }
-    console.log(`Created ${places.length} places`)
-    mongoose.connection.close()
-  })
+Place.create(places, (err) => {
+  if (err) { throw (err) }
+  console.log(`Created ${places.length} places`)
+  mongoose.connection.close()
+})

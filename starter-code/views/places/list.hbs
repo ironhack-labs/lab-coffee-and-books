@@ -4,7 +4,11 @@
   <div class="row">
 
     {{#each places}}
-    {{this.name}}
+    <h3>{{this.name}}</h3> 
+    <br>
+    <p>Ubicación en coordenadas: {{this.coords}}</p> 
+    <br>
+    <p>Tipo de negocio: {{this.type}}</p> 
 
 
     <div class="col">
@@ -15,7 +19,7 @@
     </div>
 
     <div>
-      <form action="/places/edit/{{this._id}}" method="post">
+      <form action="/places/edit/{{this._id}}" method="get">
 
         <button type="submit">Modificar</button>
       </form>
@@ -28,6 +32,7 @@
       </form>
     </div>
     <br>
+    <hr>
     {{/each}}
 
     <br>
