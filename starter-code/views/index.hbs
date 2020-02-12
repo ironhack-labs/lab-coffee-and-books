@@ -1,2 +1,133 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Coffee Shops & Restaurants</title>
+  <meta name="viewport" content="initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../stylesheets/reset.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #map {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    aside.ui {
+      transition: all 0.5s;
+      padding: 10px;
+      width: 30vw;
+      height: 100vh;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.9);
+      left: calc(100vw - 50px);
+    }
+
+    aside.ui.open {
+      left: calc(100vw - 30vw);
+    }
+
+    aside.ui #open-close {
+      position: absolute;
+      top: calc(50vh - 20px);
+      left: 0;
+    }
+
+    button,
+    select {
+      font-size: 30px;
+      padding: 5px;
+      border-radius: 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div id="map"></div>
+    <aside class="ui">
+          <h1>{{title}}</h1>
+    <hr>
+    {{#each places}}
+      <h2>{{name}} - {{business}}</h2>
+      <a href="/edit/{{_id}}">Edit</a>
+      <a href="/delete/{{_id}}">Delete</a>
+      <hr>
+    {{/each}}
+      <a href="/add">Add</a>
+      <button id="open-close">&lt;</button>
+
+
+    </aside>
+  </section>
+  <script>
+    // this part is KEY ==> let allAirports is front end via handlebars and {{{allAirports}}} is a backend render
+    {{!-- let allPlaces = {{{ allPlaces }}}; --}}
+
+    // https://developers.google.com/maps/documentation/javascript/reference
+    let map;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: new google.maps.LatLng(40.3922301, -3.6998982),
+        zoom: 3
+      });
+
+      {{!-- allPlaces.forEach(airport => {
+        new google.maps.Marker({
+          position: new google.maps.LatLng(+place.lat, +place.lon),
+          map: map,
+          title: place.name
+        });
+      }) --}}
+    }
+
+
+  
+
+    let isAsideOpen = false;
+    document.querySelector("aside.ui").classList.add("open");
+    document.querySelector("#open-close").innerHTML = ">";
+
+    {{!-- setTimeout(() => {
+      document.querySelector("aside.ui").classList.remove("open");
+      document.querySelector("#open-close").innerHTML = "<";
+    }, 1000); --}}
+
+    document.querySelector("#open-close").onclick = function () {
+      isAsideOpen = !isAsideOpen;
+
+      if (isAsideOpen) {
+        this.innerHTML = "<";
+        document.querySelector("aside.ui").classList.remove("open");
+      } else {
+        this.innerHTML = ">";
+        document.querySelector("aside.ui").classList.add("open");
+      }
+    };
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtEZU3XeEO9PLeRXjPSQ-BrnBO_shc7GA&callback=initMap"
+    async defer></script>
+</body>
+
+</html>
+
