@@ -1,0 +1,19 @@
+<h1>Crear un nuevo lugar</h1>
+
+<form action="/places/add" method="post">
+  <label for="">Nombre:</label>
+  <input type="text" name="name"><br>
+  <br>
+
+  <label for="">Tipo:</label>
+  <select name="type" id="type">
+    <Option value="Coffee Shop">Coffee Shop</Option>
+    <Option value="Bookstore">Bookstore</Option>
+  </select>
+  <br>
+  <label for="">Localización:</label>
+  <input type="text" name="latitude">
+  <input type="text" name="longitude">
+  <br><br>
+  <button type="submit">Crear</button>
+</form>
