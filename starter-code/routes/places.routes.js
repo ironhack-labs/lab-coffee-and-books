@@ -14,7 +14,7 @@ router.post('/', (req, res, next) => {
 
 	const newPlace = new Place({
 		name: req.body.name,
-		description: req.body.description,
+		type: req.body.type,
 		location
 	})
 
@@ -56,7 +56,7 @@ router.post('/:place_id', (req, res, next) => {
 			next(error);
 		} else {
 			place.name = req.body.name;
-			place.description = req.body.description;
+			place.type = req.body.type;
 			place.save(error => {
 				if (error) {
 					next(error);
