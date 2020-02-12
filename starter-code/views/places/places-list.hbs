@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Coffes and Books</h1>
+    <div class="row">
+        <ul>
+            <div class="col">
+                {{#each place}}
+                <li>
+                    <a class="btn btn-outline-info"href="/details/{{_id}}">{{name}}</a> <a class="btn btn-outline-success" href="/edit?id={{_id}}">editar</a>
+                    <form action="/delete/{{_id}}" method="POST">
+                        <button class="btn btn-outline-danger" type="submit">Borrar</button>
+                    </form>
+                </li>
+                {{/each}}
+            </div>
+        </ul>
+    </div>
+    <a href="/add" class="btn-secondary btn-lg active">Crear una nueva pelicula</a>
+    <a href="/" class="btn-secondary btn-lg active">Volver al inicio</a>
+</div>

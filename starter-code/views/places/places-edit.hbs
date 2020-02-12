@@ -1,0 +1,14 @@
+<h1>Editar {{name}}</h1>
+
+<form action="/edit/{{_id}}" method="post">
+    <label for="">Nombre:</label>
+    <input type="text" name="Nombre" value="{{name}}"><br>
+
+    <label for="">Tipo de tienda:</label>
+    <input type="text" name="Tipo" value="{{type}}"><br>
+
+    {{!-- <label for="">Trama:</label>
+    <input type="text" name="plt" value="{{plot}}"><br> --}}
+
+    <button type="submit">Editar</button>
+</form>
