@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Lista de lugares</h2>
+
+  <div class="row">
+
+    {{#each places}}
+    <h3>{{this.name}}</h3> 
+    <br>
+    <p>Ubicación en coordenadas: {{this.coords}}</p> 
+    <br>
+    <p>Tipo de negocio: {{this.type}}</p> 
+
+
+    <div class="col">
+      <br>
+      <a href="/places/{{this._id}}">
+        <button type="button" class="btn btn-link">Ir a esta</button>
+      </a>
+    </div>
+
+    <div>
+      <form action="/places/edit/{{this._id}}" method="get">
+
+        <button type="submit">Modificar</button>
+      </form>
+    </div>
+
+    <div>
+      <form action="/places/{{this._id}}/delete" method="post">
+
+        <button type="submit">Eliminar</button>
+      </form>
+    </div>
+    <br>
+    <hr>
+    {{/each}}
+
+    <br>
+  </div>
+
+  <div class="col">
+    <a href="/places/add">
+      <button type="button" class="btn btn-link">Agregar nuevo lugar</button>
+    </a>
+  </div>
+
+</div>
