@@ -1,0 +1,16 @@
+<h1>{{name}}</h1>
+<br>
+<input id="placeID" value="{{_id}}" hidden />
+<p>Type: {{type}}</p>
+<p>Latitude: {{location.coordinates.[1]}}</p>
+<p>Longitude: {{location.coordinates.[0]}}</p>
+
+<hr>
+{{!-- MAP --}}
+<h2>Map</h2>
+<figure id="myMap"></figure>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/directions.js"> </script>
+<script src="/javascripts/map.js"> </script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{key}}&callback=initMapUniqueLoc"></script>

@@ -1,0 +1,49 @@
+{{!-- ADD PLACE --}}
+<h2>Add Place</h2>
+<form action="/places/addPlace" method="POST">
+    <div class="form-container">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+    </div>
+
+    <div class="form-container">
+        <label for="type">Type</label>
+        <select id="type" name="type">
+            <option value="CoffeeShop">Coffe Shop</option>
+            <option value="BookStore">BookStore</option>
+        </select>
+    </div>
+
+
+    <div class="form-container">
+        <fieldset>
+            <label for="latitude">Latitude</label>
+            <input id="latitude" type="text" name="latitude">
+            <label for="longitude">Longitude</label>
+            <input id="longitude" type="text" name="longitude">
+        </fieldset>
+    </div>
+
+    <button>Add Place</button>
+</form>
+<hr>
+
+{{!-- LIST PLACES --}}
+<h2>Places List</h2>
+<ul>
+    {{#each places}}
+    <a href="/places/{{_id}}">
+        <li>{{name}} | {{type}}</li>
+    </a>
+    <form action="/places/delete/{{_id}}" method="POST"><button>Delete</button></form>
+    <form action="/places/edit/{{_id}}" method="GET"><button>Edit</button></form>
+    {{/each}}
+</ul>
+<hr>
+{{!-- MAP --}}
+<h2>Map</h2>
+<figure id="myMap"></figure>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/directions.js"> </script>
+<script src="/javascripts/map.js"> </script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{key}}&callback=initMap"></script>
