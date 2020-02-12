@@ -33,7 +33,7 @@ router.post('/', (req, res, next) => {
   // add location object here
   let location = {
     type: 'Point',
-    coordinates: [req.body.lat, req.body.lng]
+    coordinates: [req.body.latitude, req.body.longitude]
   }
   
   const newPlace = new Place({
