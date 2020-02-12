@@ -2,29 +2,24 @@ body {
   padding: 0;
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 a {
-  color: #00B7FF;
-}
+  color: #00B7FF; }
 
 .main-container {
   width: 100%;
   height: 100%;
   padding: 0;
-  display: flex;
-}
+  display: flex; }
 
 #map {
   width: 65%;
-  height: 100%;
-}
+  height: 100%; }
 
 #contain {
   width: 35%;
-  height: 100vh;
-}
+  height: 100vh; }
 
 .nav {
   width: 100%;
@@ -34,92 +29,77 @@ a {
   background-color: black;
   color: #fff;
   display: flex;
-  align-items: center;
-}
+  align-items: center; }
 
 .nav ul {
   display: flex;
-  padding-left: 0;
-}
+  padding-left: 0; }
 
 .nav li {
   list-style-type: none;
   margin: 0 26px;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
-.nav ul a{
+.nav ul a {
   color: #fff;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 .main-info {
   width: 100%;
   height: calc(100vh - 58px);
   overflow: auto;
-  display: flex;
-}
+  display: flex; }
 
 .main-info ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0;
-}
+  padding: 0; }
 
 .card {
   width: 210px;
   margin: 20px 0;
   border: 0;
   padding-bottom: 7px;
-  -webkit-box-shadow: 10px 10px 6px -3px rgba(179,179,179,1);
-  -moz-box-shadow: 10px 10px 6px -3px rgba(179,179,179,1);
-  box-shadow: 10px 10px 6px -3px rgba(179,179,179,1);
-}
+  -webkit-box-shadow: 10px 10px 6px -3px #b3b3b3;
+  -moz-box-shadow: 10px 10px 6px -3px #b3b3b3;
+  box-shadow: 10px 10px 6px -3px #b3b3b3; }
 
 .card li {
-  list-style-type: none;
-}
+  list-style-type: none; }
 
 .buttons {
   display: flex;
-  padding-left: 10px;
-}
+  padding-left: 10px; }
 
 .title {
-  display: flex;
-}
+  display: flex; }
 
 .title img {
   width: 13px;
   height: 20px;
-  margin: 3px 0 0 5px;
-}
+  margin: 3px 0 0 5px; }
 
 .name {
   font-size: 16px;
   text-transform: capitalize;
-  margin: 7px 0 10px 5px;
-}
+  margin: 7px 0 10px 5px; }
 
 .btn-sm {
   font-size: 10px;
-  margin-right: 5px;
-}
+  margin-right: 5px; }
 
 .title-label {
-  margin-top: 10px;
-}
+  margin-top: 10px; }
 
 .buttons-edit {
   margin-top: 30px;
-  margin-right: 1px;
-}
+  margin-right: 1px; }
 
 .danger {
-  margin-right: 20px;
-}
+  margin-right: 20px; }
 
 .form-edit {
-  margin-top: 50px;
-}
+  margin-top: 50px; }
+
+/*# sourceMappingURL=style.css.map */
