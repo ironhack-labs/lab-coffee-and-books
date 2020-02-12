@@ -1,0 +1,21 @@
+<div class="container">
+
+  <h1>LUGARES</h1>
+
+  <ul>
+
+    {{#each places}}
+    <li>{{this.name}} <a href="/update?placeId={{this._id}}">Edit</a></li>
+    {{/each}}
+
+  </ul>
+
+  <figure id="map"></figure>
+
+  <script src="directions.js"></script>
+  <script src="mapStyles.js"></script>
+  <script src="main.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+
+</div>
