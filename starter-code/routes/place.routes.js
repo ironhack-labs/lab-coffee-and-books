@@ -5,7 +5,7 @@ const Place = require('../models/place.model');
 // GET => renderiza el creador
 router.get('/new', (req, res) => res.render('places/new'))
 
-router.post('/new', (req, res, next) => {
+router.post('/', (req, res, next) => {
 
 
   const location = {
@@ -41,7 +41,7 @@ router.get('/index-places', (req, res, next) => {
   });
 });
 
-// GET => get the form pre-filled with the details of one place
+// GET => editar detalles de one place
 router.get('/:place_id/edit', (req, res, next) => {
   Place.findById(req.params.place_id, (error, place) => {
     if (error) {
@@ -54,7 +54,7 @@ router.get('/:place_id/edit', (req, res, next) => {
   });
 });
 
-// POST => save updates in the database
+// POST => guarda cambios
 router.post('/:place_id', (req, res, next) => {
   Place.findById(req.params.place_id, (error, place) => {
     if (error) {
@@ -73,7 +73,7 @@ router.post('/:place_id', (req, res, next) => {
   });
 });
 
-// DELETE => remove the place from the DB
+// DELETE => eliminar del DB
 router.get('/:place_id/delete', (req, res, next) => {
   Place.remove({
     _id: req.params.place_id
@@ -81,7 +81,7 @@ router.get('/:place_id/delete', (req, res, next) => {
     if (error) {
       next(error);
     } else {
-      res.redirect('places/index-places');
+      res.redirect('/places/index-places');
     }
   });
 });
@@ -91,7 +91,7 @@ router.get('/:place_id/delete', (req, res, next) => {
 
 
 
-// to see raw data in your browser, just go on: http://localhost:3000/api
+// el api
 router.get('/api', (req, res, next) => {
   Place.find()
     .then(allPlacesFromDB => res.json(allPlacesFromDB))
@@ -113,7 +113,7 @@ router.get('/api/:id', (req, res, next) => {
 
 
 
-// GET => get the details of one place
+// GET => detalles
 router.get('/:place_id', (req, res, next) => {
   Place.findById(req.params.place_id, (error, place) => {
     if (error) {
