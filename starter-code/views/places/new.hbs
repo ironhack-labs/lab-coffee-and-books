@@ -1,0 +1,16 @@
+<h2>New Places</h2>
+
+<form action="/add" method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="text" required>
+    <label for="type">Type</label>
+    <select name="type" id="type" required>
+        <option value="Coffee Shop">Coffee Shop</option>
+        <option value="Bookstore">Bookstore</option>
+    </select>
+    <label>Location</label>
+     <input type="text" name="lat" placeholder="latitude" >
+     <input type="text" name="lng" placeholder="longitude">
+
+    <button type="submit">Add</button>
+</form> 
