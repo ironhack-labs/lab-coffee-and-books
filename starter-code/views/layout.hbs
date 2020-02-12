@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
+<header>
+  <nav class="nav-bar">
+    <div class="navbar-bar-continer">
+      <ul class="nav-menu nav-primary-menu list-unstyled list-inline d-flex justify-content-around text-uppercase">
+        <li class="nav-item list-inline-item"><a href="/">Inicio</a></li>
+        <li class="nav-item list-inline-item"><a href="/places">Listado de lugares</a></li>
+        <li class="nav-item list-inline-item"><a href="/places/new">Añadir lugar</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
 <body>
 
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>
 </body>
+
 </html>
