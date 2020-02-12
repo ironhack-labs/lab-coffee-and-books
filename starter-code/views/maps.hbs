@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Simple Map</title>
+  <meta name="viewport" content="initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="reset.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #map {
+      width: 70vw;
+      height: 40vh;
+    }
+
+    
+    
+  </style>
+</head>
+
+<body>
+  <section>
+    <div id="map"></div>
+    {{!-- <aside class="ui">
+      <button id="open-close">&lt;</button>
+      <button id="change-zoom">Change zoom level</button>
+      <button id="change-center">Change center</button>
+      <button id="add-marker">Add marker</button>
+      <button id="multiple-points">Add multiple points</button>
+      <button id="add-many">Add many</button>
+      <button id="activate-geo">Activate geolocalization</button>
+      
+    </aside> --}}
+  </section>
+  <script>
+    // this part is KEY ==> let allAirports is front end via handlebars and {{{allAirports}}} is a backend render
+  // main.js
+
+  
+    // https://developers.google.com/maps/documentation/javascript/reference
+    let map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: new google.maps.LatLng(40.3922301, -3.6998982),
+        zoom: 10
+      });
+     
+      }
+    
+    
+    document.querySelector("#add-marker").onclick = function () {
+      {{!-- var image = {
+        url: "http://127.0.0.1:8080/customerMarker.png"
+        // This marker is 20 pixels wide by 32 pixels high.
+        //   size: new google.maps.Size(20, 32)
+      }; --}}
+    let  marker = new google.maps.Marker({
+        position: new google.maps.LatLng(40.328019, -3.769289),
+        map: map,
+        title: "Hello World!",
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        icon: image
+      });
+      map.panTo(new google.maps.LatLng(40.3922301, -3.6998982));
+      setTimeout(() => {
+        var image = {
+          url: "http://127.0.0.1:8080/customerMarker2.png"
+          // This marker is 20 pixels wide by 32 pixels high.
+          //   size: new google.maps.Size(20, 32)
+        };
+        new google.maps.Marker({
+          position: new google.maps.LatLng(40.3922301, -3.72),
+          map: map,
+          title: "Hello World!",
+          icon: image
+        });
+        map.panTo(new google.maps.LatLng(40.3922301, -3.72));
+      }, 1000);
+    };
+  
+    
+      
+    document.querySelector("#activate-geo").onclick = function () {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          new google.maps.Marker({
+            position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+            map: map,
+            title: "I am here"
+          });
+        });
+      }
+    };
+    
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhmq9mD-vfQ2RRh7xTLIwUKfEvPk_9C6I&callback=initMap"
+    async defer></script>
+</body>
+
+</html>
