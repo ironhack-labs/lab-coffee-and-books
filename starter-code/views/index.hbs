@@ -1,2 +1,54 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>PLACES</h1>
+<div>
+    <ul>
+        {{#each response}}
+            <li>{{this.name}} | {{this.type}} | {{this.location.coordinates}} <a href="/place-delete/{{this._id}}">DEL</a> | <a href="/place-edit/{{this._id}}">EDIT</a></li>
+        {{/each}}
+    </ul>
+</div>
+<br>
+<hr>
+<br>
+<div id="map"></div>
+<br>
+<hr>
+<br>
+<h3>CREATE PLACES</h3>
+<form action='/new' id="new-place" method='post'>
+    <div class="field">
+        <label for="name">Name: </label>
+        <input type="text" class='create-name' name="name">
+    </div>
+    <div class="field">
+        <label for="type">Type: </label>
+        <input type="text" class='create-type' name="type">
+    </div>
+    <div class="field">
+        <label for="name">Location: </label>
+        <input type="text" class='create-name' name="latitude" placeholder="latitude">
+        <input type="text" class='create-name' name="longitude" placeholder="longitude">
+    </div>
+    <button id="send-new-data">Create</button>
+</form>
+
+<br>
+<br>
+
+<h3>EDIT</h3>
+<form action='/' id="edit-place" method='post'>
+<input type="hidden" name="id" value="{{place._id}}">
+    <div class="field">
+        <label for="name">Name: </label>
+        <input type="text" class='edit-name' name="name" value="{{place.name}}">
+    </div>
+    <div class="field">
+        <label for="type">Type: </label>
+        <input type="text" class='edit-type' name="type" value="{{place.type}}">
+    </div>
+    <div class="field">
+        <label for="name">Location: </label>
+        <input type="text" class='create-name' name="latitude" value="{{place.location.coordinates.[1]}}">
+        <input type="text" class='create-name' name="longitude" value="{{place.location.coordinates.[0]}}">
+    </div>
+    <button id="send-updated-data">Edit</button>
+</form>
