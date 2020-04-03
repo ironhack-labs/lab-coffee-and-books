@@ -1,0 +1,9 @@
+<h1>Edit info:</h1>
+{{#data}}
+<form action="/places/edit/{{_id}}" method="POST">
+    <input type="name" value={{name}} name="name"/>
+    <input type="name" value={{type}} name="type"/>
+    <input type="submit" value="save"/>
+</form>
+<a href="/places">Back</a>
+{{/data}}

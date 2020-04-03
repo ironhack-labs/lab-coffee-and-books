@@ -1,0 +1,12 @@
+<h1>Bookstores and Coffee Shops</h1>
+{{#data}}
+    <div class="places-container">
+        <div class="name">{{name}}</div>
+        <div class="type">{{type}}</div>
+        <a href="/places/delete/{{_id}}">delete</a>
+        <a href="/places/edit/{{_id}}">edit</a>
+    </div>
+{{/data }}
+<a href="/places/new">
+    <button>Add a new place!</button>
+</a>
