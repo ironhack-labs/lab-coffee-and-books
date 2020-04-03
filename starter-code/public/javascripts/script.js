@@ -30,5 +30,4 @@ const initMap = () => {
 		.catch((error) => console.log(error));
 };
 
-
 if (document.querySelector('#map')) initMap();

@@ -45,7 +45,6 @@ router.get('/places/delete/:id', (req, res, next) => {
 router.get('/places', (req, res, next) => {
 	Place.find()
 		.then((placesFromDB) => {
-			// res.send(placesFromDB)
 			res.render('places', { placesFromDB });
 		})
 		.catch((error) => console.log(error));
