@@ -1,0 +1,21 @@
+  
+<span><a href="/places">Back</a></span><br>
+<h1>edit Place</h1>
+
+<form action="/places-edit" method="POST">
+<input type="hidden" name="placeId" value="{{_id}}">
+  <label for="title">Name:
+    <input type="text" name="name" value="{{name}}">
+  </label>
+
+  <label for="author">Type
+    <input type="text" name="type" value="{{type}}">
+  </label>
+
+  <label for="rating">Location:
+    <input type="text" name="latitude" placeholder="enter latitude" value="{{location.coordinates.[1]}}">
+    <input type="text" name="longitude" placeholder="enter longitude" value="{{location.coordinates.[0]}}">
+  </label> 
+
+  <button type="submit">SAVE</button>
+</form>
