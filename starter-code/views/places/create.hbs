@@ -1,0 +1,22 @@
+<form action="/place/create" method="POST">
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control-plaintext" name="name" id="" value="Places Name">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Type</label>
+        <div class="col-sm-10">
+            <select name="type" id="" onchange="">
+                <option value="coffeShop">Coffe Shop</option>
+                <option value="bookStore">Bookstore</option>
+            </select>
+        </div>
+        <label>Location<br>
+            <input type="text" name="latitude" placeholder="latitude"><br>
+            <input type="text" name="longitude" placeholder="longitude"><br><br>
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Create</button>
+</form>

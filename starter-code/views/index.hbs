@@ -1,2 +1,24 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h2>Lista de Lugares</h2>
+<hr>
+<br>
+<br>
+<a href="/place/create">Create</a>
+<br>
+<hr>
+<br>
+{{#each allPlaces}}
+<li><a href="/place/{{id}}"> {{name}}</a> || <a href="/place/{{id}}/delete">Delete</a>
+    || <a href="/place/{{id}}/edit">Edit</a> </li>
+{{/each}}
+
+<br>
+<br>
+<br>
+<figure id='placesMap'></figure>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/main.script.js"></script>
+
+<script id='myMap'
+    src="https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLEMAPS}&callback=initMap"></script>
