@@ -1,0 +1,9 @@
+<h2>Places</h2>
+<ul>
+    {{#each response}}
+    <li>{{name}} - {{type}}</li>
+    <a href="./places-edit/{{_id}}">Edit</a>
+    <a href="./places-delete/{{_id}}">Delete</a>
+    {{/each}}
+     <a href="./places-add">Add</a>
+</ul>
