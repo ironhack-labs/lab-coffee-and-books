@@ -1,0 +1,9 @@
+<a href="/places/add">Add New Place</a>
+
+{{#each placesFromDB}}
+<a href="/places/{{_id}}"><h2>Name: {{name}}</h2></a>
+<p>Type: {{type}}</p>
+<a href="/places/delete/{{_id}}">Delete</a>
+{{/each}}
+
+<div id="map"></div>

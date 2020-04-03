@@ -1,0 +1,17 @@
+<a href="/places">Go Back</a>
+
+<form action="/places/edit/{{_id}}" method="POST">
+  <label for="name">Name:
+    <input type="text" name="name" value="{{name}}">
+  </label>
+
+  <label for="type">Type:
+    <input type="text" name="type" value="{{type}}">
+  </label>
+
+  <label for="location">Location:
+    <input type="text" name="latitude" placeholder="enter latitude" value="{{location.coordinates.[1]}}">
+    <input type="text" name="longitude" value="{{location.coordinates.[0]}}">
+  </label>
+  <button>SAVE</button>
+</form>
