@@ -1,0 +1,28 @@
+<h1>Edit the Place</h1>
+
+<form action="/{{id}}/edit" method="POST">
+   <div>
+        <label for="staticEmail">Name:
+            <input type="text"  name="name" id="" value="{{name}}">
+      </label>
+   </div><br><br>
+
+    <div>
+        <label for="inputPassword">Type:
+       
+            <select name="type" value={{type}} id="" onchange="">
+                <option value="Coffee Shop">Coffee Shop</option>
+                <option value="Bookstore">Bookstore</option>
+            </select>
+        </label>
+      </div><br><br>
+
+  <div>
+        <label>Location<br><br>
+            <input type="text" name="latitude" placeholder={{location.coordenates}}><br><br>
+            <input type="text" name="longitude" placeholder="longitude" value="{{location.coordenates}}"><br><br>
+        </label>
+  </div>
+  
+    <button type="submit" class="btn btn-primary mb-2">Edit</button>
+</form><br>

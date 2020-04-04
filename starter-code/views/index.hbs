@@ -1,2 +1,19 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{!-- <h1>{{title}}</h1>
+<p>Welcome to {{title}}</p> --}}
+
+<h2>Coffee and Books</h2>
+<hr>
+<br>
+<a href="/create">Add a new place</a>
+<hr>
+<br>
+{{#each allPlaces}}
+<li><a href="/{{id}}"> {{name}}</a> <br/> <a href="/{{id}}/delete">Delete</a>
+    <br/> <a href="/{{id}}/edit">Edit</a></li><br>
+{{/each}}
+<br>
+<div id="map"></div>
+
+{{!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> --}}
+
+{{!-- <script src="/javascripts/script.js"></script> --}}
