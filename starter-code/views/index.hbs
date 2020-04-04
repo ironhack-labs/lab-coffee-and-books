@@ -4,18 +4,16 @@
 <h2>Coffee and Books</h2>
 <hr>
 <br>
-<a href="/place/create">Add a new place</a>
+<a href="/create">Add a new place</a>
 <hr>
 <br>
 {{#each allPlaces}}
-<li><a href="/place/{{id}}"> {{name}}</a> <br/> <a href="/place/{{id}}/delete">Delete</a>
-    <br/> <a href="/place/{{id}}/edit">Edit</a></li><br>
+<li><a href="/{{id}}"> {{name}}</a> <br/> <a href="/{{id}}/delete">Delete</a>
+    <br/> <a href="/{{id}}/edit">Edit</a></li><br>
 {{/each}}
 <br>
 <div id="map"></div>
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+{{!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> --}}
 
-<script src="/javascripts/script.js"></script>
-
-<script id='myMap'src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYhmsA4q1y-1IeLuzBszqyI3aqggtv8nQ"></script>
+{{!-- <script src="/javascripts/script.js"></script> --}}

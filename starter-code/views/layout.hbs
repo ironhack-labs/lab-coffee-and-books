@@ -8,19 +8,29 @@
   <title>{{title}}</title>
   <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        #map {
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
 </head>
 
 <body>
 
   {{{body}}}
 
- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<div id="map"></div>
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjY8VOil9kraBS00iFLFDBUN_pq_tGJGE"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <script src="/javascripts/script.js"></script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYhmsA4q1y-1IeLuzBszqyI3aqggtv8nQ"></script>
 
 </body>
 

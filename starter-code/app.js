@@ -9,7 +9,6 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
-
 mongoose
   .connect('mongodb://localhost/labCoffeeBooks', {useNewUrlParser: true, useUnifiedTopology: true})
   .then(x => {
@@ -44,18 +43,11 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-
-
 // default value for title local
 app.locals.title = 'Coffee and Books Places';
 
 
-
-// const index = require('./routes/index');
-// app.use('/', index);
-
 app.use('/', require('./routes/index'));
-app.use('/place', require('./routes/index'));
 
 
 module.exports = app;
