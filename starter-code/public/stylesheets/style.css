@@ -196,6 +196,7 @@ a {
   padding: 0 10px;
   margin: 5px 0;
   font-size: 2rem;
+  border-left: 1px solid #775600;
   display: flex;
   -moz-display: flex;
   -webkit-display: flex;
