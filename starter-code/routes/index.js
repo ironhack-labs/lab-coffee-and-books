@@ -33,12 +33,18 @@ router.get('/places/new', (req, res, next) => {
 //GET places page 
 router.post('/places/new', (req, res, next) => {
 
-  let { name, type } = req.body;
+  let { name, type, longitude, latitude } = req.body;
+
+  let coordinates = {
+    longitude,
+    latitude
+  }
 
   Place.
     create({
       name,
-      type
+      type,
+      coordinates
     })
     .then( response => {
       res.redirect('/places');
@@ -60,7 +66,7 @@ router.get('/places/delete/:id', (req, res) => {
     .catch( error => console.log(error))
 })
 
-//EDIT route
+//EDIT  GET route
 
 router.get('/places/edit/:id', (req, res) => {
   let { id } = req.params;
@@ -73,7 +79,9 @@ router.get('/places/edit/:id', (req, res) => {
     .catch( error => {
       console.log(error);
     })
-})
+});
+
+//EDIT  POST route
 
 router.post('/places/edit/:id', (req, res) => {
   let { id } = req.params;
@@ -89,12 +97,6 @@ router.post('/places/edit/:id', (req, res) => {
       console.log(error);
     })
 })
-//to-do
-
-
-
-
-
 
 
 // API for places

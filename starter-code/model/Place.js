@@ -4,7 +4,11 @@ const Schema = mongoose.Schema;
 
 const placeSchema = new Schema({
     name: String,
-    type: String
+    type: String,
+    coordinates: {
+        longitude: Number,
+        latitude: Number
+    }
 }, {
     timestamps: true
 })
