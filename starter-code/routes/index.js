@@ -19,6 +19,19 @@ router.get('/places', (req, res, next) => {
     .catch( error => console.log(error))
 });
 
+//GET single place page
+router.get('/place/:id', (req, res, next) => {
+  
+  let { id } = req.params;
+
+  Place.
+    findById(id)
+    .then( response => {
+      console.log(response)
+      res.render('single-place', {data: response});
+    })
+    .catch( error => console.log(error))
+});
 
 //GET places page 
 router.get('/places/new', (req, res, next) => {

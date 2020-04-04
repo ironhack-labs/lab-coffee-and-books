@@ -1,10 +1,11 @@
 <h1>Bookstores and Coffee Shops</h1>
 {{#data}}
     <div class="places-container">
-        <div class="name">{{name}}</div>
+        <a href="place/{{_id}}">
+            <div class="name">{{name}}</div>
+        </a>
         <div class="type">{{type}}</div>
         <a href="/places/delete/{{_id}}">delete</a>
-        <a href="/places/edit/{{_id}}">edit</a>
     </div>
 {{/data }}
 <a href="/places/new">
@@ -14,3 +15,6 @@
 <div class="map_container">
     <div id="map"></div>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuc7N3UMFZYI7XWFLO96M2SI42IGcIGPY&callback=initMap"
+    async defer></script>
+<script src="/javascripts/script.js"></script>
