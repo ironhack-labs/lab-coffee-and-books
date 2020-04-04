@@ -80,6 +80,8 @@ a {
 
 .delete {
   color: #fe0000; }
+  .delete:hover {
+    color: #ff9898; }
 
 .title {
   font-size: 8rem;
