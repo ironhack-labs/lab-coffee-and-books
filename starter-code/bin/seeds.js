@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Place = require('../models/Place');
 
-const dbName = 'stater-code';
+const dbName = 'starter-code';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
 const places = [

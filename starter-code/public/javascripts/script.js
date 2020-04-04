@@ -6,7 +6,7 @@ const initMap = () => {
 		},
 		zoom: 11,
 	});
-
+	
 	axios
 		.get('/api/places')
 		.then((placesFromAPI) => {
