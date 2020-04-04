@@ -1,20 +1,28 @@
-<h1>Bookstores and Coffee Shops</h1>
-{{#data}}
-    <div class="places-container">
-        <a href="place/{{_id}}">
-            <div class="name">{{name}}</div>
-        </a>
-        <div class="type">{{type}}</div>
-        <a href="/places/delete/{{_id}}">delete</a>
+<main class="main_content places">
+    <h1 class="title">Bookstores/Coffee Shops</h1>
+    <div class="places_content">
+
+        <div class="places_container_content">
+            {{#data}}
+            <div class="places_container">
+                <a href="place/{{_id}}">{{name}}</a>
+                <a class="delete" href="/places/delete/{{_id}}">delete</a>
+            </div>
+            {{/data }}
+        </div>
+
+        <aside>
+            <div class="map_container">
+                <div id="map"></div>
+                <div class="btns_container">
+                    <a class="btn" href="/">Home</a>
+                    <a class="btn" href="/places/new"> Add a new place!</a>
+                </div>
+            </div>
+        </aside>
+
     </div>
-{{/data }}
-<a href="/places/new">
-    <button>Add a new place!</button>
-</a>
-<a href="/">Home</a>
-<div class="map_container">
-    <div id="map"></div>
-</div>
+</main>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuc7N3UMFZYI7XWFLO96M2SI42IGcIGPY&callback=initMap"
     async defer></script>
 <script src="/javascripts/script.js"></script>
