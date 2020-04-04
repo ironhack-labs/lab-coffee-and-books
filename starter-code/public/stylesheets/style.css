@@ -1,9 +1,83 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
 
-a {
-  color: #00B7FF; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px; }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #faf7f7c1; }
+
+.btn {
+  height: auto;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid #775600;
+  background: transparent;
+  color: #775600;
+  font-weight: bold;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: color 0.2s linear, border 0.2s linear; }
+  .btn:hover {
+    color: #aa7b00;
+    border-bottom: 1px solid #775600;
+    transition: color 0.2s linear, border 0.2s linear; }
+
+.title {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #775600; }
 
 #map {
   width: 100%;
@@ -12,5 +86,63 @@ a {
 .map_container {
   width: 400px;
   height: 400px; }
+
+.main_content {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  -moz-display: flex;
+  -webkit-display: flex;
+  -o-display: flex;
+  -ms-display: flex;
+  flex-direction: row-reverse;
+  -moz-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  -o-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse; }
+  .main_content .content {
+    width: 50%;
+    height: 100%;
+    padding: 50px 0;
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    -o-display: flex;
+    -ms-display: flex;
+    flex-direction: column;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -o-flex-direction: column;
+    -ms-flex-direction: column;
+    justify-content: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center; }
+    .main_content .content * {
+      margin: 20px 0; }
+  .main_content .img_container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    -o-display: flex;
+    -ms-display: flex;
+    align-items: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -o-align-items: center;
+    -ms-align-items: center;
+    justify-content: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center; }
+    .main_content .img_container .coffee_img {
+      width: 70%; }
+  .main_content p {
+    font-size: 4.5rem; }
 
 /*# sourceMappingURL=style.css.map */
