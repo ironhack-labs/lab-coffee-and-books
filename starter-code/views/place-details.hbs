@@ -1,0 +1,8 @@
+  
+<span><a href="/places">Back</a></span><br>
+
+{{#with places}}
+<h1>{{this.name}}</h1>
+<h4>type: {{type}}</h4>
+<a href="/places-edit/{{_id}}"><button>edit</button></a>
+{{/with}}

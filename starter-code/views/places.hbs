@@ -1,0 +1,16 @@
+  
+<h1>Places</h1>
+
+<ul>
+  {{#each places}}
+  <li>
+ <a href="/places/{{_id}}">{{name}}</a>
+  <a href="/places-delete/{{_id}}">| DEL</a>
+  </li>
+  {{/each}}
+</ul>
+
+<button><a href="/places-add">New Place</a></button>
+
+<div id="map"></div>
+
