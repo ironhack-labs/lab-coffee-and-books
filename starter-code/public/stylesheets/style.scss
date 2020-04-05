@@ -1,8 +1,13 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
-a {
-  color: #00B7FF;
-}
+@import './sass_partials/resets';
+
+
+@import './sass_partials/variables';
+@import './sass_partials/mixins';
+@import './sass_partials/main';
+@import './sass_partials/map';
+@import './sass_partials/add';
+@import './sass_partials/home';
+@import './sass_partials/places';
+@import './sass_partials/edit';
+@import './sass_partials/single_place';

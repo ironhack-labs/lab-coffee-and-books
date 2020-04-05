@@ -1,0 +1,7 @@
+@mixin flex($property, $value) {
+    #{$property}: $value;
+    -moz-#{$property}: $value;
+    -webkit-#{$property}: $value;
+    -o-#{$property}: $value;
+    -ms-#{$property}: $value;
+}

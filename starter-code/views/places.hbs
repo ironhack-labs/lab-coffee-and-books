@@ -1,0 +1,26 @@
+<main class="main_content places">
+    <h1 class="title">Bookstores/Coffee Shops</h1>
+    <div class="places_content">
+
+        <div class="places_container_content">
+            {{#data}}
+            <div class="places_container">
+                <a href="place/{{_id}}">{{name}}</a>
+                <a class="delete" href="/places/delete/{{_id}}">delete</a>
+            </div>
+            {{/data }}
+            <div class="btns_container">
+                <a class="btn" href="/">home</a>
+                <a class="btn" href="/places/new"> add a new place!</a>
+            </div>
+        </div>
+
+        <aside>
+            <div class="map_container">
+                <div id="map"></div>
+            </div>
+        </aside>
+
+    </div>
+</main>
+<script src="/javascripts/script.js"></script>

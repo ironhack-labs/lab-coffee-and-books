@@ -1,0 +1,32 @@
+{{#data}}
+<main class="single_main">
+
+    <h1 class="title main">{{name}}</h1>
+
+    <div class="single_content">
+
+        <div class="info_box">
+            <h2>Type</h2>
+            <p>{{type}}</p>
+
+            <h2>Coordinates</h2>
+            <p>Latitute: <span class="lat">{{coordinates.latitude}}</span></p>
+            <p>Longitude: <span class="lng">{{coordinates.longitude}}</span></p>
+        </div>
+        
+        <div class="btn_container">
+            <a href="/places" class="btn">Back</a>
+            <a href="/places/edit/{{_id}}" class="btn">Edit</a>
+        </div>
+    </div>
+
+    <div class="map_content_container">
+        <div class="map_container">
+            <div id="map"></div>
+        </div>
+    </div>
+
+</main>
+{{/data}}
+
+<script src="/javascripts/script_2.js"></script>
