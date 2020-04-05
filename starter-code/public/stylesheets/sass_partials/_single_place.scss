@@ -1,0 +1,51 @@
+.single_main {
+    width: 100%;
+    height: 100%;
+
+    @include flex(display, flex);
+    @include flex(flex-wrap, wrap);
+    // @include flex()
+}
+
+.main {
+    width: 100%;
+    height: 10%;
+
+    padding: 20px 0 0 20px;
+}
+
+.info_box {
+    width: 50%;
+    height: 50%;
+
+    font-size: 3rem;
+
+    h2 {
+        margin-top: 30px;
+        color: $main;
+        font-weight: bold;
+    }
+
+    p {
+        margin-top: 20px;
+    }
+}
+
+.single_content {
+    @include flex(display, flex);
+    @include flex(flex-direction, column);
+    @include flex(justify-content, center);
+    @include flex(align-items, center);
+    
+    width: 50%;
+    height: 90%;
+}
+
+.map_content_container {
+    @include flex(display, flex);
+    @include flex(justify-content, center);
+    @include flex(align-items, center);
+
+    width: 50%;
+    height: 90%;
+}

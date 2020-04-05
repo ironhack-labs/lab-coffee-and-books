@@ -1,0 +1,41 @@
+.main_content {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    @include flex(display, flex);
+    @include flex(flex-direction, row-reverse);
+
+    .content {
+        width: 50%;
+        height: 100%;
+        padding: 50px 0;
+        
+        @include flex(display, flex);
+        @include flex(flex-direction, column);
+        @include flex(justify-content, center);
+
+        * {
+            margin:20px 0;
+        }
+    }
+
+    .img_container {
+        
+        width: 50%;
+        height: 100%;
+        
+        @include flex(display, flex);
+        @include flex(align-items, center);
+        @include flex(justify-content, center);
+        
+        .coffee_img {
+            width: 70%;
+        }
+    }
+
+    p {
+        font-size: 4.5rem;
+    }
+    
+}

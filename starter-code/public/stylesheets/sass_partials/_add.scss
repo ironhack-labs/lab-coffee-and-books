@@ -1,0 +1,43 @@
+.main_add {
+    h1 {
+        padding: 20px 10px;
+    }
+}
+
+.add_form {
+    width: 50%;
+    padding-left: 100px;
+    
+    @include flex(display, flex);
+    @include flex(flex-direction, column);
+    @include flex(justify-content, center);
+    @include flex(align-items, flex-end);
+
+    input {
+        margin-top: 30px;
+    }
+
+    input[type="submit"]{
+        // @include flex(align-self, flex-end);
+    }
+}
+
+.add_container {
+    @include flex(display, flex);
+    width: 100%;
+
+    .img_container {
+        width: 50%;
+        height: 100%;
+
+        @include flex(display, flex);
+        @include flex(flex-direction, column);
+        @include flex(align-items, center);
+
+
+        svg {
+            width: 50%;
+        }
+    }
+}
+

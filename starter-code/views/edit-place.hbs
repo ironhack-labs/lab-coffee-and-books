@@ -1,9 +1,13 @@
-<h1>Edit info:</h1>
+<h1 class="title">Edit info:</h1>
 {{#data}}
-<form action="/places/edit/{{_id}}" method="POST">
-    <input type="name" value={{name}} name="name"/>
-    <input type="name" value={{type}} name="type"/>
-    <input type="submit" value="save"/>
+<form class="edit_form" action="/places/edit/{{_id}}" method="POST">
+    <input type="name" value="{{name}}" name="name"/>
+    <input type="name" value="{{type}}" name="type"/>
+    <input type="name" value="{{coordinates.latitude}}" name="latitude"/>
+    <input type="name" value="{{coordinates.longitude}}" name="longitude"/>
+    <div class="btns_container">
+        <input class="btn" type="submit" value="save"/>
+        <a class="btn" href="/place/{{_id}}">Back</a>
+    </div>
 </form>
-<a href="/places">Back</a>
 {{/data}}

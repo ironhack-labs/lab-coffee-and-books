@@ -98,10 +98,14 @@ router.get('/places/edit/:id', (req, res) => {
 
 router.post('/places/edit/:id', (req, res) => {
   let { id } = req.params;
-  let { name, type } = req.body;
-  console.log(req.body);
+  let { name, type, latitude, longitude } = req.body;
 
-  Place.findByIdAndUpdate(id, { name, type })
+  let coordinates = {
+    longitude,
+    latitude
+  }
+
+  Place.findByIdAndUpdate(id, { name, type, coordinates })
     .then( response => {
       console.log(response);
       res.redirect('/places')
