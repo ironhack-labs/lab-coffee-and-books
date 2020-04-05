@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
 
 
 
-// mostrar places
+// Show places
 router.get('/places', (req, res, next) => {
   Place
   .find().sort({name: 1})
@@ -24,15 +24,12 @@ router.get('/places', (req, res, next) => {
 
 
 
-//mostrar detalhes de cada lugar
+//Places details
 
-router.get('/places/:placeId', (req, res) => {
-  const {
-    placeId
-  } = req.params;
+router.get('/places/:id', (req, res) => {
 
   Place
-    .findById(placeId)
+    .findById(req.params.id)
     .then(places => {
       // console.log(place);
       res.render('place-details', {
@@ -45,7 +42,7 @@ router.get('/places/:placeId', (req, res) => {
 
 
 
-// Editar Place
+// Edit Place
 
 //GET place edit
 router.get('/places-edit/:placeId', (req, res) => {
@@ -56,10 +53,7 @@ router.get('/places-edit/:placeId', (req, res) => {
   Place
     .findById(placeId)
     .then(places => {
-      console.log(places);
-      res.render('places-edit', 
-        places
-      );
+      res.render('places-edit', places);
     })
     .catch(error => console.log(error));
 });
@@ -68,14 +62,12 @@ router.get('/places-edit/:placeId', (req, res) => {
 //POST place edit
 router.post('/places-edit', (req, res) => {
   const {
-    placeId, 
+    placeId,
     name, 
     type, 
     longitude, 
     latitude
   } = req.body
-
-  console.log(req.body)
 
   const location = {
     type: 'point',
@@ -84,6 +76,7 @@ router.post('/places-edit', (req, res) => {
 
   Place
   .findByIdAndUpdate(placeId, {$set: {
+
     name, 
     type,
     location
@@ -100,7 +93,11 @@ router.post('/places-edit', (req, res) => {
 
 
 
-//Adicionar place
+
+
+
+
+//Add Place
 
 //rota GET
 router.get('/places-add', (req, res) => {
@@ -136,7 +133,7 @@ router.post('/places-add', (req, res) => {
 
 
 
-//Deletar Place
+//Delete Place
 router.get('/places-delete/:placeId', (req, res) => {
   const {
     placeId
@@ -150,14 +147,14 @@ router.get('/places-delete/:placeId', (req, res) => {
     .catch(error => console.log(error));
 });
 
-// router.get('/api/books', (req, res, next) => {
-//   Book
-//     .find()
-//     .then(books => {
-//       res.json(books);
-//     })
-//     .catch(error => console.log(error));
-// });
+router.get('/api/index', (req, res, next) => {
+  Place
+    .find()
+    .then(places => {
+      res.json(places);
+    })
+    .catch(error => console.log(error));
+});
 
 
 module.exports = router;

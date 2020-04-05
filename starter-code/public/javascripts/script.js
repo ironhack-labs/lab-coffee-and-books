@@ -22,8 +22,8 @@ const initMap = () => {
     zoom: 15
   });
 
-  // axios.get('')
-  // .then(responde =>)
+  // axios.get('http://localhost:3000/api/index')
+  // .then(responde =>
   // .catch()
 
   locations.forEach(location => {

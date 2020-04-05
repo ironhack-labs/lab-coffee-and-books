@@ -6,17 +6,20 @@ const placeSchema = new Schema({
   name: String,
   type: String,
   location: {
-    type: String
+    type: {
+      type: String,
+    },
+    coordinates: [Number],
   },
-  coordinates: [Number]
-  }, {
-  timestamps: true
-  
-});
+},
+{
+  timestamps: true,
+}
+);
 
 placeSchema.index({ 
   location: '2dsphere' 
 });
 
-const Place = mongoose.model("Place", placeSchema);
+const Place = mongoose.model("place", placeSchema);
 module.exports = Place;
