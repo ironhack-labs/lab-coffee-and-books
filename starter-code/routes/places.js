@@ -3,12 +3,15 @@ const router  = express.Router();
 const Place = require('../models/place')
 
 //get places
-router.get('/places', (req, res, next) => {
+router.get('/places', (req,res) => {
+  res.render('places')
+})
+router.get('/getPlaces', (req, res, next) => {
+  console.log('aca el get Places');
     Place
     .find()
     .then(response => {
-      console.log(response);
-      res.render('places', {response})
+        res.json( response )
     })
     .catch(error => console.log(error))
   })

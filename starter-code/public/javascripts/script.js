@@ -1,20 +1,19 @@
-const axios = require('axios');
+
 document.addEventListener('DOMContentLoaded', () => {
 
   console.log('IronGenerator JS imported successfully!');
 
 }, false);
 
-const coffeeBooksApi = axios.create({
-  baseURL: 'http://localhost:3000/api'
-})
-
-
 const getPlaces = () => {
-  coffeeBooksApi
-  .get()
+  fetch('http://localhost:3000/getPlaces')
   .then(response => {
-    placeStore(response.data)
+    response.json()
+    .then( res => {
+      console.log(res);
+      placeStore(res)
+    })
+    .catch( err => console.log(err))
   })
   .catch(error => console.log(error))
 }
@@ -28,17 +27,17 @@ const placeStore = (place) => {
           center: SaoPaulo,
           zoom: 8
       })
-      places.forEach((place) => {
+      place.forEach((place) => {
+        console.log('new mapa', place);
         const center = {
-          lat: place.location.coordinates[1],
-          lng: place.location.coordinates[0]
+          lat: place.latitude,
+          lng: place.longitude
         };
-        const pin = new google.maps.Marker({
+        new google.maps.Marker({
           position: center,
           map: map,
           title: place.name,
         });
-        markers.push(pin);
       });
 }
 
