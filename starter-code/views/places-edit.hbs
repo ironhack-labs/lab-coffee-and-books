@@ -1,0 +1,12 @@
+<h2>Edit a Place</h2>
+{{#with response}}
+<form action="/places-edit/{{_id}}" method="POST">
+    <label for="name">Name:
+        <input type="text" name="name" value="{{name}}">
+    </label>
+    <label for="type">Type:
+        <input type="text" name="type" value="{{type}}">
+    </label>
+    <button type="submit">Done!</button>
+</form>
+{{/with}}
