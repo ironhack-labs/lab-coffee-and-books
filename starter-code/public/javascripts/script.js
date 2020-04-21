@@ -1,14 +1,18 @@
 let myMap;
 
 window.onload = () => {
-  	myMap = new google.maps.Map(document.getElementById('my-map'), {
+
+  myMap = new google.maps.Map(document.getElementById('my-map'), {
+      
 		center: {
 			lat: 40.416900,
 			lng: -3.703400,
-		},
-      zoom: 16,
-      styles: mapStyles.night
-    });
+    },
+
+    zoom: 14,
+    styles: mapStyles.night
+      
+    })
   
   getPins()
 	
@@ -23,10 +27,10 @@ function getPins() {
       const places = placesFromAPI.data;
 
       places.forEach(elm => {
-        
+
         let center = {
           lat: elm.location.coordinates[0],
-          long: elm.location.coordinates[1]
+          lng: elm.location.coordinates[1]
         }
 
         new google.maps.Marker({
