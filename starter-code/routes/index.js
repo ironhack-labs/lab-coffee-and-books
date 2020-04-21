@@ -29,4 +29,14 @@ router.post('/create', (req, res, next) => {
     })
 })
 
+router.get('/edit/:placeID', (req, res) => {
+  Place.findById(req.params.placeID)
+    .then((fetchedPlace) => {
+      res.render('edit-form', fetchedPlace)
+    })
+    .catch((err) => {
+      next(err)
+    })
+})
+
 module.exports = router
