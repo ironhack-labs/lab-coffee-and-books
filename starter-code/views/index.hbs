@@ -1,2 +1,31 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+    <div class="list-group" id="index">
+
+        <div class="row  align-items-center">
+            {{#each placesFronmDB}}
+            <div class="col-md-4">
+                <a href="/details/{{_id}}" class="list-group-item list-group-item-action">{{name}}</a>
+            </div>
+
+            <div class="col-md-2">
+                <form action="/{{id}}/delete" method="POST">
+                    <input name="id" type="hidden" class="form-control" id="field1">
+                    <button class"delete" type="submit" class="btn btn-primary">Delete</button>
+                    <a href="/{{id}}/edit" class="btn btn-primary">Edit</a>
+                </form>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div id="map"></div>
+
+    <a id="create" href="/new" class="btn btn-primary">Create a new place</a>
+</div>
+
+
+
+
+<script src="/javascripts/script.js"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=XXXXX"></script>
