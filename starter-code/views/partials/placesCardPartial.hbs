@@ -1,0 +1,13 @@
+<div class="card" style="width: 18rem;">
+	<div class="card-body">
+		<h5 class="card-title">{{name}}</h5>
+    <h6 class="card-title type">{{type}}</h6>
+		<div class="actionButtonsDiv">
+      <a href="/edit/{{id}}" class="btn btn-warning">Edit</a>
+      <form action="/delete/{{id}}" method="POST">
+        <button type="submit" class="btn btn-danger">Delete</a>
+      </form>
+    </div>
+
+	</div>
+</div>
