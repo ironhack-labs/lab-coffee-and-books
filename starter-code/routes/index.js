@@ -29,10 +29,22 @@ router.post('/create', (req, res, next) => {
     })
 })
 
-router.get('/edit/:placeID', (req, res) => {
+router.get('/edit/:placeID', (req, res, next) => {
   Place.findById(req.params.placeID)
     .then((fetchedPlace) => {
       res.render('edit-form', fetchedPlace)
+    })
+    .catch((err) => {
+      next(err)
+    })
+})
+
+router.post('/edit/:placeID', (req, res, next) => {
+  const { name, type } = req.body
+
+  Place.findByIdAndUpdate(req.params.placeID, { name, type }, { new: true })
+    .then(() => {
+      res.redirect('/')
     })
     .catch((err) => {
       next(err)
