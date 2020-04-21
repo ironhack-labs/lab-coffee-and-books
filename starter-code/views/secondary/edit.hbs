@@ -1,0 +1,30 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+
+        <h1>Editar datos</h1>
+        <hr>
+        <form action="/option/edit/{{id}}" method="POST">
+            <div class="form-group">
+                <label for="field1">Nombre:</label>
+                <input value="{{name}}" name="name" type="text" class="form-control" id="field1">
+                
+            </div>
+            <div class="form-group">
+                <label for="field2">Tipo:</label>
+                <input value="{{type}}" name="type" type="text" class="form-control" id="field2">
+            </div>
+            <div class="form-group">
+                <label for="field3">Latitud:</label>
+                <input value="{{location.coordinates.[0]}}" name="lat" type="text" class="form-control" id="field3">
+            </div>
+            <div class="form-group">
+                <label for="field3">Longitud:</label>
+                <input value="{{location.coordinates.[1]}}" name="long" type="text" class="form-control" id="field3">
+            </div>
+
+            <button type="submit" class="btn btn-dark">Guardar cambios</button>
+        </form>
+            <a href="/" class="btn btn-sm btn-light">Volver</a>
+
+    </div>
+</div>
