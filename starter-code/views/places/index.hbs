@@ -1,0 +1,19 @@
+<div class="container">
+  <h3>Lugares</h3>
+  {{#each allPlaces}}
+  <p>Nombre: {{name}}</p>
+  <p>Locación: {{location.coordinates}}</p>
+  <p>Tipo: {{type}}</p>
+  <form action="/{{_id}}/delete" method="POST">
+    <button class="boton" type="submit">delete</button>
+  </form>
+  <form action="/{{_id}}/edit" method="GET">
+    <button class="boton" type="submit">edit</button>
+  </form>
+  {{/each}}
+</div>
+
+<div class="container">
+  <a class="link" href="/new" type="button">New place</a>
+
+</div>
