@@ -1,2 +1,19 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+    <h1>{{title}}</h1>
+    <p>Welcome to {{title}}</p>
+
+    <a class="btn btn-ligth btn-outline-success btn-sm" href="/new">Agregar Bar</a>
+
+    <div class="row mb-20">
+        {{#each allPlaces}}
+            <div class="col-md-4 row-index">
+                    <h4>{{name}}</h4>
+                    <a href="/showbar/{{id}}" class="btn btn-ligth btn-outline-success btn-sm">Ver detalles</a>
+                    <form action="/{{id}}/delete" method="POST">
+                        <button type="submit" class="btn btn-ligth btn-outline-success btn-sm">Borrar Bar</button>
+                    </form>
+                    <a href="/{{id}}/edit" class="btn btn-ligth btn-outline-success btn-sm">Edit Bar</a>
+            </div>
+        {{/each}}
+    </div>
+</div>
