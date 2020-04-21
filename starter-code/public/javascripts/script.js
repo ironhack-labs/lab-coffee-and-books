@@ -49,7 +49,8 @@ function startMap() {
     lng: -5.9940192,
   }
   googleMap = new google.maps.Map(storeMap, {
-    zoom: 17,
+    styles: mapStyles.retro,
+    zoom: 14,
     center: defaultCenter,
   })
   getPlaces()
