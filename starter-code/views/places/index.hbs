@@ -1,0 +1,27 @@
+<div class="title">
+    <div class="col">
+        <h3>Listado</h3>
+    </div>
+</div>
+  <figure id="myMap"></figure>
+
+<div class="places-list"></div>
+
+    {{#each places}}
+<div class="card col-md-4">
+  <div class="card-body">
+    <h4 class="card-title">{{name}}</h4>
+    <h5 class="card-title">{{type}}</h5>
+    <hr>
+    <a href="/places/show/{{_id}}" class="btn btn-outline-info">Ver detalles</a>
+    <a href="/places/edit?id={{_id}}"><button type="button" class="btn btn-outline-success btn-sm">Editar</button></a>
+        <form action="/places/{{_id}}/delete" method="POST">
+            <button class="btn btn-outline-danger btn-sm" type="submit">Eliminar</button>
+        </form>
+  </div>
+</div>
+    {{/each}}
+
+    <a href="/places/new"><button type="button" class="btn btn-info">Crear nuevo</button></a>
+    <a href="/"><button type="button" class="btn btn-info">Volver la inicio</button></a>
+</div> 
