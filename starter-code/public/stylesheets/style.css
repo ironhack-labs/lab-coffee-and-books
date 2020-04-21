@@ -2,9 +2,14 @@ body {
   padding: 50px;
   font-family: 'Montserrat', sans-serif; }
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Merriweather', serif;
   text-align: center; }
+
+#store-map {
+  height: 500px;
+  width: 100%; }
 
 .place-type {
   text-transform: capitalize; }
@@ -13,9 +18,5 @@ h1, h2 {
   display: block;
   width: 240px;
   margin: 16px auto; }
-
-.card-button-wrapper {
-  margin-left: 0px;
-  padding-left: 0px; }
 
 /*# sourceMappingURL=style.css.map */

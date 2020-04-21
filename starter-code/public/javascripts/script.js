@@ -1,5 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener(
+  'DOMContentLoaded',
+  () => {
+    console.log('IronGenerator JS imported successfully!')
+  },
+  false
+)
 
-  console.log('IronGenerator JS imported successfully!');
+const storeMap = document.getElementById('store-map')
 
-}, false);
+function startMap() {
+  const lasSetas = {
+    lat: 37.3931548,
+    lng: -5.9940192,
+  }
+  const map = new google.maps.Map(storeMap, {
+    zoom: 17,
+    center: lasSetas,
+  })
+}
+
+startMap()

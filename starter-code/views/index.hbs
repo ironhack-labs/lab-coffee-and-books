@@ -5,8 +5,8 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-md-6">
-      <canvas id="mapCanvas"></canvas>
+    <div class="col-md-12">
+      <div id="store-map"></div>
     </div>
   </div>
   <div class="row justify-content-center">
@@ -19,7 +19,7 @@
         <div class="card-body">
           <h5 class="card-title">{{name}}</h5>
           <h6 class="card-subtitle mb-2 text-muted place-type">{{type}}</h6>
-          <div class="d-flex"> 
+          <div class="d-flex justify-content-around"> 
             <a href="/edit/{{_id}}" class="btn card-link">Edit</a>
             <form action="/delete/{{_id}}" method="post">
             <button type="submit" class="btn card-link">Delete</button>
