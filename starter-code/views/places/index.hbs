@@ -1,27 +1,27 @@
 <div class="title">
-    <div class="col">
-        <h3>Listado</h3>
+    <div class="col text-center">
+        <h2>Los lugares más TOP</h2>
     </div>
 </div>
   <figure id="myMap"></figure>
 
-<div class="places-list"></div>
-
-    {{#each places}}
-<div class="card col-md-4">
-  <div class="card-body">
-    <h4 class="card-title">{{name}}</h4>
-    <h5 class="card-title">{{type}}</h5>
+<div class="row">
+{{#each places}}
+  <div class="col-lg-3">
+    <div class="card border-info">
+      <div class="card-body">
+        <h4 class="card-title id="placeName" data-id="{{_id}}"">{{name}}</h4>
+    <h5 class="card-title text-secondary">{{type}}</h5>
     <hr>
-    <a href="/places/show/{{_id}}" class="btn btn-outline-info">Ver detalles</a>
+    <a href="/places/show/{{_id}}" class="btn btn-sm btn-outline-info">Ver detalles</a>
     <a href="/places/edit?id={{_id}}"><button type="button" class="btn btn-outline-success btn-sm">Editar</button></a>
         <form action="/places/{{_id}}/delete" method="POST">
             <button class="btn btn-outline-danger btn-sm" type="submit">Eliminar</button>
         </form>
+      </div>
+    </div>
   </div>
+{{/each}}
+<a href="/places/new"><button type="button" class="btn btn-list btn-info">Crear nuevo</button></a>
+<a href="/"><button type="button" class="btn btn-info btn-list">Volver la inicio</button></a>
 </div>
-    {{/each}}
-
-    <a href="/places/new"><button type="button" class="btn btn-info">Crear nuevo</button></a>
-    <a href="/"><button type="button" class="btn btn-info">Volver la inicio</button></a>
-</div> 

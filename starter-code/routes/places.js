@@ -20,15 +20,20 @@ router.get('/show/:id', (req, res, next) => {
 
 //add
 router.get('/new', (req, res, next) => res.render('places/new'))
+
 router.post('/new', (req, res, next) => {
-    const { name, type, location } = req.body
+  let location = {
+		type: 'Point',
+		coordinates: [req.body.longitude, req.body.latitude]
+  }
+  
+    const newPlace = new Place({
+      name: req.body.name,
+      type: req.body.type,
+      location
+    })
 
-    // let location = {
-    //   type: 'Point',
-    //   coordinates: [req.body.longitude, req.body.latitude]
-    // }
-
-    Place.create({ name, type, location })
+    Place.create(newPlace)
     .then(() => res.redirect('/places'))
     .catch(err => console.log(`An error ocurred adding the place: ${err}`))
 })
@@ -53,13 +58,31 @@ router.get('/edit', (req, res, next) => {
 })
 
 router.post('/edit/:id', (req, res, next) => {
-  const placeId = req.params.id
+  const placeId = req.query.id
 
-  Place.findByIdAndUpdate(placeId, req.body, { new: true })
-  .then(updatePlace => res.redirect('/places'))
+  let location = {
+		type: 'Point',
+		coordinates: [req.body.longitude, req.body.latitude]
+  }
+  
+    const newPlace = new Place({
+      name: req.body.name,
+      type: req.body.type,
+      location
+    })
+
+  Place.findByIdAndUpdate(placeId, newPlace, { new: true })
+  .then(() => res.redirect('/places'))
   .catch(err => console.log(`An error ocurred updating the place: ${err}`))
 })
 
+// api
+
+router.get('/api', (req, res, next) => {
+  Place.find()
+    .then(data => res.json(data))
+    .catch(err => console.log(err))
+})
 
 
 module.exports = router

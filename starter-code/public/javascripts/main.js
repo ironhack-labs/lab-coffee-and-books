@@ -2,45 +2,36 @@ let myMap
 
 window.onload = () => {
 
-  const coffeeAndKicks = {
+  const center = {
     lat: 40.419244,
     lng: -3.706610
   }
 
   myMap = new google.maps.Map(document.getElementById('myMap'), {
-    zoom: 15,
-    center: coffeeAndKicks
+    zoom: 13,
+    center,
+    styles: mapStyles.silver
   })
-  let center = {
-    lat: undefined,
-    lng: undefined
-  }
-  getPlaces()
+
+  getPin()
 }
 
-function getPlaces() {
-  axios.get('places/api')
-  .then(response => {
-    console.log('La respuesta del servidor es', response)
-    placePlaces(response.data.places)
-  })
-  .catch(error => console.log(error))
-}
-
-function placePlaces(places) {
-  places.forEach(place => {
-    const center = {
-      lat: place.location.coordinates[1],
-      lng: place.location.coordinates[0]
-    }
-    new google.maps.Marker({
-      position: center,
-      map: myMap,
-      title: place.name
+function getPin() {
+  axios
+    .get('/places/api')
+    .then(placesFromApi => {
+      const places = placesFromApi.data
+      places.forEach(elm => {
+        let center = {
+          lat: elm.location.coordinates[0],
+          lng: elm.location.coordinates[1]
+        }
+        new google.maps.Marker({
+          position: center,
+          map: myMap,
+          title: elm.name
+        })
+      })
     })
-    myMap.setCenter({
-      lat: place[0].location.coordinates[1],
-      lng: place[0].location.coordinates[0]
-    })
-  })
+    .catch(error => console.log(error))
 }
