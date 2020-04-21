@@ -19,8 +19,13 @@
         <div class="card-body">
           <h5 class="card-title">{{name}}</h5>
           <h6 class="card-subtitle mb-2 text-muted place-type">{{type}}</h6>
-          <a href="/edit/{{_id}}" class="card-link">Edit</a>
-          <a href="#" class="card-link">Delete</a>
+          <div class="d-flex"> 
+            <a href="/edit/{{_id}}" class="btn card-link">Edit</a>
+            <form action="/delete/{{_id}}" method="post">
+            <button type="submit" class="btn card-link">Delete</button>
+            </form>
+          </div>
+
         </div>
       </article>
     </div>

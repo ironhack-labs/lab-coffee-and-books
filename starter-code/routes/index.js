@@ -57,5 +57,14 @@ router.post('/edit/:placeID', (req, res, next) => {
 
 //DELETE
 
+router.post('/delete/:placeID', (req, res, next) => {
+  Place.findByIdAndDelete(req.params.placeID)
+    .then(() => {
+      res.redirect('/')
+    })
+    .catch((err) => {
+      next(err)
+    })
+})
 
 module.exports = router
