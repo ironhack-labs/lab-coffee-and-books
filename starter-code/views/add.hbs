@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row justify-content-center">
+
+    <div class="col-sm-6 form-container">
+      <h2>Add Places</h2>
+      <form action="/add" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="typeField">Place Type</label>
+          <select class="custom-select" id="typeField" name="type">
+            <option value="coffee shop">Coffee Shop</option>
+            <option value="bookstore">Bookstore</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="latitudeField">Latitude</label>
+          <input type="text" class="form-control" id="latitudeField" name="latitude">
+        </div>
+        <div class="form-group">
+          <label for="longitudeField">Longitude</label>
+          <input type="text" class="form-control" id="longitudeField" name="longitude">
+        </div>
+        {{#if errorMessage}}
+        <p class="errorMessage">{{errorMessage}}</p>
+        {{/if}}
+        <a href="/" class="btn btn-primary">Back</a>
+        <button type="submit" class="btn btn-dark">Add Place</button>
+      </form>
+    </div>
+
+
+  </div>
+</div>

@@ -1,2 +1,28 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+
+<div class="container title-container">
+  <div class="row justify-content-center">
+    <div class="col-sm-4">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-sm-4 justify-content-center">
+      <a class="btn btn-dark addPlacesButtons" href="/add">Add Places</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <figure id="myMap"></figure>
+</div>
+
+<div class="container">
+  <div class="row">
+    {{#each allPlaces}}
+      <div class="col-sm-4">
+        {{> placesCardPartial this}}
+      </div>
+    {{/each}}
+  </div>
+</div>
