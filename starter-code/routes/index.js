@@ -3,7 +3,7 @@ const router = express.Router()
 
 const Place = require('../models/Place.model')
 
-/* GET home page */
+/* GET home page -- READ*/
 router.get('/', (req, res, next) => {
   Place.find()
     .then((places) => {
@@ -14,6 +14,8 @@ router.get('/', (req, res, next) => {
       next(err)
     })
 })
+
+//CREATE
 
 router.get('/create', (req, res) => res.render('create-form'))
 
@@ -28,6 +30,8 @@ router.post('/create', (req, res, next) => {
       next(err)
     })
 })
+
+//UPDATE
 
 router.get('/edit/:placeID', (req, res, next) => {
   Place.findById(req.params.placeID)
@@ -50,5 +54,8 @@ router.post('/edit/:placeID', (req, res, next) => {
       next(err)
     })
 })
+
+//DELETE
+
 
 module.exports = router
