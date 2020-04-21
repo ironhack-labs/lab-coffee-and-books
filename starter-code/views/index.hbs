@@ -22,9 +22,11 @@
       {{#each placesFound}}
       <tr>
         <td><strong>{{name}}</strong></td>
-        <td><p>{{typeOfPlace}}</p></td>
+        <td>
+          <p>{{typeOfPlace}}</p>
+        </td>
         <td>{{location.coordinates}}</td>
-        <td><a href="/{{id}}/dets" class="btn button-mine">Detalles</a> 
+        <td><a href="/{{id}}/dets" class="btn button-mine">Detalles</a>
 
         <td>
           <form action="/{{id}}/delete" method="POST">
@@ -37,11 +39,10 @@
       {{/each}}
 
     </tbody>
-    
+
   </table>
+
+
 </div>
 
 <figure id="my-map"></figure>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="/javascripts/main.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5pAOc0VsjZ-SX6Jxm7qm-2u0r3rcuX5I"></script>

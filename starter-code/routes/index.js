@@ -23,7 +23,7 @@ router.post('/', (req, res, next) => {
 
   let location = {
     type: 'Point',
-    coordinates: [req.body.long, req.body.lat]
+    coordinates: [req.body.lat, req.body.long]
   }
   
   Place.create( { name: req.body.name, typeOfPlace: req.body.typeOfPlace, location } )
@@ -52,7 +52,7 @@ router.post('/:id/edit', (req, res, next) => {
 
   let location = {
     type: 'Point',
-    coordinates: [req.body.long, req.body.lat]
+    coordinates: [req.body.lat, req.body.long]
   }
   
   Place.findByIdAndUpdate( req.params.id, { name: req.body.name, typeOfPlace: req.body.typeOfPlace, location }, {new: true} )
@@ -60,6 +60,12 @@ router.post('/:id/edit', (req, res, next) => {
     .catch( err => console.log('sin editar', err))
 })
 
+//API google
+router.get('/api', (req, res, next) => {
+  Place.find()
+    .then(data => res.json(data))
+    .catch(err => console.log(err))
+})
 
 
 module.exports = router;
