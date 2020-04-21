@@ -1,2 +1,19 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <canvas id="mapCanvas"></canvas>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      {{#each places}}
+      <p>{{name}}</p>
+      {{/each}}
+    </div>
+  </div>
+</div>

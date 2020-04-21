@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Place = require('./../models/place')
+const Place = require('../models/Place.model')
 
 const dbTitle = 'coffee-and-books'
 mongoose.connect(`mongodb://localhost/${dbTitle}`)

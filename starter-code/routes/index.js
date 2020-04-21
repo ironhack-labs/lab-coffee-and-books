@@ -1,9 +1,18 @@
-const express = require('express');
-const router  = express.Router();
+const express = require('express')
+const router = express.Router()
+
+const Place = require('../models/Place.model')
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  res.render('index');
-});
+  Place.find()
+    .then((places) => {
+      console.log(places)
+      res.render('index', { places })
+    })
+    .catch((err) => {
+      next(err)
+    })
+})
 
-module.exports = router;
+module.exports = router
