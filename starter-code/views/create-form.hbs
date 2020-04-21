@@ -1,0 +1,21 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2>Create an entry</h2>
+    <form method="POST" action="/create">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <br>
+        <input type="text" name="name" id="name" placeholder="Enter this place's name">
+      </div>
+      <div class="form-group">
+        <label for="type">Type of establishment</label>
+        <br>
+        <select name="type" id="type">
+          <option value="coffee shop">Coffee shop</option>
+          <option value="bookstore">Bookstore</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+  </div>
+</div>

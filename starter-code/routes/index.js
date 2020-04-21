@@ -15,4 +15,18 @@ router.get('/', (req, res, next) => {
     })
 })
 
+router.get('/create', (req, res) => res.render('create-form'))
+
+router.post('/create', (req, res, next) => {
+  const { name, type } = req.body
+
+  Place.create({ name, type })
+    .then(() => {
+      res.redirect('/')
+    })
+    .catch((err) => {
+      next(err)
+    })
+})
+
 module.exports = router

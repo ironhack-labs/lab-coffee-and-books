@@ -3,6 +3,17 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-h1 {
+h1, h2 {
   font-family: 'Merriweather', serif;
+  text-align: center;
+}
+
+.place-type {
+  text-transform: capitalize;
+}
+
+.create-btn {
+  display: block;
+  width: 240px;
+  margin: 16px auto;
 }
