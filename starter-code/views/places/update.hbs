@@ -1,0 +1,44 @@
+<h1>Updating {{name}}</h1>
+<form method="POST" action="/{{_id}}/update">
+  <div class="row justify-content-start">
+
+    <div class="col-md-3"></div>
+    <div class="col-6 form-group">
+      <label for="nameField">Name</label>
+      <input name="name" type="text" class="form-control" id="nameField" value="{{name}}">
+    </div>
+    <div class="col-md-3"></div>
+
+    <div class="col-md-3"></div>
+    <div class=" col-md-2 form-group">
+      <label for="typeField">Place type</label>
+      <select class="form-control" name="type" id="typeField">
+        <option value="{{type}}">{{type}}</option>
+        <option value="coffee shop">Coffee shop</option>
+        <option value="bookstore">Bookstore</option>
+      </select>
+    </div>
+    <div class="col-md-7"></div>
+
+    {{#each location.coordinates}}
+    {{#if @first}}
+    <div class="col-md-3"></div>
+    <div class="col-3 form-group">
+      <label for="latitudeField">Latitud</label>
+      <input name="latitude" type="text" class="form-control" id="latitudeField" value="{{this}}">
+    </div>
+    {{/if}}
+    {{#if @last}}
+    <div class="col-3 form-group">
+      <label for="longitudeField">Longitude</label>
+      <input name="longitude" type="text" class="form-control" id="longitudeField" value="{{this}}">
+    </div>
+    <div class="col-md-3"></div>
+    {{/if}}
+    {{/each}}
+
+    <div class="centered col-12">
+      <button type="submit" class="btn btn-dark btn-lg">Submit</button>
+    </div>
+  </div>
+</form>

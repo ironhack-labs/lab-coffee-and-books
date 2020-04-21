@@ -1,2 +1,23 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>{{title}} map</h1>
+
+<section id="map-section">
+  <figure id="general-map"></figure>
+</section>
+
+<h2>Coffee shops</h2>
+<section class="type-place-section row justify-content-start">
+  {{#each coffeeShops}}
+  {{> placeCard this}}
+  {{/each}}
+</section>
+
+<h2>Bookstores</h2>
+<section class="type-place-section row justify-content-start margin-bottom">
+  {{#each bookstores}}
+  {{> placeCard this}}
+  {{/each}}
+</section>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/indexmap.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AQUI_LA_KEY"></script>

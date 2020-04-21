@@ -1,0 +1,37 @@
+<h1>Creating a new place</h1>
+<form method="POST" action="/creation">
+  <div class="row justify-content-start">
+
+    <div class="col-md-3"></div>
+    <div class="col-6 form-group">
+      <label for="nameField">Name</label>
+      <input name="name" type="text" class="form-control" id="nameField">
+    </div>
+    <div class="col-md-3"></div>
+
+    <div class="col-md-3"></div>
+    <div class=" col-md-2 form-group">
+      <label for="typeField">Place type</label>
+      <select class="form-control" name="type" id="typeField">
+        <option value="coffee shop">Coffee shop</option>
+        <option value="bookstore">Bookstore</option>
+      </select>
+    </div>
+    <div class="col-md-7"></div>
+
+    <div class="col-md-3"></div>
+    <div class="col-3 form-group">
+      <label for="latitudeField">Latitud</label>
+      <input name="latitude" type="text" class="form-control" id="latitudeField">
+    </div>
+    <div class="col-3 form-group">
+      <label for="longitudeField">Longitude</label>
+      <input name="longitude" type="text" class="form-control" id="longitudeField">
+    </div>
+    <div class="col-md-3"></div>
+
+    <div class="centered col-12">
+      <button type="submit" class="btn btn-dark btn-lg">Submit</button>
+    </div>
+  </div>
+</form>
