@@ -3,6 +3,11 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+h2{
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
 
 a {
   color: #00B7FF;
@@ -12,4 +17,28 @@ a {
 
 .card{
   text-align: center;
+}
+
+
+#map {
+        height: 500px;
+        width: 100%;
+}
+
+#create{
+ display: block;
+    width: 206px;
+    margin: auto;
+    margin-top: 28px;
+}
+
+#index{
+    margin-bottom: 17px;
+    margin-top: 24px;
+
+}
+
+form{
+    margin-top: 15px;
+  margin-bottom: 15px;
 }
