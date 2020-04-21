@@ -1,9 +1,65 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
+const Place = require('../model/places.model')
 
-/* GET home page */
+//Find places
 router.get('/', (req, res, next) => {
-  res.render('index');
+  Place.find()
+    .then(placesFound => res.render('index', { placesFound }))
+    .catch(err => console.log('no se encontraron los places', err))
 });
+
+//Find especific place
+
+router.get('/:id/dets', (req, res, next) => {
+  Place.findById(req.params.id)
+    .then(foundPlace => res.render('details', foundPlace))
+    .catch(err => console.log('No se puede acceder a ese elemento', err))
+})
+
+//Add
+router.get('/add-new', (req, res, next) => { res.render('add') })
+router.post('/', (req, res, next) => {
+
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.long, req.body.lat]
+  }
+  
+  Place.create( { name: req.body.name, typeOfPlace: req.body.typeOfPlace, location } )
+    .then(() => res.redirect('/'))
+    .catch( err => console.log('No se ha añadido nada', err))
+  
+})
+
+//Delete
+router.post('/:id/delete', (req, res, next) => {
+
+  Place.findByIdAndRemove(req.params.id)
+    .then(res.redirect('/'))
+    .catch(err => console.log('No se borró nada', err))
+
+})
+
+// Edit
+router.get('/:id/edit', (req, res, next) => {
+  Place.findById(req.params.id)
+    .then(toEdit => res.render('edit', toEdit))
+    .catch(err=> console.log('No hemos pillao nada para editar', err))
+})
+
+router.post('/:id/edit', (req, res, next) => {
+
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.long, req.body.lat]
+  }
+  
+  Place.findByIdAndUpdate( req.params.id, { name: req.body.name, typeOfPlace: req.body.typeOfPlace, location }, {new: true} )
+    .then(() => res.redirect('/'))
+    .catch( err => console.log('sin editar', err))
+})
+
+
 
 module.exports = router;

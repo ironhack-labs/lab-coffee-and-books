@@ -1,2 +1,47 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="no-form">
+
+  <h2>Lista de mis places</h2>
+
+  <a href="/add-new" class="btn button-mine">Añadir un Place</a>
+
+  <table class="table table-sm table-hover">
+
+    <thead>
+      <tr>
+        <th scope="col">Lugar</th>
+        <th scope="col">Tipo de Lugar</th>
+        <th scope="col">Coordenadas</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {{#each placesFound}}
+      <tr>
+        <td><strong>{{name}}</strong></td>
+        <td><p>{{typeOfPlace}}</p></td>
+        <td>{{location.coordinates}}</td>
+        <td><a href="/{{id}}/dets" class="btn button-mine">Detalles</a> 
+
+        <td>
+          <form action="/{{id}}/delete" method="POST">
+            <input type="submit" class="btn button-mine" value="Borrar">
+          </form>
+        </td>
+
+        <td><a href="/{{id}}/edit" class="btn button-mine">Editar</a></td>
+      </tr>
+      {{/each}}
+
+    </tbody>
+    
+  </table>
+</div>
+
+<figure id="my-map"></figure>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5pAOc0VsjZ-SX6Jxm7qm-2u0r3rcuX5I"></script>
