@@ -1,0 +1,27 @@
+<style>
+    #map {
+        height: 200px;
+        width: 500px;
+    }
+</style>
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-6">
+            <div id="map"></div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <h5 class="card-header">{{name}}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{description}}</h5>
+                    <p class="card-text">{{location.coordinates}}</p>
+                    <a href="/" class="btn btn-primary">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/javascripts/script.js"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4JC9g00Q9bD4krt7_j6WBEZ4V6_wwo9k"></script>
