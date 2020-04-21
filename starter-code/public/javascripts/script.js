@@ -5,8 +5,16 @@ document.addEventListener(
   },
   false
 )
-
 const storeMap = document.getElementById('store-map')
+
+function getPlaces() {
+  axios.get("/api")
+  .then((response) => {
+    console.log("Respuesta server: ", response)
+  }).catch((err) => {
+    console.log(err)
+  });
+}
 
 function startMap() {
   const lasSetas = {
@@ -17,6 +25,8 @@ function startMap() {
     zoom: 17,
     center: lasSetas,
   })
+  getPlaces()
 }
 
 startMap()
+

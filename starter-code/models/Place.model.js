@@ -6,6 +6,7 @@ const placeSchema = new Schema(
     name: String,
     type: { type: String, enum: ['coffee shop', 'bookstore'] },
     location: Object,
+    address: String
   },
   { timestamps: true }
 )

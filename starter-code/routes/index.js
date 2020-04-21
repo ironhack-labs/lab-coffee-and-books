@@ -20,9 +20,9 @@ router.get('/', (req, res, next) => {
 router.get('/create', (req, res) => res.render('create-form'))
 
 router.post('/create', (req, res, next) => {
-  const { name, type } = req.body
+  const { name, type, address } = req.body
 
-  Place.create({ name, type })
+  Place.create({ name, type, address })
     .then(() => {
       res.redirect('/')
     })
@@ -44,9 +44,13 @@ router.get('/edit/:placeID', (req, res, next) => {
 })
 
 router.post('/edit/:placeID', (req, res, next) => {
-  const { name, type } = req.body
+  const { name, type, address } = req.body
 
-  Place.findByIdAndUpdate(req.params.placeID, { name, type }, { new: true })
+  Place.findByIdAndUpdate(
+    req.params.placeID,
+    { name, type, address },
+    { new: true }
+  )
     .then(() => {
       res.redirect('/')
     })
@@ -68,3 +72,26 @@ router.post('/delete/:placeID', (req, res, next) => {
 })
 
 module.exports = router
+
+//Raw data
+
+router.get('/api', (req, res, next) => {
+  Place.find({}, (error, allPlacesFromDB) => {
+    if (error) {
+      next(error)
+    } else {
+      res.json({ places: allPlacesFromDB })
+    }
+  })
+})
+
+router.get('/api/:id', (req, res, next) => {
+  let placeId = req.params.id
+  Restaurant.findOne({ _id: placeId }, (error, place) => {
+    if (error) {
+      next(error)
+    } else {
+      res.json({ place })
+    }
+  })
+})

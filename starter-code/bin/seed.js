@@ -5,16 +5,56 @@ const dbTitle = 'coffee-and-books'
 mongoose.connect(`mongodb://localhost/${dbTitle}`)
 
 const places = [
-  { name: 'Torch Coffee Roasters', type: 'coffee shop' },
-  { name: 'Ofelia Bakery', type: 'coffee shop' },
-  { name: 'La Crème de la Crème', type: 'coffee shop' },
-  { name: 'La Cacharrería', type: 'coffee shop' },
-  { name: 'Café de Mayo', type: 'coffee shop' },
-  { name: 'Caótica', type: 'bookstore' },
-  { name: 'La Fuga', type: 'bookstore' },
-  { name: 'Casa Tomada', type: 'bookstore' },
-  { name: 'Un Gato en Bicicleta', type: 'bookstore' },
-  { name: 'Librería Reguera', type: 'bookstore' },
+  {
+    name: 'Torch Coffee Roasters',
+    type: 'coffee shop',
+    address: 'Ave. Paseo de las Delicias, 3, 41001 Sevilla',
+  },
+  {
+    name: 'Ofelia Bakery',
+    type: 'coffee shop',
+    address: 'C. Huelva, 5, 41004 Sevilla',
+  },
+  {
+    name: 'La Crème de la Crème',
+    type: 'coffee shop',
+    address: 'Calle Regina, 1, 41003 Sevilla',
+  },
+  {
+    name: 'La Cacharrería',
+    type: 'coffee shop',
+    address: 'Calle Regina, 14, 41003 Sevilla',
+  },
+  {
+    name: 'Café de Mayo',
+    type: 'coffee shop',
+    address: 'Calle Amor de Dios, 7, 41003 Sevilla',
+  },
+  {
+    name: 'Caótica',
+    type: 'bookstore',
+    address: 'Calle José Gestoso, 8, 41003 Sevilla',
+  },
+  {
+    name: 'La Fuga',
+    type: 'bookstore',
+    address: 'Calle Conde de Torrejón, 4, 41003 Sevilla',
+  },
+  {
+    name: 'Casa Tomada',
+    type: 'bookstore',
+    address: 'Calle Muro de los Navarros, 66, 41003 Sevilla',
+  },
+  {
+    name: 'Un Gato en Bicicleta',
+    type: 'bookstore',
+    address: 'Calle Pérez Galdós, 22, 41004 Sevilla',
+  },
+  {
+    name: 'Librería Reguera',
+    type: 'bookstore',
+    address: 'Calle Almte. Apodaca, 23, 41003 Sevilla',
+  },
 ]
 
 Place.create(places)
