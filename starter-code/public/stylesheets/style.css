@@ -9,7 +9,8 @@ h2 {
 
 #store-map {
   height: 500px;
-  width: 100%; }
+  width: 100%;
+  margin: 16px 0px; }
 
 .place-type {
   text-transform: capitalize; }
@@ -17,6 +18,6 @@ h2 {
 .create-btn {
   display: block;
   width: 240px;
-  margin: 16px auto; }
+  margin: 0px auto 16px auto; }
 
 /*# sourceMappingURL=style.css.map */
