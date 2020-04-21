@@ -1,0 +1,30 @@
+<h1>Details</h1>
+<section class="details-section row">
+  <div class="col-md-6">
+    <article>
+      <h2>{{name}}</h2>
+      <p>This place is a {{type}}</p>
+    </article>
+
+    <div class="crud-btn">
+      <span class="btn-update">
+        <a href="/{{_id}}/update">Update</a>
+      </span>
+      <span class="btn-delete">
+        <a href="/{{_id}}/delete">Delete</a>
+      </span>
+    </div>
+    <a href="/">Back to the full list</a>
+  </div>
+
+  <div class="col-md-6">
+    <article>
+      <figure placeId="{{_id}}" id="detail-map"></figure>
+
+    </article>
+  </div>
+</section>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/detailmap.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AQUI_LA_KEY"></script>

@@ -1,0 +1,103 @@
+body {
+  font: 14px  sans-serif;
+  color: #343a40; }
+
+.navbar {
+  margin-bottom: 40px; }
+
+a {
+  color: #00B7FF; }
+
+.centered {
+  text-align: center;
+  margin: 10px 0; }
+
+h1 {
+  text-align: center;
+  font-size: 3.5em;
+  margin-bottom: 40px; }
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-decoration: underline; }
+
+.type-place-section {
+  border: 3px none #343a40;
+  border-style: none solid;
+  padding: 20px;
+  border-radius: 30px; }
+
+.margin-bottom {
+  margin-bottom: 100px; }
+
+.place-card {
+  text-align: center;
+  border: 1px none #343a40;
+  border-style: none solid;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 15px; }
+  .place-card h4 {
+    margin-bottom: 20px; }
+  .place-card a {
+    font-size: .8em;
+    padding: 5px 12px;
+    border: 1px solid #00B7FF;
+    border-radius: 10px; }
+  .place-card a:hover {
+    color: white;
+    background-color: #00B7FF;
+    text-decoration: none; }
+
+.details-section {
+  border: 3px none #343a40;
+  border-style: none solid;
+  padding: 30px;
+  border-radius: 30px;
+  text-align: center; }
+  .details-section p {
+    font-size: 1.3em;
+    margin-bottom: 25px; }
+  .details-section a {
+    color: white;
+    background-color: #343a40;
+    font-size: .9em;
+    padding: 5px 12px;
+    border-radius: 10px;
+    border: 1px solid #343a40; }
+  .details-section a:hover {
+    color: #343a40;
+    background-color: white;
+    text-decoration: none; }
+  .details-section .crud-btn {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 50%; }
+    .details-section .crud-btn .btn-update a {
+      color: #00B7FF;
+      background-color: white;
+      border: 1px solid #00B7FF; }
+    .details-section .crud-btn .btn-update a:hover {
+      color: white;
+      background-color: #00B7FF; }
+    .details-section .crud-btn .btn-delete a {
+      color: red;
+      background-color: white;
+      border: 1px solid red; }
+    .details-section .crud-btn .btn-delete a:hover {
+      color: white;
+      background-color: red; }
+
+/*MAPS*/
+#general-map {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 30px; }
+
+#detail-map {
+  width: 100%;
+  height: 400px; }
+
+/*# sourceMappingURL=style.css.map */
