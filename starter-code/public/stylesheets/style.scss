@@ -1,8 +1,26 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
-a {
-  color: #00B7FF;
+h1,
+h2 {
+  font-family: 'Merriweather', serif;
+  text-align: center;
+}
+
+#store-map {
+  height: 500px;
+  width: 100%;
+  margin: 16px 0px;
+}
+
+.place-type {
+  text-transform: capitalize;
+}
+
+.create-btn {
+  display: block;
+  width: 240px;
+  margin: 0px auto 16px auto;
 }
