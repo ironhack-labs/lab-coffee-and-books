@@ -1,0 +1,24 @@
+<div class="container cosa">
+  <h2>Edit place</h2>
+
+  <form action="/{{placeEdit.id}}/edit" method="POST">
+    <div class="form-group">
+      <label for="field1">Name</label>
+      <input name="name" type="text" class="form-control" id="field1" value="{{placeEdit.name}}">
+    </div>
+    <div class="form-group">
+      <label for="field2">Longitude</label>
+      <input name="longitude" type="text" class="form-control" id="field2" value="{{placeEditt.location}}">
+    </div>
+    <div class="form-group">
+      <label for="field2">Latitude</label>
+      <input name="latitude" type="text" class="form-control" id="field2" value="{{placeEditt.location}}">
+    </div>
+    <div class="form-group">
+      <label for="field3">Type</label>
+      <input name="type" type="text" class="form-control" id="field3" value="{{placeEdit.type}}">
+    </div>
+
+    <button type="submit">Edit</button>
+  </form>
+</div>
