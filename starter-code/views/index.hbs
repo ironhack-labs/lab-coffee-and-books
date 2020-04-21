@@ -1,2 +1,33 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Cafeterias en el área de Madrid</h1>
+
+
+
+<figure id="myMap"></figure>
+
+
+    <a href="/option/create" class="btn btn-bg btn-primary">Crear</a> 
+
+<div class="row">
+
+{{#each coffes}}
+<div class="col-md-3">
+
+<article>
+    <h3>{{name}}</h3>
+    <p>{{type}}</p>
+
+    <a href="/option/{{_id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+    <a href="/option/edit/{{_id}}" class="btn btn-sm btn-dark">Editar</a> 
+
+    <form action="/option/delete/{{_id}}" method="POST">
+    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+</form>
+</article>
+<hr>
+
+</div>
+      
+{{/each}}
+
+
+</div>
