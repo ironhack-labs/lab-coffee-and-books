@@ -1,11 +1,8 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
 
 <h2>Map</h2>
 {{#each allPlaces}}
 <div class="places">
   <h4>{{name}}</h4>
-  <h4>{{type}}</h4>
   <form method="POST" action="/place/{{_id}}/delete">
     <button type="submit" class="btn btn-primary btn-danger">Delete</button>
   </form>
