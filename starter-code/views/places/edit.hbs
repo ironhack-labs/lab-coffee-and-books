@@ -1,0 +1,29 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+
+        <h2>Editar lugar</h2>
+
+        <form action="/places/edit/{{_id}}" method="POST">
+            <div class="form-group">
+                <label for="field1">Nombre</label>
+                <input name="name" type="text" class="form-control" id="field1" value="{{name}}">
+            </div>
+            <div class="form-group">
+                <label for="field2">Tipo</label>
+                <select id="field2" name="select" value="{{type}}">
+                  <option selected disabled>{{type}}</option>  
+                  <option value="value1">Coffee Shop</option> 
+                  <option value="value2">Book Shop</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="field3">Dirección</label>
+                <input name="latitude" type="text" class="form-control" id="field3" placeholder="latitude" value="{{location.coordinates.[0]}}">
+                <input name="longitude" type="text" class="form-control" id="field3" placeholder="longitude" value="{{location.coordinates.[1]}}">
+            </div>
+
+            <button type="submit" class="btn btn-info btn-lg btn-block">Guardar cambios</button>
+        </form>
+    <a href="/places"><button type="button" class="btn btn-info btn-back-list">Volver a lugares</button></a>
+    </div>
+</div>

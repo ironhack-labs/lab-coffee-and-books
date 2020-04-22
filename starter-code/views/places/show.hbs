@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col">
+        <h2>Detalle del lugar</h2>
+    </div>
+</div>
+
+<div class="card" style="width: 50rem;">
+    <div class="card-header text-white bg-info">
+        <h5><strong>{{name}}</strong></h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Tipo: </strong>{{type}}</li>
+        <li class="list-group-item"><strong>Dirección: </strong>{{location}}</li>
+    </ul>
+</div>
+<a href="/places/edit?id={{_id}}"><button type="button" class="btn btn-success btn-sm">Editar</button></a>
+  <form action="/places/{{_id}}/delete" method="POST">
+      <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+  </form>
+<a href="/places"><button type="button" class="btn btn-info btn-back-list">Volver a lugares</button></a>
