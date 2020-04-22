@@ -1,0 +1,23 @@
+<h2>Edit place: {{this.name}}</h2>
+
+<form method="POST" action="/places/{{this._id}}/update">
+  <div class="form-group">
+    <label for="nameField">Name</label>
+    <input name="name" type="text" class="form-control" id="nameField" placeholder="Enter name" value="{{this.name}}">
+  </div>
+
+  <div class="form-group">
+    <label for="typeField">Type</label>
+    <select name="type" id="typeField">
+        <option value="{{this.type}}">{{this.type}}</option>
+        <option value="Coffe Shop">Coffe Shop</option>
+        <option value="Bookstore">Bookstore</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="location">Location</label>
+    <input name="latitud" type="text" class="form-control" id="latitud" placeholder="Enter Latitud" value="{{this.location.coordinates.[0]}}">
+    <input name="longitud" type="text" class="form-control" id="longitud" placeholder="Enter Longitud" value="{{this.location.coordinates.[1]}}">
+  </div>
+  <button type="submit" class="btn btn-primary">Update Place!</button>
+</form> 
