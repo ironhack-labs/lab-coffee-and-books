@@ -1,0 +1,31 @@
+
+<h1>{{title}}</h1>
+<div class="info">
+
+    <figure id="myMap"></figure>
+
+    <h3>List of all places</h3>
+    <a href="/places/new">Create new restaurant</a>
+    <ul>
+        {{#each allPlaces}}
+
+        <h3>{{name}} | {{type}}</h3>
+
+        <li>
+            <a class="btn btn-info" href="/places/{{_id}}/details">Ver</a>
+
+            <a class="btn btn-info" href="/places/{{_id}}/update">Editar</a>
+            |
+            <form action="/places/{{_id}}/delete" method="POST">
+                <button class="btn btn-danger" type="submit">Borrar</a>
+            </form>
+        </li>
+        {{/each }}
+    </ul>
+</div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="/javascripts/mapStyles.js"> </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=_ME_FALTA_LA_KEY_&callback=initMap"></script>  

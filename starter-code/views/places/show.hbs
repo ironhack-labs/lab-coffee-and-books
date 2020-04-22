@@ -1,0 +1,19 @@
+<h3 id="placeName" data-id="{{this._id}}">Detalles del lugar</h3>
+
+<h3>Nombre: {{this.name}}</h3>
+
+<p>Tipo de local: {{this.type}}</p>
+
+<h4>Localización</h4>
+<ul>
+    <li>Latitud: {{this.location.coordinates.[0]}}</li>
+    <li>Longitud: {{this.location.coordinates.[1]}}</li>
+</ul>
+<a href="/places/{{this._id}}/update">Editar lugar</a>
+<br>
+<a href="/places">Volver a la lista</a>
+
+<form action="/places/{{this._id}}/delete" method="POST">
+    <button class="btn btn-danger" type="submit">Borrar</a>
+</form>
+
