@@ -1,2 +1,29 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="row">
+  <figure id="myMap"></figure>
+  {{#each allPlaces}}
+  <div class="col-md-4">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <a href="/details/{{id}}" type="button" class="btn btn-secondary">Ver detalles</a>
+
+        <form method="POST" action="/details/{{id}}/delete">
+          <button type="submit" class="btn btn-secondary">Borrar</button>
+        </form>
+
+        <form method="GET" action="/details/{{id}}/edit">
+          <button type="submit" class="btn btn-secondary">Editar</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+<a href="/create" type="button" class="btn btn-dark">Crear un nuevo sitio</a>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=CLAVE_DE_GOOGLE_MAPS"></script>
