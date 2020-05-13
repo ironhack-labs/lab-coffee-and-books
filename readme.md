@@ -6,10 +6,9 @@
 
 Books and coffee are two very compatible things. If you think about it, a nice cup of a hot beverage and a book are two amazing things to have together.
 
-In this exercise, let's create an app to save both bookstores and coffee places and display them. You could even use Google Maps to display a path from one place to the other.
+In this exercise, we'll create an app to save both bookstores and coffee places and display them. You could even use Google Maps to display a path from one place to the other.
 
-:bulb: **Hint:** To accomplish this new challenge, feel free to follow the Google Maps & Express, the previous lesson.
-
+:bulb: **Hint:** To accomplish this new challenge, feel free to follow the Google Maps & Express learning unit.
 
 ## Requirements
 
@@ -22,7 +21,7 @@ In this exercise, let's create an app to save both bookstores and coffee places 
 
   ```
   git add .
-  git commit -m "done"
+  git commit -m "Completed Lab"
   git push origin master
   ```
 
@@ -31,26 +30,24 @@ In this exercise, let's create an app to save both bookstores and coffee places 
 ## Instructions
 
 This exercise will help you to:
+
 - Practice Google Maps API integration with an app
 - Add location properties in your models as GeoJSON
 - Display content from the database in a map
 
 ![cofee-book pic](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_141038aa0f5ce10c722722400bfdc6d5.jpg)
 
-
-### Iteration 1 - create model
+### Iteration 1 - `Place` model
 
 In `models` folder, create a new model `place.js`. For now, this model will have:
 
-```bash
-    - name,
-    - type: coffee shop, bookstore
-    - timestamps 
-```
+- `name`: String, required.
+- `type`: String, one of the following: `coffee_shop`, `bookstore`.
+- `timestamps`: The default timestamps added by mongoose when the `timestamps` schema option is set to `true`.
 
-### Iteration 2 - create CRUD on this model
+### Iteration 2 - CRUD operations for the `Place` model
 
-In this iteration, you should create full CRUD on `place.js` model - to be able to create, update, delete and display all the places you save in the database. You will have to create routes and corresponding views.
+In this iteration, you should create full CRUD operations for `place.js` model - to be able to create, update, delete and display all the places you save in the database. You will have to create routes and corresponding views.
 
 ### Iteration 3 - add `location` property
 
@@ -60,10 +57,9 @@ In this iteration, you should create full CRUD on `place.js` model - to be able 
 - Add Google Maps to the view(s) that will display the map
 - Show places on the map & add markers to show places’ locations
 
-
 ## Extra Resources
+
 - [GeoJSON](http://geojson.org/geojson-spec.html#introduction)
 - [Google Maps API](https://developers.google.com/maps/)
 
-Happy coding! :heart:
-
+Happy coding! 💙

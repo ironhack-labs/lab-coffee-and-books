@@ -1,7 +1,7 @@
 'use strict';
 
 const { Router } = require('express');
-const router = Router();
+const router = new Router();
 
 router.get('/', (req, res, next) => {
   res.render('index', { title: 'Hello World!' });
