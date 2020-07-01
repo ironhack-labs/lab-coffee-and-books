@@ -1,0 +1,19 @@
+<div class="container coasters-index">
+
+    <a href="/places/new" class="btn btn-dark">Crear nuevo place</a>
+
+    <h1 style="font-weight: 100">Índice Places</h1>
+    {{#each allPlaces}}
+
+    <hr>
+    <h4>{{name}}</h4>
+    <p>{{type}}</p>
+    
+    
+    <a href="/places/{{_id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+    <a href="/places/delete/{{_id}}" class="btn btn-sm btn-dark">Eliminar</a>
+    <a href="/places/detalles{{_id}}" class="btn btn-sm btn-dark">Editar</a>
+    <hr>
+    {{/each}}
+
+</div>
