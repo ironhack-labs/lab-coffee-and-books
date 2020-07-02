@@ -1,0 +1,16 @@
+<h1>Editar Lugar</h1>
+
+<form action="/places/edit/{{_id}}" method="POST">
+    <label for="">Nombre:</label>
+    <input type="text" name="name" value="{{name}}"><br>
+    <br>
+    <label for="">Tipo:</label>
+    <select name="type" id="type">
+        <option value="{{type}}">{{type}}</option>
+        <option value="Coffee Shop">Coffee</option>
+        <option value="Bookstore">Bookstore</option>
+    </select>
+    <br><br>
+
+    <button type="submit">Editar lugar</button>
+</form>
