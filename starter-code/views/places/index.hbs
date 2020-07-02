@@ -1,0 +1,23 @@
+<h1>Índice Places</h1>
+{{#each allPlaces}}
+
+<hr>
+<h4>{{name}}</h4>
+<p>{{type}}</p>
+
+
+<a href="/places/{{_id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+<a href="/places/delete/{{_id}}" class="btn btn-sm btn-dark">Eliminar</a>
+<a href="/places/edit/{{_id}}" class="btn btn-sm btn-dark">Editar</a>
+<hr>
+{{/each}}
+<hr>
+<a href="/places/places-new">Crear nuevo place</a>
+<hr>
+<figure id="myMap"></figure>
+
+<script src="/javascripts/main.js"></script>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPpL0N5sytjBqkxP1C4xynRJhooSYHql4"></script>
