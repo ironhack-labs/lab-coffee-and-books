@@ -1,0 +1,30 @@
+<div class="container">
+
+
+  {{!-- Aquí no se itera: {{#each place}} --}}
+
+  <h3 id="placeName" data-id="{{_id}}">{{name}}</h3>
+  <h4>Description: {{description}}</h4>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <a href="/place/{{_id}}/edit" class="btn btn-dark">Edit this place</a>
+      <a href="/place/{{_id}}/delete" class="btn btn-dark">Delete this place</a>
+      <br>
+      <br>
+      <a href="/place" class="btn btn-dark">Go back to the list</a>
+    </div>
+  </div>
+  <br>
+  <br>
+
+
+  <figure id="myMap"></figure>
+  <!--  Axios CDN  -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!--  Google Maps Key  -->
+  <script src=`https://maps.googleapis.com/maps/api/js?key=${API_KEY}`></script>
+  <!--  Connect main.js  -->
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+</div>

@@ -1,0 +1,32 @@
+<body>
+
+  <div class="info">
+    <h1>List of places</h1>
+    <br>
+    <ul>
+      {{#each allPlaces}}
+      <li>
+        <a href="/place/show/{{_id}}">{{name}}</a>
+
+      </li>
+      {{/each }}
+    </ul>
+  </div>
+  <br>
+  <div class="form-group">
+    <a href="/new" class="btn btn-dark">Add a new place</a>
+    <br>
+    <br>
+    <a href="/" class="btn btn-dark">Home</a>
+    <br>
+    <br>
+  </div>
+
+  <figure id="myMap"></figure>
+  <!--  Axios CDN  -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!--  Google Maps Key  -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdBT0F-Qk9YpUy1xEu2Wn2QD7fomLUuuM"></script>
+  <!--  Connect main.js  -->
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+</body>
