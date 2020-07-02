@@ -1,2 +1,20 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>COFFE AND BOOKS!</h1>
+<a href="/create">Create a new place!</a>
+<hr>
+{{#each allPlaces}}
+<h2>Name: {{name}}</h2>
+<h3>Type: {{type}}</h3>
+<h3>Location: {{location.coordinates}}</h3>
+<a href="/delete/{{id}}">Delete</a>
+<a href="/edit/{{id}}">Edit</a>
+<hr>
+{{/each}}
+
+<figure id="myMap"></figure>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/main.js"></script>
+
+{{!-- CAMPO KEY VACIO --}}
+<script src="https://maps.googleapis.com/maps/api/js?key=**********************"></script> 
