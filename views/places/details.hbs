@@ -1,0 +1,29 @@
+
+<div class="container">
+
+    <h2>New place</h2>
+    <div class="row">
+        <div class="col-6">
+            <div id="map"></div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <h5 class="card-header">{{name}}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{description}}</h5>
+                    <p class="card-text">Location:{{location.coordinates}}</p>
+                    <a href="/" class="btn btn-dark">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    #map {
+        height: 200px;
+        width: 500px;
+    }
+</style>
+<script src="/javascripts/script.js"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTviYVmVbEZ3Ba2_8Ke174BlvkmlYFv9s"></script>

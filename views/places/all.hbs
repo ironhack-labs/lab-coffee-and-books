@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="list-group" id="index">
+
+        <div class="row ">
+            {{#each allPlaces}}
+            <div class="col-md-4">
+                <a href="/places/details/{{_id}}" class="list-group-item list-group-item-action">{{name}}</a>
+            </div>
+
+            <div class="col-md-2">
+                <form action="/places/delete/{{id}}" method="POST">
+                    <input name="id" type="hidden" class="form-control" id="field1">
+                    <button class"delete" type="submit" class="btn btn-dark">Delete</button>
+                    <a href="/places/edit/{{id}}" class="btn btn-dark">Edit</a>
+                </form>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <style>
+    #map {
+        height: 200px;
+        width: 500px;
+    }
+</style>
+<script src="/javascripts/script.js"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTviYVmVbEZ3Ba2_8Ke174BlvkmlYFv9s"></script></div>
+
+    <a id="create" href="/places/new" class="btn btn-dark">Create new place</a>
+
