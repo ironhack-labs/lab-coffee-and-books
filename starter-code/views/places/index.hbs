@@ -1,0 +1,29 @@
+<main>
+
+  <h2>Places</h2>
+
+  {{#each allPlaces}}
+
+  <div class = "nameBox">
+    <p>Name: <a href="/places/{{id}}">{{name}}</a></p>
+    <p>Type: {{type}}</p>
+
+    <form action="/places/{{id}}/delete" method="post">
+      <button type="submit" class="btn btn-outline-dark btn-sm">Delete</button>
+    </form>
+    <hr>
+    <br>
+  </div>
+
+  {{/each}}
+
+  <h3><a class="btn btn-outline-dark" href="/places/new">Create a place</a></h3>
+
+<figure id="myMap"></figure>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AQUI_HAY_QUE_PONER_LA_API"></script>
+
+</main>
