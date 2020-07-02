@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="column">
+        <h1>List of places:</h1>
+
+        {{#each allPlaces}}
+
+        <h4>{{name}}</h4>
+
+        <p>{{type}}</p>
+        <a href="/place/detail/{{id}}">See more</a>
+
+        {{/each}}
+    </div>
+</div>

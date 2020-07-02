@@ -1,0 +1,36 @@
+<div class="row intro">
+    <div class="column">
+        <h1>Edit this place:</h1>
+
+        <form action="/place/edit/{{id}}" method="post">
+            <div class="row">
+                <div class="four columns">
+                    <label for="name">Name</label>
+                    <input value="{{name}}" class="u-full-width" type="text" name="name">
+                </div>
+                <div class="four columns">
+                    <label for="type">Type</label>
+                    <input placeholder="Must be coffee-shop or bookstore" value="{{type}}" class="u-full-width"
+                        type="text" name="type">
+                </div>
+                <div class="four columns">
+                    <label for="type">Location</label>
+                    <input placeholder="Latitude" value="{{location.coordinates.[0]}}" class="u-full-width" type="text"
+                        name="latitude">
+                    <input placeholder="Longitude" value="{{location.coordinates.[1]}}" class="u-full-width" type="text"
+                        name="longitude">
+                </div>
+            </div>
+            <div class="row">
+                <div class="eleven columns">
+
+                    <button>Edit</button>
+                </div>
+            </div>
+            <a href="/place">Go Back</a>
+
+    </div>
+    </form>
+</div>
+</div>
+</div>

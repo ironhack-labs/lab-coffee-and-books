@@ -1,0 +1,43 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+.intro {
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    font-weight: bolder;
+    font-size: 2.5em;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: black;
+}
+
+#map {
+    height: 450px;
+    width: 600px;
+    background-color: grey;
+}
+
+.btn {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.btn a {
+    padding: 15px 15px;
+    border: #64C9F2 solid 1px;
+}

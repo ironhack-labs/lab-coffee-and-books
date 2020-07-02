@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,900;1,100;1,200;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="/../stylesheets/style.css" />
 </head>
+
 <body>
 
-  {{{body}}}
+  <nav>
+    <ul class="nav-bar">
+      <li> <a href="/">HOME</a></li>
+      <li> <a href="/place">PLACES</a></li>
+      <li> <a href="/place/new">CREATE NEW PLACE</a></li>
+    </ul>
+  </nav>
+  <div class="container">
 
-  <script src="/javascripts/script.js"></script>
+    {{{body}}}
+  </div>
+  {{!-- no debería ir este script en el layout en que lo use? --}}
+  {{!-- <script src="/../javascripts/script.js"> </script> --}}
+
 </body>
+
 </html>

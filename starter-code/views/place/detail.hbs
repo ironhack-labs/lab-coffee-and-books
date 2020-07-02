@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="column">
+
+        <div class="row">
+            <div class="four columns">
+                <h1>Place detail:</h1>
+                <p>Name: {{name}}</p>
+                <p>Type: {{type}}</p>
+                <p>Latitude: {{location.coordinates.[1]}}</p>
+                <p>Longitude: {{location.coordinates.[0]}}</p>
+
+                <div class="btn">
+                    <a href="/place/edit/{{id}}">Edit</a>
+                    <a href="/place/delete/{{id}}">Delete</a>
+                    <a href="/place">Go Back</a>
+                </div>
+            </div>
+
+            <div class="seven columns">
+                <figure id="map"></figure>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="/../../javascripts/mapStyles.js"> </script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/../../javascripts/script.js"> </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeM8ya8_rxla7yD2-BlxWlp4_yrK-3HvM"></script>
