@@ -1,14 +1,22 @@
-<div class="container coasters-index">
+<div class="container place-index new">
     <h1 style="font-weight: 100">{{name}}</h1>
 
     <h3>{{placeType}}</h3>
-
-    <img src="{{photo}}" alt="{{name}}">
-
-    
+    <div class="mine">
+        <img src="{{photo}}" alt="{{name}}">
+   
+        <figure id= "myMap"></figure>
+    </div>
     <hr>
     
-    <a href="/place" class="btn btn-info">Volver</a>
-    <a href="/place/{{_id}}/remove" class="btn btn-info">Eliminar</a>
-    <a href="/place/edit/{{_id}}" class="btn btn-info">Editar</a>
+    <a href="/place" class="btn btn-info btn-mine">Volver</a>
+    <a href="/place/{{_id}}/remove" class="btn btn-info btn-mine">Eliminar</a>
+    <a href="/place/edit/{{_id}}" class="btn btn-info btn-mine">Editar</a>
     </div>
+
+    <input type="hidden" name="hiddenId" id="hiddenId" value="{{_id}}">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/javascripts/mapStyles.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2ccMln2aPW0DPoNiaRV5cNj7kTMyu6hE&callback=myMap"></script>

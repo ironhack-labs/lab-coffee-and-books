@@ -22,7 +22,7 @@ const placeSchema = new Schema({
         type: {
             type: String
         },
-        coorinates: {
+        coordinates: {
             type: [Number]
         }
     }

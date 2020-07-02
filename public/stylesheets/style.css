@@ -2,18 +2,25 @@ html {
   height: 100%; }
 
 body {
-  padding: 50px;
   font-family: 'Indie Flower';
-  min-height: 100%; }
+  min-height: 100%;
+  background-color: #D3AE7C; }
 
 /*# sourceMappingURL=style.css.map */
+.place-page {
+  color: white;
+  text-align: center; }
+
+.place-page .card {
+  color: #111111; }
+
 .place-page .card img {
   height: 150px;
   object-fit: cover; }
 
 .inicio {
   background-image: url("/images/coffe&books.jpeg");
-  min-height: 80vh;
+  min-height: 91.6vh;
   background-repeat: no-repeat;
   background-size: cover; }
 
@@ -35,11 +42,57 @@ body {
   color: white; }
 
 .minenav {
-  background-color: #8ed6f7;
+  background-color: #6F4E21;
   font-size: 20px;
   font-weight: bold; }
 
 .minenav a {
+  color: white; }
+
+.mine-card {
+  margin-bottom: 30px;
+  border-color: #D3AE7C; }
+
+.mine-card h5 {
+  font-weight: bold; }
+
+#myMap {
+  width: 300px;
+  height: 300px; }
+
+.btn {
+  background-color: #6F4E21;
+  border-color: #6F4E21; }
+
+.place-index {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-direction: column; }
+
+.mine {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px; }
+
+.mine img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin-top: -17px; }
+
+.btn-mine {
+  margin-left: 350px;
+  margin-right: 350px;
+  margin-bottom: 8px; }
+
+.new {
+  font-weight: bold;
+  margin-top: 40px; }
+
+.new h1 {
   color: white; }
 
 /*# sourceMappingURL=style.css.map */

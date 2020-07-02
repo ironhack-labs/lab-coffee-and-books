@@ -24,10 +24,13 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/new', (req, res) => {
-    const { name, placeType, photo } = req.body
+    const { name, placeType, photo, lat, lng } = req.body
+    console.log(lat)
+    console.log(lng)
+
     
     Place
-        .create({ name, placeType, photo })
+        .create({name, placeType, photo, location: { type: 'Point', coordinates: [lat, lng] }})
         .then(response => {
             console.log(response)
             res.redirect('/place') 
@@ -75,19 +78,31 @@ router.get('/:id/remove', (req, res) => {
 router.get('/edit/:id', (req, res) => {
     Place
         .findById(req.params.id)
-        .then(thePlace => res.render('place/place-edits', thePlace))
+        .then(thePlace => {
+            console.log(thePlace)
+            res.render('place/place-edits', thePlace)})
         .catch(err => console.log('error en la BBDD', err))
 })
 
 router.post('/edit/:placeId', (req, res) => {
 
-    const { name, placeType, photo } = req.body
+    const {name, placeType, photo, lat, lng} = req.body
     
     Place
-        .findByIdAndUpdate(req.params.placeId, { name, placeType, photo }, { new: true })
+        .findByIdAndUpdate(req.params.placeId, {name, placeType, photo, location: { type: 'Point', coordinates: [lat, lng] }}, { new: true })
         .then(thePlace => res.redirect('/place'))
         .catch(err => console.log('error en la BBDD', err))
 })
 
+//GOOGLE MAPS
+
+router.get('/:placeId/api', (req, res, next) => {
+    Place.findById(req.params.placeId)
+        .then(data => {
+            console.log(data)
+            console.log(req.params.placeId)
+            res.json([data])})
+        .catch(err => console.log(err))
+})
 
 module.exports = router
