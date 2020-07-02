@@ -1,0 +1,15 @@
+<h1>Edit a new place!</h1>
+<form action="/edit/{{id}}" method="post">
+  <div class="form-group">
+    <label for="name-input">Name</label>
+    <input name="name" type="text" class="form-control" value={{name}} id="name-input">
+  </div>
+  <div class="form-group"> 
+    <label for="type-input">Type</label>
+    <input name="type" type="text" class="form-control" value={{type}} id="type-input">   
+  </div>
+  <label>Address</label>
+        <input type="text" name="latitude" id="latitude" placeholder="Latitude" value="{{ location.coordinates.[1]}}">
+        <input type="text" name="longitude" id="longitude" placeholder="Longitude" value="{{ location.coordinates.[0]}}">
+  <button type="submit" class="btn btn-dark">Edit</button>
+</form>
