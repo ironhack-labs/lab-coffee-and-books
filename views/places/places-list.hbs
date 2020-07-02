@@ -1,0 +1,26 @@
+<div class="container places-index">
+    <h1 style="font-weight: 100"> Coffee shops and bookstore list!</h1>
+    {{#each places}}
+    <div class="title-cont">
+        <h3>{{name}}</h3>
+        <div class="edit-and-delete-btn">
+            <form action="places/delete/{{id}}" method="post">
+                <button class="btn btn-dark">Delete</button>
+            </form>
+            <form action="places/edit/{{id}}" method="get">
+                <button class="btn btn-dark">Edit</button>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+    <p>{{type}}</p>
+
+    {{/each}}
+    <figure id="myMap"></figure>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/javascripts/map-styles.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{key}}"></script>
+</div>
