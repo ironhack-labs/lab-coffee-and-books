@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 style="font-weight: 100">Nuevo establecimiento</h1>
+        </div>
+        <div class="col-md-6">
+
+            <form action="/place/new" method="POST">
+                <div class="form-group">
+                    <label for="name-input">Nombre</label>
+                    <input name="name" type="text" class="form-control" id="name-input">
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="type-list">Tipo de establecimiento:</label>
+                    <select name="placeType" class="form-control" id="park-list">
+                        <option>Seleccionar</option>
+                        
+                        <option>Coffee shop</option>
+                        <option>Bookstore</option>
+                       
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="photo-input">URL de la foto del establecimiento</label>
+                    <input name="photo" class="form-control" id="length-input">
+                </div>
+
+                <button type="submit" class="btn btn-info">Crear lugar</button>
+                <a href="/place" class="btn btn-info">Volver</a>
+            </form>
+        
+        </div>
+    </div>
+</div>

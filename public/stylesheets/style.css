@@ -1,0 +1,45 @@
+html {
+  height: 100%; }
+
+body {
+  padding: 50px;
+  font-family: 'Indie Flower';
+  min-height: 100%; }
+
+/*# sourceMappingURL=style.css.map */
+.place-page .card img {
+  height: 150px;
+  object-fit: cover; }
+
+.inicio {
+  background-image: url("/images/coffe&books.jpeg");
+  min-height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.inicio h1 {
+  padding-top: 40px;
+  font-size: 80px;
+  text-align: center;
+  font-weight: bold;
+  color: burlywood; }
+
+.inicio p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 40px;
+  width: 60%;
+  margin-left: 275px;
+  height: 100%;
+  color: white; }
+
+.minenav {
+  background-color: #8ed6f7;
+  font-size: 20px;
+  font-weight: bold; }
+
+.minenav a {
+  color: white; }
+
+/*# sourceMappingURL=style.css.map */
