@@ -1,0 +1,32 @@
+<h1 style="font-weight: 100">Índice de lugares</h1>
+<br>
+<a href="/places/new" class="btn btn-dark">Añadir lugar:</a>
+{{#each placesArr}}
+<hr>
+
+<h4>Nombre: {{this.name}}</h4>
+<p>Tipo: {{this.type}}</p>
+
+<p>Localización: </p>
+<ul>
+    <li>Latitud: {{this.location.lat}}</li>
+    <li>Latitud: {{this.location.lng}}</li>
+</ul>
+
+
+
+<a href="/places/{{this._id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+<a href="/places/delete/{{this._id}}" class="btn btn-sm btn-dark">Eliminar</a>
+
+
+
+<hr>
+
+{{/each}}
+
+{{!-- <figure id="myMap"></figure>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{key}}"></script> --}}

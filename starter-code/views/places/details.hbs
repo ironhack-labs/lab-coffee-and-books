@@ -1,0 +1,39 @@
+{{!-- <h1>{{title}}</h1>
+<div class="info">
+    <h3>List of all places</h3>
+    <a href="/places/new">Create new place</a>
+    <ul>
+        {{#each restaurants}}
+        <li>
+            <a href="/places/{{ this._id}}">{{ this.name}}</a>
+            |
+            <a href="/places/{{ this._id}}/delete">Delete</a>
+        </li>
+        {{/each }}
+    </ul>
+</div> --}}
+
+{{!-- 
+<figure id="myMap"></figure>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=_____TU_API_AQUI_____"></script> --}}
+
+<h1>{{title}}</h1>
+
+    <h3>Tipo</h3>
+    <p>{{type}}</p>
+
+    <p>Localización:</p>
+    <ul>
+        
+        <li>Latitud:{{this.location.lat}}</li>
+        <li>Longuitud:{{this.location.lng}}</li>
+    </ul>
+
+<hr>
+<a href="/places" class="btn btn-dark">Volver</a>
+
+{{!-- <figure id="myMap"></figure> --}}

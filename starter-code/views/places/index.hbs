@@ -1,0 +1,15 @@
+<div class="info">
+    <h3>List of all Places</h3>
+    <a href="/places/new">Create new Place</a>
+    <a class="nav-link" href="/places">Places</a>
+    <ul>
+        {{#each allPlaces}}
+        <h3>{{name}}</h3>
+        <p>{{type}}</p>
+        <a href="/places/{{_id}}">See More</a>
+        |
+        <a href="/places/delete/{{_id}}">Delete</a>
+        
+        {{/each }}
+    </ul>
+</div>
