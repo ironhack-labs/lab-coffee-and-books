@@ -1,0 +1,25 @@
+
+
+
+<form action="/places/edit?placeId={{_id}}" method="post">
+
+    <label for="name-input">Nombre</label>
+    <input name="name" type="text" class="form-control" id="name-input" value="{{name}}">
+
+
+    <label for="tipo-input">Tipo</label>
+    <input name="type" type="text" class="form-control" id="dtipo-input" value="{{type}}">         
+
+
+<label>Address</label>
+<input type="text" name="latitude" id="latitude" placeholder="Latitude"
+    value="{{ location.coordinates.[1]}}">
+<input type="text" name="longitude" id="longitude" placeholder="Longitude"
+    value="{{ location.coordinates.[0]}}">
+
+
+
+
+    <button type="submit">Editar un lugar</button>
+    <a href="/">Volver</a>
+</form>
