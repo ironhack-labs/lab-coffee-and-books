@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Mapa de lugares</h2>
+  <small>Pasa el ratón sobre ellos para ver el nombre!</small>
+
+  <figure id="myMap"></figure>
+
+  <h2 style="font-weight: 100">Lista de lugares</h2>
+  <small>Aquí está los lugares que has creado!</small>
+  <hr>
+  {{#each allPlaces}}
+    <h3>{{name}}</h3>
+    <p>{{type}}</p>
+    <a href="/places/edit?id={{_id}}" class="btn btn-dark">Editar lugar</a>
+    <a href="/places/delete?id={{_id}}" class="btn btn-dark">Eliminar lugar</a>
+    <hr>
+  {{/each}}
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=        API_KEY       "></script>
