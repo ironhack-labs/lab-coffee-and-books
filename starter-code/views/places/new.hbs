@@ -1,0 +1,20 @@
+<h1>Crea tus Coffee and Books</h1>
+<hr>
+<form action="/places/nueva" method="post">
+    <input type="text" name="name" placeholder="Nombre">
+    <div class="form-group">
+        <label for="coffee&Books">Elige el tipo de establecimiento:</label>
+        <select name="type" class="form-control" id="coffee&Books">
+            <option>Seleccionar</option>
+            <option value="coffee shop">Coffee Shop</option>
+            <option value="bookstore">BookStore</option>
+        </select>
+    </div> 
+      <label>Coordenadas</label>
+    <input type="text" name="latitude" placeholder="latitude">
+    <input type="text" name="longitude" placeholder="longitude">
+
+<br>
+ <button class="btn btn-info mt-4">Crear</button>
+</form>
+<a href="/" class="btn btn-info mt-5">Volver a la lista</a>

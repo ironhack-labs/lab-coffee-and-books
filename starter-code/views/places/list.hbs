@@ -1,0 +1,19 @@
+<div>
+<h1>Lista de Places</h1>
+<hr>
+<ul>
+    {{#each allPlaces}}
+    <li>Nombre:{{name}} y Local:{{type}}</li>
+    <a href="/places/detalles/{{id}}" class="btn btn-info m-3">Detalles</a>
+    <a href="/places/{{id}}" class="btn btn-info m-3">Borrar</a>
+    {{/each}}
+    
+
+</ul>
+
+<figure id="myMap"></figure>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2InRIlY_EQI7yBG0M096pxvofiC2SrR4"></script>
+</div>
