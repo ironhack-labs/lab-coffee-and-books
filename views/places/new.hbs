@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <h1 style="font-weight: 100">Nuevo lugar</h1>
+    </div>
+
+    <div class="col-md-6">
+
+      <form action="/places/new" method="POST">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input name="name" type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+          <label>Coordenadas:</label>
+            <input name="latitude" placeholder="latitude" type="text" class="form-control" id="latitude">
+            <input name="longitude" placeholder="longitude" type="text" class="form-control" id="longitude">
+        </div>
+        <div class="form-group">
+          <label for="type">Tipo:</label>
+          <select name="type" class="form-control" id="type">
+            <option>Seleccionar</option>
+            <option value="coffee shop">Coffee Shop</option>
+            <option value="bookstore">Book Store</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Crear lugar!</button>
+        <a href="/places" class="btn btn-dark">Volver</a>
+
+      </form>
+    </div>
+
+  </div>
+</div>
