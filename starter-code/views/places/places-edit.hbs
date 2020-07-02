@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <h1 style="font-weight: 100">Edit Place</h1>
+        </div>
+
+        <div class="col-md-6">
+            <form action="/places/edit?id={{_id}}" method="post">
+            
+                <div class="form-group">
+                    <label for="name-input">Nombre</label>
+                    <input name="name" type="text" class="form-control" id="name-input" value="{{name}}">
+                </div>
+                <div class="form-group">
+                    <label for="description-input">Type</label>
+                    <input name="type" type="text" class="form-control" id="description-input"
+                        value="{{type}}">
+                </div>
+                <div class="form-group">
+                    <label for="lat-input">Latitud</label>
+                    <input name="lat" type="number" class="form-control" id="lat-input"
+                        value="{{location.lat}}">
+                </div>
+                <div class="form-group">
+                    <label for="long-input">Longitud</label>
+                    <input name="long" type="number" class="form-control" id="long-input" value="{{location.long}}">
+                </div>
+                
+
+                <button type="submit" class="btn btn-dark">Save Changes</button>
+                <a href="/places" class="btn btn-dark">Go back</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
