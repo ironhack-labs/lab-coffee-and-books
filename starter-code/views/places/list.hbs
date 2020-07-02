@@ -1,0 +1,11 @@
+<h1>Listado </h1>
+{{#each allPlaces}}
+<h4>{{name}} | {{type}} <a class="btn btn-info" href="/places/{{_id}}">[ver detalles]</a> | <a class="btn btn-info"
+        href="/places/edit/{{_id}}">[Editar]</a> 
+    <form action="/places/{{_id}}/delete" method="POST"><br>
+        <button class="btn btn-danger" type="submit">Borrar</a>
+    </form>
+</h4>
+<br>
+
+{{/each}}
