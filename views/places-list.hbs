@@ -1,0 +1,16 @@
+<div class="container ">
+
+    {{#each allPlaces}}
+
+
+    <a href="/places/{{_id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+    <h1 style="font-weight: 100">{{name}}</h1>
+
+    <h4>Tipo</h4>
+    <p>{{type}}</p>
+    
+       {{/each}}
+    
+    <a href="/places/new" class="btn btn-dark">Crear lugar</a>
+
+</div>
