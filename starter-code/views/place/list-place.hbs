@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>List establishment</h1>
+
+    {{#each allBooks}}
+    <p>{{name}}
+        <a class="btn btn-special-xs btn-dark" href="/placce/details-place/{{_id}}">details</a>
+        <a class="btn btn-special-xs btn-dark" href="/place/edit-place?placeId={{_id}}">edit</a>
+    </p>
+    {{/each}}
+</div>
