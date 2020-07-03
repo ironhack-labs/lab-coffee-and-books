@@ -3,35 +3,44 @@
   <div class="row">
 
     <div class="col-md-6">
-      <h1 style="font-weight: 100">Editar {{thePlace.name}}</h1>
+      <h1 style="font-weight: 100">Editar montaña rusa</h1>
     </div>
 
     <div class="col-md-6">
-
-      <form action="/places/edit/{{thePlace.id}}" method="post">
+      <form action="/coasters/edit?id={{coaster._id}}" method="post">
+        {{#with coaster}}
         <div class="form-group">
           <label for="name-input">Nombre</label>
-          <input name="name" type="text" class="form-control" id="name-input" value="{{thePlace.name}}">
+          <input name="name" type="text" class="form-control" id="name-input" value="{{name}}">
         </div>
         <div class="form-group">
-          <label for="type">Tipo de lugar</label>
-          <select name="type" class="form-control" id="type">
-
-
-            <option value="coffe shop">Coffe Shop</option>
-            <option value="bookstore">Bookstore</option>
+          <label for="description-input">Descripción</label>
+          <input name="description" type="text" class="form-control" id="description-input" value="{{description}}">
+        </div>
+        <div class="form-group">
+          <label for="inversions-input">Inversiones</label>
+          <input name="inversions" type="number" class="form-control" id="inversions-input" value="{{inversions}}">
+        </div>
+        <div class="form-group">
+          <label for="length-input">Longitud</label>
+          <input name="length" type="number" class="form-control" id="length-input" value="{{length}}">
+        </div>
+        {{/with}}
+        <div class="form-group">
+          <label for="park-list">Parque en el que se encuentra:</label>
+          <select name="park" class="form-control" id="park-list">
+            <option>Seleccionar</option>
+            {{#each parks}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
           </select>
-          <label>Address</label>
-          <input class="form-group" type="text" name="latitude" id="latitude" placeholder="Latitude"
-            value="{{ thePlace.location.coordinates.[1]}}">
-          <input class="form-group" type="text" name="longitude" id="longitude" placeholder="Longitude"
-            value="{{ thePlace.location.coordinates.[0]}}">
         </div>
 
-        <button type="submit" class="btn btn-dark">Editar</button>
-        <a href="/places" class="btn btn-dark">Volver</a>
+        <button type="submit" class="btn btn-dark">Guardar edición</button>
+        <a href="/coasters" class="btn btn-dark">Volver</a>
 
       </form>
     </div>
 
   </div>
+</div>

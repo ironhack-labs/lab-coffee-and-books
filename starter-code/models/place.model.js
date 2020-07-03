@@ -2,23 +2,23 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const placeSchema = new Schema({
-  name: String,
-  typeOfPlace: {
-    type: String,
-    enum: ['Coffe Shop', 'Bookstore']
-  },
-  location: {
-    type: {
-      type: String
+    name: String,
+    typeOfPlace: {
+        type: String,
+        enum: ['Coffe Shop', 'Bookstore']
     },
-    coordinates: [Number]
-  }
+    location: {
+        type: {
+            type: String
+        },
+        coordinates: [Number]
+    }
 }, {
-  timestamps: true
+    timestamps: true
 })
 
 placeSchema.index({
-  location: '2dsphere'
+    location: '2dsphere'
 })
 
-const Place = mongoose.model('Place', placeSchema)
+module.exports = mongoose.model('Place', placeSchema)
