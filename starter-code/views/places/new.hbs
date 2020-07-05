@@ -1,0 +1,19 @@
+<h2>Nuevo sitio</h2>
+
+<form action="/places/crear" method="post">
+
+    <label for="name">Nombre</label>
+    <input name="name" value="{{name}}" type="text">
+
+    <label for="type">Tipo</label>
+    <input name="type" value="{{type}}" type="text">
+
+    <label>Dirección</label>
+    <input type="text" name="latitude" placeholder="latitude">
+    <input type="text" name="longitude" placeholder="longitude">
+
+    <button type="submit" class="btn btnEdit btn-dark btn-sm">Crear Sitio</button>
+
+</form>
+
+<a class="btn btn-dark non-radius btn-sm" href="/places/listado">Volver</a>

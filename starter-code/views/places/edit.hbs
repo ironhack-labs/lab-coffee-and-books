@@ -1,0 +1,19 @@
+
+    <h2>Editar sitio</h2>
+
+    <form action="/places/editar/{{_id}}" method="post">
+
+        <label for="name">Nombre</label>
+        <input name="name" value="{{name}}" id="name" type="text">
+
+        <label>Dirección</label>
+        <input type="text" name="latitude" id="latitude" placeholder="Latitude"
+            value="{{ place.location.coordinates.[1]}}">
+        <input type="text" name="longitude" id="longitude" placeholder="Longitude"
+            value="{{ place.location.coordinates.[0]}}">
+
+        <button type="submit" class="btn btnEdit btn-dark btn-sm">Editar sitio</button>
+
+    </form>
+
+    <a class="btn btn-dark non-radius btn-sm" href="/places/listado">Volver</a>

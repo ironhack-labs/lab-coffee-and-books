@@ -1,0 +1,18 @@
+<h2>Listado de sitios</h2>
+
+{{#each allPlaces}}
+<p>{{name}}</p>
+
+<a class="btn btn-special-xs btn-dark" href="/places/detalle/{{_id}}">Detalles</a>
+
+<form action="/places/{{_id}}/editar" method="GET">
+    <button type="submit" class="btn btn-special-xs btn-dark ">Editar sitios </button>
+</form>
+
+<form action="/places/{{_id}}/eliminar" method="POST">
+    <button type="submit" class="btn btn-special-xs btn-dark">Eliminar sitios</button>
+</form>
+
+
+{{/each}}
+
