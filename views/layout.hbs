@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+  <div class='containe-flex'>
+    <nav  class='navbar navbar-expand-lg navbar-light bg-light'>
+      <a class='navbar-brand' href='/'>Books and coffees</a>
+      <ul class='navbar-nav ml-auto'>
+        <li class='nav-item'><a class='nav-link' href='/places/list'>Complete list</a></li>
+        <li class='nav-item'><a class='nav-link' href='/places/new'>Add a new place</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="contaier">
+    
+    {{{body}}}
+ 
+  </main
+
+  
+</body>
+
+
+
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=__google_key__&callback=initMap"></script>
+
+
+
+
+</html>

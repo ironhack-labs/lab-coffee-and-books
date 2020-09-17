@@ -1,0 +1,24 @@
+<h2>Add a new bookstore or cofee shop to our database</h2>
+
+<form action='/places/new' method='POST'>
+    <div class='form-group'>
+        <label>Name</label>
+        <input type='text' name='name' >
+    </div>
+
+    <div class='form-group'>
+        <label>Type</label>
+        <select name="type">
+            <option value="bookstore">Bookstore</option>
+            <option value="coffee shop">Coffee Shop</option>
+        </select>
+    </div>
+
+    <div class='form-group'>
+        <label>Coordinates (latitude and longitude)</label>
+            <input type='text' name='latitude'>
+            <input type='text' name='longitude'>
+     </div>
+
+    <button type='submit' class='btn btn-type1'>Add</button>
+</form>
