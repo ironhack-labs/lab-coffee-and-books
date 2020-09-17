@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Edit Place</h2>
+  <form action="/place/edit/{{id}}" method="post">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Place Name: </label>
+      <input value="{{name}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Type :</label>
+      <input value="{{type}}" name="type" type="text" class="form-control" id="exampleInputPassword1"
+        placeholder="Only: coffee shop or bookstore">
+    </div>
+
+    <button type="submit" class="btn btn-dark">Save</button>
+  </form>
+</div>

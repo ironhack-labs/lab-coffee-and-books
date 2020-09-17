@@ -1,0 +1,24 @@
+<div class="container">
+  <form action="/place/new" method="post">
+    <div class="form-group title">
+      <label for="exampleInputEmail1">Place Name: </label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Type :</label>
+      <input name="type" type="text" class="form-control" id="exampleInputPassword1" placeholder="Only: coffee shop or bookstore">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Latitude :</label>
+      <input name="latitude" type="text" class="form-control" id="exampleInputPassword1"
+        placeholder="Latitude">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Longitude :</label>
+      <input name="longitude" type="text" class="form-control" id="exampleInputPassword1"
+        placeholder="Longitude">
+    </div>
+   
+    <button type="submit" class="btn btn-dark">Create</button>
+  </form>
+</div>
