@@ -1,0 +1,46 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <h1 style="font-weight: 100">Edit Place</h1>
+      <div id="map" class="edit"></div>
+    </div>
+
+    <div class="col-md-6">
+
+      <form action="/edit?id={{id}}" method="post" id="edit-form">
+        <div class="form-group">
+          <label for="name-input">Name</label>
+          <input name="name" value="{{name}}" type="text" class="form-control" id="name-input">
+        </div>
+  
+        <div class="form-group">
+          <label for="type">Type:</label>
+          <select name="type" class="form-control" id="type">
+            <option value="{{type}}">Change type?</option>
+            <option value="coffee shop">Coffee Shop</option>
+            <option value="bookstore">Bookstore</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="lat-input">Latitude</label>
+          <input name="lat" value="{{coordinates.lat}}"type="text" class="form-control" id="lat-input">
+        </div>
+        <div class="form-group">
+          <label for="lng-input">Longitude</label>
+          <input name="lng" value="{{coordinates.lng}}"type="text" class="form-control" id="lng-input">
+        </div>
+
+        <button type="submit" class="btn btn-dark">Edit Place</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/places-map-app.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVN91SWiBBN_5LUvurH2WzhaPiTUN_ME&callback=initMap"></script>

@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font-family: sans-serif; }
+
+h1 {
+  margin: 30px; }
+
+#edit-form {
+  margin-top: 100px; }
+
+label {
+  margin-right: 10px; }
+
+nav {
+  margin-bottom: 30px; }
+
+#map.index {
+  height: 500px;
+  margin: 50px; }
+
+#map.edit {
+  height: 400px;
+  margin: 30px; }
+
+/*# sourceMappingURL=style.css.map */
