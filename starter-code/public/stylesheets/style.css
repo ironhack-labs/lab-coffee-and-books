@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0%; }
+
+body {
+  font-family: sans-serif; }
+
+.map {
+  margin-top: 50px;
+  width: auto;
+  height: 500px;
+  border: 5px solid black; }
+
+.title {
+  padding-top: 40px; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="title">All Places</h1>
+  <div class="row">
+    <div class="col-8 ">
+      {{#each place}}
+      <p Class="title"><strong>Name :</strong> {{name}}</p>
+      <p><strong>Type :</strong> {{type}}</p>
+      <a href="place/details/{{id}}" class="btn btn-dark active">Details</a>
+      <a href="place/edit/{{id}}" class="btn btn-dark active">Edit</a>
+      <a href="place/delete/{{id}}" class="btn btn-danger active">Delete</a>
+      <hr>
+      {{/each}}
+      
+    </div>
+  </div>
+</div>
