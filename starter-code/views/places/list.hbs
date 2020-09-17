@@ -1,0 +1,26 @@
+<h2>List of places you can visit</h2>
+
+{{#each places}}
+
+<ul>
+
+    <li>{{name}} | {{type}} | <a class="btn-dark" href="/places/{{id}}/edit">Edit</a></li>
+
+</ul>
+
+{{/each}}
+         
+<hr>
+
+<a class="btn-dark" href="/places/new">Create a new place</a>
+
+<a class="btn-dark" href="/">Go back</a>
+
+<div id="placesMap"></div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/places-map.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6QuEerMaDGdLKWQI5Unhol9Nr2_2HtYY"></script>
+   
