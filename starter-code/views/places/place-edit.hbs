@@ -1,0 +1,37 @@
+<div class="container">
+
+      <h1 style="font-weight: 100">Editar Lugar</h1>
+  <div class="row">
+
+    <div class="col-md-6">
+
+      <form action="/places/edit/{{id}}" method="POST">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input name="name" type="text" id="name-input" placeholder="{{name}}" value="{{name}}" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="latitude">Latitud</label>
+          <input  type="text" name="latitude" placeholder="{{location.coordinates.[1]}}" value="{{location.coordinates.[1]}}" class="form-control">
+         </div>
+        <div class="form-group">
+          <label for="longitude">Longitud</label>
+          <input  name="longitude" type="text" placeholder="{{location.coordinates.[0]}}" value="{{location.coordinates.[0]}}" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="type">Tipo de lugar:</label>
+          <select name="type" class="form-control" id="type">
+            <option>Seleccionar</option>
+                <option value="coffe shop">coffe shop</option>
+                <option value="bookstore">bookstore</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Crear nuevo lugar</button>
+        <a href="/places/details/{{id}}" class="btn btn-primary">Volver  </a>
+
+      </form>
+    </div>
+
+  </div>
+</div>

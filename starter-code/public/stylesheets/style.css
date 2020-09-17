@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+#map {
+  width: 60%;
+  margin: auto;
+  height: 600px; }
+
+#restaurantsMap {
+  height: 500px; }
+
+.title {
+  text-align: center;
+  margin-bottom: 20px; }
+
+.title a {
+  margin-top: 20px;
+  margin-right: 50px; }
+
+/*# sourceMappingURL=style.css.map */
