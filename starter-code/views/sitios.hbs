@@ -1,0 +1,9 @@
+<div class = "col-6">
+{{#each place}}
+<div>
+  <p>name : {{name}}</p>
+  <p>sitio : {{type}}</p>
+  <a style="margin-left: 40px;" href="/{{id}}/delete" class="btn btn-danger">borrar</a>
+  <a style="margin-left: 40px;" href="/{{id}}/details" class="btn btn-dark">edit</a>
+</div>
+{{/each}}
