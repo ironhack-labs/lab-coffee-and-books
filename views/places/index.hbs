@@ -1,0 +1,14 @@
+<h1>Lista de lugares</h1>
+
+
+{{#each places}}
+<hr>
+<p>Nombre: {{name}}</p>
+<p>Tipo: {{type}}</p>
+</div>
+ <a href="/places/remove/{{_id}}" class="btn btn-primary"> Borrar</a>
+ <a href="/places/edit/{{_id}}" class="btn btn-primary"> Editar</a>
+
+</form>
+<hr>
+{{/each}}
