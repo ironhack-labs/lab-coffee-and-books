@@ -1,14 +1,29 @@
+
+{{> google}}
+
+
 <h1>Lista de lugares</h1>
-
-
+<div class="modal-body row">
+<div class="placesList col-md-6">
 {{#each places}}
 <hr>
 <p>Nombre: {{name}}</p>
 <p>Tipo: {{type}}</p>
-</div>
+
  <a href="/places/remove/{{_id}}" class="btn btn-primary"> Borrar</a>
  <a href="/places/edit/{{_id}}" class="btn btn-primary"> Editar</a>
-
 </form>
 <hr>
 {{/each}}
+</div>
+
+<div id="placesMaps" class="col-md-6" style="height: 700px"></div>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../../javascripts/places-map-app.js"></script>
+ 
+ 
+
+{{> google}}
+

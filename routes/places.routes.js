@@ -53,8 +53,7 @@ module.exports = router
 
 router.get('/edit/:id',(req,res)=>{
     const id = req.params.id
-    const {name,type}= req.body
-    Place.findById(id)
+     Place.findById(id)
     .then(place=>res.render('places/edit-places',place))
     .catch(err=>console.log('Error: ', err))
     
@@ -63,9 +62,21 @@ router.get('/edit/:id',(req,res)=>{
 
 router.post('/edit/:id',(req,res)=>{
 const id = req.params.id
-const {name,type}= req.body
-Place.findByIdAndUpdate(id,{name,type})
-.then(()=>res.redirect('/places'))
+
+let location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
+}
+const newPlace={
+    name:req.body.name,
+    type:req.body.type,
+    location
+}
+
+Place.findByIdAndUpdate(id,newPlace)
+.then(()=>{
+   
+    res.redirect('/places')})
 .catch(err=>console.log('Error: ', err))
 
 })

@@ -11,6 +11,7 @@ const express = require('express')
 const app = express()
 
 // Configs
+require('./configs/hbs.config')
 require('./configs/preformatter.config')(app)
 require('./configs/middleware.config')(app)
 require('./configs/views.configs')(app)
