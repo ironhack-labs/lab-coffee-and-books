@@ -1,0 +1,33 @@
+<div class="container">
+
+    <h1>{{title}}</h1>
+    <div id="map" class="index"></div>
+
+<table class="table">
+    <thead>
+        <th>PLACE</th>
+        <th>TYPE</th>
+        <th>COORDINATES</th>
+        <th></th>
+    </thead>
+    {{#each allPlaces}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{type}}</td>
+        <td>{{coordinates.lat}} / {{coordinates.lng}}</td>
+        <td>
+            <a href="/delete/?id={{id}}" class="btn btn-secondary btn-sm">Borrar</a>
+            <a href="/edit/?id={{id}}" class="btn btn-secondary btn-sm">Editar</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+
+</div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/places-map-app.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVN91SWiBBN_5LUvurH2WzhaPiTUN_ME&callback=initMap"></script>

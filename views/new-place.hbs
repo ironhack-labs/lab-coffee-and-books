@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <h1 style="font-weight: 100">New Place</h1>
+    </div>
+
+    <div class="col-md-6">
+
+      <form action="/new" method="post">
+        <div class="form-group">
+          <label for="name-input">Name</label>
+          <input name="name" type="text" class="form-control" id="name-input">
+        </div>
+          <div class="form-group">
+            <p>Type: </p>
+            <div class="form-check form-check-inline">
+              <input name="type" value="cofee shop" type="radio" class="form-check-input" id="cofee">
+              <label class="form-check-label" for="coffee">Cofee Shop</label>
+              <input name="type" value="bookstore" type="radio" class="form-check-input" id="bookstore">
+              <label class="form-check-label" for="bookstore">Bookstore</label>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="lat-input">Latitude</label>
+          <input name="lat" type="text" class="form-control" id="lat-input">
+        </div>
+        <div class="form-group">
+          <label for="lng-input">Longitude</label>
+          <input name="lng" type="text" class="form-control" id="lng-input">
+        </div>
+
+        <button type="submit" class="btn btn-dark">Create Place</button>
+      </form>
+    </div>
+
+  </div>
+</div>
