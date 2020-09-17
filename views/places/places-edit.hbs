@@ -1,0 +1,16 @@
+<h1>AQUI SE EDITAN LOS LUGARES</h1>
+
+<div class="container">
+
+    <h3>Editar {{name}}</h3>
+
+    <form action="/places/edit/{{id}}" method="post" >
+        <input type="text" name="name"  value="{{name}}"><br><br>
+        <input type="text" name="type"  value="{{type}}"><br><br>
+        <input type="text" name="latitude" placeholder="latitude" ><br><br>
+        <input type="text" name="longitude" placeholder="longitude"><br><br>
+        <input type="submit" name="" id="submit">
+    </form>
+</div>
+
+<a href="/">Volver a inicio</a>
