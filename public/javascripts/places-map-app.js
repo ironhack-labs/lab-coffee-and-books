@@ -17,8 +17,9 @@ function drawMap(places) {
 
   map = new google.maps.Map(document.querySelector('#placesMaps'),
     {
-      center: { lat: 0, lng: 0 },
-      zoom: 10
+      center: { lat: 38.996555, lng: -1.848478 },
+      zoom: 10,
+      styles: mapStyles.retro
     }
   )
 
@@ -29,7 +30,10 @@ function drawMap(places) {
       lng: elm.location.coordinates[0]
     }
 
-    new google.maps.Marker({ map, position: center })
+let img = "/images/maps-and-flags.png"
+
+    new google.maps.Marker({ map, position: center,icon: img })
+    
   })
 
   map.setCenter({ lat: places[0].location.coordinates[1], lng: places[0].location.coordinates[0] })
