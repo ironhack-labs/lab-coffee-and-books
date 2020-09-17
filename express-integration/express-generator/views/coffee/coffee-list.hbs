@@ -1,0 +1,30 @@
+<div class="container">
+
+    <h1>Todos los coffees</h1>
+
+    <ul>
+        {{#each coffee}}
+        <li>
+            <p>{{name}} | {{place}}
+                <a class="btn btn-sm btn-dark" href="/coffee/detalles/{{_id}}">ver detalles</a>
+                <a class="btn btn-sm btn-dark" href="/coffee/editar?id={{_id}}">editar</a>
+                <a class="btn btn-sm btn-dark" href="/coffee/eliminar?id={{_id}}">eliminar</a>
+            </p>
+        </li>
+        {{/each}}
+    </ul>
+    <a class="btn btn-sm btn-dark" href="/coffee/crear">crear</a>
+
+    <hr>
+
+    <div id="placesMap"></div>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/mapStyle.js"></script>
+<script src="/javascripts/list.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpZQiuDwqbKrjoQX7F54H9R3lwBHrY4sM&callback=initMap"></script>
+
+
+
