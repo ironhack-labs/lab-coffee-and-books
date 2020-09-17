@@ -1,0 +1,16 @@
+
+<div class="container">
+<h1>LISTA DE LUGARES</h1>
+    <ul>
+        {{#each places}}
+            <li>
+                <h2><a href="/places/details/{{_id}}">{{name}}</a></h2>
+            </li>
+        {{/each}}
+    </ul>
+
+
+    <a class="btn btn-primary" href="/places/new">Add new Place</a>
+    <a class="btn btn-primary" href="/">Back to Index</a>
+</div>
+
