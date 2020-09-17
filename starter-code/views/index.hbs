@@ -1,2 +1,26 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+
+      <h1>See all places on the map!</h1>
+
+    </div>
+
+    <div class="col-md-6">
+
+      <div id="map"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/map/map-styles.js"></script>
+<script src="/javascripts/map/index.js"></script>
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5PgZXxRBmXmb3y9rnNtVYu5rOspd0BU&callback=initMap'></script>

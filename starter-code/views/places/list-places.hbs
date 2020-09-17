@@ -1,0 +1,12 @@
+
+{{#each allPlaces}}
+  <p>{{name}}</p>
+  <p>{{type}}</p>
+  <p>
+    <small>Latitude: {{location.coordinates.[0]}}</small> |
+    <small>Longitude: {{location.coordinates.[1]}}</small>
+  </p>
+  <a href="/places/update/{{id}}" class="btn btn-sm btn-outline-dark">Update</a>
+  <a href="/places/delete/{{id}}" class="btn btn-sm btn-danger">Delete</a>
+  <hr>
+{{/each}}
