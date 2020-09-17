@@ -1,0 +1,45 @@
+main {
+  padding: 20px 50px;
+}
+.navbar-brand {
+  font-size: 1.4em;
+  padding-left: 15px;
+}
+
+.nav-item{
+  padding: 10px;
+  font-size: 1.2em;
+
+}
+
+h1, h2, h3, h4 {
+	padding-bottom: 20px;
+}
+
+#map {
+	height: 500px;
+	margin: 10px;
+}
+.lista>ul {
+    list-style-type: none;
+}
+
+.delete-place {
+	color: red;
+	font-weight: bold;
+}
+
+.btn-type1 {
+box-shadow: 3px 2px 0px 0px #efdcfb;
+	background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+	background-color:#dfbdfa;
+	border-radius:6px;
+	border:1px solid #c584f3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-weight:bold;
+	padding:10px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #854629;
+}

@@ -1,0 +1,28 @@
+<h2>The places in our database</h2>
+
+<p>Did you miss somewhere? Add it to our database <a class="btn btn-type1" href="/places/new">Add!</a> </p>
+<p>Did you see something wrong? You can edit the info, or remove an old place</p>
+
+<div class="row">
+
+{{#each allPlaces}}
+    
+    <div class="col-md-3 text-center lista">
+        
+        <ul>
+            <li>{{name}}, <i>{{type}}</i> || <a href="/places/edit/{{_id}}">Edit</a> || <a href="/places/delete/{{_id}}" class="delete-place">Delete</a> </li>
+            
+          
+        </ul>
+    </div>
+{{/each}}
+</div>
+
+
+        <div id="map"></div>
+
+
+
+
+
+
