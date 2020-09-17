@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Place = require('../models/place.model');
 
-// vista places
+
+
+// View of the places
 router.get('/', (req, res) => {
 
     Place.find({})
@@ -12,10 +14,10 @@ router.get('/', (req, res) => {
 
 
 
-// vista new y create
+// New places
 router.get('/new', (req, res) => res.render('places/new-places'))
 
-// Vista new Proceso
+// Creation of the places
 router.post('/new', (req, res, next) => {
 
     let location = {
@@ -36,7 +38,7 @@ router.post('/new', (req, res, next) => {
         .catch(err => next(err))
 })
 
-// Delete
+// Delete places
 router.post('/delete/:id', (req, res, next) => {
 
     const id = req.params.id
@@ -46,7 +48,7 @@ router.post('/delete/:id', (req, res, next) => {
         .catch(err => next(err))
 })
 
-//edit
+//Edit places
 router.get('/edit/:id', (req, res, next) => {
 
     const id = req.params.id
@@ -56,6 +58,7 @@ router.get('/edit/:id', (req, res, next) => {
         .catch(err => next(err))
 })
 
+// submission for editing
 router.post('/edit/:id', (req, res, next) => {
 
     const id = req.params.id
@@ -79,5 +82,8 @@ router.post('/edit/:id', (req, res, next) => {
         .then(() => res.redirect('/places'))
         .catch(err => next(err))
 })
+
+
+
 
 module.exports = router 
