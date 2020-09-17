@@ -1,0 +1,29 @@
+<div class="container">
+
+    <a href="/places/new" class="btn btn-dark">Create</a>
+
+    <h1 style="font-weight: 100">Index of places</h1>
+
+
+    <hr>
+    {{#each allPlaces}}
+
+    <form action="/places/delete/{{id}}" method="post">
+        <button type="submit" class="btn btn-dark">Delete </button>
+    </form>
+
+    <a href="/places/edit/{{id}}" class="btn btn-sm btn-dark">Edit</a>
+    <h4>{{name}}</h4>
+    <p>Type: {{type}}</p>
+    <hr>
+    {{/each}}
+
+
+
+
+    <h2>Maps of the places</h2>
+
+    <div id="coffeesMap"></div>
+
+
+</div>
