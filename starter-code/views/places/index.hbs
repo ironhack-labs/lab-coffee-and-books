@@ -1,0 +1,44 @@
+<section class="place-index container">
+
+    <h1>Todos los lugares</h1>
+
+    <div class="row justify-content-around">
+
+        {{#each allPlaces}}
+
+        <article class="col-md-6 col-lg-4">
+
+            <div class="card row">
+
+                <div class="header col-12">
+
+                    <h2>{{type}}</h2>
+
+                </div>
+
+                <div class="body col-12">
+
+                    <h3>Name: {{name}}</h3>
+                    <h4>Latitude: {{location.latitude}}</h4>
+                    <h4>Longitud: {{location.longitude}}</h4>
+
+                </div>
+
+            </div>
+
+            <div class="buttons row">
+
+                <a href='/places/edit/{{id}}' class="btn btn-info">Edit</a>
+                <a href='/places/delete/{{id}}' class="btn btn-danger">Delete</a>
+
+            </div>
+
+        </article>
+
+        {{/each}}
+
+    </div>
+
+    <a href='/places/new' class="btn btn-warning">Crear nuevo lugar</a>
+
+</section>
