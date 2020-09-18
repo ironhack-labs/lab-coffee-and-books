@@ -1,0 +1,57 @@
+<section class="create container">
+
+    <h1>Crea un nuevo lugar</h1>
+
+    <form action='/places/new' method='post'>
+        <div class='form-group'>
+
+            <label for='palce-name'>Name</label>
+            <input id='palce-name' type='text' class='form-control' name='name' required>
+
+        </div>
+
+        <div class='form-group'>
+
+            <label for='place-type'>Type</label>
+
+            <select id='place-tyep' class="form-control" name='type'>
+
+                <option>Choose one</option>
+                <option value="coffee shop">Coffee shop</option>
+                <option value="bookstore">Book store</option>
+
+            </select>
+
+
+        </div>
+
+        {{#if errorMessage}}
+
+        <div class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+
+        {{/if}}
+
+
+        <div class='form-group'>
+
+            <label for='latitude'>Latitude</label>
+            <input id='latitude' type='range' min='-85' max='85' step='any' class='form-control' name='latitude'
+                required>
+
+        </div>
+
+        <div class='form-group'>
+
+            <label for='longitude'>Longitude</label>
+            <input id='longitude' type='range' min='-180' max='180' step='any' class='form-control' name='longitude'
+                required>
+
+        </div>
+
+        <button type='submit' class='btn btn-info'>Create</button>
+
+    </form>
+
+</section>
