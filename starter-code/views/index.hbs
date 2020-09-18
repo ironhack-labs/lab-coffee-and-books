@@ -1,2 +1,36 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+
+    <h1>{{title}}</h1>
+    <p>Welcome to {{title}}</p>
+
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <h1>All places on the map</h1>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div id="map"></div>
+
+        </div>
+
+    </div>
+
+    <a class="btn btn-dark" href="/place/list">Places List</a>
+
+
+</div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/javascripts/places/map-styles.js"></script>
+<script src="/javascripts/places/map-app.js"></script>
+<script
+    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyChTY2JUaPkufMpfjTIgL1qN6pJhTm7uWw&callback=initMap'></script>

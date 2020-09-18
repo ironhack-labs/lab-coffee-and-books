@@ -1,0 +1,36 @@
+<section class='places-list'>
+    <div class='container'>
+
+        <h3>Places</h3>
+        <hr>
+
+        <div class='row'>
+
+            {{#each allplaces}}
+
+            <div class='col-6'>
+                <ul>
+                    <li class='list-points'>{{name}} | {{type}} | <small>Latitude: {{location.coordinates.[0]}}</small>
+                        | <small>Longitude: {{location.coordinates.[1]}}</small></li>
+                </ul>
+            </div>
+
+            <div class='col-6'>
+                <a class="btn btn-dark edit-btn" href="/place/{{id}}">See details</a>
+                <form action="/place/{{id}}/delete" method="POST">
+                    <button type="submit" class="btn btn-dark edit-btn">Delete</button>
+                </form>
+            </div>
+
+            {{/each}}
+
+        </div>
+
+        <hr>
+
+        <div class='container'>
+            <a class="btn btn-dark" href="/">Home</a>
+            <a class="btn btn-dark" href="/place/new">Add a place</a>
+        </div>
+    </div>
+</section>
