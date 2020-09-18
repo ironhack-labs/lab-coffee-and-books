@@ -2,8 +2,12 @@
 
 {{#each places}}
 <br>
-<h2>{{name}}</h2> <a href="/places/edit/{{id}}"> Go to edit</a>
-<a href="/places/delete/{{id}}">Option to delete</a>
+
+<h2>{{name}}</h2>
+
+<a class="btn btn-primary" href="/places/edit/{{id}}" role="button">Go to edit</a>
+
+<a class="btn btn-primary" href="/places/delete/{{id}}">Option to delete</a>
 <br>
 <p>{{type}}</p>
 

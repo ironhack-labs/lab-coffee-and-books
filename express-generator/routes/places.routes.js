@@ -33,12 +33,33 @@ router.post('/create', (req, res, next) => {
 })
 
 router.get('/edit/:id', (req, res, next) => {
-    Places.findById(req.query.id)
-        .then(place => res.render('places/editPlaces', {place}))
-        .catch(() => next())
+    
+    const id = req.params.id
+
+    Places.findById(id)
+        .then(place => {
+            const {name, type} = place
+            const coordinates = place.location.coordinates
+
+            res.render('places/editPlaces', {name, type, coordinates})})
+        .catch(err => next(err))
 })
 
-router.post('/edit/:id', (req, res, next) => res.redirect('places/indexPlaces'))
+router.post("/edit/:id", (req, res, next) => {
+
+    const id = req.params.id
+    console.log(req.body)
+    const { name, type } = req.body
+
+    // add the location object
+    let location = {
+        type: 'Point',
+        coordinates: [req.body.latitude, req.body.longitude]
+    }
+    Place.findByIdAndUpdate(id, { name, type, location })
+        .then(() => res.redirect("/"))
+        .catch(err => next(err))
+})
 
 router.get('/delete/:id', (req, res, next) => {
     const id = req.params.id
