@@ -1,0 +1,22 @@
+<h2>List of places</h2>
+<br><br>
+
+<div class="container list-section">
+    <div class="row">
+        {{#each places}}
+        <div class="col-sm-6 col-md-4">
+            <h4>{{name}}</h4>
+            <p>{{type}}</p>
+            <div class="map">
+                
+                
+            </div>
+            <a href="/places/edit/{{_id}}" class="btn btn-dark btn-sm">Editar</a>
+            <hr>
+            <a href="/places/delete/{{_id}}" class="btn btn-dark btn-sm">Borrar</a>
+        </div>
+        
+        {{/each}}
+    </div>
+    
+</div>
