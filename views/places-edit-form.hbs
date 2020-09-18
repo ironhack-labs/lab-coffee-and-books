@@ -1,0 +1,25 @@
+<h2>Formulario de edición</h2>
+<br>
+<div class="container list-section">
+    <div class="row">
+                <div class="col-8">
+            <form action="/places/edit/{{_id}}" method="post">
+                <div class="form-group">
+                    <label >Nombre del sitio</label>
+                    <input name="name" value="{{name}}" type="text" class="form-control">
+                    <br>
+                <div class="form-group">
+                    <label >Tipo de lugar</label>
+                    <input name="type" value="{{type}}" type="text" class="form-control">
+                </div>
+                <br>
+               
+                <button type="submit" class="btn btn-dark btn-sm">Guardar</button>
+                
+            </form>
+            
+        </div>
+   
+    </div>
+
+</div>
