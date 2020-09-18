@@ -1,0 +1,40 @@
+
+<main class="container back-places">
+  <h2>Este es el indice de lugares</h2>
+  <div class="row places-style">
+      {{#each allPlaces}}
+      
+      <div class="col-md-6" >
+        
+            <h4>{{name}}</h4>
+            <p><em>{{description}}</em></p>
+            <p>{{address}}</p>
+  
+            <a href="/places/delete?id={{_id}}" class="btn btn-sm btn-danger space-btn">eliminar</a>
+            <!-- <a href="/places/{{_id}}" class="btn btn-sm btn-dark space-btn" >ver detalles</a> -->
+            <a href="/places/edit?id={{_id}}" class="btn btn-sm btn-success space-btn">editar</a>
+            
+            <hr>
+      </div>
+      
+      {{/each}}
+
+  </div>
+
+</main>  
+
+  <!--
+ <div class="col-md-6  btn-places">
+          
+            <a href="/places/delete?id={{_id}}" class="btn btn-sm btn-danger space-btn">eliminar</a>
+            <a href="/places/{{_id}}" class="btn btn-sm btn-dark space-btn" >ver detalles</a>
+            <a href="/places/edit?id={{_id}}" class="btn btn-sm btn-success space-btn">editar</a>
+            
+      
+      </div>
+
+
+
+    -->  
+
+  
