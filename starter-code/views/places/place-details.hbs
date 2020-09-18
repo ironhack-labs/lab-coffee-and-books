@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Details</h2>
+    <div>
+        <h3>{{name}}</h3>
+        <hr>
+        <p>{{type}}</p>
+        <hr>
+        <p>
+            <small>Latitude: {{location.coordinates.[0]}}</small> |
+            <small>Longitude: {{location.coordinates.[1]}}</small>
+        </p>
+    </div>
+    <div class="container">
+        <a class="btn btn-dark" href="/place/update/{{id}}">Edit</a>
+        <a class="btn btn-dark" href="/place/list">Go back</a>
+    </div>
+
+</div>

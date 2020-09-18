@@ -1,0 +1,41 @@
+<div class="container">
+
+    <h1 style="font-weight: 100">Add a new place</h1>
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <form action="{{newPlace}}" method="POST">
+
+                <div class="form-group">
+                    <label for="name-input">Name</label>
+                    <input name="name" type="text" class="form-control" id="name-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="type-input">Type of place</label>
+                    <select name="type" class="form-control" id="type-input" required>
+                        <option>Select</option>
+                        <option value="coffee shop">Coffe Shop</option>
+                        <option value="bookstore">BookStore</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="latitude-input">Latitude</label>
+                    <input name="latitude" type="text" class="form-control" id="latitude-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="longitude-input">Longitude</label>
+                    <input name="longitude" type="text" class="form-control" id="longitude-input" required>
+                </div>
+
+                <button type="submit" class="btn btn-dark">Done</button>
+                <a class="btn btn-dark" href="/place/list">Back to list</a>
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,18 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.places-list .edit-btn {
+    border-radius: 8px;
+    font-size: 10px;
+    line-height: normal;
+}
+
+#map {
+    height: 500px;
+}
