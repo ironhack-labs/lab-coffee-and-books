@@ -1,0 +1,12 @@
+<h1>AQUI SE INDEXARÍAN LOS SITIOS DE LA DB</h1>
+
+{{#each places}}
+<br>
+<h2>{{name}}</h2> <a href="/places/edit/{{id}}"> Go to edit</a>
+<a href="/places/delete/{{id}}">Option to delete</a>
+<br>
+<p>{{type}}</p>
+
+{{/each}} 
+
+<a href="/">Go back</a>
