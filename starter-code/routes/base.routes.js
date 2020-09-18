@@ -32,7 +32,9 @@ router.post('/new', (req, res, next) => {
 router.get('/list', (req, res) => {
 
     CoffeeBooks.find()
-        .then(coffeeBooks => res.render('list', {coffeeBooks}))
+        .then(coffeeBooks => {
+            res.render('list', {coffeeBooks, key : process.env.KEY})
+        })
         .catch(err => next(err))
 
 })

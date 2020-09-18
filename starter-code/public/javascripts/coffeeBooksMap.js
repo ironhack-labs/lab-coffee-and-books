@@ -37,11 +37,13 @@ function drawMap(coffeesAndBooks){
         
     });
 
-    
+
 
     map.setCenter({
         lat: coffeesAndBooks[0].location.coordinates[1], 
         lng: coffeesAndBooks[0].location.coordinates[0]
     })
 
-}
+} 
+
+let key = process.env.KEY
