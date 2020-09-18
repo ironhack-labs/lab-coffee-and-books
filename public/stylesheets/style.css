@@ -1,0 +1,15 @@
+body {
+  padding: 50px;
+  font-family: sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+#map {
+  height: 700px
+}
+
+
+#placesMap {
+  height: 500px
+}

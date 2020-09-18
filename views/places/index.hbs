@@ -1,0 +1,9 @@
+{{#each places}}
+<a class="text-dark" href="/places/{{_id}}">{{name}}</a>
+{{type}}
+<a class="btn btn-outline-success" href="/places/edit/{{_id}}">Edit</a>
+
+<form action="/places/{{_id}}/delete" method="POST">
+    <button class="btn btn-outline-danger" type="submit">Delete</button>
+</form>
+{{/each}}
