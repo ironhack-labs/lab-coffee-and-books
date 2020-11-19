@@ -1,0 +1,29 @@
+<div class="container">
+    
+    <h1 style="font-weight: 100">List of all places</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div id="placesMap"></div>
+        </div>
+        
+        <div class="col-md-4">
+            {{#each allPlaces}}
+        
+            <h4>{{name}}</h4>
+            <h6>{{type}}</h6>            
+            <a href="/places/edit?id={{_id}}" class="btn btn-dark">Edit</a>
+            <a href="/places/delete?id={{_id}}" class="btn btn-dark">Delete</a>
+            <hr>
+        
+            {{/each}}
+        </div>
+    </div>  
+
+</div>
+
+{{!-- Scripts estáticos --}}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=-----------API-KEY-----------=initApp"></script>

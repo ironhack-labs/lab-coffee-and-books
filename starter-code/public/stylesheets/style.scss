@@ -1,8 +1,16 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-family: sans-serif;
 }
 
-a {
-  color: #00B7FF;
+nav {
+  margin-bottom: 60px;
+}
+
+h1, h2 {
+  margin-bottom: 30px;
+}
+
+#placesMap {
+  height: 500px;
 }
