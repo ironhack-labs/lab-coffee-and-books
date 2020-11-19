@@ -1,0 +1,35 @@
+<div class="list">
+    <div class="container">
+        <h2>DÓNDE ESTAMOS</h2>
+
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <figure id="placesMap"></figure>
+            </div>
+            <div class="col-md-4" id='list-places'>
+                {{#each allPlaces}}
+                <h5>{{name}}</h5>
+                <h6>{{type}}</h6>
+                <a class="btn btn-light" id="edit-btn" href="/places/edit?place_id={{id}}">Editar</a>
+                <a class="btn btn-danger" href="/places/delete?place_id={{id}}">Eliminar</a>
+                <hr>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{!-- Scripts estáticos --}}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+<script src="/javascripts/places-map.js"></script>
+<script src="/javascripts/styles.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=_____INSERT___API___&callback=initApp"></script>
+<script src="/javascripts/styles.js"></script>

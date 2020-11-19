@@ -1,0 +1,108 @@
+/*COLORS
+beige:#ffe4b7
+beige-dark: e0b167
+*/
+
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family:'Roboto', sans-serif;
+}
+
+#placesMap{
+  height: 500px;
+  width:100%;
+  background-color: red;
+}
+
+
+
+h5 {
+  font-size: 25px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+h2 {
+font-weight: 100;
+font-size: 60px;
+margin: 0;
+padding: 0 0 15px 0;
+}
+
+#list-places a{
+  margin-right: 10px;
+}
+#list-places {
+  text-align: center;
+}
+
+
+
+.nav-title{
+  font-weight: 400;
+  font-size: 20px;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 100px;
+}
+
+.hero {
+  background-color: #e0b167;
+  color: white;
+  margin: 0
+}
+
+.index-color{
+  background-color:#ffe4b7;
+  height: 500px;
+  margin: 0
+}
+
+#start-button {
+  text-align: center
+}
+
+#start-button a{
+  padding: 15px 50px;
+  font-size: 30px;
+  color: white;
+  background-color: #e0b167;
+  margin-top: 150px;
+  border: none
+}
+
+#edit-btn{
+background-color: #ffe4b7;
+border: none
+}
+
+
+.list {
+  padding-top: 20px;
+  background-color: #e0b167;
+  color: white
+}
+
+.list-body {
+   background-color: #ffe4b7
+}
+
+#new-place {
+  color: white;
+  padding: 40px 0; 
+
+}
+
+.form-bg {
+  background-color: #e0b167;
+  height: 600px;
+}
