@@ -1,0 +1,28 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <h1 style="font-weight: 100">Edit place</h1>
+        </div>
+
+        <div class="col-md-6">
+
+            <form action="/places/edit?id={{_id}}" method="POST">
+                <div class="form-group">
+                    <label for="name-input">Name</label>
+                    <input name="name" type="text" class="form-control" id="name-input">
+                </div>
+                <div class="form-group">
+                    <label for="type-input">Type</label>
+                    <input name="type" type="text" class="form-control" id="type-input">
+                </div>
+
+                <button type="submit" class="btn btn-dark">Save</button>
+                <a href="/places" class="btn btn-dark">Back</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
