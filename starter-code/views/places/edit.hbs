@@ -1,0 +1,25 @@
+<h2>Edit details of a place</h2>
+
+<form action="/places/{{id}}/edit" method="post">
+
+  <label>Name</label>
+  <input type="text" name="name" value="{{name}}">
+
+  <label>Type</label>
+  <input type="text" name="type" value="{{type}}">
+
+  <label>Latitude Coordinates</label>
+  <input type="text" name="latitude" value="{{location.coordinates.[0]}}">
+
+  <label>Longitude Coordinates</label>
+  <input type="text" name="longitude" value="{{location.coordinates.[1]}}">
+
+  <button class="btn-dark" type="submit">Edit</button>
+
+</form>
+
+<hr>
+
+<a class="btn-dark" href="/places/{{id}}/delete">Delete</a>
+
+<a class="btn-dark" href="/places">Go back to the list of places</a>
