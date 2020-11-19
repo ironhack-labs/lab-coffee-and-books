@@ -1,8 +1,22 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-family: sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.navbar {
+  margin-bottom: 40px;
+}
+
+.container {
+  padding-top: 95px;
+  padding-bottom: 95px;
+}
+
+.places-index .btn {
+  float: right;
+}
+
+#placesMap {
+  height: 500px;
+  background-color: red;
 }

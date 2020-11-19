@@ -1,0 +1,19 @@
+body {
+  font-weight: 100;
+  font-family: sans-serif; }
+
+.navbar {
+  margin-bottom: 40px; }
+
+.container {
+  padding-top: 95px;
+  padding-bottom: 95px; }
+
+.places-index .btn {
+  float: right; }
+
+#placesMap {
+  height: 500px;
+  background-color: red; }
+
+/*# sourceMappingURL=style.css.map */
