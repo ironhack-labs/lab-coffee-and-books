@@ -1,0 +1,12 @@
+body {
+  font-weight: 100;
+  font-family: sans-serif; }
+
+.navbar {
+  margin-bottom: 40px; }
+
+#placesMap {
+  height: 500px;
+  background-color: red; }
+
+/*# sourceMappingURL=style.css.map */

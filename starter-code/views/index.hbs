@@ -1,2 +1,19 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+    <h1 class="mb-5">{{siteTitle}}</h1>
+    <h2 class="mb-5">Our places:</h2>
+    <div class="row">
+        {{#each allPlaces}}
+        <div class="col-md-4">
+            <div class="card bg-light mb-3">
+                <h3 class=" card-header">{{name}}</h3>
+                <div class="card-body">
+                    <p><strong>Type of place:</strong> {{place}}</p>
+                    <a href="/delete?id={{id}}" class="btn btn-sm btn-danger ">Delete</a>
+                    <a href="/edit?id={{id}}" class="btn btn-sm btn-success mr-1">Edit</a>
+                    <a href="/{{id}}" class="btn btn-sm btn-dark mr-1">View details</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
