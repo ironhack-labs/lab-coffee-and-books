@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Ubicaciones</h1>
+
+    <ul>
+        {{#each allPlaces}}
+        <li>{{name}} <small>
+                [<a href="/locales/detalle/{{_id}}">ver detalles</a>]
+                [<a href="/locales/editar-local?place_id={{_id}}">editar</a>]
+                [<a href="/locales/eliminar-local?place_id={{_id}}">eliminar</a>]
+              
+            </small></li>
+        {{/each}}
+    </ul>
+</div>
