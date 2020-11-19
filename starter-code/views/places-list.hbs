@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+
+  <div >
+
+    {{#each allPlaces}}
+    <br>
+    <h4>{{name}}</h4>
+    <br>
+    <p>{{type}}</p>
+    <br>
+    <p>{{description}}</p>
+    <hr>
+    <div class="row">
+    <form method="POST" action="/description/{{id}}/delete">
+      <button type="submit" class="btn btn-secondary">Borrar</button>
+    </form>
+    <form method="GET" action="/description/{{id}}/edit">
+      <button type="submit" class="btn btn-secondary">Editar</button>
+    </form>
+    </div>
+    <hr>
+    {{/each}}
+
+  </div>
+
+</div> 
+
+<div class="row justify-content-center">
+
+<br>
+<a href="/new" type="button" class="btn btn-dark">Añadir lugar nuevo</a>
+<br>
+
+</div>
