@@ -1,0 +1,37 @@
+<div class="container">
+
+    <h1>All our establishments</h1>
+<br>
+    <div class="row">
+
+        <div class="col-md-8">
+            <div id="placesMap"></div>
+        </div>
+
+        <div class="col-md-4">
+            {{#each allPlaces}}
+            <hr>
+            <h4>{{name}}</h4>
+            <small><strong>{{type}}</strong></small>
+            <br>
+            <div class="row justify-content-around">
+            <a href="/places/edit?id={{id}}" class="btn btn-sm btn-dark">Edit</a>
+            <a href="/places/delete?id={{id}}" class="btn btn-sm btn-dark">Delete</a>
+            </div>
+            {{/each}}
+            <hr>
+        </div>
+
+    </div>
+    <br>
+
+    <a href="/" class="btn btn-dark">Go back</a>
+
+    <a href="/places/new" class="btn btn-dark">Add a new establishment</a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7_Z6w9N8Buo783dfYtcYxD5RWpX4mTJ4&callback=initApp"></script>
