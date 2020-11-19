@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Solway:wght@400;500;700;800&display=swap");
+body {
+  background: url(../images/bookandcofee.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; }
+
+h1 {
+  margin-top: 2em;
+  margin-right: 50px;
+  font-family: 'Solway', serif;
+  font-size: 5em;
+  color: #e1dbc8;
+  text-align: right; }
+
+h2 {
+  padding-top: 50px;
+  padding-bottom: 30px; 
+  text-align: left;
+  margin-left: 45px;
+
+}
+
+h4 {
+  padding-bottom: 8px; }
+
+.places-style{
+  margin: 0 30px;
+
+}  
+
+.places-style hr{
+  margin-top: 30px;
+}
+.places-style p{
+  line-height: 0.95em;
+}
+
+.back-places {
+  background-color: white; 
+  padding-bottom: 50px;
+}
+
+.btn-places {
+  margin-top: 40px; }
+
+
+.form-style{
+  padding-top: 60px;
+  font-weight: bold;
+  margin-right: 50px;
+}  
+.label-form{
+  font-size: 1.2em;
+}
+
+#map {
+  height: 100%; }
+
+
+
+/*# sourceMappingURL=style.css.map */
