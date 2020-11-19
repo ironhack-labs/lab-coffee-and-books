@@ -1,0 +1,44 @@
+<div class="container">
+
+    <h1>All places</h1>
+
+    <div class="row">
+
+
+        <div class="col-md-4">
+
+             <a href="/places/new" class="btn btn-warning">Crear lugar</a>
+              <a href="/places-map" class="btn btn-success">Mostrar mapa</a>
+            <ul>
+                {{#each places}}
+                <li>
+                    <h3>{{name}}</h3>
+                    <p>{{type}}</p>
+                    
+
+                    <a href="/places/edit?id={{id}}" class="btn btn-info">Editar lugar</a>
+                    <a href="/places/delete?id={{id}}" class="btn btn-danger">Eliminar lugar</a> 
+
+                    <hr> 
+
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="/javascripts/styles.js"></script>
+    <script src="/javascripts/restaurants-map.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6QuEerMaDGdLKWQI5Unhol9Nr2_2HtYY&callback=initApp"></script>
