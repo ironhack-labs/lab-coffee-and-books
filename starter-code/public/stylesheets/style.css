@@ -1,0 +1,14 @@
+body {
+  font-family: 'Montserrat', sans-serif; }
+
+h1, h2, h3 {
+  font-weight: 200; }
+
+.navbar {
+  margin-bottom: 40px; }
+
+#placesMap {
+  height: 500px;
+  background-color: #53ceb9; }
+
+/*# sourceMappingURL=style.css.map */
