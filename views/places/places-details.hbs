@@ -1,0 +1,24 @@
+<section class="container places-index">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+         <h1><strong>{{placeDetails.name}}</strong></h1>
+
+         <hr>
+
+         <h3>Tipo de lugar: {{placeDetails.type}}</h3><br>
+
+         <h5><strong>Localización en coordenadas:</strong></h5><br>
+
+        <p><strong>Latitud:</strong> {{placeDetails.location.coordinates.lat}} </p>
+        <p><strong>Longitud:</strong> {{placeDetails.location.coordinates.lng}}</p>
+
+        <a href="/places/edit?id={{placeDetails.id}}" class="btn btn-dark btn-block">Editar</a>
+
+        </div>
+
+    </div>
+
+</section>

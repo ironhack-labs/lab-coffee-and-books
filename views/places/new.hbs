@@ -1,0 +1,55 @@
+<div class="container" style="margin-top: 100px;">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <h1 style="font-weight: 100"><i>Crea un nuevo lugar para la comunidad.</i></h1><br>
+      <h1 style="font-weight: 100"><i>Siempre podrás seguir haciendo CRUDs en tu cafetería favorita.</i></h1>
+    </div>
+
+    <div class="col-md-6">
+
+
+      <form action="/places/new" method="POST">
+        <div class="form-group">
+          <label for="name-input">Nombre</label>
+          <input name="name" type="text" class="form-control" id="name-input">
+        </div>
+
+        <div class="form-group">
+          <label for="type-input">Tipo</label>
+          <select name="type" class="form-control" id="type-list">
+            <option>Seleccionar</option>
+
+            <option value="coffee">coffee</option>
+            <option value="bookstore">bookstore</option>
+
+          </select>
+        </div>
+
+        <br><h3>Localización</h3>
+        <div class="form-group">
+          <label for="lat-input">Latitud</label>
+          <input name="location.coordinates.lat" type="number" step="any" class="form-control" id="lat-input">
+        </div>
+
+        <div class="form-group">
+          <label for="lng-input">Longitud</label>
+          <input name="location.coordinates.lng" type="number" step="any" class="form-control" id="lng-input">
+        </div>
+
+        <div class="form-group">
+          <label for="coordinatetype-input">Tipo</label>
+          <input name="location.type" type="hidden" class="form-control" id="coordinatetype-input" value="Point">
+        </div>
+
+
+        <button type="submit" class="btn btn-info">Crear nuevo lugar</button>
+        <br><br>
+        <a href="/places" class="btn btn-dark">Volver a ver todos los sitios</a>
+
+      </form>
+    </div>
+
+  </div>
+</div>
