@@ -1,0 +1,7 @@
+body {
+  font-family: sans-serif; }
+
+#restaurantsMap {
+  height: 500px;
+  background-color: yellow;
+}

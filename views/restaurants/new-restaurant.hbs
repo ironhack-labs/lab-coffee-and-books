@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h3>Create a new restaurant</h3>
+            <hr>
+            <form method="POST" action="/restaurants/new">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <input name="type" type="text" class="form-control" id="type">
+                    <small class="form-text text-muted">"coffe shop" or "bookstore"</small>
+                </div>
+                <div class="form-group">
+                    <label for="latitude">Latitude</label>
+                    <input name="latitude" type="text" class="form-control" id="latitude">
+                </div>
+                <div class="form-group">
+                    <label for="longitude">Longitude</label>
+                    <input name="longitude" type="text" class="form-control" id="longitude">
+                </div>
+            
+                <input type="submit" class="btn btn-primary" value="Create Restaurant"></input>
+            </form>
+        </div>
+    </div>
+</div>
+

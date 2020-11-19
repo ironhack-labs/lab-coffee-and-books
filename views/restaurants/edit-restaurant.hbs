@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            {{#with restaurantInfo}}
+            <h3>Create a new restaurant</h3>
+            <hr>
+            <form method="POST" action="/restaurants/edit?restaurant_id={{id}}">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" class="form-control" id="name" value="{{name}}" >
+                </div>
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <input name="type" type="text" class="form-control" id="type" value="{{type}}">
+                    <small class="form-text text-muted">"coffe shop" or "bookstore"</small>
+                </div>
+                <div class="form-group">
+                    <label for="latitude">Latitude</label>
+                    <input name="latitude" type="text" class="form-control" id="latitude" value="{{location.coordinates.[0]}}">
+                </div>
+                <div class="form-group">
+                    <label for="longitude">Longitude</label>
+                    <input name="longitude" type="text" class="form-control" id="longitude" value="{{location.coordinates.[1]}}">
+                </div>
+
+                <input type="submit" class="btn btn-primary" value="Edit Restaurant"></input>
+            </form>
+            {{/with}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+
+    <h1>All restaurants</h1>
+
+    <div class="row">
+
+        <div class="col-md-7">
+            <div id="restaurantsMap"></div>
+        </div>
+
+        <div class="col-md-5">
+            <ul>
+                {{#each allRestaurants}}
+                <li>
+                    <h3>{{name}}</h3>
+                    <p>{{type}}</p>
+                    <a href="/restaurants/edit?restaurant_id={{id}}" class="btn btn-warning">Edit</a>
+                    <a href="/restaurants/delete?restaurant_id={{id}}" class="btn btn-danger">Delete</a>
+                    <hr>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+    </div>
+
+    <a href="/" class="btn btn-warning">Back</a>
+
+</div>
+
+
+{{!-- SCRIPTS MAPS --}}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/places.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=____aqui_tu_api_key____&callback=initApp"></script>
