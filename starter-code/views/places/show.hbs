@@ -1,0 +1,25 @@
+<div class="container">
+
+  <h2>Places</h2>
+
+  <hr>
+    <ul>
+      {{#each allPlaces}}
+      <li class="">{{name}} <small>
+          <a class="text-info" href="/places/delete-place?place_id={{_id}}">delete</a>
+          <a class="text-info" href="/places/edit-place?place_id={{_id}}">edit</a>
+    
+        </small></li>
+      {{/each}}
+    </ul>
+    <hr>
+
+    <figure id="placesMap"></figure>
+
+
+    <script src="/javascripts/directions.js"></script>
+    <script src="/javascripts/places-map.js"></script>
+    
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+    </script>
+</div>
