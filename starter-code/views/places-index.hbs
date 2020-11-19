@@ -1,0 +1,49 @@
+<section class="container">
+
+  <article class="row topper">
+    <h2>Check out all our places:</h2>
+    
+    <a href="/new" class="btn btn-info">Create new place</a>
+  </article>
+
+  <hr>
+
+  <article class="row">
+
+    <div class="col-md-4">
+      <h4>Bookstores:</h4>
+      <ul class="lists">
+        {{#each bookstores}}
+          <li>
+            <a href="/{{id}}"> <h5>{{name}}</h5> </a>
+            <p>{{address}}</p>
+          </li>
+        {{/each}}
+      </ul>
+      <hr>
+      <h4>Coffee Shops:</h4>
+      <ul class="lists">
+        {{#each coffeeshops}}
+          <li>
+            <a href="/{{id}}"> <h5>{{name}}</h5> </a>
+            <p>{{address}}</p>
+          </li>
+        {{/each}}
+      </ul>
+
+    </div>
+
+    <div class="col-md-8">
+      <figure id="placesMap"></figure>
+    </div>
+
+  </article>
+</section>
+
+{{!--  GOOGLE MAPS SCRIPTS  --}}
+
+{{!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> --}}
+
+<script src="/javascripts/maps-styles.js"></script>
+<script src="/javascripts/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBorJFgA2TDXIEtW3y7gLx7Gf3uU2CJPcc&callback=initApp" type="text/javascript"></script>

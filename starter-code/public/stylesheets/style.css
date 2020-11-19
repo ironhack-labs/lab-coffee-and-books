@@ -1,50 +1,41 @@
 body {
   font-family: sans-serif;
-  font-weight: 100;
-}
+  font-weight: 100; }
 
 main {
-  margin-top: 100px;
-}
+  margin-top: 100px; }
 
 hr {
-  margin: 30px 0;
-}
+  margin: 30px 0; }
 
 h1, h2, h3, h4, h5 {
-  font-weight: 300;
-}
+  font-weight: 300; }
 
 h6 {
   font-weight: 500;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 .lists li {
-  margin: 20px 0;
-}
+  margin: 20px 0; }
 
 .lists p {
-  font-style: italic;
-}
+  font-style: italic; }
 
 a {
-  color: black;
-}
+  color: black; }
 
 a:hover {
   text-decoration: none;
-  color: #17a2b8;
-}
+  color: #17a2b8; }
 
 #placesMap {
   background-color: gray;
-  height: 600px;
-}
+  height: 600px; }
 
 .topper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-}
+  align-items: center; }
+
+/*# sourceMappingURL=style.css.map */
