@@ -1,6 +1,6 @@
 let mapInstance
 
-function initMap() {
+function initApp() {
 
     drawMap()
     getPlaces()
