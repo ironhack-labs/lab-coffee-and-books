@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+  <br>
+    <h1>¡Edita tus lugares preferidos!</h1>
+  <br>
+</div>
+
+<div class="row justify-content-center">
+
+  <form action="/description/{{id}}/edit" method="POST">
+
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input name="name" type="text" class="form-control" id="name" value="{{name}}">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="type">Tipo de lugar</label>
+      <select name="type" class="form-control" id="type">
+        <option value="Coffee shop">Coffee Shop</option>
+        <option value="Bookstore">Bookstore</option>
+      </select>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="longitude">Longitud</label>
+      <input name="longitude" type="text" class="form-control" id="longitude" value="{{location.coordinates.[0]}}">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="latitude">Latitud</label>
+      <input name="latitude" type="text" class="form-control" id="latitude" value="{{location.coordinates.[1]}}">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-dark">Editar</button>
+
+  </form>
+  
+</div>

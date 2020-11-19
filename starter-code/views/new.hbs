@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+  <br>
+    <h1>¡Añade tus lugares preferidos a nuestra lista!</h1>
+  <br>
+</div>
+
+<div class="row justify-content-center">
+
+    <form action="/new" method="POST">
+
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input name="name" type="text" class="form-control" id="name" placeholder="Nombre">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="type">Tipo de lugar</label>
+        <select name="type" class="form-control" id="type">
+          <option value="Coffee Shop">Coffee shop</option>
+          <option value="Bookstore">Bookstore</option>
+        </select>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="longitude">Longitud</label>
+        <input name="longitude" type="text" class="form-control" id="longitude" placeholder="Longitud">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="latitude">Latitud</label>
+        <input name="latitude" type="text" class="form-control" id="latitude" placeholder="Latitud">
+      </div>
+      <br>
+      <button type="submit" class="btn btn-dark">Añadir lugar nuevo</button>
+    </form>
+
+</div>
