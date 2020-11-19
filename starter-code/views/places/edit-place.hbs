@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <h1 style="font-weight: 100">Esdita el establecimiento '{{name}}'</h1>
+    </div>
+
+    <div class="col-md-6">
+
+      <form action="/places/edit?place_id={{id}}" method="POST">
+        <div class="form-group">
+          <label for="name-input">Nombre</label>
+          <input name="name" type="text" class="form-control" id="name-input" value="{{name}}">
+        </div>
+        <div class="form-group">
+          <label for="name-input">Latitud</label>
+          <input name="latitude" type="text" class="form-control" id="name-input" value="{{location.coordinates.[0]}}">
+        </div>
+        <div class="form-group">
+          <label for="name-input">Longitud</label>
+          <input name="longitude" type="text" class="form-control" id="name-input" value="{{location.coordinates.[1]}}">
+        </div>
+        <div class="form-group">
+          <label for="description-input">Tipo de establecimiento</label>
+          <select multiple name="type" class="form-control" id="type-list">
+            <option>coffee shop</option>
+            <option>bookstore</option>
+          </select>
+          <small class="muted-text">[Mantén pulsado ctrl para seleccionar varias opciones a la vez]</small>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Guardar cambios</button>
+      </form>
+    </div>
+
+  </div>
+</div>

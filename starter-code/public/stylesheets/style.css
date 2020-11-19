@@ -1,0 +1,12 @@
+body {
+  font-family: sans-serif;
+  font-weight: 300; }
+
+#myPlacesMap {
+  height: 700px; }
+
+.main {
+  margin-top: 250px;
+  align-items: center; }
+
+/*# sourceMappingURL=style.css.map */

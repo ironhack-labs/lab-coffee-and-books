@@ -1,8 +1,13 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
+  font-weight: 300;
 }
 
-a {
-  color: #00B7FF;
+#myPlacesMap{
+  height: 700px;
+}
+
+.main{
+  margin-top: 250px;
+  align-items: center;
 }

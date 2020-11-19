@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="row main">
+
+    <div class="col-md-8">
+      <div id="myPlacesMap"></div>
+    </div>
+
+    <div class="col-md-4">
+      <div>
+        <h1>Listado de establecimientos</h1>
+        {{#each response}}
+        <p>Nombre: {{name}}</p>
+        <p>Tipo de establecimiento: {{type}}</p>
+
+        <a href="places/{{id}}" class="btn btn-info">Ver detalles</a>
+        <a href="places/edit?place_id={{id}}" class="btn btn-info">Editar establecimiento</a>
+
+        <form action="/places/delete?place_id={{id}}" method="POST">
+          <button type="submit" class="btn btn-info">Borrar</button>
+        </form>
+        {{/each}}
+
+      </div>
+
+      <div>
+        <a href="places/new" class="btn btn-info">Crear nuevo establecimiento</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+{{!-- <script src="/javascripts/styles.js"></script> --}}
+<script src="/javascripts/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnHWbHiOHojNWROxQjyDdp56a6owiIKEg&callback=initMap"></script>
