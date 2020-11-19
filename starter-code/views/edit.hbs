@@ -1,0 +1,27 @@
+<div class="container py-5">
+
+    <h3>Edita {{this.name}}</h3>
+
+    <form method="POST" action="/edit/{{this._id}}">
+        <div class="form-group">
+            <label for="name">Nombre</label><br>
+            <input class= 'form-control' type="text" name="name" value="{{this.name}}">
+        </div>
+        <div class="form-group">
+            <label for="type">Tipo</label>
+            <select class="form-control"name="type" id="type" value= {{this.type}}><br><br>
+            <option value="coffeeShop">Cafetería</option>
+            <option value="bookStore">Librería</option>
+        </select>
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label for="">Latitud y Longitud</label>
+            <input class= 'form-control' type="text" name="latitude" placeholder="Latitud" value="{{this.location.coordinates.[1]}}">
+            <input class= 'form-control'type="text" name="longitude" placeholder="Longitud" value="{{this.location.coordinates.[0]}}">
+
+        </div>
+        
+        <input type="submit" name="Crear" id="submit" value="Editar">
+    </form>
+</div>

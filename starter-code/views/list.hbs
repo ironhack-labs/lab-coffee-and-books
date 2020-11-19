@@ -1,0 +1,33 @@
+<div class="container py-5">
+    <h1>Lista de Cafeterías y Librerías</h1>
+    
+      <hr>
+    {{#each coffeeBooks}}
+    <div class='d-flex justify-content-between '>
+    <div>
+        <h4>{{this.name}}</h4>
+        <p>{{this.type}}</p>
+    </div>
+    <div>
+        
+        <a href="/delete/{{this._id}}" class="btn btn-sm btn-dark">Eliminar</a>
+        <a href="/edit/{{this._id}}" class="btn btn-sm btn-dark">Editar</a>
+    </div>
+    </div>
+    <hr>
+
+    {{/each}}
+
+    <div id="coffeeBooksMap"></div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/javascripts/coffeeBooksMap.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key={{key}}&callback=initMap"></script>
+
+    
+    
+    
+
+</div>
