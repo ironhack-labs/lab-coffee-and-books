@@ -1,8 +1,26 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.navbar{
+  margin-bottom: 50px;
 }
 
-a {
-  color: #00B7FF;
+#coffeeMap{
+ height: 500px;
+  background-color: red;
+}
+
+.btn-warning{
+  margin-bottom: 10px;
+}
+
+img{
+  width: 100%;
+  object-fit: cover;
+}
+
+form{
+  padding-top: 50px;
+}
+
+h1,h2,h3{
+  font-weight: 300px;
+  margin-bottom: 40px;
 }

@@ -1,0 +1,26 @@
+.navbar {
+  margin-bottom: 50px; }
+
+#coffeeMap {
+  height: 500px;
+  background-color: red; }
+
+.btn-warning {
+  margin-bottom: 10px; }
+
+img {
+  width: 100%;
+  object-fit: cover; }
+
+form {
+  padding-top: 50px; }
+
+h1, h2, h3 {
+  font-weight: 300px;
+  margin-bottom: 40px; }
+
+.main {
+  background-image: url("https://image.freepik.com/free-photo/top-view-cup-coffee-with-copy-space_23-2148336691.jpg");
+  background-repeat: no-repeat; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,28 @@
+<div class="container">
+
+  <div class="row">
+<div class ="col-md-4">
+  <h1 style="font-weight: 100">Listado de Coffee Books</h1>
+
+  {{#each allPlaces}}
+  <hr>
+  <h4>{{name}}</h4>
+  <p>{{type}}</p>
+  <a href="/places/edit?id={{id}}" class="btn btn-warning">Editar Coffee</a>
+<br>
+    <a href="/places/delete?id={{id}}" class="btn btn-danger">Eliminar Coffee</a>
+
+  {{/each}}
+</div>
+
+<div class="col-md-8">
+            <figure id="coffeeMap"></figure>
+            <a href="/" class="btn btn-dark">Volver a Inicio</a>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/javascripts/styles.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=____APIKEY________-CpQPLE"></script>
+<script type="text/javascript" src="/javascripts/placemap.js"></script>
