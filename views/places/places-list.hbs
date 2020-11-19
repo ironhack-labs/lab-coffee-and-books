@@ -1,0 +1,33 @@
+<div class="container coasters-index">
+
+   
+    <h1 style="font-weight: 100">Nuestros Coffee and Books</h1>
+
+    <hr>
+    {{#each allPlaces}}
+    
+    <h4>{{name}}</h4>
+    <p>{{type}}</p>
+<a href="/places/edit/{{id}}" class="btn btn-dark">Editar Place</a>
+<a href="/places/delete/{{id}}" class="btn btn-dark">Borrar Place</a>
+    {{/each}}
+
+    <a href="/places/new" class="btn btn-dark">Crear nuevo Place</a>
+
+   <div id="placesMap"></div>
+
+
+
+
+
+</div>
+
+
+
+
+{{!-- Scripts estáticos --}}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/restaurants-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=____aqui_tu_api_key____&callback=initApp"></script>

@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <h1 style="font-weight: 100">Nuevo place</h1>
+        </div>
+
+        <div class="col-md-6">
+
+            <form action="/places/new" method="POST">
+                <div class="form-group">
+                    <label for="name-input">Nombre</label>
+                    <input name="name" type="text" class="form-control" id="name-input">
+                </div>
+                <div class="form-group">
+                    <label for="type-input">Tipo</label>
+                    <input name="type" type="text" class="form-control" id="type-input">
+                </div>
+                     <select>     
+                        {{#each allPLaces}}
+
+                        <option value="{{type}}">{{type}}</option>
+
+                        {{/each}}
+
+                    </select>
+                    <button type="submit" class="btn btn-dark">Crear nuevo place</button>
+                    <a href="/places" class="btn btn-dark">Volver</a>
+                </div>
+
+                
+                
+
+            </form>
+        </div>
+
+    </div>
+</div>
