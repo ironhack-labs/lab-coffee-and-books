@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+            <div id="placesMap"></div>
+        </div>
+    <div class="col-md-4">
+    {{#each places}}
+      <h3>{{name}}</h3>
+      <p>{{type}}</p>
+      <a href="/places/edit?id={{id}}" class="btn btn-dark">Editar</a>
+  <a href="/places/delete?id={{id}}" class="btn btn-dark">Eliminar</a>
+      <hr>    
+  {{/each}} 
+  </div>  
+  </div>
+  
+</div>
+{{!-- Scripts estáticos --}}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=__YOUR-API-KEY__&callback=initApp"></script>
+
