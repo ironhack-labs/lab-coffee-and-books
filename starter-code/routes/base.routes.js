@@ -45,7 +45,7 @@ router.post('/new', (req, res, next) => {
       type: req.body.type,
       location
     })
-    .then(() => res.redirect('/'))
+    .then(() => res.redirect('/new'))
     .catch(err => console.log("An error ocurred", err))
 })
 
