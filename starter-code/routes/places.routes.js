@@ -78,11 +78,10 @@ router.post('/edit', (req, res) => {
   }
 
   else {
-
-
+    
     Places
       .findByIdAndUpdate(placeID, { name, type, location })
-      .then(placeInfo => res.redirect('/'))
+      .then(placeInfo => res.redirect('/places'))
       .catch(err => console.log(err))
   }
 })

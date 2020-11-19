@@ -16,7 +16,8 @@ function drawMap() {
   mapInstance = new google.maps.Map(document.querySelector('#coffeeMap'),
     {
       center: { lat: 40.409344, lng: - 3.709200 },
-      zoom: 15
+      zoom: 15, 
+      styles: mapStyles.retro
     }
   )
 }
