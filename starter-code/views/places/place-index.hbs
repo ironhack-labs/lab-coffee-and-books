@@ -1,0 +1,36 @@
+<div class="container places-index">
+
+  <a href="/places/new" class="btn btn-success">Crear nuevo lugar</a>
+
+  <h1 style="font-weight: 100">Índice de lugares</h1>
+
+  <div class="row">
+
+    <div class="col-md-8">
+      <div id="placesMap"></div>
+    </div>
+
+    <div class="col-md-4">
+      <ul>
+        {{#each allPlaces}}
+        <li>
+          <a href="/places/{{_id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+          <h4>{{name}}</h4>
+          <p>{{type}}</p>
+          <hr>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+
+
+{{!-- Scripts estáticos --}}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<-------------- PON TU KEY AQUI --------->&callback=initApp"></script>
