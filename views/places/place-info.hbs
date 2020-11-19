@@ -1,0 +1,29 @@
+<div class="row place-details">
+
+  <div class="col-md-6">
+    <figure><img src="{{image}}" alt="{{name}}"></figure>
+  </div>
+
+  <div class="col-md-6">
+    <h2>– {{name}} –</h2>
+
+    <hr>
+
+    <h5>{{description}}</h5>
+    <p><strong>{{type}}</strong></p>
+
+    {{!-- mapa aquí? --}}
+
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <a class="btn btn-info" href="/places/edit/{{id}}">EDITAR</a>
+      </div>
+
+      <div class="col-lg-5">
+        <form action="/places/delete/{{id}}" method="POST">
+          <button class="btn btn-danger" type="submit">ELIMINAR</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
