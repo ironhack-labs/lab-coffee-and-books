@@ -1,8 +1,27 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#myPlacesMap, #onePlaceMap{
+  height: 500px;
+  //background-color: red;
+}
+
+.main{
+  margin-top: 150px;
+  align-items: center;
+}
+
+.action-btns{
+  display: flex;
+}
+
+.action-btns form{
+  margin-left: 20px;
+}
+.details{
+ background-color: rgba(227, 227, 214, .5); 
+ border-radius: 10px; 
+ padding: 50px;
+ box-shadow: 10px -12px rgba(227, 227, 214, 1);
 }

@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif; }
+
+#myPlacesMap, #onePlaceMap {
+  height: 500px; }
+
+.main {
+  margin-top: 150px;
+  align-items: center; }
+
+.action-btns {
+  display: flex; }
+
+.action-btns form {
+  margin-left: 20px; }
+
+.details {
+  background-color: rgba(227, 227, 214, 0.5);
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: 10px -12px #e3e3d6; }
+
+/*# sourceMappingURL=style.css.map */

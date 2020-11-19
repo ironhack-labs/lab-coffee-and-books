@@ -1,0 +1,20 @@
+<div class="container">
+
+  <div class="row main justify-content-center">
+
+    <div class="col-md-8">
+      <div class= "details">
+        <h1>Detalles del establecimiento '{{name}}'</h1>
+        <hr>
+        <p>Nombre: {{name}}</p>
+        <p>Tipo de establecimiento: {{type}} </p>
+        <p>Latitud: {{location.coordinates.[0]}}</p>
+        <p>Longitud: {{location.coordinates.[1]}}</p>
+
+       <hr>
+        <a href="/places/edit?place_id={{id}}" class="btn btn-info">Editar establecimiento</a>
+      </div>
+    </div>
+  </div>
+
+</div>
