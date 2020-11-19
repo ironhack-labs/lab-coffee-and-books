@@ -1,4 +1,4 @@
-let mapInstance
+let mapInstance, userCurrentPosition
 
 function initMap() {
 
@@ -8,10 +8,28 @@ function initMap() {
 }
 
 function newMap() {
+
   mapInstance = new google.maps.Map(
     document.querySelector('#myPlacesMap'),
-    {center: { lat: 40.392499, lng: -3.698214 }, zoom: 15}
+    {center:  { lat: 40.392499, lng: -3.698214 }, zoom: 15, styles: nightParty}
   )
+
+  if (navigator.geolocation) {
+   
+    navigator.geolocation.getCurrentPosition(
+
+      pos => {
+        userCurrentPosition = { lat: pos.coords.latitude, lng: pos.coords.longitude }
+        mapInstance.setCenter(userCurrentPosition)
+      },
+      
+      err => console.log('¡No me has dejado acceder a tu posición!', err))
+    
+  } else {
+
+    console.log('Módulo de geolocalización no disponible')
+
+  }
 }
 
 function getPlacesAddress() {
@@ -36,5 +54,5 @@ function drawMarkers(places) {
       })
   })
 
-  mapInstance.setCenter({ lat: places[1].location.coordinates[0], lng: places[1].location.coordinates[1] })
+  //mapInstance.setCenter({ lat: places[0].location.coordinates[0], lng: places[0].location.coordinates[1] })
 }

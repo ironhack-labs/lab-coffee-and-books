@@ -1,13 +1,27 @@
 body {
   font-family: sans-serif;
-  font-weight: 300;
 }
 
-#myPlacesMap{
-  height: 700px;
+#myPlacesMap, #onePlaceMap{
+  height: 500px;
+  //background-color: red;
 }
 
 .main{
-  margin-top: 250px;
+  margin-top: 150px;
   align-items: center;
+}
+
+.action-btns{
+  display: flex;
+}
+
+.action-btns form{
+  margin-left: 20px;
+}
+.details{
+ background-color: rgba(227, 227, 214, .5); 
+ border-radius: 10px; 
+ padding: 50px;
+ box-shadow: 10px -12px rgba(227, 227, 214, 1);
 }
