@@ -1,0 +1,59 @@
+<div class="container">
+    <h1>List of places:</h1>
+
+    <ul>
+        {{#each allPlaces}}
+
+        <hr>
+
+        <li>{{name}} <small>
+                [<a href="/places/details/{{_id}}">see details</a>]
+                [<a href="/places/edit-place?place_id={{_id}}">edit</a>]
+                [<a href="/places/delete-place?place_id={{_id}}">delete</a>]
+            </small></li>
+        {{/each}}
+    </ul>
+
+    <div>
+        <h2>See our locations</h2>
+        <figure id="placesMap"></figure>
+        
+    </div>
+
+        <a href="/" class="btn btn-dark">Back to homepage</a>
+
+        <hr>
+
+    <style>
+        #map {
+            height: 80vh;
+            background-color: gray;
+        }
+    </style>
+
+    <body>
+        <figure id='map'></figure>
+        {{!-- <script src="maps.js"></script> --}}
+        <script>
+            function initApp() {
+                const mapInstance = new google.maps.Map(
+                    document.querySelector('#map'),
+                    {
+                        center: {
+                            lat: 40.421622, lng: -3.681623
+                        },
+                        zoom: 10
+                    }
+
+            }
+        </script>
+    </body>
+    
+</div>
+
+
+{{!-- Scripts estáticos --}}
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/directions.js"></script>
+<script src="/javascripts/parks-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5rEEoMF14elEqCN9qqrAvVoagKXHMSEY&callback=initApp"></script>
