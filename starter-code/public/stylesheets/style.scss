@@ -1,8 +1,14 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  // padding: 50px;
+  font-family: sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.navbar {
+  margin: 0 0 10px 0;
+}
+
+#map {
+  height: 300px;
+  width: 700px;
+  background-color: grey;
 }

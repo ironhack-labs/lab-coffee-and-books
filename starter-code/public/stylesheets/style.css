@@ -1,0 +1,12 @@
+body {
+  font-family: sans-serif; }
+
+.navbar {
+  margin: 0 0 10px 0; }
+
+#map {
+  height: 300px;
+  width: 700px;
+  background-color: grey; }
+
+/*# sourceMappingURL=style.css.map */
