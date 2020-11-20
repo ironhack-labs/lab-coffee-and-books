@@ -1,0 +1,47 @@
+
+<div class="container">
+<div class="row">
+
+<div class="cool-md-4">
+<h1>{{data.name}}
+</h1>
+
+{{data.type}}
+<br>
+{{data.location.coordinates}}
+<br>
+<hr>
+<a href="/sitios/editar/{{data.id}}"class="btn btn-warning">Editar</a>
+
+<a href="/sitios/eliminar/{{data.id}}" class="btn btn-danger">Eliminar</a>
+
+<a href="/sitios" class="btn btn-dark">Volver a sitios</a>
+</div>
+<div class="col-md-8">
+    <style>
+      #map {
+        height: 500px;
+        width: 100%;
+      }
+    </style>
+    
+      <div id="map" class="red"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"
+  integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ=="
+  crossorigin="anonymous"></script>
+      <script type="text/javascript" src="/javascripts/sites-map.js"></script>
+
+
+    <script src="{{{myKey}}}"></script>
+
+    
+    
+  
+
+</div>
+
+
+</div>
+</div>
