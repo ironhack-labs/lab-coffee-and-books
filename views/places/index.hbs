@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row justify-content-space-between">
+        <div class="col-md-7 col-12">
+            <div id="placesMap"></div>
+        </div> 
+
+        <div class="col-md-5 col-12">
+            <div class='row'>
+                <div class="col-md-12 col-6">
+                    <h3>Bookstores</h3>
+                    <hr>
+                    <ul>
+                    {{#each bookstores}}
+                        <li>
+                            {{name}} [<a class="link-edit" href="/places/edit?id={{id}}" >Edit</a>] [<a
+                            class="link-del" href="/places/delete?id={{id}}">Delete</a>]
+                        </li>    
+                        <hr>
+                    {{/each}}
+                    </ul>
+                </div>
+
+                <div class="col-md-12 col-6">
+                    <h3>Coffee Shops</h3>
+                    <hr>
+                    <ul>
+                        {{#each coffeeShops}}
+                            <li>
+                                {{name}} [<a class="link-edit" href="/places/edit?id={{id}}">Edit</a>] [<a class="link-del" href="/places/delete?id={{id}}">Delete</a>]
+                            </li>
+                            <hr>
+                        {{/each}}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+            
+    </div>   
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=________API_KEY_HERE________&callback=initApp"></script>
