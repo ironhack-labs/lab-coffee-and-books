@@ -1,0 +1,26 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6 mx-auto">
+            <h1>Nueva localización</h1>
+    <form action="/places/new" method="post">
+        <div class="form-group">
+            <label for="name-input">Nombre</label>
+            <input name="name" type="text" class="form-control" id="name-input">
+        </div>
+        <div class="form-group">
+            <label for="place-list">Tipo de local</label>
+            <input type="radio" name="type" value="bookstore">Bookstore
+            <input type="radio" name="type" value="coffee shop">Coffee Shop
+        </div>
+
+
+    
+        <button type="submit" class="btn btn-dark">Crear nuevo local</button>
+        <a href="/places" class="btn btn-dark">Volver</a>
+    
+    </form>
+        </div>
+    </div>
+</div>

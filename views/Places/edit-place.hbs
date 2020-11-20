@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-7">
+
+            <h2>{{name}}</h2>
+
+
+            <form method="post" action="/places/edit/{{id}}">
+                <div class="form-group">
+                    <label>Nombre del local</label>
+                    <input type="text" class="form-control" name="name" value="{{name}}">
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="place-list">Tipo de local</label>
+                        <input type="radio" name="type" value="bookstore">Bookstore
+                        <input type="radio" name="type" value="coffee shop">Coffee Shop
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-dark">Editar local</button>
+            </form>
+
+        </div>
+    </div>
+
+
+
+</div>
