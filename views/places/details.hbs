@@ -1,0 +1,29 @@
+<div class="container">
+
+    <h1>{{name}}</h1>
+
+    <hr>
+
+    <div class="row justify-content-around">
+
+        <div class="col-md-4">
+
+            <h3>Detalles</h3>
+
+            <hr>
+
+            <p><strong>Tipo:</strong> {{type}}</p>
+            <p><strong>Localización:</strong> </p>
+
+             <figure id="placesMap"></figure>
+
+            <a href="/lugares" class="btn btn-dark">Volver a los lugares</a>
+
+</div>
+
+{{!-- Scripts estáticos --}}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/javascripts/styles.js"></script>
+<script src="/javascripts/directions.js"></script>
+<script src="/javascripts/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=aqui_iria_mi_Api&callback=initApp"></script>
