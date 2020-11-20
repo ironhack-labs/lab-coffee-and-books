@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <h1>{{title}}</h1>
+    </div>
+
+    <div class="col-md-6">
+
+      <h4>New shop</h4>
+
+      <form action="/new" method="POST">
+        <div class="form-group">
+          <label for="name-input">Local Name</label>
+          <input name="name" type="text" class="form-control" placeholder="Toma Café" id="name-input">
+        </div>
+
+        <div class="form-group">
+          <label for="name-input">Local Type</label>
+          <input name="type" type="text" class="form-control" placeholder="Coffee Shop | Book Store" id="name-input">
+        </div>
+
+        <div class="form-group">
+          <label for="name-input">Coordinates</label>
+          <input name="location" type="text" class="form-control" placeholder="-25.63666, 59.26951" id="name-input">
+        </div>
+
+        <button type="submit" class="btn btn-dark btn-block">Create local</button>
+      </form>
+
+    </div>
+
+  </div>
+</div>
