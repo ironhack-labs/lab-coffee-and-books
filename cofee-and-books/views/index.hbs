@@ -1,0 +1,46 @@
+<h1>Welcome to {{title}}</h1>
+
+<h2>Cofees:</h2>
+
+<ul>
+  {{#each places}}
+  <li>
+    <a href="/{{this._id}}">{{this.name}}</a>
+  </li>
+  <form action="/cofee/{{this.id}}/delete" method="POST">
+    <button type="submit">Delete cafe</button>
+  </form>
+  {{/each}}
+</ul>
+
+<form action="/newP">
+  <button type="submit">Add new Cofee</button>
+</form>
+<br>
+<form action="/libraries/Libraries">
+  <button type="submit">View libraries</button>
+</form>
+<br><br>
+<div id="res_map" style="width: 70%; height: 400px"></div>
+
+<script>
+    window.onload = function () {
+        const map = new google.maps.Map(document.getElementById("res_map"),{
+            zoom: 13,
+            center: {
+                lat: {{places.[0].location.coordinates.[1]}},
+                lng: {{places.[0].location.coordinates.[0]}}
+            }
+        });
+        let marker;
+        {{#each places}}
+            marker = new google.maps.Marker({
+                position:{
+                    lat: {{this.location.coordinates.[1]}},
+                    lng: {{this.location.coordinates.[0]}}
+                },
+                map
+            });
+        {{/each}}
+    }
+</script>

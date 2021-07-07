@@ -1,0 +1,44 @@
+<h1>{{title}}</h1>
+<h2>Libraries:</h2>
+
+<ul>
+  {{#each libraries}}
+  <li>
+    <a href="/libraries/{{this._id}}">{{this.name}}</a>
+  </li>
+  <form action="/libraries/library/{{this.id}}/delete" method="POST">
+    <button type="submit">Delete library</button>
+  </form>
+  {{/each}}
+</ul>
+
+<form action="/libraries/newL">
+  <button type="submit">Add new Library</button>
+</form>
+<br>
+<form action="/">
+  <button type="submit">Return cofees</button>
+</form>
+<br><br>
+<div id="res_map" style="width: 70%; height: 400px"></div>
+<script>
+    window.onload = function () {
+        const map = new google.maps.Map(document.getElementById("res_map"),{
+            zoom: 13,
+            center: {
+                lat: {{libraries.[0].location.coordinates.[1]}},
+                lng: {{libraries.[0].location.coordinates.[0]}}
+            }
+        });
+        let marker;
+        {{#each libraries}}
+            marker = new google.maps.Marker({
+                position:{
+                    lat: {{this.location.coordinates.[1]}},
+                    lng: {{this.location.coordinates.[0]}}
+                },
+                map
+            });
+        {{/each}}
+    }
+</script>

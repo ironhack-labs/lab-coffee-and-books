@@ -1,0 +1,33 @@
+<h1>{{places.name}}</h1>
+<h2>{{places.desc}}</h2>
+<img src="{{places.image}}" alt="{{this.name}}">
+
+<div id="res_map" style="width: 70%; height: 400px"></div>
+
+<script>
+    window.onload = function () {
+        const map = new google.maps.Map(document.getElementById("res_map"),{
+            zoom: 18,
+            center: {
+                lat: {{places.location.coordinates.[1]}},
+                lng: {{places.location.coordinates.[0]}}
+            }
+        });
+        const marker = new google.maps.Marker({
+            position:{
+                lat: {{places.location.coordinates.[1]}},
+                lng: {{places.location.coordinates.[0]}}
+            },
+            animation: google.maps.Animation.BOUNCE,
+            icon: {
+              url: "{{places.image}}",
+              scaledSize: new google.maps.Size(50, 50), // scaled size
+            },
+            map
+        })
+    }
+</script>
+<br><br>
+<form action="/">
+<button type="submit">Return</button>
+</form>
