@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Cafeterías y Librerías</h1>
+
+    <ul>
+        {{#each places}}
+        <li>
+            {{name}} {{location.coordinates.[0]}} {{location.coordinates.[1]}} <br><br>
+
+            <a href="/cafe-y-libro/{{_id}}/editar" class="btn btn-warning">Editar</a>
+    
+        <form action="/cafe-y-libro/{{_id}}/eliminar" method="POST" style="display: inline-block;">
+            <button class="btn btn-danger">Eliminar</button>
+        </form><br><br>
+        </li>
+        {{/each}}
+    </ul>
+</div>
