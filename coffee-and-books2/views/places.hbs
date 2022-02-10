@@ -1,0 +1,26 @@
+<h2>Places List</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <ul>
+                {{#each placeInfo}}
+                <li>{{name}}</li>
+                <li>{{type}}</li>
+            
+                <a href="/places/{{_id}}">Place Detail</a>
+                <br><br>
+
+                <form action="/places/{{_id}}/delete" method="POST">
+                    <label for="delete-btn">
+                        <input id="delete-btn" type="submit" value="Delete Place" >
+                    </label>
+                </form>
+                
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+
+

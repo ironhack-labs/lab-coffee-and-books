@@ -1,0 +1,23 @@
+<h2>Edit your Place</h2>
+
+<form action="/places/{{_id}}/edit" method="POST">
+
+    <label>
+        Name
+        <input type="text" name="name" value="{{name}}">
+    </label>
+
+    <label>Type of Place
+        <select name="type" id="">
+            <option value="coffee_shop">Coffee Shop</option>
+            <option value="bookstore">Book Store</option>
+        </select>
+    </label>
+
+
+    <input type="submit" value="Save Edition">
+
+</form>
+
+<br><br>
+<a href="/places/{{_id}}">Go back</a>
