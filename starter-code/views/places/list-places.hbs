@@ -1,0 +1,44 @@
+<div class="container">
+
+    <h1>Nuestros Places:</h1>
+
+    <ul id="places">
+        {{#each allPlaces}}
+        <li>{{name}}</li>
+        <div class="row">
+            <div class="col-1"><a class="btn btn-primary" href="/places/{{id}}/editar">Editar</a></div>
+            <div class="col-1">
+                <form action="/places/{{id}}/delete" method="POST">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </div>
+        </div>
+        {{/each}}
+    </ul>
+
+    <figure id="myMap"></figure>
+
+
+
+</div>
+
+{{!-- script de axios --}}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="../../js/maps-script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=______&callback=initMap"></script>
+
+
+{{!-- 1. pegar key y los scripts, que el de google tiene al final el callback de initMap--}}
+{{!-- 2. crear el script maps-script para renderizar un mapa en la carpeta js de public--}}
+{{!-- 3. En el script, crear la función initMap, que llama a las demás funciones--}}
+{{!-- 4. La función drawMap dibuja el mapa, centrándolo y con un zoom --}}
+{{!-- 5. En el modelo, añadir la propiedad location, y el index de 2dsphere --}}
+{{!-- 6. En nuestras rutas, es el momento de modificar la creación de lugares --}}
+{{!-- 7. Ahora tenemos que crear una API, de tal manera que podamos disponer de nuestros datos en formato JSON --}}
+{{!-- 8. Recordatorio: Utilizar .[0] en handlebars para acceder a una posición de un array --}}
+{{!-- 9. Creamos el archivo api.routes, lo enrutamos desde app.js, y ahí requerimos el modelo y creamos la ruta .get,
+con un res.json --}}
+{{!-- 10. Añadir el cdn de axios en la vista que lo vamos a utilizar --> list-places.hbs --}}
+{{!-- 11. Nos vamos al script de public, y ahí definimos las funciones getPlaces de la api y drawPlaces, con la llamada
+a axios --}}
