@@ -1,0 +1,14 @@
+<h2>Read Places</h2>
+<ul>
+    {{#each places}}
+    <li>Name: {{name}}</li>
+    <li>Latitude: {{location.coordinates.[0]}}</li>
+    <li>Longitude: {{location.coordinates.[1]}}</li>
+    <form action="/{{id}}/edit" method="POST">
+        <button>Edit Place</button>
+    </form>
+    <form action="/{{id}}/delete" method="POST">
+        <button>Delete Place</button>
+    </form>
+    {{/each}}
+</ul>
