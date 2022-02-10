@@ -1,0 +1,17 @@
+<div class="container">
+    <div class='row'>
+        <h2>Tus lugares preferidos</h2>
+     
+        {{#each places}}
+        <div class="col-6 text-center places">
+            <h4>{{name}}</h4>
+            <p>{{type}}</p>
+            <p>Coordenadas {{location.coordinates}}</p>
+            <a class="btn btn-warning" href="/editar/{{id}}">Editar</a>
+        </div>
+        {{/each}}
+
+
+
+        </row>
+    </div>
