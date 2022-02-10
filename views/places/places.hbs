@@ -1,0 +1,18 @@
+<div class="container">
+
+    <h1>All places</h1>
+    
+    <ul>
+        {{#each places}}
+        <li>Name: {{name}} </li>
+        <li>Type: {{type}}</li>
+        <li>Latitude: {{location.coordinates.[0]}}</li>
+        <li>Longitude: {{location.coordinates.[1]}}</li>
+        <a href="{{id}}/update">Edit me</a> <br>
+        <form action="{{_id}}/delete" method="post">
+            <button>Delete</button>
+        </form>
+        <hr>
+        {{/each}}
+    </ul>
+</div>
