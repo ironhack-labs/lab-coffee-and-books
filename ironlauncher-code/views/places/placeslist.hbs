@@ -1,0 +1,39 @@
+<br />
+<div class="container">
+<h2>List of places</h2>
+
+<br />
+<br />
+
+{{#each places}}
+
+  <h4>{{name}}</h4>
+  <p>{{type}}</p>
+  <a href="/places/edit/{{id}}" class="btn btn-outline-dark">edit</a>
+
+  <form
+    action="/places/delete/{{id}}"
+    method="POST"
+    style="display: inline-block;"
+  >
+    <button class="btn btn-outline-dark">delete</button>
+  </form>
+
+{{/each}}
+<br />
+<div class="container">
+
+  <h1>All places</h1>
+  <hr />
+  <div id="myMap"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/basic-map-setup.js"></script>
+<script src="/js/mapStyles.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initMap"
+></script>
+
+</div>

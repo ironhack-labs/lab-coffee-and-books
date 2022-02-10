@@ -1,0 +1,49 @@
+<br>
+<div class="container">
+<div class="row justify-content-center"></div>
+<h2>Create a new place</h2>
+
+<form action="/places/create" method="POST">
+ <div class="mb-3 row">
+  <div class="col">
+  <label>
+    Name
+    <input type="text" name="name" />
+  </label>
+  </div>
+  </div> 
+
+
+ <div class="mb-3 row">
+  <div class="col">
+  <label for="type">
+    Type
+    <select name="type" id="type" />
+      <option value="coffee shop">coffee shop</option>
+     <option value="bookstore">bookstore</option>
+    </select>
+  </label>
+    </div>
+  </div> 
+ <div class="mb-3 row">
+  <div class="col">
+
+
+        <label>Latitude
+            <input name="lat" type="text">
+        </label>
+    </div>
+  </div> 
+<div class="mb-3 row">
+  <div class="col">
+        <label>Longitude
+            <input name="lng" type="text">
+        </label>
+        <br><br>
+          </div>
+  </div> 
+
+
+  <input type="submit" value="Create new place" class="btn btn-outline-dark" />
+</form>
+</div>
