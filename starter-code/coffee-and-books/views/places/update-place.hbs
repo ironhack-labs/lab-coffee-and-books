@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8">
+
+            <h2>Update your place!</h2>
+
+            <br>
+            <br>
+
+            <form action="/places/{{places.id}}/edit" method="POST">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" value="{{places.name}}">
+                </div>
+
+                <select class=" mb-3 form-select" aria-label="Default select example" name="type">
+                    <option selected>Select your type!</option>
+                    <option value="Coffe Shop">Coffe Shop</option>
+                    <option value="Bookstore">Bookstore</option>
+                </select>
+
+                <div class="mb-3">
+                    <label>
+                        Latitud
+                        <input type="text" name="lat">
+                    </label>
+                </div>
+
+                <div class="mb-3">
+                    <label>
+                        Longitud
+                        <input type="text" name="lng">
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update!</button>
+            </form>
+
+        </div>
+    </div>
+</div>
