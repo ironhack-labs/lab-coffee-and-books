@@ -1,0 +1,27 @@
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+#myMap {
+  height: 400px;
+  background-color: red;
+}
+body {
+ font-family: 'Work Sans', sans-serif;
+}
+
+.index-container {
+text-align: center;
+}
+
+.new-form {
+  text-align: center;
+}
+
+.update-form {
+  text-align: center;
+}
