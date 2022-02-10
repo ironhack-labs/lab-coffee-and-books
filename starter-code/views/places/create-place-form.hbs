@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <h1>Crea un nuevo lugar</h1>
+            <form action="/crear" method="POST">
+                <div class="mb-3">
+                    <label for="placeName" class="form-label">Nombre del lugar:</label>
+                    <input type="text" class="form-control" id="placeName" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="placeType" class="form-label">Tipo del lugar:</label>
+                    <input type="text" class="form-control" id="placeType" name="type">
+                </div>
+
+                <div class="mb-3">
+                    <label for="placeLat" class="form-label">Latitud:</label>
+                    <input type="text" class="form-control" id="placeLat" name="lat">
+                </div>
+                <div class="mb-3">
+                    <label for="placeLng" class="form-label">Longitud:</label>
+                    <input type="text" class="form-control" id="placeLng" name="lng">
+                </div>
+                <button type="submit" class="btn btn-primary">Crear lugar</button>
+            </form>
+        </div>
+    </div>
+</div>

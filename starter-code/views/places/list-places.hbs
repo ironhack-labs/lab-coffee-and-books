@@ -1,0 +1,29 @@
+<div class="container">
+
+    <h1>Nuestros Places:</h1>
+
+    <ul id="places">
+        {{#each allPlaces}}
+        <li>{{name}}</li>
+        <div class="row">
+            <div class="col-1"><a class="btn btn-primary" href="/places/{{id}}/editar">Editar</a></div>
+            <div class="col-1">
+                <form action="/places/{{id}}/delete" method="POST">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </div>
+        </div>
+        {{/each}}
+    </ul>
+
+    <figure id="myMap"></figure>
+
+
+
+</div>
+
+{{!-- script de axios --}}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="../../js/maps-script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=______&callback=initMap"></script>
