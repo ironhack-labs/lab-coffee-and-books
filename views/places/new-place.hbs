@@ -1,0 +1,32 @@
+<div class="container">
+
+    <form action="/crear-sitio" method="POST">
+
+        <label>
+            <input type="text" placeholder="name your place" name="name">
+        </label>
+
+        <label for="type-select">Choose a type:</label>
+
+        <select name="type">
+            <option value="">--Please choose an option--</option>
+            <option value="bookstore">Bookstore</option>
+            <option value="coffee shop">Coffee shop</option>
+
+        </select>
+
+        <label>Latitud
+            <input name="lat" type="text">
+        </label>
+        <br><br>
+
+        <label>Longitud
+            <input name="lng" type="text">
+        </label>
+        <br><br>
+
+
+        <input type="submit" value="Create place">
+
+    </form>
+</div>
