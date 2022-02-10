@@ -1,0 +1,22 @@
+<div class="createpage">
+    <a href="/places/create"><button class="createnew btn btn-primary">Create new</button></a>
+    <div class="d-flex flex-row cardss">
+        {{#each resp}}
+        <div class="placescard col-4">
+            <h4>{{name}}</h4>
+            <h5>{{type}}</h5>
+            <div class="placesbtns d-flex flex-row justify-content-center">
+                <a href="/places/details/{{_id}}">
+                    <button class="btn btn-outline-primary">Info</button>
+                </a>
+                <a href="/places/{{_id}}/edit">
+                    <button class="btn btn-outline-warning">Edit</button>
+                </a>
+                <form action="/places/{{_id}}/delete" method="POST">
+                    <button class="btn btn-outline-danger">Remove</button>
+                </form>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

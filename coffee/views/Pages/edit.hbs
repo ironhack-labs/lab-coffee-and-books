@@ -1,0 +1,23 @@
+<div class="col-9 text-center card">
+    <form action="/places/{{_id}}/edit" method="post" class="formcreate">
+        <label for="input">Place name:</label>
+        <input type="text" name="name" placeholder="Place name" class="form-control">
+        <label for="input">Place Type:</label>
+        <select name="type" class="form-select">
+            <option value="Coffee Shop">Coffee Shop</option>
+            <option value="Bookstore">Bookstore</option>
+        </select>
+        <div class="locations d-flex flex-row justify-content-around">
+            <div class="ltd">
+                <label for="input">Place latitude:</label>
+                <input type="text" name="lat" placeholder="Latitude" class="form-control">
+            </div>
+
+            <div class="longitude">
+                <label for="input">Place longitude:</label>
+                <input type="text" name="lng" placeholder="Longitude" class="form-control">
+            </div>
+        </div>
+        <button class="btn btn-primary">Edit</button>
+    </form>
+</div>

@@ -1,0 +1,86 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
+  margin-bottom: 20px;
+}
+.nav-link{
+  margin-left: 20px;
+}
+
+.nav-link.home{
+  margin: 0
+}
+
+.placescard{
+  border:1px solid black;
+}
+
+.mainlayout{
+  height: 91vh;
+}
+.mainlayout .row{
+  justify-content: center;
+}
+
+.formcreate input, .formcreate select{
+  margin-bottom: 20px;
+}
+
+.card {
+  border: 1px solid gray;
+  border-radius:20px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+  height: 500px;
+}
+
+.card form {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin: auto 40px;
+}
+
+.placescard {
+  text-align: center;
+  border: 1px solid gray;
+  border-radius:20px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+}
+
+.placesbtns button{
+  margin: 0 3px 10px 3px;
+}
+
+.placescard{
+  margin-left: 10px;
+}
+
+.locations input{
+  width: 300px;
+}
+
+.createnew {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.createpage{
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.cardss{
+justify-content: center;
+}
+
+.Map{
+  height: 80vh;
+  background-color: aqua;
+}
