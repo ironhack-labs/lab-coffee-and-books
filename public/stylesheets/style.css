@@ -4,7 +4,8 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: #ffff;
+  text-decoration: none;
 }
 
 h1 {
@@ -18,4 +19,27 @@ img{
 #myMap {
   height: 400px;
  
+}
+
+h2{
+  text-align: center;
+  margin: 10px;
+}
+
+button{
+  margin: 10px;
+}
+
+button input {
+  border: none;
+  background-color: inherit;
+  color: white;
+}
+
+.buttons-list{
+  text-align: center;
+}
+
+.new-place{
+  margin: 10px;
 }
