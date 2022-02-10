@@ -1,0 +1,18 @@
+<h1>{{name}}'s info</h1>
+<p>Type: {{type}}</p>
+
+<figure id="myMap"></figure>
+
+<div class="buttons">
+    <a href="/places/{{_id}}/edit" class="btn btn-primary">EDIT</a>
+    <form action="/places/{{_id}}/delete" method="POST">
+        <button type="submit" class="btn btn-primary">DELETE</button>
+    </form>
+</div>
+<div class="d-none">
+    <input value="{{location.coordinates.[0]}}">
+    <input value="{{location.coordinates.[1]}}">
+</div>
+
+<script src="/js/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=__API-KEY__&callback=initMap"></script>
