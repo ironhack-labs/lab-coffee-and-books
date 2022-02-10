@@ -1,0 +1,14 @@
+<div class="container mainT">
+<h2>Lugares</h2>
+{{#each listPlaces}}
+<h4>{{name}}</h4>
+<p>{{placeS}}</p>
+<p>{{location}}</p>
+<a href="/{{_id}}/editar">Editar</a>
+<form action="/{{_id}}/borrar" method="POST">
+    <button>Eliminar</button>
+</form>
+ {{/each}}
+
+ <a href="/">Return to Home</a>
+</div>

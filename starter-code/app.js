@@ -11,10 +11,13 @@ const app = express();
 
 require("./config")(app);
 
-app.locals.appTitle = `Coffee-book project`;
+app.locals.appTitle = `Coffee Books project`;
 
-const index = require("./routes/index");
-app.use("/", index);
+const index = require('./routes/index');
+app.use('/', index);
+
+const placesRoutes = require('./routes/places.routes')
+app.use('/', placesRoutes)
 
 require("./error-handling")(app);
 

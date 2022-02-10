@@ -1,0 +1,25 @@
+<div class="container">
+<h1>Edit {{name}}</h1>
+
+<form action="/{{_id}}/editar" method="POST">
+
+    <label>
+        Nombre
+        <input type="text" name="name" value="{{name}}">
+    </label>
+    <label>
+        Lugar
+        <input type="text" name="place" value="{{placeS}}">
+    </label>
+    <label>
+        Localición
+        <input type="text" name="place" value="{{location}}">
+    </label>
+
+
+    <input type="submit" value="Guardar edición">
+</form>
+
+<a href="/lista">Volver al listado</a>
+
+</div>
