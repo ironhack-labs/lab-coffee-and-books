@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>LISTA DE LUGARES</h2>
+    <hr>
+
+    {{#each places}}
+    <h5>{{name}}</h5>
+    <h6>{{type}}</h6>
+    <div class="buttons">
+        <a href="/places/{{_id}}/edit" class="btn" style="background-color: #9e2438">Editar</a>
+        <form action="/places/{{_id}}/delete" method="POST">
+            <button type="submit" class="btn" style="background-color: #000000;">Borrar lugar</button>
+        </form>
+    </div>
+    <hr>
+    {{/each}}
+
+    <figure id="myMap"></figure>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=METE-AQUI-TU-KEY&callback=initMap"></script>

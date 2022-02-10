@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>AÑADE UN NUEVO LUGAR</h2>
+
+    <form action="/places/create" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Nombre:</label>
+            <input type="text" class="form-control" name="name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tipo de establecimiento:</label>
+            <input type="text" class="form-control" name="type" list="type">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Latitud:</label>
+            <input type="text" class="form-control" name="lat">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Longitud:</label>
+            <input type="text" class="form-control" name="lng">
+        </div>
+        <button type="submit" class="btn" style="background-color: #9e2438;">Añadir lugar</button>
+    </form>
+</div>
+
+
+<datalist id="type">
+    <option>coffee shop</option>
+    <option>bookstore</option>
+</datalist>
