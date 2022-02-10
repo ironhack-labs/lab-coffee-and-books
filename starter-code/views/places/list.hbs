@@ -3,7 +3,7 @@
 {{#each listPlaces}}
 <h4>{{name}}</h4>
 <p>{{placeS}}</p>
-<p>{{location}}</p>
+<p>{{location.coordinates}}</p>
 <a href="/{{_id}}/editar">Editar</a>
 <form action="/{{_id}}/borrar" method="POST">
     <button>Eliminar</button>

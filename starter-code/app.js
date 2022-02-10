@@ -19,6 +19,9 @@ app.use('/', index);
 const placesRoutes = require('./routes/places.routes')
 app.use('/', placesRoutes)
 
+const mapRoutes = require('./routes/api.routes')
+app.use('/', mapRoutes)
+
 require("./error-handling")(app);
 
 module.exports = app;
