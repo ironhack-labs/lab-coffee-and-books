@@ -1,0 +1,16 @@
+{{#each places}}
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+
+        <a href="/places/{{id}}/edit" class="card-link">Update</a>
+
+        <form action="/places/{{id}}/delete" method="POST">
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+
+    </div>
+</div>
+
+{{/each}}
