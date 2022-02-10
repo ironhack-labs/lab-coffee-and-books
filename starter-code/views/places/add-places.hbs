@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+        <h1>Registro</h1>
+        <hr>
+
+        <form action="/places/create" method="POST">
+
+            <div class="mb-3 row">
+                <div class="col">
+                    <label for="nameInput" class="form-label">nombre</label>
+                    <input type="text" class="form-control" name="name">
+                    <div class="form-text">Requerido.</div>
+                </div>
+            </div>     
+            <div class="mb-3 row">
+                <div class="col">
+                    <label for="latInput" class="form-label">latitud</label>
+                    <input type="text" class="form-control" name="lat">
+                    <div class="form-text">Requerido.</div>
+                </div>
+           
+                <div class="col">
+                    <label for="lngInput" class="form-label">altitud</label>
+                    <input type="text" class="form-control" name="lng">
+                    <div class="form-text">Requerido.</div>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col">
+                   <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="type">
+                       <option value="coffee-shop">cafeteria</option>
+                    <option value="bookstore">libreria</option>
+                   </select>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-dark block">Completar registro</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</div>
