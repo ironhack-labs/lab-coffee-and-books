@@ -1,0 +1,44 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #52a4c5;
+}
+
+h1, h2 {
+  color: 15px;
+  margin-top: 50px;
+}
+
+h6 {
+  color: #9e2438
+}
+
+.btn {
+  color: white
+}
+
+#myMap {
+  height: 500px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.btn {
+  margin: 5px;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home a {
+  padding: 30px;
+}
