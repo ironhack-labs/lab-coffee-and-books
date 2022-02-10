@@ -10,3 +10,7 @@ a {
 h1 {
   color: 15px;
 }
+
+#myMap {
+  height: 400px;
+}

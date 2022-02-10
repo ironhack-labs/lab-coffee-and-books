@@ -10,10 +10,15 @@ router.get('/create', (req, res, next) => {
 //Adding New Places (handle)
 router.post('/create', (req,res,next) => {
 
-    const { name, type } = req.body
+    const { name, type, lat, lng   } = req.body
+
+    const location = {
+        type: 'Point',
+        coordinates: [lat, lng]
+    }
 
     Place
-        .create({ name, type })
+        .create({ name, type, location})
         .then(() => res.redirect('/places'))
         .catch(err => {
             res.render('../views/new-place')
@@ -41,6 +46,10 @@ router.post('/:id/delete', (req, res) => {
         .catch(err => console.log(err))
 })
 
+// Places map
+router.get('/map', (req, res, next) => res.render('../views/places/marked-map'))
+
+// Places id
 router.get('/:id', (req, res, next) => {
 
     const { id } = req.params
@@ -66,13 +75,21 @@ router.get('/:id/edit', (req,res,next) => {
 router.post('/:id/edit', (req, res, next) => {
 
     const { id } = req.params
-    const { name, type } = req.body
+    const { name, type, lat, lng } = req.body
+    
+    const location = {
+        type: 'Point',
+        coordinates: [lat, lng]
+    }
 
     Place
-        .findByIdAndUpdate(id, {name, type}, {new: true} )
+        .findByIdAndUpdate(id, {name, type, location}, {new: true} )
         .then(() => res.redirect('/places'))
         .catch(err => console.log(err))
 })
+
+
+
 
 module.exports = router;
 

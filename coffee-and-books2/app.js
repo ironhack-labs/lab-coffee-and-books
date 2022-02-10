@@ -21,6 +21,9 @@ app.use("/", indexRouter);
 const placesRouter = require('./routes/places.routes');
 app.use('/places', placesRouter);
 
+// API routes
+const apiRouter = require('./routes/api.routes');
+app.use('/api', apiRouter);
 
 require("./error-handling")(app);
 

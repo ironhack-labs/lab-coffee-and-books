@@ -7,6 +7,8 @@
                 {{#each placeInfo}}
                 <li>{{name}}</li>
                 <li>{{type}}</li>
+                <li>{{location.coordinates.[0]}}</li>
+                <li>{{location.coordinates.[1]}}</li>
             
                 <a href="/places/{{_id}}">Place Detail</a>
                 <br><br>
