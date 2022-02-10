@@ -1,0 +1,17 @@
+body {
+  font-family: sans-serif;
+  font-weight: 200;
+}
+
+.navbar {
+  margin-bottom: 50px;
+}
+
+.navbar form button {
+  background: transparent;
+  border: none;
+}
+
+#myMap {
+  height: 500px;
+}

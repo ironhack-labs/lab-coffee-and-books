@@ -1,0 +1,18 @@
+<h2>Places Edit</h2>
+<form action="/places/{{_id}}/edit" method="POST">
+    <label>
+        Name
+        <input type="text" name="name" value="{{name}}">
+    </label>
+
+    <label>
+        Latitude
+        <input type="text" name="lat" value="{{location.coordinates.[0]}}">
+    </label>
+
+    <label>
+        Longitude
+        <input type="text" name="lng" value="{{location.coordinates.[1]}}">
+    </label>
+    <input type="submit" value="Update Place">
+</form>
