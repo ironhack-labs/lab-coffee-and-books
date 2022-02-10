@@ -1,0 +1,12 @@
+<h1>lista</h1>
+
+{{#each places}}
+<h4>{{name}}</h4>
+<p>{{type}}</p>
+<a href="/places/{{id}}/update">
+<button>editar</button>
+</a>
+<form action="/places/{{id}}/delete" method="POST">
+    <button>eliminar</button>
+</form>
+{{/each}}

@@ -1,9 +1,25 @@
-const express = require('express');
-const router  = express.Router();
+
+
+module.exports = app => {
+
+
+
+  const apiRoutes = require('./api.routes')
+  app.use("/api", apiRoutes)
+
+ const placesRoutes =require('./places.routes')
+ app.use("/places",placesRoutes)
+
+
+  const mapRouter = require("./map.routes");
+  app.use("/map", mapRouter);
+
 
 /* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+ const indexRouter = require("./index.routes");
+ app.use("/", indexRouter);
+}
 
-module.exports = router;
+
+
+
