@@ -1,8 +1,3 @@
-/* body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-} */
-
 a {
   color: #00b7ff;
 }
@@ -17,4 +12,16 @@ h1 {
 }
 body {
  font-family: 'Work Sans', sans-serif;
+}
+
+.index-container {
+text-align: center;
+}
+
+.new-form {
+  text-align: center;
+}
+
+.update-form {
+  text-align: center;
 }
