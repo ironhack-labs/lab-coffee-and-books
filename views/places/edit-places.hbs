@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Editar Cafetería o Librería</h1>
+
+    <form action="/cafe-y-libro/{{_id}}/editar" method="POST">
+        <label>
+            Nombre:
+            <input type="text" name="name" value="{{name}}">
+        </label>
+
+        <label>
+            Latitud:
+            <input type="text" name="lat" value="{{location.coordinates.[0]}}">
+        </label>
+
+        <label>
+            Longitud:
+            <input type="text" name="lng" value="{{location.coordinates.[1]}}">
+        </label>
+
+        <input class="btn btn-dark" type="submit" value="Editar">
+    </form>
+</div>
