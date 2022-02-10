@@ -1,0 +1,20 @@
+.navbar {
+    margin-bottom: 30px;
+}
+
+#places{
+    margin-top: 25px;
+}
+
+li {
+    list-style: none;
+}
+
+.btn {
+    margin: 10px;
+}
+
+#myMap {
+    height: 400px;
+    background-color: red;
+}
