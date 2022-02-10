@@ -1,0 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#myMap{
+  height: 500px;
+  background-color: greenyellow;
+}
