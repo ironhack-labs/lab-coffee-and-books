@@ -1,0 +1,27 @@
+<h2>Detalles y Edición</h2>
+
+
+<form action="/editar/{{id}}" method="POST">
+
+    <label>Nombre<input class="form-control" type="text" name="name" value="{{name}}"></label>
+    <label>Latitud <input class="form-control" type="text" name="lat" value="{{location.coordinates.[0]}}"></label>
+    <label>Longitud <input class="form-control" type="text" name="lng" value="{{location.coordinates.[1]}}"></label>
+
+    <label for="type">Tipo
+        <select name="type" id="type" class="form-select">
+
+            <option value="coffee shop">Cafetería</option>
+            <option value="bookstore">Librería</option>
+
+        </select>
+    </label>
+
+    <input class="btn btn-secondary" type="submit" value="Editar">
+
+
+
+</form>
+
+<form action="/editar/{{id}}/delete" method="POST">
+    <button class="btn btn-danger">Eliminar</button>
+</form>

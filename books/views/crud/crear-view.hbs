@@ -1,0 +1,19 @@
+<h2>Crear Lugar</h2>
+<form action="/crear" method="POST">
+
+    <label>Nombre<input class="form-control" type="text" name="name"></label>
+    <label>Longitud<input class="form-control" type="text" name="lng"></label>
+    <label>Latitud<input class="form-control" type="text" name="lat"></label>
+
+    <label for="type">Tipo
+        <select name="type" id="type" class="form-select">
+
+            <option value="coffee shop">Cafetería</option>
+            <option value="bookstore">Librería</option>
+
+        </select>
+    </label>
+
+    <input class="btn btn-primary" type="submit" value="Crear Lugar">
+
+</form>
