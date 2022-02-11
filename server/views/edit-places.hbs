@@ -1,0 +1,17 @@
+<h2>Edita tus lugares</h2>
+
+<form action="/places/{{places.id}}/edit" method="POST">
+
+    <label>
+        Nombre del lugar
+        <input type="text" name="name" value="{{name}}">
+    </label>
+
+    <br><br>
+
+    <label>
+        Tipo de lugar
+        <input type="text" name="type" value="{{type}}">
+    </label>
+
+</form>
