@@ -30,5 +30,34 @@ router.get("/", (req, res, next) => {
 
 })
 
+router.get("/:id/edit", (req, res, next) => {
+    const { id } = req.params
+
+    Place
+    .findById(id)
+    .then(place => res.render("places/edit-places", place))
+    .catch(err => next(err))
+})
+
+router.post("/:id/edit", (req, res, next) => {
+    const { id } = req.params
+    const { name, type } = req.body
+
+    Place
+    .findByIdAndUpdate(id, { name, type })
+    .then(() => res.redirect("/places"))
+    .catch(err => next(err))
+
+})
+
+router.post("/:id/delete", (req, res, next) => {
+    const { id } = req.params
+
+    Place
+    .findByIdAndDelete(id)
+    .then(() => res.redirect("/places"))
+    .catch(err => next(err))
+})
+
 
 module.exports = router;

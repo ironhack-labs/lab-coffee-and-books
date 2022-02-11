@@ -1,27 +1,26 @@
 <div class="container"> 
-    <h2>Add a new place</h2>
+    <h2>Edit {{name}}</h2>
     <div class="row justify-content-center">
         <div class="col-6">
-            <form action="/places/create" method="POST">
+            <form action="/places/{{id}}/edit" method="POST">
                 <div class="mb-3">
                     <label class="form-label">Name:</label>
-                    <input type="text" class="form-control" name="name">
+                    <input type="text" class="form-control" name="name" value="{{name}}">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Type:</label>
-                    <input type="text" class="form-control" name="type" list="type">
+                    <input type="text" class="form-control" name="type" list="type" value="{{type}}">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Latitude:</label>
-                    <input type="text" class="form-control" name="lat">
+                    <input type="text" class="form-control" name="lat" value="{{location.coordinates.[0]}}">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Longitude:</label>
-                    <input type="text" class="form-control" name="lng">
+                    <input type="text" class="form-control" name="lng" value="{{location.coordinates.[1]}}">
                 </div>
                 <button type="submit" class="btn btn-danger">Add place</button>
             </form>
         </div>
-
     </div>
 </div>

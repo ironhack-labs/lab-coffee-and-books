@@ -1,1 +1,21 @@
-<h1>IT'S WORKING</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        {{#each places}}
+            <div class="col-6">
+                <h1>{{name}}</h1>
+                <p>{{type}}</p>
+                <a class="btn btn-danger mb-3" href="/places/{{id}}/edit">edit</a>
+                <form action="/places/{{id}}/delete" method="POST">
+                    <button class="btn btn-danger mb-3">Delete</button>
+                </form>
+            </div>
+        {{/each}}
+    </div>
+
+    <figure id="myMap"></figure>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
