@@ -1,0 +1,29 @@
+<form action="/{{id}}/editar" method="POST" style="display: inline-block">
+
+<label>
+    Name:
+    <input type="text" name="name" value=""{{name}}>
+</label>
+
+<label>
+    Select a Type:
+    <select name="type">
+        <option value="coffee shop"> Coffee Shop</option>
+        <option value="bookstore"> bookstore</option>
+    </select>
+</label>
+<label>
+    Latitud:
+    <input name="lat" type="text">
+</label>
+<label>
+    Longitud:
+    <input name="lng" type="text">
+</label>
+
+<input type="submit" value="Edit place">
+
+
+
+
+</form>
