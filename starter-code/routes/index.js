@@ -1,9 +1,9 @@
-const express = require('express');
-const router  = express.Router();
+module.exports = app => {
 
-/* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+  const placeRouter = require('./place.routes')
+  app.use('/', placeRouter)
 
-module.exports = router;
+  const apiRouter = require('./api.routes')
+  app.use('/api', apiRouter)
+
+}

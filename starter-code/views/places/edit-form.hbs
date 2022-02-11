@@ -1,0 +1,37 @@
+<div class="container">
+
+
+    <form action="/editar/{{_id}}" method="POST">
+
+        <legend>Editar</legend>
+        <div class="mb-3 d-grid gap-2 col-6 mx-auto">
+            <label for="nameInput" class="form-label">Name:</label>
+            <input type="text" id="nameInput" class="form-control" name="name" value="{{name}}">
+        </div>
+
+        <div class="mb-3 d-grid gap-2 col-6 mx-auto">
+            <select name="type" value="{{type}}" class="form-select">
+                <option value="coffe shop">coffe shop</option>
+                <option value="bookstore">bookstore</option>
+            </select>
+        </div>
+        <div class="mb-3 d-grid gap-2 col-6 mx-auto">
+            <label for="latInput" class="form-label">Latitud:</label>
+            <input type="text" id="latInput" class="form-control" name="lat" value="{{latitud}}">
+        </div>
+        <div class="mb-3 d-grid gap-2 col-6 mx-auto">
+            <label for="lngInput" class="form-label">Longitud</label>
+            <input type="text" id="lngInput" class="form-control" name="lng" value="{{longitud}}">
+        </div>
+
+        <button type="submit" class="btn btn-dark d-grid gap-2 col-6 mx-auto">Editar</button>
+
+    </form>
+
+
+
+
+
+
+
+</div>
