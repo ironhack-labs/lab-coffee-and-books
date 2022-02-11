@@ -1,0 +1,94 @@
+body{
+  font-family: 'Oswald', sans-serif;
+}
+
+
+
+li{list-style: none;}
+
+.submit-btn{
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.landing-page{
+  background-image: url("https://secretnyc.co/wp-content/uploads/2021/09/bookcluib2-1024x683.jpg");
+  height: 100vh;
+  color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.greeting{
+  padding: 25px;
+  background-color: blanchedalmond;
+  opacity: 0.9;
+  width:300px;
+  border-radius: 35px;
+}
+.card {margin:5px}
+
+
+.veryBigMap{
+  height: 500px;
+  opacity: 0.85;
+  border-radius: 35px;
+ 
+}
+
+.bigMap{
+  height: 600px;
+}
+.smallMap{
+  height: 150px;
+}
+.card{margin-top: 25px;}
+
+#errorMessage {
+  background-color: rgb(255, 202, 202);
+  width: 400px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  padding: 5px;
+  text-align: center;
+
+  
+  animation: showFromBottom 6s forwards;
+}
+#successMessage {
+  background-color: rgb(202, 255, 206);
+  width: 400px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  padding: 5px;
+  text-align: center;
+  animation: showFromBottom 6s forwards;
+}
+
+@keyframes  showFromBottom {
+  0% {
+    bottom: -50px
+  }
+
+  10% {
+    bottom: 10px;
+
+  }
+
+  90% {
+    bottom: 10px;
+  }
+
+  100% {
+    bottom: -50px
+  }
+}
