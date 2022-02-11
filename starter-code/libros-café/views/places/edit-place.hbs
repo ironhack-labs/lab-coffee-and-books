@@ -1,0 +1,55 @@
+<main class="container">
+    <h2>Edit {{name}}</h2>
+
+    <form action="/places/edit/{{_id}}" method="POST">
+
+
+        <div class="card" style="width: 30rem;">
+            <div class="card-header">
+                <label>NAME:
+                    <input class="input-field" type="text" name='name' value="{{name}}" required>
+                </label>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <label for="activity" class="form-label">Select activity</label>
+                    <input class="form-control" list="options" name="type" id="activity" value="{{type}}" required>
+                    <datalist id="options">
+                        <option value="Bookstore">
+                        <option value="CoffeeShop">
+                    </datalist>
+                </li>
+
+                <li class="list-group-item"><label class="form-label" for="location">Location
+
+
+                    </label> <br><input id="location" class="input-field" type="number" step="any" name='location.lat'
+                        value="{{location.lat}}" required>
+                    <input id="location" class="input-field" type="number" name='location.lng' step="any"
+                        value="{{location.lng}}" required>
+                </li>
+
+
+            </ul>
+
+            <input class="submit-btn btn btn-lg btn-warning" type="submit" value="EDIT ENTRY">
+        </div>
+
+
+        <br><br>
+        <a href="/places">[back]</a>
+        <a href="/">[main]</a>
+    </form>
+
+    {{#if errorMessage}}
+    <div id="errorMessage">
+        <p>{{errorMessage}}</p>
+    </div>
+    {{/if}}
+
+    {{#if successMessage}}
+    <div id="successMessage">
+        <p>{{successMessage}}</p>
+    </div>
+    {{/if}}
+</main>
