@@ -1,0 +1,24 @@
+<div class="container">
+
+    <div class="raw">
+        <div class="col-6">
+            <h1>Detalles de {{name}}</h1>
+            <br><br>
+            <p>Nombre: {{name}}</p>
+            <p>Tipo de espacio: {{type}} </p>
+        </div>
+        <div class="col-6">
+
+            <figure id="myMap"></figure>
+        </div>
+
+
+
+    </div>
+    <a class='btn btn-dark' href="/listado">Volver al listado</a>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=__&callback=initMap"></script>

@@ -1,0 +1,17 @@
+<div class="container">
+
+    <h1>Lista de lugares</h1>
+    <ul>
+        {{#each places}}
+        <li>{{name}}
+            <a class='btn btn-dark' href="/detalles/{{_id}}">Detalles</a>
+            <a class='btn btn-dark' href="/editar/{{_id}}">Editar</a>
+
+            <form action="/eliminar/{{_id}}" method="POST" style="display: inline-block;">
+                <button class='btn btn-dark'>Eliminar</button>
+            </form>
+        </li>
+        <br><br>
+        {{/each}}
+    </ul>
+</div>
