@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <h2>Listado de tiendas</h2>
+<hr>
+      <ul>
+            {{#each places}}
+
+            <li><h3>Nombre: {{name}} </h3><br>
+                <h4>Tipo de negocio: {{type}} </h4><br>
+                <a href="/tiendas/detalles/{{id}}">Detalles</a> <br><br>
+                
+                <a href="/tiendas/{{id}}">Editar</a> <br><br>
+
+                <form action="/tiendas/listado/eliminar/{{id}}" method="POST">
+                <button>Eliminar negocio</button>
+                </form>
+                <hr>
+            {{/each}}
+
+            </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
