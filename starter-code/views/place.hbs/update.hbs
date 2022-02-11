@@ -1,0 +1,24 @@
+<h2>Actualizar información {{name}}</h2>
+
+<form action="/edit/{{_id}}" method="POST">
+
+
+    <label>
+        Nombre
+        <input type="text" name="name" value="{{name}}">
+    </label>
+    <br>
+     <label>
+        Nº de hélices
+        <input type="number" name="propellers" value="{{propellers}}">
+    </label>
+    <br>
+     <label>
+        Velocidad
+        <input type="number" name="maxSpeed" value="{{maxSpeed}}">
+    </label>
+    <br>
+
+    <input type="submit" value="Guardar cambios">
+
+</form>
