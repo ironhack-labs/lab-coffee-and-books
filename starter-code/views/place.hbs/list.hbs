@@ -1,0 +1,28 @@
+<div class="container">
+
+
+    <h2>Cafeterias</h2>
+    <ul>
+    {{#each place}}
+
+            
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <a href='/cafeteria/{{_id}}/edit' class="card-link">Edit</a>
+               <form action="/cafeteria/{{_id}}/delete" method="post">
+                <button>Eliminar</button>
+            </form>
+            </div>
+        </div>
+
+        {{/each}}
+
+    </ul>
+
+
+    <a href="/cafeteria/create">Añadir cafeteria </a>
+
+</div>      
+
+
