@@ -1,0 +1,32 @@
+<h2>Editar: {{name}}</h2>
+<hr>
+
+<form action="/establecimientos/{{_id}}/editar" method="post">
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="name" value="{{name}}">
+        <label for="floatingInput">Nombre</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="lat" value="{{lat}}">
+        <label for="floatingInput">Ubicación - Latitud</label>
+    </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="lng" value="{{lng}}">
+            <label for="floatingInput">Ubicación - Longitud</label>
+        </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="type" value="{{type}}">
+        <label for="floatingInput">Tipo</label>
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Editar">
+
+</form>
+
+
+
+<a class="btn btn-warning" href="/establecimientos/listado" role="button">Volver al listado</a>
