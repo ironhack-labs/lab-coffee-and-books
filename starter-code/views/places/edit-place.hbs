@@ -1,0 +1,30 @@
+<h1>Edit {{name}}</h1>
+
+
+<div class="container form">
+
+    <h2> create a new place</h2>
+
+    <form action="/places/{{_id}}/editar" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Name:</label>
+            <input type="text" class="form-control" name="name" value="{{name}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">type:</label>
+            <select name="type">
+                <option disabled selected>---select one---</option>
+                <option value="coffee shop"> Coffee shop</option>
+                <option value="bookstore"> Bookstore</option>
+            </select>
+        </div>
+        <label class="form-label">Latitude:</label>
+        <input type="text" class="form-control" name="name" value="{{lat}}">
+        <label class="form-label">Longitude:</label>
+        <input type="text" class="form-control" name="name" value="{{lng}}">
+        <br>
+
+        <button type="submit" class="btn" style="background-color: #f05811;">Create a new</button>
+    </form>
+
+</div>
