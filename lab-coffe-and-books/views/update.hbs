@@ -1,0 +1,20 @@
+<h2>Update the Places</h2>
+<form action="/places/{{id}}/edit" method="POST">
+    <label>
+        placeName
+        <input type="text" name="name" value="{{name}}">
+    </label>
+    <br><br>
+    <label>
+        businessClass
+        <input type="text" name="businessClass" value="{{businessClass}}">
+    </label>
+    <br><br>
+    <label>
+        Location
+        <input name="lat" type="text" value="{{location.coordinates.[0]}}">
+        <input name="lng" type="text" value="{{location.coordinates.[1]}}">
+    </label>
+    <br><br>
+    <button type="submit"> listo</button>
+</form>
