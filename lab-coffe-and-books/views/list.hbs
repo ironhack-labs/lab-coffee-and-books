@@ -1,0 +1,10 @@
+<h2>Available Places</h2>
+<ul>
+    {{#each places}}
+    <li>{{name}},{{businessClass}},{{location.coordinates.[0]}},{{location.coordinates.[1]}},{{id}}</li>
+    <form action="/place/{{_id}}/delete" method="POST">
+        <button type="submit">DESAPARECEEEEEEEE</button>
+    </form>
+    <a href="/places/{{_id}}/edit">Editame</a>
+    {{/each}}
+</ul>
