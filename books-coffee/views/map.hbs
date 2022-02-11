@@ -1,0 +1,33 @@
+<!-- index.html -->
+
+<style>
+    #map {
+        height: 500px;
+        width: 100%;
+    }
+</style>
+
+
+<h3>My First Map</h3>
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDECGsze_GbvH4L7Jf8_N2al6bIb_RhIHQ"></script>
+<script src="../app.js"></script>
+<script>
+
+    function startMap() {
+        const ironhackBCN = {
+            lat: 41.3977381,
+            lng: 2.190471916
+        };
+        const map = new google.maps.Map(
+            document.getElementById('map'),
+            {
+                zoom: 5,
+                center: ironhackBCN
+            }
+        );
+    }
+
+    startMap();
+</script>
