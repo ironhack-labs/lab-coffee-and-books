@@ -1,0 +1,20 @@
+<h2>Listado</h2>
+
+<hr>
+<div class="container">
+    <ul>
+        {{#each places}}
+        <li>
+            <h3>{{name}}</h3>
+        </li>
+        <a class="btn btn-primary" href="/establecimientos/{{_id}}/editar">Editar</a>
+        <form action="/establecimientos/{{_id}}/eliminar" method="post" style="display: inline-block;">
+            <button class="btn btn-danger">Eliminar</button>
+        </form>
+        {{/each}}
+    </ul>
+</div>
+
+<a class="btn btn-primary" href="/establecimientos/crear" role="button">Registrar nuevo</a>
+<a class="btn btn-warning" href="/" role="button">Volver a inicio</a>
+

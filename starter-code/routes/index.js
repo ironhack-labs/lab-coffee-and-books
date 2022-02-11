@@ -1,9 +1,7 @@
-const express = require('express');
-const router  = express.Router();
+module.exports = app => {
 
-/* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+    // Base routes
+    const placeRouter = require("./place.routes");
+    app.use("/", placeRouter);
 
-module.exports = router;
+}
