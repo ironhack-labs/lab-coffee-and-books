@@ -1,0 +1,14 @@
+<h2>Lista de lugares</h2>
+<hr>
+
+{{#each placeList}}
+<ul>
+    <li>{{name}} <a href="/places/{{id}}/edit"> Edit</a></li>
+
+    <form action="/places/{{id}}/delete" method="POST"><button type="submit"> Delete</button></form>
+
+</ul>
+
+
+
+{{/each}}
