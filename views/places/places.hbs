@@ -1,0 +1,38 @@
+<div class="container">
+    <h2> List of places</h2>
+
+
+    <ul>
+
+        {{#each places}}
+
+
+        <li>Name: {{name}} Type: {{type}} Location: {{location.coordinates}}</li>
+
+        <div class="buttons-list">
+            <button type="button" class="btn btn-primary">
+                <a href="/sitios/{{_id}}/editar">Editar</a>
+            </button>
+            <button type="button" class="btn btn-primary">
+
+                <form class="button" action="/sitios/{{_id}}/eliminar" method="POST">
+
+
+                    <input type="submit" value="Delete place">
+
+                </form>
+            </button>
+        </div>
+
+        {{/each}}
+
+    </ul>
+
+    <figure id="myMap"></figure>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/mapStyles.js"></script>
+<script src="/js/places-map-setup.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initMap"></script>

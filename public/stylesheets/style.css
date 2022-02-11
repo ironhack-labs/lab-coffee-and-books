@@ -1,0 +1,45 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #ffff;
+  text-decoration: none;
+}
+
+h1 {
+  color: 15px;
+}
+
+img{
+  width: 30px;
+}
+
+#myMap {
+  height: 400px;
+ 
+}
+
+h2{
+  text-align: center;
+  margin: 10px;
+}
+
+button{
+  margin: 10px;
+}
+
+button input {
+  border: none;
+  background-color: inherit;
+  color: white;
+}
+
+.buttons-list{
+  text-align: center;
+}
+
+.new-place{
+  margin: 10px;
+}

@@ -1,0 +1,28 @@
+<div class="container">
+
+    <form action="/sitios/{{_id}}/editar" method="POST">
+
+        <label>
+            <input type="text" placeholder="name your place" name="name" value="{{name}}">
+        </label>
+
+        <label>
+            <input type="text" placeholder="type of place" name="type" value="{{type}}">
+        </label>
+
+        <label>Latitud
+            <input name="lat" type="text" value="{{location.coordinates.[0]}}">
+        </label>
+
+
+        <label>Longitud
+            <input name="lng" type="text" value="{{location.coordinates.[1]}}">
+        </label>
+
+
+
+        <input type="submit" value="Update place">
+
+
+    </form>
+</div>
