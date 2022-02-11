@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 class="text-center pt-5 pb-2 fw-bolder">PLACES</h1>
+    <div class="row justify-content-center px-3 pt-4">
+        {{#each places}}
+        <div class="col-md-4">
+            <div class="card px-2 border-0" style="width: 18rem;">
+                <img src="../images/cafeteria.jpg" class="card-img-top" alt="...">
+                <div class="card-body d-flex flex-column">
+                    <p class="fw-bold fs-5">Name: {{name}}</p>
+                    <p class="border-top-0 border-end-0 border-start-0 my-2 py-2" type="text">
+                    <p class="fw-bold fs-5">Description: {{description}}</p>
+                    <p class="border-top-0 border-end-0 border-start-0 my-2 py-2" type="text">
+                    <p class="fw-bold fs-5">Latitud:{{lat}}</p>
+                    <p class="border-top-0 border-end-0 border-start-0 my-2 py-2" type="text">
+                    <p class="fw-bold fs-5">Longitud: {{lng}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        <a href="/places/create" class="btn btn-dark mt-4" role="button">Add a new Place</a>
+
+    </div>
+</div>

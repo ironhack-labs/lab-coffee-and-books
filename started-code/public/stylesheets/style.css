@@ -1,0 +1,15 @@
+body {
+  font-family: "Titillium Web", sans-serif;
+}
+
+.container {
+  min-height: 88vh;
+}
+
+footer {
+  background-color: black;
+}
+
+#myMap {
+  height: 400px;
+}
