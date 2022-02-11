@@ -1,0 +1,74 @@
+<main class="container">
+
+
+    <div class="row">
+
+
+        <div class="card" style="width: 90%">
+            <div class="card-body">
+                <h2 id="name" class="card-title name">{{name}}</h2>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item ">
+                    <h3>{{type}}</h3>
+                </li>
+                <li class="list-group-item ">
+                    <h5>Coordinates:</h5>
+                    <ul class="list-group list-group-flush">
+                        <li id="lat" class="list-group-item lat">{{location.lat}}</li>
+                        <li id="lng" class="list-group-item lng">{{location.lng}}</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="card-footer">
+
+                <figure id="individualMap" class="list-group list-group-flush bigMap map">
+
+                </figure>
+
+
+            </div>
+
+
+            <div class="card-body ">
+                <div class="list-buttons">
+
+                    <form class="d-grid gap-2 col-6 mx-auto" action="/places/delete/{{_id}}" method="POST">
+                        <a class="btn btn-sm btn-warning edit" href="/places/edit/{{_id}}" role="button">EDIT</a>
+                        <input class="btn-danger" type="submit" value="DELETE">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <br><br>
+        <a href="/places">[back]</a>
+
+    </div>
+
+
+    {{#if errorMessage}}
+    <div id="errorMessage">
+        <p>{{errorMessage}}</p>
+    </div>
+    {{/if}}
+
+    {{#if successMessage}}
+    <div id="successMessage">
+        <p>{{successMessage}}</p>
+    </div>
+    {{/if}}
+</main>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+<script src="/js/multiple-maps-script.js"></script>
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgc8Bn1wqwy9v2Euv8FbgDu4B8cGuOz6w&callback=thumbMapInit"></script>
