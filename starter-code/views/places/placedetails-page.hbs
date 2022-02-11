@@ -1,0 +1,10 @@
+<h2>{{name}} info</h2>
+<p>Type:{{type}}</p>
+
+
+<div class="buttons">
+    <a href="/places/{{_id}}/editar" class="btn btn-primary">EDIT</a>
+    <form action="/places/{{_id}}/borrar" method="POST">
+        <button type="submit" class="btn btn-primary">DELETE</button>
+    </form>
+</div>

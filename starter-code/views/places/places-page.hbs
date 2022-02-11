@@ -1,0 +1,18 @@
+<a href="/places/crear">Create a new place</a>
+<br>
+<a href="/places/:placeId/borrar">Delete an existing place</a>
+
+<h2>All the placess</h2>
+{{#each places}}
+
+<p>{{name}}</p>
+<p>{{type}}</p>
+<a href="/places/{{id}}/editar">EDITAR</a>
+
+<form action="/places/{{id}}/borrar" method="POST">
+    <button type="submit"> DELETE</button>
+</form>
+
+<br>
+
+{{/each}}
