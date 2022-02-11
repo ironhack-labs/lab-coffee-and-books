@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Edit {{name}}</h1>
+    <hr>
+    <form method="POST" action="/coffee/{{_id}}/edit">
+        <label>Nombre
+            <input name="name" type="text" {{name}}>
+        </label>
+        <br><br>
+
+        <label>Latitud
+            <input name="lat" type="text" {{lat}}>
+        </label>
+        <br><br>
+
+        <label>Longitud
+            <input name="lng" type="text" {{lng}}>
+        </label>
+        <br><br>
+
+        <input type="submit" value="Edit coffee">
+    </form>
+</div>
