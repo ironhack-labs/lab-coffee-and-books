@@ -1,0 +1,33 @@
+<div class="container">
+
+    <h1>Edita el sitio</h1>
+
+    <hr>
+
+    <form method="POST" action="/editar/{{place.id}}">
+
+        <label>Nombre
+            <input name="name" type="text" value="{{place.name}}">
+        </label>
+        <br><br>
+
+        <label>Tipo
+            <input name="type" type="text" value="{{place.type}}">
+        </label>
+        <br><br>
+
+        <label>Latitude
+            <input name="lat" type="text" value="{{place.lat}}">
+        </label>
+        <br><br>
+        
+        <label>Longitude
+            <input name="lng" type="text" value="{{place.lng}}">
+        </label>
+        <br><br>
+
+        <input type="submit" value="Guardar cambios">
+
+    </form>
+
+</div>
