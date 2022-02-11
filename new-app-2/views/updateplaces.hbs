@@ -1,0 +1,29 @@
+<h2> edita aqui  </h2> 
+<h2> {{name}}</h2>
+
+
+
+<form action='/edit?id={{id}}' method='post'>
+    <label for='name'>Nombre</label>
+    <input type='text' name='name' value='{{name}}' />
+    <label for='type'>Tipo</label>
+    <select name='type' id='type'>
+      <option value='Coffee shop'>Coffee shop</option>
+      <option value='Bookstore'>Bookstore</option>
+    </select>
+    <label>Latitud
+      <input name='lat' type='text' value='{{location.coordinates.[0]}}' />
+    </label>
+    <br /><br />
+
+    <label>Longitud
+      <input name='lng' type='text' value='{{location.coordinates.[1]}}' />
+    </label>
+    <br /><br />
+      <button>Guardar</button>
+  </form>
+<a href='/places'> lista de sitios</a>
+{{!-- 
+ <button><a href="/places/{{id}}">guardar</a> </button>   --}}
+
+ {{!-- no se ya que mas hacer.... --}}

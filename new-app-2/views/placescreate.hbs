@@ -1,0 +1,26 @@
+ 
+ <h1> crear un sitio  </h1>
+ <form action="/places/create" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Nombre:</label>
+            <input type="text" class="form-control" name="name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">libreria:</label>
+            <input type="text" class="form-control" name="catchPhrase">
+            <select name="type" id="type">
+                <option value="Coffe shop">Coffe shop</option>
+                  <option value="Bookstore">Bookstore</option>
+
+            </select>
+            <label> longitud
+            <input type="text" name="lng">
+             </label>
+             
+              <label>
+            <input type="text" name="lat">
+             </label>
+
+        </div>
+        <button type="submit" class="btn" style="background-color: #f05811;">Añadir nuevo lugar</button>
+    </form>

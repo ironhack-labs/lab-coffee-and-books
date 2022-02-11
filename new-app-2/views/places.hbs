@@ -1,0 +1,23 @@
+<h1> soy los sitios  </h1>
+
+{{#each places}}
+  <p>Nombre: {{name}}</p>
+  <p>Tipo: {{type}}</p>
+  <p>Coordinates: {{location.coordinates}}</p>
+  <button><a href='/edit/{{id}}'>Editar</a></button>
+   
+    <form action="/places/{{_id}}/delete" method="POST">
+            <button>Delete</button>
+        </form>
+
+       
+  {{!-- <button><a href="/places/{{id}}">borrar</a> </button>  
+  --}}
+  <hr />
+{{/each}}
+  <a href='/places/create'> crear Nuevo sitio</a>
+
+
+ 
+  
+            
