@@ -1,0 +1,25 @@
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("https://dbdzm869oupei.cloudfront.net/img/quadres/preview/42831.png");
+  background-size: cover;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  margin: 25px;
+  padding: 10px;
+  color: 15px;
+}
+
+h2 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+nav {
+  margin: 0px;
+}

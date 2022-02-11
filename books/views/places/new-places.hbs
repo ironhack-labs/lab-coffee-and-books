@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Nuevas tiendas</h2>
+      <hr />
+      <form action="/tiendas" method="POST">
+
+        <label>
+          Nombre del establecimiento
+          <input type="text" name="name" />
+        </label>
+
+        <br /><br />
+
+        <label>
+          Tipo de negocio
+          <input type="text" name="type" />
+        </label>
+
+        <br /><br />
+
+        <input type="submit" value="Crear negocio" />
+
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <h2>Editar tiendas</h2>
+      <hr />
+      <form action="/tiendas/{{id}}" method="POST">
+
+        <label>
+          Nombre del establecimiento
+          <input type="text" name="name" value="{{name}}" />
+        </label>
+
+        <br /><br />
+
+        <label>
+          Tipo de negocio
+          <input type="text" name="type" value="{{type}}" />
+        </label>
+
+        <br /><br />
+
+        <input type="submit" value="Editar" />
+
+      </form>
+
+    </div>
+
+  </div>
+</div>
