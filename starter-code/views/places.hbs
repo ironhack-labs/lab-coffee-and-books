@@ -1,0 +1,42 @@
+<div class="container-list">
+
+    <h2>Places</h2>
+
+    <hr>
+
+    <ul>
+        {{#each places}}
+        <li class="places-list">
+            <a href="/places/{{id}}">{{name}} | {{type}}</a>
+
+            <form action="/places/{{id}}/delete" method="POST">
+                <button class="btn btn-sm btn-warning" type="submit">Delete</button>
+            </form>
+            <a href="/places/{{id}}/edit" class="btn btn-sm btn-dark">Edit</a>
+
+        </li>
+        {{/each}}
+    </ul>
+
+
+
+    <a href="/" class="btn btn-dark">Back to Home page</a>
+
+</div>
+
+<style>
+    #placesMap {
+        height: 300px;
+        background-color: red;
+    }
+</style>
+
+<figure id="placesMap"></figure>
+
+<a href="/api/places" target="_blank">Mira la API!</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbHBgxM7Yx1HVvbifq4i0oq-1qIFnXSeY
+&callback=initMap"></script>
