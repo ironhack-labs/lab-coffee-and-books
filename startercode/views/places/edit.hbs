@@ -1,0 +1,73 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>editar lugar</h1>
+
+            <hr />
+
+            <form action="/place/{{id}}/edit" method="POST">
+
+                <div class="mb-3">
+                    <label for="placeName" class="form-label">name</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="placeName"
+                        name="placeName"
+                        value="{{placeName}}"
+                    />
+                </div>
+                <div class="mb-3">
+                    <div class="col-auto">
+                        <label
+                            class="visually-hidden"
+                            for="autoSizingSelect"
+                        >type</label>
+                        <select
+                            name="type"
+                            class="form-select"
+                            id="autoSizingSelect"
+                        >
+
+                            <option value="coffeshop">coffeshop</option>
+                            <option value="bookstore">bookstore</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="placelat" class="form-label">latitud</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="placelat"
+                        name="lat"
+                        value="{{location.coordinates.[0]}}"
+                    />
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="placelat" class="form-label">longitud</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="placelong"
+                        name="lng"
+                        value="{{location.coordinates.[1]}}"
+                    />
+
+                </div>
+
+                <button type="submit" class="btn btn-dark">editar sitio</button>
+
+            </form>
+
+            <hr />
+
+        </div>
+    </div>
+
+</div>

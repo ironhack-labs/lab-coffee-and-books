@@ -1,0 +1,38 @@
+<div class="container">
+
+    <h1>Listado lugares</h1>
+
+    <hr />
+
+    <ul>
+        {{#each places}}
+            <li class="book-row">
+                <h3>name: {{placeName}}</h3>
+                <h5>type : {{type}}</h5>
+                <p>location:
+                    {{location.coordinates.[0]}},{{location.coordinates.[1]}}</p>
+
+                <div>
+                    <button class="btn btn-sm btn-dark">
+                        <a href="place/{{id}}/edit">| edit |</a>
+                    </button>
+                </div>
+
+                <div>
+                    <form action="place/{{id}}/delete" method="POST">
+                        <button
+                            class="btn btn-sm btn-warning"
+                            type="submit"
+                        >Eliminar</button>
+                    </form>
+                </div>
+
+            </li>
+        {{/each}}
+    </ul>
+
+    <hr />
+
+    <a href="/" class="btn btn-dark">Volver al incio</a>
+
+</div>
