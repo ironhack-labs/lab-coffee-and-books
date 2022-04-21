@@ -1,0 +1,27 @@
+<div class="container">
+
+    <h2>Listado lugares</h2>
+
+    <hr>
+
+    <ul>
+        {{#each places}}
+        <li class="book-row">
+            <a href="/places/{{_id}}">{{name}}</a>
+        </li>
+        {{/each}}
+    </ul>
+
+    <hr>
+
+    <a href="/" class="btn btn-dark">Volver al inicio</a>
+
+    <a href="/places/create" class="btn btn-dark">Crear un lugar</a>
+
+</div>
+
+<figure id="placesMap"></figure>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/places-map-setup.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADxaW8Hz1pYhTHYQu-nL1WpibzuY4MsEA&callback=initMap"></script>
