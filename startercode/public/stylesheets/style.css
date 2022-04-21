@@ -1,0 +1,14 @@
+footer {
+  background-color: #b3b3b4;
+  color: rgb(2, 2, 2);
+  text-align: center;
+  font-size: .9em;
+  padding: 5px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.navbar {
+  margin-bottom: 50px;
+}

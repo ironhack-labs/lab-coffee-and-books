@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>LISTA DE LUGARES</h2>
+
+    <hr>
+
+    <div class="container">
+        <div class ="row">
+            {{#each places}}
+            <div class="col-md-4">             
+               <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{type}}</h6>
+                    <p class="card-text">{{description}}</p>
+               
+                     <a href="/{{id}}/edit" class=" btn btn-dark btn-square-md">Edit</a>
+                     <form action="/{{id}}/delete" method="POST">
+                          <button class="btn btn-sm btn-warning" type="submit">Delete</button>
+                     </form>
+                </div>
+               </div>
+            </div>    
+            {{/each}}
+        </div>
+    </div>
+
+</div>
+
+
+
+
