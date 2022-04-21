@@ -1,0 +1,23 @@
+<div class="detailsGeneral">
+    <div class="container">
+
+        <h2>Detalles de {{name}}</h2>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-8">
+                {{!-- <h3>Detalles</h3> --}}
+                <p><strong>name:</strong> {{name}}</p>
+                <p><strong>type:</strong> {{type}}</p>
+                <p><strong>longitude:</strong> {{location.coordinates.[0]}}</p>
+                <p><strong>latitude:</strong> {{location.coordinates.[1]}}</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <a href="/places" class="btn btn-dark">Volver al listado</a>
+
+    </div>
+</div>

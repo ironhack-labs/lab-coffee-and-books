@@ -1,0 +1,30 @@
+<div class="listGeneral">
+
+
+    <div class="container">
+
+        <h1>All places</h1>
+
+        <hr>
+
+        <ul>
+            {{#each places}}
+            <li>
+                <div class="placesListRow">
+                    <p>{{name}}</p>
+                    <a href="/places/{{id}}" class=" btn btn-dark btn-square-md">Details</a>
+                    <a href="/places/{{id}}/edit" class=" btn btn-dark btn-square-md">Edit</a>
+                    <form action="/places/{{_id}}/delete" method="POST">
+                        <button class="btn btn-sm btn-warning" type="submit">Delete</button>
+                    </form>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+
+        <hr>
+
+        <a href="/" class="btn btn-dark">Back to home</a>
+
+    </div>
+</div>

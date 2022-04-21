@@ -1,2 +1,9 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Maps API</h1>
+
+<a href="/places" class=" btn btn-dark btn-square-md m-2 mb-3">places</a>
+<a href="/places/create" class=" btn btn-dark btn-square-md m-2 mb-3">create place</a>
+<figure id="placesMap"></figure>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/basic-map-setup.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJXfnCjCNoZ5DFVcicZ182oaJT54TZPb4&callback=initMap"></script>
