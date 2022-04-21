@@ -1,0 +1,24 @@
+<h1>Places</h1>
+{{#each place}}
+<h2>{{name}}</h2>
+<h2>{{type}}</h2>
+{{!-- <form action="/places/{{id}}/edit" method="POST">
+    <button type="sumbit" class="btn btn-secondary">Edit</button>
+</form> --}}
+<a href="/places/{{id}}/edit">Edit</a>
+<a href="/places/{{id}}/delete">Delete</a>
+{{/each}}
+
+<style>
+    #placesMap {
+        height: 600px;
+        background-color: red;
+    }
+</style>
+<figure id="placesMap"></figure>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/google-map-script.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaSx95KBqS17kH5CKm-TnB_3KDMEIvJk8&callback=initMap"></script>
+
+{{!-- AIzaSyCaSx95KBqS17kH5CKm-TnB_3KDMEIvJk8 --}}
