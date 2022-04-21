@@ -1,0 +1,34 @@
+<h2>Add a new place</h2>
+
+
+<form action="/places/create" method="POST">
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+
+    <label for="type">Type</label>
+    <select name="type" id="type">
+
+        <option>Coffee shop</option>
+
+        <option>Bookstore</option>
+
+
+    </select>
+
+    <div class="row">
+        <div class="col-md-3">
+            <label for="latitude">Latitud</label>
+            <input type="text" name="latitude">
+        </div>
+        <div class="col-md-3">
+
+            <label for="longitude">Longitud</label>
+            <input type="text" name="longitude">
+        </div>
+
+    </div>
+    <button type="submit" class="btn btn-dark">Add a new place</button>
+
+
+</form>
