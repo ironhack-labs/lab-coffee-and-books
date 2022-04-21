@@ -1,0 +1,52 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <h1>Actualizar Lugar</h1>
+            <hr>
+
+            <form action="/places/{{id}}/edit" method="POST">
+
+                <div class="mb-3 row">
+                    <div class="col">
+                        <label for="title" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                        <div class="form-text">Requerido.</div>
+                    </div>
+
+                </div>
+                <div class="mb-3 row">
+                    <div class="col">
+                        <label for="lat" class="form-label">latitud</label>
+                        <input type="text" class="form-control" id="lat" name="lat" value="{{lat}}">
+                        <div class="form-text">Requerido.</div>
+                    </div>
+
+                </div>
+                <div class="mb-3 row">
+                    <div class="col">
+                        <label for="long" class="form-label">longitud</label>
+                        <input type="text" class="form-control" id="long" name="long" value="{{long}}">
+                        <div class="form-text">Requerido.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="type" class="form-label">Type</label>
+                        <input class="form-select" value="{{type}}" name="type" list="type">
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-dark block">Guardar</button>
+                    </div>
+            </form>
+            <datalist id="type">
+
+                <option>coffee shop</option>
+                <option>bookstore</option>
+            </datalist>
+        </div>
+    </div>
+
+</div>
