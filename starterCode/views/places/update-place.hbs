@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>EDIT {{name}}</h2>
+
+    <form action="/places/{{_id}}/edit" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Name:</label>
+            <input type="text" class="form-control" name="name" value="{{name}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Type:</label>
+            <input type="text" class="form-control" name="type" list="type" value="{{type}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Latitude:</label>
+            <input type="text" class="form-control" name="lat" value="{{location.coordinates.[0]}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Longitude:</label>
+            <input type="text" class="form-control" name="lng" value="{{location.coordinates.[1]}}">
+        </div>
+        <button type="submit" class="btn" style="background-color: #4b3704;">Edit place</button>
+    </form>
+
+
+</div>
