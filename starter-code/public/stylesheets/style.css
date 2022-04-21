@@ -1,0 +1,35 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+#placesMap{
+  height: 75vh;
+  /* background-color: red; */
+}
+ul{
+  list-style: none;}
+
+  .placesListRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+
+    .placesListRow a{
+      margin-left: 20px;
+      height: 40px;
+    }
+    .placesListRow button {
+      margin-left: 20px;
+      height: 40px;
+    }
