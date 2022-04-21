@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="col-md-6">
+        <h2> New Place!</h2>
+        <form action="/places/new" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Type</label>
+                <select name="type" id="type">
+                    <option value="coffee shop">Coffee Shop</option>
+                    <option value="bookstore">Bookstore</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" name="latitude" placeholder="latitude">
+                <input type="text" name="longitude" placeholder="longitude">
+            </div>
+            <button type="submit" class="btn btn-dark">Create</button>
+        </form>
+    </div>
+</div>
