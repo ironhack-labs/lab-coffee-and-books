@@ -1,0 +1,36 @@
+<h2>Update</h2>
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>EDIT YOUR PLACE</h1>
+
+            <hr>
+
+            <form action='/place/{{id}}/edit' method="POST">
+
+                <div class="mb-3">
+                    <label for="Name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="Name" name="Name" value="{{name}}">
+                </div>
+                <div class="mb-3">
+                    <label for="Propellers" class="form-label">type</label>
+                    <input type="text" class="form-control" id="Propellers" name="propellers" value="{{type}}">
+                </div>
+                <input type="text" name="latitude" placeholder="latitud">
+                <input type="text" name="longitude" placeholder="longitud">
+
+
+                <button type="submit" class="btn btn-dark">Save edition</button>
+                <a href="/" class="btn btn-dark">Go back!</a>
+            </form>
+
+
+            <hr>
+
+
+        </div>
+    </div>
+
+
+</div>

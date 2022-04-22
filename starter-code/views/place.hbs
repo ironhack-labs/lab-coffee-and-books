@@ -1,0 +1,32 @@
+<style>
+    #basicMap {
+        height: 300px;
+        background-color: rgb(185, 112, 112);
+    }
+</style>
+
+<h2>Places</h2>
+
+{{#each place}}
+<ul>
+    <li>
+        Name: {{name}}
+        type: {{type}}
+
+    </li>
+</ul>
+
+<a href="/place/{{id}}/edit" class="btn btn-primary">Edit Places</a>
+
+<form action="/place/{{id}}/delete" method="POST">
+    <button class="btn btn-sm btn-warning" type="submit">Remove</button>
+</form>
+
+{{/each}}
+
+<figure id="basicMap"></figure>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="javascripts/basic-map-setup.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
