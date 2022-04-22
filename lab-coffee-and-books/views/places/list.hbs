@@ -1,0 +1,12 @@
+<h1>List Places</h1>
+<ul>
+    {{#each places}}
+
+    <li>{{name}}</li>
+    <li>{{type}}</li>
+    <a href="/places/edit/{{_id}}">Edit</a>
+    <hr>
+
+    {{/each}}
+
+</ul>

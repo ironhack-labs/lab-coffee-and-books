@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Editar {{title}}</h1>
+
+            <hr>
+
+            <form action="/places/edit/{{_id}}" method="POST">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                </div>
+                Type: {{type}}
+                <div class="mb-3">
+                    <label for="coffeeShop" class="form-label">Coffee coffeeShop</label>
+                    <input type="radio" class="form-control" id="coffeeShop" name="type" value="{{type}}" required>
+
+
+                    <label for="bookStore" class="form-label">Book Store</label>
+                    <input type="radio" class="form-control" id="bookStore" name="type" value="{{type}}">
+                </div>
+
+
+                <button type="submit" class="btn btn-dark">Save</button>
+                <a href="/" class="btn btn-dark">Back to index</a>
+            </form>
+
+
+            <hr>
+
+
+        </div>
+    </div>
+
+
+</div>
