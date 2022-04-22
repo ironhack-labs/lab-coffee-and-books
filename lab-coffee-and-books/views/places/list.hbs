@@ -1,0 +1,15 @@
+<h2>All the places</h2>
+
+{{#each places}}
+<ul>
+    <li>Name: {{name}}</li>
+    <li>Type: {{type}}</li>
+    <li>Longitud: {{location.coordinates.[0]}}</li>
+    <li>Latitud: {{location.coordinates.[1]}}</li>
+    <a href="/places/{{id}}/edit">EDITAR</a>
+    <form action="/places/{{id}}/delete" method="POST">
+        <button class="btn btn-sm btn-warning" type="submit">ELIMINAR</button>
+    </form>
+</ul>
+
+{{/each}}
