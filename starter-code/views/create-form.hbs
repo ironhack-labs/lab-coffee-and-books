@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h2>Create</h2>
+
+            <hr>
+
+            <form action="/place/create" method="POST">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label" placeholder="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="type" class="form-label" >Type</label>
+                    <select name="type" class="form-select" multiple>
+                        <option value="coffeeshop">Coffeshop</option>
+                        <option value="bookstore">Book Store</option>
+                    </select>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Latitud</label>
+                    <input type="text" name="latitude" placeholder="latitud">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Longitud</label>
+                    <input type="text" name="longitude" placeholder="longitud">
+                </div>
+                <button type="submit" class="btn btn-dark">Create</button>
+                <a href="/" class="btn btn-dark">Inicio</a>
+            </form>
+
+
+            <hr>
+
+
+        </div>
+    </div>
+
+
+</div>

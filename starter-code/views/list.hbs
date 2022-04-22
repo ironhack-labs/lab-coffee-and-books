@@ -1,0 +1,39 @@
+<h2> Places</h2>
+
+<hr>
+
+<ul>
+    {{#each places}}
+    <li>
+        <p><strong>{{name}}</strong></p>
+        <p>Type: {{type}}</p>
+        <div class="mb-3">
+            <label for="name" class="form-label">Latitud</label>
+            <input type="text" name="latitude" placeholder="latitud" value="{{location.coordinates.[0]}}">
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Longitud</label>
+            <input type="text" name="longitude" placeholder="longitud" value="{{location.coordinates.[1]}}">
+        </div>
+
+        <a href="/places/{{id}}/edit" class="btn btn-dark">Edit</a>
+
+        <form action="/places/{{id}}/delete" method="POST">
+            <button class="btn btn-sm  " type="submit">Delete</button>
+        </form>
+
+    </li>
+    {{/each}}
+</ul>
+
+<hr>
+
+<figure id="map"></figure>
+
+
+<a href="/">Volver al incio</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/places-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNlwJnczOEYC8VHb6tkjgFk_AFP9TGNW8&callback=initMap"></script>

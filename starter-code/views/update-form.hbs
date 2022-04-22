@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h2>Create</h2>
+
+            <hr>
+
+            <form action="/places/{{id}}/edit" method="POST">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}" >
+                </div>
+
+                <div class="mb-3">
+                    <label for="type" class="form-label">Type</label>
+                    <select name="type" class="form-select" >
+                        <option value="coffeeshop">Coffeshop</option>
+                        <option value="bookstore">Book Store</option>
+                    </select>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Latitud</label>
+                    <input type="text" name="latitude" placeholder="latitud" value="{{location.coordinates.[0]}}">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Longitud</label>
+                    <input type="text" name="longitude" placeholder="longitud" value="{{location.coordinates.[1]}}">
+                </div>
+
+                <button type="submit" class="btn btn-dark">Edit</button>
+                <a href="/" class="btn btn-dark">Inicio</a>
+            </form>
+
+
+            <hr>
+
+
+        </div>
+    </div>
+
+
+</div>
