@@ -1,0 +1,27 @@
+<div class="container">
+
+    <div class="row">
+
+        {{#each places}}
+
+        <div class="col-6">
+
+            <h2>{{name}}</h2>
+
+            <p class="features"><strong>Type</strong> {{type}}</p>
+            <a class="editButton" href="/places/{{id}}/edit">Edit</a>
+
+            <hr>
+
+            <form action="/places/{{id}}/delete" method="POST">
+                <button class="btn btn-sm btn-warning" type="submit">Delete</button>
+            </form>
+
+        </div>
+
+        {{/each}}
+
+    </div>
+
+
+</div>

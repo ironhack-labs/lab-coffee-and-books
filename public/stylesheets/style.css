@@ -1,0 +1,21 @@
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav {
+  margin-bottom: 30px;
+}
+
+footer {
+  padding: 10px;
+  background-color: black;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+#map {
+  height: 500px;
+}
