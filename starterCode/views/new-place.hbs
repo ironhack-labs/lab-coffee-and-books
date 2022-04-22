@@ -1,0 +1,28 @@
+<div class="container">
+
+    <form action="/places-new" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="placeType" class="form-label">Type</label>
+            <select name="type" id="type">
+                <option value="Coffee Shop">Coffee Shop</option>
+                <option value="Bookstore">Bookstore</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="latitude" class="form-label">Latitude</label>
+            <input type="text" class="form-control" id="latitude" name="lat">
+        </div>
+        <div class="mb-3">
+            <label for="longitud" class="form-label">Longitud</label>
+            <input type="text" class="form-control" id="longitud" name="lng">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add to the list</button>
+    </form>
+
+
+</div>

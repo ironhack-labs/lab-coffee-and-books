@@ -1,0 +1,34 @@
+<style>
+    #placesMap {
+        height: 400px;
+        background-color: grey;
+    }
+</style>
+
+
+<div class="container">
+
+    <h1>All places</h1>
+    <ul>
+        {{#each allPlaces}}
+        <li>{{name}} |
+            <a href="/place-edit/{{id}}">Edit</a> |
+            <form action="/place-delete/{{id}}" method="POST">
+                <button class="btn btn-sm btn-outline-danger" type="submit">Delete</button>
+            </form>
+        </li>
+
+        {{/each}}
+    </ul>
+
+    <figure id="placesMap"></figure>
+
+    <button class="btn btn-sm btn-outline-danger fxd-btn" type="submit"><a href="#########">ADD A NEW PLACE</a></button>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/js/locals-map-setup.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb6r264RJFqhWcbSlzuMatum_MO3A6BoY&callback=initMap"></script>
