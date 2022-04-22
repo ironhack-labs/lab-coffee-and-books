@@ -1,0 +1,30 @@
+<div class="container">
+
+    <h1>Listado de garitos</h1>
+
+    <hr>
+
+    <ul>
+        {{#each places}}
+        <li class="book-row">
+            <a href="/establecimientos/detalles/{{_id}}"><strong>NOMBRE DEL GARITO</strong><br> {{name}}</a><br>
+            <p><strong>¿CULO O CODO?</strong><br> {{type}}</p><br>
+            <hr>
+            <a class="btn btn-sm btn-dark" href="/establecimientos/mapa">Mapa</a><br>
+            <hr><br>
+
+            <a href="/establecimientos/editar/{{_id}}" class="btn btn-sm btn-dark">Editar</a><br>
+            <hr>
+            <form action="/establecimientos/eliminar/{{_id}}" method="POST">
+                <button class="btn btn-sm btn-warning" type="submit">Eliminar</button>
+                <hr>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+
+    <hr>
+
+    <a href="/" class="btn btn-dark">Volver al incio</a>
+
+</div>
