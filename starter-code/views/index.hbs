@@ -1,2 +1,33 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+
+    <div class="row justify-content-center">
+        {{#each local}}
+
+        <div class="col-md-3">
+            <div class="mb-3">
+                <p>{{name}}</p>
+            </div>
+
+            <button type="button" class="btn btn-info"><a href="/crud/local/{{id}}/edit">Editar</a></button>
+
+            <form action="/{{id}}/delete" method="POST">
+                <button class="btn btn-primary" type="submit">Eliminar</button>
+            </form>
+            <hr>
+        </div>
+        <hr>
+        <hr>
+        <hr>
+        {{/each}}
+
+        <figure id="places"></figure>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="/js/places-map-setup.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADxaW8Hz1pYhTHYQu-nL1WpibzuY4MsEA&callback=initMap"></script>
+
+
+    </div>
+
+
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Añade un nuevo local</h1>
+
+            <hr>
+
+            <form action="/crud/crear-local" method="POST">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="type">Tipo:</label>
+                    <select name="type" id="type">
+                        <option name="type">bookstore</option>
+                        <option name="type">coffee shop</option>
+                    </select>
+                </div>
+                {{!-- <div class="mb-3">
+                    <label for="longitude" class="form-label">Longitude</label>
+                    <input type="text" class="form-control" id="longitude" name="longitude">
+                </div>
+                <div class="mb-3">
+                    <label for="latitude" class="form-label">Latitute</label>
+                    <input type="text" class="form-control" id="latitude" name="latitude">
+                </div> --}}
+                <button type="submit" class="btn btn-light">Añadir local</button>
+                <a href="/" class="btn btn-dark">Volver al incio</a>
+            </form>
+            <hr>
+        </div>
+    </div>
+
+
+</div>
