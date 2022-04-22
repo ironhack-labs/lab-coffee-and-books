@@ -1,0 +1,22 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: black;
+}
+
+h1 {
+  color: 15px;
+}
+
+.navbar {
+  padding: 20px;
+  font-size: 1.5em;
+  background-color: darkorange;
+  text-decoration: none;
+}
+
+.container {
+  padding: 40px;
+}
