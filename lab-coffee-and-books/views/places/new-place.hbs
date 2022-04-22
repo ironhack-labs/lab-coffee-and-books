@@ -1,0 +1,43 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Crear nuevo garito</h1>
+
+            <hr>
+
+            <form action="/establecimientos/crear" method="POST">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="type" class="form-label">Tipo</label>
+                    <select name="type" class="form-select" multiple>
+                        <option value="coffee shop">Coffee Shop</option>
+                        <option value="bookstore">Bookstore</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="latitude" class="form-label">Latitud</label>
+                    <input type="text" class="form-control" name="latitude">
+                </div>
+                <div class="mb-3">
+                    <label for="longitude" class="form-label">Longitud</label>
+                    <input type="text" name="longitude" class="form-control">
+                </div>
+
+
+                <button type="submit" class="btn btn-dark">Crear nuevo garito</button>
+            </form>
+
+
+            <hr>
+
+
+        </div>
+    </div>
+
+
+</div>

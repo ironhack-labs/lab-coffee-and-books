@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Editar {{name}}</h1>
+
+            <hr>
+
+            <form action="/establecimientos/editar/{{_id}}" method="POST">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                </div>
+                <div class="mb-3">
+                    <label for="type" class="form-label">Tipo</label>
+                    <input type="text" class="form-control" id="type" name="type" value="{{type}}">
+                </div>
+                <div class="mb-3">
+                    <label for="latitude" class="form-label">Latitud</label>
+                    <input type="text" class="form-control" id="latitude" name="latitude" value="{{this.latitude}}">
+                </div>
+                <div class="mb-3">
+                    <label for="longitude" class="form-label">Longitud</label>
+                    <input type="text" class="form-control" id="longitude" name="longitude" value="{{this.longitude}}">
+                </div>
+
+                <button type="submit" class="btn btn-dark">Guardar edición</button>
+            </form>
+
+
+            <hr>
+
+
+        </div>
+    </div>
+
+
+</div>
