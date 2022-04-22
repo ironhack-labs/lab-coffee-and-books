@@ -1,0 +1,25 @@
+<h1>EDIT</h1>
+
+<form action="/stores/{{id}}/edit" method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Latitude</label>
+
+        <input type="text" class="form-control" id="latitude" name="latitude" value="{{location.coordinates.[0]}}">
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Longitude</label>
+        <input type="text" class="form-control" id="longitude" name="longitude" value="{{location.coordinates.[1]}}">
+    </div>
+    <div class="mb-3">
+        <select name="type" id="type">
+            <option class="form-label" value="coffee shop">coffee shop</option>
+            <option value="bookstore">bookstore</option>
+
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Actualiza</button>
+</form>

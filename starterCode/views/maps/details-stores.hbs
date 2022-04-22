@@ -1,0 +1,28 @@
+<div class="container prueba">
+    <h1>Store List</h1>
+    <div class="row">
+        {{#each allStores}}
+        <div class="col-mg-3">
+            <p> Name Store:<strong>{{name}}</strong> </p>
+            <p>Type Store: <i>{{type}}</i> </p>
+            <a class="btn btn-warning" href="/stores/{{id}}/edit">Edit</a>
+            <form action="/stores/{{id}}/delete" method="POST">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+
+
+        </div>
+        {{/each}}
+
+        <a class="btn btn-info" href="/">Go to home</a>
+    </div>
+
+
+    <figure id="store-maps"></figure>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/js/store-map-setup.js"></script>
+
