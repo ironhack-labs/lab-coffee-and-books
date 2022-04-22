@@ -1,0 +1,29 @@
+<h5>Edit {{name}}'s {{type}}</h5>
+<hr>
+<form action="/places/{{id}}/edit" method="POST">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input name="name" type="name" class="form-control-sm mb-3" id="name" aria-describedby="name" value="{{name}}">
+  </div>
+  <div class="form-group">
+    <label for="type">Type of place</label>
+    <select name="type" class="form-control-sm mb-3" id="type">
+      <option>coffee shop</option>
+      <option>bookstore</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="longitude">Longitude:</label>
+    <input name="longitude" type="longitude" class="form-control-sm mb-3" id="longitude" aria-describedby="emailHelp" value="{{location.coordinates.[0]}}">
+  </div>
+  <div class="form-group">
+    <label for="latitude">Latitude:</label>
+    <input name="latitude" type="latitude" class="form-control-sm mb-3" id="latitude" aria-describedby="emailHelp" value="{{location.coordinates.[1]}}">
+  </div>
+
+  <button type="submit" class="btn btn-outline-success">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+    </svg>
+  </button>
+</form>
