@@ -1,0 +1,11 @@
+.fxd-btn a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(255, 183, 0)
+}
+
+.fxd-btn {
+    position: fixed;
+    bottom: 20;
+    
+}
