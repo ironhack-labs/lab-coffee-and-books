@@ -1,0 +1,19 @@
+<div class="container">
+
+    <h1>Lista de cofees</h1>
+
+    <hr>
+
+    {{#each places}}
+    <h3>{{name}}</h3>
+    <p>{{type}}</p>
+    <a class="btn btn-dark" href="/places/{{id}}/edit">Editar</a>
+    <form class="btn btn-danger" action="/places/{{id}}/delete" method="POST">
+    <button class="btn btn-danger">Eliminar</button>
+    </form>
+    <hr>
+
+
+    {{/each}}
+
+</div>
