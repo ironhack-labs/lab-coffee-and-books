@@ -1,0 +1,26 @@
+<h2>all place</h2>
+{{#each places}}
+<hr>
+{{name}}
+{{type}}
+{{latitude}}
+{{longitude}}
+<a href="/place/edit/{{id}}">Editar</a>
+<a href="/place/delete/{{id}}">Eliminar</a>
+{{/each}}
+
+<div class="container">
+
+    <h1>Place maps</h1>
+
+    <div id="myMap"></div>
+
+    <a href="/" class="btn btn-dark">Volver al inicio</a>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/mapStyles.js"></script>
+<script src="/js/map-places.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=init"></script>
