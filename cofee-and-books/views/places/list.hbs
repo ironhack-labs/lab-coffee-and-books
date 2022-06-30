@@ -1,0 +1,12 @@
+<h1>LISTA</h1>
+<ul class="list-group list-group-flush">
+    {{#each places}}
+    <li class="list-group-item">Nombre: {{name}} <br> Tipo: {{type}}
+        <br> <a href="lista/{{id}}/cambiar" class="btn btn-secondary">Editar</a>
+
+        <form action="/lista/{{id}}/eliminar" method="POST" style="display: inline-block">
+            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm">
+        </form>
+    </li>
+    {{/each}}
+</ul>
