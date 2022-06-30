@@ -1,0 +1,32 @@
+<div class="container">
+    <h2 class="listText">All places</h2>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Coords</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <td><a href="/places/details/{{id}}">{{name}}</a></td>
+                <td>{{type}}</td>
+                <td>{{location.coordinates}}</td>
+                <td>
+                    <form action="/places/delete/{{id}}" method="POST">
+                        <a href="/places/edit/{{id}}" class="btn btn-warning list-btn">Edit</a>
+                        <button type="submit" class="btn btn-danger list-btn">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <a href="/places/create" class="btn btn-success list-btn">Add</a>
+</div>

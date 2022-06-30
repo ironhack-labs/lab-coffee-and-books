@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Edit</h1>
+    <form action="/places/edit/{{data.id}}" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name of the place</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{data.name}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Type of place</label>
+            <select class="form-select" id="type" name="type">
+
+                {{#if type.isCoffeShop}}
+                <option selected value="coffeShop">Coffe shop</option>
+                <option value="bookStore">Book store</option>
+                {{/if}}
+                {{#if type.isBookStore}}
+                <option value="coffeShop">Coffe shop</option>
+                <option selected value="bookStore">Book store</option>
+                {{/if}}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Place location</label>
+            <div class="container">
+                <label for="lat" class="form-label">Latitude</label>
+                <input type="text" class="form-control" id="lat" name="lat" value="{{data.location.coordinates.[0]}}">
+                <label for="lon" class="form-label">Longitude</label>
+                <input type="text" class="form-control" id="lon" name="lon" value="{{data.location.coordinates.[1]}}">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
