@@ -1,0 +1,22 @@
+body {
+
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+.navbar form button {
+  background: transparent;
+  border: none;
+}
+
+#myMap {
+  height: 500px;
+
+}
