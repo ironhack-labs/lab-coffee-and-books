@@ -1,0 +1,19 @@
+<h2>The best world places</h2>
+
+{{#each places}}
+
+{{name}}
+{{type}}
+{{location.coordinates.[0]}}
+{{location.coordinates.[1]}}
+
+<br>
+<a href="/places/{{id}}/delete">Delete</a>
+<a href="/places/{{id}}/edit">Edit a place</a>
+
+{{/each}}
+
+<a href="/create">Create a place</a>
+<br>
+
+<br>

@@ -1,0 +1,24 @@
+h1 {
+  color: 15px;
+}
+
+.navbar {
+  margin-bottom: 40px;
+}
+
+#myMap {
+  height: 400px;
+  background-color: red;
+}
+
+h3 {
+  text-align: center;
+}
+
+#map {
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  width: 90%;
+  background: red;
+}
