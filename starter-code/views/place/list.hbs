@@ -1,0 +1,41 @@
+<div class="container">
+
+    <h1>Place list</h1>
+
+    <hr>
+
+    {{#each coffe}}
+
+    <article>
+
+        <a href="/place/list">
+            <h5> Name <br>{{name}}</h5><br>
+
+            <h5>type <br>{{type}}</h5><br>
+
+            <h5>Description <br>{{description}}</h5><br>
+
+            <h5>latitud <br>{{location.coordinates.[0]}}</h5><br>
+
+            <h5>longitud <br>{{location.coordinates.[1]}}</h5><br>
+
+
+
+
+        </a>
+
+        <a href="/place/create" class="btn btn-dark btn-sm">Create place</a>
+        <a href="/place/{{id}}/edit" class="btn btn-info btn-sm">Edit place</a>
+
+        <form action="/place/{{id}}/delete" method="POST" style="display: inline-block">
+            <input type="submit" value="Eliminar" class="btn btn-dark btn-sm">
+        </form>
+
+        <hr>
+
+
+    </article>
+
+    {{/each}}
+
+</div>
