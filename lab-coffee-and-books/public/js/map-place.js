@@ -8,7 +8,7 @@ function init() {
 function renderMap() {
     map = new google.maps.Map(
         document.querySelector('#myMap'),
-        { zoome: 14, center: { lat: 40.451807254583144, lng: - 3.707659546418771 }, styles: mapStyles.retro }
+        { zoom: 14, center: { lat: 40.451807254583144, lng: - 3.707659546418771 }, styles: mapStyles.retro }
     )
 }
 
@@ -25,6 +25,7 @@ function printMarkers(places) {
 
     places.forEach(place => {
         let position = { let: place.location.coordinates[0], lng: place.location.coordinates[1] }
+        console.log(position)
         new google.maps.Marker({ position, map })
     })
 
