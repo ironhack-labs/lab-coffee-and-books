@@ -15,12 +15,19 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Place location</label>
+            <label for="direction" class="form-label">Direction</label>
+            <input type="text" class="form-control" id="direction" name="direction">
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Place Coords</label>
             <div class="container">
                 <label for="lat" class="form-label">Latitude</label>
-                <input type="text" class="form-control" id="lat" name="lat">
+                <input type="text" class="form-control" id="lat" name="lat" value="{{data.location.coordinates.[0]}}"
+                    readonly>
                 <label for="lon" class="form-label">Longitude</label>
-                <input type="text" class="form-control" id="lon" name="lon">
+                <input type="text" class="form-control" id="lon" name="lon" value="{{data.location.coordinates.[1]}}"
+                    readonly>
             </div>
         </div>
 
@@ -28,3 +35,6 @@
     </form>
 
 </div>
+<script src="/js/geocode.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMzL3s__ul0jf_RCKdh2eRUwJJsQ5ojTo&callback=initialize"></script>

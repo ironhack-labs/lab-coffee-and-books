@@ -12,7 +12,7 @@ router.get("/", (req, res, next) => {
 
 /*Get Details*/
 router.get("/details/:id", (req, res, next) => {
-    Place.findById(req.params)
+    Place.findById(req.params.id)
         .then(data => res.render("places/details-place", data))
         .catch(err => console.log(err))
 })
