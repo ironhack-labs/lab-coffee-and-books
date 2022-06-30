@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Places List</h1>
+    <hr>
+    <div class="row">
+        {{#each allPlaces}}
+        <div class="col-md-4">
+            <article>
+                <h2>{{name}}</h2>
+                <hr>
+                <p>Latitude:{{location.coordinates.[0]}}</p>
+                <p>Longitude: {{location.coordinates.[1]}}</p>
+                <div class="btn-group" style="width: 100%">
+                    <a href="/places/edit/{{_id}}" class="btn btn-outline-dark btn-sm">Edit</a>
+                    <a href="/places/delete/{{_id}}" class="btn btn-dark btn-sm">Delete</a>
+                </div>
+            </article>
+        </div>
+        {{/each}}
+    </div>
+</div>
