@@ -1,38 +1,46 @@
 <div class="container">
-    <h1>Register a new place</h1>
-    <form action="/places/create" method="POST">
-        <div class="mb-3">
-            <label for="name" class="form-label">Name of the place</label>
-            <input type="text" class="form-control" id="name" name="name">
+    <div class="row">
+        <div class="col-6">
+            <h1>Register a new place</h1>
+            <form action="/places/create" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name of the place</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Type of place</label>
+                    <select class="form-select" id="type" name="type">
+                        <option selected value="coffeShop">Coffe shop</option>
+                        <option value="bookStore">Book store</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="direction" class="form-label">Direction</label>
+                    <input type="text" class="form-control" id="direction" name="direction">
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Place Coords</label>
+                    <div class="container">
+                        <label for="lat" class="form-label">Latitude</label>
+                        <input type="text" class="form-control" id="lat" name="lat"
+                            value="{{data.location.coordinates.[0]}}" readonly>
+                        <label for="lon" class="form-label">Longitude</label>
+                        <input type="text" class="form-control" id="lon" name="lon"
+                            value="{{data.location.coordinates.[1]}}" readonly>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <div id="smallMap"></div>
         </div>
 
-        <div class="mb-3">
-            <label for="name" class="form-label">Type of place</label>
-            <select class="form-select" id="type" name="type">
-                <option selected value="coffeShop">Coffe shop</option>
-                <option value="bookStore">Book store</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="direction" class="form-label">Direction</label>
-            <input type="text" class="form-control" id="direction" name="direction">
-
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Place Coords</label>
-            <div class="container">
-                <label for="lat" class="form-label">Latitude</label>
-                <input type="text" class="form-control" id="lat" name="lat" value="{{data.location.coordinates.[0]}}"
-                    readonly>
-                <label for="lon" class="form-label">Longitude</label>
-                <input type="text" class="form-control" id="lon" name="lon" value="{{data.location.coordinates.[1]}}"
-                    readonly>
-            </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </div>
 
 </div>
 <script src="/js/geocode.js"></script>
