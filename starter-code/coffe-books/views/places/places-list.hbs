@@ -1,0 +1,33 @@
+<div class="container mt-5">
+
+    <h2>Places</h2>
+    <div class="row">
+        {{#each places}}
+        <div class="col-md-4">
+
+            <div class="card border-dark mt-3">
+
+                <div class="card-body">
+                    <p class="card-title"><strong>{{name}}</strong></p>
+                    <p class="card-text">{{type}}</p>
+                    <p class="card-text"><b>Coordinates:</b></p>
+                    <ul class="card-text">
+
+                        <li class="card-text">{{location.coordinates.[0]}} Latitude</li>
+                        <li class="card-text">{{location.coordinates.[1]}} Longitude</li>
+                    </ul>
+
+
+
+                    <a href="/places/{{id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="/places/{{id}}/delete" method="POST" style="display: inline-block">
+                        <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        {{/each}}
+    </div>
+
+</div>
