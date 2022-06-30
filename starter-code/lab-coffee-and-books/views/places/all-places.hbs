@@ -1,0 +1,21 @@
+<div class="container">
+
+    <h1>Aaaaaall the places!</h1>
+
+    <hr>
+
+    {{#each places}}
+
+    <article>
+
+        <p>{{name}} is a {{type}}
+
+            <a href="/places/details/{{id}}" class="btn btn-warning btn-sm">Detalles</a>
+
+        </p>
+
+    </article>
+    
+    {{/each}}
+
+</div>
