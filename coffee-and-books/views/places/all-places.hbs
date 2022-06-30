@@ -1,0 +1,20 @@
+<h1>All places</h1>
+
+<hr>
+
+{{#each places}}
+<p>{{name}} - {{type}}<br>
+    <a href="/places/edit/{{id}}">Editar</a> |
+    <a href="/places/delete/{{id}}">Eliminar</a>
+</p>
+{{/each}}
+
+<figure>
+    <div id="my-map"></div>
+</figure>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/mapStyles.js"></script>
+<script src="/js/map-places.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?{{!-- key=_____PEGA_AQUI_TU_API_KEY_____ --}}&callback=init"></script>
