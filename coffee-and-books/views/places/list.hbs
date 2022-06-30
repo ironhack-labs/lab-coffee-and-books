@@ -1,0 +1,10 @@
+<div class="container default-margin">
+    {{#each places}}
+    <h1>Nombre: {{name}}</h1>
+    <h2>Tipo: {{type}}</h1>
+        <a href="/edit/{{id}}" class="btn btn-primary">Edítame</a>
+        <a href="/delete/{{id}}" class="btn btn-danger">Bórrame macaco</a>
+        <hr>
+        {{/each}}
+
+</div>
