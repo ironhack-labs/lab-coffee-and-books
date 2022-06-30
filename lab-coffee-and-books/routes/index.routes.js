@@ -11,4 +11,7 @@ router.use("/", placesRouter)
 const apiRouter = require('./api.routes')
 router.use('/api', apiRouter)
 
+const mapRouter = require('./maps.routes')
+router.use('/maps', mapRouter)
+
 module.exports = router;
