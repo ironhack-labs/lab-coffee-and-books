@@ -1,0 +1,10 @@
+{{#each place}}
+<p>{{name}}</p>
+<p>{{type}}</p>
+<p>{{latitude}}</p>
+<p>{{longitude}}</p>
+<a href='/editar/{{id}}'>Editar lugar</a>
+<form action="/eliminar/{{id}}" method="POST" style="display: inline-block">
+    <input type="submit" value="eliminar" class="btn btn-danger btn-sm">
+</form>
+{{/each}}

@@ -1,0 +1,35 @@
+<div class="container">
+
+    <h1>Crear nueva cafetería</h1>
+
+    <hr>
+
+    <form method="POST" action="/crear">
+
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp">
+        <br><br>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="type" value="coffee shop" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Coffee shop
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" name="type" type="checkbox" value="bookstore" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+                Book store
+            </label>
+        </div>
+        <label for="exampleInputEmail1" class="form-label">Latitud</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="latitude" aria-describedby="emailHelp">
+        <label for="exampleInputEmail1" class="form-label">Longitude</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="longitude" aria-describedby="emailHelp">
+
+
+        <input type="submit" value="Crear cafeterías">
+
+    </form>
+
+</div>
