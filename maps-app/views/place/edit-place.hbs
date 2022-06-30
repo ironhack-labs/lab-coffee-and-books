@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <h1>Edit {{name}}</h1>
+
+                <hr>
+
+                <form action="/place/edit/{{id}}" method="POST">
+                    <label>
+                        Name: <input type="text" name="name" value="{{name}}">
+                    </label>
+
+                    <label>
+                        Type: <input type="text" name="type" value="{{type}}">
+                    </label>
+
+                    <label>
+                        Latitude: <input type="text" name="latitude" value="{{latitude}}">
+                    </label>
+
+                    <label>
+                        Longitude: <input type="text" name="longitude" value="{{longitude}}">
+                    </label>
+
+                    <input type="submit" value="Update character" class="btn-dark btn">
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
