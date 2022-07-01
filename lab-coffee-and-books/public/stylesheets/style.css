@@ -1,0 +1,17 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.navbar {
+  margin-bottom: 40px;
+}
+
+#myMap {
+  height: 400px;
+  /* background-color: rgb(45, 9, 250);
+*/
+}
