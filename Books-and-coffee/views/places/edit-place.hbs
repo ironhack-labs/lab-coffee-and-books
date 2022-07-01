@@ -1,0 +1,31 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+    </div>
+    <ul class="list-group list-group-flush">
+        <form method="POST" action="/places/edit/{{resp.id}}">
+            <li class="list-group-item">
+                <label>Nombre
+                    <input name="name" type="text" value="{{resp.name}}">
+                </label>
+            </li>
+            <li class="list-group-item">
+            <label>Type
+                <input name="type" type="text" value="{{resp.type}}">
+            </label>
+            </li>
+            <li class="list-group-item">
+                <label>Latitud
+                    <input name="latitude" type="text" value="{{resp.location.coordinates.[0]}}">
+                </label>
+            </li>
+            <li class="list-group-item">
+                <label>Longitud
+                    <input name="longitude" type="text" value="{{resp.location.coordinates.[1]}}">
+                </label>
+            </li>
+            <li class="list-group-item">
+                <input type="submit" value="Editar">
+            </li>
+        </form>
+    </ul>
+</div> 
