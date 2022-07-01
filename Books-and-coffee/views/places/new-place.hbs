@@ -1,0 +1,32 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+    </div>
+    <h2>Anadir nuevo sitio</h2>
+    <ul class="list-group list-group-flush">
+        <form method="POST" action="/places/create">
+            <li class="list-group-item">
+                <label>Nombre
+                    <input name="name" type="text">
+                </label>
+            </li>
+            <li class="list-group-item">
+            <label>Type
+                <input name="type" type="text">
+            </label>
+            </li>
+            <li class="list-group-item">
+                <label>Latitud
+                    <input name="latitude" type="text">
+                </label>
+            </li>
+            <li class="list-group-item">
+                <label>Longitud
+                    <input name="longitude" type="text">
+                </label>
+            </li>
+            <li class="list-group-item">
+                <input type="submit" value="Crear">
+            </li>
+        </form>
+    </ul>
+</div>

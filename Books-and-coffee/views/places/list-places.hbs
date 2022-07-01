@@ -1,0 +1,15 @@
+{{#each places}}
+
+<div class="card" style="width: 25rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Name: {{name}}</li>
+        <li class="list-group-item">Type: {{type}}</li>
+        <li class="list-group-item">Location: {{location}}</li>
+        <hr>
+        <a class="btn btn-dark btn-sm" href="/places/edit/{{id}}">Edit-place</a>
+        <a class="btn btn-danger btn-sm" href="/places/delete/{{id}}">Delete-place</a>
+
+    </ul>
+</div>
+
+{{/each}}
