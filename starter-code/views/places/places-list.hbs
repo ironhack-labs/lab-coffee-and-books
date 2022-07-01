@@ -1,0 +1,19 @@
+<h1>List of Coffee Shops and Bookstores</h1>
+{{#each place}}
+<p><a href="/places/{{id}}/details">{{name}}</a></p>
+<button class="btn btn-warning"><a href="/places/{{id}}/edit">Edit place</a></button>
+<form action="/places/{{id}}/delete" method="POST">
+    <button class="btn btn-danger">delete</button>
+</form>
+{{/each}}
+
+
+
+<div class="container">
+    <h1>Coffee shops and Bookstores map</h1>
+    <div id="myMap"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/map-coffeeshops.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHmGdGuHadjuxqzR0hK2tUHShe0OtGxHo&callback=init"></script>
