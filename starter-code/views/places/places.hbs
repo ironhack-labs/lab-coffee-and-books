@@ -1,0 +1,33 @@
+<div class="container">
+
+<h1 class="mt-5">Places!</h1>
+
+</div>
+
+<div class="container mt-5">
+
+{{#each getAllPlaces}}
+<h2>Name: {{name}}</h2>
+
+<h2>Type of place: {{type}}</h2>
+
+<a href="/places/{{id}}/edit-place">Edit this place</a>
+<br>
+<a href="/places/{{id}}/delete-place">Delete this place</a>
+<br>
+
+{{/each}}
+<br>
+</div>
+<br>
+<br>
+
+<div class="container">
+
+<a href="/places/create-place">Create place</a>
+
+</div>
+
+
+
+
