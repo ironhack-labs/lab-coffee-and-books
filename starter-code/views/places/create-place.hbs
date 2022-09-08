@@ -1,0 +1,25 @@
+
+<div class="container mt-5">
+<h1>Create a place</h1>
+</div>
+
+<div class="container mt-5">
+
+<form action="/places/create-place" method="POST">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" placeholder="Local's name" name="name">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1" class="mt-2">Type</label>
+        <input type="text" class="form-control" placeholder="coffee shop or bookstore" id="exampleInputPassword1" name="type">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1" class="mt-2">Longitude</label>
+        <input type="text" class="form-control" placeholder="longitude" id="exampleInputPassword1" name="longitude">
+        <label for="exampleInputPassword1" class="mt-2">Latitude</label>
+        <input type="text" class="form-control" placeholder="latitude" id="exampleInputPassword1" name="latitude">
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+</div>
