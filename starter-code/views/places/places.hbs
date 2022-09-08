@@ -1,0 +1,13 @@
+{{#each Store}}
+
+<div class="card w-30 align-items-center">
+    <div class="card-body text-center">
+        <h3 class="card-title">{{name}}</h3>
+        <h6 class="card-text">{{type}}</h6>
+    </div>
+    <a href="/places/edit/{{_id}}" class="card-text text-decoration-none text-reset">Edit</a>
+    <a href="/places/delete/{{_id}}" class="card-text text-decoration-none text-reset">Delete!!</a>
+</div>
+
+
+{{/each}}
