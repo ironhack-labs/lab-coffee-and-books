@@ -1,0 +1,17 @@
+<h1>ESTAS EN PLACESSSSSSS</h1>
+
+{{#each AllPlaces}}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text"></p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{type}}</li>
+    </ul>
+    <div class="card-body">
+        <a href="/places/{{_id}}/update" class="card-link">Update</a>
+        <a href="/places/{{_id}}/delete" class="card-link">Delete</a>
+    </div>
+</div>
+{{/each}}

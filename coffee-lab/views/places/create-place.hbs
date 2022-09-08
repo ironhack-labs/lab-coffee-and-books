@@ -1,0 +1,24 @@
+<h1>ESTAS EN CREATE</h1>
+
+<form action="/places/create" method="post">
+    <div class="mb-3">
+        <label for="" class="form-label">Name:</label>
+        <input type="text" name="name" class="form-control w-25">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Longitude:</label>
+        <input type="text" name="longitude" value="{{location.coordinates.[0]}}" class="form-control w-25">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Latitude:</label>
+        <input type="text" name="latitude" value="{{location.coordinates.[1]}}" class="form-control w-25">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Type:</label>
+        <select class="form-select w-25" name="type" size="2" multiple aria-label="multiple select example">
+            <option>coffee shop</option>
+            <option>bookstore</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Create!</button>
+</form>
