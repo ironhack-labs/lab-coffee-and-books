@@ -1,0 +1,28 @@
+<div class="container">
+  <h2 class="listText">All venues</h2>
+
+
+  <ul>
+
+    <ul>
+      <li scope="col">Name</li>
+      <li scope="col">Type</li>
+      <li scope="col"></li>
+    </ul>
+
+    {{#each data}}
+    <ul>
+      <p>{{name}}</p>
+      <p>{{type}}</p>
+      <form action="/place/delete/{{id}}" method="POST">
+        <a href="/place/edit/{{id}}" class="btn btn-warning list-btn">Edit</a>
+        <button type="submit" class="btn btn-danger list-btn">Delete</button>
+      </form>
+      </li>
+    </ul>
+    {{/each}}
+
+  </ul>
+
+  <a href="/place/create" class="btn btn-success list-btn">Add</a>
+</div>
