@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1>Register a new place</h1>
+
+      <form action="/place/create" method="POST">
+        <div class="mb-3">
+          <label for="name">Name of the venue</label>
+          <input type="text" id="name" name="name">
+        </div>
+
+        <div class="mb-3">
+          <label for="type">Type of the plce</label>
+          <input type="text" id="type" name="type">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="col-6">
+      <div id="smallMap"></div>
+    </div>
+
+  </div>
+
+</div>
+<script src="/js/geocode.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMzL3s__ul0jf_RCKdh2eRUwJJsQ5ojTo&callback=initialize"></script>
