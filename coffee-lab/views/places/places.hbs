@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>All The Places</h1>
+    <div class="row d-flex">
+        {{#each places}}
+        <div class="card col-4 m-5">
+            <div class="card-header">
+                <h2>{{name}}</h2>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Type: {{type}}</h5>
+                <div id="map">
+                    <!-- aqui va el mapa -->
+                </div>
+                <a href="/places/{{id}}/edit" class="btn btn-primary">Update</a>
+                <form action="/places/{{id}}/delete" method="GET">
+                    <button class="btn btn-primary mt-3" type="submit">Delete Place</button>
+                </form>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

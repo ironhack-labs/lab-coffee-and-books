@@ -1,0 +1,29 @@
+body {
+  padding: 0;
+  margin: 0 auto;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+.index {
+  width: 100%;
+  height: 100vh;
+  padding-top: 40px;
+  background-image: url('https://culturacafeina.com/wp-content/uploads/2020/04/como-identificar-un-buen-coffee-shop-2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.col {
+  background-color: rgba(255, 255, 255, 0.621);
+  padding: 60px;
+  border-radius: 10px;
+}
