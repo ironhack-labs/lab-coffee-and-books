@@ -1,0 +1,11 @@
+<h1>Places List</h1>
+<div class="d-flex flex-warp gap-3">
+    {{#each places}}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">{{type}}</p>
+            <a href="/details/{{_id}}" class="btn btn-primary">Details</a>
+        </div>
+    </div>
+    {{/each}}

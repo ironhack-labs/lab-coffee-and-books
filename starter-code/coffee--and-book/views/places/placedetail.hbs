@@ -1,0 +1,36 @@
+<h1>EDIT PLACE</h1>
+<hr>
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <h1>Edit</h1>
+            <hr>
+
+            <form action="/details/{{_id}}" method="POST">
+
+                <div class="mb-3 row">
+                    <div class="col">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="name" class="form-control" id="name" name="name" value="{{name}}">
+                        <div class="form-text">Requerido.</div>
+                    </div>
+                    <select name="type">
+                        <option value="coffe shop">Coffe Shop</option>
+                        <option value="bookstore">Book Store</option>
+                    </select>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-dark block">Edit</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <form action="/delete/{{_id}}" method="POST" style="display: inline">
+        <input type="submit" value="delete" class="btn btn-danger">
+    </form>
+</div>
