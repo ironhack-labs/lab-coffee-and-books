@@ -10,3 +10,8 @@ a {
 h1 {
   color: 15px;
 }
+
+#myMap {
+  height: 400px;
+  background-color: rgb(2, 65, 30);
+}

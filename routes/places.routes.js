@@ -1,8 +1,8 @@
 const express = require('express');
 const Place = require('../models/place.model');
 const router = express.Router();
+// const { listIndexes } = require('./../models/place.model')
 
-/* GET home page */
 
 router.get("/listado", (req, res, next) => {
     Place
