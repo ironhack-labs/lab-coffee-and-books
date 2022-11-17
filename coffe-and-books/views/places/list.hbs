@@ -1,0 +1,40 @@
+
+<h1>Our places</h1>
+<hr>
+
+<ul class="list-group">
+  {{#each place}}
+    <li class="list-group-item">
+      
+      <div class="row ">
+        <div class="col-3 align-self-center">
+            <h4>{{name}}</h4>
+        </div>
+        <div class="col-5 align-self-center">
+            <h6>{{type}}</h6>
+        </div>
+
+        <div class="col-md-1 me-1">
+          <a href="/places/{{_id}}/details" type="button" class="btn btn-dark w-100">Detalles</a>
+        </div>
+
+        <div class="col-md-1 me-1">
+          <a href="/places/{{_id}}/edit" type="button" class="btn btn-warning w-100">Editar</a>
+        </div>
+
+        <div class="col-md-1 me-1">
+          <form action="/places/{{_id}}/delete" method="POST" style="display: inline">
+          <input type="submit" value="Eliminar" class="btn btn-danger w-100">
+          </form>       
+        </div>
+      </div>
+
+    </li>
+  {{/each}}
+</ul>
+
+<hr>
+
+<div class="mt-4">
+    <a href="/places/create" type="button" class="btn btn-dark">Nueva localización</a>
+</div>

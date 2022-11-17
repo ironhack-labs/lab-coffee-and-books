@@ -1,0 +1,47 @@
+
+
+<form action="/places/{{id}}/edit" method="POST">
+
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">Nombre</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <p class="col-sm-2 col-form-label">Localización</p>
+    <div class="col-sm-5">
+      <label for="latitude">Latitud</label>
+      <input type="text" class="form-control" id="latitude" name="latitude" value="{{location.coordinates.[0]}}">
+    </div>
+
+    <div class="col-sm-5">
+      <label for="longitude">Longitud</label>
+      <input type="text" class="form-control" id="longitude" name="longitude" value="{{location.coordinates.[1]}}">
+    </div>
+  </div>
+
+  <fieldset class="row mb-3">
+    <legend class="col-form-label col-sm-2 pt-0">Tipología</legend>
+    <div class="col-sm-10">
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="type" id="type" value="Bookstore">
+        <label class="form-check-label" for="type">
+          Bookstore
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="type" id="type" value="Coffee shop">
+        <label class="form-check-label" for="type">
+          Coffe Shop
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+  
+  <button type="submit" class="btn btn-dark">Editar</button>
+</form>
