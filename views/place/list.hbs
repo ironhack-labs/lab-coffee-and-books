@@ -1,0 +1,33 @@
+<h2 class="title">List of All places</h2>
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <a class="btn btn-dark" href="/palces/create">Create a New Place</a>
+  <a href="/" class="btn btn-success">Back to the Homepage</a>
+</div>
+
+<br />
+<hr />
+
+<div class="container">
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {{#each place}}
+      <div class="col" style="margin-bottom: 50px;">
+        <div class="card h-100" style="margin-bottom:10px">
+          <div class="card-body">
+            <h4 class="card-title" style="font-weight:border">Name:{{name}}</h4>
+            <h6>Type:{{type}}</h6>
+            <hr />
+            <h6>Coords:{{location.coordinates}}</h6>
+            <hr />
+            <a href="/palces/{{_id}}/edit" class="btn btn-dark">Edit the place</a>
+
+            {{! si utiliza el POST en route, hay que utilizar formulario aqui, sino, en route, utilizar GET }}
+            <a href="/palces/{{_id}}/delete" class="btn btn-dark">Delete the
+              place</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
