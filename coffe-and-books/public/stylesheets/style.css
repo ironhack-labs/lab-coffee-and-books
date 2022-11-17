@@ -1,0 +1,10 @@
+body {
+  font: sans-serif;
+  background-color: rgba(232, 107, 30, 0.4) ;
+}
+
+
+#map {
+  height: 500px;
+  background-color: red;
+}
