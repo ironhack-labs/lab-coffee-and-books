@@ -1,0 +1,43 @@
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h1>Nuevo sitio</h1>
+            <hr>
+            <form action="/listado/crear" method="POST">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="type" class="form-label">Coffee Shop / Bookstore</label>
+                            <input type="text" class="form-control" id="type" name="type">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="latitud" class="form-label">Latitud</label>
+                            <input type="text" class="form-control" id="latitud" name="latitud">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="longitud" class="form-label">Longitud</label>
+                            <input type="text" class="form-control" id="longitud" name="longitud">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="d-grid mt-5">
+                        <button type="submit" class="btn btn-dark btn-lg">Crear sitio</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+</div>
