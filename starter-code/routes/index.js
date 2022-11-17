@@ -1,9 +1,17 @@
-const express = require('express');
-const router  = express.Router();
+module.exports = (app) => {
+	// Index
+	const index = require("./index.routes");
+	app.use("/", index);
 
-/* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+	// Cafés
+	const cafesRoutes = require("./cafes.routes");
+	app.use("/", cafesRoutes);
 
-module.exports = router;
+	// Mapas
+	const mapasRoutes = require("./maps.routes");
+	app.use("/", mapasRoutes);
+
+	// API
+	const apiRoutes = require("./api.routes");
+	app.use("/api", apiRoutes);
+};

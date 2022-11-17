@@ -1,0 +1,38 @@
+<div class="container">
+
+	<div class="row justify-content-center">
+
+		<div class="col-md-8">
+
+			<h1>Nuevo lugar</h1>
+
+			<form action="/cafeterias/crear" method="POST">
+
+				<div class="mb-3">
+					<label for="name" class="form-label">Nombre</label>
+					<input type="text" class="form-control" id="name" name="name" />
+					<div class="form-text">Requerido.</div>
+				</div>
+				<div class="mb-3">
+					<label for="type" class="form-label">Tipo</label>
+					<input type="text" class="form-control" id="type" name="type" />
+					<div class="form-text">Cafetería o Tienda.</div>
+				</div>
+				<div class="mb-3 col">
+					<label for="lat" class="form-label">Latitud</label>
+					<input type="text" class="form-control" id="lat" name="lat" />
+					<div class="form-text">Requerido.</div>
+				</div>
+				<div class="mb-3 col">
+					<label for="lng" class="form-label">Longitud</label>
+					<input type="text" class="form-control" id="lng" name="lng" />
+					<div class="form-text">Requerido.</div>
+				</div>
+				<div class="d-grid gap-2 m-2">
+					<button type="submit" class="btn btn-dark block">Crear lugar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
