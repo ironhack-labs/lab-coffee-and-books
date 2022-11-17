@@ -1,0 +1,18 @@
+body {
+
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+#placesMap {
+  margin-top: 15px;
+  height: 80vh;
+  background-color: red;
+}
