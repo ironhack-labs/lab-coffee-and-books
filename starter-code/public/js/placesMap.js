@@ -2,22 +2,22 @@ let myMap
 
 function init() {
   renderMap()
-  getRestaurants()
+  getplaces()
 }
 
 
-function getRestaurants() {
+function getplaces() {
 
   axios
-    .get('/api/restaurants')
+    .get('/api/places')
     .then(response => setMarkers(response.data))
     .catch(err => console.log(err))
 }
 
 
-function setMarkers(restaurants) {
+function setMarkers(places) {
 
-  restaurants.forEach(elm => {
+  places.forEach(elm => {
 
     const lat = elm.location.coordinates[0]
     const lng = elm.location.coordinates[1]
