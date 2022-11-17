@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <h2>Shops</h2>
+    <hr>
+    <div class="row">
+        <br>
+        {{#each coffee}}
+        <div class="col-md-4 mb-3 ">
+            <div>
+                <h5 class="card-title mt-2">{{name}} </h5>
+
+                <a href="/shop/details/{{id}}" class="btn btn-warning">More Information</a>
+                <a href='/shop/edit/{{id}}' class="btn btn-warning">Edit Place</a>
+
+            </div>
+        </div>
+
+
+        {{/each}}
+        <a href="/shop/create" class="btn btn-warning">Add New Place! </a>
+        </row>
+        <a href="/" class="btn btn-dark mt-2">Home</a>
+    </div>
