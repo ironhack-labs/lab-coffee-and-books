@@ -1,0 +1,17 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+}
+
+#storeMap {
+  height: 300px;
+  background-color: rgb(157, 157, 157);
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
