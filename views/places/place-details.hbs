@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h1>Ficha de {{name}}</h1>
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <hr>
+            <p>Nombre: {{name}}</p>
+            <p>Tipo: {{type}}</p>
+            <hr>
+            <a href="/places/editar/{{_id}}" class="btn btn-warning">Editar</a>
+
+            <form action="/places/eliminar/{{_id}}" method="POST" style="display: inline">
+                <input type="submit" value="Eliminar" class="btn btn-danger">
+            </form>
+
+            <a href="/places/listado" class="btn btn-info">Establecimientos</a>
+        </div>
+
+    </div>
