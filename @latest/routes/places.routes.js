@@ -11,7 +11,7 @@ router.post("/create", (req, res, next) => {
 
     Place
         .create({ name, type, location })
-        .then(() => res.redirect("/list"))
+        .then(() => res.redirect("/places/list"))
         .catch(err => console.log(err))
 })
 
