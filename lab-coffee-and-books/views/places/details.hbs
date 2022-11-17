@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Detalles de {{name}}</h1>
+    <hr>
+    <p>{{type}}</p>
+
+
+
+    <figure id="myMap"></figure>
+
+
+
+
+
+
+
+    <a href="/places/list" class="btn btn-dark">Volver al listado</a>
+
+
+    <a href="/places/edit/{{_id}}" class="btn btn-warning">Editar lugar</a>
+
+    <form action="/places/delete/{{_id}}" method="POST" style="display: inline">
+        <input type="submit" value="Eliminar lugar" class="btn btn-danger">
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/basicMap.js"></script>
+    <script src="/js/placesMap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbBJPvYIaR5ozIx_0-uWiGeO9cK4IxHww&callback=initMap">
+    </script>
+
+</div>
