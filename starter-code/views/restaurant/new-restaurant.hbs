@@ -1,0 +1,36 @@
+<div class="container">
+
+    <h1>Crear nuevo restaurante</h1>
+
+    <hr>
+
+    <form method="POST" action="/restaurantes/crear">
+
+        <div class="mb-6">
+            <label for="usernameInput" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control" id="usernameInput" name="name">
+        </div>
+        <div class="mb-6">
+            <label for="latitude" class="form-label">Latitud</label>
+            <input type="text" class="form-control" id="latitude" name="latitude">
+        </div>
+        <div class="mb-6">
+            <label for="longitude" class="form-label">Longitud</label>
+            <input type="text" class="form-control" id="longitude" name="longitude">
+        </div>
+
+        <div class="dropdown mb-6">
+            <select name="type" class="form-select" aria-label="Default select example">
+                <option selected>Tipo</option>
+                <option value="coffeShop">Cafeterías</option>
+                <option value="bookstore">Librerías</option>
+
+            </select>
+
+        </div>
+
+        <input type="submit" value="Crear restaurante">
+
+    </form>
+
+</div>

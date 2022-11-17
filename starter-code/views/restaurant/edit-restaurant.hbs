@@ -1,0 +1,38 @@
+<div class="container">
+
+    <h1>Editar restaurante</h1>
+
+    <hr>
+
+    <form method="POST" action="/restaurantes/upgrade/{{restaurantes._id}}">
+
+        <div class="mb-6">
+            <label for="usernameInput" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control" id="usernameInput" name="name" value="{{restaurantes.name}}">
+        </div>
+        <div class="mb-6">
+            <label for="latitude" class="form-label">Latitud</label>
+            <input type="Number" class="form-control" id="latitude" name="latitude" value="{{restaurantes.location}}">
+        </div>
+        <div class="mb-6">
+            <label for="longitude" class="form-label">Longitud</label>
+            <input type="Number" class="form-control" id="longitude" name="longitude" value="{{restaurantes.location}}">
+        </div>
+
+        <div class="dropdown mb-6">
+            <select name="type" class="form-select" aria-label="Default select example">
+                <option selected>Tipo</option>
+                <option value="coffeShop">Cafeterías</option>
+                <option value="bookstore">Librería</option>
+
+            </select>
+
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-dark">Editar restaurante</button>
+        </div>
+
+    </form>
+
+</div>
