@@ -1,3 +1,4 @@
+
 let myMap
 
 function init() {
@@ -9,8 +10,12 @@ function init() {
 function getplaces() {
 
   axios
-    .get('/api/places')
-    .then(response => setMarkers(response.data))
+    .get('/api/map')
+    .then(response => {
+      console.log(response.data)
+      setMarkers(response.data)
+
+    })
     .catch(err => console.log(err))
 }
 
