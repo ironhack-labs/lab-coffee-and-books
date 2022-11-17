@@ -1,0 +1,16 @@
+<h1>Holaaa estas en list</h1>
+
+<div class="container ">
+  {{#each place}}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{name}}</h5>
+      <p class="card-text">Type: {{type}}</p>
+      <a href="/place/edit/{{_id}}" class="btn btn-secondary">Edit</a>
+      <form action="/place/delete/{{_id}}" method="POST">
+        <input type="submit" value="Delete" class="btn btn-danger">
+      </form>
+    </div>
+  </div>
+  {{/each}}
+</div>
