@@ -1,0 +1,17 @@
+<div class="container mt-5">
+
+    <h1>{{name}}</h1>
+
+
+    <p>{{type}}</p>
+    <p>Coordenadas: {{location.coordinates}}</p>
+    <hr>
+
+
+    <a href="/places/{{_id}}/edit" class="btn btn-primary">Editar</a>
+
+    <form action="/places/{{_id}}/delete" method="POST">
+        <button class="btn btn-warning">Eliminar</button>
+    </form>
+
+</div>

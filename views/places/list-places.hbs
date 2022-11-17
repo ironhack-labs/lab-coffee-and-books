@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Lugares</h1>
+    <hr>
+
+    {{#each places}}
+    <p>
+    <h4>{{name}}</h4>
+    <a href="/places/{{_id}}">Ver Info</a>
+    </p>
+    {{/each}}
+
+    <hr>
+
+    <a href="/" class="btn btn-dark">Volver a incio</a>
+    <a href="/places/create" class="btn btn-success">Añadir un lugar nuevo</a>
+</div>

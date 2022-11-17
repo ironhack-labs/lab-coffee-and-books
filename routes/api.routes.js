@@ -1,0 +1,14 @@
+const router = require("express").Router()
+
+const Place = require('./../models/place-model')
+
+router.get("/places", (req, res, next) => {
+    console.log('entro aqui')
+
+    Place
+        .find()
+        .then(places => res.json(places))
+        .catch(err => console.log(err))
+})
+
+module.exports = router
