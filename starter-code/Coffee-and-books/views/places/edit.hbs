@@ -1,0 +1,29 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h2>Editar</h2>
+
+            <form action="/lugares/{{_id}}/editar" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                </div>
+                <select class="form-select" aria-label="Default select example" name="type">
+                    <option selected>Open this select menu</option>
+                    <option value="coffee-shop">Coffee Shop</option>
+                    <option value="bookstore">Book Stores</option>
+
+                </select>
+
+
+                <div class="d-grid">
+                    <button type="submit" href="/lugares/editar" class="btn btn-dark mt-3">Enviar</button>
+                </div>
+
+            </form>
+
+            <hr>
+        </div>
+    </div>

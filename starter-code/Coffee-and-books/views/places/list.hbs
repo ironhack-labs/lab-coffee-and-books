@@ -1,0 +1,34 @@
+<h2>Lugares</h2>
+<hr>
+<div class="container d-flex flex-wrap justify-content-center">
+
+    {{#each places}}
+    <div class="row ">
+
+        <div class="card col-md-3" style="width: 18rem">
+
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <hr>
+                <p>{{type}}</p>
+
+
+
+                <a href="/lugares/{{_id}}/editar" class="btn btn-warning mb-2">Editar</a>
+                <form action="/lugares/{{_id}}/eliminar" method="POST">
+                    <input type="submit" value="Eliminar" class="btn btn-danger">
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    {{/each}}
+
+    <hr>
+
+
+</div>
