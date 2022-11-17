@@ -1,0 +1,11 @@
+{{#each restaurantes}}
+<h1>{{name}}</h1>
+<h2>{{type}}</h2>
+<h2>{{location}}</h2>
+<a href="/restaurantes/upgrade/{{_id}}" class="btn btn-warning">Editar Restaurantes</a>
+
+<form action="/restaurantes/delete/{{_id}}" method="POST" style="display: inline">
+    <input type="submit" value="Eliminar Restaurante" class="btn btn-danger">
+</form>
+<hr>
+{{/each}}
