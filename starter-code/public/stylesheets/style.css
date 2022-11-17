@@ -1,0 +1,70 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+#map {
+  height: 500px;
+  margin-top: 40px;
+}
+
+.title-page {
+  text-align: center;
+}
+
+.list-places {
+  margin-top: 40px;
+}
+
+.a-button-form {
+  padding: 10px;
+  background-color: #00b7ff;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.a-button-form:hover,
+.a-button-form:active {
+  color: white;
+  text-decoration: none;
+}
+
+.form-container {
+
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 200px
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.form-button {
+  width: 100%;
+  border-radius: 4px;
+  background-color: #00b7ff;
+  padding: 10px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+}
+
+.detail-box {
+  margin: 0 auto;
+}

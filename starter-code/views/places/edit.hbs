@@ -1,0 +1,19 @@
+<h1 class="title-page">Edit place</h1>
+<div class="form-container">
+    <form action="/places/edit/{{place._id}}" method="post">
+        <label for="name">Name:</label><input class="form-input" type="text" name="name" placeholder="Name"
+            value="{{place.name}}">
+
+        <label for="type">Type:</label><select class="form-input" name="type">
+            <option value="{{place.type}}" selected>{{place.type}}</option>
+            <option value="{{typeArray.[0]}}">{{typeArray.[0]}}</option>
+        </select>
+
+        <label for="lat">Latitude:</label>
+        <input class="form-input" type="number" step="any" name="lat" value="{{place.location.coordinates.[0]}}">
+
+        <label for="long">Longitude:</label>
+        <input class="form-input" type="number" step="any" name="long" value="{{place.location.coordinates.[1]}}">
+        <button class="form-button" type="submit">Edit</button>
+    </form>
+</div>

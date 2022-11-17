@@ -1,0 +1,10 @@
+<h1 class="title-page">List of places</h1>
+<div class="list-places row">
+    {{#each places}}
+    <div class="col-3">
+        <p>Name: {{name}}</p>
+        <p>Type: {{type}}</p>
+        <a class="a-button-form" href="/places/{{_id}}">Show detail</a>
+    </div>
+    {{/each}}
+</div>
