@@ -1,0 +1,33 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <form action='/shop/edit/{{place._id}}' method="POST">
+                <div class="mb-3 mt-5">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="username" name="name" value="{{place.name}}">
+                </div>
+                <select name="type" class="form-select mb-3" id="type">
+                    <option disabled selected> Select type</option>
+                    <option value="CoffeShop">Coffe Shop</option>
+                    <option value="Bookstore">Bookstore</option>
+                </select>
+                <div class="d-grid mt-5">
+                    <button type="submit" class="btn btn-dark">Editar</button>
+                </div>
+
+
+                <a href="/students/lista" class="btn btn-dark mt-2">Volver al listado</a>
+
+                <hr>
+            </form>
+
+            <form action="/shop/delete/{{place.id}}" method="post">
+                <input type="submit" value="Eliminar personaje" class="btn btn-danger" style="display: inline">
+
+            </form>
+        </div>
+    </div>
+    <a href="/" class="btn btn-dark">Volver al Inicio</a>
+</div>
