@@ -1,0 +1,12 @@
+<div class="container mt-5">
+    <h1 class="mb-3">Lista de Lugares</h1>
+    <hr>
+    <ul>
+        {{#each places}}
+        <h2>{{name}}</h2>
+        <a href="/places/list/{{_id}}" class="btn btn-outline-dark">Details</a>
+        <hr>
+        {{/each}}
+        <a href="/" class="btn btn-dark">Volver a Inicio</a>
+    </ul>
+</div>

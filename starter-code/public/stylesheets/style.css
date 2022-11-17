@@ -1,0 +1,12 @@
+body {
+
+  font: Sans-serif
+}
+
+a {
+  color: #00b7ff;
+}
+
+#myMap {
+  height: 500px;
+}

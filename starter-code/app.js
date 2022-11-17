@@ -1,58 +1,34 @@
-require('dotenv').config();
 
-const bodyParser   = require('body-parser');
-const cookieParser = require('cookie-parser');
-const express      = require('express');
-const favicon      = require('serve-favicon');
-const hbs          = require('hbs');
-const mongoose     = require('mongoose');
-const logger       = require('morgan');
-const path         = require('path');
+require("dotenv").config();
 
 
-mongoose
-  .connect('mongodb://localhost/starter-code', {useNewUrlParser: true})
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err)
-  });
+require("./db");
 
-const app_name = require('./package.json').name;
-const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
+const express = require("express");
+
+
+const hbs = require("hbs");
 
 const app = express();
 
-// Middleware Setup
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
 
-// Express View engine setup
+require("./config")(app);
 
-app.use(require('node-sass-middleware')({
-  src:  path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  sourceMap: true
-}));
-      
-
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
+app.locals.appTitle = 'ironCoffeShop';
 
 
+const indexRoutes = require("./routes/index.routes");
+app.use("/", indexRoutes)
 
-// default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+const placesRoutes = require("./routes/places.routes")
+app.use("/places", placesRoutes)
 
+const apiRoutes = require("./routes/api.routes")
+app.use("/api", apiRoutes)
 
+const mapRoutes = require("./routes/maps.routes")
+app.use("/map", mapRoutes)
 
-const index = require('./routes/index');
-app.use('/', index);
-
+require("./error-handling")(app);
 
 module.exports = app;
