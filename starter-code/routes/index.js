@@ -1,9 +1,12 @@
-const express = require('express');
-const router  = express.Router();
+module.exports = app => {
 
-/* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+    const indexRouter = require('./index.routes')
+    app.use('/', indexRouter)
 
-module.exports = router;
+    const sitesRouter = require('./sites.routes')
+    app.use('/listado', sitesRouter)
+
+    app.use('/', require('./map.routes'))
+    app.use('/api', require('./api.routes'))
+
+}
