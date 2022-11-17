@@ -1,0 +1,34 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 mt-5">
+
+            <h1>Editar {{name}}</h1>
+
+            <form action="/places/editar/{{_id}}" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                </div>
+                <div class="mb-3">
+                    <label for="type" class="form-label">Tipo de establecimiento</label>
+                    <input type="text" class="form-control" id="type" name="type" value="{{type}}"">
+                </div>
+
+
+
+
+                <div class=" d-grid">
+                    <button type="submit" class="btn btn-dark">Editar Establecimiento</button>
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+
+
+
+    <a href="/" class="btn btn-dark">Volver al inicio</a>
+</div>
