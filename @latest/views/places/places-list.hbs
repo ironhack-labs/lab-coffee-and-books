@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <table class="table mb-0 align-middle bg-white w-50">
+            <thead class="bg-light">
+                <tr>
+                    <th>Lugar</th>
+                    <th>Tipo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each places}}
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <span>{{name}}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span>{{type}}<span>
+                    </td>
+                    <td>
+                        <a href="/places/{{_id}}/edit" class="btn btn-dark btn-sm btn-rounded">
+                            Editar
+                        </a>
+                        <form action="/places/{{_id}}/delete" method="post" class="d-inline">
+                            <input type="submit" class="btn btn-dark btn-sm btn-rounded" value="Eliminar">
+                        </form>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
