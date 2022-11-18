@@ -1,4 +1,4 @@
-let myMap
+let placesMap
 
 function initMap() {
     renderMap()
@@ -26,7 +26,7 @@ function setMarkers(places) {
 
 function renderMap() {
     myMap = new google.maps.Map(
-        document.getElementById('myMap'),
+        document.getElementById('placesMap'),
         {
             zoom: 16,
             center: { lat: 28.466286410545266, lng: - 16.25171950391105 },
