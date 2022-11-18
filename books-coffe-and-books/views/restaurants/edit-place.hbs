@@ -1,0 +1,15 @@
+<form action="/restaurantes/{{id}}/edit" method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Coffeplace name</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+
+    </div>
+    <div class="mb-3">
+
+        <select name="type">
+            <option value="coffeShop">coffe shop</option>
+            <option value="bookStore">bookStore</option>
+        </select>
+
+        <button type="submit" class="btn btn-light">Submit</button>
+</form>
