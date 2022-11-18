@@ -1,0 +1,10 @@
+<h1>je pasa</h1>
+
+{{#each place}}
+{{name}}
+{{type}}
+<a type="button" class="btn btn-outline-primary" href="/restaurantes/{{_id}}/edit">update</a>
+<form action="/restaurantes/{{_id}}/delete" method="POST" style="display: inline">
+    <input type="submit" value="Delete restaurant" class="btn btn-outline-dark">
+</form>
+{{/each}}
