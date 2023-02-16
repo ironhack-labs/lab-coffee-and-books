@@ -1,0 +1,14 @@
+<h2>Details of {{ places.name }}</h2>
+
+
+<h3> Type {{ places.type }} </h3>
+<h3> latitud {{places.location.coordinates.[0]}} </h3>
+<h3> longitud {{places.location.coordinates.[1]}} </h3>
+
+
+{{!-- <p> Weapon: {{ character.weapon }} </p> --}}
+
+<a href="/lugares/editar/{{id}}" class=" btn btn-warning btn-sm">Editar</a>
+<form action="/eliminar/{{character.id}}" method="POST">
+    <input type="submit" value="Eliminar" class="btn btm-danger btn-sm">
+</form>
