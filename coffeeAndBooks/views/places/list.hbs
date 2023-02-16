@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Coffee & Books</h2>
+    <br>
+    <div class="row">
+        {{#each places}}
+        <div class="card col-md-3 m-2 mb-4" style="width: 18rem;">
+
+            <div class="card-body">
+                <h5 class="card-title">Nombre: {{name}}</h5>
+                <p class="card-text">Tipo: {{type}}</p>
+                <p class="card-text">Latitud: {{location.coordinates.[0]}}</p>
+                <p class="card-text">Longitud: {{location.coordinates.[1]}}</p>
+                <div class="row">
+                    <a href="/edit/{{id}}" class="btn btn-dark btn-sm">Editar</a>
+                    <form action="/delete/{{id}}" method="POST">
+                        <div class="d-grid">
+                            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm">
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+        {{/each}}
+    </div>
+    <a href='/create' class="btn btn-dark">Añadir lugar</a>
+</div>
