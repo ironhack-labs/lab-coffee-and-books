@@ -1,0 +1,37 @@
+<div class="container p-5">
+    <div class="row justify-content-center">
+
+        <div class="col-md-6 p-4">
+
+            <h2>Add new coffee</h2>
+            <form class="row g-3" action="/coffees/create" method="POST">
+                <div class="col-12">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" id="name">
+                </div>
+                <div class="col-md-12">
+                    <label for="type" class="form-label">Type:</label>
+
+                    <select class="form-select" aria name="type" id="type">
+                        <option value="coffee shop">Coffee shop</option>
+                        <option value="bookstore">Bookstore</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="lat">Lat:</label>
+                    <input type="text" name="lat" class="form-control" id="lat">
+                </div>
+                <div class="col-md-6">
+                    <label for="lon">Lon:</label>
+                    <input type="text" name="lon" class="form-control" id="lon">
+                </div>
+                <div class="col-12">
+                    <div class="d-grid gap-2">
+
+                        <button type="submit" class="btn btn-dark">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

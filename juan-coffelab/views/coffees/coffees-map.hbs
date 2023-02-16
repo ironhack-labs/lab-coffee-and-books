@@ -1,0 +1,44 @@
+<div class="container p-5">
+
+    <div class="row justify-content-center">
+        <div class="col-7">
+            <div class="container p-3">
+                <h2 class="text-center">List of coffees</h2>
+
+                <div id="map"></div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each coffees}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>{{type}}</td>
+                            <td><a href="/coffees/{{id}}" class="btn btn-dark">Details</a></td>
+                        </tr>
+
+                        {{/each}}
+                    </tbody>
+                </table>
+
+
+                <div class="my-3 d-flex justify-content-center align-items-center">
+                    <h3 class="my-2">Do you want add a new Coffee?</h3>
+                    <a href="/coffees/create" class="btn btn-success mx-3">Add Coffee</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/js/placesMap.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyC9_1_UO0xbZTJ_yY8kNNiGIXGuEef7LsI"></script>
