@@ -1,0 +1,42 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <h1>Crear nuevo lugar</h1>
+            <hr>
+
+            <form action='/create' method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="type" class="form-label">Tipo:</label>
+                    <select id="type" class="form-select" name="type">
+                        <option selected disabled>Select...</option>
+                        <option value="coffee shop">coffee shop</option>
+                        <option value="bookstore">bookstore</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="latitude" class="form-label">Latitud:</label>
+                    <input type="text" class="form-control" id="latitude" name="latitude">
+                </div>
+
+                <div class="mb-3">
+                    <label for="longitude" class="form-label">Longitud:</label>
+                    <input type="text" class="form-control" id="longitude" name="longitude">
+                </div>
+
+                <div class="d-grid mt-5">
+                    <button type="submit" class="btn btn-dark btn-lg">Crear lugar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
