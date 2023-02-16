@@ -1,0 +1,32 @@
+<div class="container mt-5">
+
+    <div class="row">
+
+        {{#each places}}
+
+        <div class="col-md-3">
+
+            <article class="character-card mb-5">
+
+                <h4>{{name}}</h4>
+                <hr>
+                <p>Type: {{type}}</p>
+
+                <div class="d-grid">
+
+                    <div class="btn-group">
+                        <a href="/places/edit/{{id}}" class=" btn btn-warning btn-sm">Edit</a>
+                        <form action="/places/delete/{{id}}" method="post">
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+        {{/each}}
+    </div>
+
+</div>
