@@ -1,0 +1,47 @@
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h1>EDIT{{name}}</h1>
+            <hr>
+            <form action="/{{_id}}/edit" method="POST">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">NAME:</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="type" class="form-label">TYPE:</label>
+                            <input type="text" class="form-control" id="type" name="type" value="{{type}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="latitude" class="form-label">Latitude:</label>
+                    <input type="text" class="form-control" id="latitude" name="latitude"
+                        value="{{location.coordinates.[0]}}">
+                </div>
+                <div class="mb-3">
+                    <label for="longitude" class="form-label">Longitude:</label>
+                    <input type="text" class="form-control" id="longitude" name="longitude"
+                        value="{{location.coordinates.[1]}}">
+                </div>
+                <input type="hidden" name="place_id" value="{{_id}}">
+                <div class="d-grid mt-5">
+                    <button type="submit" class="btn btn-dark btn-lg">SAVE EDIT</button>
+
+            </form>
+
+
+        </div>
+        </form>
+    </div>
+</div>
+
+
+</div>
