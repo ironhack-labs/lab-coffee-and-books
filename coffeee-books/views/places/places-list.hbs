@@ -1,0 +1,22 @@
+<div class='container'>
+    <dir class="encabezado mt-5">
+        <h2>Places</h2>
+    </dir>
+    {{#each places}}
+    <div class="placelist ms-5 mt-5">
+        <h4>{{name}}</h4>
+        <p>Type: {{type}}</p>
+
+        <p>{{location.coordinates.[0]}}</p>
+
+        <p>{{location.coordinates.[1]}}</p>
+
+        <div class='d-flex'>
+
+            <a class="btn btn-dark mt-2 me-2" href="/places/{{_id}}/update" role="button">Update</a>
+            <a class="btn btn-danger mt-2 ms-2" href="/places/{{_id}}/delete" method='POST' role="button">Delete</a>
+        </div>
+    </div>
+    {{/each}}
+
+</div>
