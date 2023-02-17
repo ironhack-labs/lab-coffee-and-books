@@ -13,6 +13,10 @@ router.get('/places', (req, res, next) => {
         .catch(err => next(err))
 })
 
+router.get("/placesmap", (req, res, next) => {
+    res.render("places/places-map")
+})
+
 
 router.get('/create-places', (req, res, next) => {
     res.render('places/create-places')
