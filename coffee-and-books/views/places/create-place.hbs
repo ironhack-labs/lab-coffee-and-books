@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-8">
+            <h2>Agregar un lugar</h2>
+            <hr>
+            <form action="/create" method="POST">
+                <div class="mt-2">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                    <div id="nameHelp" class="form-text">Required</div>
+                </div>
+                <div class="mt-4">
+                    <label for="type" class="form-label">Type</label>
+                    <select class="form-select" name="type" id="type">
+                        <option value="COFFEE-SHOP">Coffee Shop</option>
+                        <option value="BOOKSTORE">Bookstore</option>
+                    </select>
+                    <div id="typeHelp" class="form-text">Required</div>
+                </div>
+
+                <div class="mt-2">
+                    <label for="latitude" class="form-label">Latitude</label>
+                    <input type="latitude" class="form-control" id="latitude" name="latitude">
+                    <div id="nameHelp" class="form-text">Required</div>
+                </div>
+
+                <div class="mt-2">
+                    <label for="longitude" class="form-label">Longitude</label>
+                    <input type="text" class="form-control" id="longitude" name="longitude">
+                    <div id="longitudeHelp" class="form-text">Required</div>
+                </div>
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
