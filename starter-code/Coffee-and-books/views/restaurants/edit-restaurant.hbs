@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-6">
+        <h1>Edit restaurant: {{name}}</h1>
+        <hr>
+        <form action="/restaurants/{{id}}/edit" method="post" class="row g-3">
+            <div class="col-6">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+            </div>
+            <div class="col-6">
+                <label for="type" class="form-label">Tipo</label>
+                <select id="type" class="form-select" name="type">
+                    <option selected>{{type}}</option>
+                    <option>Coffee shop</option>
+                    <option>Bookstore</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" name="description" value="{{description}}">
+            </div>
+            <div class="col-6">
+                <label for="lat" class="form-label">Latitud</label>
+                <input type="number" class="form-control" id="lat" name="lat" value="{{location.coordinates.[0]}}">
+                {{!--Pdte sacar coordenadas--}}
+            </div>
+            <div class="col-6">
+                <label for="lng" class="form-label">Longitud</label>
+                <input type="number" class="form-control" id="lng" name="lng" value="{{location.coordinates.[1]}}">
+            </div>
+            <div class=" d-grid col-12">
+                <button type="submit" class="btn btn-success">Save changes</button>
+            </div>
+        </form>
+    </div>
+</div>

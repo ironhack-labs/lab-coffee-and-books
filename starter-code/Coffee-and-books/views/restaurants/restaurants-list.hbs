@@ -1,0 +1,21 @@
+<h1>Restaurants</h1>
+<a href="/restaurants/create" class="btn btn-warning">( + ) Restaurant</a>
+<hr>
+<div class="row">
+    {{#each rests}}
+    <div class="col-4 p-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><a href="restaurants/{{_id}}/details"> {{ name }} </a></h5>
+
+                <div class="d-flex justify-content-center">
+                    <a href="/restaurants/{{id}}/edit" class="btn btn-warning mx-1">Edit</a>
+                    <form action="/restaurants/{{id}}/delete" method="post" class="mx-1">
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
