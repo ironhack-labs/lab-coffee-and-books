@@ -1,0 +1,41 @@
+<div class="container">
+    <a href="/places" class="btn btn-light mb-2 col-2">Go back</a>
+    <div class="row justify-content-center mt-4">
+        <div class="col-8">
+            <h2>Editar {{name}}</h2>
+            <hr>
+            <form action="/edit/{{id}}" method="POST">
+                <div class="mt-2">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                </div>
+
+                <div class="mt-4">
+                    <label for="type" class="form-label">Type</label>
+                    <select class="form-select" name="type" id="type" value="{{type}}">
+                        {{!-- <option selected value="{{type}}"></option> --}}
+                        <option value="COFFEE-SHOP">Coffee Shop</option>
+                        <option value="BOOKSTORE">Bookstore</option>
+                    </select>
+                </div>
+
+                <div class="mt-2">
+                    <label for="latitude" class="form-label">Latitude</label>
+                    <input type="text" class="form-control" id="latitude" name="latitude" value="{{location.latitude}}">
+                </div>
+
+                <div class="mt-2">
+                    <label for="longitude" class="form-label">Longitude</label>
+                    <input type="text" class="form-control" id="longitude" name="longitude"
+                        value="{{location.longitude}}">
+                </div>
+
+                <input type="hidden" name="place_id" value="{{id}}">
+
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-dark btn-lg">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
