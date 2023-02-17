@@ -1,0 +1,52 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <h1>Formulario de creación de un nuevo local</h1>
+            <hr>
+            <p>Por favor, rellena todos los campos.</p>
+            <hr>
+            <form action="/crear" method="POST">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre del local</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="type" class="form-label">Tipo de local</label>
+                            <select class="form-control" id="type" name="type">
+                                <option value="">Selecciona una opción</option>
+                                <option value="coffee shop">Cafetería</option>
+                                <option value="bookstore">Librería</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="latitutde" class="form-label">Latitud</label>
+                            <input type="text" class="form-control" id="latitude" name="latitude">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="longitude" class="form-label">Longitud</label>
+                            <input type="text" class="form-control" id="longitude" name="longitude">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid mt-5">
+                    <button type="submit" class="btn btn-dark btn-lg">Dar de alta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
