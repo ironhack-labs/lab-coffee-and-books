@@ -1,0 +1,19 @@
+<div class="container celebrities">
+    <div class="row drones">
+        {{#each places}}
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Name:{{name}}</h5>
+                <p class="card-text">Type:{{type}}</p>
+                <p class="card-text">Location:{{location.coordinates}}</p>
+                <a href="/places/edit-place/{{id}}"> EDIT </a></li>
+                <form action="/places/delete/{{id}}" method="POST">
+                    <input class="btn btn-danger" type="submit" value="Delete">
+                </form><br>
+
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
