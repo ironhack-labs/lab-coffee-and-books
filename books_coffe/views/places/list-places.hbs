@@ -1,0 +1,23 @@
+<h2 class="mb-5">Available places</h2>
+<div class="row">
+    {{#each places}}
+    <div class="col-md-4 ">
+        <h3>{{name}}</h3>
+        <p>
+            Type: {{type}} <br>
+            Cordenadas:
+            {{#each locate.cordinates}}
+            {{this}}
+            {{/each}}
+        </p>
+        <a href="/places/{{id}}/edit" class="btn btn-dark">Editar</a>
+        <form method="POST" action="/places/{{id}}/delete" style="display: inline;">
+            <input type="submit" value="Eliminar" class="btn btn-danger">
+        </form>
+        <hr>
+    </div>
+    {{/each}}
+</div>
+<div class="mb-5">
+    <a href="/places/create" class="btn btn-success mb-3">Crear Places</a>
+</div>
