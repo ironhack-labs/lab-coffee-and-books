@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Coffee & Places</h1>
+    <p>Enjoy books whilst drinking coffee</p>
+    <hr class="mb-5">
+    <div class="row mb-3">
+        {{#each places}}
+        <div class="col-md-4 mb-5">
+
+            <h2>{{name}}</h2>
+            <a href="/places/{{id}}" class="btn btn-sm btn-success custom-button">Details</a>
+
+
+            <a href="/places/edit/{{id}}" class="btn btn-sm btn-outline-danger custom-button edit-button">Edit</a>
+
+            <form action="/places/delete-place/{{id}}" method="POST" style="display: inline">
+                <input type="submit" value="DELETE" class="btn btn-sm btn-danger custom-button delete-button">
+            </form>
+
+        </div>
+
+        {{/each}}
+    </div>
+
+</div>
