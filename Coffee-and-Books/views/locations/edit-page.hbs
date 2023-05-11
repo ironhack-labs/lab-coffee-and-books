@@ -27,13 +27,13 @@
                 <div class="mb-3 ">
                     <label for="locationLatitude" class="form-label">Latitude</label>
                     <input type="number" class="form-control" id="locationLatitude" name="latitude"
-                        value="{{latitude}}">
+                        value="{{location.coordinates.[0]}}">
                 </div>
 
                 <div class="mb-3 ">
                     <label for="locationLongitude" class="form-label">Longitude</label>
                     <input type="number" class="form-control" id="locationLongitude" name="longitude"
-                        value="{{longitude}}">
+                        value="{{location.coordinates.[1]}}">
                 </div>
 
                 <button type="submit" class="btn btn-dark">Guardar edición</button>
