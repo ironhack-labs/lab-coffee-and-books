@@ -28,8 +28,11 @@ app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 const placesRoutes = require("./routes/place.routes")
-app.use("/", placesRoutes)
-
+app.use("/", placesRoutes);
+const mapsRoutes = require("./routes/maps.routes");
+app.use("/", mapsRoutes);
+const apiRoutes = require("./routes/api.routes");
+app.use("/api", apiRoutes);
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
