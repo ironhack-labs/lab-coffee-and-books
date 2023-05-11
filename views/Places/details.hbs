@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-3 mx-auto">
+      <div class="card">
+        <img
+          src="https://boconospecialtycoffee.com/wp-content/uploads/2021/05/Bocono-Specialty-Coffee-Cafeteria-de-Especialidad-Madrid-1.jpg"
+          class="card-img-top image-fluid"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center fw-bold">Detalles de
+            {{place.name}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><span
+              class="fw-bold"
+            >Descripción:</span><br />
+            {{place.description}}
+          </li>
+          <li class="list-group-item"><span
+              class="fw-bold"
+            >Localización:</span><br />
+            Latitud:{{latitude}}
+            <br />
+            Longitud:{{longitude}}
+          </li>
+        </ul>
+        <div class="card-body mx-auto">
+          <a class="btn btn-warning text-white" href="/editar/{{id}}">Editar</a>
+          <form
+            action="/delete/{{id}}"
+            method="POST"
+            style="margin-bottom:0"
+            class="d-inline"
+          >
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
