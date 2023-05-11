@@ -1,0 +1,46 @@
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h1>editar {{name}} </h1>
+            <hr>
+            <form action="/places/{{id}}/edit" method="POST">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" value="{{name}}" name="name">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="type" class="form-label">Tipo</label>
+                            <select name="type" id="type">
+                                <option value="coffee shop">coffee shop</option>
+                                <option value="bookstore">bookstore</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="lat" class="form-label">altitude</label>
+                            <input type="text" class="form-control" id="lat" value="{{lat}}" name="lat">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="long" class="form-label">Longitude</label>
+                            <input type="text" class="form-control" id="long" value="{{long}}" name="long">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid mt-5">
+                    <button type="submit" class="btn btn-dark btn-lg">editar Lugar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
