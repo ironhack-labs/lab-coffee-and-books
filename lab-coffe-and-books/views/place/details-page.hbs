@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <h2>{{name}}</h2>
+        <hr>
+
+        <div class="col-12 col-md-3">
+            <div class="px-2 py-4 card">
+                <p><strong> Tipo:</strong></p>
+                <p>{{type}}</p>
+                <a href="/{{_id}}/edit" class="btn btn-warning mb-3">Editar Restaurante</a>
+                <form action="/{{_id}}/delete" method="POST">
+                    <input type="submit" value="Eliminar Restaurante" class="btn btn-sm btn-danger w-100">
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

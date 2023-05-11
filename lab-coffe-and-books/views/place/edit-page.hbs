@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+
+    <h1>Crear nuevo restaurante</h1>
+    <hr>
+
+    <div class="col-6">
+        <form action="/{{_id}}/edit" method="POST">
+
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre del restaurante: </label>
+                <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Tipo: </label>
+                <input type="text" class="form-control" id="description" name="description" value="{{type}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="latitude" class="form-label">Latitud: </label>
+                <input type="text" class="form-control" id="latitude" name="latitude"
+                    value="{{location.coordinates.[0]}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="longitude" class="form-label">Longitud: </label>
+                <input type="text" class="form-control" id="longitude" name="longitude"
+                    value='{{location.coordinates.[1]}}'>
+            </div>
+
+            <input type="submit" value="Editar restaurante" class="btn btn-success">
+
+        </form>
+
+    </div>
+
+
+
+
+
+</div>
+</div>

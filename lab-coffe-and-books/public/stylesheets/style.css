@@ -1,0 +1,8 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#map {
+  background-color: red;
+  height: 400px;
+}
