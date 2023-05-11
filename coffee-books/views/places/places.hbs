@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row mt-4">
+        <h2>Places</h2>
+        <a href="/create" class="btn btn-light mb-2 col-2">Place</a>
+    </div>
+    <div class="row">
+        {{#each place}}
+        <div class="col-3">
+            <div class="card mb-2 bg-light flex-fill">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p>Type: {{type}}</p>
+                </div>
+                <a href="/edit/{{_id}}" class="btn btn-dark btn-sm">Edit</a>
+                <form action="/delete/{{_id}}" method="POST">
+                    <input type="submit" value="Eliminar" class="btn btn-danger btn-sm">
+                </form>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
