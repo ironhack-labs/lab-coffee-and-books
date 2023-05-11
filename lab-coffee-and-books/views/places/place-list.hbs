@@ -1,0 +1,26 @@
+<div class="container list">
+
+    <div class="row">
+
+        {{#each places}}
+
+        <div class="col-md-4">
+            <div class="card mb-4 player-card">
+
+                <div class="card-body">
+                    <h5 class="card-title">Nombre: <span>{{name}}</span></h5>
+                    <p class="card-title"> Tipo:{{type}}</p>
+
+                    <a href="/{{id}}/edit" class="btn btn-dark btn-sm ">Editar</a>
+                    <form action="/{{id}}/delete" method="POST">
+                        <input type="submit" value="Borrar" class="btn btn-danger btn-sm ">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+
+
+    </div>
