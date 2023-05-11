@@ -1,0 +1,28 @@
+<h1>{{place.name}}: Full Info</h1>
+
+<hr>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-5 text-center d-flex flex-column justify-content-center map-placeholder">
+            <p>[here goes the individual map for this one]</p>
+            <p>(maybe a nice photo)</p>
+        </div>
+        <div class="col-md-8">
+            <h2 class="place-name"><strong>{{place.name}}</strong></h2>
+            <p class="mt-5"><strong>Type:</strong> {{place.type}}</p>
+            <p><strong> Coordinates: </strong> {{latitude}}, {{longitude}}</p>
+        </div>
+
+    </div>
+</div>
+<hr>
+<div>
+
+    <a href="/places/edit/{{id}}" class="btn btn-sm btn-outline-danger custom-button edit-button">Edit</a>
+
+    <form action="/places/delete-place/{{id}}" method="POST" style="display: inline">
+        <input type="submit" value="DELETE" class="btn btn-sm btn-danger custom-button delete-button">
+    </form>
+    <a href="/places/see-all" class="btn btn-dark">Back to Places</a>
+</div>
