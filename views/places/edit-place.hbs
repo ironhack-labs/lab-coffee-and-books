@@ -1,0 +1,39 @@
+<div class="container">
+
+    <h1>Editar place</h1>
+
+    <hr>
+
+    <form method="POST" action="/places/editar/{{_id}}">
+
+        <label>Nombre
+            <input name="name" type="text" value={{name}}>
+        </label>
+        <br><br>
+
+        <label>Tipo de place
+            <select class="form-select form-select-lg mb-3" name="type" id="type">
+                <option selected disabled> Elige el tipo</option>
+                <option value="coffee shop">coffee shop</option>
+                <option value="bookstore">bookstore</option>
+            </select>
+        </label>
+
+        <br><br>
+
+        <label>Latitud
+            <input name="latitude" type="text">
+
+        </label>
+        <br><br>
+
+        <label>Longitud
+            <input name=" longitude" type="text">
+        </label>
+        <br><br>
+
+        <input type="submit" value="Actualizar place">
+
+    </form>
+
+</div>
