@@ -1,0 +1,44 @@
+<div class="container mt-5">
+
+    <h1> edit place </h1>
+
+    <hr>
+
+    <div class="container mb-5">
+
+        <form action="/places/create" method="POST">
+
+            <div class="container mb-3">
+                <label for=""> NAME </label>
+                <input type="text" name="name" value="{{name}}">
+            </div>
+
+
+            <div class="container mb-3">
+                <label for=""> TYPE </label>
+                <select name="type" id="">
+                    <option value="coffee shop"> coffee shop </option>
+                    <option value="bookstore"> bookstore </option>
+                </select>
+            </div>
+
+            <div class="container mb-3">
+                <label for=""> LATITUD </label>
+                <input type="text" name="lat" value="{{location.coordinates.[0]}}">
+            </div>
+
+            <div class="container mb-3">
+                <label for=""> LONGITUD </label>
+                <input type="text" name="lon" value="{{location.coordinates.[1]}}">
+            </div>
+
+
+            <div class="container mb-3">
+                <button class="btn btn-dark"> UPDATE </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

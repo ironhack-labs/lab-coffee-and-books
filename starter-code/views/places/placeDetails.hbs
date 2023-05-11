@@ -1,0 +1,45 @@
+<div class="container mt-5">
+
+    <h1> DETAILS: </h1>
+
+    <hr>
+
+    <div class="container mt-5">
+
+        <div class="container mb-5">
+            <h6> PLACE'S NAME: </h6>
+            <p> {{name}} </p>
+        </div>
+
+        <div class="container mb-5">
+            <h6> TYPE: </h6>
+            <p> {{type}} </p>
+        </div>
+
+        <div class="container mb-5">
+            <h6> LAT: </h6>
+            <p> {{location.coordinates[0]}} </p>
+            <h6> LON: </h6>
+            <p> {{location.coordinates[1]}} </p>
+        </div>
+
+
+    </div>
+
+
+    <hr>
+
+
+    <div class="container mb-3">
+        <a href="/places/{{id}}/edit" class="btn btn-dark"> EDIT PLACE </a>
+    </div>
+
+    <form action="/places/{{id}}/delete" method="post">
+        <button class="btn btn-danger"> DELETE PLACE </button>
+    </form>
+
+
+
+
+
+</div>

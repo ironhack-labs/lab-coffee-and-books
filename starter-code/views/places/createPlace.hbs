@@ -1,0 +1,44 @@
+<div class="container mt-5">
+
+    <h1> create place </h1>
+
+    <hr>
+
+    <div class="container mb-5">
+
+        <form action="/places/create" method="POST">
+
+            <div class="container mb-3">
+                <label for=""> NAME </label>
+                <input type="text" name="name">
+            </div>
+
+
+            <div class="container mb-3">
+                <label for=""> TYPE </label>
+                <select name="type" id="">
+                    <option value="coffee shop"> coffee shop </option>
+                    <option value="bookstore"> bookstore </option>
+                </select>
+            </div>
+
+            <div class="container mb-3">
+                <label for=""> LATITUD </label>
+                <input type="text" name="lat">
+            </div>
+
+            <div class="container mb-3">
+                <label for=""> LONGITUD </label>
+                <input type="text" name="lon">
+            </div>
+
+
+            <div class="container mb-3">
+                <button class="btn btn-dark"> CREATE </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
