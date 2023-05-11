@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2>Add a new place</h2>
+            <hr>
+            <form action="/place/create-place" method="POST">
+                <div class="mb-3 mt-5">
+                    <label for="placeName" class="form-label">Place name</label>
+                    <input type="text" class="form-control" id="placeName" name="name">
+                </div>
+
+
+                <label>Type
+                    <select class="form-select" aria-label="Default select example" name="type">
+                        <option value="coffee shop">coffee shop</option>
+                        <option value="bookstore">bookstore</option>
+                    </select>
+                </label>
+
+                <div class="mb-3">
+                    <label for="placeLocation" class="form-label">latitude</label>
+                    <input type="text" class="form-control" id="placeLocation" name="latitude">
+                </div>
+                <div class="mb-3">
+                    <label for="placeLocation" class="form-label">longitude</label>
+                    <input type="text" class="form-control" id="placeLocation" name="longitude">
+                </div>
+
+
+
+                <button type="submit" class="btn btn-dark">Add the place!</button>
+            </form>
+
+        </div>
+    </div>
+</div>

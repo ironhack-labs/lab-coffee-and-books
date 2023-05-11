@@ -1,0 +1,24 @@
+<div class="container">
+
+    <h2>All the places</h2>
+    <div class="row">
+        {{#each places}}
+        <div class="col-md-4">
+            <div style="width: 18rem;" class="card mb-3">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <p> <strong>{{name}}</strong></p>
+                    </li>
+                    <li class="list-group-item">
+                        <p>{{type}}</p>
+                        <a href="/place/edit-place/{{_id}}">Edit place</a>
+                        <form action="/place/delete-place/{{_id}}" method="POST" style="display: inline; "
+                            class="btn btn-warning">
+                            <input type="submit" value="eliminar">
+                        </form>
+                </ul>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
