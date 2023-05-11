@@ -8,12 +8,14 @@ const placeSchema = new Schema(
         },
         type: {
             type: String,
-            enum: ['coffee shop, bookstore']
+            enum: ['coffee shop', 'bookstore'],
         },
         location: {
-            type: String
-        },
-        coordinates: [Number]
+            type: {
+                type: String
+            },
+            coordinates: [Number]
+        }
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`    

@@ -1,0 +1,30 @@
+<h1>lista de PLACES</h1>
+
+<div class="container mt-5">
+
+    <div class="row">
+
+        {{#each places}}
+
+        <div class="col-md-3">
+
+            <article class="character-card mb-5">
+
+                <h4>{{name}}</h4>
+                <hr>
+                <p>Type: {{type}}</p>
+
+                <div class="d-grid">
+
+                    <a href="/place/{{id}}" class="btn btn-dark">See details</a>
+
+
+                </div>
+
+            </article>
+
+        </div>
+        {{/each}}
+    </div>
+
+</div>

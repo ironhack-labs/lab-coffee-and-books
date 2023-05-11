@@ -1,1 +1,38 @@
-<h1>CREAR PLACES</h1>
+<h1>NEW PLACE</h1>
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h1>New Place</h1>
+            <hr>
+            <form action="/create" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="type" class="form-label">Type</label>
+                    <input type="text" class="form-control" id="type" name="type">
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location">
+                </div>
+
+                {{!-- <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div> --}}
+
+                <div class="d-grid mt-5">
+                    <button type="submit" class="btn btn-dark btn-lg">Create place</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>

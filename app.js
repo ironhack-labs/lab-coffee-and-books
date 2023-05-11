@@ -31,6 +31,9 @@ app.use("/", indexRoutes);
 const placesRoutes = require("./routes/places.routes");
 app.use("/", placesRoutes);
 
+const mapsRoutes = require("./routes/maps.routes");
+app.use("/", mapsRoutes);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

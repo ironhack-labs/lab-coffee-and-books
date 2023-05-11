@@ -1,0 +1,32 @@
+<h1>editar</h1>
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <hr>
+            <form action="/places/{{id}}/edit" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="type" class="form-label">Type</label>
+                    <input type="text" class="form-control" id="type" name="type" value="{{type}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location" value="{{location}}">
+                </div>
+
+                <div class="d-grid mt-5">
+                    <button type="submit" class="btn btn-dark btn-lg">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
