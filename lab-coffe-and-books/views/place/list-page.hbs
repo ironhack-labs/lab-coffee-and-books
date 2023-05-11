@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <h1>Lista de lugares</h1>
+        <hr>
+
+        {{#each restaurants}}
+        <div class="col-12 col-md-3 mb-3">
+            <div class="px-2 py-4 card text-center">
+                <a href="/{{_id}}/details">{{name}}</a>
+                <a href="/{{_id}}/details" class="btn btn-info mt-4">Ver Detalles</a>
+            </div>
+        </div>
+        {{/each}}
+        <hr>
+        <a href="/create" class="btn btn-dark">Crear Place</a>
+
+    </div>
+</div>
