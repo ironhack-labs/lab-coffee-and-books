@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <h1>Editar {{name}}</h1>
+            <hr>
+
+
+            {{!-- ENVIAMOS EL ID COMO PARAM AL ENDPOINT YA QUE ES NECESARIO PARA EDITARLO --}}
+            <form action="/locations/edit-locations/{{id}}" method="POST">
+                <div class="mb-3 mt-5">
+                    <label for="locationName" class="form-label">Título</label>
+                    <input type="text" class="form-control" id="locationName" name="name" value="{{name}}">
+                </div>
+
+                <div class="mb-3">
+                    <label>Location
+                        <select class="form-select" aria-label="Default select example" name="place">
+                            <option selected>Open this select menu</option>
+                            <option value="coffee-shop">coffee-shop</option>
+                            <option value="bookstore">bookstore</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="mb-3 ">
+                    <label for="locationLatitude" class="form-label">Latitude</label>
+                    <input type="number" class="form-control" id="locationLatitude" name="latitude"
+                        value="{{location.coordinates.[0]}}">
+                </div>
+
+                <div class="mb-3 ">
+                    <label for="locationLongitude" class="form-label">Longitude</label>
+                    <input type="number" class="form-control" id="locationLongitude" name="longitude"
+                        value="{{location.coordinates.[1]}}">
+                </div>
+
+                <button type="submit" class="btn btn-dark">Guardar edición</button>
+            </form>
+
+        </div>
+    </div>
+
+
+
+</div>

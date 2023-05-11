@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Listado de locations</h1>
+    <hr class="mb-3">
+
+    {{#each location}}
+
+    {{name}}
+    <a href="/locations/edit-locations/{{_id}}" class="btn btn-sm btn-info">editar</a>
+
+    <form action="/locations/delete-locations/{{_id}}" method="POST" style="display: inline">
+        <input type="submit" value="eliminar" class="btn btn-sm btn-danger">
+    </form>
+
+    <hr>
+
+    {{/each}}
+
+    <a href="/" class="btn btn-dark">Volver a inicio</a>
+</div>
