@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Places list</h1>
+    <hr class="mb-3">
+    <div class="row">
+        {{#each places}}
+        <div class="col-md-4 mb-4">
+            <div class="card p-4" style="">
+                <div class="card-body">
+                    <h1 class="card-title">{{name}}</h1>
+                    <hr>
+                    <p class="card-text">{{type}}</p>
+                    <p>Latitud: {{location.coordinates.[0]}}</p>
+                    <p>Longitud: {{location.coordinates.[1]}}</p>
+                    <a href="/places/edit/{{_id}}" class="btn btn-sm btn-info">Editar</a>
+                    <form action="/places/delete/{{_id}}" method="POST" style="display: inline">
+                        <input type="submit" value="Eliminar" class="btn btn-sm btn-danger">
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+    <hr>
+    <a href="/" class="btn btn-dark">Home</a>
+</div>
