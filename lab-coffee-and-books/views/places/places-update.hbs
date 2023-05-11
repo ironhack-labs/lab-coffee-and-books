@@ -1,0 +1,42 @@
+<div class="container">
+
+    <h2>Update {{name}}</h2>
+
+    <hr>
+    <div class="row justify-content-center">
+
+        <div class="col-6">
+
+            <form action="/places/{{id}}/edit" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="droneName" name="name" value="{{name}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="type">Type:</label>
+                    <select id="type" class="form-control" name="type">
+                        <option value="Coffee Shop">Coffee Shop</option>
+                        <option value="Bookstore">Bookstore</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="latitude" class="form-label">Latitude</label>
+                    <input type="text" class="form-control" id="latitude" name="latitude" value="{{location.coordinates.[0]}}">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="longitude" class="form-label">Longitude</label>
+                    <input type="text" class="form-control" id="longitude" name="longitude" value="{{location.coordinates.[1]}}">
+                </div>
+
+                <button type="submit" class="btn btn-dark">Update Place</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

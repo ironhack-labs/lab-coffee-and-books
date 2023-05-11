@@ -1,0 +1,23 @@
+<div class="container">
+
+    <h2>Places List </h2>
+
+
+        {{#each place }}
+        {{ name }}
+
+        <a href="/places/{{id}}/edit" class="btn btn-secondary btn-lg btn-block">UPDATE PLACE</a>
+
+        <form action="/places/{{id}}/delete" method="POST" style="display: inline">
+            <input type="submit" value="DELETE" class="btn btn-secondary btn-lg btn-block btn-danger" id="">
+        </form>
+
+        <hr>
+       
+        {{/each}}
+
+
+    
+
+
+</div>
