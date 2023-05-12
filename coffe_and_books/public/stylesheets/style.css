@@ -1,0 +1,29 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 1em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%
+}
+
+#map {
+  height: 600px;
+  background-color: black;
+
+}
