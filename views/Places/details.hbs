@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 pt-5">
   <div class="row">
     <div class="col-3 mx-auto">
       <div class="card">
@@ -26,9 +26,12 @@
           </li>
         </ul>
         <div class="card-body mx-auto">
-          <a class="btn btn-warning text-white" href="/editar/{{id}}">Editar</a>
+          <a
+            class="btn btn-warning text-white"
+            href="/editar/{{place.id}}"
+          >Editar</a>
           <form
-            action="/delete/{{id}}"
+            action="/borrar/{{place.id}}"
             method="POST"
             style="margin-bottom:0"
             class="d-inline"
