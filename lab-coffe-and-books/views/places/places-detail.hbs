@@ -1,0 +1,23 @@
+<div class="container">
+    <hr>
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h2>{{name}}</h2>
+                <hr>
+                <h3>type</h3>
+                <h5>{{type}}</h5>
+                <h3>location</h3>
+                <h5>lat: {{location.coordinates.[0]}}</h5>
+                <h5>long: {{location.coordinates.[1]}}</h5>
+                <hr>
+                <a class="btn btn-sm btn-dark" href="/">Back to menu</a>
+                <a class="btn btn-sm btn-dark m-3" href="/places">Back to list</a>
+                <form action="/places/{{_id}}/delete" method="POST" style="display: inline;">
+                    <input type="submit" value="delete" class="btn btn-sm btn-danger">
+                </form>
+                <a class="btn btn-sm btn-warning ml-3" href="/places/{{_id}}/edit">Edit</a>
+            </div>
+        </div>
+    </div>
+</div>
