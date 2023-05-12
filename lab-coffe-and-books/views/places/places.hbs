@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Places in DataBase</h2>
+    <hr>
+    <div class="row">
+        {{#each place}}
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <hr>
+                <h5 class="card-title">{{name}}</h5>
+                <a href="/places/{{_id}}">Details</a>
+                <hr>
+                <form action="/places/{{_id}}/delete" method="POST" style="display: inline;">
+                    <input type="submit" value="delete" class="btn btn-sm btn-danger">
+                </form>
+                <a class="btn btn-sm btn-warning ml-3" href="/places/{{_id}}/edit">Edit</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <a class="btn btn-dark m-3" href="/">Back to menu</a>
+</div
