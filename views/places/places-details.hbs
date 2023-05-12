@@ -1,0 +1,19 @@
+<h1>Detalles de places</h1>
+<div class="container mt-5">
+
+    <h2>Details of {{ name }}</h2>
+
+    <hr>
+
+    <p> Occupation: {{ type }} </p>
+
+    <hr>
+    <a href="/places/{{id}}/edit" class="btn btn-dark">Editar</a>
+
+    <a href="/places" class="btn btn-dark">Back</a>
+
+    <form action="/places/{{id}}/delete" method="POST">
+        <input type="submit" value="Delete profile" class="btn btn-warning">
+    </form>
+
+</div>
