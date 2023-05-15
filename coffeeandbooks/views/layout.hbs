@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>{{appTitle}}</title>
+   <link rel="stylesheet" href="/stylesheets/style.css" />
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+
+   <nav class='navbar navbar-expand-md navbar-dark bg-dark mb-5'>
+      <a class='navbar-brand' href='/'>Restaurants app</a>
+      <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent'
+         aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+         <span class='navbar-toggler-icon'></span>
+      </button>
+      <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+         <ul class='navbar-nav ml-auto'>
+            <li class='nav-item'>
+               <a class='nav-link' href='/'>Inicio</a>
+            </li>
+
+            <li class='nav-item'>
+               <a class='nav-link' href='/map/basico'>Mapa básico</a>
+            </li>
+
+            <li class='nav-item'>
+               <a class='nav-link' href='/places/create'>Crear</a>
+            </li>
+            <li class='nav-item'>
+               <a class='nav-link' href='/places/placeslist'>Lista de sitios</a>
+            </li>
+
+            <li class='nav-item'>
+               <a class='nav-link' href='/restaurantes/mapa'>Restaurantes</a>
+            </li>
+
+            <li class='nav-item'>
+               <a class='nav-link' href='/api/restaurants'>API endpoint</a>
+            </li>
+
+         </ul>
+      </div>
+   </nav>
+
+
+
+   {{{body}}}
+
+   <script src="/js/script.js"></script>
+</body>
+
+</html>
