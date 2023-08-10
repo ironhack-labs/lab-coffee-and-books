@@ -1,0 +1,44 @@
+<div class="container">
+    <h2>Update the place</h2>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <form action="/places/{{places._id}}/edit" method="POST">
+                <div class="mb-3">
+                    <label for="field1" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="field1" name="name" value="{{name}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="field2" class="form-label">Type</label>
+                    <select class="form-select" type="text" id="field2" name="type" value="{{type}}">
+                        <option selected>Select One</option>
+                        <option value="cofee shop">Coffee shop</option>
+                        <option value="bookstore">Bookstore</option>
+
+                    </select>
+                </div>
+
+                <div class="mb3">
+                    <label for="field3" class="form-label">Latitude
+                        <input type="number" class="form-control" id="field3" name="latitude"
+                            value="{{location.coordinates.[1]}}">
+                    </label>
+                </div>
+
+                <div class="mb3">
+                    <label for="field4" class="form-label">Longitude
+                        <input type="number" class="form-control" id="field4" name="latitude"
+                            value="{{location.coordinates.[0]}}">
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-dark">Save Edit</button>
+
+            </form>
+
+        </div>
+
+    </div>

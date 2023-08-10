@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Create a new place</h2>
+
+    <div class="row justify-content-center gap-2">
+
+        <div class="col-md-8">
+
+            <form action="/new-place" method="POST">
+                <div class="mb-3">
+                    <label for="field1" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="field1" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="field2" class="form-label">Type</label>
+                    <select class="form-select" type="text" id="field2" name="type">
+                        <option selected>Select One</option>
+                        <option value="Cofee shop">Coffee shop</option>
+                        <option value="Bookstore">Bookstore</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="field3">Latitude
+                        <input type="text" class="form-control" id="field3" name="latitude">
+                    </label>
+
+                    <label for="field4">Longitude
+                        <input type="text" class="form-control" id="field4" name="longitude">
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-dark">Save New Place</button>
+
+            </form>
+
+        </div>
+
+    </div>
