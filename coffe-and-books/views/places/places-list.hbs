@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row justify-content-center text-center mt-5">
+        <div class="col-12">
+            <div class="row justify-content-around text-center ">
+
+                <h1>Places List</h1>
+                <hr>
+                {{#each places}}
+                <h3>Name</h3>
+                <p>{{name}}</p>
+            </div>
+            <h5>Type</h5>
+            <p>{{type}}</p>
+        </div>
+
+        {{/each}}
+    </div>
+    <div class="col-12">
+        <figure id="myMap"></figure>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <script src="./js/script.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?AIzaSyB1b1pqZds_AnR_-0VeiMHPvmDh71zeRD4&callback=init"></script>
+    </div>
+
+
+</div>
+</div>
+</div>
