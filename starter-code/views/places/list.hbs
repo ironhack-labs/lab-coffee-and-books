@@ -1,0 +1,41 @@
+<div class='container mt-5'>
+
+  <h1>List</h1>
+  <hr />
+
+  <div class='row'>
+
+    {{#each places}}
+
+      <div class='col-md-3'>
+
+        <article class='place-card mb-5'>
+
+          <h4 class='mt-2'>{{name}}</h4>
+          <br />
+          <p>Type: {{type}}</p>
+
+          <div class='row mt-5 d-flex justify-content-between'>
+
+            <div class='col'>
+              <div class='d-grid'>
+                <a href='/places/{{_id}}/edit' class='btn btn-warning btn-sm'>Edit</a>
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class='d-grid'>
+                <form action='/places/{{_id}}/delete' method='POST'>
+                  <button class='btn btn-danger btn-sm w-100' type='submit'>Delete</button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    {{/each}}
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+.navbar {
+  background-color: #000000;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+  color: white;
+}
+
+.place-card {
+  background-color: #000000bb;
+  border-radius: 2%;
+  padding: 10px;
+  font-size: 0.9em;
+  text-align: center;
+  width: 18rem;
+}
+
+#myMap {
+  height: 70vh;
+  background-color: black;
+}
