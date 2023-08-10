@@ -1,0 +1,15 @@
+<h1>Edit place</h1>
+
+<p> Place: {{name}}</p>
+<p> Type of place: {{type}}</p>
+<p> Location (latitude, longitude): {{location.coordinates}}</p>
+
+<a href="/places/{{_id}}/edit">Edit place</a>
+
+<form action="/places/{{_id}}/delete" method="POST">
+    <input type="submit" value="Delete place">
+</form>
+
+
+<a href="/" class="btn btn-dark">Back to home</a>
+<a href="/places" class="btn btn-dark">Back to places</a>

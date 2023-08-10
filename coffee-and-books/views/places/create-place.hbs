@@ -1,0 +1,54 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <h1>Create new place</h1>
+
+            <form action="/places/create" method="POST">
+
+                <div class="mb-3">
+                    <label for="field1" class="form-label">Place name</label>
+                    <input type="text" class="form-control" id="field1" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="field2" class="form-label">Type of place</label>
+                    <select class="form-control" id="field2" name="type">
+                        <option name="COFFEESHOP">COFFEESHOP</option>
+                        <option name="BOOKSTOPE">BOOKSTORE</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="field3" class="form-label">Longitude</label>
+                    <input type="text" class="form-control" id="field3" name="longitude">
+                    <p class="form-text">Enter longitude between -180 and 180.</p>
+                </div>
+
+                <div class="mb-3">
+                    <label for="field4" class="form-label">Latitude</label>
+                    <input type="text" class="form-control" id="field4" name="latitude">
+                    <p class="form-text">Enter latitude between -90 and 90.</p>
+                </div>
+
+                <div class="col">
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-dark">Add new place</button>
+                    </div>
+
+                    <hr>
+
+                    <a href="/" class="btn btn-dark">Back to home</a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
