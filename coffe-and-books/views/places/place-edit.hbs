@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <h2>{{name}} edition</h2>
+    <hr>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form action="/edit/{{id}}" method="post" class="mt-5">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+
+                </div>
+                <div class="mb-3">
+                    <label for="disabledSelect" class="form-label">Type</label>
+                    <select id="disabledSelect" class="form-select" name="type">
+                        <option>coffee shop</option>
+                        <option>bookstore</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="latitude" class="form-label">Latitude</label>
+                    <input type="number" class="form-control" id="latitude" name="latitude"
+                        value="{{location.coordinates.[1]}}">
+                </div>
+                <div class="mb-3">
+                    <label for="longitude" class="form-label">Longitude</label>
+                    <input type="number" class="form-control" id="longitude" name="longitude"
+                        value="{{location.coordinates.[0]}}">
+                </div>
+
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
