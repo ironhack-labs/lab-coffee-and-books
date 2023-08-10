@@ -1,0 +1,15 @@
+<h1>Edit Place</h1>
+
+<form action="/edit-place/{{place._id}}" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{place.name}}">
+
+    <label for="type">Type:</label>
+    <input type="text" id="type" name="type" value="{{place.type}}">
+
+
+    <button type="submit">Save Changes</button>
+</form>
+
+<a href="/places/{{place._id}}">Back to details</a>
+<a href="/places">Back to Places List</a>

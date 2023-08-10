@@ -1,0 +1,13 @@
+<h1>{{place.name}} Details</h1>
+<p>Name: {{place.name}}</p>
+<p>Type: {{place.type}}</p>
+
+
+
+<a href="/edit-place/{{place._id}}">Edit Place</a>
+
+<form action="/delete-place/{{place._id}}" method="POST" style="display: inline-block;">
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+<a href="/places">Back to Places List</a>
