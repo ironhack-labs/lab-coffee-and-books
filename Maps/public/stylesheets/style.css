@@ -1,0 +1,16 @@
+body {
+  font: 14px sans-serif;
+}
+
+a {
+  color: #ff1900;
+}
+
+h1 {
+  color: 15px;
+}
+
+#myMap {
+  height: 400px;
+  /* background-color: red; */
+}

@@ -1,0 +1,36 @@
+<div class="container">
+
+    <h1>Add new store</h1>
+
+    <hr>
+
+    <form method="POST" action="/place/create">
+
+        <label>Name
+            <input name="name" type="text">
+        </label>
+        <br><br>
+
+        <label>Type
+            <select class="form-select" aria-label="Default select example" name="type" type="text">
+                <option value="bookstore">Bookstore</option>
+                <option value="coffee shop">Coffee shop</option>
+            </select>
+        </label>
+        <br><br>
+
+        <label>Latitude
+            <input name="latitude" type="text">
+        </label>
+        <br><br>
+
+        <label>Longitude
+            <input name="longitude" type="text">
+        </label>
+        <br><br>
+
+        <input type="submit" value="Add new">
+
+    </form>
+    <a href="/place/">See stores</a>
+</div>

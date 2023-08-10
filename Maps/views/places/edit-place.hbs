@@ -1,0 +1,16 @@
+<div class="container">
+
+    <h2>Edit</h2>
+    <form action="/place/{{_id}}/edit" method="POST">
+        <label for="field1" class="form-label">Title</label>
+        <input type="text" class="form-control" id="field1" name="name" value="{{name}}">
+        <hr>
+        <label for="field2" class="form-label">Genre</label>
+        <input type="text" class="form-control" id="field2" name="type" value="{{type}}">
+        <hr>
+        <button>Edit</button>
+    </form>
+    <div class="mt-5">
+        <a href="/place/">See stores</a>
+    </div>
+</div>
