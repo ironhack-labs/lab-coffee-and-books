@@ -1,0 +1,17 @@
+body {
+  font-family: sans-serif;
+  font-weight: 200;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+#myMap {
+  height: 400px;
+  background-color: black;
+}
