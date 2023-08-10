@@ -1,0 +1,32 @@
+<div class="container">
+    <h2> PLACES</h2>
+
+    <div class="row">
+
+        {{#each placesList}}
+
+        <div class="col-sm-4 mb-4 mb-sm-0  col-4">
+            <div class="card gap-1">
+                <div class="card-body text-bg-light ">
+                    <ul class="list-group list-group-flush">
+                        <h5 class="card-title">{{name}} </h5>
+                        <p class="list-group-item">{{type}}</p>
+                        <p class="list-group-item">Latitude: {{location.coordinates.[1]}}</p>
+                        <p class="list-group-item">Longitude: {{location.coordinates.[0]}}</p>
+                        <div class="d-flex gap-2">
+                            <a href="/places/{{_id}}/edit">Edit</a>
+                            <form action="/places/{{_id}}/delete" method="POST">
+                                <input type="submit" value="Delete">
+                            </form>
+                        </div>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+
+    </div>
+
+</div>
