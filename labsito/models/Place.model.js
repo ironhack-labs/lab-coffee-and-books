@@ -7,7 +7,7 @@ const placeSchema = new Schema(
 		},
 		type: {
 			type: String,
-			enum: ['Coffee Shop', 'Bookstore'],
+			enum: ['Coffee Shop', 'Bookstore', 'Place From Map'],
 		},
 		location: {
 			type: {

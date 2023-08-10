@@ -12,7 +12,7 @@ const app = express()
 
 require('./config')(app)
 
-app.locals.appTitle = `Coffee & Books`
+app.locals.appTitle = `Places`
 
 require('./routes')(app)
 
