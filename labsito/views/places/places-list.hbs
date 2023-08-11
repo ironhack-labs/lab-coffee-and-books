@@ -1,0 +1,23 @@
+<div class="row justify-content-center">
+	<div class="col-9">
+		<h2>Lista de lugares</h2>
+		<ul class="list-group mt-3">
+			{{#each places}}
+			<li class="list-group-item pt-3 d-flex justify-content-between align-items-baseline">
+				<p>{{name}} <span class="badge bg-dark p-2 ms-2">{{type}}</span></p>
+				<div class="row me-2">
+					<div class="col-6">
+						<a href="/edit/{{id}}" class="btn btn-warning d-grid">Editar</a>
+					</div>
+					<div class="col-6">
+						<form action="/delete/{{id}}" method="POST">
+							<input class="btn btn-danger" type="submit" value="Eliminar">
+						</form>
+					</div>
+				</div>
+			</li>
+			{{/each}}
+		</ul>
+		<a href="/create" class="btn btn-success my-4">Añadir lugar</a>
+	</div>
+</div>
