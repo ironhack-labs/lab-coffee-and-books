@@ -1,0 +1,21 @@
+<body>
+    <h1>Create a new place</h1>
+    <form method="POST" action="/create">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="type">Type:</label>
+        <select id="type" name="type" required>
+            <option value="coffee shop">Coffee Shop</option>
+            <option value="bookstore">Bookstore</option>
+        </select>
+        <br>
+        <label for="latitude">Latitude</label>
+        <input type="text" id="latitude" name="latitude">
+        <br>
+        <label for="longitude">Longitude</label>
+        <input type="text" id="longitude" name="longitude">
+        <br>
+        <button type="submit">Create Place</button>
+    </form>
+</body>
