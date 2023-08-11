@@ -25,7 +25,7 @@ function renderMap() {
 		let myData = mapsMouseEvent.latLng.toJSON()
 		axios
 			.get(
-				`https://maps.googleapis.com/maps/api/geocode/json?latlng=${myData.lat},${myData.lng}&key=AIzaSyC84LkpQNYywBK6UmzK78jP0ZzGrf89IzA`
+				`https://maps.googleapis.com/maps/api/geocode/json?latlng=${myData.lat},${myData.lng}&key=----API----KEY`
 			)
 			.then(response => {
 				let myPlaceLat = myData.lat
