@@ -1,0 +1,33 @@
+<h1 class=" d-flex justify-content-center">List Place</h1>
+<hr>
+
+<div class="container">
+
+    <div class="row">
+
+
+        <div class="col-4">
+            {{#each eachPlace }}
+
+            <div class="cardPlace">
+                <div class="textPl">{{place}}</div>
+
+                <a class="editForm mt-4" href="/editPlace/{{_id}}">Edit</a>
+
+
+                <form class="  mt-4" action='/delete/{{_id}}' method="post">
+
+                    <input class="formdiv" type="submit" value="delete">
+
+                </form>
+            </div>
+
+
+
+
+
+            <hr>
+            {{/each}}
+        </div>
+    </div>
+</div>
