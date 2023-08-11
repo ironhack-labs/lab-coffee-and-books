@@ -1,0 +1,209 @@
+* {
+  color: white;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+
+  background-image: url('../images/cafe.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+}
+
+a {
+  color: #00b7ff;
+  z-index: 3;
+  text-decoration: none;
+}
+
+li {
+  z-index: 1;
+}
+
+
+h1 {
+  color: purple;
+
+
+}
+
+
+
+
+
+.contaButton {
+  height: 100px;
+  width: 200px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.btn {
+
+  position: relative;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  color: #dcc2e4;
+  background-color: purple;
+  transition: 0.8s;
+}
+
+.btn:hover {
+  font-size: 2em;
+  color: black;
+
+}
+
+.contList {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+
+
+
+.form-group label {
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+
+}
+
+#myMap {
+  height: 600px;
+
+}
+
+.channge {
+  display: flex;
+  flex-direction: column;
+  width: 3rem;
+  height: 1.5rem;
+  border: 0;
+  background: transparent;
+  gap: .65rem;
+}
+
+.channge>div {
+  background-color: black;
+  height: 2px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all .5s;
+  transform-origin: left;
+
+}
+
+button:hover div:first-child {
+  transform: rotate(38deg);
+}
+
+button:hover div:nth-child(2) {
+  opacity: 0;
+}
+
+button:hover div:last-child {
+  transform: rotate(-38deg);
+}
+
+.formCreate {
+  height: 50vh;
+  background-color: #dcc2e4;
+  opacity: 0.7;
+  width: 50vh;
+
+}
+
+.formCont {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+
+}
+
+label {
+  font-size: 2em;
+}
+
+input:focus {
+  outline: none;
+
+}
+
+.cardPlace {
+  width: 50px;
+}
+
+.textPl {
+  color: black;
+}
+
+.editForm {
+  color: white;
+  width: min-content;
+  background-color: purple;
+  cursor: pointer;
+  border: none;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  font-weight: bold;
+  align-items: center;
+  animation: shaking 2s infinite;
+
+
+}
+
+
+
+
+
+
+
+
+
+.formdiv {
+  background-color: purple;
+  cursor: pointer;
+  border: none;
+  padding: 16px 24px;
+
+  border-radius: 20px;
+  font-weight: bold;
+
+  animation: shaking 2s infinite;
+}
+
+
+@keyframes shaking {
+  10% {
+    transform: scale(1.05)rotate(5deg);
+  }
+
+  20% {
+    transform: scale(1.05)rotate(-5deg);
+  }
+
+  30% {
+    transform: scale(1.05)rotate(5deg);
+  }
+
+  40% {
+    transform: none
+  }
+}
+
+.concent {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}

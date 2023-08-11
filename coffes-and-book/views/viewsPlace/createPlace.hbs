@@ -1,0 +1,38 @@
+<h1 class=" d-flex justify-content-center">Create Place</h1>
+
+
+
+<div class="formCont">
+    <form class="formCreate d-flex  justify-content-center text-algin-center" action="/create" method="post">
+        <div class="form-group">
+
+            <label class="form-group mt-4" for="Place">Place</label>
+            <input type="text" class="form-control" name="place" id="Place" aria-describedby="Place"
+                placeholder="Enter place">
+
+            <div class="form-group mt-4">
+                <label class="form-group" for="typePlace">Type place</label>
+                <select class="form-control" id="typePlace" type="text" name="type">
+                    <option></option>
+                    <option>coffee shop</option>
+                    <option>bookstore</option>
+
+                </select>
+            </div>
+
+            <div class="form-group mt-4">
+                <label for="latitude">Latitude</label>
+                <input type="string" class="form-control" id="latitude" placeholder="Enter latitude" name="latitude">
+            </div>
+
+
+            <div class="form-group mt-4">
+                <label for="longitude">Longitude</label>
+                <input type="string" class="form-control" id="longitude" placeholder="Enter longitude" name="longitude">
+            </div>
+
+            <div class=" buttoDelete mt-4 contaButton">
+                <button type="submit" class="btn mt-4">Submit</button>
+            </div>
+    </form>
+</div>

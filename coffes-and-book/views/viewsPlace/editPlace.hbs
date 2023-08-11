@@ -1,0 +1,34 @@
+<h2 class=" d-flex justify-content-center">Create Place</h2>
+
+<form action="/editPlace/{{id}}" method="post">
+    <div class="form-group">
+
+        <label for="Place">Place</label>
+        <input type="text" class="form-control" name="place" id="Place" aria-describedby="Place"
+            placeholder="Enter place" value="{{place}}">
+
+        <div class="form-group ">
+            <label for="typePlace">Type place</label>
+            <select class="form-control" id="typePlace" type="text" name="type">
+                <option>coffee shop</option>
+                <option>bookstore</option>
+
+            </select>
+        </div>
+
+        <div class="form-group ">
+            <label for="latitude">Latitude</label>
+            <input type="string" class="form-control" id="latitude" placeholder="Enter latitude" name="latitude"
+                value="{{location.coordinates.[1]}}">
+        </div>
+
+
+        <div class="form-group">
+            <label for="longitude">Longitude</label>
+            <input type="string" class="form-control" id="longitude" placeholder="Enter longitude" name="longitude"
+                value="{{location.coordinates.[0]}}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Submit</button>
+</form>
