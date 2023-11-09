@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="form">
+        <h1>Create a place!</h1>
+        <form action="/places/create" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name of de coffee books</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+
+            <div class="mb-3">
+                <label for="typeofplace" class="form-label">Type of place</label>
+                <select multiple id="typeofplace" class="form-select" name="type">
+
+                    <option value='coffee shop'>Coffee shop</option>
+                    <option value='bookstore'>Book Store</option>
+
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="latitude" class="form-label">Latitud</label>
+                <input type="text" class="form-control" id="latitude" name="latitude">
+            </div>
+            <div class="mb-3">
+                <label for="longitude" class="form-label">Longitude</label>
+                <input type="text" class="form-control" id="longitude" name="longitude">
+            </div>
+
+
+            <button type="submit" class="btn btn-success">Create!</button>
+        </form>
+    </div>
+</div>
