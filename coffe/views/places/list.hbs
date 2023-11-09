@@ -1,0 +1,30 @@
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <table class="table table-striped table-secondary text-center">
+                <div class="container">
+                    {{#each places}}
+                    <tr>
+                        <td>
+                            <p>{{name}}</p>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a class="btn btn-light" href="/places/edit/{{_id}}">edit</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <form action="/places/delete/{{_id}}" method="POST">
+                                        <input type="submit" value="delete" class="btn btn-danger">
+                                    </form>
+                                </div>
+                            </div>
+
+
+                        </td>
+                    </tr>
+                    {{/each}}
+            </table>
+        </div>
+    </div>
+</div>
