@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Editar</h2>
+    <hr>
+
+    <form method="POST" action="/places/edit/{{id}}">
+
+        <label>Nombre
+            <input name="name" type="text" id="name" value="{{name}}">
+        </label>
+        <br><br>
+
+        <label for="type">Type:</label>
+
+        <select name="type" id="type">
+            <option value="bookstore">Bookstore</option>
+            <option value="coffeeShop">Coffee shop</option>
+        </select>
+        <br><br>
+
+        <label>Latitud
+            <input name="latitude" type="text" id="latitude" value="{{location.coordinates.[1]}}">
+        </label>
+        <br><br>
+
+        <label>Longitud
+            <input name="longitude" type="text" id="longitude" value="{{location.coordinates.[0]}}">
+        </label>
+        <br><br>
+
+        <input type="submit" value="Editar">
+
+        {{!-- esto ya esta, hay que enviar al post, update y redirigir y comprobar --}}
+
+    </form>
+</div>

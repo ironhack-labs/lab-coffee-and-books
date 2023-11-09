@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Crear</h2>
+    <hr>
+
+    <form method="POST" action="/places/create">
+
+        <label>Nombre
+            <input name="name" type="text">
+        </label>
+        <br><br>
+
+        <label for="type">Type:</label>
+
+        <select name="type" id="type">
+            <option value="bookstore">Bookstore</option>
+            <option value="coffeeShop">Coffee shop</option>
+        </select>
+        <br><br>
+
+        <label>Latitud
+            <input name="latitude" type="text">
+        </label>
+        <br><br>
+
+        <label>Longitud
+            <input name="longitude" type="text">
+        </label>
+        <br><br>
+
+        <input type="submit" value="Crear">
+
+    </form>
+</div>
