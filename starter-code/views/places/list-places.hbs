@@ -1,0 +1,26 @@
+<h2> List of Coffee Store and Bookstore </h2>
+
+<ul>
+    {{#each place }}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card">{{name}}</h3>
+                <p class="card">Category: {{category}}</p>
+
+
+
+
+                <a href="/edit/{{_id}}">Edit</a>
+            </div>
+        </div>
+        <form action="/delete/{{id}}" method="post">
+            <div class="d-grid mt-3">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+        </form>
+
+        {{/each}}
+
+
+</ul>

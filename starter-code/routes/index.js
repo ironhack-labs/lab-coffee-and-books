@@ -1,9 +1,13 @@
-const express = require('express');
-const router  = express.Router();
+module.exports = app => {
+    const indexRoutes = require('./index.routes')
+    app.use('/', indexRoutes)
 
-/* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+    const mapRoutes = require('./map.routes')
+    app.use('/', mapRoutes)
 
-module.exports = router;
+    const placeRoutes = require('./places.routes')
+    app.use('/', placeRoutes)
+
+    const apiRoutes = require('./api.routes')
+    app.use('/api', apiRoutes)
+}
