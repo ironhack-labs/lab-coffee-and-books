@@ -1,0 +1,70 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("/images/backi.jpg");
+  background-size: cover;
+}
+
+.whot {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 50px;
+}
+
+.what {
+  text-align: center;
+  text-decoration-line: underline;
+  font-size: 40px;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+#myMap {
+  height: 500px;
+}
+
+.weird {
+  padding-top: 10px;
+  background-color: beige;
+  opacity: 90%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+ul li {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  list-style: none;
+
+}
+
+.chiquiv {
+  font-size: 10px;
+  margin-left: 60px;
+
+}
+
+.chiqui {
+  font-size: 10px;
+  margin-left: 0px;
+}
+
+.centeral {
+  padding-top: 30px;
+  padding-right: 20px;
+  width: 500px;
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  background-color: wheat;
+  border-radius: 12px;
+}
