@@ -1,0 +1,23 @@
+<div class="container mt-5">
+
+    <div class="row">
+
+        {{#each places}}
+
+        <div class="col-md-4">
+
+            <article class="character-card mb-5">
+
+                <h2>{{name}}</h2>
+                <hr>
+                <p>Tipo: {{type}}</p>
+
+                <p>Localización: {{location.coordinates}}</p>
+                <a href="/sitios/eliminar">borrar sitio que feo</a>
+            </article>
+
+        </div>
+        {{/each}}
+    </div>
+
+</div>
