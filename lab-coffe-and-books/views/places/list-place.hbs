@@ -1,0 +1,20 @@
+<h1>Places</h1>
+
+{{#each place}}
+
+<a href="/places/{{id}}" class="btn btn-dark"> {{name}}</a>
+
+<hr>
+
+{{/each}}
+
+<hr>
+
+<a href="/places/create-places" class="btn btn-dark">Add a new place</a>
+<a href="/" class="btn btn-dark">Back to home</a>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/places-map.js"></script>
+
+
+<a href="/" class="btn btn-dark">Back to home</a>
