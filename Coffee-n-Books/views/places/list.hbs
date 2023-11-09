@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>All places</h2>
+    <a href="/" class="btn btn-sm btn-dark mb-5">Home</a>
+    <a class="btn btn-dark btn-sm mb-5" href="/places/create">Create new place</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each places}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{type}}</td>
+                <td><a href="/places/edit/{{id}}" class="btn btn-sm btn-outline-dark">Editar</a></td>
+                <td>
+                    <form action="/places/delete/{{id}}" method="post">
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <figure id="myMap"></figure>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./js/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=init"></script>
