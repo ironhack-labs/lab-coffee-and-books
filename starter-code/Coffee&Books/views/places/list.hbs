@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <h2>Listado</h2>
+    <hr>
+
+    <div class="row mt-5">
+        {{#each places}}
+        <div class="col-4">
+            <h3>{{name}}</h3>
+            <p>{{type}}</p>
+            <p>{{location.coordinates.[0]}}</p>
+            <p>{{location.coordinates.[1]}}</p>
+
+            <form action="/places/edit/{{id}}" method="GET">
+                <input type="submit" value="Editar" class="btn btn-success btn-sm">
+            </form>
+            <form action="/places/delete/{{id}}" method="POST">
+                <input type="submit" value="Eliminar" class="btn btn-danger btn-sm">
+            </form>
+        </div>
+        {{/each}}
+    </div>
+
+
+</div>
