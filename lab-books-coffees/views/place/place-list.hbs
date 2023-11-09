@@ -1,0 +1,21 @@
+<div class="container">
+    {{#each places}}
+    <div class="row align-items-center">
+        <div class="col-4">
+            {{name}}
+
+        </div>
+        <div class="col-4">
+            {{type}}
+
+        </div>
+        <div class="col-4 mb-2">
+            <a class="btn btn-info" href="/places/details/{{_id}}" role="button">Details</a>
+        </div>
+        <hr>
+    </div>
+
+    {{/each}}
+
+    <a class="btn btn-dark" href="/places/create" role="button">Create</a>
+</div>
