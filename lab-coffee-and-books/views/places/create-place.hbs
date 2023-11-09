@@ -1,0 +1,46 @@
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h1>New place</h1>
+            <hr>
+            <form action="/places/create" method="POST">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="type" class="form-label">Type</label>
+                            <select class="form-select" name="type" id="type">
+                                <option value="coffee shop">Coffee shop</option>
+                                <option value="bookstore">Bookstore</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="lat" class="form-label">Latitude</label>
+                            <input type="text" class="form-control" id="lat" name="latitude">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="long" class="form-label">Longitude</label>
+                            <input type="text" class="form-control" id="long" name="longitude">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid mt-5">
+                    <button type="submit" class="btn btn-dark btn-lg">Create place</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,36 @@
+<div class="container mt-5">
+
+    <table class="table">
+
+        <tbody>
+
+            {{#each places}}
+
+            <tr>
+
+                <td>
+                    <h4>{{name}}</h4>
+                </td>
+                <div class="btn-group">
+                    <td>
+                        <a href="/places/{{_id}}" class="btn btn-dark btn-md">Details</a>
+                    </td>
+                    <td>
+                        <a href="/places/{{_id}}/edit" class=" btn btn-warning btn-md">Edit</a>
+                    </td>
+                    <td>
+                        <form action="/places/{{_id}}/delete" method="POST">
+                            <input type="submit" value="Delete" class="btn btn-danger btn-md">
+                        </form>
+                    </td>
+                </div>
+            </tr>
+
+            {{/each}}
+
+        </tbody>
+
+    </table>
+</div>
+
+</div>
