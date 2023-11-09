@@ -1,0 +1,17 @@
+<h1> Places List </h1>
+<hr>
+<table class="table">
+    <tbody>
+        {{#each places }}
+        <tr>
+            <td><a href="/places/{{id}}"> {{ name }} </a></td>
+            <td> <a href="/places/{{id}}/edit" class="btn btn-warning">Edit</a></td>
+            <td>
+                <form action="/places/{{id}}/delete" method="post">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
