@@ -18,7 +18,6 @@ router.post("/create", (req, res, next) => {
     const location = { type: "Point", coordinates: [longitude, latitude] }
 
 
-    console.log(req.body, location)
     Place
         .create({ name, type, location })
         .then(() => res.redirect("/places"))
@@ -37,10 +36,11 @@ router.get("/edit/:id", (req, res, next) => {
 
 router.post("/edit/:id", (req, res, next) => {
     const { id: placeId } = req.params
-    const { name, type } = req.body
+    const { name, type, longitude, latitude } = req.body
+    const location = { type: "Point", coordinates: [longitude, latitude] }
 
     Place
-        .findByIdAndUpdate(placeId, { name, type })
+        .findByIdAndUpdate(placeId, { name, type, location })
         .then(() => res.redirect("/places"))
         .catch(err => next(err))
 

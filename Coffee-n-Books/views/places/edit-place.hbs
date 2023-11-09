@@ -6,12 +6,11 @@
             <label for="name" class="form-label">Name of the place</label>
             <input type="text" class="form-control" id="name" name="name" value="{{name}}">
         </div>
-        <div class="mb-3">
-            <div class="mb-3">
-                <label for="type" class="form-label">Type of the place (Book Store or Coffee shop)</label>
-                <input type="text" class="form-control" id="type" name="type" value="{{type}}">
-            </div>
-        </div>
+        <select class="form-select" name="type">
+            <option selected>Type of the place</option>
+            <option value="book store">Book store</option>
+            <option value="coffee shop">Coffee shop</option>
+        </select>
         <div class="mb-3">
             <h5 class="mb-3">Coordinates</h5>
             <div>
