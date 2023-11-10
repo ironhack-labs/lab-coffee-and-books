@@ -1,0 +1,16 @@
+<div class="container">
+
+    <h2>Our bookstores and coffee shops</h2>
+    <hr>
+
+    {{#each places}}
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <a href="/details/{{id}}">{{name}} | {{type}}</a>
+        </li>
+    </ul>
+
+    {{/each}}
+
+</div>
