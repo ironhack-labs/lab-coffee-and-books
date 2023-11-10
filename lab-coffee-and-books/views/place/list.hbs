@@ -1,0 +1,9 @@
+<div class="container">
+    {{#each places}}
+        <p>Nombre: {{name}}</p>
+        <p>Tipo: {{type}}</p>
+        <a href="/lugares/detalles/{{_id}}">Detalles</a>
+        <a href="/lugares/editar/{{_id}}">Editar</a>
+        <a href="/lugares/eliminar/{{_id}}">Eliminar</a>
+    {{/each}}
+</div>
