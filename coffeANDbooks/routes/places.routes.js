@@ -13,12 +13,12 @@ router.get('/create', (req, res, next) => {
 })
 
 router.post('/create', (req, res, next) => {
-    const { name, type, latitude, longitude } = req.body
-
+    const { name, type, latitude: latitude, longitude: longitude } = req.body
     const location = {
         type: 'Point',
-        coordinates: [Number(longitude), Number(latitude)]
+        coordinates: [latitude, longitude]
     }
+
 
     Place
         .create({ name, type, location })

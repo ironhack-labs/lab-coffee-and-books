@@ -10,10 +10,8 @@ const placeSchema = new Schema({
         type: {
             type: String
         },
-        coordinates: {
-            type:
-                [Number]
-        }
+        coordinates: [Number]
+
     }
 },
     {
