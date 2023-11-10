@@ -1,0 +1,37 @@
+<div class="container">
+
+    <h1>Crear nuevo lugar</h1>
+
+    <hr>
+
+    <form action="/editar" method="POST">
+
+        <label> Nombre
+            <input name="name" type="text" value="{{name}}">
+        </label>
+        <br><br>
+        <hr>
+        <label> Type
+            <hr>
+            <input type="radio" id="coffee shop" name="opciones" value="coffee shop">
+            <label for="coffee shop">Coffee shop</label>
+            <input type="radio" id="bookstore" name="opciones" value="bookstore">
+            <label for="bookstore"> Bookstore</label>
+        </label>
+        <br><br>
+        <hr>
+        <label>Latitud
+            <input name="latitude" type="text" value="{{location.coordinates.[0]}}">
+        </label>
+        <br><br>
+        <hr>
+        <label>Longitud
+            <input name="longitude" type="text" value="{{location.coordinates.[1]}}">
+        </label>
+        <br><br>
+        <hr>
+        <input type="submit" value="Crear lugar">
+
+    </form>
+
+</div>

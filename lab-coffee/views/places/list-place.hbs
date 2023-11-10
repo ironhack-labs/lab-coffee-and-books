@@ -1,0 +1,24 @@
+<div class="container">
+    <h1> Lista de lugares </h1>
+    <table class="table">
+        <tbody>
+            {{#each places}}
+            <tr>
+                <td>
+                    {{name}}
+                </td>
+                <td>
+                    <a href="/editar/{{_id}}" class="btn btn-warning btn-sm">Editar</a>
+                </td>
+
+                <td>
+                    <form action="/eliminar/{{_id}}" method="POST">
+                        <input type="submit" value="eliminar" class="btn btn-danger btn-sm">
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <a href="/" class="btn btn-dark"> Volver al home</a>
+</div>
