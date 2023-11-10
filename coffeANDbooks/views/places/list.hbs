@@ -1,0 +1,36 @@
+<h2> Places list </h2>
+
+<div class="container mt-5">
+
+    <div class="row">
+
+        {{#each places}}
+
+        <div class="col-md-4">
+
+            <article class="character-card mb-5">
+
+                <h4>{{name}}</h4>
+
+                <p>Type:{{type}}</p>
+                {{!-- <p>{{coordinates.latitude}}</p>
+                <p>{{coordinates}}</p> --}}
+
+
+                <div class="d-grid">
+
+                    <div class="btn-group">
+                        <a href="/places/{{id}}" class="btn btn-dark btn-sm">Ver detalles</a>
+                        <a href="/places/{{id}}/edit" class=" btn btn-warning btn-sm">Editar</a>
+                        <a href="/places/{{id}}/delete" class="btn btn-danger btn-sm">Eliminar</a>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+        {{/each}}
+    </div>
+    <a href="/">inicio</a>
+</div>
