@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-6">
+            <h1>Editar Sitio</h1>
+            <hr>
+            <form action="/places/{{_id}}/edit" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre: </label>
+                    <input type="text" id="name" class="form-control" name="name" value="{{name}}">
+                </div>
+                <div class="mb-3">
+                    <label for="floatingSelect" class="form-label">Tipo: </label>
+                    <select name="type" class="form-select" id="floatingSelect"
+                        aria-label="Floating label select example">
+                        <option value="coffee Shop">Coffee shop</option>
+                        <option value="bookStore">Bookstore</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="latitud" class="form-label">Latitud: </label>
+                    <input type="text" id="latitud" class="form-control" name="latitud"
+                        value="{{location.coordinates.[0]}}">
+                </div>
+                <div class="mb-3">
+                    <label for="longitud" class="form-label">Longitud: </label>
+                    <input type="text" id="longitud" class="form-control" name="longitud"
+                        value="{{location.coordinates.[1]}}">
+                </div>
+                <div class="d-grid">
+                    <input type="submit" class="btn btn-dark mt-3" value="Editar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

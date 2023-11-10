@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-6">
+            <h1>Crear Sitio</h1>
+            <hr>
+            <form action="/places/create" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre: </label>
+                    <input type="text" id="name" class="form-control" name="name">
+                </div>
+
+                <div class="mb-3 form-floating">
+                    <select name="type" class="form-select" id="floatingSelect"
+                        aria-label="Floating label select example">
+                        <option value="coffee Shop" selected>Coffee shop</option>
+                        <option value="bookStore">Bookstore</option>
+                    </select>
+                    <label for="floatingSelect">Tipo: </label>
+                </div>
+
+                <div class="mb-3">
+                    <label for="latitud" class="form-label">Latitud:</label>
+                    <input type="text" id="latitud" class="form-control" name="latitud">
+                </div>
+                <div class="mb-3">
+                    <label for="longitud" class="form-label">Longitud: </label>
+                    <input type="text" id="longitud" class="form-control" name="longitud">
+                </div>
+                <div class="d-grid">
+                    <input type="submit" class="btn btn-dark mt-3" value="Crear">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
