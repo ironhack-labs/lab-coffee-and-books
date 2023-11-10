@@ -1,0 +1,33 @@
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h1>Edita a {{name}}</h1>
+            <hr>
+            <form action='/places/{{_id}}/edit' method="POST">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">name</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <select class="form-select" aria-label="Default select example" name="type">
+                                <option selected>type of place</option>
+                                <option value="coffee-shop">coffeeShop</option>
+                                <option value="bookstore">bookStore</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid mt-5">
+                    <button type="submit" class="btn btn-dark btn-lg">Editar personaje</button>
+                </div>
+            </form>
+            <a href="/">inicio</a>
+        </div>
+    </div>
+</div>
