@@ -1,0 +1,25 @@
+<div class="container">
+    <h1> Lista de lugares</h1>
+    <hr>
+
+    {{#each places}}
+    <p><strong> Nombre del lugar:</strong>{{name}}</p>
+
+    <a href="/lugares/detalles/{{id}}"> Detalles</a>
+
+
+    {{/each}}
+
+
+
+    <hr>
+
+
+    <a href="/lugares/lugarmap"> Ver mapa de lugares</a>
+
+
+
+    <a href="/lugares/crear"> Crear</a>
+
+
+</div>
