@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Listado de libros</h1>
+    <hr>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Título</th>
+
+            </tr>
+        </thead>
+        {{#each list}}
+        <tbody>
+            <tr>
+                <td>
+                    <h5>{{name}}</h5>
+                </td>
+                <td>
+                    <a href="/listado/editar/{{_id}}" class="btn btn-warning btn-sm">Editar</a>
+                    <form action="/listado/eliminar/{{_id}}" method="POST" class="d-inline">
+                        <input type="submit" value="Eliminar" class="btn btn-danger btn-sm">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+        {{/each}}
+    </table>
+</div>

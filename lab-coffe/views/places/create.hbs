@@ -1,0 +1,38 @@
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Crear nuevo restaurante</h1>
+
+
+
+    <form method="POST" action="/crear">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Descripción</label>
+            <input type="text" class="form-control" id="description" name="description">
+        </div>
+
+        <div class="form-group">
+            <label for="category">Categoría</label>
+            <select class="form-control" id="category" name="place">
+                <option>Coffe shop</option>
+                <option>Bookstore</option>
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="latitude">Latitud</label>
+            <input type="text" class="form-control" id="latitude" name="latitude">
+        </div>
+
+        <div class="form-group">
+            <label for="longitude">Longitud</label>
+            <input type="text" class="form-control" id="longitude" name="longitude">
+        </div>
+
+        <button type="submit" class="btn btn-success btn-block">Crear restaurante</button>
+    </form>
+</div>
