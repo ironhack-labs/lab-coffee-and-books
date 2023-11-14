@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="container-places">
+
+        <h1>LIST OF PLACES</h1>
+
+        <div>
+            {{#each newPlaces}}
+            <div class="places">
+                <hr>
+                <a href="/places/{{id}}">
+                    {{name}}
+                </a>
+                <a href="/places/{{id}}">
+                    {{type}}
+                </a>
+
+            </div>
+            <div class="buttons">
+                <div>
+                    <a href="places/{{id}}/edit" class="btn btn-sm btn-dark">EDIT</a>
+                </div>
+                <div>
+                    <form action="places/{{id}}/delete" method="POST">
+                        <button class="btn btn-sm btn-dark" type="submit">DELETE</button>
+                    </form>
+                </div>
+            </div>
+            {{/each}}
+
+            <hr>
+            <a href="/" class="btn btn-dark">HOME</a>
+
+        </div>
+    </div>
+</div>
+
+
+    
