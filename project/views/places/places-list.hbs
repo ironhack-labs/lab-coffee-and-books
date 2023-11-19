@@ -1,0 +1,31 @@
+<h2>Places list</h2>
+<hr>
+<div class="container">
+    {{#each places}}
+    <div class="row">
+        <div class="col">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <p> <span class="fw-bold">Nombre:</span> {{name}}</p>
+
+                    <p> <span class="fw-bold">tipo:</span> {{type}}</p>
+
+                    <a href="/places/{{id}}/edit" class="btn btn-sm btn-info">editar</a>
+                    <form action="/places/{{id}}/delete" method="POST" style="display: inline">
+                        <input type="submit" value="eliminar" class="btn btn-sm btn-danger">
+                    </form>
+                </li>
+
+            </ul>
+
+        </div>
+        <hr>
+    </div>
+
+
+
+    {{/each}}
+</div>
+
+<a href="/" class="btn btn-dark">Volver a inicio</a>
+<a href="/create" class="btn btn-dark">Crear nuevo lugar</a>
