@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <div class="row">
+        {{#each places}}
+        <div class="col-md-3">
+            <article class="character-card mb-5">
+                <h4>{{name}}</h4>
+                <div class="d-grid">
+                    <div class="btn-group">
+                        <form action="/{{_id}}/edit" class="btn btn-warning btn-sm">
+                            <a href="/{{_id}}/edit" class=" btn btn-warning btn-sm">Editar</a>
+                        </form>
+                        <form action="/{{_id}}/delete" method="POST" class="btn btn-danger btn-sm">
+                            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm">
+                        </form>
+                    </div>
+                </div>
+            </article>
+        </div>
+        {{/each}}
+    </div>
+</div>
+<div class="container">
+    <hr>
+    <figure id="map"></figure>
+    <hr>
+    <a href="/create" class="btn btn-dark">Crea un nuevo establecimiento</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>

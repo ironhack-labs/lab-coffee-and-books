@@ -1,0 +1,28 @@
+<form method="POST" action="/create">
+    <div class="mb-3">
+        <label for="name" class="form-label">Nombre del establecimiento</label>
+        <input type="text" class="form-control" id="name" placeholder="Casa Pepe" name="name">
+    </div>
+
+    <div class="mb-3">
+        <label for="type" class="form-label">Tipo de establecimiento</label>
+            <select class="form-select" aria-label="Default select example" name="type" id="type">
+                <option selected>Opciones</option>
+                <option value="Coffee Shop">Coffee shop</option>
+                <option value="Bookstore">Bookstore</option>
+            </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="longitude" class="form-label">Longitud</label>
+        <input type="text" class="form-control" id="longitude" name="longitude">
+    </div>
+    <div class="mb-3">
+        <label for="latitude" class="form-label">Latitud</label>
+        <input type="text" class="form-control" id="latitude" name="latitude">
+    </div>
+
+    <div class="d-grid mt-5">
+        <button type="submit" class="btn btn-success btn-lg">Crear</button>
+    </div>
+</form>
